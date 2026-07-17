@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Autodesk 3ds Max ile profesyonel 3B modelleme ve animasyon. Arnold render motoru ve modern arayüzle projelerinizi hayata geçirin. Cadbim Autodesk Gold Partner.">
+<title>Autodesk 3ds Max — 3B Modelleme, Animasyon & Render | Cadbim</title>
+  <meta property="og:title" content="Autodesk 3ds Max — 3B Modelleme & Render | Cadbim Gold Partner">
+  <meta property="og:description" content="3ds Max ile profesyonel 3B modelleme, animasyon ve Arnold render. Mimari, oyun, film ve endüstriyel tasarım için. Cadbim ATC eğitim merkezi.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cadbim.com.tr/3dsmax">
+  <meta property="og:image" content="https://www.cadbim.com.tr/og-image.png">
+  <meta property="og:site_name" content="Cadbim">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Autodesk 3ds Max — 3B Modelleme & Render | Cadbim Gold Partner">
+  <meta name="twitter:description" content="3ds Max ile profesyonel 3B modelleme, animasyon ve Arnold render. Mimari, oyun, film ve endüstriyel tasarım için.">
+  <link rel="canonical" href="https://www.cadbim.com.tr/3dsmax">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+:root{
+  --navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;
+  --cyan:#00c8f0;--cyan2:#0ea5e9;
+  --cdim:rgba(0,200,240,0.12);--cbor:rgba(0,200,240,0.2);
+  --w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);
+  --w30:rgba(255,255,255,0.3);--w10:rgba(255,255,255,0.1);--w06:rgba(255,255,255,0.06);
+  --fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;
+  --r:8px;--rm:12px;--rl:16px;--rxl:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.92);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.nav-logo-name{font-family:var(--fd);font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--w);line-height:1;}
+.nav-logo-since{font-size:9px;color:rgba(0,200,240,0.8);letter-spacing:4px;text-transform:uppercase;margin-top:5px;line-height:1;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
+.nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:var(--r);font-weight:700;font-size:13px;}
+
+/* HERO */
+.hero{padding:120px 3rem 64px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;}
+.hero-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(var(--w10) 1px,transparent 1px),linear-gradient(90deg,var(--w10) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1200px;}
+.hero-left{}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:20px;}
+.crumb a{color:var(--w30);text-decoration:none;}.crumb a:hover{color:var(--cyan);}
+.product-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:var(--r);border:.5px solid;font-size:11px;font-weight:500;letter-spacing:1px;margin-bottom:18px;}
+.hero h1{font-family:var(--fd);font-size:clamp(2rem,3.5vw,3rem);font-weight:800;line-height:1.1;color:var(--w);margin-bottom:16px;}
+.hero h1 em{font-style:normal;color:var(--cyan);}
+.hero-sub{font-size:15px;color:var(--w50);line-height:1.75;margin-bottom:28px;max-width:480px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{background:var(--cyan);color:var(--navy);padding:12px 26px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{opacity:.88;transform:translateY(-1px);}
+.btn-g{background:transparent;color:var(--w80);border:.5px solid var(--w30);padding:12px 26px;border-radius:var(--r);font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-g:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-1px);}
+.hero-right{}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hstat{background:var(--navy3);border-radius:var(--rm);border:.5px solid var(--w10);padding:18px 16px;}
+.hstat-num{font-family:var(--fd);font-size:1.8rem;font-weight:800;margin-bottom:4px;}
+.hstat-lbl{font-size:12px;color:var(--w30);line-height:1.4;}
+
+/* SECTIONS */
+.section{padding:64px 3rem;}
+.section-alt{background:var(--navy2);}
+.sh{margin-bottom:40px;}
+.slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
+.stitle{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:var(--w);margin-bottom:8px;}
+.ssub{font-size:14px;color:var(--w50);max-width:540px;line-height:1.7;}
+
+/* FEATURE GRID */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:36px;}
+.feat-card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:22px 20px;transition:border-color .2s;}
+.feat-card:hover{border-color:var(--cbor);}
+.feat-card.new::before{content:'YENİ';font-size:9px;font-weight:600;letter-spacing:1.5px;color:var(--cyan);background:var(--cdim);border:.5px solid var(--cbor);padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:10px;}
+.feat-card.enhanced::before{content:'GELİŞTİRİLDİ';font-size:9px;font-weight:600;letter-spacing:1.5px;color:#fbbf24;background:rgba(251,191,36,0.1);border:.5px solid rgba(251,191,36,0.25);padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:10px;}
+.feat-icon{font-size:22px;color:var(--cyan);margin-bottom:10px;}
+.feat-card h3{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--w);margin-bottom:6px;}
+.feat-card p{font-size:13px;color:var(--w50);line-height:1.6;}
+
+/* SEKTÖR TABS */
+.sector-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.stab{padding:8px 16px;border-radius:20px;font-size:12px;cursor:pointer;border:.5px solid var(--w10);background:transparent;color:var(--w50);transition:all .2s;font-family:var(--fb);}
+.stab:hover{border-color:var(--w30);color:var(--w80);}
+.stab.active{background:var(--cdim);border-color:var(--cbor);color:var(--cyan);}
+.sector-content{display:none;}
+.sector-content.show{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.sc-left h3{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--w);margin-bottom:10px;}
+.sc-left p{font-size:13px;color:var(--w50);line-height:1.7;margin-bottom:14px;}
+.sc-pts{display:flex;flex-direction:column;gap:6px;}
+.sc-pt{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--w50);}
+.sc-pt i{font-size:14px;flex-shrink:0;margin-top:2px;}
+.sc-right{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--cbor);padding:20px;}
+.sc-right h4{font-size:12px;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
+.sc-tools{display:flex;flex-wrap:wrap;gap:7px;}
+.sc-tool{font-size:12px;padding:5px 11px;border-radius:6px;background:rgba(255,255,255,.04);border:.5px solid var(--w10);color:var(--w50);}
+
+/* TOOLSETS */
+.toolset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:36px;}
+.toolset-card{background:var(--navy3);border-radius:var(--rm);border:.5px solid var(--w10);padding:18px 16px;transition:all .2s;}
+.toolset-card:hover{border-color:var(--cbor);transform:translateY(-1px);}
+.ts-icon{font-size:20px;color:var(--cyan);margin-bottom:10px;}
+.toolset-card h3{font-size:13px;font-weight:500;color:var(--w);margin-bottom:5px;}
+.toolset-card p{font-size:12px;color:var(--w30);line-height:1.5;}
+.ts-boost{font-size:11px;color:var(--cyan);margin-top:8px;font-weight:500;}
+
+/* CROSS */
+.cross{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:32px;margin-top:16px;}
+.cross h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:6px;}
+.cross .cdesc{font-size:13px;color:var(--w50);margin-bottom:16px;}
+.cross-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.cp{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;}
+.cp:hover{border-color:var(--cbor);color:var(--cyan);}
+.cp i{font-size:14px;color:var(--cyan);}
+
+/* CTA */
+.cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 64px;}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
+.cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;color:var(--w);margin-bottom:10px;}
+.cta-strip p{font-size:14px;color:var(--w50);margin-bottom:26px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24px;}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fbot p{font-size:12px;color:rgba(255,255,255,0.2);}
+.socials{display:flex;gap:10px;}
+.socials a{width:32px;height:32px;border-radius:var(--r);border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}
+.socials a:hover{border-color:var(--cyan);color:var(--cyan);}
+@media(max-width:1000px){.hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}.nav-links{display:none;}.cta-strip{margin:0 1.5rem 56px;}}
+@media(max-width:600px){.section{padding:48px 1.5rem;}.hero{padding:96px 1.5rem 52px;}.sector-content.show{grid-template-columns:1fr;}}
+
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+</style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CADBIM2026"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CADBIM2026');
+</script>
+
+<!-- SEO -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#060c1a">
+<meta property="og:locale" content="tr_TR">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.cadbim.com.tr/#organization",
+   "name": "Cadbim",
+   "url": "https://www.cadbim.com.tr/",
+   "logo": "https://www.cadbim.com.tr/og-image.png",
+   "foundingDate": "1993",
+   "email": "cadbim@cadbim.com.tr",
+   "telephone": "+902324643490",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901",
+    "addressLocality": "Çiğli",
+    "addressRegion": "İzmir",
+    "postalCode": "35620",
+    "addressCountry": "TR"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/cadbim/",
+    "https://www.youtube.com/c/CadbimTeknikDestek",
+    "https://www.instagram.com/cadbim_izmir/",
+    "https://www.facebook.com/cadbimizmir"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.cadbim.com.tr/3dsmax#webpage",
+   "url": "https://www.cadbim.com.tr/3dsmax",
+   "name": "Autodesk 3ds Max — 3B Modelleme, Animasyon & Render | Cadbim",
+   "description": "Autodesk 3ds Max ile profesyonel 3B modelleme ve animasyon. Güçlü Arnold render motoru ve modern arayüz.",
+   "isPartOf": {
+    "@id": "https://www.cadbim.com.tr/#website"
+   },
+   "inLanguage": "tr-TR",
+   "publisher": {
+    "@id": "https://www.cadbim.com.tr/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Ana Sayfa",
+     "item": "https://www.cadbim.com.tr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Ürünler",
+     "item": "https://www.cadbim.com.tr/autodesk"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Autodesk 3ds Max",
+     "item": "https://www.cadbim.com.tr/3dsmax"
+    }
+   ]
+  },
+  {
+   "@type": "Product",
+   "name": "Autodesk 3ds Max",
+   "description": "Autodesk 3ds Max ile profesyonel 3B modelleme, animasyon ve Arnold render. Mimari görselleştirme, oyun, film ve endüstriyel tasarım için.",
+   "url": "https://www.cadbim.com.tr/3dsmax",
+   "image": "https://www.cadbim.com.tr/og-image.png",
+   "brand": {
+    "@type": "Brand",
+    "name": "Autodesk"
+   },
+   "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "TRY",
+    "seller": {
+     "@id": "https://www.cadbim.com.tr/#organization"
+    },
+    "url": "https://www.cadbim.com.tr/3dsmax"
+   }
+  }
+ ]
+}
+</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="stylesheet" href="assets/css/design-system.css?v=5">
+</head>
+<body><nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logos/cadbim-logo.png" alt="Cadbim">
+    <div><div class="nav-logo-name">Cadbim</div><div class="nav-logo-since">Est. 1993</div></div>
+  </a>
+      <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="cadbim_urunler.html" class="active">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="cadbim_autodesk.html">Autodesk</a>
+        <a href="cadbim_adobe.html">Adobe</a>
+        <a href="cadbim_designjet.html">HP DesignJet</a>
+        <a href="cadbim_hp_z_workstation.html">HP Workstations</a>
+        <a href="cadbim_hp_build_workspace.html">HP Build Workspace</a>
+        <a href="cadbim_chaos.html">Chaos</a>
+        <a href="cadbim_ultimaker.html">UltiMaker</a>
+        <a href="cadbim_sketchup.html">SketchUp</a>
+        <a href="cadbim_lumion.html">Lumion</a>
+        <a href="cadbim_microsoft.html">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cadbim_cozumler.html">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="cadbim_dijital_donusum.html" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Tasarım & Mühendislik</div>
+            <a href="cadbim_bim.html">BIM</a>
+            <a href="cadbim_simulasyon.html">Simülasyon & Analiz</a>
+            <a href="cadbim_tolerans_analizi.html">Tolerans Analizi</a>
+            <a href="cadbim_tasarim_otomasyonu.html">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Dijital İkiz & Üretim</div>
+            <a href="cadbim_dijital_ikiz.html">Dijital İkiz</a>
+            <a href="cadbim_fabrika_tasarimi.html">Fabrika Tasarımı</a>
+            <a href="cadbim_cam.html">CAM & İmalat</a>
+            <a href="cadbim_eklemeli_imalat.html">Eklemeli İmalat & 3D Baskı</a>
+            <a href="cadbim_nesting.html">Nesting</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="cadbim_plm.html">PLM</a>
+            <a href="cadbim_pdm.html">PDM</a>
+            <a href="cadbim_insaat_yonetimi.html">İnşaat Proje Yönetimi</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & Gerçeklik</div>
+            <a href="cadbim_gorsellestirme.html">Görselleştirme & Render</a>
+            <a href="cadbim_yaratici_icerik.html">Yaratıcı İçerik & Tasarım</a>
+            <a href="cadbim_gerceklik_yakalama.html">Gerçeklik Yakalama</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="sektor_mimari.html">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="sektor_mimari.html">Mimarlık</a>
+        <a href="sektor_insaat.html">İnşaat & Altyapı</a>
+        <a href="sektor_makine.html">Makine & Üretim</a>
+        <a href="sektor_otomotiv.html">Otomotiv</a>
+        <a href="sektor_medya.html">Medya & Eğlence</a>
+        <a href="sektor_egitim.html">Eğitim</a>
+        <a href="sektor_havacilik.html">Havacılık & Savunma</a>
+      </div>
+    </li>
+    <li><a href="cadbim_egitimler.html">Eğitimler</a></li>
+    <li><a href="cadbim_hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="cadbim_iletisim.html">İletişim</a></li>
+    <li><a href="cadbim_kvkk.html">KVKK</a></li>
+    <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-bg" style="background:radial-gradient(ellipse 80% 60% at 10% -10%,rgba(99,102,241,0.12) 0%,transparent 60%);"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cadbim_autodesk.html">Autodesk</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">3ds Max</span></div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+  <div style="width:56px;height:56px;border-radius:12px;background:rgba(168,85,247,0.12);border:.5px solid rgba(192,132,252,0.3);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;color:#c084fc;font-family:'Manrope',sans-serif;flex-shrink:0;">3ds</div>
+  <div>
+    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);">AUTODESK</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:700;color:#fff;">3ds Max</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px;">3B Modelleme · Animasyon · Render</div>
+  </div>
+</div>
+      <h1>Profesyonel 3B Dünyalar<br><em>Yaratın</em></h1>
+      <p class="hero-sub">Modelleme, animasyon ve görselleştirmede sektör standardı. Mimari, oyun, film ve endüstriyel tasarım için tek platform — dahili Arnold render motoruyla fotogerçekçi sonuçlar.</p>
+      <div class="hero-btns">
+        <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
+        <a href="cadbim_egitimler.html" class="btn-g">3ds Max Eğitimi</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-num" style="color:#c084fc;">Arnold</div>
+          <div class="hstat-lbl">Dahili GPU/CPU render motoru — ek maliyet yok</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:var(--cyan);">USD</div>
+          <div class="hstat-lbl">Açık kaynak USD iş akışı — büyük sahne pipeline'ı</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:#34d399;">CAT</div>
+          <div class="hstat-lbl">Karakter animasyon araç seti — hazır rig sistemi</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:#fbbf24;">Python 3</div>
+          <div class="hstat-lbl">Modern otomasyon ve güçlü API entegrasyonu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="sh">
+    <div class="slabel">Temel Özellikler</div>
+    <div class="stitle">3ds Max ile Neler Yapabilirsiniz?</div>
+    <p class="ssub">Modelleme, animasyon ve render — yaratıcı üretimin her aşaması için güçlü araçlar.</p>
+  </div>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-topology-star-3"></i></div>
+      <h3>Yeniden Topoloji Araçları</h3>
+      <p>Karmaşık poligon verilerini temiz, animasyona ve render'a uygun doğru topolojiye dönüştürün. Yüksek yoğunluklu meshlerde otomatik yeniden yüzeyleme.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-arrows-maximize"></i></div>
+      <h3>Akıllı Ekstrüzyon</h3>
+      <p>Yüzeyleri etkileşimli olarak ekstrüde edin; kesişen geometriyi otomatik algılayıp birleştirin. Boolean iş akışını hızlandıran modelleme davranışı.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-palette"></i></div>
+      <h3>Malzeme Yönetimi</h3>
+      <p>Fiziksel tabanlı (PBR) malzeme desteği, Open Shading Language (OSL) ve gelişmiş malzeme düzenleyici ile fotogerçekçi yüzeyler.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-sun-high"></i></div>
+      <h3>Arnold Render Entegrasyonu</h3>
+      <p>Dahili Arnold render motoru ile GPU ve CPU üzerinde profesyonel kalitede çıktı. Etkileşimli render (ActiveShade) ile anlık geri bildirim.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-run"></i></div>
+      <h3>Animasyon Araçları</h3>
+      <p>Karakter animasyonu (CAT), hareket yolları, parçacık efektleri ve sıvı simülasyonları. Film ve oyun için eksiksiz animasyon araç seti.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-stack-2"></i></div>
+      <h3>USD Desteği</h3>
+      <p>Açık kaynak USD eklentisi, katman düzenleyici ve ışık bağlama. Büyük ekiplerde ölçeklenebilir, standart bir üretim pipeline'ı.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-code"></i></div>
+      <h3>Modern Arayüz & Python 3</h3>
+      <p>Özelleştirilebilir çalışma alanı, Python 3 entegrasyonu ve gelişmiş güvenlik önlemleri. Tekrarlayan görevleri otomatikleştirin.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sh">
+    <div class="slabel">Kullanım Senaryoları</div>
+    <div class="stitle">Kim Nasıl Kullanıyor?</div>
+  </div>
+  <div class="sector-tabs">
+    <button class="stab active" onclick="showSector('mimar',this)">Mimarlık</button>
+    <button class="stab" onclick="showSector('oyun',this)">Oyun</button>
+    <button class="stab" onclick="showSector('film',this)">Film & TV</button>
+    <button class="stab" onclick="showSector('urun',this)">Endüstriyel Tasarım</button>
+  </div>
+  <div id="sector-mimar" class="sector-content show">
+    <div class="sc-left">
+      <h3>Mimari Görselleştirme</h3>
+      <p>İç ve dış mekan sahnelerini fotogerçekçi kalitede sunun. CAD ve BIM modellerini içe aktarın, Arnold ile ışıklandırıp render alın; müşteri sunumlarında fark yaratın.</p>
+      <div class="sc-pts">
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>Revit / AutoCAD / SketchUp model içe aktarma</div>
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>PBR malzeme kütüphaneleri ile gerçekçi yüzeyler</div>
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>Gündüz/gece ışık senaryoları ve tur animasyonları</div>
+      </div>
+    </div>
+    <div class="sc-right">
+      <h4>Birlikte kullanılan araçlar</h4>
+      <div class="sc-tools">
+        <a href="cadbim_revit.html" class="sc-tool" style="text-decoration:none;">Revit</a>
+        <a href="cadbim_chaos.html" class="sc-tool" style="text-decoration:none;">Chaos V-Ray</a>
+        <a href="cadbim_lumion.html" class="sc-tool" style="text-decoration:none;">Lumion</a>
+        <a href="cadbim_autocad.html" class="sc-tool" style="text-decoration:none;">AutoCAD</a>
+      </div>
+    </div>
+  </div>
+  <div id="sector-oyun" class="sector-content">
+    <div class="sc-left">
+      <h3>Oyun — Karakter & Çevre Modelleme</h3>
+      <p>Oyun motorlarına hazır varlıklar üretin. Düşük poligonlu modelleme, UV, normal map bake ve LOD iş akışları; karakter rig ve animasyonlar CAT ile.</p>
+      <div class="sc-pts">
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>Retopology ve normal/AO map bake</div>
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>CAT ile karakter rig ve animasyon</div>
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>Unreal / Unity için FBX & USD dışa aktarma</div>
+      </div>
+    </div>
+    <div class="sc-right">
+      <h4>Birlikte kullanılan araçlar</h4>
+      <div class="sc-tools">
+        <a href="cadbim_autodesk.html" class="sc-tool" style="text-decoration:none;">Maya</a>
+        <a href="cadbim_autodesk.html" class="sc-tool" style="text-decoration:none;">MotionBuilder</a>
+        <a href="cadbim_adobe.html" class="sc-tool" style="text-decoration:none;">Adobe Substance</a>
+      </div>
+    </div>
+  </div>
+  <div id="sector-film" class="sector-content">
+    <div class="sc-left">
+      <h3>Film & TV — Animasyon ve VFX</h3>
+      <p>Sahne tasarımı, efekt ve animasyon üretimi. Parçacık sistemleri, sıvı simülasyonları ve Arnold render ile sinematik kalitede görüntü.</p>
+      <div class="sc-pts">
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>Parçacık ve sıvı/duman simülasyonları</div>
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>Arnold ile katmanlı (AOV) render çıktısı</div>
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>USD pipeline ile büyük sahne yönetimi</div>
+      </div>
+    </div>
+    <div class="sc-right">
+      <h4>Birlikte kullanılan araçlar</h4>
+      <div class="sc-tools">
+        <a href="cadbim_autodesk.html" class="sc-tool" style="text-decoration:none;">Maya</a>
+        <a href="cadbim_autodesk.html" class="sc-tool" style="text-decoration:none;">Arnold</a>
+        <a href="cadbim_adobe.html" class="sc-tool" style="text-decoration:none;">After Effects</a>
+      </div>
+    </div>
+  </div>
+  <div id="sector-urun" class="sector-content">
+    <div class="sc-left">
+      <h3>Endüstriyel Tasarım — Prototip & Sunum</h3>
+      <p>Ürün prototiplerini fotogerçekçi görsellerle sunun. CAD verisini içe aktarın, malzeme ve ışık kurun, pazarlama görselleri ve dönen ürün animasyonları üretin.</p>
+      <div class="sc-pts">
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>STEP / Inventor / Fusion CAD içe aktarma</div>
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>Stüdyo ışıklandırma ile ürün render'ı</div>
+        <div class="sc-pt"><i class="ti ti-check" style="color:#c084fc;"></i>360° turntable ve patlatılmış görünüm animasyonları</div>
+      </div>
+    </div>
+    <div class="sc-right">
+      <h4>Birlikte kullanılan araçlar</h4>
+      <div class="sc-tools">
+        <a href="cadbim_inventor.html" class="sc-tool" style="text-decoration:none;">Inventor</a>
+        <a href="cadbim_fusion.html" class="sc-tool" style="text-decoration:none;">Fusion</a>
+        <a href="cadbim_alias.html" class="sc-tool" style="text-decoration:none;">Alias</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="sh">
+    <div class="slabel">Karşılaştırma</div>
+    <div class="stitle">3ds Max vs. Alternatifler</div>
+    <p class="ssub">Görselleştirme ve mimari sunum odaklı üretimde 3ds Max'in konumu.</p>
+  </div>
+  <div style="overflow-x:auto;margin-top:8px;">
+    <table style="width:100%;border-collapse:collapse;min-width:560px;font-size:14px;">
+      <thead>
+        <tr style="text-align:left;">
+          <th style="padding:14px 16px;color:var(--w50);font-weight:500;border-bottom:.5px solid var(--w10);">Özellik</th>
+          <th style="padding:14px 16px;color:var(--cyan);font-family:var(--fd);border-bottom:.5px solid var(--cbor);">3ds Max</th>
+          <th style="padding:14px 16px;color:var(--w50);font-weight:500;border-bottom:.5px solid var(--w10);">Maya</th>
+          <th style="padding:14px 16px;color:var(--w50);font-weight:500;border-bottom:.5px solid var(--w10);">Blender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding:13px 16px;color:var(--w80);border-bottom:.5px solid var(--w06);">Mimari görselleştirme</td>
+          <td style="padding:13px 16px;color:#34d399;border-bottom:.5px solid var(--w06);">Sektör standardı</td>
+          <td style="padding:13px 16px;color:var(--w50);border-bottom:.5px solid var(--w06);">Orta</td>
+          <td style="padding:13px 16px;color:var(--w50);border-bottom:.5px solid var(--w06);">İyi</td>
+        </tr>
+        <tr>
+          <td style="padding:13px 16px;color:var(--w80);border-bottom:.5px solid var(--w06);">CAD / BIM veri uyumu</td>
+          <td style="padding:13px 16px;color:#34d399;border-bottom:.5px solid var(--w06);">Güçlü (Autodesk)</td>
+          <td style="padding:13px 16px;color:var(--w50);border-bottom:.5px solid var(--w06);">Orta</td>
+          <td style="padding:13px 16px;color:var(--w50);border-bottom:.5px solid var(--w06);">Sınırlı</td>
+        </tr>
+        <tr>
+          <td style="padding:13px 16px;color:var(--w80);border-bottom:.5px solid var(--w06);">Dahili render (Arnold)</td>
+          <td style="padding:13px 16px;color:#34d399;border-bottom:.5px solid var(--w06);">Dahil</td>
+          <td style="padding:13px 16px;color:var(--w80);border-bottom:.5px solid var(--w06);">Dahil</td>
+          <td style="padding:13px 16px;color:var(--w50);border-bottom:.5px solid var(--w06);">Cycles/Eevee</td>
+        </tr>
+        <tr>
+          <td style="padding:13px 16px;color:var(--w80);border-bottom:.5px solid var(--w06);">Film / VFX pipeline</td>
+          <td style="padding:13px 16px;color:var(--w80);border-bottom:.5px solid var(--w06);">İyi</td>
+          <td style="padding:13px 16px;color:#34d399;border-bottom:.5px solid var(--w06);">Sektör standardı</td>
+          <td style="padding:13px 16px;color:var(--w50);border-bottom:.5px solid var(--w06);">İyi</td>
+        </tr>
+        <tr>
+          <td style="padding:13px 16px;color:var(--w80);">Kurumsal destek & eğitim</td>
+          <td style="padding:13px 16px;color:#34d399;">Cadbim ATC</td>
+          <td style="padding:13px 16px;color:#34d399;">Cadbim ATC</td>
+          <td style="padding:13px 16px;color:var(--w50);">Topluluk</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12px;color:var(--w30);margin-top:14px;">Karşılaştırma genel kullanım senaryolarına dayalı özet bir değerlendirmedir; proje ihtiyacınıza göre doğru aracı birlikte belirleyelim.</p>
+</section>
+
+
+<section data-enrich-brand style="padding:60px 3rem;background:#0a1225;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Cadbim Farkı</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;color:#fff;margin-bottom:8px;">Autodesk Yatırımınızı Uçtan Uca Sahipleniyoruz</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 26px;max-width:640px;">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten yenilemeye tüm yaşam döngüsü tek muhatapta.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:30px;">
+   <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+     <div style="width:36px;height:36px;border-radius:10px;background:#0ea5e91a;color:#0ea5e9;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-license" style="font-size:18px;"></i></div>
+     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Esnek Abonelik Seçenekleri</h3>
+     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">Tek kullanıcılı ve çok kullanıcılı abonelikler, 1/3 yıllık dönemler ve koleksiyon avantajıyla ihtiyacınıza uygun plan.</p>
+   </div>
+   <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+     <div style="width:36px;height:36px;border-radius:10px;background:#0ea5e91a;color:#0ea5e9;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-school" style="font-size:18px;"></i></div>
+     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Yetkili Eğitim Merkezi (ATC)</h3>
+     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">Resmi Autodesk sertifikalı eğitimler — yazılımı almakla kalmayın, ekibiniz ustalaşsın.</p>
+   </div>
+   <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+     <div style="width:36px;height:36px;border-radius:10px;background:#0ea5e91a;color:#0ea5e9;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-headset" style="font-size:18px;"></i></div>
+     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Türkçe Gold Partner Desteği</h3>
+     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p>
+   </div></div>
+    <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:22px;">
+   <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
+     <div style="width:30px;height:30px;border-radius:50%;background:#0ea5e91a;border:1px solid #0ea5e955;color:#0ea5e9;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-message" style="font-size:14px;"></i></div>
+     <div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">1. Teklif & İhtiyaç Analizi</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</div>
+     </div>
+   </div>
+   <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
+     <div style="width:30px;height:30px;border-radius:50%;background:#0ea5e91a;border:1px solid #0ea5e955;color:#0ea5e9;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-file-check" style="font-size:14px;"></i></div>
+     <div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">2. Lisanslama / Tedarik</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Resmi kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</div>
+     </div>
+   </div>
+   <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
+     <div style="width:30px;height:30px;border-radius:50%;background:#0ea5e91a;border:1px solid #0ea5e955;color:#0ea5e9;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-settings" style="font-size:14px;"></i></div>
+     <div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">3. Kurulum & Eğitim</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</div>
+     </div>
+   </div>
+   <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
+     <div style="width:30px;height:30px;border-radius:50%;background:#0ea5e91a;border:1px solid #0ea5e955;color:#0ea5e9;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-headset" style="font-size:14px;"></i></div>
+     <div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">4. Sürekli Destek</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</div>
+     </div>
+   </div></div>
+  </div>
+</section>
+<div class="cta-strip">
+  <h2>3ds Max lisans teklifi alın</h2>
+  <p>Tekil 3ds Max aboneliği mi, yoksa 3ds Max + Maya + Arnold içeren M&E Collection mı avantajlı — birlikte hesaplayalım. Eğitim dahil planlar mevcut.</p>
+  <div class="cta-btns">
+    <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
+    <a href="cadbim_egitimler.html" class="btn-g">3ds Max Eğitimi Al</a>
+  </div>
+</div>
+<script>
+function showSector(id, btn) {
+  document.querySelectorAll('.sector-content').forEach(el => el.classList.remove('show'));
+  document.querySelectorAll('.stab').forEach(el => el.classList.remove('active'));
+  document.getElementById('sector-' + id).classList.add('show');
+  btn.classList.add('active');
+}
+</script>
+<footer>
+  <div class="fbot">
+    <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+    </div>
+  </div>
+</footer><script src="mobilenav.js" defer></script>
+</body>
+</html>

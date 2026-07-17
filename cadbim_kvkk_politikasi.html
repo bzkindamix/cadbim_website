@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Kişisel Verilerin Korunması ve İşlenmesi Politikası — Cadbim KVKK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;--cyan:#00c8f0;--w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);--w30:rgba(255,255,255,0.3);--w10:rgba(255,255,255,0.1);--fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:15px;line-height:1.7;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.95);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1);}
+.nav-logo-name{font-family:var(--fd);font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--w);line-height:1;}
+.nav-logo-since{font-size:9px;color:rgba(0,200,240,0.8);letter-spacing:4px;text-transform:uppercase;margin-top:5px;line-height:1;}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none;}
+.nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:4px;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:8px;font-weight:700;font-size:13px;}
+
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+
+.content{max-width:820px;margin:0 auto;padding:130px 3rem 90px;}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:24px;}
+.crumb a{color:var(--w30);text-decoration:none;}
+.crumb a:hover{color:var(--cyan);}
+.doc-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;}
+h1.doc-title{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:32px;line-height:1.25;}
+.doc-body p{color:var(--w80);margin-bottom:18px;font-size:15px;}
+.doc-body h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);margin:32px 0 12px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-top:48px;padding:12px 22px;border:1px solid var(--w10);border-radius:8px;color:var(--w50);text-decoration:none;font-size:13px;transition:all .2s;}
+.back-link:hover{border-color:var(--cyan);color:var(--cyan);}
+footer{background:#040810;border-top:.5px solid rgba(255,255,255,0.06);padding:40px 3rem 24px;}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fbot p{font-size:12px;color:rgba(255,255,255,0.2);}
+.socials{display:flex;gap:10px;}
+.socials a{width:32px;height:32px;border-radius:8px;border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}
+.socials a:hover{border-color:var(--cyan);color:var(--cyan);}
+@media(max-width:900px){.nav-links{display:none;}}
+@media(max-width:600px){.content{padding:110px 1.5rem 56px;}}
+</style>
+
+<!-- SEO -->
+<meta name="description" content="Cadbim kişisel verilerin korunması ve işlenmesi politikası. 6698 sayılı KVKK uyum çerçevemiz.">
+<link rel="canonical" href="https://www.cadbim.com.tr/kvkk-politikasi">
+<meta name="theme-color" content="#060c1a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cadbim">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Kişisel Verilerin Korunması ve İşlenmesi Politikası — Cadbim KVKK">
+<meta property="og:description" content="Cadbim kişisel verilerin korunması ve işlenmesi politikası. 6698 sayılı KVKK uyum çerçevemiz.">
+<meta property="og:url" content="https://www.cadbim.com.tr/kvkk-politikasi">
+<meta property="og:image" content="https://www.cadbim.com.tr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kişisel Verilerin Korunması ve İşlenmesi Politikası — Cadbim KVKK">
+<meta name="twitter:description" content="Cadbim kişisel verilerin korunması ve işlenmesi politikası. 6698 sayılı KVKK uyum çerçevemiz.">
+<meta name="twitter:image" content="https://www.cadbim.com.tr/og-image.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.cadbim.com.tr/#organization",
+   "name": "Cadbim",
+   "url": "https://www.cadbim.com.tr/",
+   "logo": "https://www.cadbim.com.tr/og-image.png",
+   "foundingDate": "1993",
+   "email": "cadbim@cadbim.com.tr",
+   "telephone": "+902324643490",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901",
+    "addressLocality": "Çiğli",
+    "addressRegion": "İzmir",
+    "postalCode": "35620",
+    "addressCountry": "TR"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/cadbim/",
+    "https://www.youtube.com/c/CadbimTeknikDestek",
+    "https://www.instagram.com/cadbim_izmir/",
+    "https://www.facebook.com/cadbimizmir"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.cadbim.com.tr/kvkk-politikasi#webpage",
+   "url": "https://www.cadbim.com.tr/kvkk-politikasi",
+   "name": "Kişisel Verilerin Korunması ve İşlenmesi Politikası — Cadbim KVKK",
+   "description": "Cadbim kişisel verilerin korunması ve işlenmesi politikası. 6698 sayılı KVKK uyum çerçevemiz.",
+   "isPartOf": {
+    "@id": "https://www.cadbim.com.tr/#website"
+   },
+   "inLanguage": "tr-TR",
+   "publisher": {
+    "@id": "https://www.cadbim.com.tr/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Ana Sayfa",
+     "item": "https://www.cadbim.com.tr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "KVKK",
+     "item": "https://www.cadbim.com.tr/kvkk"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Kişisel Verilerin Korunması ve İşlenmesi Politikası",
+     "item": "https://www.cadbim.com.tr/kvkk-politikasi"
+    }
+   ]
+  }
+ ]
+}
+</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="stylesheet" href="assets/css/design-system.css?v=5">
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logos/cadbim-logo.png" alt="Cadbim">
+    <div><div class="nav-logo-name">Cadbim</div><div class="nav-logo-since">Est. 1993</div></div>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="cadbim_urunler.html">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="cadbim_autodesk.html">Autodesk</a>
+        <a href="cadbim_adobe.html">Adobe</a>
+        <a href="cadbim_designjet.html">HP DesignJet</a>
+        <a href="cadbim_hp_z_workstation.html">HP Workstations</a>
+        <a href="cadbim_hp_build_workspace.html">HP Build Workspace</a>
+        <a href="cadbim_chaos.html">Chaos</a>
+        <a href="cadbim_ultimaker.html">UltiMaker</a>
+        <a href="cadbim_sketchup.html">SketchUp</a>
+        <a href="cadbim_lumion.html">Lumion</a>
+        <a href="cadbim_microsoft.html">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cadbim_cozumler.html">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="cadbim_dijital_donusum.html" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Tasarım & Mühendislik</div>
+            <a href="cadbim_bim.html">BIM</a>
+            <a href="cadbim_simulasyon.html">Simülasyon & Analiz</a>
+            <a href="cadbim_tolerans_analizi.html">Tolerans Analizi</a>
+            <a href="cadbim_tasarim_otomasyonu.html">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Dijital İkiz & Üretim</div>
+            <a href="cadbim_dijital_ikiz.html">Dijital İkiz</a>
+            <a href="cadbim_fabrika_tasarimi.html">Fabrika Tasarımı</a>
+            <a href="cadbim_cam.html">CAM & İmalat</a>
+            <a href="cadbim_eklemeli_imalat.html">Eklemeli İmalat & 3D Baskı</a>
+            <a href="cadbim_nesting.html">Nesting</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="cadbim_plm.html">PLM</a>
+            <a href="cadbim_pdm.html">PDM</a>
+            <a href="cadbim_insaat_yonetimi.html">İnşaat Proje Yönetimi</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & Gerçeklik</div>
+            <a href="cadbim_gorsellestirme.html">Görselleştirme & Render</a>
+            <a href="cadbim_yaratici_icerik.html">Yaratıcı İçerik & Tasarım</a>
+            <a href="cadbim_gerceklik_yakalama.html">Gerçeklik Yakalama</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="sektor_mimari.html">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="sektor_mimari.html">Mimarlık</a>
+        <a href="sektor_insaat.html">İnşaat & Altyapı</a>
+        <a href="sektor_makine.html">Makine & Üretim</a>
+        <a href="sektor_otomotiv.html">Otomotiv</a>
+        <a href="sektor_medya.html">Medya & Eğlence</a>
+        <a href="sektor_egitim.html">Eğitim</a>
+        <a href="sektor_havacilik.html">Havacılık & Savunma</a>
+      </div>
+    </li>
+    <li><a href="cadbim_egitimler.html">Eğitimler</a></li>
+    <li><a href="cadbim_hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="cadbim_iletisim.html">İletişim</a></li>
+    <li><a href="cadbim_kvkk.html" class="active">KVKK</a></li>
+    <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
+  </ul>
+</nav>
+<div class="content">
+  <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cadbim_kvkk.html">KVKK</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Kişisel Verilerin Korunması ve İşlenmesi Politikası</span></div>
+  <div class="doc-label">KVKK Aydınlatma Metinleri</div>
+  <h1 class="doc-title">Kişisel Verilerin Korunması ve İşlenmesi Politikası</h1>
+  <div class="doc-body">
+    <h3>1. GİRİŞ</h3>
+    <p>Veri sorumlusu olarak Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi (Şirket) için ürün ve hizmet alan kişileri, çalışanları ve ilişki içinde olduğu diğer gerçek kişilere ait kişisel verilerin korunması, büyük önem arz etmektedir. Kişisel verilerin işlenmesi ve korunması süreçleri için işbu Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi Kişisel Verilerin Korunması Ve İşlenmesi Politikası (Politika) ile hedeflenen; şirket ile ilişki kuran müşterilerimizin, çalışanlarımızın, çalışan adaylarımızın, ziyaretçilerimizin, iş birliği içinde olduğumuz kurum çalışanlarının ve üçüncü kişilerin kişisel verilerinin hukuka uygun biçimde işlenmesi ve korunmasıdır. Bu kapsamda, 6698 sayılı Kişisel Verilerin Korunması Kanun'u (Kanun) ve ilgili mevzuat gereğince kişisel verilerin işlenmesi ve korunması için şirket tarafından gereken idari ve teknik tedbirler alınmaktadır.</p>
+    <h3>2. POLİTİKANIN AMACI VE KAPSAMI</h3>
+    <p>Bu Politikanın temel amacı, şirket tarafından hukuka uygun bir biçimde yürütülen kişisel veri işleme faaliyeti ve kişisel verilerin korunmasına yönelik benimsenen sistemler konusunda açıklamalarda bulunmak, bu kapsamda şirketimizin ilişkili olduğu kişilere karşı şeffaflık sağlamak ve ilgili kişileri kişisel verilerin işlenmesi konusunda aydınlatmaktır.</p>
+    <p>Bu Politika kapsamı; ürün ve hizmet alan kişilerin, çalışanlarımızın, çalışan adaylarımızın, ziyaretçilerimizin ve üçüncü kişilerin otomatik olan ya da herhangi bir veri kayıt sisteminin parçası olmak kaydıyla otomatik veya otomatik olmayan yollarla işlenen kişisel verilerine ilişkindir.</p>
+    <h3>3. KİŞİSEL VERİLERİN KORUNMASINA İLİŞKİN HUSUSLAR</h3>
+    <h3>3.1 Kişisel Verilerin Korunması</h3>
+    <p>Şirketimiz, Kanunu'nun 12. maddesine uygun olarak, işlemekte olduğu kişisel verilerin hukuka aykırı olarak işlenmesini, verilere hukuka aykırı olarak erişilmesini önlemek ve verilerin muhafazasını sağlamak için uygun güvenlik düzeyini sağlamaya yönelik gerekli teknik ve idari tedbirleri almakta, bu kapsamda gerekli denetimleri yapmakta veya yaptırmaktadır. Bu kapsamda şirketimiz Kişisel Verileri Koruma Kurulu (Kurul) tarafından yayımlanmış olan rehberlere uygun olarak gerekli güvenlik düzeyini sağlamaya yönelik idari ve teknik tedbirleri almakta, denetimleri yapmakta veya yaptırmaktadır.</p>
+    <h3>3.2 Özel Nitelikli Kişisel Verilerin Korunması</h3>
+    <p>Hassasiyet arz eden kişisel verilere, hukuka aykırı olarak işlendiğinde kişilerin mağduriyetine veya ayrımcılığa sebep olma riski nedeniyle Kişisel Verilerin Korunması Kanunu kapsamında özel önem atfedilmiştir. Kanun'un 6. maddesi uyarınca "özel nitelikli" kişisel veriler; ırk, etnik köken, siyasi düşünce, felsefi inanç, din, mezhep veya diğer inançlar, kılık ve kıyafet, dernek, vakıf ya da sendika üyeliği, ceza mahkûmiyeti ve güvenlik tedbirleriyle ilgili veriler (Sağlık ve cinsel hayat dışındaki özel nitelikli kişisel veriler) sağlık, cinsel hayat, ile biyometrik ve genetik veriler (Sağlık ve cinsel hayata ilişkin özel nitelikli kişisel veriler) olarak belirlenmiştir. Şirket tarafından, kişisel verilerin korunması için alınan teknik ve idari tedbirler özel nitelikli kişisel veriler bakımından Kurul'un 31/01/2018 Tarihli ve 2018/10 Sayılı Kararı'nda öngörülen yeterli önlemler Özel Nitelikli Kişisel Verilerin Korunması Politikası içerisinde açıklanan kapsamda alınmakta ve bu doğrultuda yürütülen çalışmalar şirket bünyesinde gerçekleştirilen denetimler çerçevesinde takip edilmekte ve denetlenmektedir.</p>
+    <h3>3.3 Kişisel Verilerin Korunması Konusunda Alınan Tedbirlerin Denetimi ve Şirket Personellerinin Eğitimi</h3>
+    <p>Şirket bünyesinde Kişisel Veri Koruma Komitesi mevcuttur. Komite, veri sorumlusu olan şirket adına, Kanunun 12. maddesinden kaynaklanan görevi gereği, kendi kurum veya kuruluşunda Kanun hükümlerinin uygulanmasını sağlamak amacıyla gerekli denetimleri bizzat yapmakta ve ihtiyaç halinde yetkin kuruluşlardan destek almak suretiyle yaptırmaktadır. Bu denetim sonuçlarına göre, tespit edilen ihlaller, olumsuzluklar ve uygunsuzluklar komite içerisinde yer alan sorumlulara bildirilmekte ve bu hususlar nezdinde gereken tedbirleri aldırmaktadır. Şirket tarafından dışarıdan bir hizmet alınan gerçek veya tüzel kişilere kişisel verilerin aktarılması durumunda, kişisel verilerin hukuka uygun olarak aktarıldığı ilgili firmalar ile kişisel verilerin aktarıldığı kişilerin, kişisel verilerin korunması amacıyla gerekli güvenlik tedbirlerini alacağına ve kendi kuruluşlarında bu tedbirlere uyulmasını sağlanacağına ilişkin hükümler içeren ek sözleşmeler yapılmaktadır. Bunlarla birlikte Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi personeller ile verilerin korunması tedbirlerine uyulmasına yönelik sözleşmeler yapmaktadır.</p>
+    <p>Şirket, kişisel verilerin hukuka aykırı olarak işlenmesini, verilere hukuka aykırı olarak erişilmesini önlemeye ve verilerin muhafazasını sağlamaya yönelik farkındalığın artırılması için çalışanlarına, gerekli eğitimlerin düzenlenmesini sağlamaktadır.</p>
+    <h3>4. KİŞİSEL VERİLERİN İŞLENMESİNE İLİŞKİN HUSUSLAR</h3>
+    <p>Şirket, Anayasa'nın 20. maddesine ve Kanunu'nun 4. maddesine uygun olarak kişisel veri işleme faaliyetinde bulunmaktadır. Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi, kanunlarda öngörülen veya kişisel veri işleme amacının gerektirdiği süre kadar kişisel verileri muhafaza etmektedir. Şirket, Kanunu'nun 10. maddesine uygun olarak kişisel verisi işlenen ilgili kişileri aydınlatmakta ve rıza alınması gereken durumlarda ilgili kişilerinden rızalarını talep etmekte ve rızaları doğrultusunda bu kişisel verileri aşağıda belirtilen kriterleri esas alarak işlemektedir.</p>
+    <h3>4.1. Hukuka ve Dürüstlük Kuralına Uygun İşleme</h3>
+    <p>Şirket, kişisel verilerin işlenmesinde yasal düzenlemelerle getirilen ilkeler ile kamusal güven ve dürüstlük kuralına uygun hareket etmektedir. Dürüstlük kuralına uygun olma ilkesi uyarınca şirket veri işlemedeki hedeflerine ulaşmaya çalışırken, ilgili kişilerin haklarını dikkate almaktadır.</p>
+    <h3>4.2. Kişisel Verilerin Doğru ve Gerektiğinde Güncel Olmasını Sağlama</h3>
+    <p>Kişisel verilerin doğru ve güncel bir şekilde tutulması, şirket açısından ilgili kişinin temel hak ve özgürlüklerinin korunması açısından gereklidir. Kişisel verilerin doğru ve gerektiğinde güncel olmasının sağlanması noktasında şirket azami özen yükümlülüğünü yerine getirmektedir. Bu sebeple şirket tarafından kişisel verisi işlenen ilgili kişilerin bilgilerinin doğru ve güncel olarak tutulması için bütün iletişim kanalları açıktır ve bu hususlarda gerekli tedbirleri almaktadır.</p>
+    <h3>4.3. Belirli, Açık ve Meşru Amaçlarla İşleme</h3>
+    <p>Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi, meşru ve hukuka uygun olan kişisel veri işleme amacını açık ve kesin olarak belirlemektedir. Şirket, yürütmekte olduğu faaliyet ile bağlantılı ve faaliyetleri ve ticari hizmetleri için gerekli olan kadar kişisel veri işlemektedir.</p>
+    <h3>4.4. İşlendikleri Amaçla Bağlantılı, Sınırlı ve Ölçülü Olma</h3>
+    <p>Şirket, kişisel verileri, ilgili ve işinin yürütülmesi için gerekli olan amaçlar dahilinde işlemektedir. Bu sebeple şirket, kişisel verileri belirlenen amaçların gerçekleştirilebilmesine elverişli bir biçimde işlemekte ve amacın gerçekleştirilmesiyle ilgili olmayan veya ihtiyaç duyulmayan kişisel verilerin işlenmesinden kaçınmaktadır.</p>
+    <h3>4.5. İlgili Mevzuatta Öngörülen veya İşlendikleri Amaç için Gerekli Olan Süre Kadar Muhafaza Etme</h3>
+    <p>Şirket, kişisel verileri ancak ilgili mevzuatta belirtildiği veya şirket politikaları gereği işlendikleri amaç için gerekli olan süre kadar muhafaza etmektedir. Bu kapsamda, şirket öncelikle ilgili mevzuatta kişisel verilerin saklanması için bir süre öngörülüp öngörülmediğini tespit etmekte, bir süre belirlenmişse bu süreye uygun davranmakta, bir süre belirlenmemişse kişisel verileri işlendikleri amaç için gerekli olan ve şirketin saklama politikasında belirtilen süre kadar saklamaktadır. Şirket kişisel veri envanterindeki saklama sürelerini esas almakta olup, burada belirtilen süreler sonunda Kanun kapsamındaki yükümlülükler çerçevesinde kişisel veriler, verinin niteliğine ve kullanım amacına göre silinmekte, yok edilmekte veya anonimleştirilmektedir.</p>
+    <h3>5. KİŞİSEL VERİLERİN İŞLENMESİ</h3>
+    <p>Kişisel verisi işlenen ilgili kişinin açık rıza vermesi, kişisel verilerin hukuka uygun olarak işlenmesini mümkün kılan hukuki dayanaklardan yalnızca biridir. Açık rıza dışında, kanunda belirtilen şartlardan birinin varlığı durumunda da kişisel veriler işlenebilir. Kişisel veri işleme faaliyetinin dayanağı aşağıda belirtilen şartlardan yalnızca biri olabildiği gibi bu şartlardan birden fazlası da aynı kişisel veri işleme faaliyetinin dayanağı olabilir. İşlenen verilerin özel nitelikli kişisel veri olması halinde, işbu Politika'nın 5.2 başlığı (Özel Nitelikli Kişisel Verilerin İşlenmesi) içerisinde yer alan şartlar uygulanacaktır.</p>
+    <h3>5.1 Kişisel Verilerin İşlenme Şartları</h3>
+    <p>a) İlgili kişinin Açık Rızasının Bulunması: Kişisel verilerin işlenme şartlarından biri ilgili kişinin açık rızasıdır. Kişisel ilgili kişinin açık rızası belirli bir konuya ilişkin, bilgilendirilmeye dayalı olarak ve özgür iradeyle açıklanmalıdır.</p>
+    <p>b) Kanunlarda Açıkça Öngörülmesi: İlgili kişinin kişisel verileri, kanunda açıkça öngörülmekte ise diğer bir ifade ile ilgili kanunda kişisel verilerin işlenmesine ilişkin açıkça bir hüküm olması halinde işbu veri işleme şartının varlığından söz edilebilecektir.</p>
+    <p>c) Fiili İmkânsızlık Sebebiyle İlgilinin Açık Rızasının Alınamaması: Fiili imkânsızlık nedeniyle rızasını açıklayamayacak durumda olan veya rızasına geçerlilik tanınamayacak olan kişinin kendisinin ya da başka bir kişinin hayatı veya beden bütünlüğünü korumak için kişisel verisinin işlenmesinin zorunlu olması halinde ilgili kişinin kişisel verileri işlenebilecektir.</p>
+    <p>d) Sözleşmenin Kurulması veya İfasıyla Doğrudan İlgi Olması: İlgili kişinin taraf olduğu bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması kaydıyla, kişisel verilerin işlenmesinin gerekli olması halinde işbu şart yerine getirilmiş sayılabilecektir.</p>
+    <p>e) Şirket'in Hukuki Yükümlülüğünü Yerine Getirmesi: Şirketimizin hukuki yükümlülüklerini yerine getirmesi için işlemenin zorunlu olması halinde ilgili kişinin kişisel verileri işlenebilecektir.</p>
+    <p>f) Kişisel İlgili kişinin Kişisel Verisini Alenileştirmesi: İlgili kişinin, kişisel verisini alenileştirmiş olması halinde ilgili kişisel veriler alenileştirme amacıyla sınırlı olarak işlenebilecektir.</p>
+    <p>g) Bir Hakkın Tesisi veya Korunması için Veri İşlemenin Zorunlu Olması: Bir hakkın tesisi, kullanılması veya korunması için veri işlemenin zorunlu olması halinde ilgili kişinin kişisel verileri işlenebilecektir.</p>
+    <p>h) Şirket'in Meşru Menfaati için Veri İşlemenin Zorunlu Olması: Kişisel ilgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla şirketimizin meşru menfaatleri için veri işlemesinin zorunlu olması halinde ilgili kişinin kişisel verileri işlenebilecektir.</p>
+    <h3>5.2 Özel Nitelikli Kişisel Verilerin İşlenmesi</h3>
+    <p>Özel nitelikli kişisel veriler şirketimiz tarafından, işbu Politika'da belirtilen ilkelere uygun olarak ve Kurul'un belirleyeceği yöntemler de dahil olmak üzere gerekli her türlü idari ve teknik tedbirler alınarak ve 6698 sayılı Kişisel Verilerin Korunması Kanununa yönelik hükümler de içeren Ceza Muhakemesi Kanunu ile Bazı Kanunlarda Değişiklik Yapılmasına Dair Kanun'un, 12/3/2024 tarihli ve 32487 sayılı Resmî Gazete'de yayınlanması üzerine 01.06.2024 tarihinden itibaren aşağıdaki şartların varlığı halinde işlenmektedir:</p>
+    <p>a) İlgili kişinin açık rızasının olması,</p>
+    <p>b) Kanunlarda açıkça öngörülmesi,</p>
+    <p>c) Fiili imkânsızlık nedeniyle rızasını açıklayamayacak durumda bulunan veya rızasına hukuki geçerlilik tanınmayan kişinin, kendisinin ya da bir başkasının hayatı veya beden bütünlüğünün korunması için zorunlu olması,</p>
+    <p>ç) İlgili kişinin alenileştirdiği kişisel verilere ilişkin ve alenileştirme iradesine uygun olması,</p>
+    <p>d) Bir hakkın tesisi, kullanılması veya korunması için zorunlu olması,</p>
+    <p>e) Sır saklama yükümlülüğü altında bulunan kişiler veya yetkili kurum ve kuruluşlarca, kamu sağlığının korunması, koruyucu hekimlik, tıbbi teşhis, tedavi ve bakım hizmetlerinin yürütülmesi ile sağlık hizmetlerinin planlanması, yönetimi ve finansmanı amacıyla gerekli olması,</p>
+    <p>f) İstihdam, iş sağlığı ve güvenliği, sosyal güvenlik, sosyal hizmetler ve sosyal yardım alanlarındaki hukuki yükümlülüklerin yerine getirilmesi için zorunlu olması,</p>
+    <p>g) Siyasi, felsefi, dini veya sendikal amaçlarla kurulan vakıf, dernek ve diğer kâr amacı gütmeyen kuruluş ya da oluşumların, tâbi oldukları mevzuata ve amaçlarına uygun olmak, faaliyet alanlarıyla sınırlı olmak ve üçüncü kişilere açıklanmamak kaydıyla; mevcut veya eski üyelerine ve mensuplarına veyahut bu kuruluş ve oluşumlarla düzenli olarak temasta olan kişilere yönelik olması, hâlinde mümkündür.</p>
+    <h3>6. KİŞİSEL VERİLERİN İŞLENME AMAÇLARI</h3>
+    <p>Şirket, Kişisel Verilerin Korunması Kanunu'nun 5. maddesinin 2. fıkrasında ve 6. maddenin 3. fıkrasında belirtilen kişisel veri işleme şartları içerisindeki amaçlarla sınırlı olarak kişisel verileri işlemektedir. Bu konu ile ilgili ayrıntılı bilgiye işbu Politika'nın EK-2 ("EK 2 - Şirket Tarafından İşlenen Kişisel Veriler ve Amaçları") dokümanından ulaşılması mümkündür.</p>
+    <h3>7. İLGİLİ KİŞİNİN AYDINLATILMASI VE BİLGİLENDİRİLMESİ</h3>
+    <p>Şirket, Kişisel Verilerin Korunması Kanunu'nun 10. maddesine uygun olarak, kişisel verilerin elde edilmesi sırasında kişisel verisi işlenen ilgili kişileri aydınlatmaktadır. Bu kapsamda şirket, veri sorumlusunun kimliği, varsa temsilcisinin kimliği, kişisel verilerin hangi amaçla işleneceği, işlenen kişisel verilerin kimlere ve hangi amaçla aktarılabileceği, kişisel veri toplamanın yöntemi ve hukuki sebebi ile kişisel verisi işlenen ilgili kişilerin sahip olduğu haklar konusunda ilgili kişinin niteliğine ve veri işleme sürecine göre aydınlatma yapmaktadır. Bu kapsamda şirket içerisinde ve ortak kullanım alanlarında kolayca görebilecekleri ön aydınlatma bilgilendirmeleri ve aydınlatma metinleri yerleştirmiştir. Şirket web sitesinde bu politika ile birlikte süreç ve kişi bazlı aydınlatma metni, çerez politikası, başvuru formu da yayınlanmıştır.</p>
+    <h3>8. KİŞİSEL VERİLERİN AKTARILMASI</h3>
+    <p>Şirket, hukuka uygun olan kişisel veri işleme amaçları doğrultusunda, gerekli güvenlik önlemlerini alarak, ilgili kişinin kişisel verilerini üçüncü kişilere aktarabilmektedir. Bu kapsamda;</p>
+    <p>Kanunlarda kişisel verinin aktarılacağına ilişkin açık bir düzenleme var ise,</p>
+    <p>Bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olmak kaydıyla sözleşmenin taraflarına ait kişisel verinin aktarılması gerekli ise,</p>
+    <p>Şirketin hukuki yükümlülüğünü yerine getirmesi için kişisel veri aktarımı zorunlu ise,</p>
+    <p>Kişisel veri aktarımı bir hakkın tesisi, kullanılması veya korunması için zorunlu ise,</p>
+    <p>İlgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla, şirketin meşru menfaatleri için kişisel veri aktarımı zorunlu ise,</p>
+    <p>Sağlık ve cinsel hayat dışındaki özel nitelikli kişisel veriler için; kanunlarda öngörülen hâller var ise;</p>
+    <p>Sağlık ve cinsel hayata ilişkin kişisel veriler ise ancak kamu sağlığının korunması, koruyucu hekimlik, tıbbî teşhis, tedavi ve bakım hizmetlerinin yürütülmesi, sağlık hizmetleri ile finansmanının planlanması ve yönetimi kapsamında yetkili kişi kurum kuruluşlarla paylaşılması gerekliliği var ise;</p>
+    <p>aktarılmaktadır.</p>
+    <h3>9. KİŞİSEL VERİLERİN AKTARILDIĞI ÜÇÜNCÜ KİŞİLER VE AKTARILMA AMAÇLARI</h3>
+    <p>Şirket hukuka uygun olan kişisel veri işleme amaçları doğrultusunda gerekli güvenlik önlemlerini alarak ilgili kişinin kişisel verilerini ve özel nitelikli kişisel verilerini üçüncü kişilere aktarabilmektedir. Şirketimiz bu doğrultuda Kanun'un 8. ve 9. maddelerinde öngörülen düzenlemelere uygun hareket etmektedir. Bu konu ile ilgili ayrıntılı bilgiye işbu Politika'nın EK-3 ("EK 3 - Şirketimiz Tarafından Kişisel Verilerin Aktarıldığı Üçüncü Kişiler ve Aktarılma Amaçları") dokümanından ulaşılması mümkündür.</p>
+    <h3>10. KİŞİSEL VERİ ENVANTERİ VE KİŞİSEL VERİLERİN SINIFLANDIRILMASI</h3>
+    <p>Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi nezdinde, şirketin meşru ve hukuka uygun kişisel veri işleme amaçları doğrultusunda, Kanunu'nun 5. maddesinde ve 6. maddesinde belirtilen kişisel veri işleme şartlarından bir veya birkaçına dayalı ve bunlarla sınırlı olarak, Kanun'da belirtilen genel ilkelere ve Kanun'da düzenlenen tüm yükümlülüklere uyularak aşağıda belirtilen kategorilerdeki kişisel veriler, ilgili kişiler aydınlatılmak suretiyle işlenmektedir.</p>
+    <p>Şirket, Kişisel Verileri Koruma Kurumu tarafından yürürlüğe sokulan Veri Sorumluları Sicili Yönetmeliği uyarınca kişisel veri envanteri oluşturmuştur. Bu veri envanterinde veri kategorileri, verinin kaynağı, veri işleme amaçları, veri işleme süreci, verilerin aktarıldığı alıcı grupları ve saklama süreleri yer almaktadır. Bu kapsamda şirket kişisel veri envanteri içerisinde aşağıdaki veri kategorilerinde yer alan kişisel veriler bulunmaktadır:</p>
+    <p>Kimlik Verisi: Kişi kimliğine dair bilgilerin bulunduğu veri grubudur.</p>
+    <p>İletişim Verisi: Kişiye ulaşmak için kullanılabilecek veri grubudur.</p>
+    <p>Görsel ve İşitsel Veri: Kişiye ait görsel ve işitsel verilerin bulunduğu veri grubudur.</p>
+    <p>Özlük Verisi: Bu veri kategorisi kişilere ait bordro bilgileri, mal bildirimi bilgileri, özgeçmiş bilgileri gibi veri türlerini ifade etmektedir.</p>
+    <p>Finansal Veri: Kişinin finansal bilgilerinin bulunduğu veri grubudur.</p>
+    <p>Mesleki Deneyim: Kişinin mesleğine, mesleki tecrübelerine ve eğitim bilgilerine ait bilgilerin bulunduğu veri grubudur.</p>
+    <p>Lokasyon: Kişinin konum bilgisini içerir veri grubudur.</p>
+    <p>Müşteri İşlem Verisi: Bu veri kategorisi çağrı merkezi kayıtları, fiş, alındı belgesi, kıymetli evrak bilgileri ve fatura bilgileri gibi veri türlerini ifade etmektedir.</p>
+    <p>Hukuki İşlem Verisi: Bu veri kategorisi adli makamlarla yazışmalardaki bilgiler, dava dosyasındaki bilgiler gibi veri türlerini ifade etmektedir.</p>
+    <p>İşlem Güvenliği Verisi: Kişiye ait IP bilgisi, log kaydı ve çerezler gibi işlem güvenliği verilerinin bulunduğu veri grubudur.</p>
+    <p>Fiziksel Mekan Güvenliği Verisi: Kişiye ait kamera kayıtları, giriş çıkış kayıtları gibi fiziksel mekan güvenliği verilerinin bulunduğu veri grubudur.</p>
+    <p>Risk Yönetimi: Bu veri kategorisi teknik idari risklerin yönetilmesi için işlenen bilgiler gibi veri türlerini ifade etmektedir.</p>
+    <p>Sağlık Verisi: Kişinin sağlık verilerine ilişkin veri grubudur.</p>
+    <p>Diğer: Veri Sorumluları Sicili'nde kategorize edilmeyen verileri ifade etmektedir.</p>
+    <h3>11. KİŞİSEL VERİLERİN SAKLANMA SÜRELERİ</h3>
+    <p>Şirket, ilgili kanunlarda ve mevzuatlarda öngörülen durumlarda kişisel verileri bu mevzuatlarda belirtilen süre boyunca saklamaktadır. Kişisel verilerin ne kadar süre boyunca saklanması gerektiğine ilişkin mevzuatta bir süre düzenlenmemişse, kişisel veriler şirketin o veriyi işlerken yürüttüğü faaliyet ile bağlı olarak, şirketin uygulamaları ve ticari teamülleri uyarınca saklanmasını gerektiren süre kadar saklamaktadır.</p>
+    <p>Türk Ceza Kanunu'nun 138. maddesinde, KVK Kanunu'nun 7. maddesinde ve Kişisel Verileri Koruma Kurumu tarafından yürürlüğe konulan "Kişisel Verilerin Silinmesi, Yok Edilmesi ve Anonimleştirilmesi Hakkında Yönetmelik" uyarınca, ilgili kanun hükümlerine uygun olarak işlenen kişisel veriler, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde Şirketin politikalarına istinaden veya ilgili kişinin talebi üzerine kişisel veriler silinir, yok edilir veya anonim hâle getirilir. Şirket bu konuda yönetmelik hükümlerine göre bir politika oluşturmuş olup, bu politika uyarınca hareket etmektedir.</p>
+    <h3>12. İLGİLİ KİŞİNİN HAKLARI; BU HAKLARIN KULLANILMASI</h3>
+    <p>Şirket, Kişisel Verilerin Korunması Kanunu'nun 10. maddesine uygun olarak ilgili kişinin haklarını kendisine bildirmekte ve 11. maddede düzenlenen bu hakların nasıl kullanılacağı konusunda kişisel verisi işlenen ilgili kişiye yol göstermektedir ve şirket, ilgili kişilerin haklarının değerlendirilmesi ve ilgili kişilere gereken bilgilendirmenin yapılması için Kişisel Verilerin Korunması Kanunu'nun 13. maddesine uygun olarak gerekli kanalları, iç işleyişi, idari ve teknik düzenlemeleri yürütmektedir.</p>
+    <h3>12.1 Kişisel verisi işlenen ilgili kişilerin hakları</h3>
+    <p>a. Kişisel veri işlenip işlenmediğini öğrenme,</p>
+    <p>b. Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,</p>
+    <p>c. Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</p>
+    <p>d. Yurtiçinde veya yurtdışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,</p>
+    <p>e. Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</p>
+    <p>f. Kişisel Verilerin Korunması Kanunu ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerin silinmesini veya yok edilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</p>
+    <p>g. İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkması halinde bu sonuca itiraz etme,</p>
+    <p>h. Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme.</p>
+    <h3>12.2. Kişisel Verisi İşlenen İlgili Kişinin Haklarını İleri Süremeyeceği Haller</h3>
+    <p>Kişisel verisi işlenen ilgili kişiler, Kişisel Verilerin Korunması Kanunu'nun 28. maddesi gereğince aşağıdaki haller Kişisel Verilerin Korunması Kanunu kapsamı dışında tutulduğundan, bu konularda 12.1.'de sayılan haklarını ileri süremezler:</p>
+    <p>a. Kişisel verilerin resmi istatistik ile anonim hâle getirilmek suretiyle araştırma, planlama ve istatistik gibi amaçlarla işlenmesi,</p>
+    <p>b. Kişisel verilerin millî savunmayı, millî güvenliği, kamu güvenliğini, kamu düzenini, ekonomik güvenliği, özel hayatın gizliliğini veya kişilik haklarını ihlal etmemek ya da suç teşkil etmemek kaydıyla, sanat, tarih, edebiyat veya bilimsel amaçlarla ya da ifade özgürlüğü kapsamında işlenmesi,</p>
+    <p>c. Kişisel verilerin millî savunmayı, millî güvenliği, kamu güvenliğini, kamu düzenini veya ekonomik güvenliği sağlamaya yönelik olarak kanunla görev ve yetki verilmiş kamu kurum ve kuruluşları tarafından yürütülen önleyici, koruyucu ve istihbarati faaliyetler kapsamında işlenmesi,</p>
+    <p>d. Kişisel verilerin soruşturma, kovuşturma, yargılama veya infaz işlemlerine ilişkin olarak yargı makamları veya infaz mercileri tarafından işlenmesi.</p>
+    <p>Kişisel Verilerin Korunması Kanunu'nun 28/2 maddesi gereğince; aşağıda sıralanan hallerde kişisel verisi işlenen ilgili kişiler zararın giderilmesini talep etme hakkı hariç, 12.1.'de sayılan diğer haklarını ileri süremezler:</p>
+    <p>a. Kişisel veri işlemenin suç işlenmesinin önlenmesi veya suç soruşturması için gerekli olması,</p>
+    <p>b. Kişisel verisi işlenen ilgili kişinin kendisi tarafından alenileştirilmiş kişisel verilerin işlenmesi,</p>
+    <p>c. Kişisel veri işlemenin kanunun verdiği yetkiye dayanılarak görevli ve yetkili kamu kurum ve kuruluşları ile kamu kurumu niteliğindeki meslek kuruluşlarınca, denetleme veya düzenleme görevlerinin yürütülmesi ile disiplin soruşturma veya kovuşturması için gerekli olması,</p>
+    <p>d. Kişisel veri işlemenin bütçe, vergi ve mali konulara ilişkin olarak Devletin ekonomik ve mali çıkarlarının korunması için gerekli olması.</p>
+    <h3>12.3. Kişisel İlgili Kişinin Haklarını Kullanması</h3>
+    <p>Kişisel verisi işlenen ilgili kişiler bu Politikada belirtilen haklarına ilişkin taleplerini kimliklerini tespit edecek bilgi ve belgelerle ve aşağıda belirtilen yöntemlerle veya Kişisel Verileri Koruma Kurulu'nun belirlediği diğer yöntemlerle başvuru formunu doldurup imzalayarak şirkete ücretsiz olarak iletebileceklerdir. Bu konuda düzenlemeler Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi Kişisel Veri Başvuru ve Yanıt Prosedürü'nde ve aydınlatma metinleri içerisinde yapılmıştır.</p>
+    <p>İlgili kişi, KVKK'nın ilgili kişinin haklarını düzenleyen 11. maddesi kapsamındaki haklarını Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ'e göre, Ataşehir Mahallesi Anadolu Cadde No: 901/ Çiğli İzmir adresine yazılı olarak veya cadbim@cadbim.com.tr e-postanızın Firma sistemlerinde kayıtlı olması şartı ile e-posta adresine elektronik ortamdan iletmek suretiyle veya cadbim.bilgisayar@hs01.kep.tr kep adresine kayıtlı elektronik posta ile başvurarak kullanabilecektir.</p>
+    <p>EK-1 TANIMLAR</p>
+    <p>Açık Rıza: Belirli bir konuya ilişkin, bilgilendirilmeye dayanan ve özgür iradeyle açıklanan rıza.</p>
+    <p>Anonim Hale Getirme: Kişisel verinin, kişisel veri niteliğini kaybedecek ve bu durumun geri alınamayacağı şekilde değiştirilmesidir. Ör: Maskeleme, toplulaştırma, veri bozma vb. tekniklerle kişisel verinin bir gerçek kişi ile ilişkilendirilemeyecek hale getirilmesi.</p>
+    <p>Başvuru Formu: Kişisel verisi işlenen ilgili kişilerin haklarını kullanmak için yapacakları başvuruyu içeren "6698 Sayılı Kişisel Verilerin Korunması Kanunu Gereğince İlgili Kişi Tarafından Veri Sorumlusuna Yapılacak Başvurulara İlişkin Başvuru Formu".</p>
+    <p>Çalışan Adayı: Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi'ne herhangi bir yolla iş başvurusunda bulunmuş ya da özgeçmiş ve ilgili bilgilerini açmış olan gerçek kişiler.</p>
+    <p>İş Birliği İçinde Olunan Kurumların Çalışanları, Hissedarları ve Yetkilileri: Şirketin her türlü iş ilişkisi içerisinde bulunduğu kurumlarda (iş ortağı, tedarikçi gibi, ancak bunlarla sınırlı olmaksın) çalışan, bu kurumların hissedarları ve yetkilileri dahil olmak üzere, gerçek ve tüzel kişiler.</p>
+    <p>İş Ortağı: Şirketin faaliyetlerini yürütürken bizzat veya birlikte muhtelif projeler yürütmek, hizmet almak gibi amaçlarla iş ortaklığı kurduğu taraflar.</p>
+    <p>Kişisel Verilerin İşlenmesi: Kişisel verilerin tamamen veya kısmen otomatik olan ya da herhangi bir veri kayıt sisteminin parçası olmak kaydıyla otomatik olmayan yollarla elde edilmesi, kaydedilmesi, depolanması, muhafaza edilmesi, değiştirilmesi, yeniden düzenlenmesi, açıklanması, aktarılması, devralınması, elde edilebilir hâle getirilmesi, sınıflandırılması ya da kullanılmasının engellenmesi gibi veriler üzerinde gerçekleştirilen her türlü işlem.</p>
+    <p>İlgili kişi: Kişisel verisi işlenen gerçek kişi. Örneğin; ziyaretçi, personel, müşteri vb.</p>
+    <p>Kişisel Veri: Kimliği belirli veya belirlenebilir gerçek kişiye ilişkin her türlü bilgi. (Örneğin; ad-soyad, TCKN, e-posta, adres, doğum tarihi, kredi kartı numarası vb.) Tüzel kişilere ilişkin bilgilerin işlenmesi Kanun kapsamında değildir.</p>
+    <p>Özel Nitelikli Kişisel Veri: Irk, etnik köken, siyasi düşünce, felsefi inanç, din, mezhep veya diğer inançlar, kılık kıyafet, dernek, vakıf ya da sendika üyeliği, sağlık, cinsel hayat, ceza mahkumiyeti ve güvenlik tedbirleriyle ilgili veriler ile biyometrik ve genetik veriler.</p>
+    <p>Tedarikçi: Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi'nin faaliyetlerini yürütürken Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi'nin emir ve talimatlarına uygun, sözleşme temelli olarak şirkete hizmet sunan taraflar.</p>
+    <p>Üçüncü Kişi: Politika kapsamında farklı bir şekilde tanımlanmamış olan, kişisel verileri politika kapsamında işlenen gerçek kişiler. Örneğin; aile bireyleri, eski çalışanlar.</p>
+    <p>Veri İşleyen: Veri sorumlusunun verdiği yetkiye dayanarak onun adına kişisel veri işleyen gerçek ve tüzel kişi. Örneğin; şirketin hizmet aldığı firmalar vb.</p>
+    <p>Veri Sorumlusu: Kişisel verilerin işlenme amaçlarını ve vasıtalarını belirleyen, verilerin sistematik bir şekilde tutulduğu yeri (veri kayıt sistemi) yöneten kişi. Bu politika kapsamında Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi veri sorumlusudur.</p>
+    <p>Verilerin Silinmesi: Şirket içindeki tüm ilgili kullanıcıların, kişisel veriye erişimin engellenecek şekilde şifrelenmesi ve sadece veri koruma sorumlusunun bu şifreye sahip olması durumunu ifade etmektedir.</p>
+    <p>Verilerin Yok Edilmesi: Kişisel verinin bir daha geri döndürülemeyecek bir biçimde fiziksel olarak veya teknolojik yöntemlerle tamamen ortadan kaldırılması durumunu ifade etmektedir.</p>
+    <p>Ziyaretçi: Şirketin sahip olduğu fiziksel binaya çeşitli amaçlarla girmiş olan gerçek kişiler.</p>
+    <p>EK 2 - ŞİRKET TARAFINDAN İŞLENEN KİŞİSEL VERİLER VE AMAÇLARI</p>
+    <p>Çalışan — Kimlik, İletişim, Mesleki Deneyim, Hukuki İşlem, Finans, Özlük, Görsel ve İşitsel Kayıtlar: 4857 Sayılı İş Kanunu başta olmak üzere bu kanunlara bağlı yönetmelikler uyarınca, Çalışan Memnuniyeti ve Bağlılığı Süreçlerinin Yürütülmesi, Çalışanlar İçin İş Akdi ve Mevzuattan Kaynaklı Yükümlülüklerin Yerine Getirilmesi, Çalışanlar İçin Yan Haklar ve Menfaatleri Süreçlerinin Yürütülmesi, Faaliyetlerin Mevzuata Uygun Yürütülmesi, Finans ve Muhasebe İşlerinin Yürütülmesi, Görevlendirme Süreçlerinin Yürütülmesi, Hukuk İşlerinin Takibi ve Yürütülmesi, İç Denetim / Soruşturma / İstihbarat Faaliyetlerinin Yürütülmesi, İletişim Faaliyetlerinin Yürütülmesi, İş Faaliyetlerinin Yürütülmesi / Denetimi, Sözleşme Süreçlerinin Yürütülmesi, İnsan Kaynakları Süreçlerinin Planlanması, Yetkili Kişi, Kurum ve Kuruluşlara Bilgi Verilmesi, Eğitim Faaliyetlerinin Yürütülmesi amaçları ile çalışanlara ait kişisel veriler işlenmektedir.</p>
+    <p>Çalışan — Sağlık Bilgisi: Şirket çalışanların göreve uygunluklarının takip edilebilmesi amacıyla çalışanların sağlık bilgileri işlenmektedir.</p>
+    <p>Çalışan Adayı — Kimlik, İletişim, Mesleki Deneyim, Görsel ve İşitsel Kayıtlar: Şirket çalışan adaylarının işe alım süreçlerinde uygun pozisyon için değerlendirilebilmesine esas almak üzere; istihdam ile ilgili hazırlık işlemlerinin yapılabilmesi amacıyla çalışan adaylarının kimlik bilgisi, iletişim bilgisi, mesleki deneyim bilgisi, finans bilgilerini işlemektedir.</p>
+    <p>Potansiyel Müşteri — Kimlik, İletişim: Potansiyel müşterilerin tercih ve ihtiyaçları doğrultusunda uygulama, mal, ürün ve hizmetlere ilişkin bilgi istenmesi gereğince potansiyel müşterilerimizin bilgileri işlenmektedir.</p>
+    <p>Stajyer — Kimlik, İletişim, Görsel ve İşitsel Kayıtlar: Stajyer alım süreçlerinde uygun pozisyon için değerlendirilebilmesine esas almak üzere; istihdam ile ilgili hazırlık işlemlerinin yapılabilmesi amacıyla stajyer adaylarının kimlik bilgisi, iletişim bilgilerini işlemektedir.</p>
+    <p>Ziyaretçi — Fiziksel Mekan Güvenliği: Ziyaretçilerin şirket binasına giriş çıkışlarının takibi ile şirket binasının güvenliğini sağlamak amacıyla, şirketimizin meşru menfaatleri doğrultusunda, şirketimiz bünyesinde yer alan kamera kayıtları ile ziyaretçilerin görüntüleri kayıt altında tutulmaktadır.</p>
+    <p>EK 3 - KİŞİSEL VERİLERİN AKTARILDIĞI ÜÇÜNCÜ KİŞİLER VE AKTARILMA AMAÇLARI</p>
+    <p>Yetkili Kamu Kurum ve Kuruluşları (Tedarikçi, Tedarikçi Çalışanı, Personel, Çalışan Adayı, Stajyer, Hizmet Sağlayıcı, Hizmet Sağlayıcı Çalışanı, İş Ortağı Çalışanı için): Kamu kurum ve kuruluşlarının talep ettiği ve hukuki dayanak sundukları durumlarda amaçla sınırlı olarak aktarım yapılmaktadır.</p>
+  </div>
+  <a href="cadbim_kvkk.html" class="back-link"><i class="ti ti-arrow-left"></i>KVKK Ana Sayfaya Dön</a>
+</div>
+<footer>
+  <div class="fbot">
+    <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+<script src="mobilenav.js" defer></script>
+</body>
+</html>
