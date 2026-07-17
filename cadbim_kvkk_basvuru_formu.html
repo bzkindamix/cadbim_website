@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>İlgili Kişi Başvuru Formu — Cadbim KVKK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;--cyan:#00c8f0;--w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);--w30:rgba(255,255,255,0.3);--w10:rgba(255,255,255,0.1);--fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:15px;line-height:1.7;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.95);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1);}
+.nav-logo-name{font-family:var(--fd);font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--w);line-height:1;}
+.nav-logo-since{font-size:9px;color:rgba(0,200,240,0.8);letter-spacing:4px;text-transform:uppercase;margin-top:5px;line-height:1;}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none;}
+.nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:4px;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:8px;font-weight:700;font-size:13px;}
+
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+
+.content{max-width:820px;margin:0 auto;padding:130px 3rem 90px;}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:24px;}
+.crumb a{color:var(--w30);text-decoration:none;}
+.crumb a:hover{color:var(--cyan);}
+.doc-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;}
+h1.doc-title{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:32px;line-height:1.25;}
+.doc-body p{color:var(--w80);margin-bottom:18px;font-size:15px;}
+.doc-body h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);margin:32px 0 12px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-top:48px;padding:12px 22px;border:1px solid var(--w10);border-radius:8px;color:var(--w50);text-decoration:none;font-size:13px;transition:all .2s;}
+.back-link:hover{border-color:var(--cyan);color:var(--cyan);}
+footer{background:#040810;border-top:.5px solid rgba(255,255,255,0.06);padding:40px 3rem 24px;}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fbot p{font-size:12px;color:rgba(255,255,255,0.2);}
+.socials{display:flex;gap:10px;}
+.socials a{width:32px;height:32px;border-radius:8px;border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}
+.socials a:hover{border-color:var(--cyan);color:var(--cyan);}
+@media(max-width:900px){.nav-links{display:none;}}
+@media(max-width:600px){.content{padding:110px 1.5rem 56px;}}
+</style>
+
+<!-- SEO -->
+<meta name="description" content="6698 sayılı KVKK kapsamında ilgili kişi başvuru formu. Kişisel verilerinize ilişkin taleplerinizi Cadbim’e iletin.">
+<link rel="canonical" href="https://www.cadbim.com.tr/kvkk-basvuru-formu">
+<meta name="theme-color" content="#060c1a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cadbim">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="İlgili Kişi Başvuru Formu — Cadbim KVKK">
+<meta property="og:description" content="6698 sayılı KVKK kapsamında ilgili kişi başvuru formu. Kişisel verilerinize ilişkin taleplerinizi Cadbim’e iletin.">
+<meta property="og:url" content="https://www.cadbim.com.tr/kvkk-basvuru-formu">
+<meta property="og:image" content="https://www.cadbim.com.tr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="İlgili Kişi Başvuru Formu — Cadbim KVKK">
+<meta name="twitter:description" content="6698 sayılı KVKK kapsamında ilgili kişi başvuru formu. Kişisel verilerinize ilişkin taleplerinizi Cadbim’e iletin.">
+<meta name="twitter:image" content="https://www.cadbim.com.tr/og-image.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.cadbim.com.tr/#organization",
+   "name": "Cadbim",
+   "url": "https://www.cadbim.com.tr/",
+   "logo": "https://www.cadbim.com.tr/og-image.png",
+   "foundingDate": "1993",
+   "email": "cadbim@cadbim.com.tr",
+   "telephone": "+902324643490",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901",
+    "addressLocality": "Çiğli",
+    "addressRegion": "İzmir",
+    "postalCode": "35620",
+    "addressCountry": "TR"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/cadbim/",
+    "https://www.youtube.com/c/CadbimTeknikDestek",
+    "https://www.instagram.com/cadbim_izmir/",
+    "https://www.facebook.com/cadbimizmir"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.cadbim.com.tr/kvkk-basvuru-formu#webpage",
+   "url": "https://www.cadbim.com.tr/kvkk-basvuru-formu",
+   "name": "İlgili Kişi Başvuru Formu — Cadbim KVKK",
+   "description": "6698 sayılı KVKK kapsamında ilgili kişi başvuru formu. Kişisel verilerinize ilişkin taleplerinizi Cadbim’e iletin.",
+   "isPartOf": {
+    "@id": "https://www.cadbim.com.tr/#website"
+   },
+   "inLanguage": "tr-TR",
+   "publisher": {
+    "@id": "https://www.cadbim.com.tr/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Ana Sayfa",
+     "item": "https://www.cadbim.com.tr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "KVKK",
+     "item": "https://www.cadbim.com.tr/kvkk"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "İlgili Kişi Başvuru Formu",
+     "item": "https://www.cadbim.com.tr/kvkk-basvuru-formu"
+    }
+   ]
+  }
+ ]
+}
+</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="stylesheet" href="assets/css/design-system.css?v=5">
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logos/cadbim-logo.png" alt="Cadbim">
+    <div><div class="nav-logo-name">Cadbim</div><div class="nav-logo-since">Est. 1993</div></div>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="cadbim_urunler.html">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="cadbim_autodesk.html">Autodesk</a>
+        <a href="cadbim_adobe.html">Adobe</a>
+        <a href="cadbim_designjet.html">HP DesignJet</a>
+        <a href="cadbim_hp_z_workstation.html">HP Workstations</a>
+        <a href="cadbim_hp_build_workspace.html">HP Build Workspace</a>
+        <a href="cadbim_chaos.html">Chaos</a>
+        <a href="cadbim_ultimaker.html">UltiMaker</a>
+        <a href="cadbim_sketchup.html">SketchUp</a>
+        <a href="cadbim_lumion.html">Lumion</a>
+        <a href="cadbim_microsoft.html">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cadbim_cozumler.html">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="cadbim_dijital_donusum.html" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Tasarım & Mühendislik</div>
+            <a href="cadbim_bim.html">BIM</a>
+            <a href="cadbim_simulasyon.html">Simülasyon & Analiz</a>
+            <a href="cadbim_tolerans_analizi.html">Tolerans Analizi</a>
+            <a href="cadbim_tasarim_otomasyonu.html">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Dijital İkiz & Üretim</div>
+            <a href="cadbim_dijital_ikiz.html">Dijital İkiz</a>
+            <a href="cadbim_fabrika_tasarimi.html">Fabrika Tasarımı</a>
+            <a href="cadbim_cam.html">CAM & İmalat</a>
+            <a href="cadbim_eklemeli_imalat.html">Eklemeli İmalat & 3D Baskı</a>
+            <a href="cadbim_nesting.html">Nesting</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="cadbim_plm.html">PLM</a>
+            <a href="cadbim_pdm.html">PDM</a>
+            <a href="cadbim_insaat_yonetimi.html">İnşaat Proje Yönetimi</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & Gerçeklik</div>
+            <a href="cadbim_gorsellestirme.html">Görselleştirme & Render</a>
+            <a href="cadbim_yaratici_icerik.html">Yaratıcı İçerik & Tasarım</a>
+            <a href="cadbim_gerceklik_yakalama.html">Gerçeklik Yakalama</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="sektor_mimari.html">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="sektor_mimari.html">Mimarlık</a>
+        <a href="sektor_insaat.html">İnşaat & Altyapı</a>
+        <a href="sektor_makine.html">Makine & Üretim</a>
+        <a href="sektor_otomotiv.html">Otomotiv</a>
+        <a href="sektor_medya.html">Medya & Eğlence</a>
+        <a href="sektor_egitim.html">Eğitim</a>
+        <a href="sektor_havacilik.html">Havacılık & Savunma</a>
+      </div>
+    </li>
+    <li><a href="cadbim_egitimler.html">Eğitimler</a></li>
+    <li><a href="cadbim_hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="cadbim_iletisim.html">İletişim</a></li>
+    <li><a href="cadbim_kvkk.html" class="active">KVKK</a></li>
+    <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
+  </ul>
+</nav>
+<div class="content">
+  <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cadbim_kvkk.html">KVKK</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">İlgili Kişi Başvuru Formu</span></div>
+  <div class="doc-label">KVKK Aydınlatma Metinleri</div>
+  <h1 class="doc-title">İlgili Kişi Başvuru Formu</h1>
+  <div class="doc-body">
+    <p>KVKK kapsamındaki haklarınızı kullanmak için "İlgili Kişi Başvuru Formu"nu doldurup imzalayarak aşağıdaki kanallardan birinden Cadbim'e iletebilirsiniz:</p>
+    <p><b>Posta:</b> Ataşehir Mahallesi Anadolu Cadde No: 901/ Çiğli İzmir</p>
+    <p><b>E-posta:</b> cadbim@cadbim.com.tr</p>
+    <p><b>KEP:</b> cadbim.bilgisayar@hs01.kep.tr</p>
+    <p>Başvuru formunun PDF nüshası için lütfen <a href="cadbim_iletisim.html" style="color:var(--cyan);">İletişim</a> sayfamızdan bizimle iletişime geçin — form dosyasını size e-posta ile ileteceğiz.</p>
+  </div>
+  <a href="cadbim_kvkk.html" class="back-link"><i class="ti ti-arrow-left"></i>KVKK Ana Sayfaya Dön</a>
+</div>
+<footer>
+  <div class="fbot">
+    <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+<script src="mobilenav.js" defer></script>
+</body>
+</html>

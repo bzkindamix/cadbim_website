@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cadbim ürün kataloğu — Autodesk, Adobe, HP, Chaos, UltiMaker, SketchUp ve Microsoft. İhtiyacınıza uygun yazılım ve donanımı seçin.">
+<title>Ürünler & Markalar — Autodesk, Adobe, HP, Chaos | Cadbim</title>
+  <meta property="og:title" content="Ürünler & Markalar | Cadbim">
+  <meta property="og:description" content="Autodesk, Adobe, HP, Chaos, UltiMaker, SketchUp, Lumion, Microsoft — tüm marka ve ürünleri tek katalogda keşfedin.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cadbim.com.tr/urunler">
+  <meta property="og:image" content="https://www.cadbim.com.tr/og-image.png">
+  <meta property="og:site_name" content="Cadbim">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ürünler & Markalar | Cadbim">
+  <meta name="twitter:description" content="Autodesk, Adobe, HP, Chaos, UltiMaker, SketchUp, Lumion, Microsoft — tüm marka ve ürünleri tek katalogda keşfedin.">
+  <link rel="canonical" href="https://www.cadbim.com.tr/urunler">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+:root{
+  --navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;
+  --cyan:#00c8f0;--cyan2:#0ea5e9;
+  --cdim:rgba(0,200,240,0.12);--cbor:rgba(0,200,240,0.2);
+  --w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);
+  --w30:rgba(255,255,255,0.3);--w10:rgba(255,255,255,0.1);--w06:rgba(255,255,255,0.06);
+  --fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;
+  --r:8px;--rm:12px;--rl:16px;--rxl:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.92);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.nav-logo-name{font-family:var(--fd);font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--w);line-height:1;}
+.nav-logo-since{font-size:9px;color:rgba(0,200,240,0.8);letter-spacing:4px;text-transform:uppercase;margin-top:5px;line-height:1;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
+.nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:var(--r);font-weight:700;font-size:13px;}
+.hero{padding:120px 3rem 72px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;}
+.hero-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(var(--w10) 1px,transparent 1px),linear-gradient(90deg,var(--w10) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;max-width:820px;}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:20px;}
+.crumb a{color:var(--w30);text-decoration:none;transition:color .2s;}.crumb a:hover{color:var(--cyan);}
+.hero-pill{display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:20px;border:.5px solid;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px;}
+.hero h1{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.15;color:var(--w);margin-bottom:18px;}
+.hero h1 em{font-style:normal;color:var(--cyan);}
+.hero-sub{font-size:16px;color:var(--w50);max-width:640px;line-height:1.75;margin-bottom:32px;}
+.hero-features{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
+.hf{display:flex;align-items:center;gap:6px;font-size:13px;padding:7px 14px;border-radius:20px;background:var(--w06);border:.5px solid var(--w10);color:var(--w50);}
+.hf i{font-size:14px;color:var(--cyan);}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{background:var(--cyan);color:var(--navy);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{opacity:.88;transform:translateY(-1px);}
+.btn-g{background:transparent;color:var(--w80);border:.5px solid var(--w30);padding:13px 28px;border-radius:var(--r);font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-g:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-1px);}
+.section{padding:72px 3rem;}
+.section-alt{background:var(--navy2);}
+.sh{margin-bottom:48px;}
+.slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;}
+.stitle{font-family:var(--fd);font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:var(--w);margin-bottom:10px;}
+.ssub{font-size:15px;color:var(--w50);max-width:560px;line-height:1.7;}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:40px;}
+.card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:26px 22px;transition:border-color .2s,transform .15s;}
+.card:hover{border-color:var(--cbor);transform:translateY(-2px);}
+.card.hi{border-color:rgba(0,200,240,0.2);}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;}
+.card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
+.card .desc{font-size:13px;color:var(--w50);line-height:1.65;margin-bottom:14px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-size:10px;padding:2px 8px;border-radius:4px;border:.5px solid;}
+.pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
+.pt{display:flex;align-items:flex-start;gap:7px;font-size:12px;color:var(--w50);}
+.pt i{font-size:12px;flex-shrink:0;margin-top:2px;}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:40px;}
+.feat{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w06);padding:24px 20px;transition:border-color .2s;}
+.feat:hover{border-color:var(--cbor);}
+.feat-icon{font-size:26px;color:var(--cyan);margin-bottom:12px;}
+.feat h3{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--w);margin-bottom:7px;}
+.feat p{font-size:13px;color:var(--w50);line-height:1.6;}
+.quote-block{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rl);padding:28px;margin-top:16px;}
+.quote-text{font-size:15px;color:var(--w80);line-height:1.7;font-style:italic;margin-bottom:10px;}
+.quote-source{font-size:12px;color:var(--w30);}
+.cross{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:36px;margin-top:16px;}
+.cross h3{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--w);margin-bottom:6px;}
+.cross .desc{font-size:13px;color:var(--w50);margin-bottom:18px;}
+.cross-pills{display:flex;flex-wrap:wrap;gap:10px;}
+.cp{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;}
+.cp:hover{border-color:var(--cbor);color:var(--cyan);}
+.cp i{font-size:15px;color:var(--cyan);}
+.cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:48px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 72px;}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
+.cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--w);margin-bottom:10px;}
+.cta-strip p{font-size:15px;color:var(--w50);margin-bottom:28px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24px;}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fbot p{font-size:12px;color:rgba(255,255,255,0.2);}
+.socials{display:flex;gap:10px;}
+.socials a{width:32px;height:32px;border-radius:var(--r);border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}
+.socials a:hover{border-color:var(--cyan);color:var(--cyan);}
+.spec-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px;}
+.spec-table tr{border-bottom:.5px solid var(--w06);}
+.spec-table tr:last-child{border-bottom:none;}
+.spec-table td{padding:10px 0;color:var(--w50);line-height:1.5;}
+.spec-table td:first-child{color:var(--w30);width:45%;padding-right:16px;}
+.spec-table td strong{color:var(--w80);font-weight:500;}
+@media(max-width:900px){.nav-links{display:none;}.cta-strip{margin:0 1.5rem 56px;}}
+/* ==== ÜRÜN KATALOĞU ==== */
+.filterbar{position:sticky;top:68px;z-index:50;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:18px 3rem;background:rgba(6,12,26,0.85);backdrop-filter:blur(16px);border-bottom:.5px solid var(--w06);}
+.fchip{padding:8px 18px;border-radius:22px;border:.5px solid var(--w10);background:transparent;color:var(--w50);font-family:var(--fb);font-size:13px;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.fchip:hover{border-color:var(--w30);color:var(--w80);}
+.fchip.active{background:var(--cyan);border-color:var(--cyan);color:var(--navy);font-weight:700;}
+.brand-block{padding:56px 3rem;border-bottom:.5px solid var(--w06);}
+.brand-block:nth-child(even){background:var(--navy2);}
+.brand-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:8px;}
+.brand-logo{margin-left:auto;height:64px;display:flex;align-items:center;flex-shrink:0;opacity:0;transform:translateX(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+.brand-logo.in{opacity:1;transform:none;}
+.brand-logo img{max-height:60px;max-width:220px;width:auto;object-fit:contain;display:block;}
+.brand-logo.wl img{filter:brightness(0) invert(1);}
+.brand-logo.wl.in{opacity:.95;}
+.brand-link{margin-left:20px!important;}
+@media(max-width:600px){.brand-logo{height:44px;order:5;margin-left:0;}.brand-logo img{max-height:40px;max-width:150px;}}
+.brand-head h2{font-family:var(--fd);font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;color:var(--w);}
+.brand-badge{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:20px;border:.5px solid;font-weight:600;}
+.brand-link{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;transition:gap .2s;}
+.brand-link:hover{gap:11px;}
+.brand-desc{font-size:14px;color:var(--w50);max-width:640px;line-height:1.7;margin-bottom:28px;}
+.group-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--w30);margin:26px 0 14px;}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.pcard{display:flex;align-items:center;gap:14px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rm);padding:16px 18px;text-decoration:none;transition:border-color .18s,transform .15s,background .18s;}
+.pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgba(0,200,240,.04);}
+.pico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.pcard h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin:0 0 3px;}
+.pcard p{font-size:12px;color:var(--w50);line-height:1.45;margin:0;}
+.pcard .parr{margin-left:auto;font-size:15px;color:var(--w30);transition:color .2s,transform .2s;flex-shrink:0;}
+.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
+@media(max-width:600px){.filterbar{padding:14px 1rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;}.brand-block{padding:44px 1.25rem;}}
+@media(max-width:600px){.section{padding:52px 1.5rem;}.hero{padding:100px 1.5rem 56px;}}
+
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+</style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CADBIM2026"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CADBIM2026');
+</script>
+
+<!-- SEO -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#060c1a">
+<meta property="og:locale" content="tr_TR">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.cadbim.com.tr/#organization",
+   "name": "Cadbim",
+   "url": "https://www.cadbim.com.tr/"
+  },
+  {
+   "@type": "CollectionPage",
+   "@id": "https://www.cadbim.com.tr/urunler#webpage",
+   "url": "https://www.cadbim.com.tr/urunler",
+   "name": "Ürünler & Markalar — Cadbim",
+   "description": "Cadbim ürün kataloğu — Autodesk, Adobe, HP, Chaos, UltiMaker, SketchUp, Lumion ve Microsoft.",
+   "isPartOf": {
+    "@id": "https://www.cadbim.com.tr/#website"
+   },
+   "inLanguage": "tr-TR",
+   "publisher": {
+    "@id": "https://www.cadbim.com.tr/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Ana Sayfa",
+     "item": "https://www.cadbim.com.tr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Ürünler",
+     "item": "https://www.cadbim.com.tr/urunler"
+    }
+   ]
+  }
+ ]
+}
+</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="stylesheet" href="assets/css/design-system.css?v=5">
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logos/cadbim-logo.png" alt="Cadbim">
+    <div><div class="nav-logo-name">Cadbim</div><div class="nav-logo-since">Est. 1993</div></div>
+  </a>
+      <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="cadbim_urunler.html" class="active">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="cadbim_autodesk.html">Autodesk</a>
+        <a href="cadbim_adobe.html">Adobe</a>
+        <a href="cadbim_designjet.html">HP DesignJet</a>
+        <a href="cadbim_hp_z_workstation.html">HP Workstations</a>
+        <a href="cadbim_hp_build_workspace.html">HP Build Workspace</a>
+        <a href="cadbim_chaos.html">Chaos</a>
+        <a href="cadbim_ultimaker.html">UltiMaker</a>
+        <a href="cadbim_sketchup.html">SketchUp</a>
+        <a href="cadbim_lumion.html">Lumion</a>
+        <a href="cadbim_microsoft.html">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cadbim_cozumler.html">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="cadbim_dijital_donusum.html" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Tasarım & Mühendislik</div>
+            <a href="cadbim_bim.html">BIM</a>
+            <a href="cadbim_simulasyon.html">Simülasyon & Analiz</a>
+            <a href="cadbim_tolerans_analizi.html">Tolerans Analizi</a>
+            <a href="cadbim_tasarim_otomasyonu.html">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Dijital İkiz & Üretim</div>
+            <a href="cadbim_dijital_ikiz.html">Dijital İkiz</a>
+            <a href="cadbim_fabrika_tasarimi.html">Fabrika Tasarımı</a>
+            <a href="cadbim_cam.html">CAM & İmalat</a>
+            <a href="cadbim_eklemeli_imalat.html">Eklemeli İmalat & 3D Baskı</a>
+            <a href="cadbim_nesting.html">Nesting</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="cadbim_plm.html">PLM</a>
+            <a href="cadbim_pdm.html">PDM</a>
+            <a href="cadbim_insaat_yonetimi.html">İnşaat Proje Yönetimi</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & Gerçeklik</div>
+            <a href="cadbim_gorsellestirme.html">Görselleştirme & Render</a>
+            <a href="cadbim_yaratici_icerik.html">Yaratıcı İçerik & Tasarım</a>
+            <a href="cadbim_gerceklik_yakalama.html">Gerçeklik Yakalama</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="sektor_mimari.html">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="sektor_mimari.html">Mimarlık</a>
+        <a href="sektor_insaat.html">İnşaat & Altyapı</a>
+        <a href="sektor_makine.html">Makine & Üretim</a>
+        <a href="sektor_otomotiv.html">Otomotiv</a>
+        <a href="sektor_medya.html">Medya & Eğlence</a>
+        <a href="sektor_egitim.html">Eğitim</a>
+        <a href="sektor_havacilik.html">Havacılık & Savunma</a>
+      </div>
+    </li>
+    <li><a href="cadbim_egitimler.html">Eğitimler</a></li>
+    <li><a href="cadbim_hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="cadbim_iletisim.html">İletişim</a></li>
+    <li><a href="cadbim_kvkk.html">KVKK</a></li>
+    <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
+  </ul>
+</nav>
+
+<section class="hero" style="min-height:auto;">
+  <div class="hero-bg" style="background:radial-gradient(ellipse 70% 50% at 15% 0%,rgba(0,200,240,0.13) 0%,transparent 60%);"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner" style="display:block;">
+    <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:12px;"></i><span style="color:var(--w50);">Ürünler</span></div>
+    <div class="hero-pill" style="background:var(--cdim);border-color:var(--cbor);color:var(--cyan);"><i class="ti ti-apps" style="font-size:13px;"></i>8 Marka · 60+ Ürün</div>
+    <h1>Ürünler &amp; <em>Markalar</em></h1>
+    <p class="hero-sub">Yetkili iş ortağı olduğumuz tüm markalar ve ürün grupları tek katalogda. Aşağıdan markaya göre filtreleyin, ihtiyacınıza uygun ürünü seçin ve detay sayfasına gidin.</p>
+  </div>
+</section>
+
+<div class="filterbar" id="filterbar">
+  <button class="fchip active" data-f="all" onclick="filterBrand('all',this)">Tümü</button>
+  <button class="fchip" data-f="autodesk" onclick="filterBrand('autodesk',this)">Autodesk</button>
+  <button class="fchip" data-f="adobe" onclick="filterBrand('adobe',this)">Adobe</button>
+  <button class="fchip" data-f="hp" onclick="filterBrand('hp',this)">HP</button>
+  <button class="fchip" data-f="chaos" onclick="filterBrand('chaos',this)">Chaos</button>
+  <button class="fchip" data-f="ultimaker" onclick="filterBrand('ultimaker',this)">UltiMaker</button>
+  <button class="fchip" data-f="sketchup" onclick="filterBrand('sketchup',this)">SketchUp</button>
+  <button class="fchip" data-f="lumion" onclick="filterBrand('lumion',this)">Lumion</button>
+  <button class="fchip" data-f="microsoft" onclick="filterBrand('microsoft',this)">Microsoft</button>
+</div>
+
+<div id="catalog">
+
+<section class="brand-block" data-brand="autodesk">
+  <div class="brand-head">
+    <h2>Autodesk</h2>
+    <span class="brand-badge" style="color:#fbbf24;border-color:rgba(251,191,36,0.35);">Gold Partner · ATC · AAP</span>
+    <div class="brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk Gold Partner" loading="lazy"></div>
+    <a href="cadbim_autodesk.html" class="brand-link">Marka sayfası <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <p class="brand-desc">Tasarım ve üretimin dijital motoru. Mimarlık, mühendislik, imalat ve medya için tüm Autodesk portföyü — lisanslama, eğitim ve teknik destekle.</p>
+
+  <div class="group-label">Koleksiyonlar</div>
+  <div class="pgrid">
+      <a href="cadbim_aec_collection.html" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#818cf8;"><i class="ti ti-building-community"></i></div><div><h3>AEC Collection</h3><p>Revit, AutoCAD, Civil 3D ve daha fazlası tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_pdm_collection.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-settings-2"></i></div><div><h3>PD&M Collection</h3><p>Inventor, Vault, Fusion ve simülasyon tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_me_collection.html" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#0ea5e9;"><i class="ti ti-movie"></i></div><div><h3>M&E Collection</h3><p>Maya + 3ds Max + Arnold tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+
+  <div class="group-label">Architecture, Engineering &amp; Construction (AEC)</div>
+  <div class="pgrid">
+      <a href="cadbim_autocad.html" class="pcard"><div class="pico" style="background:rgba(225,29,72,0.13);color:#e11d48;"><i class="ti ti-square"></i></div><div><h3>AutoCAD</h3><p>2B/3B tasarım ve dokümantasyon standardı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_autocad_lt.html" class="pcard"><div class="pico" style="background:rgba(225,29,72,0.13);color:#e11d48;"><i class="ti ti-square-dashed"></i></div><div><h3>AutoCAD LT</h3><p>Uygun fiyatlı 2B CAD çizim</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_autocad_web.html" class="pcard"><div class="pico" style="background:rgba(225,29,72,0.13);color:#e11d48;"><i class="ti ti-browser"></i></div><div><h3>AutoCAD Web</h3><p>Tarayıcıda DWG erişimi</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_revit.html" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#818cf8;"><i class="ti ti-building"></i></div><div><h3>Revit</h3><p>BIM tabanlı yapı tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_revit_lt.html" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#818cf8;"><i class="ti ti-building"></i></div><div><h3>Revit LT</h3><p>Sadeleştirilmiş mimari BIM</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_civil3d.html" class="pcard"><div class="pico" style="background:rgba(52,211,153,0.13);color:#34d399;"><i class="ti ti-road"></i></div><div><h3>Civil 3D</h3><p>Altyapı ve arazi mühendisliği</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_navisworks.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><i class="ti ti-eye-check"></i></div><div><h3>Navisworks</h3><p>3B koordinasyon & clash detection</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_forma.html" class="pcard"><div class="pico" style="background:rgba(52,211,153,0.13);color:#34d399;"><i class="ti ti-building-community"></i></div><div><h3>Forma</h3><p>Bulutta erken aşama tasarım</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_advance_steel.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-building-bridge"></i></div><div><h3>Advance Steel</h3><p>Çelik detaylandırma & imalat</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_robot_structural.html" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#a5b4fc;"><i class="ti ti-chart-dots-3"></i></div><div><h3>Robot Structural Analysis</h3><p>Gelişmiş yapısal analiz</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_infraworks.html" class="pcard"><div class="pico" style="background:rgba(52,211,153,0.13);color:#34d399;"><i class="ti ti-road"></i></div><div><h3>InfraWorks</h3><p>Altyapı konsept tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_construction_cloud.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><i class="ti ti-crane"></i></div><div><h3>Autodesk Forma</h3><p>Forma Build, Forma Takeoff, Forma Data Management — inşaat yönetimi</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_bim_collaborate_pro.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><i class="ti ti-users"></i></div><div><h3>Autodesk Forma Design Collaboration</h3><p>Bulutta Revit ortak çalışması</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_autodesk_docs.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><i class="ti ti-folders"></i></div><div><h3>Autodesk Forma Data Management</h3><p>Ortak veri ortamı (CDE)</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_vehicle_tracking.html" class="pcard"><div class="pico" style="background:rgba(52,211,153,0.13);color:#34d399;"><i class="ti ti-steering-wheel"></i></div><div><h3>Vehicle Tracking</h3><p>Araç dönüş izi & otopark tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+
+  <div class="group-label">Product Design &amp; Manufacturing</div>
+  <div class="pgrid">
+      <a href="cadbim_inventor.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-settings-2"></i></div><div><h3>Inventor</h3><p>Parametrik makine ve ürün tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_fusion.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><i class="ti ti-3d-cube-sphere"></i></div><div><h3>Fusion</h3><p>Bulut CAD/CAM/CAE platformu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_fusion_manage.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><i class="ti ti-topology-ring"></i></div><div><h3>Fusion Manage</h3><p>Bulut PLM</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_vault_pdm.html" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#a5b4fc;"><i class="ti ti-database"></i></div><div><h3>Vault</h3><p>Tasarım verisi ve versiyon yönetimi</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_moldflow.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><i class="ti ti-droplet"></i></div><div><h3>Moldflow</h3><p>Plastik enjeksiyon simülasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_netfabb.html" class="pcard"><div class="pico" style="background:rgba(16,185,129,0.13);color:#10b981;"><i class="ti ti-printer-3d"></i></div><div><h3>Netfabb</h3><p>Eklemeli imalat hazırlığı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_factory_design.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-building-factory-2"></i></div><div><h3>Factory Design Utilities</h3><p>Fabrika yerleşim tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_featurecam.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-tools"></i></div><div><h3>FeatureCAM</h3><p>Özellik tabanlı CAM otomasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_powermill.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-settings-automation"></i></div><div><h3>PowerMill</h3><p>5 eksen gelişmiş CAM</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_powershape.html" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.13);color:#e879f9;"><i class="ti ti-vector-bezier-2"></i></div><div><h3>PowerShape</h3><p>Kalıp & imalat CAD</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_alias.html" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.13);color:#e879f9;"><i class="ti ti-brush"></i></div><div><h3>Alias</h3><p>Endüstriyel tasarım & yüzey</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+
+  <div class="group-label">Media &amp; Entertainment</div>
+  <div class="pgrid">
+      <a href="cadbim_maya.html" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#0ea5e9;"><i class="ti ti-3d-cube-sphere"></i></div><div><h3>Maya</h3><p>3B animasyon, modelleme & VFX</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_maya_creative.html" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#0ea5e9;"><i class="ti ti-3d-cube-sphere"></i></div><div><h3>Maya Creative</h3><p>Uygun fiyatlı 3B araç seti</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_3dsmax.html" class="pcard"><div class="pico" style="background:rgba(168,85,247,0.13);color:#c084fc;"><i class="ti ti-topology-star-3"></i></div><div><h3>3ds Max</h3><p>3B modelleme, animasyon & render</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_arnold.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-sun-high"></i></div><div><h3>Arnold</h3><p>Fotogerçekçi render motoru</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_motionbuilder.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><i class="ti ti-walk"></i></div><div><h3>MotionBuilder</h3><p>Gerçek zamanlı karakter animasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_flame.html" class="pcard"><div class="pico" style="background:rgba(239,68,68,0.13);color:#ef4444;"><i class="ti ti-flame"></i></div><div><h3>Flame</h3><p>VFX, kompozit & renklendirme</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_mudbox.html" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.13);color:#e879f9;"><i class="ti ti-brush"></i></div><div><h3>Mudbox</h3><p>Dijital heykel & doku boyama</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_flow_production_tracking.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><i class="ti ti-checklist"></i></div><div><h3>Flow Production Tracking</h3><p>Prodüksiyon takibi (ShotGrid)</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_golaem.html" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#a5b4fc;"><i class="ti ti-users-group"></i></div><div><h3>Golaem</h3><p>Maya için kalabalık simülasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_flow_studio.html" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#0ea5e9;"><i class="ti ti-cloud-cog"></i></div><div><h3>Autodesk Flow Studio</h3><p>Bulut tabanlı medya üretimi</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+
+  <div class="group-label">Genel Araçlar &amp; Platform Servisleri</div>
+  <div class="pgrid">
+      <a href="cadbim_autocad_web.html" class="pcard"><div class="pico" style="background:rgba(225,29,72,0.13);color:#e11d48;"><i class="ti ti-browser"></i></div><div><h3>AutoCAD Web</h3><p>Tarayıcıda CAD</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_autodesk_drive.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><i class="ti ti-cloud"></i></div><div><h3>Autodesk Drive</h3><p>Güvenli bulut tasarım depolama</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_desktop_connector.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><i class="ti ti-plug-connected"></i></div><div><h3>Desktop Connector</h3><p>Bulut dosya senkronizasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_recap_pro.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-scan"></i></div><div><h3>ReCap Pro</h3><p>Nokta bulutu & gerçeklik yakalama</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_tinkercad.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><i class="ti ti-cube"></i></div><div><h3>Tinkercad</h3><p>Ücretsiz web tabanlı 3B tasarım</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_meshmixer.html" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.13);color:#e879f9;"><i class="ti ti-topology-complex"></i></div><div><h3>Meshmixer</h3><p>Mesh düzenleme & 3B baskı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_dwg_trueview.html" class="pcard"><div class="pico" style="background:rgba(225,29,72,0.13);color:#e11d48;"><i class="ti ti-file-search"></i></div><div><h3>DWG TrueView</h3><p>Ücretsiz DWG görüntüleyici</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_design_review.html" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#a5b4fc;"><i class="ti ti-file-pencil"></i></div><div><h3>Design Review</h3><p>İşaretleme & inceleme (DWF)</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+</section>
+
+<section class="brand-block" data-brand="adobe">
+  <div class="brand-head">
+    <h2>Adobe</h2>
+    <span class="brand-badge" style="color:#fb7185;border-color:rgba(226,89,34,0.4);">Gold Reseller</span>
+    <div class="brand-logo"><img src="assets/logos/adobe-gold-reseller.png" alt="Adobe Gold Reseller" loading="lazy"></div>
+    <a href="cadbim_adobe.html" class="brand-link">Marka sayfası <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <p class="brand-desc">Creative Cloud, Acrobat Pro ve tüm Adobe kurumsal lisanslama — ticari, eğitim ve kamu programlarıyla.</p>
+  <div class="pgrid">
+      <a href="cadbim_adobe.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-brand-adobe"></i></div><div><h3>Creative Cloud</h3><p>Photoshop, Illustrator, Premiere ve tüm CC</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_adobe.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-file-text"></i></div><div><h3>Acrobat Pro</h3><p>PDF üretim, imza ve doküman yönetimi</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_photoshop.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-photo-edit"></i></div><div><h3>Photoshop</h3><p>Görüntü düzenleme & kompozit</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_illustrator.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-vector-bezier-2"></i></div><div><h3>Illustrator</h3><p>Vektör grafik & logo tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_indesign.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-file-text"></i></div><div><h3>InDesign</h3><p>Sayfa tasarımı & yayıncılık</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_premiere_pro.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-video"></i></div><div><h3>Premiere Pro</h3><p>Profesyonel video kurgu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_after_effects.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-sparkles"></i></div><div><h3>After Effects</h3><p>Motion graphics & VFX</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_lightroom.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-camera"></i></div><div><h3>Lightroom</h3><p>Fotoğraf düzenleme & arşiv</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_substance3d.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-texture"></i></div><div><h3>Substance 3D</h3><p>3B doku & malzeme koleksiyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_firefly.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-sparkles"></i></div><div><h3>Firefly</h3><p>Ticari güvenli üretken AI</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_adobe_express.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-bolt"></i></div><div><h3>Adobe Express</h3><p>Ekipler için hızlı içerik</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_adobe_stock.html" class="pcard"><div class="pico" style="background:rgba(226,89,34,0.12);color:#e25922;"><i class="ti ti-photo"></i></div><div><h3>Adobe Stock</h3><p>Lisanslı görsel & video kütüphanesi</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+</section>
+
+<section class="brand-block" data-brand="hp">
+  <div class="brand-head">
+    <h2>HP</h2>
+    <span class="brand-badge" style="color:#38bdf8;border-color:rgba(56,189,248,0.4);">Amplify Synergy Partner</span>
+    <div class="brand-logo"><img src="assets/logos/hp-amplify-synergy.png" alt="HP Amplify Synergy Partner" loading="lazy"></div>
+    <a href="cadbim_hp.html" class="brand-link">Marka sayfası <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <p class="brand-desc">DesignJet baskı çözümleri, Z serisi iş istasyonları ve yetkili teknik servis — her ürün grubu kendi sayfasında.</p>
+  <div class="pgrid">
+      
+      <a href="cadbim_hp_build_workspace.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><i class="ti ti-cpu"></i></div><div><h3>HP Build Workspace</h3><p>AI destekli uzaktan render ve iş akışı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      
+      <a href="cadbim_hp_designjet_t.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><i class="ti ti-printer"></i></div><div><h3>DesignJet T Serisi</h3><p>CAD teknik çizim plotterları</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_hp_designjet_xl.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><i class="ti ti-printer"></i></div><div><h3>DesignJet XL Serisi</h3><p>Yüksek hacimli MFP plotter</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_hp_designjet_z.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><i class="ti ti-photo"></i></div><div><h3>DesignJet Z Serisi</h3><p>Fotoğraf & fine art baskı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_hp_z_workstation.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><i class="ti ti-device-desktop"></i></div><div><h3>Z Masaüstü İş İstasyonları</h3><p>Z2 · Z4 · Z6 · Z8 Fury</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_hp_zbook.html" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><i class="ti ti-device-laptop"></i></div><div><h3>ZBook Mobil İş İstasyonları</h3><p>Firefly · Power · Studio · Fury</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+</section>
+
+<section class="brand-block" data-brand="chaos">
+  <div class="brand-head">
+    <h2>Chaos</h2>
+    <span class="brand-badge" style="color:#fcd34d;border-color:rgba(245,158,11,0.35);">Reseller</span>
+    <div class="brand-logo"><img src="assets/logos/chaos.webp" alt="Chaos" loading="lazy"></div>
+    <a href="cadbim_chaos.html" class="brand-link">Marka sayfası <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <p class="brand-desc">Fotogerçekçi render ekosistemi — V-Ray, Enscape, Corona ve Veras AI.</p>
+  <div class="pgrid">
+      <a href="cadbim_chaos.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="ti ti-sun-high"></i></div><div><h3>V-Ray</h3><p>3ds Max & Maya için prodüksiyon render</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_chaos.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="ti ti-eye"></i></div><div><h3>Enscape</h3><p>Gerçek zamanlı render ve VR</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_chaos.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="ti ti-sparkles"></i></div><div><h3>Veras AI</h3><p>AI destekli konsept görselleştirme</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_corona.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="ti ti-sun"></i></div><div><h3>Corona</h3><p>Mimari render — kutudan fotogerçekçi</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_vantage.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="ti ti-bolt"></i></div><div><h3>Vantage</h3><p>Gerçek zamanlı ray tracing</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_phoenix.html" class="pcard"><div class="pico" style="background:rgba(239,68,68,0.12);color:#ef4444;"><i class="ti ti-flame"></i></div><div><h3>Phoenix</h3><p>Ateş, duman & sıvı simülasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_anima.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="ti ti-users-group"></i></div><div><h3>Anima</h3><p>3B kalabalık animasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_cosmos.html" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="ti ti-library-photo"></i></div><div><h3>Cosmos</h3><p>Render’a hazır 3B varlık kütüphanesi</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+</section>
+
+<section class="brand-block" data-brand="ultimaker">
+  <div class="brand-head">
+    <h2>UltiMaker</h2>
+    <span class="brand-badge" style="color:#4ade80;border-color:rgba(34,197,94,0.35);">Reseller</span>
+    <div class="brand-logo wl"><img src="assets/logos/ultimaker.svg" alt="UltiMaker" loading="lazy"></div>
+    <a href="cadbim_ultimaker.html" class="brand-link">Marka sayfası <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <p class="brand-desc">Endüstriyel masaüstü 3B yazıcılar, 300+ filament seçeneği ve Cura yazılımı.</p>
+  <div class="pgrid">
+      <a href="cadbim_ultimaker.html" class="pcard"><div class="pico" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="ti ti-printer-3d"></i></div><div><h3>S Serisi 3D Yazıcılar</h3><p>Güvenilir endüstriyel eklemeli üretim</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_factor4.html" class="pcard"><div class="pico" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="ti ti-building-factory-2"></i></div><div><h3>Factor 4 Serisi</h3><p>Endüstriyel sürekli üretim — 340°C</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_method_xl.html" class="pcard"><div class="pico" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="ti ti-box"></i></div><div><h3>Method XL</h3><p>Mühendislik sınıfı ABS baskı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_sketch_sprint.html" class="pcard"><div class="pico" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="ti ti-school"></i></div><div><h3>Sketch Sprint</h3><p>Eğitim için yüksek hızlı PLA</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_cura.html" class="pcard"><div class="pico" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="ti ti-slice"></i></div><div><h3>Cura</h3><p>Dilimleme yazılımı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_digital_factory.html" class="pcard"><div class="pico" style="background:rgba(16,185,129,0.12);color:#10b981;"><i class="ti ti-cloud-cog"></i></div><div><h3>Digital Factory</h3><p>Yazıcı filosu & iş yönetimi</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+</section>
+
+<section class="brand-block" data-brand="sketchup">
+  <div class="brand-head">
+    <h2>SketchUp</h2>
+    <span class="brand-badge" style="color:#e879f9;border-color:rgba(217,70,239,0.35);">Partner</span>
+    <div class="brand-logo wl"><img src="assets/logos/sketchup.svg" alt="SketchUp" loading="lazy"></div>
+    <a href="cadbim_sketchup.html" class="brand-link">Marka sayfası <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <p class="brand-desc">Sezgisel 3B modelleme — mimarlık ve tasarım için hızlı konsept aracı.</p>
+  <div class="pgrid">
+      <a href="cadbim_sketchup.html" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><i class="ti ti-cube"></i></div><div><h3>SketchUp Pro</h3><p>Hızlı 3B modelleme ve sunum</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_sketchup_go.html" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><i class="ti ti-device-ipad"></i></div><div><h3>SketchUp Go</h3><p>Web & iPad modelleme</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_sketchup_studio.html" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><i class="ti ti-stack-2"></i></div><div><h3>SketchUp Studio</h3><p>Pro + V-Ray + Scan Essentials</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_trimble_connect.html" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><i class="ti ti-cloud"></i></div><div><h3>Trimble Connect</h3><p>Bulut tabanlı model işbirliği</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+</section>
+
+<section class="brand-block" data-brand="lumion">
+  <div class="brand-head">
+    <h2>Lumion</h2>
+    <span class="brand-badge" style="color:#4ade80;border-color:rgba(34,197,94,0.35);">Partner</span>
+    <div class="brand-logo wl"><img src="assets/logos/lumion.png" alt="Lumion" loading="lazy"></div>
+    <a href="cadbim_lumion.html" class="brand-link">Marka sayfası <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <p class="brand-desc">Mimari sunumlar için gerçek zamanlı render ve görselleştirme.</p>
+  <div class="pgrid">
+      <a href="cadbim_lumion.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.12);color:#22c55e;"><i class="ti ti-sun"></i></div><div><h3>Lumion</h3><p>Anlık mimari görselleştirme</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_lumion_view.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.12);color:#22c55e;"><i class="ti ti-eye"></i></div><div><h3>Lumion View</h3><p>CAD içinde gerçek zamanlı render</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_lumion_studio.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.12);color:#22c55e;"><i class="ti ti-stack-2"></i></div><div><h3>Lumion Studio</h3><p>Pro + View + Cloud tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_lumion_cloud.html" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.12);color:#22c55e;"><i class="ti ti-cloud"></i></div><div><h3>Lumion Cloud</h3><p>Render paylaşım & onay platformu</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+</section>
+
+<section class="brand-block" data-brand="microsoft">
+  <div class="brand-head">
+    <h2>Microsoft</h2>
+    <span class="brand-badge" style="color:#94a3b8;border-color:rgba(148,163,184,0.35);">Partner</span>
+    <div class="brand-logo wl"><img src="assets/logos/microsoft-partner-black.png" alt="Microsoft Partner" loading="lazy"></div>
+    <a href="cadbim_microsoft.html" class="brand-link">Marka sayfası <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <p class="brand-desc">Microsoft 365, Azure kurumsal lisanslama ve bulut çözümleri.</p>
+  <div class="pgrid">
+      <a href="cadbim_microsoft.html" class="pcard"><div class="pico" style="background:rgba(148,163,184,0.1);color:#94a3b8;"><i class="ti ti-brand-windows"></i></div><div><h3>Microsoft 365 & Azure</h3><p>Kurumsal lisanslama ve bulut</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+</section>
+
+</div>
+
+<div class="cta-strip">
+  <h2>Aradığınız ürünü bulamadınız mı?</h2>
+  <p>İhtiyacınızı anlatın, doğru lisans ve donanımı birlikte belirleyelim.</p>
+  <div class="cta-btns">
+    <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
+    <a href="cadbim_egitimler.html" class="btn-g">Eğitim Programları</a>
+  </div>
+</div>
+
+<footer>
+  <div class="fbot">
+    <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+<script>
+function filterBrand(f, btn){
+  document.querySelectorAll('.fchip').forEach(function(c){c.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('.brand-block').forEach(function(bl){
+    bl.style.display = (f==='all' || bl.dataset.brand===f) ? '' : 'none';
+  });
+  if(f!=='all'){
+    var fb=document.getElementById('filterbar');
+    var y=fb ? fb.getBoundingClientRect().bottom+window.scrollY : 0;
+    window.scrollTo({top:Math.max(0,y-80),behavior:'smooth'});
+  }
+}
+</script>
+<script>
+(function(){
+  var els=document.querySelectorAll('.brand-logo');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion:reduce)').matches){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(ents){ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.2});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+<script src="mobilenav.js" defer></script>
+</body>
+</html>

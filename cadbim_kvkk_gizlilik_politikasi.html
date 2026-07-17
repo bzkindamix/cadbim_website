@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Gizlilik Politikası — Cadbim KVKK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+:root{--navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;--cyan:#00c8f0;--w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);--w30:rgba(255,255,255,0.3);--w10:rgba(255,255,255,0.1);--fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:15px;line-height:1.7;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.95);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1);}
+.nav-logo-name{font-family:var(--fd);font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--w);line-height:1;}
+.nav-logo-since{font-size:9px;color:rgba(0,200,240,0.8);letter-spacing:4px;text-transform:uppercase;margin-top:5px;line-height:1;}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none;}
+.nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:4px;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:8px;font-weight:700;font-size:13px;}
+
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+
+.content{max-width:820px;margin:0 auto;padding:130px 3rem 90px;}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:24px;}
+.crumb a{color:var(--w30);text-decoration:none;}
+.crumb a:hover{color:var(--cyan);}
+.doc-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;}
+h1.doc-title{font-family:var(--fd);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:32px;line-height:1.25;}
+.doc-body p{color:var(--w80);margin-bottom:18px;font-size:15px;}
+.doc-body h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);margin:32px 0 12px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;margin-top:48px;padding:12px 22px;border:1px solid var(--w10);border-radius:8px;color:var(--w50);text-decoration:none;font-size:13px;transition:all .2s;}
+.back-link:hover{border-color:var(--cyan);color:var(--cyan);}
+footer{background:#040810;border-top:.5px solid rgba(255,255,255,0.06);padding:40px 3rem 24px;}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fbot p{font-size:12px;color:rgba(255,255,255,0.2);}
+.socials{display:flex;gap:10px;}
+.socials a{width:32px;height:32px;border-radius:8px;border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}
+.socials a:hover{border-color:var(--cyan);color:var(--cyan);}
+@media(max-width:900px){.nav-links{display:none;}}
+@media(max-width:600px){.content{padding:110px 1.5rem 56px;}}
+</style>
+
+<!-- SEO -->
+<meta name="description" content="Cadbim gizlilik politikası. Kişisel verilerinizin toplanması, işlenmesi ve korunmasına ilişkin ilkelerimiz.">
+<link rel="canonical" href="https://www.cadbim.com.tr/kvkk-gizlilik-politikasi">
+<meta name="theme-color" content="#060c1a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cadbim">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Gizlilik Politikası — Cadbim KVKK">
+<meta property="og:description" content="Cadbim gizlilik politikası. Kişisel verilerinizin toplanması, işlenmesi ve korunmasına ilişkin ilkelerimiz.">
+<meta property="og:url" content="https://www.cadbim.com.tr/kvkk-gizlilik-politikasi">
+<meta property="og:image" content="https://www.cadbim.com.tr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gizlilik Politikası — Cadbim KVKK">
+<meta name="twitter:description" content="Cadbim gizlilik politikası. Kişisel verilerinizin toplanması, işlenmesi ve korunmasına ilişkin ilkelerimiz.">
+<meta name="twitter:image" content="https://www.cadbim.com.tr/og-image.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.cadbim.com.tr/#organization",
+   "name": "Cadbim",
+   "url": "https://www.cadbim.com.tr/",
+   "logo": "https://www.cadbim.com.tr/og-image.png",
+   "foundingDate": "1993",
+   "email": "cadbim@cadbim.com.tr",
+   "telephone": "+902324643490",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901",
+    "addressLocality": "Çiğli",
+    "addressRegion": "İzmir",
+    "postalCode": "35620",
+    "addressCountry": "TR"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/cadbim/",
+    "https://www.youtube.com/c/CadbimTeknikDestek",
+    "https://www.instagram.com/cadbim_izmir/",
+    "https://www.facebook.com/cadbimizmir"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.cadbim.com.tr/kvkk-gizlilik-politikasi#webpage",
+   "url": "https://www.cadbim.com.tr/kvkk-gizlilik-politikasi",
+   "name": "Gizlilik Politikası — Cadbim KVKK",
+   "description": "Cadbim gizlilik politikası. Kişisel verilerinizin toplanması, işlenmesi ve korunmasına ilişkin ilkelerimiz.",
+   "isPartOf": {
+    "@id": "https://www.cadbim.com.tr/#website"
+   },
+   "inLanguage": "tr-TR",
+   "publisher": {
+    "@id": "https://www.cadbim.com.tr/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Ana Sayfa",
+     "item": "https://www.cadbim.com.tr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "KVKK",
+     "item": "https://www.cadbim.com.tr/kvkk"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Gizlilik Politikası",
+     "item": "https://www.cadbim.com.tr/kvkk-gizlilik-politikasi"
+    }
+   ]
+  }
+ ]
+}
+</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="stylesheet" href="assets/css/design-system.css?v=5">
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logos/cadbim-logo.png" alt="Cadbim">
+    <div><div class="nav-logo-name">Cadbim</div><div class="nav-logo-since">Est. 1993</div></div>
+  </a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="cadbim_urunler.html">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="cadbim_autodesk.html">Autodesk</a>
+        <a href="cadbim_adobe.html">Adobe</a>
+        <a href="cadbim_designjet.html">HP DesignJet</a>
+        <a href="cadbim_hp_z_workstation.html">HP Workstations</a>
+        <a href="cadbim_hp_build_workspace.html">HP Build Workspace</a>
+        <a href="cadbim_chaos.html">Chaos</a>
+        <a href="cadbim_ultimaker.html">UltiMaker</a>
+        <a href="cadbim_sketchup.html">SketchUp</a>
+        <a href="cadbim_lumion.html">Lumion</a>
+        <a href="cadbim_microsoft.html">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cadbim_cozumler.html">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="cadbim_dijital_donusum.html" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Tasarım & Mühendislik</div>
+            <a href="cadbim_bim.html">BIM</a>
+            <a href="cadbim_simulasyon.html">Simülasyon & Analiz</a>
+            <a href="cadbim_tolerans_analizi.html">Tolerans Analizi</a>
+            <a href="cadbim_tasarim_otomasyonu.html">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Dijital İkiz & Üretim</div>
+            <a href="cadbim_dijital_ikiz.html">Dijital İkiz</a>
+            <a href="cadbim_fabrika_tasarimi.html">Fabrika Tasarımı</a>
+            <a href="cadbim_cam.html">CAM & İmalat</a>
+            <a href="cadbim_eklemeli_imalat.html">Eklemeli İmalat & 3D Baskı</a>
+            <a href="cadbim_nesting.html">Nesting</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="cadbim_plm.html">PLM</a>
+            <a href="cadbim_pdm.html">PDM</a>
+            <a href="cadbim_insaat_yonetimi.html">İnşaat Proje Yönetimi</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & Gerçeklik</div>
+            <a href="cadbim_gorsellestirme.html">Görselleştirme & Render</a>
+            <a href="cadbim_yaratici_icerik.html">Yaratıcı İçerik & Tasarım</a>
+            <a href="cadbim_gerceklik_yakalama.html">Gerçeklik Yakalama</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="sektor_mimari.html">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="sektor_mimari.html">Mimarlık</a>
+        <a href="sektor_insaat.html">İnşaat & Altyapı</a>
+        <a href="sektor_makine.html">Makine & Üretim</a>
+        <a href="sektor_otomotiv.html">Otomotiv</a>
+        <a href="sektor_medya.html">Medya & Eğlence</a>
+        <a href="sektor_egitim.html">Eğitim</a>
+        <a href="sektor_havacilik.html">Havacılık & Savunma</a>
+      </div>
+    </li>
+    <li><a href="cadbim_egitimler.html">Eğitimler</a></li>
+    <li><a href="cadbim_hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="cadbim_iletisim.html">İletişim</a></li>
+    <li><a href="cadbim_kvkk.html" class="active">KVKK</a></li>
+    <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
+  </ul>
+</nav>
+<div class="content">
+  <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cadbim_kvkk.html">KVKK</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Gizlilik Politikası</span></div>
+  <div class="doc-label">KVKK Aydınlatma Metinleri</div>
+  <h1 class="doc-title">Gizlilik Politikası</h1>
+  <div class="doc-body">
+    <p>https://www.cadbim.com.tr/ web sitesi ziyaretçilerinin ve mobil uygulama kullanıcılarının (bundan sonra her ikisi "Kullanıcı" olarak anılacaktır.) gizliliğinin ve kişisel verilerinin korunmasına büyük bir önem vermektedir. Başta T.C. Anayasası ve 6698 sayılı Kişisel Verilerin Korunması Kanunu ("Kanun") olmak üzere tabi olduğu mevzuat hükümlerine riayet etmek için her türlü teknik ve idari tedbiri alan veri sorumlusu Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi ("Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi" olarak anılacaktır.) işbu Gizlilik Politikası'nda Kullanıcı'ların hangi kişisel verilerini ne şekilde işlediğini ve veri güvenliği nasıl sağladığını, Kullanıcı'ların hangi haklara sahip olduğunu açıklamayı amaçlamaktadır.</p>
+    <h3>1. KİŞİSEL VERİLERİN İŞLENMESİ</h3>
+    <p>A. GENEL İLKELER</p>
+    <p>https://www.cadbim.com.tr/ web sitesi üzerinden elde ettiği kişisel verilerin işlenmesinde Kanun'un 4. maddesinde düzenlenen aşağıdaki genel ilkelere uygun hareket etmektedir:</p>
+    <p>Hukuka ve dürüstlük kurallarına uygun olma</p>
+    <p>Doğru ve gerektiğinde güncel olma</p>
+    <p>Belirli, açık ve meşru amaçlar için işlenme</p>
+    <p>İşlendikleri amaçla bağlantılı, sınırlı ve ölçülü olma</p>
+    <p>İlgili mevzuatta öngörülen veya işlendikleri amaç için gerekli olan süre kadar muhafaza edilme</p>
+    <p>B. KİŞİSEL VERİ İŞLEME AMAÇLARI</p>
+    <p>Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi, Kullanıcı kişisel verilerini Kanun ve ikincil düzenlemelere uygun olarak aşağıda belirtilen amaçlarla işlenmektedir:</p>
+    <p>Hukuki Yükümlülükler: Başta çevrimiçi kullanıcı verilerinin ilgili mevzuata uygun şekilde işlenmesi ve idari/adli makamlardan gelen bilgi taleplerinin cevaplandırılması olmak üzere, kişisel verileriniz Şirketimizin tabi olduğu herhangi bir mevzuat hükmünün gerektirmesi halinde mevzuatta öngörülen şekillerde işlenebilir, aktarılabilir ve ilgili mevzuatta öngörülen ya da amaç için gerekli olan süre boyunca saklanabilir.</p>
+    <p>Uyuşmazlıkların Çözümü: Şirketimiz ileride ortaya çıkabilecek uyuşmazlıklarda hukuka uygun işlemler gerçekleştirdiğini ve yasal yükümlülüklerini yerine getirdiğini ispatlamak ve uyuşmazlıkların çözümünü sağlamak amacıyla kişisel verilerinizi işleyebilir, ilgili yasal merciler ile paylaşabilir.</p>
+    <p>Hizmetlerin İyileştirilmesi ve Müşteri Memnuniyeti: Kişisel verileriniz web sitesi deneyiminizi iyileştirmek amacıyla analitik çalışmaların yürütülmesi, talep, şikâyet ve önerilerinizin değerlendirilerek müşteri memnuniyetini ve hizmet kalitesini artırmaya yönelik aksiyonlar alınması amaçlarıyla işlenmektedir.</p>
+    <p>C. KİŞİSEL VERİLERİNİZİN İŞLENMESİNİN HUKUKİ SEBEPLERİ</p>
+    <p>Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi, kişisel verileri Kanun'da yer alan hukuki sebeplerden en az birinin varlığı halinde işlemektedir. Yukarıda belirtilen kişisel veri işleme amaçlarının dayandığı hukuki sebepler şu şekildedir:</p>
+    <p>Hukuki yükümlülüklerimizin yerine getirilmesi amacıyla gerçekleştirdiğimiz veri işleme faaliyetleri, Kanun m.5/2(ç) hükmünde belirtilen hukuki sebebe dayanır.</p>
+    <p>Uyuşmazlıkların çözümü için kişisel verilerin işlendiği haller, Kanun m.5/2(e) hükmünde belirtilen bir hakkın tesisi, kullanılması veya korunması hukuki sebebine dayanır.</p>
+    <p>Meşru menfaat hukuki sebebine dayanan işleme faaliyetleri.</p>
+    <p>D. KİŞİSEL VERİLERİN TOPLANMA YÖNTEMLERİ</p>
+    <p>Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi olarak yürüttüğümüz hizmetlerimiz kapsamında, müşterilerimize tam ve doğru hizmet sağlamak üzere kişisel verilere ihtiyaç duymaktayız. Kişisel veriler, tarafımızca sunulan hizmetler ve iş süreçleri kapsamında yasal mevzuat ve sözleşmeden kaynaklanan yükümlülüklerin tam ve eksiksiz olarak yerine getirilmesi, iş süreçlerinin yürütülebilmesi ve sonuçlandırılabilmesi ile insan kaynakları ve işe alım süreçlerinin yürütülmesi amacıyla, elektronik posta, telefon görüşmesi, fiziksel yöntemler vb. benzeri vasıtalar ile sözlü, yazılı ya da elektronik olarak veya Kanun'da belirtilen otomatik veya otomatik olmayan yöntemler ile Kişisel Verilen Korunması Kanunu ve diğer yasal düzenlemelere uygun olarak toplanmakta ve işlenmektedir.</p>
+    <p>E. KİŞİSEL VERİLERİN AKTARILMASI</p>
+    <p>Kişisel verilerin güvenliği ve ilgili mevzuat hükümlerine riayet etme konusunda yüksek hassasiyet gösteren Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi, kişisel verileri yalnızca gerekli olduğu ölçüde hukuka uygun olarak paylaşmakta; bunun dışında herhangi bir ticari amaçla aktarmamakta veya üçüncü kişilere satmamaktadır. Bunun yanı sıra Kullanıcı kişisel verileri Kanun'un 8. maddelerinde belirtilen şartlar çerçevesinde yetkili kamu kurum ve kuruluşları paylaşılabilir.</p>
+    <p>Resmi Makamlarla Kişisel Veri Paylaşımı</p>
+    <p>Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi https://www.cadbim.com.tr/ web sitesine yapılan ziyaret veya üyeliğe ilişkin kişisel verileri ve gezinme bilgileri gibi trafik bilgilerini; tabi olduğu mevzuattan kaynaklanan yükümlülüklerini yerine getirmek amacıyla (suçla mücadele, devlet ve kamu güvenliğinin tehdidi ve benzeri ancak bununla sınırlı olmamak üzere yasal veya idari olarak bildirim veya bilgi verme yükümlülüğünün mevcut olduğu durumlarda) yasal olarak bu bilgileri talep etmeye yetkili olan kamu kurum ve kuruluşları ile paylaşabilecektir.</p>
+    <p>F. KİŞİSEL VERİLERİN SİLİNMESİ, YOK EDİLMESİ VE ANONİMLEŞTİRİLMESİ</p>
+    <p>Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi, https://www.cadbim.com.tr/ web sitesi aracılığıyla işlediği kişisel verileri, ilgili mevzuatta öngörülen süreler ve/veya işleme amacının gerektirdiği süre boyunca saklamaktadır. Bu sürenin sona ermesi durumunda kişisel veriler, Kanun ve Kişisel Verilerin Silinmesi, Yok Edilmesi veya Anonim Hale Getirilmesi Hakkında Yönetmelik'e uygun olarak imha edilmektedir.</p>
+    <h3>2. Web Sitemizde Kullanılan Çerezlere İlişkin Bilgilendirme</h3>
+    <p>Firmamız tarafından, kullanıcıların web sitesindeki dolaşımları sırasında toplanan çerezlere ilişkin Firma politikamıza internet sitemiz üzerinden ulaşabilirsiniz.</p>
+    <h3>3. ÇOCUKLARA AİT KİŞİSEL VERİLER</h3>
+    <p>Şirketimizin web sitesi yetişkinler tarafından kullanılması öngörülmüş olup sunulan hizmetler çocuklara yönelik değildir. 18 yaşından küçüklerin Şirketimizin sunduğu hizmetleri kullanabilmesi için veli ya da vasisinin rızası gerekmektedir. 18 yaşından küçük bir çocuktan bilgi alınması durumunda Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi bu bilgiyi silme hakkına sahiptir.</p>
+    <h3>4. KULLANICI'NIN HAKLARI</h3>
+    <p>Kullanıcı, veri sahibi sıfatıyla Şirketimize başvurarak;</p>
+    <p>Kişisel verilerinin işlenip işlenmediğini öğrenme,</p>
+    <p>Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,</p>
+    <p>Kişisel verilerinin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</p>
+    <p>Yurt içinde veya yurt dışında kişisel verilerinin aktarıldığı üçüncü kişileri bilme,</p>
+    <p>Kişisel verilerinin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme ve bu kapsamda yapılan işlemlerin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</p>
+    <p>Kanun ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerinin silinmesini veya yok edilmesini isteme ve bu kapsamda yapılan işlemlerin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</p>
+    <p>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhini bir sonucun ortaya çıkmasına itiraz etme,</p>
+    <p>Kişisel verilerinin Kanun'a aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme haklarına sahiptir.</p>
+    <h3>5. GİZLİLİK POLİTİKASI'NDA YAPILACAK DEĞİŞİKLİKLER</h3>
+    <p>Cadbim Bilgisayar Özel Eğitim Danışmanlık Pazarlama Sanayi Ve Ticaret Limited Şirketi, işbu Gizlilik Politikası'nda her zaman değişiklik yapabilir. Bu değişiklikler, değiştirilmiş yeni Gizlilik Politikası'nın yayınlandığı gün geçerlilik kazanır. İşbu Gizlilik Politikası'ndaki değişikliklerden haberdar olunması için, Kullanıcı'lara gerekli bilgilendirmeler yapılacaktır.</p>
+    <h3>6. İLETİŞİM</h3>
+    <p>Kişisel veri sahipleri olarak haklarınıza ilişkin taleplerinizi Kişisel Verileri Koruma Kanunun 13. Maddesinde yazılı veya "Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ" de düzenlenen yöntemlerle şirkete iletmeniz durumunda; şirketimiz, talebin niteliğine göre, talebi en kısa sürede ve en geç otuz gün içinde ücretsiz olarak sonuçlandıracaktır. Ancak, işlemin ayrıca bir maliyet gerektirmesi halinde, Şirket tarafından Kişisel Verileri Koruma Kurumu tarafından belirlenen tarifedeki ücret alınacaktır.</p>
+    <p>Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tespit edici gerekli bilgiler ile birlikte Kişisel Verileri Koruma Kanunun 11. Maddesinde belirtilen haklardan, kullanmayı talep ettiğiniz hakka yönelik açıklamalarınızı içeren talebinizi; https://www.cadbim.com.tr/ internet sitemizdeki başvuru formunu doldurarak basılı halde imzalı bir nüshasını Ataşehir Mahallesi Anadolu Cadde No: 901/ Çiğli İzmir adresimize gönderebilir, bizzat elden iletebilir veya cadbim@cadbim.com.tr e-posta adresine cadbim.bilgisayar@hs01.kep.tr kep adresimize güvenli elektronik imzalı olarak iletebilirsiniz.</p>
+  </div>
+  <a href="cadbim_kvkk.html" class="back-link"><i class="ti ti-arrow-left"></i>KVKK Ana Sayfaya Dön</a>
+</div>
+<footer>
+  <div class="fbot">
+    <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+<script src="mobilenav.js" defer></script>
+</body>
+</html>

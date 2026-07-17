@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Autodesk Vault PDM yazılımı. CAD dosyası yönetimi, versiyon takibi, BOM yönetimi, Inventor & AutoCAD entegrasyonu, Fusion Manage PLM bağlantısı. Cadbim Gold Partner.">
+<title>Autodesk Vault PDM — Ürün Veri Yönetimi | Cadbim</title>
+  <meta property="og:title" content="Autodesk Vault PDM — Ürün Veri Yönetimi | Cadbim">
+  <meta property="og:description" content="Vault PDM ile CAD verisi yönetimi, versiyon takibi ve BOM. Cadbim Autodesk Gold Partner.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cadbim.com.tr/vault-pdm">
+  <meta property="og:image" content="https://www.cadbim.com.tr/og-image.png">
+  <meta property="og:site_name" content="Cadbim">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Autodesk Vault PDM — Ürün Veri Yönetimi | Cadbim">
+  <meta name="twitter:description" content="Vault PDM ile CAD verisi yönetimi, versiyon takibi ve BOM. Cadbim Autodesk Gold Partner.">
+  <link rel="canonical" href="https://www.cadbim.com.tr/vault-pdm">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+:root{
+  --navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;
+  --cyan:#00c8f0;--cyan2:#0ea5e9;
+  --cdim:rgba(0,200,240,0.12);--cbor:rgba(0,200,240,0.2);
+  --w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);
+  --w30:rgba(255,255,255,0.3);--w10:rgba(255,255,255,0.1);--w06:rgba(255,255,255,0.06);
+  --fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;
+  --r:8px;--rm:12px;--rl:16px;--rxl:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.92);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.nav-logo-name{font-family:var(--fd);font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--w);line-height:1;}
+.nav-logo-since{font-size:9px;color:rgba(0,200,240,0.8);letter-spacing:4px;text-transform:uppercase;margin-top:5px;line-height:1;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
+.nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:var(--r);font-weight:700;font-size:13px;}
+.hero{padding:120px 3rem 64px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;}
+.hero-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(var(--w10) 1px,transparent 1px),linear-gradient(90deg,var(--w10) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:20px;}
+.crumb a{color:var(--w30);text-decoration:none;}.crumb a:hover{color:var(--cyan);}
+.product-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:var(--r);border:.5px solid;font-size:11px;font-weight:500;letter-spacing:1px;margin-bottom:18px;}
+.hero h1{font-family:var(--fd);font-size:clamp(1.9rem,3.2vw,2.9rem);font-weight:800;line-height:1.1;color:var(--w);margin-bottom:16px;}
+.hero h1 em{font-style:normal;color:var(--cyan);}
+.hero-sub{font-size:15px;color:var(--w50);line-height:1.75;margin-bottom:28px;max-width:480px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{background:var(--cyan);color:var(--navy);padding:12px 26px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{opacity:.88;transform:translateY(-1px);}
+.btn-g{background:transparent;color:var(--w80);border:.5px solid var(--w30);padding:12px 26px;border-radius:var(--r);font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-g:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-1px);}
+.hero-right{}
+.hstats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hstat{background:var(--navy3);border-radius:var(--rm);border:.5px solid var(--w10);padding:18px 16px;}
+.hstat-num{font-family:var(--fd);font-size:1.8rem;font-weight:800;margin-bottom:4px;}
+.hstat-lbl{font-size:12px;color:var(--w30);line-height:1.4;}
+.section{padding:64px 3rem;}
+.section-alt{background:var(--navy2);}
+.sh{margin-bottom:40px;}
+.slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
+.stitle{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:var(--w);margin-bottom:8px;}
+.ssub{font-size:14px;color:var(--w50);max-width:540px;line-height:1.7;}
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:36px;}
+.feat-card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:22px 20px;transition:border-color .2s;}
+.feat-card:hover{border-color:var(--cbor);}
+.feat-card.new::before{content:'YENİ';font-size:9px;font-weight:600;letter-spacing:1.5px;color:var(--cyan);background:var(--cdim);border:.5px solid var(--cbor);padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:10px;}
+.feat-card.enh::before{content:'GELİŞTİRİLDİ';font-size:9px;font-weight:600;letter-spacing:1.5px;color:#fbbf24;background:rgba(251,191,36,0.1);border:.5px solid rgba(251,191,36,0.25);padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:10px;}
+.feat-icon{font-size:22px;color:var(--cyan);margin-bottom:10px;}
+.feat-card h3{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--w);margin-bottom:6px;}
+.feat-card p{font-size:13px;color:var(--w50);line-height:1.6;}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:36px;}
+.cmp-card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 20px;transition:border-color .2s;}
+.cmp-card:hover{border-color:var(--cbor);}
+.cmp-card.hi{border-color:rgba(0,200,240,0.25);}
+.cmp-badge{font-size:10px;padding:3px 8px;border-radius:4px;font-weight:500;display:inline-block;margin-bottom:10px;border:.5px solid;}
+.cmp-card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
+.cmp-card p{font-size:13px;color:var(--w50);line-height:1.6;margin-bottom:12px;}
+.cmp-pts{display:flex;flex-direction:column;gap:5px;}
+.cmp-pt{display:flex;align-items:flex-start;gap:7px;font-size:12px;color:var(--w50);}
+.cmp-pt i{font-size:12px;flex-shrink:0;margin-top:2px;}
+.cross{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:32px;margin-top:16px;}
+.cross h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:6px;}
+.cross .cdesc{font-size:13px;color:var(--w50);margin-bottom:16px;}
+.cross-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.cp{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;}
+.cp:hover{border-color:var(--cbor);color:var(--cyan);}
+.cp i{font-size:14px;color:var(--cyan);}
+.cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 64px;}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
+.cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;color:var(--w);margin-bottom:10px;}
+.cta-strip p{font-size:14px;color:var(--w50);margin-bottom:26px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.pdm-plm-diagram{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:center;margin-top:36px;padding:28px;background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--cbor);}
+.diagram-col{text-align:center;padding:20px;}
+.diagram-col h3{font-family:var(--fd);font-size:16px;font-weight:700;margin-bottom:8px;}
+.diagram-col p{font-size:13px;color:var(--w50);line-height:1.6;}
+.diagram-arrow{display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:28px;}
+.diagram-sub{font-size:11px;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
+footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24px;}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fbot p{font-size:12px;color:rgba(255,255,255,0.2);}
+.socials{display:flex;gap:10px;}
+.socials a{width:32px;height:32px;border-radius:var(--r);border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}
+.socials a:hover{border-color:var(--cyan);color:var(--cyan);}
+@media(max-width:1000px){.hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}.nav-links{display:none;}.cta-strip{margin:0 1.5rem 56px;}.pdm-plm-diagram{grid-template-columns:1fr;}}
+@media(max-width:600px){.section{padding:48px 1.5rem;}.hero{padding:96px 1.5rem 52px;}}
+
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+</style>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CADBIM2026"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CADBIM2026');
+</script>
+
+<!-- SEO -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#060c1a">
+<meta property="og:locale" content="tr_TR">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.cadbim.com.tr/#organization",
+   "name": "Cadbim",
+   "url": "https://www.cadbim.com.tr/",
+   "logo": "https://www.cadbim.com.tr/og-image.png",
+   "foundingDate": "1993",
+   "email": "cadbim@cadbim.com.tr",
+   "telephone": "+902324643490",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901",
+    "addressLocality": "Çiğli",
+    "addressRegion": "İzmir",
+    "postalCode": "35620",
+    "addressCountry": "TR"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/cadbim/",
+    "https://www.youtube.com/c/CadbimTeknikDestek",
+    "https://www.instagram.com/cadbim_izmir/",
+    "https://www.facebook.com/cadbimizmir"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.cadbim.com.tr/vault-pdm#webpage",
+   "url": "https://www.cadbim.com.tr/vault-pdm",
+   "name": "Autodesk Vault PDM — Ürün Veri Yönetimi | Cadbim",
+   "description": "Autodesk Vault PDM yazılımı. CAD dosyası yönetimi, versiyon takibi, BOM yönetimi, Inventor & AutoCAD entegrasyonu, Fusion Manage PLM bağlantısı. Cadbim Gold Partner.",
+   "isPartOf": {
+    "@id": "https://www.cadbim.com.tr/#website"
+   },
+   "inLanguage": "tr-TR",
+   "publisher": {
+    "@id": "https://www.cadbim.com.tr/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Ana Sayfa",
+     "item": "https://www.cadbim.com.tr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Ürünler",
+     "item": "https://www.cadbim.com.tr/autodesk"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Autodesk Vault PDM",
+     "item": "https://www.cadbim.com.tr/vault-pdm"
+    }
+   ]
+  },
+  {
+   "@type": "Product",
+   "name": "Autodesk Vault PDM",
+   "description": "Autodesk Vault PDM yazılımı. CAD dosyası yönetimi, versiyon takibi, BOM yönetimi, Inventor & AutoCAD entegrasyonu, Fusion Manage PLM bağlantısı. Cadbim Gold Partner.",
+   "url": "https://www.cadbim.com.tr/vault-pdm",
+   "image": "https://www.cadbim.com.tr/og-image.png",
+   "brand": {
+    "@type": "Brand",
+    "name": "Autodesk"
+   },
+   "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "TRY",
+    "seller": {
+     "@id": "https://www.cadbim.com.tr/#organization"
+    },
+    "url": "https://www.cadbim.com.tr/vault-pdm"
+   }
+  }
+ ]
+}
+</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="stylesheet" href="assets/css/design-system.css?v=5">
+</head>
+<body><nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logos/cadbim-logo.png" alt="Cadbim">
+    <div><div class="nav-logo-name">Cadbim</div><div class="nav-logo-since">Est. 1993</div></div>
+  </a>
+      <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="cadbim_urunler.html" class="active">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="cadbim_autodesk.html">Autodesk</a>
+        <a href="cadbim_adobe.html">Adobe</a>
+        <a href="cadbim_designjet.html">HP DesignJet</a>
+        <a href="cadbim_hp_z_workstation.html">HP Workstations</a>
+        <a href="cadbim_hp_build_workspace.html">HP Build Workspace</a>
+        <a href="cadbim_chaos.html">Chaos</a>
+        <a href="cadbim_ultimaker.html">UltiMaker</a>
+        <a href="cadbim_sketchup.html">SketchUp</a>
+        <a href="cadbim_lumion.html">Lumion</a>
+        <a href="cadbim_microsoft.html">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cadbim_cozumler.html">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="cadbim_dijital_donusum.html" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Tasarım & Mühendislik</div>
+            <a href="cadbim_bim.html">BIM</a>
+            <a href="cadbim_simulasyon.html">Simülasyon & Analiz</a>
+            <a href="cadbim_tolerans_analizi.html">Tolerans Analizi</a>
+            <a href="cadbim_tasarim_otomasyonu.html">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Dijital İkiz & Üretim</div>
+            <a href="cadbim_dijital_ikiz.html">Dijital İkiz</a>
+            <a href="cadbim_fabrika_tasarimi.html">Fabrika Tasarımı</a>
+            <a href="cadbim_cam.html">CAM & İmalat</a>
+            <a href="cadbim_eklemeli_imalat.html">Eklemeli İmalat & 3D Baskı</a>
+            <a href="cadbim_nesting.html">Nesting</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="cadbim_plm.html">PLM</a>
+            <a href="cadbim_pdm.html">PDM</a>
+            <a href="cadbim_insaat_yonetimi.html">İnşaat Proje Yönetimi</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & Gerçeklik</div>
+            <a href="cadbim_gorsellestirme.html">Görselleştirme & Render</a>
+            <a href="cadbim_yaratici_icerik.html">Yaratıcı İçerik & Tasarım</a>
+            <a href="cadbim_gerceklik_yakalama.html">Gerçeklik Yakalama</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="sektor_mimari.html">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="sektor_mimari.html">Mimarlık</a>
+        <a href="sektor_insaat.html">İnşaat & Altyapı</a>
+        <a href="sektor_makine.html">Makine & Üretim</a>
+        <a href="sektor_otomotiv.html">Otomotiv</a>
+        <a href="sektor_medya.html">Medya & Eğlence</a>
+        <a href="sektor_egitim.html">Eğitim</a>
+        <a href="sektor_havacilik.html">Havacılık & Savunma</a>
+      </div>
+    </li>
+    <li><a href="cadbim_egitimler.html">Eğitimler</a></li>
+    <li><a href="cadbim_hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="cadbim_iletisim.html">İletişim</a></li>
+    <li><a href="cadbim_kvkk.html">KVKK</a></li>
+    <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-bg" style="background:radial-gradient(ellipse 80% 60% at 10% -10%,rgba(245,158,11,0.1) 0%,transparent 60%);"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cadbim_autodesk.html">Autodesk</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Vault PDM</span></div>
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+  <img src="assets/img/emb-08883a2089.png" alt="Vault" style="width:56px;height:56px;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.5);flex-shrink:0;">
+  <div>
+    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);">AUTODESK</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:700;color:#fff;">Vault</div><div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px;">Product Data Management</div>
+  </div>
+</div>
+      <h1>Tasarım Verilerinizi<br><em>Kontrol Altına Alın</em></h1>
+      <p class="hero-sub">AI destekli ürün veri yönetimi. Autodesk tasarım araçlarıyla derin entegrasyon, otomatik versiyon takibi, BOM yönetimi ve Fusion Manage PLM bağlantısı.</p>
+      <div class="hero-btns">
+        <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
+        <a href="cadbim_fusion_manage.html" class="btn-g">PLM ile Birlikte Kullan</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hstats">
+        <div class="hstat">
+          <div class="hstat-num" style="color:#fbbf24;">AI</div>
+          <div class="hstat-lbl">Autodesk Assistant — akıllı PDM desteği ve görev otomasyonu</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:var(--cyan);">PLM</div>
+          <div class="hstat-lbl">Fusion Manage ile native Vault Connector entegrasyonu</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:#34d399;">BOM</div>
+          <div class="hstat-lbl">Kapsamlı imalat malzeme listesi oluşturma ve yönetimi</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num" style="color:#f87171;">API</div>
+          <div class="hstat-lbl">Modern cloud API'lar ile ERP ve iş sistemleri entegrasyonu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" style="padding-top:0;">
+  <div class="cross">
+      <h3>Vault PDM ile birlikte çalışan araçlar</h3>
+      <p class="cdesc">Vault iş akışınızı tamamlayan Cadbim ürünleri</p>
+      <div class="cross-pills">
+        <a href="cadbim_inventor.html" class="cp"><img src="assets/logos/autodesk-white.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;">Autodesk Inventor — birincil CAD kaynağı</a>
+        <a href="cadbim_fusion.html" class="cp"><img src="assets/logos/autodesk-white.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;">Autodesk Fusion — CAD + CAM + PDM</a>
+        <a href="cadbim_fusion_manage.html" class="cp"><img src="assets/logos/autodesk-white.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;">Fusion Manage PLM — süreç yönetimi</a>
+        <a href="cadbim_autocad.html" class="cp"><img src="assets/logos/autodesk-white.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;">AutoCAD — teknik çizim yönetimi</a>
+      </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+  <div class="sh">
+    <div class="slabel">PDM nedir, neden lazım?</div>
+    <div class="stitle">Tasarım Verisi Kaosuna Son</div>
+    <p class="ssub">Ekip büyüdükçe "en güncel dosya hangisi?" sorusu kritik hale gelir. Vault bu soruyu ortadan kaldırır.</p>
+  </div>
+  <div class="pdm-plm-diagram">
+    <div class="diagram-col">
+      <div class="diagram-sub">Tasarımcı iş akışı</div>
+      <h3 style="color:#fbbf24;">Vault PDM</h3>
+      <p>CAD dosyaları, çizimler, versiyon geçmişi, BOM, check-in/out, CAD entegrasyonu</p>
+    </div>
+    <div class="diagram-arrow">
+      <div style="text-align:center;">
+        <i class="ti ti-arrows-exchange" style="font-size:28px;"></i>
+        <div style="font-size:11px;color:var(--w30);margin-top:4px;">Vault Connector</div>
+      </div>
+    </div>
+    <div class="diagram-col">
+      <div class="diagram-sub">Kurumsal süreç yönetimi</div>
+      <h3 style="color:var(--cyan);">Fusion Manage PLM</h3>
+      <p>NPI, change management, BOM yayını, tedarikçi yönetimi, kalite süreçleri</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sh">
+    <div class="slabel">Vault — Yeni Özellikler</div>
+    <div class="stitle">Son Sürümdeki Yenilikler</div>
+  </div>
+  <div class="feat-grid">
+    <div class="feat-card new">
+      <div class="feat-icon"><i class="ti ti-sparkles"></i></div>
+      <h3>Autodesk AI Assistant</h3>
+      <p>Vault içinde akıllı, bağlam duyarlı AI desteği. Soruları yanıtlar, görevleri otomatize eder, işi ileri taşır.</p>
+    </div>
+    <div class="feat-card new">
+      <div class="feat-icon"><i class="ti ti-archive"></i></div>
+      <h3>Project & Data Archive</h3>
+      <p>Tamamlanan veya geçerliliği kalmayan proje ve tasarım verilerini arşivleyin. Büyük veri setlerini kolayca yönetin.</p>
+    </div>
+    <div class="feat-card new">
+      <div class="feat-icon"><i class="ti ti-trash"></i></div>
+      <h3>Trash Bin (Çöp Kutusu)</h3>
+      <p>Yanlışlıkla silinen dosyalar için geçici depolama ve geri yükleme. Kritik dosya kayıplarını önleyin.</p>
+    </div>
+    <div class="feat-card new">
+      <div class="feat-icon"><i class="ti ti-api"></i></div>
+      <h3>Vault Data APIs</h3>
+      <p>Modern cloud API seti ile Vault'u diğer iş sistemlerine entegre edin — ERP, CRM, özel uygulamalar.</p>
+    </div>
+    <div class="feat-card new">
+      <div class="feat-icon"><i class="ti ti-link"></i></div>
+      <h3>Hyperlink User-Defined Property</h3>
+      <p>Kullanıcı tanımlı özelliklerde tıklanabilir URL ve e-posta adresi. Fusion Manage kayıtlarına bağlantı.</p>
+    </div>
+    <div class="feat-card new">
+      <div class="feat-icon"><i class="ti ti-shield-lock"></i></div>
+      <h3>Automatic Account Disablement</h3>
+      <p>Kullanıcı erişiminin ne zaman sona ereceğini belirleyin — güvenlik ve lisans yönetimi kolaylaşır.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="sh">
+    <div class="slabel">Temel Özellikler</div>
+    <div class="stitle">Vault PDM ile Neler Yapabilirsiniz?</div>
+  </div>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-git-branch"></i></div>
+      <h3>Versiyon Takibi & Check-in/out</h3>
+      <p>Tüm tasarım dosyaları için otomatik versiyon geçmişi. Kimin, ne zaman, ne değiştirdiği tam olarak izlenir.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-users"></i></div>
+      <h3>Eş Zamanlı Tasarım</h3>
+      <p>Merkezi konumdan güvenli, eş zamanlı veri erişimi. Obje sahipliği gerekmez, replikasyon ortamı sadeleşir.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-3d-cube-sphere"></i></div>
+      <h3>CAD Entegrasyonu</h3>
+      <p>Inventor, AutoCAD, AutoCAD Electrical, AutoCAD Mechanical ile derin entegrasyon — ayrı bir veri transferi gerektirmez.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-list-details"></i></div>
+      <h3>BOM Yönetimi</h3>
+      <p>Kapsamlı imalat malzeme listesi oluşturma ve sürdürme. Dosyaya BOM atandığında Vault otomatik item oluşturur.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-copy"></i></div>
+      <h3>Design Copy & Reuse</h3>
+      <p>Tasarımları kopyala, bileşenleri yeniden kullan veya değiştir. Copy design kütüphane dosyası koruması sağlar.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-cpu"></i></div>
+      <h3>Job Processor</h3>
+      <p>CAD işlemlerini workstation yerine job processor üzerinde çalıştırın. Tasarımcı bilgisayarlarının yükü azalır.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-world"></i></div>
+      <h3>Multisite & Uzak Erişim</h3>
+      <p>Dağıtık ekipler arası veri senkronizasyonu. Mobil uygulama, tarayıcı thin client ve Vault Gateway ile uzaktan erişim.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon"><i class="ti ti-git-merge"></i></div>
+      <h3>Fusion Manage Entegrasyonu</h3>
+      <p>Vault Connector ile PDM ve PLM arasında native bağlantı. BOM, item ve değişiklik süreçleri otomatik senkronize.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sh">
+    <div class="slabel">Vault Seviyeleri</div>
+    <div class="stitle">Hangi Vault Size Uygun?</div>
+    <p class="ssub">3 farklı seviye — küçük ekipten kurumsal firmaya.</p>
+  </div>
+  <div class="compare-grid">
+    <div class="cmp-card">
+      <span class="cmp-badge" style="background:rgba(148,163,184,0.1);color:#94a3b8;border-color:rgba(148,163,184,0.2);">WORKGROUP</span>
+      <h3>Vault Workgroup</h3>
+      <p>Küçük ekipler için temel PDM. Check-in/out, versiyon takibi, CAD entegrasyonu.</p>
+      <div class="cmp-pts">
+        <div class="cmp-pt"><i class="ti ti-check" style="color:#94a3b8;"></i>Temel PDM özellikleri</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:#94a3b8;"></i>CAD entegrasyonu</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:#94a3b8;"></i>Versiyon geçmişi</div>
+      </div>
+    </div>
+    <div class="cmp-card hi">
+      <span class="cmp-badge" style="background:rgba(245,158,11,0.1);color:#fbbf24;border-color:rgba(245,158,11,0.25);">PROFESSIONAL ★</span>
+      <h3>Vault Professional</h3>
+      <p>Tam kapsamlı PDM. Multisite, gelişmiş iş akışları, BOM yönetimi ve Fusion Manage PLM bağlantısı.</p>
+      <div class="cmp-pts">
+        <div class="cmp-pt"><i class="ti ti-check" style="color:#fbbf24;"></i>Tüm Workgroup özellikleri</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:#fbbf24;"></i>Multisite senkronizasyonu</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:#fbbf24;"></i>Gelişmiş iş akışları & onay</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:#fbbf24;"></i>Fusion Manage PLM bağlantısı</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:#fbbf24;"></i>Vault Data APIs</div>
+      </div>
+    </div>
+    <div class="cmp-card">
+      <img src="assets/img/emb-942a880ebf.png" alt="" style="width:28px;height:28px;border-radius:5px;flex-shrink:0;">
+    <span class="cmp-badge" style="background:rgba(0,200,240,0.1);color:var(--cyan);border-color:var(--cbor);">PLM BUNDLE</span>
+      <h3>Vault PLM</h3>
+      <p>Vault Professional + Fusion Manage PLM bir arada. PDM ve PLM'yi ayrı satın almak yerine tek pakette.</p>
+      <div class="cmp-pts">
+        <div class="cmp-pt"><i class="ti ti-check" style="color:var(--cyan);"></i>Vault Professional (PDM)</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:var(--cyan);"></i>Fusion Manage (PLM)</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:var(--cyan);"></i>Native Vault Connector dahil</div>
+        <div class="cmp-pt"><i class="ti ti-check" style="color:var(--cyan);"></i>Tek abonelik, tam entegrasyon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" style="padding-top:0;">
+  <div style="padding-top:64px;">
+    
+  </div>
+</section>
+
+
+<section data-enrich-brand style="padding:60px 3rem;background:#0a1225;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Cadbim Farkı</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;color:#fff;margin-bottom:8px;">Autodesk Yatırımınızı Uçtan Uca Sahipleniyoruz</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 26px;max-width:640px;">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten yenilemeye tüm yaşam döngüsü tek muhatapta.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:30px;">
+   <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+     <div style="width:36px;height:36px;border-radius:10px;background:#0ea5e91a;color:#0ea5e9;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-license" style="font-size:18px;"></i></div>
+     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Esnek Abonelik Seçenekleri</h3>
+     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">Tek kullanıcılı ve çok kullanıcılı abonelikler, 1/3 yıllık dönemler ve koleksiyon avantajıyla ihtiyacınıza uygun plan.</p>
+   </div>
+   <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+     <div style="width:36px;height:36px;border-radius:10px;background:#0ea5e91a;color:#0ea5e9;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-school" style="font-size:18px;"></i></div>
+     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Yetkili Eğitim Merkezi (ATC)</h3>
+     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">Resmi Autodesk sertifikalı eğitimler — yazılımı almakla kalmayın, ekibiniz ustalaşsın.</p>
+   </div>
+   <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+     <div style="width:36px;height:36px;border-radius:10px;background:#0ea5e91a;color:#0ea5e9;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-headset" style="font-size:18px;"></i></div>
+     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Türkçe Gold Partner Desteği</h3>
+     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p>
+   </div></div>
+    <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:22px;">
+   <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
+     <div style="width:30px;height:30px;border-radius:50%;background:#0ea5e91a;border:1px solid #0ea5e955;color:#0ea5e9;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-message" style="font-size:14px;"></i></div>
+     <div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">1. Teklif & İhtiyaç Analizi</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</div>
+     </div>
+   </div>
+   <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
+     <div style="width:30px;height:30px;border-radius:50%;background:#0ea5e91a;border:1px solid #0ea5e955;color:#0ea5e9;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-file-check" style="font-size:14px;"></i></div>
+     <div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">2. Lisanslama / Tedarik</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Resmi kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</div>
+     </div>
+   </div>
+   <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
+     <div style="width:30px;height:30px;border-radius:50%;background:#0ea5e91a;border:1px solid #0ea5e955;color:#0ea5e9;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-settings" style="font-size:14px;"></i></div>
+     <div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">3. Kurulum & Eğitim</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</div>
+     </div>
+   </div>
+   <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
+     <div style="width:30px;height:30px;border-radius:50%;background:#0ea5e91a;border:1px solid #0ea5e955;color:#0ea5e9;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-headset" style="font-size:14px;"></i></div>
+     <div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">4. Sürekli Destek</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</div>
+     </div>
+   </div></div>
+  </div>
+</section>
+<div class="cta-strip">
+  <h2>Vault PDM teklifi alın</h2>
+  <p>Kaç kullanıcı, hangi seviye, PLM entegrasyonu gerekiyor mu — birlikte değerlendirelim.</p>
+  <div class="cta-btns">
+    <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
+    <a href="cadbim_iletisim.html" class="btn-g">Demo Talep Et</a>
+  </div>
+</div>
+<footer>
+  <div class="fbot">
+    <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+    </div>
+  </div>
+</footer><script src="mobilenav.js" defer></script>
+</body>
+</html>

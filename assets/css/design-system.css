@@ -1,0 +1,156 @@
+/*
+  CADBİM Design System — Overlay v2 (Engineering Precision)
+  -----------------------------------------------------------
+  Mevcut navy/cyan marka kimliğini korur; her sayfanın satır içi <style>
+  bloğundan SONRA yüklenir ki üzerine yazabilsin. v2 ile site geneline
+  yeni tipografi hiyerarşisi (başlıklar: Space Grotesk) yayılır.
+  Sayfa düzenini veya bileşen yapısını değiştirmez.
+*/
+
+:root {
+  /* Tipografi: başlıklarda Space Grotesk (152 sayfadaki font linkinde yüklü).
+     Sayfalar başlık fontunu --font-d veya --fd değişkeninden okur; bu dosya
+     satır içi stillerden sonra geldiği için buradaki tanım kazanır. */
+  --font-d: 'Space Grotesk', 'Manrope', sans-serif;
+  --fd: 'Space Grotesk', 'Manrope', sans-serif;
+
+  /* Orijinal --w30 (0.3 alfa) koyu navy üzerinde ~2.6:1 kontrast veriyordu (WCAG AA'nın altında).
+     0.58'e çıkarınca ~6.5:1'e ulaşıyor; etiket/alt metinlerde okunabilirlik sağlanır. */
+  --w30: rgba(255, 255, 255, 0.58);
+}
+
+/* Space Grotesk geniş kesimli bir font; büyük başlıklarda hafif sıkılaştırma
+   optik dengeyi kurar. .stitle tüm sayfalarda ortak bölüm başlığı sınıfıdır. */
+.stitle, .hero h1 { letter-spacing: -.015em; }
+
+/* Geniş ekranlarda bölüm içerikleri (kart ızgaraları, şeritler) viewport'a
+   yayılıp sağa doğru uzuyordu; içerik 1180px'te toplanır, bölüm zemini
+   tam genişlikte kalır. */
+.section > * { max-width: 1180px; margin-left: auto; margin-right: auto; }
+
+/* Başlık fontunu değişken kullanmayan (miras alan veya sabit yazan) sayfalarda
+   da hiyerarşiyi kurar; bu dosya satır içi stillerden sonra geldiği için
+   element seviyesindeki h1/h2 tanımlarını geçersiz kılar. */
+h1, h2, .htitle { font-family: var(--fd); }
+
+/* Footer'daki satır içi (değişken kullanmayan) düşük kontrastlı renkler */
+.footer-col a { color: rgba(255, 255, 255, 0.6); }
+.footer-bot p { color: rgba(255, 255, 255, 0.45); }
+
+/* Sabit navigasyon yüksekliği yüzünden sayfa içi bağlantılarda (#hakkimizda vb.)
+   başlığın nav bar altında kalmasını önler */
+[id] { scroll-margin-top: 84px; }
+
+/* Klavye ile gezinen kullanıcılar için görünür odak halkası */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--cyan, #00c8f0);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Sistem düzeyinde "hareketi azalt" tercihine saygı */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Sosyal ikon dokunma alanını 44x44 dokunma hedefi standardına yaklaştırır */
+@media (max-width: 600px) {
+  .socials a { width: 40px; height: 40px; }
+}
+
+/*
+  Bileşen modernizasyonu — kart elevation + buton geri bildirimi
+  ---------------------------------------------------------------
+  Site genelinde tekrarlayan kart bileşenleri aynı temel kalıbı kullanıyor:
+  navy3 arka plan + w10 kenarlık + hover'da kenarlık rengi değişimi.
+  Buradaki kural, hover'a hafif bir "kalkma" (translateY) ve derinlik
+  (box-shadow) katıyor. hp-badge-card (statik rozet kartı) hariç.
+*/
+.office-card, .feat-card, .toolset-card, .product-card, .sol-card,
+.cmp-card, .prod-card, .why-card, .acc-card, .entry-card, .sector-card,
+.format-card, .course-card, .cert-card {
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.office-card:not(.hp-badge-card):hover, .feat-card:hover, .toolset-card:hover,
+.product-card:hover, .sol-card:hover, .cmp-card:hover, .prod-card:hover,
+.why-card:hover, .acc-card:not(.hp-badge-card):hover, .entry-card:hover,
+.sector-card:hover, .format-card:hover, .course-card:hover, .cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Birincil CTA'larda hover'da cyan parlama — yeni görsel dilin imzası */
+.btn-p:hover, .btn-primary:hover, .nav-cta:hover {
+  box-shadow: 0 5px 22px rgba(0, 200, 240, 0.32);
+}
+
+/* CTA butonlarında basılı (active) durum için dokunsal geri bildirim */
+.btn-p:active, .btn-g:active, .btn-primary:active, .btn-secondary:active, .nav-cta:active {
+  transform: scale(0.97);
+}
+
+/*
+  Nav "Çözümler" dropdown kategorizasyonu
+  ----------------------------------------
+  152 sayfada da aynı 15 öğelik düz liste 4 alt gruba ayrıldı
+  (Tasarım & Mühendislik / Dijital İkiz & Üretim / Veri & Süreç
+  Yönetimi / Görselleştirme & Gerçeklik). Bu kurallar grup
+  başlıklarını ve öne çıkan "Dijital Dönüşüm" linkini biçimlendirir.
+*/
+.nav-dropdown-menu { min-width: 250px; }
+.nav-dd-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--w30, rgba(255,255,255,0.58));
+  padding: 10px 12px 4px;
+  margin-top: 4px;
+  border-top: .5px solid var(--w10, rgba(255,255,255,0.1));
+}
+.nav-dd-label:first-of-type { border-top: none; margin-top: 0; }
+.nav-dd-feat {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  color: var(--cyan, #00c8f0) !important;
+  font-weight: 600;
+  background: var(--cyan-dim, rgba(0,200,240,0.08));
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+
+/*
+  Çözümler mega-menüsü — 15+ öğe dikeyde ekrandan taşıyordu; 4 kolonlu
+  yatay düzene alındı. Menü nav öğesinin altında ortalanır; dar ekranlarda
+  2 kolona düşer (900px altında mobil menü devrededir).
+*/
+.nav-mega {
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  width: min(780px, calc(100vw - 32px));
+  padding: 12px;
+}
+.nav-dropdown:hover .nav-mega { transform: translateX(-50%) translateY(0); }
+.nav-mega .nav-dd-feat { margin-bottom: 8px; }
+.nav-mega-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px 12px;
+}
+.nav-mega-col .nav-dd-label { border-top: none; margin-top: 0; padding: 6px 12px 4px; }
+.nav-mega-col a { white-space: normal; }
+@media (max-width: 1100px) {
+  .nav-mega { width: min(520px, calc(100vw - 32px)); }
+  .nav-mega-cols { grid-template-columns: 1fr 1fr; }
+}
