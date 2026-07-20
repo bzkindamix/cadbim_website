@@ -154,3 +154,6 @@ select:focus-visible {
   .nav-mega { width: min(520px, calc(100vw - 32px)); }
   .nav-mega-cols { grid-template-columns: 1fr 1fr; }
 }
+
+/* Üst menü yazı rengi beyaz (Onur 2026-07-20) — hover/active cyan korunur (inline :hover daha yüksek specificity) */
+.nav-links a{color:var(--w);}
