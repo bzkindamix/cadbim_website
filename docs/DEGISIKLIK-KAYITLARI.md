@@ -59,3 +59,12 @@
 - **Dokunulmadı (zaten doğru):** adobe sayfası "Gold Reseller Partner" rozeti, hakkımızda gövde metni, footer "İzmir Merkez Ofis" (Onur tercihi), JSON-LD adres şeması.
 - **Doğrulama:** localhost:8420 — ana sayfa meta/og "Adobe Gold Reseller Partner" içeriyor.
 - **Durum:** ✅ Uygulandı ve doğrulandı.
+
+### DK-2026-07-20-06 — Metin rötuşları: hakkımızda sosyal açıklama + ana sayfa footer
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:**
+  - `cadbim_hakkimizda.html` og/twitter açıklaması: "Autodesk & Adobe Gold Partner" → "Autodesk Gold Partner, Adobe Gold Reseller Partner" (tam ve doğru statü).
+  - `index.html` footer: "Autodesk ve Adobe Gold İş Ortağı." → tam portföy: "Autodesk Gold Partner ve Adobe Gold Reseller Partner; HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağı."
+- **Doğrulama:** localhost:8420 — footer metni tam portföyü gösteriyor.
+- **Durum:** ✅ Uygulandı ve doğrulandı.
