@@ -36,7 +36,7 @@ hp.com'da video bulunmayan durumlar için. Bir kanalın HP'ye ait olduğu 3 kont
 | Ürün sayfası | Video ID | Kaynak |
 |---|---|---|
 | designjet_xl3600 | cuvHfdbQaNE | Onur (doğrulandı) |
-| designjet_t870 | CNG6QSRUDSQ | Onur (doğrulandı) |
+| designjet_t870 | hRa2oRinXyc | hp.com seri videosu (resmi HP; eski CNG6QSRUDSQ "Plot it" bayi kanalıydı, Onur onayıyla değiştirildi) |
 | designjet_t850 | hRa2oRinXyc | hp.com T850/T870/T950 seri sayfası |
 | designjet_t950 | hRa2oRinXyc | hp.com seri sayfası (T850 ile aynı — Onur onayladı) |
 | designjet_t200 | hzxO73kldmc | hp.com T200 sayfası ("Simple. Compact. Responsible.") |
