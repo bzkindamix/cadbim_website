@@ -38,5 +38,6 @@ hp.com'da video bulunmayan durumlar için. Bir kanalın HP'ye ait olduğu 3 kont
 | designjet_xl3600 | cuvHfdbQaNE | Onur (doğrulandı) |
 | designjet_t870 | CNG6QSRUDSQ | Onur (doğrulandı) |
 | designjet_t850 | hRa2oRinXyc | hp.com T850/T870/T950 seri sayfası |
+| designjet_t950 | hRa2oRinXyc | hp.com seri sayfası (T850 ile aynı — Onur onayladı) |
 
 > Ek not: `hRa2oRinXyc` seri videosu T850 + T870 + T950'yi birlikte anlatıyor; T870/T950 için de geçerli bir resmi seçenek. `hbLl7KoiEqA` (teaser) ve `Yj-cYh12vBs` (multi-size özellik) da aynı hp.com sayfasında yer alan resmi alternatifler.
