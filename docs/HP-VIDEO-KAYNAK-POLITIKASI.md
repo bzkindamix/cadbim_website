@@ -39,5 +39,25 @@ hp.com'da video bulunmayan durumlar için. Bir kanalın HP'ye ait olduğu 3 kont
 | designjet_t870 | CNG6QSRUDSQ | Onur (doğrulandı) |
 | designjet_t850 | hRa2oRinXyc | hp.com T850/T870/T950 seri sayfası |
 | designjet_t950 | hRa2oRinXyc | hp.com seri sayfası (T850 ile aynı — Onur onayladı) |
+| designjet_t200 | hzxO73kldmc | hp.com T200 sayfası ("Simple. Compact. Responsible.") |
+| designjet_t600 | 6WzCOBtWuGQ | hp.com T600 sayfası ("Simple. Compact. Responsible.") |
+| designjet_t1600 | ZEnzBgbS2yk | hp.com T1600/T2600 "Build Connected" seri sayfası (T2600 ile aynı) |
+| designjet_t2600 | ZEnzBgbS2yk | hp.com T1600/T2600 "Build Connected" seri sayfası |
+| designjet_xl3800 | MbASXZgN3tI | hp.com XL 3800 sayfası ("Introducing XL 3800 MFP") |
+| designjet_z6pro | EgbZf_9Ewjg | hp.com Z6 Pro sayfası ("Out Of This World Precision") |
+| designjet_z9pro | zj8HtwqYn7w | Resmi HP kanalı ("Introducing Z6 Pro and Z9⁺ Pro"); hp.com Z9 Pro sayfasında YouTube yok (self-host), fallback |
+| designjet_smart_tank | zsYVMY0h3uU | Resmi **HP Asia** kanalı ("Smart Tank T858/T908: First Large Format Ink Tank"); hp.com'da YouTube yok, whitelist fallback |
+
+### Videosuz bırakılanlar (resmi HP videosu bulunamadı)
+
+| Ürün | Neden |
+|---|---|
+| designjet_t830 | hp.com'da YouTube yok; bulunan "T830 Product Video" bayi kanalı (GDS/Graphic Design Supplies) — reddedildi |
+| designjet_t1700 | hp.com'da YouTube yok; resmi tekil ürün videosu yok (eski model) |
+| designjet_z6810 | hp.com'da YouTube yok (üretim yazıcısı, niş) |
+| designjet_z6ps / z9ps | hp.com Z6/Z9 PostScript sayfasında YouTube yok; Pro serisi videosu farklı ürün hattı, konmadı |
+| designjet_sd_pro / hd_pro | Tarayıcılar; hp.com'da resmi ürün videosu yok |
+
+> Reddedilen bayi kanalları (kayıt): GDS/Graphic Design Supplies (`HX3rbwWkW50`), GOM Australia (`fNsE5HG7GCY`) — isimde/başlıkta HP geçse de resmi değil.
 
 > Ek not: `hRa2oRinXyc` seri videosu T850 + T870 + T950'yi birlikte anlatıyor; T870/T950 için de geçerli bir resmi seçenek. `hbLl7KoiEqA` (teaser) ve `Yj-cYh12vBs` (multi-size özellik) da aynı hp.com sayfasında yer alan resmi alternatifler.
