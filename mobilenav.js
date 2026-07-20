@@ -325,7 +325,7 @@
     background:rgba(255,255,255,.05);color:rgba(255,255,255,.55);font-family:inherit;font-size:13px;cursor:pointer;transition:border-color .2s,color .2s;}
   .cbk-trigger:hover{border-color:rgba(0,200,240,.4);color:#fff;}
   .cbk-trigger i{font-size:16px;color:#00c8f0;}
-  .cbk-trigger .kbd{margin-left:6px;font-size:11px;padding:2px 6px;border-radius:5px;background:rgba(255,255,255,.08);border:.5px solid rgba(255,255,255,.12);color:rgba(255,255,255,.5);letter-spacing:.5px;}
+  .cbk-trigger .kbd{margin-left:2px;font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.2px;}
   @media(min-width:1025px){ .cbk-trigger{display:inline-flex;} }
 
   .cbk-overlay{position:fixed;inset:0;z-index:2500;background:rgba(4,8,18,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
@@ -504,7 +504,7 @@
     trigger.className = "cbk-trigger";
     trigger.type = "button";
     trigger.setAttribute("aria-label", "Site içi arama");
-    trigger.innerHTML = '<i class="ti ti-search"></i><span class="kbd">' + (isMac ? "⌘K" : "Ctrl K") + "</span>";
+    trigger.innerHTML = '<i class="ti ti-search"></i><span class="kbd">Ara</span>';
     trigger.title = "Ara";
     var navLinks = nav.querySelector(".nav-links");
     if (navLinks) {
