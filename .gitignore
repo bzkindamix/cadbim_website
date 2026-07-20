@@ -2,3 +2,6 @@
 *.zip
 Thumbs.db
 
+# HP ham asset kütüphanesi (2.5GB, videolar >100MB) — repoya girmez; seçilen görseller assets/products/ köküne temiz adla kopyalanır
+assets/products/designjet/
+

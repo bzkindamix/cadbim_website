@@ -77,5 +77,9 @@
 - **Şablon:** hero altına yeni bölüm — beyaz kartta ürün görseli (`width:100%`/`height:auto`, oran korunur) + "Broşür İndir (PDF)" butonu (`btn-p`); Product JSON-LD `image` alanı ürün görseline güncellenir. Görseller `assets/products/`, PDF'ler `assets/brochures/`.
 - **Kapsam (13 birebir eşleşen):** t1600, t2600, t830, t850, t950, t1700, xl3600, xl3800, z6pro, z9pro, z6ps, z9ps, tarayıcılar.
 - **Hariç (rapor):** t200/t600 (canlıda ad farkı: T230/T630), t870/z6810/smart_tank (kaynak yok).
-- **Tamamlanan:** ✅ **T1600** (`hp-designjet-t1600.png` HP DAM + `designjet-t1600.pdf` cadbim). Doğrulandı (localhost).
-- **Durum:** 🔄 Devam ediyor — kalan 12 model.
+- **Kesinleşen kaynak kararları:** Görsel = HP (Onur'un indirdiği HP asset kitleri, `assets/products/designjet/` — gitignore'da); PDF = cadbim.com.tr broşürleri; **Video = CADBİM YouTube kanalı** (iframe embed, repoya video konmaz — mp4'ler 2.5GB, bazıları >100MB); Tarayıcı = `tarayıcılar` sayfası **sd_pro + hd_pro** iki ayrı sayfaya bölünecek (hub yok).
+- **Görsel hazırlığı:** 13 model görseli seçildi, 1400px'e küçültüldü, şeffaf PNG'ler beyaz zemine düzleştirilip JPG yapıldı (47–236KB). `assets/products/hp-designjet-*.jpg` + `hp-scanner-{sd,hd}-pro.jpg`.
+- **Tamamlanan:** ✅ T1600, ✅ T2600 (görsel + broşür, localhost doğrulandı).
+- **Kalan:** t1700, t830, xl3600, z6pro, z9pro, z6ps(←Z6 44), z9ps(←Z9 44/64), t200(←T230), t600(←T630) sayfaları + 2 tarayıcı sayfası + CADBİM YouTube videoları.
+- **Not:** z6pro görselinde çıktı "SALE" posteri — ileride değiştirilebilir. Atlananlar: t730 (EOL), t850, t950, t870, z6810, xl3800, smart_tank (kaynak yok).
+- **Durum:** 🔄 Devam ediyor.
