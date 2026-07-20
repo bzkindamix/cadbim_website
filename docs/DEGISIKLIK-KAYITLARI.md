@@ -68,3 +68,14 @@
   - `index.html` footer: "Autodesk ve Adobe Gold İş Ortağı." → tam portföy: "Autodesk Gold Partner ve Adobe Gold Reseller Partner; HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağı."
 - **Doğrulama:** localhost:8420 — footer metni tam portföyü gösteriyor.
 - **Durum:** ✅ Uygulandı ve doğrulandı.
+
+### DK-2026-07-20-07 — DesignJet sayfalarına ürün görseli + broşür (BATCH — devam ediyor)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Amaç:** Sitedeki DesignJet sayfalarında ürün görseli yoktu; ekleniyor.
+- **Kaynak kararları (Onur):** Ürün görselleri **HP resmi DAM CDN**'inden (temiz, şeffaf-zemin PNG); broşür PDF'leri **cadbim.com.tr**'den; video HP'den (varsa YouTube gömme). "En iyi çaba batch" — kalite sonra birlikte ayıklanacak.
+- **Şablon:** hero altına yeni bölüm — beyaz kartta ürün görseli (`width:100%`/`height:auto`, oran korunur) + "Broşür İndir (PDF)" butonu (`btn-p`); Product JSON-LD `image` alanı ürün görseline güncellenir. Görseller `assets/products/`, PDF'ler `assets/brochures/`.
+- **Kapsam (13 birebir eşleşen):** t1600, t2600, t830, t850, t950, t1700, xl3600, xl3800, z6pro, z9pro, z6ps, z9ps, tarayıcılar.
+- **Hariç (rapor):** t200/t600 (canlıda ad farkı: T230/T630), t870/z6810/smart_tank (kaynak yok).
+- **Tamamlanan:** ✅ **T1600** (`hp-designjet-t1600.png` HP DAM + `designjet-t1600.pdf` cadbim). Doğrulandı (localhost).
+- **Durum:** 🔄 Devam ediyor — kalan 12 model.
