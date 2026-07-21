@@ -131,6 +131,24 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 .xp-body b{display:block;font-size:13px;font-weight:600;color:var(--w);font-family:var(--fd);line-height:1.3;}
 .xp-body small{display:block;font-size:11.5px;color:var(--w50);margin-top:2px;line-height:1.4;}
 .xp-arrow{margin-left:auto;color:var(--w30);font-size:15px;flex-shrink:0;transition:color .2s;}
+/* filtreli ürün kataloğu */
+.pfilter{position:sticky;top:68px;z-index:40;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 0;background:rgba(6,12,26,0.9);backdrop-filter:blur(14px);}
+.fchip{padding:8px 16px;border-radius:22px;border:.5px solid var(--w10);background:transparent;color:var(--w50);font-family:var(--fb);font-size:12.5px;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.fchip:hover{border-color:var(--w30);color:var(--w80);}
+.fchip.active{background:var(--cyan);border-color:var(--cyan);color:var(--navy);font-weight:700;}
+.psearch{margin-left:auto;display:flex;align-items:center;gap:7px;border:.5px solid var(--w10);border-radius:22px;padding:7px 14px;background:rgba(255,255,255,0.03);}
+.psearch i{font-size:14px;color:var(--w30);}
+.psearch input{background:transparent;border:none;outline:none;color:var(--w);font-family:var(--fb);font-size:13px;width:150px;}
+.psearch input::placeholder{color:var(--w30);}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.pcard{display:flex;align-items:center;gap:14px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rm);padding:16px 18px;text-decoration:none;transition:border-color .18s,transform .15s,background .18s;}
+a.pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgba(0,200,240,.04);}
+.pico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.pcard h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin:0 0 3px;}
+.pcard p{font-size:12px;color:var(--w50);line-height:1.45;margin:0;}
+.pcard .parr{margin-left:auto;font-size:15px;color:var(--w30);transition:color .2s,transform .2s;flex-shrink:0;}
+a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
+@media(max-width:600px){.pfilter{position:static;gap:6px;}.psearch{margin-left:0;width:100%;}.psearch input{flex:1;width:auto;}}
 </style>
 
 <!-- Google Analytics -->
@@ -429,6 +447,71 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
     </a>
   </div>
 </section>
+
+<section class="section" id="urun-katalogu">
+  <div class="sh">
+    <div class="slabel">Ürün Kataloğu</div>
+    <div class="stitle">Tüm HP Ürünleri</div>
+    <p class="ssub">22 ürünün tamamı — plotter modelleri, tarayıcılar, iş istasyonları ve yazılım. Seri filtreleriyle süzün veya model adıyla arayın.</p>
+  </div>
+  <div class="pfilter" id="pfilter">
+    <button class="fchip active" data-f="all">Tümü</button>
+    <button class="fchip" data-f="t">DesignJet T</button>
+    <button class="fchip" data-f="xl">DesignJet XL</button>
+    <button class="fchip" data-f="z">DesignJet Z</button>
+    <button class="fchip" data-f="tarayici">Tarayıcı &amp; Tank</button>
+    <button class="fchip" data-f="ws">İş İstasyonları</button>
+    <button class="fchip" data-f="yazilim">Yazılım</button>
+    <div class="psearch"><i class="ti ti-search"></i><input id="psearch" type="text" placeholder="Ürün ara..." aria-label="Ürün ara"></div>
+  </div>
+  <div class="pgrid" id="pgrid" style="margin-top:26px;">
+      <a href="cadbim_designjet_t200.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T200 Serisi (T230/T250)</h3><p>HP DesignJet T230 ve T250: ev ve küçük ofisler için 610 mm (24&quot;)...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_t600.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T600 Serisi (T630/T650)</h3><p>HP DesignJet T630 ve T650: küçük ofisler için 24&quot; ve 36&quot; pl...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_t830.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T830 MFP</h3><p>HP DesignJet T830: orta ölçekli işletmeler için 610 mm (24&quot;) çok...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_t850.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T850</h3><p>HP DesignJet T850: KOBİ ölçekli AEC firmaları için 914 mm (36&quot;)...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_t870.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T870</h3><p>HP DesignJet T870: AEC firmaları, eğitim kurumları ve perakende için...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_t950.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T950</h3><p>HP DesignJet T950: yoğun AEC ekipleri için 914 mm (36&quot;) plotter/MFP</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_t1600.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T1600</h3><p>HP DesignJet T1600: çalışma grupları için 914 mm (36&quot;) plotter</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_t1700.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T1700</h3><p>HP DesignJet T1700: CAD ve GIS için 1118 mm (44&quot;) plotter</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_t2600.html" class="pcard" data-cat="t"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet T2600 MFP</h3><p>HP DesignJet T2600: departmanlar için 914 mm (36&quot;) çok fonksiyon...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_xl3600.html" class="pcard" data-cat="xl"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet XL 3600 MFP</h3><p>HP DesignJet XL 3600: zorlu ortamlar için kompakt ve dayanıklı 36&quo...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_xl3800.html" class="pcard" data-cat="xl"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet XL 3800 MFP</h3><p>HP DesignJet XL 3800: dakikada 6 A1 renkli baskı ile sınıfının en hız...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_z6pro.html" class="pcard" data-cat="z"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet Z6 Pro</h3><p>HP DesignJet Z6 Pro: 1626 mm (64&quot;) grafik üretim yazıcısı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_z6ps.html" class="pcard" data-cat="z"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet Z6 PostScript</h3><p>HP DesignJet Z6 PostScript: 24&quot; ve 44&quot; profesyonel grafik y...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_z6810.html" class="pcard" data-cat="z"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet Z6810</h3><p>HP DesignJet Z6810: baskı servisleri için 1067 mm (42&quot;) üretim s...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_z9pro.html" class="pcard" data-cat="z"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet Z9+ Pro</h3><p>HP DesignJet Z9+ Pro: 1626 mm (64&quot;) premium fotoğraf ve fine art...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_z9ps.html" class="pcard" data-cat="z"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet Z9+ PostScript</h3><p>HP DesignJet Z9+ PostScript: 24&quot; ve 44&quot; profesyonel fotoğra...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_hd_pro.html" class="pcard" data-cat="tarayici"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet HD Pro 2 42" Tarayıcı</h3><p>HP DesignJet HD Pro 2 (42</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_sd_pro.html" class="pcard" data-cat="tarayici"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet SD Pro 2 44" Tarayıcı</h3><p>HP DesignJet SD Pro 2 (44</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_designjet_smart_tank.html" class="pcard" data-cat="tarayici"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>DesignJet Smart Tank (T858/T908)</h3><p>HP DesignJet Smart Tank T858 ve T908: kopyalama merkezleri için 914 m...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_hp_z_workstation.html" class="pcard" data-cat="ws"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>Z Masaüstü İş İstasyonları</h3><p>HP Z2, Z4, Z6 ve Z8 Fury iş istasyonları: CAD, BIM, simülasyon ve GPU...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_hp_zbook.html" class="pcard" data-cat="ws"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>ZBook Mobil İş İstasyonları</h3><p>HP ZBook Firefly, Power, Studio ve Fury: sahada ve yolda CAD, BIM ve...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_hp_build_workspace.html" class="pcard" data-cat="yazilim"><div class="pico" style="background:rgba(56,189,248,0.14);color:#38bdf8;"><img src="assets/logos/hp-logo.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>Build Workspace</h3><p>HP Build Workspace — DesignJet T2600 Plus ile şantiye-ofis arasında d...</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+  <p id="pempty" style="display:none;color:var(--w50);font-size:14px;margin-top:24px;">Aramanızla eşleşen ürün bulunamadı.</p>
+</section>
+<script>
+(function(){
+  var chips=document.querySelectorAll('#pfilter .fchip');
+  var cards=[].slice.call(document.querySelectorAll('#pgrid .pcard'));
+  var f='all', q='';
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(f==='all'||c.getAttribute('data-cat')===f)&&(!q||c.textContent.toLowerCase().indexOf(q)>-1);
+      c.style.display=ok?'':'none'; if(ok)n++;
+    });
+    document.getElementById('pempty').style.display=n?'none':'';
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('active');});
+    ch.classList.add('active'); f=ch.getAttribute('data-f'); apply();
+  });});
+  document.getElementById('psearch').addEventListener('input',function(e){
+    q=e.target.value.trim().toLowerCase(); apply();
+  });
+})();
+</script>
 
 <!-- SERVİS -->
 <section class="section section-alt" id="servis">

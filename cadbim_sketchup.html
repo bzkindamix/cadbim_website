@@ -119,6 +119,24 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 /* R2 esboyut */
 .cards{grid-auto-rows:1fr;}.cards>a{height:100%;display:block;}.cards>a>.card{height:100%;}
 .plogo-ph{width:44px;height:44px;border:1.5px dashed rgba(0,200,240,.5);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:8px;letter-spacing:1px;color:rgba(0,200,240,.8);flex-shrink:0;font-family:var(--fd);font-weight:700;}
+/* filtreli ürün kataloğu */
+.pfilter{position:sticky;top:68px;z-index:40;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 0;background:rgba(6,12,26,0.9);backdrop-filter:blur(14px);}
+.fchip{padding:8px 16px;border-radius:22px;border:.5px solid var(--w10);background:transparent;color:var(--w50);font-family:var(--fb);font-size:12.5px;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.fchip:hover{border-color:var(--w30);color:var(--w80);}
+.fchip.active{background:var(--cyan);border-color:var(--cyan);color:var(--navy);font-weight:700;}
+.psearch{margin-left:auto;display:flex;align-items:center;gap:7px;border:.5px solid var(--w10);border-radius:22px;padding:7px 14px;background:rgba(255,255,255,0.03);}
+.psearch i{font-size:14px;color:var(--w30);}
+.psearch input{background:transparent;border:none;outline:none;color:var(--w);font-family:var(--fb);font-size:13px;width:150px;}
+.psearch input::placeholder{color:var(--w30);}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.pcard{display:flex;align-items:center;gap:14px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rm);padding:16px 18px;text-decoration:none;transition:border-color .18s,transform .15s,background .18s;}
+a.pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgba(0,200,240,.04);}
+.pico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.pcard h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin:0 0 3px;}
+.pcard p{font-size:12px;color:var(--w50);line-height:1.45;margin:0;}
+.pcard .parr{margin-left:auto;font-size:15px;color:var(--w30);transition:color .2s,transform .2s;flex-shrink:0;}
+a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
+@media(max-width:600px){.pfilter{position:static;gap:6px;}.psearch{margin-left:0;width:100%;}.psearch input{flex:1;width:auto;}}
 </style>
 
 <!-- Google Analytics -->
@@ -391,31 +409,51 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 </section>
 
 <!-- SKETCHUP PRO ÜRÜN AİLESİ -->
-<section class="section">
-  <div class="sh"><div class="slabel">Ürün Ailesi</div><div class="stitle">SketchUp Pro Ürünleri</div><div class="ssub">Sektöre özel iş akışları için SketchUp Pro sürümleri — temel modellemeden saha/altyapı ve ileri iş akışlarına.</div></div>
-  <div class="grid g4">
-    <div class="card">
-      <div style="margin-bottom:14px;"><img src="assets/logos/sketchup.svg" alt="" style="height:26px;width:auto;object-fit:contain;"></div>
-      <h3>SketchUp Pro</h3>
-      <p>Masaüstü + web + iPad'de profesyonel 3B modelleme, LayOut ile 2B dokümantasyon ve sınırsız bulut depolama.</p>
-    </div>
-    <div class="card">
-      <div style="margin-bottom:14px;"><i class="ti ti-scan" style="font-size:26px;color:#e11d48;"></i></div>
-      <h3>SketchUp Pro Scan</h3>
-      <p>Nokta bulutu (point cloud) verisini doğrudan SketchUp'a alıp tarama üzerinden modelleme — scan-to-model.</p>
-    </div>
-    <div class="card">
-      <div style="margin-bottom:14px;"><i class="ti ti-bulldozer" style="font-size:26px;color:#e11d48;"></i></div>
-      <h3>SketchUp Pro Civil Contractor</h3>
-      <p>Saha ve altyapı yüklenicileri için kazı/dolgu, kot ve metraj odaklı sivil iş akışları.</p>
-    </div>
-    <div class="card">
-      <div style="margin-bottom:14px;"><i class="ti ti-stack-2" style="font-size:26px;color:#e11d48;"></i></div>
-      <h3>SketchUp Pro Advanced Workflows</h3>
-      <p>İleri düzey ekipler için genişletilmiş araç ve otomasyon seti; daha hızlı ve tutarlı proje üretimi.</p>
-    </div>
+<section class="section" id="urun-katalogu">
+  <div class="sh">
+    <div class="slabel">Ürün Kataloğu</div>
+    <div class="stitle">Tüm SketchUp Ürünleri</div>
+    <p class="ssub">Pro ailesi ve platform ürünlerinin tamamı (7). Filtreleyin veya isimle arayın.</p>
   </div>
+  <div class="pfilter" id="pfilter">
+    <button class="fchip active" data-f="all">Tümü</button>
+    <button class="fchip" data-f="pro">Pro Ailesi</button>
+    <button class="fchip" data-f="platform">Platform &amp; Paketler</button>
+    <div class="psearch"><i class="ti ti-search"></i><input id="psearch" type="text" placeholder="Ürün ara..." aria-label="Ürün ara"></div>
+  </div>
+  <div class="pgrid" id="pgrid" style="margin-top:26px;">
+      <div class="pcard" data-cat="pro" style="cursor:default;"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><img src="assets/logos/products/sketchup-icon.svg" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>SketchUp Pro</h3><p>Masaüstü 3B modelleme — LayOut ve Style Builder dahil</p></div></div>
+      <div class="pcard" data-cat="pro" style="cursor:default;"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><i class="ti ti-scan"></i></div><div><h3>SketchUp Pro Scan</h3><p>Point cloud verisiyle modelleme — Scan Essentials</p></div></div>
+      <div class="pcard" data-cat="pro" style="cursor:default;"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><i class="ti ti-bulldozer"></i></div><div><h3>SketchUp Pro Civil Contractor</h3><p>Saha ve hafriyat iş akışları için araç seti</p></div></div>
+      <div class="pcard" data-cat="pro" style="cursor:default;"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><i class="ti ti-stack-2"></i></div><div><h3>SketchUp Pro Advanced Workflows</h3><p>Gelişmiş iş akışları — tarama + saha araçları</p></div></div>
+      <a href="cadbim_sketchup_go.html" class="pcard" data-cat="platform"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><img src="assets/logos/products/sketchup-icon.svg" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>SketchUp Go</h3><p>Web & iPad üzerinde modelleme</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_sketchup_studio.html" class="pcard" data-cat="platform"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><img src="assets/logos/products/sketchup-icon.svg" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>SketchUp Studio</h3><p>Pro + V-Ray + Scan Essentials tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_trimble_connect.html" class="pcard" data-cat="platform"><div class="pico" style="background:rgba(217,70,239,0.12);color:#d946ef;"><img src="assets/logos/products/trimble-icon.png" alt="" style="width:26px;height:26px;object-fit:contain;"></div><div><h3>Trimble Connect</h3><p>Bulut tabanlı model işbirliği</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+  <p id="pempty" style="display:none;color:var(--w50);font-size:14px;margin-top:24px;">Aramanızla eşleşen ürün bulunamadı.</p>
 </section>
+<script>
+(function(){
+  var chips=document.querySelectorAll('#pfilter .fchip');
+  var cards=[].slice.call(document.querySelectorAll('#pgrid .pcard'));
+  var f='all', q='';
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(f==='all'||c.getAttribute('data-cat')===f)&&(!q||c.textContent.toLowerCase().indexOf(q)>-1);
+      c.style.display=ok?'':'none'; if(ok)n++;
+    });
+    document.getElementById('pempty').style.display=n?'none':'';
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('active');});
+    ch.classList.add('active'); f=ch.getAttribute('data-f'); apply();
+  });});
+  document.getElementById('psearch').addEventListener('input',function(e){
+    q=e.target.value.trim().toLowerCase(); apply();
+  });
+})();
+</script>
 <!-- ENTEGRASYONLAR -->
 <section class="section section-alt">
   <div class="sh">

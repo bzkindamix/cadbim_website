@@ -8,6 +8,21 @@
 
 ## 2026-07-21
 
+### DK-2026-07-21-25 — Filtreli ürün kataloğu 5 marka sayfasına daha yayıldı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** Autodesk'te kurulan filtreli katalog deseni (DK-23: fchip kategori filtreleri + isim arama + pgrid/pcard + boş durum) uygun tüm markalara uygulandı:
+  - **Adobe (13):** "Creative Cloud Uygulamaları" bölümü katalogla değişti — Paket & Doküman 2 / Grafik & Fotoğraf 4 / Video & Ses 3 / 3D & AI 2 / İçerik & Stok 2.
+  - **HP (22):** Designjet Serisi bölümünden sonra YENİ katalog bölümü — tüm model sayfaları tek listede: DesignJet T 9 / XL 2 / Z 5 / Tarayıcı & Tank 3 / İş İstasyonları 2 / Yazılım 1. Model adları ve açıklamaları her modelin kendi sayfasının title/meta'sından otomatik çekildi.
+  - **Chaos (8):** "Chaos Ekosistemi" bölümü katalogla değişti — Render 2 / Gerçek Zamanlı 2 / Simülasyon & Animasyon 2 / AI & Varlıklar 2 (Anima ve Cosmos eklendi).
+  - **UltiMaker (9):** "Yazıcı Modelleri" bölümü katalogla değişti — 3D Yazıcılar 7 (S8-S3, Factor 4, Method XL, Sketch Sprint) / Yazılım 2 (Cura, Digital Factory).
+  - **SketchUp (7):** "SketchUp Pro Ürünleri" bölümü katalogla değişti — Pro Ailesi 4 / Platform & Paketler 3.
+- **Kural:** Kendi sayfası olmayan ya da bulunulan sayfaya işaret eden ürünler ok'suz, tıklanmaz kart olarak listelendi (ör. V-Ray/Enscape/Veras, S-serisi modeller, Pro varyantları). **Lumion (4) ve Microsoft (3)** bilinçli kapsam dışı: tüm ürünleri zaten tek bakışta görünüyor, filtre değer katmıyor.
+- **Bonus:** cadbim_urunler.html'de Digital Factory kartındaki yanlış ikon (Autodesk logosu) → ultimaker-icon düzeltildi.
+- **Doğrulama:** localhost 1280/375 — 5 sayfada kart sayıları ve tüm chip filtreleri doğru (59 kart toplam), 0 kırık ikon, arama çalışıyor (hp "t850"→1), mobilde tek sütun/statik filtre/taşma yok, div dengeleri 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-21-24 — Site geneli logo-metin dikey hizalama denetimi ve düzeltmesi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
