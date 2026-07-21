@@ -54,8 +54,10 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .hero h1 em{font-style:normal;color:var(--cyan);}
 .hero-sub{font-size:16px;color:var(--w50);max-width:640px;line-height:1.75;margin-bottom:32px;}
 .hero-features{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
-.hf{display:flex;align-items:center;gap:6px;font-size:13px;padding:7px 14px;border-radius:20px;background:var(--w06);border:.5px solid var(--w10);color:var(--w50);}
-.hf i{font-size:14px;color:var(--cyan);}
+.hf{flex:1 1 170px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;font-weight:600;font-family:var(--fd);padding:12px 14px;border-radius:10px;background:rgba(255,255,255,0.03);border:.5px solid var(--w10);color:var(--w80);white-space:nowrap;transition:border-color .2s,background .2s,color .2s;}
+.hf i{font-size:15px;color:var(--cyan);}
+.hf:hover{border-color:var(--cbor);background:rgba(0,200,240,0.06);color:var(--w);}
+@media(max-width:600px){.hf{flex-basis:130px;padding:10px 8px;font-size:12px;}}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
 .btn-p{background:var(--cyan);color:var(--navy);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;}
 .btn-p:hover{opacity:.88;transform:translateY(-1px);}
@@ -126,10 +128,34 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 .hero-inner{max-width:1240px;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;}
 .hero-copy{min-width:0;}
 .hero-badge{display:flex;align-items:center;justify-content:center;}
-.hero-badge img{width:clamp(200px,22vw,290px);max-width:100%;height:auto;object-fit:contain;}
+.hero-badge img{width:clamp(150px,15vw,200px);max-width:100%;height:auto;object-fit:contain;}
 #one-cikan-urunler>div>a{height:100%;}
 #one-cikan-urunler .card{height:100%;}
-.plogo-ph{width:44px;height:44px;border:1.5px dashed rgba(0,200,240,.5);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:8px;letter-spacing:1px;color:rgba(0,200,240,.8);flex-shrink:0;font-family:var(--fd);font-weight:700;}
+/* koleksiyonlar yan yana */
+.colgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:40px;}
+.colgrid .card{display:flex;flex-direction:column;}
+.col-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.col-head img{width:40px;height:40px;border-radius:9px;flex-shrink:0;}
+.col-head h3{margin:0;font-size:16px;}
+.col-head small{display:block;font-size:11px;color:var(--w30);margin-top:2px;letter-spacing:.3px;}
+.colgrid .tags{margin-top:auto;padding-top:14px;}
+.col-more{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--cyan);text-decoration:none;margin-top:16px;font-weight:600;}
+.col-more:hover{text-decoration:underline;}
+/* ürün kartı logosu */
+.pl{width:44px;height:44px;border-radius:10px;flex-shrink:0;object-fit:contain;}
+.pcard-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.pcard-head h3{margin:0;}
+/* birlikte tercih edilenler */
+.xgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px;}
+.xp{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--navy3);border:.5px solid var(--w10);border-radius:12px;text-decoration:none;transition:border-color .2s,transform .15s;}
+.xp:hover{border-color:var(--cbor);transform:translateY(-1px);}
+.xp:hover .xp-arrow{color:var(--cyan);}
+.xp-logo{width:42px;height:42px;border-radius:9px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.xp-logo img{max-width:26px;max-height:26px;object-fit:contain;}
+.xp-body{min-width:0;}
+.xp-body b{display:block;font-size:13px;font-weight:600;color:var(--w);font-family:var(--fd);line-height:1.3;}
+.xp-body small{display:block;font-size:11.5px;color:var(--w50);margin-top:2px;line-height:1.4;}
+.xp-arrow{margin-left:auto;color:var(--w30);font-size:15px;flex-shrink:0;transition:color .2s;}
 @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:2rem;}}
 </style>
 
@@ -336,10 +362,13 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
     <div class="stitle">Autodesk Industry Collections</div>
     <p class="ssub">Sektörünüze özel araçlar tek lisansta — tekil aboneliklerden çok daha ekonomik ve entegre.</p>
   </div>
-  <div class="card">
-      <div style="margin-bottom:8px;"><img src="assets/img/emb-94bf54d479.png" alt="" style="width:32px;height:32px;border-radius:6px;flex-shrink:0;"></div>
-      <h3><a href="cadbim_aec_collection.html" style="color:inherit;text-decoration:none;">AEC Collection</a></h3>
-      <p class="desc">Architecture, Engineering & Construction — Revit, AutoCAD, Civil 3D, Navisworks, InfraWorks, Forma ve daha 11 araç tek pakette. Karmaşık yapı ve altyapı projelerine yönelik genişletilmiş iş akışları.</p>
+  <div class="colgrid">
+    <div class="card hi">
+      <div class="col-head">
+        <img src="assets/logos/products/aec-collection.svg" alt="AEC Collection">
+        <div><h3><a href="cadbim_aec_collection.html" style="color:inherit;text-decoration:none;">AEC Collection</a></h3><small>Architecture, Engineering &amp; Construction</small></div>
+      </div>
+      <p class="desc">Revit, AutoCAD, Civil 3D, Navisworks, InfraWorks, Forma ve daha 11 araç tek pakette. Karmaşık yapı ve altyapı projelerine yönelik genişletilmiş iş akışları.</p>
       <div class="tags">
         <a class="tag" href="cadbim_revit.html" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">Revit</a>
         <a class="tag" href="cadbim_autocad.html" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">AutoCAD</a>
@@ -353,11 +382,14 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
         <a class="tag" href="cadbim_advance_steel.html" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">Advance Steel</a>
         <a class="tag" href="cadbim_robot_structural.html" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">Robot Structural Analysis</a>
       </div>
+      <a class="col-more" href="cadbim_aec_collection.html">Koleksiyonu incele <i class="ti ti-arrow-right" style="font-size:13px;"></i></a>
     </div>
     <div class="card hi">
-      <div style="margin-bottom:8px;"><img src="assets/img/emb-ed245277d4.png" alt="" style="width:32px;height:32px;border-radius:6px;flex-shrink:0;"></div>
-      <h3><a href="cadbim_pdm_collection.html" style="color:inherit;text-decoration:none;">PD&M Collection</a></h3>
-      <p class="desc">Product Design & Manufacturing — Inventor, AutoCAD, Fusion, Vault, HSMWorks ve daha 9 araç. Mühendislik ürün geliştirme ve imalat için entegre iş akışları.</p>
+      <div class="col-head">
+        <img src="assets/logos/products/pdm-collection.svg" alt="PD&amp;M Collection">
+        <div><h3><a href="cadbim_pdm_collection.html" style="color:inherit;text-decoration:none;">PD&M Collection</a></h3><small>Product Design &amp; Manufacturing</small></div>
+      </div>
+      <p class="desc">Inventor, AutoCAD, Fusion, Vault, HSMWorks ve daha 9 araç. Mühendislik ürün geliştirme ve imalat için entegre iş akışları.</p>
       <div class="tags">
         <a class="tag" href="cadbim_inventor.html" style="background:rgba(245,158,11,0.1);color:#fcd34d;border-color:rgba(245,158,11,0.2);text-decoration:none;display:inline-block;">Inventor</a>
         <a class="tag" href="cadbim_fusion.html" style="background:rgba(245,158,11,0.1);color:#fcd34d;border-color:rgba(245,158,11,0.2);text-decoration:none;display:inline-block;">Fusion</a>
@@ -368,11 +400,14 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
         <a class="tag" href="cadbim_3dsmax.html" style="background:rgba(245,158,11,0.1);color:#fcd34d;border-color:rgba(245,158,11,0.2);text-decoration:none;display:inline-block;">3ds Max</a>
         <a class="tag" href="cadbim_fusion_manage.html" style="background:rgba(245,158,11,0.1);color:#fcd34d;border-color:rgba(245,158,11,0.2);text-decoration:none;display:inline-block;">Fusion Manage</a>
       </div>
+      <a class="col-more" href="cadbim_pdm_collection.html">Koleksiyonu incele <i class="ti ti-arrow-right" style="font-size:13px;"></i></a>
     </div>
     <div class="card hi">
-      <div style="margin-bottom:8px;"><img src="assets/img/emb-edd15b0bdb.png" alt="" style="width:32px;height:32px;border-radius:6px;flex-shrink:0;"></div>
-      <h3><a href="cadbim_me_collection.html" style="color:inherit;text-decoration:none;">M&E Collection</a></h3>
-      <p class="desc">Media & Entertainment — 3ds Max, Maya, Arnold, Flame, MotionBuilder. Film, VFX, oyun ve dijital içerik üretimi için kurumsal standart araçlar.</p>
+      <div class="col-head">
+        <img src="assets/logos/products/me-collection.svg" alt="M&amp;E Collection">
+        <div><h3><a href="cadbim_me_collection.html" style="color:inherit;text-decoration:none;">M&E Collection</a></h3><small>Media &amp; Entertainment</small></div>
+      </div>
+      <p class="desc">3ds Max, Maya, Arnold, Flame, MotionBuilder. Film, VFX, oyun ve dijital içerik üretimi için kurumsal standart araçlar.</p>
       <div class="tags">
         <a class="tag" href="cadbim_3dsmax.html" style="background:rgba(168,85,247,0.1);color:#e9d5ff;border-color:rgba(192,132,252,0.2);text-decoration:none;display:inline-block;">3ds Max</a>
         <a class="tag" href="cadbim_maya.html" style="background:rgba(168,85,247,0.1);color:#e9d5ff;border-color:rgba(192,132,252,0.2);text-decoration:none;display:inline-block;">Maya</a>
@@ -381,6 +416,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
         <a class="tag" href="cadbim_mudbox.html" style="background:rgba(168,85,247,0.1);color:#e9d5ff;border-color:rgba(192,132,252,0.2);text-decoration:none;display:inline-block;">Mudbox</a>
         <a class="tag" href="cadbim_flame.html" style="background:rgba(168,85,247,0.1);color:#e9d5ff;border-color:rgba(192,132,252,0.2);text-decoration:none;display:inline-block;">Flame</a>
       </div>
+      <a class="col-more" href="cadbim_me_collection.html">Koleksiyonu incele <i class="ti ti-arrow-right" style="font-size:13px;"></i></a>
     </div>
   </div>
 </section>
@@ -397,7 +433,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
     <!-- AutoCAD -->
     <a href="cadbim_autocad.html" style="text-decoration:none;display:block;color:inherit;"><div class="card hi" style="border-color:rgba(239,68,68,0.25);">
       <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;">
-        <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
+        <img class="pl" src="assets/logos/products/autocad.svg" alt="">
         <div>
           <h3 style="margin-bottom:4px;">AutoCAD</h3>
           <div style="font-size:12px;color:var(--w30);">2D & 3D teknik çizim yazılımı</div>
@@ -415,7 +451,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
     <!-- Revit -->
     <a href="cadbim_revit.html" style="text-decoration:none;display:block;color:inherit;"><div class="card hi" style="border-color:rgba(99,102,241,0.25);">
       <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;">
-        <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
+        <img class="pl" src="assets/logos/products/revit.svg" alt="">
         <div>
           <h3 style="margin-bottom:4px;">Autodesk Revit</h3>
           <div style="font-size:12px;color:var(--w30);">BIM yazılımı — tasarla, yap, dönüştür</div>
@@ -433,7 +469,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
     <!-- Inventor -->
     <a href="cadbim_inventor.html" style="text-decoration:none;display:block;color:inherit;"><div class="card hi" style="border-color:rgba(245,158,11,0.25);">
       <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;">
-        <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
+        <img class="pl" src="assets/logos/products/inventor.svg" alt="">
         <div>
           <h3 style="margin-bottom:4px;">Autodesk Inventor</h3>
           <div style="font-size:12px;color:var(--w30);">3D makine tasarımı yazılımı</div>
@@ -451,7 +487,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
     <!-- Fusion -->
     <a href="cadbim_fusion.html" style="text-decoration:none;display:block;color:inherit;"><div class="card hi" style="border-color:rgba(14,165,233,0.25);">
       <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;">
-        <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
+        <img class="pl" src="assets/logos/products/fusion.svg" alt="">
         <div>
           <h3 style="margin-bottom:4px;">Autodesk Fusion</h3>
           <div style="font-size:12px;color:var(--w30);">CAD + CAM + CAE + PCB — tek platform</div>
@@ -468,70 +504,55 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 
     <!-- Civil 3D -->
     <a href="cadbim_civil3d.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <div style="margin-bottom:6px;"><img src="assets/img/emb-b147fb58ab.png" alt="" style="width:28px;height:28px;border-radius:5px;flex-shrink:0;"></div>
-    <h3>AutoCAD Civil 3D</h3>
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/civil3d.svg" alt=""><h3>AutoCAD Civil 3D</h3></div>
       <p class="desc">Karayolu, drenaj, kadastro ve altyapı projeleri için. Dinamik modeller ve otomatik çizim üretimi.</p>
     </div></a>
 
     <!-- Navisworks -->
-    <div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <div style="margin-bottom:6px;"><img src="assets/img/emb-9ab064fc9a.png" alt="" style="width:28px;height:28px;border-radius:5px;flex-shrink:0;"></div>
-    <h3>Navisworks</h3>
+    <a href="cadbim_navisworks.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/navisworks.svg" alt=""><h3>Navisworks</h3></div>
       <p class="desc">Proje koordinasyonu ve clash detection. Farklı disiplinlerin modellerini tek ortamda birleştirip çakışmaları tespit edin.</p>
-    </div>
+    </div></a>
 
     <!-- InfraWorks -->
-    <div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <div style="margin-bottom:6px;"><img src="assets/img/emb-a591649f73.png" alt="" style="width:28px;height:28px;border-radius:5px;flex-shrink:0;"></div>
-    <h3>InfraWorks</h3>
+    <a href="cadbim_infraworks.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/infraworks.svg" alt=""><h3>InfraWorks</h3></div>
       <p class="desc">Altyapı planlama ve konsept tasarım. GIS verileri ile 3D ortamda kentsel ölçek çalışmaları.</p>
-    </div>
+    </div></a>
 
     <!-- ACC -->
-    <div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <h3>Autodesk Forma</h3>
+    <a href="cadbim_construction_cloud.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/forma.svg" alt=""><h3>Autodesk Forma</h3></div>
       <p class="desc">Saha ve proje yönetimi. Forma Build, Forma Data Management — tüm paydaşları tek dijital platformda buluşturun.</p>
-    </div>
+    </div></a>
 
     <!-- Vault -->
     <a href="cadbim_vault_pdm.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <div style="margin-bottom:6px;"><img src="assets/img/emb-08883a2089.png" alt="" style="width:28px;height:28px;border-radius:5px;flex-shrink:0;"></div>
-    <h3>Vault PDM</h3>
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/vault-pdm.svg" alt=""><h3>Vault PDM</h3></div>
       <p class="desc">Ürün veri yönetimi. Tasarım dosyalarını merkezi olarak yönetin, versiyonlayın ve ekiple paylaşın.</p>
     </div></a>
 
     <!-- 3ds Max -->
     <a href="cadbim_3dsmax.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <div style="margin-bottom:6px;"><img src="assets/img/emb-1c02fbe124.png" alt="" style="width:28px;height:28px;border-radius:5px;flex-shrink:0;"></div>
-    <h3>Autodesk 3ds Max</h3>
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/3dsmax.svg" alt=""><h3>Autodesk 3ds Max</h3></div>
       <p class="desc">3D modelleme, animasyon ve render. Mimari görselleştirme, film prodüksiyonu ve oyun için.</p>
     </div></a>
 
     <!-- Maya -->
-    <div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <div style="margin-bottom:6px;"><img src="assets/img/emb-8d95649aff.png" alt="" style="width:28px;height:28px;border-radius:5px;flex-shrink:0;"></div>
-    <h3>Autodesk Maya</h3>
+    <a href="cadbim_maya.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/maya.svg" alt=""><h3>Autodesk Maya</h3></div>
       <p class="desc">Karakter animasyonu ve VFX. Film, dizi ve reklam prodüksiyonunda endüstri standardı araç.</p>
-    </div>
+    </div></a>
 
     <!-- Forma -->
     <a href="cadbim_forma.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <h3>Autodesk Forma</h3>
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/forma.svg" alt=""><h3>Forma Site Design</h3></div>
       <p class="desc">AI destekli erken aşama site analizi ve tasarım. Revit ile entegre bulut BIM iş akışı.</p>
     </div></a>
 
     <!-- Tandem -->
     <a href="cadbim_tandem.html" style="text-decoration:none;display:block;color:inherit;"><div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <h3>Autodesk Tandem</h3>
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/tandem.svg" alt=""><h3>Autodesk Tandem</h3></div>
       <p class="desc">Operasyonel dijital ikiz. As-built BIM verisini varlık yönetimi ve IoT ile işletmeye taşır.</p>
     </div></a>
 
@@ -584,12 +605,12 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   <div class="cross">
     <h3>Autodesk ile birlikte sıkça tercih edilenler</h3>
     <p class="desc">Autodesk iş akışınızı tamamlayan Cadbim ürünleri</p>
-    <div class="cross-pills">
-      <a href="cadbim_hp.html" class="cp"><img src="assets/logos/hp-blue.png" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);">HP Z Workstation — Autodesk onaylı donanım</a>
-      <a href="cadbim_hp.html" class="cp"><img src="assets/logos/hp-blue.png" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);">HP Designjet — teknik çizim çıktısı</a>
-      <a href="cadbim_chaos.html" class="cp"><img src="assets/logos/chaos.webp" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;">Chaos V-Ray / Enscape — render & görselleştirme</a>
-      <a href="cadbim_ultimaker.html" class="cp"><img src="assets/logos/ultimaker.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);">UltiMaker — fiziksel prototip üretimi</a>
-      <a href="cadbim_adobe.html" class="cp"><img src="assets/logos/adobe-logo.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;">Adobe CC — sunum & belge yönetimi</a>
+    <div class="xgrid">
+      <a href="cadbim_hp_z_workstation.html" class="xp"><span class="xp-logo"><img src="assets/logos/hp-logo.png" alt="HP"></span><span class="xp-body"><b>HP Z Workstation</b><small>Autodesk onaylı donanım</small></span><i class="ti ti-arrow-up-right xp-arrow"></i></a>
+      <a href="cadbim_designjet.html" class="xp"><span class="xp-logo"><img src="assets/logos/hp-logo.png" alt="HP"></span><span class="xp-body"><b>HP DesignJet</b><small>Teknik çizim çıktısı</small></span><i class="ti ti-arrow-up-right xp-arrow"></i></a>
+      <a href="cadbim_chaos.html" class="xp"><span class="xp-logo"><img src="assets/logos/chaos.webp" alt="Chaos"></span><span class="xp-body"><b>Chaos V-Ray / Enscape</b><small>Render &amp; görselleştirme</small></span><i class="ti ti-arrow-up-right xp-arrow"></i></a>
+      <a href="cadbim_ultimaker.html" class="xp"><span class="xp-logo"><img src="assets/logos/products/ultimaker-icon.webp" alt="UltiMaker"></span><span class="xp-body"><b>UltiMaker</b><small>Fiziksel prototip üretimi</small></span><i class="ti ti-arrow-up-right xp-arrow"></i></a>
+      <a href="cadbim_adobe.html" class="xp"><span class="xp-logo"><img src="assets/logos/products/adobe.png" alt="Adobe"></span><span class="xp-body"><b>Adobe Creative Cloud</b><small>Sunum &amp; belge yönetimi</small></span><i class="ti ti-arrow-up-right xp-arrow"></i></a>
     </div>
   </div>
 </section>

@@ -116,7 +116,21 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 /* R2 esboyut */
 .cards{grid-auto-rows:1fr;}.cards>a{height:100%;display:block;}.cards>a>.card{height:100%;}
-.plogo-ph{width:44px;height:44px;border:1.5px dashed rgba(0,200,240,.5);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:8px;letter-spacing:1px;color:rgba(0,200,240,.8);flex-shrink:0;font-family:var(--fd);font-weight:700;}
+/* R3 marka sayfası kalite iyileştirmeleri */
+@media(max-width:600px){.hf{flex-basis:130px;padding:10px 8px;font-size:12px;}}
+.pl{width:44px;height:44px;border-radius:10px;flex-shrink:0;object-fit:contain;}
+.pcard-head{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.pcard-head h3{margin:0;}
+.xgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px;}
+.xp{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--navy3);border:.5px solid var(--w10);border-radius:12px;text-decoration:none;transition:border-color .2s,transform .15s;}
+.xp:hover{border-color:var(--cbor);transform:translateY(-1px);}
+.xp:hover .xp-arrow{color:var(--cyan);}
+.xp-logo{width:42px;height:42px;border-radius:9px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.xp-logo img{max-width:26px;max-height:26px;object-fit:contain;}
+.xp-body{min-width:0;}
+.xp-body b{display:block;font-size:13px;font-weight:600;color:var(--w);font-family:var(--fd);line-height:1.3;}
+.xp-body small{display:block;font-size:11.5px;color:var(--w50);margin-top:2px;line-height:1.4;}
+.xp-arrow{margin-left:auto;color:var(--w30);font-size:15px;flex-shrink:0;transition:color .2s;}
 </style>
 
 <!-- Google Analytics -->
@@ -329,8 +343,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
   <div class="grid g2">
     <div class="card hi">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <h3>Microsoft 365</h3>
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/microsoft.svg" alt=""><h3>Microsoft 365</h3></div>
       <p>Word, Excel, PowerPoint, Teams, Outlook ve OneDrive — iş üretkenliği için bulut tabanlı ofis paketi. Business, Enterprise ve Education planları.</p>
       <div class="pts">
         <div class="pt"><i class="ti ti-check" style="color:var(--cyan);"></i>Microsoft 365 Business Basic / Standard / Premium</div>
@@ -340,8 +353,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       </div>
     </div>
     <div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <h3>Microsoft Azure</h3>
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/microsoft.svg" alt=""><h3>Microsoft Azure</h3></div>
       <p>Bulut altyapı, hesaplama, depolama ve yapay zeka hizmetleri. Kurumsal uygulamalarınız için esnek ve ölçeklenebilir bulut platformu.</p>
       <div class="pts">
         <div class="pt"><i class="ti ti-check" style="color:var(--cyan);"></i>Azure sanal makineler ve konteynerler</div>
@@ -350,8 +362,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       </div>
     </div>
     <div class="card">
-      <div class="plogo-ph" title="Ürün logosu eklenecek">LOGO</div>
-      <h3>Microsoft 365 Güvenlik</h3>
+      <div class="pcard-head"><img class="pl" src="assets/logos/products/microsoft.svg" alt=""><h3>Microsoft 365 Güvenlik</h3></div>
       <p>Defender, Intune ve Azure AD ile kurumsal güvenlik. Cihaz yönetimi, kimlik koruması ve veri kaybı önleme.</p>
     </div>
     <div class="card">

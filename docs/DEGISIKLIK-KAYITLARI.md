@@ -8,6 +8,21 @@
 
 ## 2026-07-21
 
+### DK-2026-07-21-22 — Marka sayfaları R3 kalite iyileştirmesi (6 sayfa)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam (Onur'un 5 maddesi, tüm marka ana sayfalarına uygulandı):**
+  1. **Gold Partner rozeti küçültüldü** — autodesk hero rozeti clamp(200-290px)→clamp(150-200px) (masaüstü 282×429→192×292).
+  2. **Hero hızlı-linkleri** — dağınık hap (pill) stili yerine eşit genişlikte gerilen, ikonlu, hover'lı düzenli kutular (`.hf` yeniden; mobil ≤600px varyantı ile). Autodesk/adobe/chaos/ultimaker.
+  3. **Koleksiyonlar yan yana** — autodesk'te AEC/PD&M/M&E kartları kayıp grid sarmalayıcısı (`.colgrid`) ile 3 sütuna alındı (sayfadaki kadim -1 div dengesizliği de burada kapandı); resmi collection SVG ikonları + "Koleksiyonu incele →" linki eklendi.
+  4. **LOGO placeholder temizliği** — 27 adet kesikli "LOGO" kutusu gerçek ürün logolarıyla değişti: autodesk 13 (resmi Autodesk SVG'leri; bağlantısız Navisworks/InfraWorks/Maya/Forma-platform kartları linklendi; mükerrer "Autodesk Forma" başlığı → "Forma Site Design"), chaos 6 (chaos.webp), ultimaker 5 (ultimaker-icon), microsoft 3 (microsoft.svg).
+  5. **"Birlikte sıkça tercih edilenler"** — küçük/okunmaz logolu hap şeritleri yerine `.xgrid` kart modülü (42px logo kutusu + başlık + açıklama + ok); hedef linkler doğru ürün sayfalarına ayrıştırıldı (Z Workstation→hp_z_workstation, Designjet→designjet vb.). Autodesk/adobe/hp/chaos/ultimaker.
+- **Partner rozet duvarları:** adobe (3 beyaz kutu → tek şeffaf Adobe Gold Reseller logosu), hp (3 beyaz kutu → tek resmi HP Amplify Synergy insignia, kendi kart tasarımıyla, çerçevesiz).
+- **Etkilenen dosyalar (6):** cadbim_autodesk, cadbim_adobe, cadbim_hp, cadbim_chaos, cadbim_ultimaker, cadbim_microsoft (+ scratchpad script `brand_quality_r3.py`). sketchup/lumion/designjet/hp_z_workstation/hp_build_workspace'te bu desenler yok — değişiklik gerekmedi.
+- **Doğrulama:** localhost 1280 ve 375 — 6 sayfada 0 kalan placeholder, 0 kırık logo, div dengeleri 0, yatay taşma yok; hf satırları eşit genişlik; koleksiyonlar masaüstünde tek satır/mobilde tek sütun; hp rozeti mobil 190×187 ortalı.
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-21-21 — Autodesk hero: resmi tam-liste Gold Partner logosu (kullanıcı dosyası)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
