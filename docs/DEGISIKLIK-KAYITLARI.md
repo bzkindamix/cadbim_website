@@ -8,6 +8,15 @@
 
 ## 2026-07-21
 
+### DK-2026-07-21-23 — Autodesk sayfası: filtreli tam ürün kataloğu (46 ürün)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** `cadbim_autodesk.html` "Öne Çıkan Ürünler" bölümü (13 kart) yalnızca portföyün bir kısmını gösteriyordu. Ürünler sayfasındaki desenle (fchip + pgrid/pcard) **46 ürünlük tam katalog** ile değiştirildi: kategori filtreleri (Tümü / Koleksiyonlar 3 / Mimarlık & İnşaat 11 / Forma Platformu 4 / Ürün Tasarımı & İmalat 11 / Medya & Eğlence 10 / Genel Araçlar 7) + isimle arama kutusu + "eşleşen ürün yok" boş durumu. Filtre çubuğu masaüstünde yapışkan (sticky), mobilde statik. Kart verisi cadbim_urunler.html Autodesk bölümünden birebir alındı (AutoCAD Web mükerrer kaydı tekilleştirildi).
+- **Etkilenen dosyalar:** cadbim_autodesk.html (+ scratchpad `autodesk_catalog.py`).
+- **Doğrulama:** localhost 1280/375 — 46 kart, 0 kırık ikon; filtreler doğru sayıyor (AEC 11, M&E 10), arama "maya"→4, boş arama mesajı çalışıyor, sıfırlama 46; mobilde tek sütun, chip taşması yok, yatay taşma yok; div dengesi 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-21-22 — Marka sayfaları R3 kalite iyileştirmesi (6 sayfa)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
