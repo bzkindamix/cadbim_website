@@ -326,3 +326,12 @@
 - **Kapsam:** 63 sayfa (62 script + substance manuel). cross varsa değiştirildi, yoksa cta-strip öncesi eklendi.
 - **Doğrulama:** Denge kontrolü 0 bozulma (autodesk'in -1'i önceden vardı). autocad (çözüm/endüstri linkleri, eğitim→?cat=autocad, modül CTA öncesi, 0 kırık); egitimler?cat=autocad → AutoCAD sekmesi aktif, 4 kurs filtreli. 
 - **Durum:** ✅ Tüm ürün sayfalarında yeni ilgili-modülü + koşullu eğitim yönlendirmesi.
+
+### DK-2026-07-21-18 — Mobil arama kapatma + egitimler logo temizliği + HP logosu
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı).
+- **1) Mobil menü/arama kapatılamıyordu:** Kök neden — hamburger `.nav` (z-index:1000) stacking context'i içinde; arama paneli `z-index:2000` hamburger'ı örtüyordu. Çözüm: panelin `.cbm-top` bar'ına görünür **kapat (X) butonu** eklendi (`.cbm-close`), `close()`e bağlandı. Artık ESC + hamburger + kapat butonu ile kapanıyor. (mobilenav.js)
+- **2) cadbim_egitimler.html:** Rozet satırından **Adobe Gold Reseller ve HP Amplify** logoları kaldırıldı (Cadbim yalnızca Autodesk ATC eğitimi veriyor). Kalan: Autodesk ATC + Academic Partner.
+- **3) Ana sayfa markalar (HP kutusu):** Karmaşık `hp-amplify-insignia.png` → sade resmi **mavi HP logosu** (`HP_Blue_RGB_150_MD.png` → assets/logos/hp-logo.png, 300×300). index.html cred-row.
+- **Doğrulama (localhost, mobil+masaüstü):** Mobilde menü açılıp kapat butonuyla kapanıyor; egitimler'de adobe/hp logosu yok; ana sayfa HP kutusu mavi HP logosu yüklü.
+- **Durum:** ✅ Üç düzenleme tamam.

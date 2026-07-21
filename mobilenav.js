@@ -379,12 +379,13 @@
     panel.setAttribute("role", "dialog");
     panel.setAttribute("aria-label", "Menü");
     panel.innerHTML =
-      '<div class="cbm-top">' +
-        '<div class="cbm-search">' +
+      '<div class="cbm-top" style="display:flex;align-items:center;gap:10px;">' +
+        '<div class="cbm-search" style="flex:1;min-width:0;">' +
           '<i class="ti ti-search"></i>' +
           '<input type="search" inputmode="search" autocomplete="off" placeholder="Ara: ürün, çözüm, sektör…" aria-label="Site içi arama">' +
           '<button class="cbm-clear" type="button" aria-label="Temizle"><i class="ti ti-x"></i></button>' +
         "</div>" +
+        '<button class="cbm-close" type="button" aria-label="Kapat" style="flex-shrink:0;width:42px;height:42px;border:none;background:rgba(255,255,255,.07);border-radius:11px;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent;"><i class="ti ti-x" style="font-size:22px;"></i></button>' +
       "</div>" +
       '<div class="cbm-body">' +
         '<div class="cbm-results" role="listbox"></div>' +
@@ -451,6 +452,8 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && document.body.classList.contains("cbm-open")) close();
     });
+    var closeBtn = panel.querySelector(".cbm-close");
+    if (closeBtn) closeBtn.addEventListener("click", close);
 
     /* Akordeon */
     panel.querySelectorAll(".cbm-ghead").forEach(function (h) {
