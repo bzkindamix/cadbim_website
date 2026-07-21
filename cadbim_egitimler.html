@@ -995,6 +995,14 @@ function filterCourses(cat, btn) {
   });
 }
 
+// URL ?cat=<kategori> ile otomatik filtre + katalog'a kaydır
+(function(){
+  var p=new URLSearchParams(location.search).get('cat');
+  if(!p) return;
+  var btn=[].slice.call(document.querySelectorAll('.ctab')).find(function(b){var o=b.getAttribute('onclick');return o&&o.indexOf("'"+p+"'")>-1;});
+  if(btn){ btn.click(); var k=document.getElementById('katalog'); if(k) setTimeout(function(){k.scrollIntoView({behavior:'smooth'});},120); }
+})();
+
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.form-submit');

@@ -316,3 +316,13 @@
 - **Doğrulama (localhost):** autocad (emb-logo tipi) ve substance3d (Tip A) — hero'da CTA yok, tek "Teklif İste" yalnızca sondaki cta-strip'te, cross CTA'dan hemen önce, 0 kırık görsel. Yeni sıra: hero(tanıtım) → özellikler/uygulamalar → kullanım → ilgili ürünler(cross) → CTA.
 - **Not:** Autodesk sayfalarında 2 cross uç uca gelebiliyor (ilgili ürünler + Cadbim lisans); yapısal sorun değil, istenirse birleştirilir.
 - **Durum:** ✅ Tüm ürün sayfaları: içerik önce, CTA sonda.
+
+### DK-2026-07-21-17 — Ürün sayfası sonu: "Bu Ürünle İlgili" modülü (çözüm/endüstri/eğitim)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur karışık cross'u beğenmedi; "kullanıldığı çözümler ve endüstriler şeritleri + ilgili sayfalara link; eğitimi olan ürünlerde eğitim yönlendirmesi (sadece Autodesk, önce eğitim var mı kontrol et)" istedi. Tasarımı substance3d prototipinde onayladı.
+- **Yeni modül (sayfa sonu, cross yerine):** "Keşfet / Bu Ürünle İlgili" başlığı + etiketli 3 grup: **Kullanıldığı Çözümler** (çözüm sayfalarına linkli pill'ler), **Endüstriler** (sektör sayfalarına linkli), **Birlikte Çalıştığı Ürünler** (cross'tan çıkarılan, ürün logolu). + **Eğitim CTA banner'ı**.
+- **Eşleştirme:** Ürün→kategori (AEC/M&E/PD&M/PLATFORM/Adobe/Chaos) → kategori-bazlı çözüm+endüstri. Birlikte-ürünler mevcut cross'tan alındı.
+- **Eğitim banner'ı:** Yalnızca eğitimi olan Autodesk ürünlerinde (egitimler'deki data-cat'lere göre: autocad, revit, inventor, fusion, civil, media=3ds/maya, aec). 16 sayfada. Banner `cadbim_egitimler.html?cat=<kategori>#katalog`'a gidiyor; egitimler'e URL-param filtre desteği eklendi (o kategoriyi otomatik filtreleyip katalog'a kaydırır). Adobe/HP/vb.'de eğitim banner'ı yok.
+- **Kapsam:** 63 sayfa (62 script + substance manuel). cross varsa değiştirildi, yoksa cta-strip öncesi eklendi.
+- **Doğrulama:** Denge kontrolü 0 bozulma (autodesk'in -1'i önceden vardı). autocad (çözüm/endüstri linkleri, eğitim→?cat=autocad, modül CTA öncesi, 0 kırık); egitimler?cat=autocad → AutoCAD sekmesi aktif, 4 kurs filtreli. 
+- **Durum:** ✅ Tüm ürün sayfalarında yeni ilgili-modülü + koşullu eğitim yönlendirmesi.
