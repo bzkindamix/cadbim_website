@@ -6,7 +6,16 @@
 
 ---
 
-## 2026-07-20
+## 2026-07-21
+
+### DK-2026-07-21-20 — Autodesk hero: partner logo karmaşasını tek Gold Partner logosuna indirme
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** `cadbim_autodesk.html` hero'sundaki sağ rozet duvarı (7 kutu: Gold Partner, ATC, Service Provider, D&M Cloud, PD&M, M&E, PLM — beyaz kartlar) kaldırıldı. Yerine tek **Autodesk Gold Partner** logosu, çerçevesiz/beyaz-zeminsiz, koyu hero üzerinde beyaz (ters) versiyon (`autodesk-gold-partner-white.png`).
+- **Etkilenen dosyalar:** cadbim_autodesk.html (markup: `.badgewall`→`.hero-badge`; CSS: `.bw-tile`/`.bw-wide` kuralları kaldırıldı, `.hero-badge` eklendi).
+- **Doğrulama:** localhost — eski kutu sayısı 0, logo yüklendi (natural 845×215, masaüstü 358×91 / mobil 260×66), sağ sütunda, yatay taşma yok (1280 ve 375).
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda.
 
 ### DK-2026-07-20-01 — SEO: prefix'li canonical/og:url/JSON-LD düzeltmesi
 
