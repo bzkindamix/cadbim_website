@@ -8,6 +8,16 @@
 
 ## 2026-07-21
 
+### DK-2026-07-21-21 — Autodesk hero: resmi tam-liste Gold Partner logosu (kullanıcı dosyası)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** DK-20'deki sade "AUTODESK Gold Partner" logosu, Onur'un ilettiği **resmi tam-liste** Gold Partner lockup'ı ile değiştirildi (Specialization: Product Design & Mfg., Building Architecture, Media & Entertainment, PLM, Design & Manufacturing Cloud + Value Added Services: Authorized Training Center, Authorized Developer, System Integrator). Şeffaf zeminli beyaz versiyon; çerçeve/kutu yok.
+- **Kaynak dosya:** `5070268038-20230407083646.avif` (RGBA, 318×484, şeffaf) → PIL ile 2× LANCZOS → `assets/logos/autodesk-gold-partner-full-white.png` (636×968).
+- **Etkilenen dosyalar:** cadbim_autodesk.html (img src + `.hero-badge img` genişlik clamp(200–290px) dikey logoya göre ayarlandı).
+- **Doğrulama:** localhost — logo yüklendi (natural 636×968; masaüstü 282×429, hero metniyle 456px hizalı; mobil 200×304 ortalı); yatay taşma yok (1280 ve 375).
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-21-20 — Autodesk hero: partner logo karmaşasını tek Gold Partner logosuna indirme
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
