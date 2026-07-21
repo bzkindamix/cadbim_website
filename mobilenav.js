@@ -90,7 +90,7 @@
     ["AEC Collection", "cadbim_aec_collection.html", "autodesk koleksiyon revit civil3d paket", "Ürün"],
     ["PD&M Collection", "cadbim_pdm_collection.html", "autodesk koleksiyon inventor vault imalat paket", "Ürün"],
     ["M&E Collection", "cadbim_me_collection.html", "autodesk koleksiyon maya 3dsmax arnold paket", "Ürün"],
-    ["Construction Cloud", "cadbim_construction_cloud.html", "autodesk build takeoff docs insaat saha", "Ürün"],
+    ["Autodesk Forma", "cadbim_autodesk_forma.html", "autodesk forma construction cloud build takeoff docs insaat saha", "Ürün"],
     ["BIM Collaborate Pro", "cadbim_bim_collaborate_pro.html", "autodesk revit bulut worksharing ortak calisma", "Ürün"],
     ["Autodesk Docs", "cadbim_autodesk_docs.html", "autodesk cde dokuman yonetimi iso 19650", "Ürün"],
     ["Vehicle Tracking", "cadbim_vehicle_tracking.html", "autodesk arac donus izi swept path otopark", "Ürün"],

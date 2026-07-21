@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Autodesk Tandem ile operasyonel dijital ikiz. As-built BIM verisinin işletmeye devri, varlık yönetimi ve canlı sensör (IoT) entegrasyonu. Cadbim Gold Partner.">
-<title>Autodesk Tandem — Operasyonel Dijital İkiz | Cadbim</title>
-  <meta property="og:title" content="Autodesk Tandem | Cadbim Gold Partner">
-  <meta property="og:description" content="Autodesk Tandem ile as-built BIM'i çalışan bir operasyonel dijital ikize dönüştürün. Varlık yönetimi ve IoT. Cadbim Gold Partner.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Autodesk Forma: Build, Takeoff, Data Management ve Design Collaboration ile tasarımdan sahaya bağlı inşaat yönetimi. Cadbim Gold Partner danışmanlığıyla.">
+<title>Autodesk Forma — AEC Endüstri Bulutu | Cadbim</title>
+  <meta property="og:title" content="Autodesk Forma — AEC Endüstri Bulutu | Cadbim">
+  <meta property="og:description" content="Autodesk Forma: Build, Takeoff, Data Management ve Design Collaboration ile tasarımdan sahaya bağlı inşaat yönetimi. Cadbim Gold Partner danışmanlığıyla.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.cadbim.com.tr/tandem">
+  <meta property="og:url" content="https://www.cadbim.com.tr/autodesk-forma">
   <meta property="og:image" content="https://www.cadbim.com.tr/og-image.png">
   <meta property="og:site_name" content="Cadbim">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Autodesk Tandem | Cadbim Gold Partner">
-  <meta name="twitter:description" content="Autodesk Tandem ile as-built BIM'i çalışan bir operasyonel dijital ikize dönüştürün. Varlık yönetimi ve IoT. Cadbim Gold Partner.">
-  <link rel="canonical" href="https://www.cadbim.com.tr/tandem">
+  <meta name="twitter:title" content="Autodesk Forma — AEC Endüstri Bulutu | Cadbim">
+  <meta name="twitter:description" content="Autodesk Forma: Build, Takeoff, Data Management ve Design Collaboration ile tasarımdan sahaya bağlı inşaat yönetimi. Cadbim Gold Partner danışmanlığıyla.">
+  <link rel="canonical" href="https://www.cadbim.com.tr/autodesk-forma">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -34,103 +34,80 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.92);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
 .nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
 .nav-logo img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.nav-logo:hover img{animation:navLogoDraw .7s cubic-bezier(.4,0,.2,1);}
+@keyframes navLogoDraw{from{clip-path:inset(0 100% 0 0);opacity:.35;}to{clip-path:inset(0 0% 0 0);opacity:.92;}}
 .nav-logo-name{font-family:var(--fd);font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--w);line-height:1;}
 .nav-logo-since{font-size:9px;color:rgba(0,200,240,0.8);letter-spacing:4px;text-transform:uppercase;margin-top:5px;line-height:1;}
 .nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
 .nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--cyan);}
 .nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:var(--r);font-weight:700;font-size:13px;}
-
-/* HERO */
-.hero{padding:120px 3rem 64px;position:relative;overflow:hidden;}
+.hero{padding:120px 3rem 72px;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;pointer-events:none;}
 .hero-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(var(--w10) 1px,transparent 1px),linear-gradient(90deg,var(--w10) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:1200px;}
-.hero-left{}
 .crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:20px;}
 .crumb a{color:var(--w30);text-decoration:none;}.crumb a:hover{color:var(--cyan);}
-.product-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:var(--r);border:.5px solid;font-size:11px;font-weight:500;letter-spacing:1px;margin-bottom:18px;}
-.hero h1{font-family:var(--fd);font-size:clamp(2rem,3.5vw,3rem);font-weight:800;line-height:1.1;color:var(--w);margin-bottom:16px;}
-.hero h1 em{font-style:normal;color:var(--cyan);}
-.hero-sub{font-size:15px;color:var(--w50);line-height:1.75;margin-bottom:28px;max-width:480px;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-p{background:var(--cyan);color:var(--navy);padding:12px 26px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;}
-.btn-p:hover{opacity:.88;transform:translateY(-1px);}
-.btn-g{background:transparent;color:var(--w80);border:.5px solid var(--w30);padding:12px 26px;border-radius:var(--r);font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
-.btn-g:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-1px);}
-.hero-right{}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.hstat{background:var(--navy3);border-radius:var(--rm);border:.5px solid var(--w10);padding:18px 16px;}
-.hstat-num{font-family:var(--fd);font-size:1.8rem;font-weight:800;margin-bottom:4px;}
-.hstat-lbl{font-size:12px;color:var(--w30);line-height:1.4;}
-
-/* SECTIONS */
-.section{padding:64px 3rem;}
+.section{padding:72px 3rem;}
 .section-alt{background:var(--navy2);}
-.sh{margin-bottom:40px;}
+.sh{margin-bottom:48px;}
 .slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
-.stitle{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:var(--w);margin-bottom:8px;}
-.ssub{font-size:14px;color:var(--w50);max-width:540px;line-height:1.7;}
-
-/* FEATURE GRID */
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:36px;}
-.feat-card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:22px 20px;transition:border-color .2s;}
-.feat-card:hover{border-color:var(--cbor);}
-.feat-card.new::before{content:'YENİ';font-size:9px;font-weight:600;letter-spacing:1.5px;color:var(--cyan);background:var(--cdim);border:.5px solid var(--cbor);padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:10px;}
-.feat-card.enhanced::before{content:'GELİŞTİRİLDİ';font-size:9px;font-weight:600;letter-spacing:1.5px;color:#fbbf24;background:rgba(251,191,36,0.1);border:.5px solid rgba(251,191,36,0.25);padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:10px;}
-.feat-icon{font-size:22px;color:var(--cyan);margin-bottom:10px;}
-.feat-card h3{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--w);margin-bottom:6px;}
-.feat-card p{font-size:13px;color:var(--w50);line-height:1.6;}
-
-/* SEKTÖR TABS */
-.sector-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
-.stab{padding:8px 16px;border-radius:20px;font-size:12px;cursor:pointer;border:.5px solid var(--w10);background:transparent;color:var(--w50);transition:all .2s;font-family:var(--fb);}
-.stab:hover{border-color:var(--w30);color:var(--w80);}
-.stab.active{background:var(--cdim);border-color:var(--cbor);color:var(--cyan);}
-.sector-content{display:none;}
-.sector-content.show{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.sc-left h3{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--w);margin-bottom:10px;}
-.sc-left p{font-size:13px;color:var(--w50);line-height:1.7;margin-bottom:14px;}
-.sc-pts{display:flex;flex-direction:column;gap:6px;}
-.sc-pt{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--w50);}
-.sc-pt i{font-size:14px;flex-shrink:0;margin-top:2px;}
-.sc-right{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--cbor);padding:20px;}
-.sc-right h4{font-size:12px;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
-.sc-tools{display:flex;flex-wrap:wrap;gap:7px;}
-.sc-tool{font-size:12px;padding:5px 11px;border-radius:6px;background:rgba(255,255,255,.04);border:.5px solid var(--w10);color:var(--w50);}
-
-/* TOOLSETS */
-.toolset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:36px;}
-.toolset-card{background:var(--navy3);border-radius:var(--rm);border:.5px solid var(--w10);padding:18px 16px;transition:all .2s;}
-.toolset-card:hover{border-color:var(--cbor);transform:translateY(-1px);}
-.ts-icon{font-size:20px;color:var(--cyan);margin-bottom:10px;}
-.toolset-card h3{font-size:13px;font-weight:500;color:var(--w);margin-bottom:5px;}
-.toolset-card p{font-size:12px;color:var(--w30);line-height:1.5;}
-.ts-boost{font-size:11px;color:var(--cyan);margin-top:8px;font-weight:500;}
-
-/* CROSS */
+.stitle{font-family:var(--fd);font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:var(--w);margin-bottom:10px;}
+.ssub{font-size:15px;color:var(--w50);max-width:560px;line-height:1.7;}
+.btn-p{background:var(--cyan);color:var(--navy);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{opacity:.88;transform:translateY(-1px);}
+.btn-g{background:transparent;color:var(--w80);border:.5px solid var(--w30);padding:13px 28px;border-radius:var(--r);font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-g:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-1px);}
+.grid{display:grid;gap:16px;margin-top:40px;}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
+.card:hover{border-color:var(--cbor);}
+.card.hi{border-color:var(--cbor);}
+.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
+.card p{font-size:13px;color:var(--w50);line-height:1.65;}
+.pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
+.pt{display:flex;align-items:flex-start;gap:7px;font-size:13px;color:var(--w50);}
+.pt i{font-size:13px;flex-shrink:0;margin-top:2px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.tag{font-size:10px;padding:2px 8px;border-radius:4px;border:.5px solid;}
 .cross{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:32px;margin-top:16px;}
 .cross h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:6px;}
-.cross .cdesc{font-size:13px;color:var(--w50);margin-bottom:16px;}
-.cross-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.cross .cd{font-size:13px;color:var(--w50);margin-bottom:16px;}
+.cpills{display:flex;flex-wrap:wrap;gap:8px;}
 .cp{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;}
 .cp:hover{border-color:var(--cbor);color:var(--cyan);}
 .cp i{font-size:14px;color:var(--cyan);}
-
-/* CTA */
-.cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 64px;}
+.cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 72px;}
 .cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
-.cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;color:var(--w);margin-bottom:10px;}
-.cta-strip p{font-size:14px;color:var(--w50);margin-bottom:26px;}
+.cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--w);margin-bottom:10px;}
+.cta-strip p{font-size:15px;color:var(--w50);margin-bottom:28px;}
 .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24px;}
+footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24px;}
 .fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .fbot p{font-size:12px;color:rgba(255,255,255,0.2);}
 .socials{display:flex;gap:10px;}
 .socials a{width:32px;height:32px;border-radius:var(--r);border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}
 .socials a:hover{border-color:var(--cyan);color:var(--cyan);}
-@media(max-width:1000px){.hero-inner{grid-template-columns:1fr;}.hero-right{display:none;}.nav-links{display:none;}.cta-strip{margin:0 1.5rem 56px;}}
-@media(max-width:600px){.section{padding:48px 1.5rem;}.hero{padding:96px 1.5rem 52px;}.sector-content.show{grid-template-columns:1fr;}}
+input,select,textarea{width:100%;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--r);padding:11px 14px;font-size:14px;color:var(--w80);font-family:var(--fb);transition:border-color .2s;outline:none;appearance:none;}
+input:focus,select:focus,textarea:focus{border-color:var(--cbor);}
+textarea{min-height:110px;resize:vertical;}
+label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-full{grid-column:1/-1;}
+.submit-btn{width:100%;padding:14px;border-radius:var(--r);background:var(--cyan);color:var(--navy);font-weight:700;font-size:15px;cursor:pointer;border:none;font-family:var(--fd);display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .2s;}
+.submit-btn:hover{opacity:.88;}
+.map-wrap{border-radius:var(--rl);overflow:hidden;border:.5px solid var(--w10);margin-top:24px;}
+.office-card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px;transition:border-color .2s;}
+.office-card:hover{border-color:var(--cbor);}
+.office-card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.office-card h3 i{font-size:16px;color:var(--cyan);}
+.office-info{display:flex;flex-direction:column;gap:8px;}
+.oi{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--w50);}
+.oi i{font-size:14px;color:var(--cyan);flex-shrink:0;margin-top:2px;}
+@media(max-width:900px){.nav-links{display:none;}.cta-strip{margin:0 1.5rem 56px;}.form-row{grid-template-columns:1fr;}}
+@media(max-width:600px){.section{padding:52px 1.5rem;}.hero{padding:100px 1.5rem 56px;}}
 
 .nav-dropdown{position:relative;}
 .nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
@@ -161,35 +138,14 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
    "@type": "Organization",
    "@id": "https://www.cadbim.com.tr/#organization",
    "name": "Cadbim",
-   "url": "https://www.cadbim.com.tr/",
-   "logo": "https://www.cadbim.com.tr/og-image.png",
-   "foundingDate": "1993",
-   "email": "cadbim@cadbim.com.tr",
-   "telephone": "+902324643490",
-   "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901",
-    "addressLocality": "Çiğli",
-    "addressRegion": "İzmir",
-    "postalCode": "35620",
-    "addressCountry": "TR"
-   },
-   "sameAs": [
-    "https://www.linkedin.com/company/cadbim/",
-    "https://www.youtube.com/c/CadbimTeknikDestek",
-    "https://www.instagram.com/cadbim_izmir/",
-    "https://www.facebook.com/cadbimizmir"
-   ]
+   "url": "https://www.cadbim.com.tr/"
   },
   {
    "@type": "WebPage",
-   "@id": "https://www.cadbim.com.tr/tandem#webpage",
-   "url": "https://www.cadbim.com.tr/tandem",
-   "name": "Autodesk Tandem — Operasyonel Dijital İkiz | Cadbim",
-   "description": "Autodesk Tandem ile operasyonel dijital ikiz. As-built BIM verisinin işletmeye devri, varlık yönetimi ve canlı sensör (IoT) entegrasyonu. Cadbim Gold Partner.",
-   "isPartOf": {
-    "@id": "https://www.cadbim.com.tr/#website"
-   },
+   "@id": "https://www.cadbim.com.tr/autodesk-forma#webpage",
+   "url": "https://www.cadbim.com.tr/autodesk-forma",
+   "name": "Autodesk Forma — AEC Endüstri Bulutu | Cadbim",
+   "description": "Autodesk Forma: Build, Takeoff, Data Management ve Design Collaboration ile tasarımdan sahaya bağlı inşaat yönetimi. Cadbim Gold Partner danışmanlığıyla.",
    "inLanguage": "tr-TR",
    "publisher": {
     "@id": "https://www.cadbim.com.tr/#organization"
@@ -208,21 +164,21 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
      "@type": "ListItem",
      "position": 2,
      "name": "Ürünler",
-     "item": "https://www.cadbim.com.tr/autodesk"
+     "item": "https://www.cadbim.com.tr/urunler"
     },
     {
      "@type": "ListItem",
      "position": 3,
-     "name": "Autodesk Tandem",
-     "item": "https://www.cadbim.com.tr/tandem"
+     "name": "Autodesk Forma",
+     "item": "https://www.cadbim.com.tr/autodesk-forma"
     }
    ]
   },
   {
    "@type": "Product",
-   "name": "Autodesk Tandem",
-   "description": "Autodesk Tandem ile operasyonel dijital ikiz. As-built BIM verisinin işletmeye devri, varlık yönetimi ve canlı sensör (IoT) entegrasyonu. Cadbim Gold Partner.",
-   "url": "https://www.cadbim.com.tr/tandem",
+   "name": "Autodesk Forma",
+   "description": "Autodesk Forma: Build, Takeoff, Data Management ve Design Collaboration ile tasarımdan sahaya bağlı inşaat yönetimi. Cadbim Gold Partner danışmanlığıyla.",
+   "url": "https://www.cadbim.com.tr/autodesk-forma",
    "image": "https://www.cadbim.com.tr/og-image.png",
    "brand": {
     "@type": "Brand",
@@ -235,7 +191,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
     "seller": {
      "@id": "https://www.cadbim.com.tr/#organization"
     },
-    "url": "https://www.cadbim.com.tr/tandem"
+    "url": "https://www.cadbim.com.tr/autodesk-forma"
    }
   }
  ]
@@ -245,7 +201,8 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <link rel="apple-touch-icon" href="/favicon.svg">
 <link rel="stylesheet" href="assets/css/design-system.css?v=6">
 </head>
-<body><nav class="nav">
+<body>
+<nav class="nav">
   <a href="index.html" class="nav-logo"><img src="assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
       <ul class="nav-links">
     <li class="nav-dropdown">
@@ -317,128 +274,70 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
     <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
   </ul>
 </nav>
+
 <section class="hero">
-  <div class="hero-bg" style="background:radial-gradient(ellipse 80% 60% at 10% -10%,rgba(45,212,191,0.13) 0%,transparent 60%);"></div>
+  <div class="hero-bg" style="background:radial-gradient(ellipse 70% 50% at 20% 0%,rgba(34,197,94,0.12) 0%,transparent 60%);"></div>
   <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cadbim_autodesk.html">Autodesk</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Tandem</span></div>
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-        <img src="assets/logos/products/tandem.svg" alt="Autodesk Tandem" style="width:56px;height:56px;object-fit:contain;flex-shrink:0;">
+  <div style="position:relative;z-index:1;">
+    <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cadbim_autodesk.html">Autodesk</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Autodesk Forma</span></div>
+    <div style="max-width:760px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
+        <img src="assets/logos/products/forma.svg" alt="Autodesk Forma" style="width:56px;height:56px;border-radius:12px;object-fit:contain;flex-shrink:0;">
         <div>
-          <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);">AUTODESK</div>
-          <div style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:700;color:#fff;">Tandem</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px;">Operasyonel Dijital İkiz</div>
+          <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--w30);">AUTODESK</div>
+          <div style="font-family:var(--fd);font-size:22px;font-weight:700;color:#fff;">Autodesk Forma</div>
+          <div style="font-size:11px;color:var(--w30);margin-top:2px;">Site Design · Data Management · Design Collaboration · Build · Takeoff</div>
         </div>
       </div>
-      <h1>Yapıyı Teslim Et,<br><em>İkizini</em> İşlet</h1>
-      <p class="hero-sub">Autodesk Tandem, as-built BIM verinizi yapının tüm yaşam döngüsü boyunca çalışan bulut tabanlı operasyonel dijital ikize dönüştürür. Varlık verisi, sistem izleme ve canlı sensör bağlantısı tek platformda.</p>
-    </div>
-    <div class="hero-right">
-      <div class="hero-stats">
-        <div class="hstat"><div class="hstat-num" style="color:var(--cyan);">Bulut</div><div class="hstat-lbl">Tarayıcıdan erişilen, her zaman güncel dijital ikiz</div></div>
-        <div class="hstat"><div class="hstat-num" style="color:#5eead4;">As-built</div><div class="hstat-lbl">Teslim BIM verisi yapılandırılmış operasyon verisine dönüşür</div></div>
-        <div class="hstat"><div class="hstat-num" style="color:#a5b4fc;">IoT</div><div class="hstat-lbl">Tandem Connect ile canlı sensör verisi ikize bağlanır</div></div>
-        <div class="hstat"><div class="hstat-num" style="color:#fbbf24;">FM</div><div class="hstat-lbl">Tesis operasyonu ve bakım model üzerinden yürütülür</div></div>
-      </div>
+      <h1 style="font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;line-height:1.12;color:var(--w);margin-bottom:16px;">AEC Endüstri Bulutu — Tasarımdan Sahaya</h1>
+      <p style="font-size:16px;color:var(--w50);line-height:1.75;margin-bottom:32px;max-width:620px;">Autodesk Forma, AEC projelerini erken tasarımdan sahaya tek endüstri bulutunda birleştirir: kavramsal tasarım <strong style="color:var(--w80);font-weight:600;">Forma Site Design</strong>’da, dokümanlar <strong style="color:var(--w80);font-weight:600;">Data Management</strong>’ta (CDE), model koordinasyonu <strong style="color:var(--w80);font-weight:600;">Design Collaboration</strong>’da, metraj <strong style="color:var(--w80);font-weight:600;">Takeoff</strong>’ta, saha yönetimi <strong style="color:var(--w80);font-weight:600;">Build</strong>’de — hepsi bağlantılı. (Eski adı Autodesk Construction Cloud.)</p>
     </div>
   </div>
 </section>
+<!-- FORMA PLATFORM MODÜLLERİ -->
+<section class="section" style="padding-top:0;">
+  <div class="sh"><div class="slabel">Platform Modülleri</div><div class="stitle">Autodesk Forma Ailesi</div><div class="ssub">Erken tasarımdan saha yönetimine — tek endüstri bulutunda bağlantılı modüller. Her modülün ayrı sayfası:</div></div>
+  <div class="grid g4">
+    <a href="cadbim_forma.html" class="card" style="text-decoration:none;display:flex;flex-direction:column;">
+      <div style="margin-bottom:14px;"><img src="assets/logos/products/forma.svg" alt="" style="width:30px;height:30px;object-fit:contain;"></div>
+      <h3>Forma Site Design</h3>
+      <p>Bulutta erken aşama tasarım, saha analizi ve kavramsal modelleme.</p>
+      <span style="margin-top:auto;padding-top:14px;font-size:12px;color:var(--cyan);display:inline-flex;align-items:center;gap:5px;">İncele <i class="ti ti-arrow-right" style="font-size:13px;"></i></span>
+    </a>
+    <a href="cadbim_autodesk_docs.html" class="card" style="text-decoration:none;display:flex;flex-direction:column;">
+      <div style="margin-bottom:14px;"><img src="assets/logos/products/autodesk-docs.svg" alt="" style="width:30px;height:30px;object-fit:contain;"></div>
+      <h3>Forma Data Management</h3>
+      <p>ISO 19650 uyumlu ortak veri ortamı (CDE); doküman ve model yönetimi.</p>
+      <span style="margin-top:auto;padding-top:14px;font-size:12px;color:var(--cyan);display:inline-flex;align-items:center;gap:5px;">İncele <i class="ti ti-arrow-right" style="font-size:13px;"></i></span>
+    </a>
+    <a href="cadbim_bim_collaborate_pro.html" class="card" style="text-decoration:none;display:flex;flex-direction:column;">
+      <div style="margin-bottom:14px;"><img src="assets/logos/products/bim-collaborate-pro.svg" alt="" style="width:30px;height:30px;object-fit:contain;"></div>
+      <h3>Forma Design Collaboration</h3>
+      <p>Bulutta Revit ortak çalışması ve model koordinasyonu.</p>
+      <span style="margin-top:auto;padding-top:14px;font-size:12px;color:var(--cyan);display:inline-flex;align-items:center;gap:5px;">İncele <i class="ti ti-arrow-right" style="font-size:13px;"></i></span>
+    </a>
+    <a href="cadbim_insaat_yonetimi.html" class="card" style="text-decoration:none;display:flex;flex-direction:column;">
+      <div style="margin-bottom:14px;"><img src="assets/logos/products/forma.svg" alt="" style="width:30px;height:30px;object-fit:contain;"></div>
+      <h3>Build &amp; Takeoff</h3>
+      <p>Saha yönetimi (RFI, punch list, formlar) ve model tabanlı metraj.</p>
+      <span style="margin-top:auto;padding-top:14px;font-size:12px;color:var(--cyan);display:inline-flex;align-items:center;gap:5px;">İncele <i class="ti ti-arrow-right" style="font-size:13px;"></i></span>
+    </a>
+  </div>
+</section>
+
+
+
+
 <section class="section section-alt">
-  <div class="sh">
-    <div class="slabel">Temel Özellikler</div>
-    <div class="stitle">Tandem ile Neler Yapabilirsiniz?</div>
-    <p class="ssub">Tasarım ve inşaat verisini, yapının işletme ömrü boyunca değer üreten bir dijital ikize dönüştürün.</p>
-  </div>
-  <div class="feat-grid">
-    <div class="feat-card">
-      <div class="feat-icon"><i class="ti ti-transfer-in"></i></div>
-      <h3>Yapılandırılmış Teslim</h3>
-      <p>As-built BIM ve doküman verisi tek, standart bir dijital ikize aktarılır. Kağıt klasör devri ve dağınık dosyalar sona erer.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon"><i class="ti ti-database"></i></div>
-      <h3>Varlık Veri Yönetimi</h3>
-      <p>Ekipman, garanti, manuel ve öznitelikler merkezi tutulur. Her varlığa tıklandığında tüm bilgisi tek yerde açılır.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon"><i class="ti ti-sitemap"></i></div>
-      <h3>Sistem İzleme</h3>
-      <p>Elektrik, mekanik ve tesisat sistemlerinin mekânlar arası bağlantısını görselleştirin; arıza kökünü hızla bulun.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon"><i class="ti ti-broadcast"></i></div>
-      <h3>Canlı Sensör / IoT</h3>
-      <p>Tandem Connect ile gerçek zamanlı sensör verisini ikize bağlayın — sıcaklık, doluluk ve enerji canlı izlenir.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon"><i class="ti ti-tool"></i></div>
-      <h3>Bakım & Operasyon</h3>
-      <p>Planlı bakım, arıza tespiti ve saha ekibi yönlendirmesini doğrudan model üzerinden yürütün.</p>
-    </div>
-    <div class="feat-card">
-      <div class="feat-icon"><i class="ti ti-checklist"></i></div>
-      <h3>Veri Standartları</h3>
-      <p>COBie ve sınıflandırma standartlarıyla teslim verisi tutarlı, denetlenebilir ve devredilebilir olur.</p>
-    </div>
-  </div>
+  <div class="sh"><div class="slabel">Öne Çıkan Özellikler</div><div class="stitle">Autodesk Forma ile Neler Yapabilirsiniz?</div></div>
+  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-folders"></i></div><h3>Ortak Veri Ortamı</h3><p>ISO 19650 uyumlu doküman ve model yönetimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-calculator"></i></div><h3>Autodesk Forma Takeoff</h3><p>2B ve model tabanlı metraj tek platformda.</p></div><div class="card"><div class="card-icon"><i class="ti ti-helmet"></i></div><h3>Autodesk Forma Build</h3><p>RFI, iş emri, saha formları ve punch list yönetimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-eye-check"></i></div><h3>Model Koordinasyonu</h3><p>Otomatik çakışma tespiti ve sorun takibi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-chart-bar"></i></div><h3>Proje Analitiği</h3><p>Risk ve ilerlemenin panolarla takibi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-devices"></i></div><h3>Saha Mobil Uygulaması</h3><p>Çevrimdışı çalışan tablet/telefon erişimi.</p></div></div>
 </section>
 <section class="section">
-  <div class="sh">
-    <div class="slabel">Kullanım Senaryoları</div>
-    <div class="stitle">Kim Nasıl Kullanıyor?</div>
-  </div>
-  <div class="sector-tabs">
-    <button class="stab active" onclick="showSector('fm',this)">Tesis Yönetimi</button>
-    <button class="stab" onclick="showSector('sahip',this)">Yapı Sahibi / İşletmeci</button>
-    <button class="stab" onclick="showSector('insaat',this)">İnşaat / Teslim</button>
-    <button class="stab" onclick="showSector('altyapi',this)">Altyapı & Kampüs</button>
-  </div>
-  <div id="sector-fm" class="sector-content show">
-    <div class="sc-left">
-      <h3>Tesis Yönetimi için Tandem</h3>
-      <p>Binayı model üzerinden işletin — ekipman konumu, geçmişi ve dokümanı tek tıkla. Arızaya müdahale süresini kısaltın.</p>
-      <div class="sc-pts"><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Varlık envanteri modelde</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Arıza kök analizi</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Planlı bakım yönetimi</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Saha ekibine konum yönlendirme</div></div>
-    </div>
-    <div class="sc-right">
-      <h4>Birlikte kullanılan araçlar</h4>
-      <div class="sc-tools"><a href="cadbim_revit.html" class="sc-tool" style="text-decoration:none;">Revit</a><a href="cadbim_autodesk_forma.html" class="sc-tool" style="text-decoration:none;">Autodesk Forma</a><a href="cadbim_forma.html" class="sc-tool" style="text-decoration:none;">Forma</a></div>
-    </div>
-  </div>
-  <div id="sector-sahip" class="sector-content">
-    <div class="sc-left">
-      <h3>Yapı Sahibi / İşletmeci için Tandem</h3>
-      <p>Portföyünüzdeki varlıkların dijital ikizini standart tutun; işletme maliyetini ve karar süresini düşürün.</p>
-      <div class="sc-pts"><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Portföy geneli standart veri</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>İşletme maliyeti görünürlüğü</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Enerji & doluluk takibi</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Devir-teslimde eksiksiz veri</div></div>
-    </div>
-    <div class="sc-right">
-      <h4>Birlikte kullanılan araçlar</h4>
-      <div class="sc-tools"><a href="cadbim_revit.html" class="sc-tool" style="text-decoration:none;">Revit</a><a href="cadbim_autodesk_forma.html" class="sc-tool" style="text-decoration:none;">Autodesk Forma</a></div>
-    </div>
-  </div>
-  <div id="sector-insaat" class="sector-content">
-    <div class="sc-left">
-      <h3>İnşaat / Teslim için Tandem</h3>
-      <p>Projeyi as-built veriyle birlikte teslim edin; işverene kağıt değil, çalışan bir dijital ikiz bırakın.</p>
-      <div class="sc-pts"><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>As-built model teslimi</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>COBie veri paketi</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Doküman & garanti bağlama</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Sorunsuz operasyona devir</div></div>
-    </div>
-    <div class="sc-right">
-      <h4>Birlikte kullanılan araçlar</h4>
-      <div class="sc-tools"><a href="cadbim_revit.html" class="sc-tool" style="text-decoration:none;">Revit</a><a href="cadbim_autodesk_forma.html" class="sc-tool" style="text-decoration:none;">Autodesk Forma</a><a href="cadbim_autodesk_docs.html" class="sc-tool" style="text-decoration:none;">Autodesk Forma Data Management</a></div>
-    </div>
-  </div>
-  <div id="sector-altyapi" class="sector-content">
-    <div class="sc-left">
-      <h3>Altyapı & Kampüs için Tandem</h3>
-      <p>Kampüs, hastane veya altyapı varlıklarını tek dijital ikizde toplayıp merkezi olarak işletin.</p>
-      <div class="sc-pts"><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Çok binalı varlık yönetimi</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Sistem geneli izleme</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Sensör tabanlı durum takibi</div><div class="sc-pt"><i class="ti ti-check" style="color:#5eead4;"></i>Uzun ömürlü varlık verisi</div></div>
-    </div>
-    <div class="sc-right">
-      <h4>Birlikte kullanılan araçlar</h4>
-      <div class="sc-tools"><a href="cadbim_revit.html" class="sc-tool" style="text-decoration:none;">Revit</a><a href="cadbim_autodesk_forma.html" class="sc-tool" style="text-decoration:none;">Autodesk Forma</a><a href="cadbim_autodesk.html" class="sc-tool" style="text-decoration:none;">InfraWorks</a></div>
-    </div>
-  </div>
+  <div class="sh"><div class="slabel">Kullanım Senaryoları</div><div class="stitle">Kimler İçin?</div></div>
+  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-helmet"></i></div><h3>Ana Yükleniciler</h3><p>Saha–ofis bilgi akışının tek platformda toplanması.</p></div><div class="card"><div class="card-icon"><i class="ti ti-building"></i></div><h3>Proje Yönetim Firmaları</h3><p>Paydaş koordinasyonu ve doküman kontrolü.</p></div><div class="card"><div class="card-icon"><i class="ti ti-building-bank"></i></div><h3>İşverenler</h3><p>Projeye şeffaf erişim ve teslim kayıtları.</p></div></div>
 </section>
+
+
 <section data-enrich-brand style="padding:60px 3rem;background:#0a1225;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Cadbim Farkı</div>
@@ -497,24 +396,17 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <div style="display:grid;gap:24px;">
     <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div><div class="cpills"><a href="cadbim_bim.html" class="cp"><i class="ti ti-building"></i>BIM</a><a href="cadbim_insaat_yonetimi.html" class="cp"><i class="ti ti-crane"></i>İnşaat Proje Yönetimi</a><a href="cadbim_gorsellestirme.html" class="cp"><i class="ti ti-sun-high"></i>Görselleştirme & Render</a></div></div>
     <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div><div class="cpills"><a href="sektor_mimari.html" class="cp"><i class="ti ti-building"></i>Mimarlık</a><a href="sektor_insaat.html" class="cp"><i class="ti ti-crane"></i>İnşaat & Altyapı</a></div></div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-box" style="color:var(--cyan);font-size:15px;"></i>Birlikte Çalıştığı Ürünler</div><div class="cpills"><a href="cadbim_autodesk.html" class="cp"><i class="ti ti-box"></i>Autodesk Marka Sayfası</a><a href="cadbim_bim_collaborate_pro.html" class="cp"><img src="assets/logos/products/bim-collaborate-pro.svg" alt="" style="height:15px;width:auto;margin-right:6px;vertical-align:-3px;">Autodesk Forma Design Collaboration — bulutta model ortak çalışması</a><a href="cadbim_autodesk_docs.html" class="cp"><img src="assets/logos/products/autodesk-docs.svg" alt="" style="height:15px;width:auto;margin-right:6px;vertical-align:-3px;">Autodesk Forma Data Management — ortak veri ortamı (CDE)</a></div></div>
   </div>
 </section>
 <div class="cta-strip">
-  <h2>Tandem dijital ikiz teklifi alın</h2>
-  <p>BIM'den operasyona geçişi birlikte planlayalım. As-built verinizden çalışan bir dijital ikiz kuralım.</p>
+  <h2>Autodesk Forma teklifi alın</h2>
+  <p>İhtiyacınıza uygun lisans ve eğitim planını birlikte belirleyelim.</p>
   <div class="cta-btns">
     <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
-    <a href="cadbim_dijital_ikiz.html" class="btn-g">Dijital İkiz Çözümü</a>
+    <a href="cadbim_egitimler.html" class="btn-g">Eğitim Programları</a>
   </div>
 </div>
-<script>
-function showSector(id, btn) {
-  document.querySelectorAll('.sector-content').forEach(el => el.classList.remove('show'));
-  document.querySelectorAll('.stab').forEach(el => el.classList.remove('active'));
-  document.getElementById('sector-' + id).classList.add('show');
-  btn.classList.add('active');
-}
-</script>
 <footer>
   <div class="fbot">
     <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
@@ -522,8 +414,9 @@ function showSector(id, btn) {
       <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
       <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
       <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
     </div>
   </div>
-</footer><script src="mobilenav.js" defer></script>
-</body>
-</html>
+</footer>
+<script src="mobilenav.js" defer></script>
+</body></html>

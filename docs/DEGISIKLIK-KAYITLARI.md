@@ -8,6 +8,27 @@
 
 ## 2026-07-21
 
+### DK-2026-07-21-28 — construction_cloud → autodesk_forma yeniden adlandırma + sayfa denetimi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** Sayfa içeriği DK-öncesi turlarda "Autodesk Forma"ya çevrilmişti ama **dosya adı/URL** eski kalmıştı. Yapılanlar:
+  - `cadbim_construction_cloud.html` → **`cadbim_autodesk_forma.html`** (git mv); canonical/og/JSON-LD 7 URL `/construction-cloud` → `/autodesk-forma`.
+  - **Logolar güncellendi:** hero'daki jenerik vinç ikonu → resmi `forma.svg` (56px); "Build & Takeoff" modül kartındaki kask ikonu → `forma.svg`. (Diğer modül kartları zaten resmi SVG'liydi.)
+  - **12 referans** güncellendi (8 sayfa + urunler 2 + tandem 4 dahil); `mobilenav.js` arama dizini kaydı "Autodesk Forma" oldu (eski ad arama anahtarı olarak korundu); `sitemap.xml` girdisi `/autodesk-forma` (lastmod 2026-07-21).
+  - Eski adrese **yönlendirme stub'ı** bırakıldı (meta refresh + JS replace + canonical + noindex) — eski linkler kırılmaz.
+  - Sayfada görünür "Construction Cloud" metni taraması: yalnızca bilinçli "(Eski adı Autodesk Construction Cloud.)" notu var, korunudu.
+- **Doğrulama:** localhost — eski URL yeni sayfaya yönlendiriyor; başlık doğru; 3 forma.svg yüklü; taşma yok; site genelinde `construction_cloud` referansı 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+
+### DK-2026-07-21-27 — Site geneli İngilizce sözcüklerde büyük-İ (İ→I) denetimi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Sorun:** Sayfalar `lang="tr"` olduğundan `text-transform:uppercase` İngilizce sözcüklerde de noktalı İ üretiyor (Architecture→ARCHİTECTURE, Trimble→TRİMBLE); ayrıca kaynakta yazılı 1 hata (COOKİE).
+- **Denetim:** 152 sayfada (a) kaynakta İ içeren tüm sözcükler, (b) uppercase-transform'lu sınıf ve satır-içi stillerin tam metinleri tarandı. `lang="en"` verilmiş öğeler (sektör hero-badge'leri) zaten doğruydu — dokunulmadı. Türkçe sözcükler (LİSANSLAMA, SERİ, VİDEOSU, CADBİM...) bilinçli olarak İ ile bırakıldı.
+- **Düzeltmeler (19 dosya, 27 değişiklik; İngilizce sözcükler kaynakta ön-uppercase edildi):** COOKİE→COOKIE (çerez politikası ×2); urunler grup başlıkları (ARCHITECTURE/ENGINEERING/CONSTRUCTION, PRODUCT DESIGN & MANUFACTURING, MEDIA & ENTERTAINMENT) + AMPLIFY rozeti; autodesk hero-pill SERVICE PROVIDER; hp hero-pill AMPLIFY; slabel'ler: ALIAS ×2, CIVIL, FUSION, AMPLIFY Impact ×2; satır-içi etiketler: CREDENTIALS, SPECIALIZATION (hakkimizda), HP CONSTRUCTION (build_workspace), LUMION B.V., MICROSOFT, TRIMBLE (sketchup), ULTIMAKER, HP DESIGNJET (sanatsal_baski), NESTING, FINE ART (designjet); pbrand: TRIMBLE (mimari), ULTIMAKER (makine).
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda (DK-27 ve DK-28 tek commit).
+
 ### DK-2026-07-21-26 — Filtreli katalog deseni 7 endüstri sayfasına yayıldı
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
