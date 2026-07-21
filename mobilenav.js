@@ -596,3 +596,40 @@
     init();
   }
 })();
+
+
+/* ==== scroll-reveal motoru (iç sayfalar; index kendi .reveal'ını kullanır) ==== */
+(function(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  var els=[].slice.call(document.querySelectorAll(
+    "section .sh, section .card, .pgrid .pcard, section .feat, .xp, .cross, .cta-strip, .office-card"
+  )).filter(function(e){return !e.closest(".reveal,.reveal-stagger")&&!e.hasAttribute("data-rv");});
+  if(!els.length)return;
+  var sayac=new Map();
+  els.forEach(function(e){
+    var p=e.parentElement,i=sayac.get(p)||0;sayac.set(p,i+1);
+    e.setAttribute("data-rv","");
+    e.style.setProperty("--rvd",Math.min(i*60,360)+"ms");
+  });
+  var bekleyen=els.slice(),son=0,zam=null;
+  function tara(){
+    var vh=window.innerHeight;
+    for(var i=bekleyen.length-1;i>=0;i--){
+      var r=bekleyen[i].getBoundingClientRect();
+      if(r.top<vh*0.92&&r.bottom>0){bekleyen[i].classList.add("rv-in");bekleyen.splice(i,1);}
+    }
+    if(!bekleyen.length){
+      window.removeEventListener("scroll",planla);
+      window.removeEventListener("resize",planla);
+    }
+  }
+  function planla(){
+    var s=Date.now();
+    if(s-son>80){son=s;tara();}
+    else{clearTimeout(zam);zam=setTimeout(tara,90);}
+  }
+  window.addEventListener("scroll",planla,{passive:true});
+  window.addEventListener("resize",planla,{passive:true});
+  window.__rv={tara:tara,bekleyen:bekleyen};
+  tara();
+})();

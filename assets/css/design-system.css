@@ -157,3 +157,10 @@ select:focus-visible {
 
 /* Üst menü yazı rengi beyaz (Onur 2026-07-20) — hover/active cyan korunur (inline :hover daha yüksek specificity) */
 .nav-links a{color:var(--w);}
+
+
+/* ==== R4: site geneli scroll-reveal (iç sayfalar) ==== */
+@media (prefers-reduced-motion: no-preference){
+  [data-rv]{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rvd,0s);will-change:opacity,transform;}
+  [data-rv].rv-in{opacity:1;transform:none;}
+}

@@ -8,6 +8,35 @@
 
 ## 2026-07-21
 
+### DK-2026-07-21-31 — Canlıya geçiş hazırlığı: eski site URL envanteri + 301 haritası
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** Canlı cadbim.com.tr (Wix) sitemap index'inden **665 URL** toplandı (24 alt sitemap): 120 ana sayfa, 242 blog yazısı, 97 blog taksonomi, ~206 dinamik koleksiyon öğesi. Yeni site canonical setiyle (153) tam eşleme üretildi:
+  - **33 BIREBIR** (aynı slug — 301 gerekmez), **210 KURAL** (kesin 301 hedefi), **83 GOZDEN** (Onur onayı gerekli), **339 GOZDEN-BLOG** (blog kararına bağlı).
+  - DesignJet/UltiMaker/Chaos/Adobe koleksiyon öğeleri **model/ürün bazında** eşlendi (ör. /designjet-ofis/hp-designjet-t230 → /designjet-t200).
+  - **İçerik adı değişiklikleri tablosu:** Construction Cloud→Autodesk Forma, Fusion 360→Fusion, ShotGrid→Flow Production Tracking, HSMWorks→Fusion, AutoCAD dikey ürünleri→toolset, Nastran/CFD/Point Layout EOL, MakerBot→UltiMaker vb.
+  - Strateji notları: GitHub Pages sunucu-taraflı 301 yapamaz → canlıda Cloudflare Pages/Netlify benzeri host şart; Türkçe karakterli eski URL'ler; Search Console süreci; geçiş günü kontrol listesi.
+- **Çıktılar:** `docs/CANLIYA-GECIS-URL-HARITASI.md` (rapor) + `docs/redirects-taslak.csv` (665 satır, makine-okunur).
+- **Durum:** ✅ Doküman hazır; GOZDEN kalemleri Onur onayı bekliyor.
+
+### DK-2026-07-21-30 — İç sayfalara scroll-reveal animasyon motoru
+
+- **Kapsam:** Ana sayfadaki reveal deneyimi tüm iç sayfalara taşındı. `design-system.css`'e `[data-rv]` stilleri (yalnız `prefers-reduced-motion: no-preference` altında), `mobilenav.js`'e motor eklendi: `.sh/.card/.pgrid .pcard/.feat/.xp/.cross/.cta-strip/.office-card` hedefleri, ebeveyn içi 60ms kademeli gecikme (maks 360ms), ana sayfanın kendi `.reveal`'ı hariç tutulur.
+- **Teknik karar:** IntersectionObserver yerine **zaman-eşikli scroll dinleyicisi** (80ms) — tarayıcı panelinde IO/rAF'ın hiç ateşlemediği tespit edildi; scroll+getBoundingClientRect her ortamda deterministik. `window.__rv` teşhis kancası bırakıldı.
+- **Cache-bust:** design-system.css v7, mobilenav.js v5 (153 sayfa).
+- **Doğrulama:** localhost — revit/autodesk/urunler: ilk görünüm anında, kaydırdıkça kademeli reveal (urunler 89 eleman, 1500px kaydırmada 39 reveal); stagger 0/60/120/180ms ölçüldü.
+
+### DK-2026-07-21-29 — Site geneli kod + SEO denetimi ve düzeltmeleri
+
+- **Denetim (154 dosya):** kırık iç link **0**, kırık asset **0**, duplicate id **0**, div dengesizliği **0**, alt'sız görsel **0**, title/desc mükerrerliği **0** — yapı zaten sağlamdı. Bulunan ve düzeltilenler:
+  - **Attribute kıran tırnaklar:** designjet hd_pro/sd_pro description'larında kaçışsız `42"`/`44"` → `&quot;` (3'er meta).
+  - **Kısa title'lar:** cozumler, kvkk, tesekkurler zenginleştirildi; **index description** 182→146 karakter.
+  - **tesekkurler.html** form-sonrası sayfa → `noindex, follow`.
+  - **Sitemap ↔ canonical uyumu:** 6 slug hizalandı (z6pro→z6-pro, factor4→factor-4, substance3d→substance-3d...).
+  - **Performans:** 107 sayfada **647 img'e `loading="lazy"`**, 878 img'e `decoding="async"` — nav + hero görselleri bilinçli hariç (LCP koruması).
+  - Yönlendirme stub'ına h1.
+- **Durum:** ✅ Tamamlandı ve yayınlandı. **Referans:** commit (main) — DK-29/30/31 tek commit.
+
 ### DK-2026-07-21-28 — construction_cloud → autodesk_forma yeniden adlandırma + sayfa denetimi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
