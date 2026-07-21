@@ -335,3 +335,11 @@
 - **3) Ana sayfa markalar (HP kutusu):** Karmaşık `hp-amplify-insignia.png` → sade resmi **mavi HP logosu** (`HP_Blue_RGB_150_MD.png` → assets/logos/hp-logo.png, 300×300). index.html cred-row.
 - **Doğrulama (localhost, mobil+masaüstü):** Mobilde menü açılıp kapat butonuyla kapanıyor; egitimler'de adobe/hp logosu yok; ana sayfa HP kutusu mavi HP logosu yüklü.
 - **Durum:** ✅ Üç düzenleme tamam.
+
+### DK-2026-07-21-19 — Nav logosu yatay CADBİM + marka logo boyut dengeleme
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı).
+- **Nav logosu (153 sayfa):** Sol üstteki ikon + "CADBİM" + "Est. 1993" metni kaldırıldı; yerine Onur'un verdiği **yatay CADBİM logosu** (`cadbim logo yatay png.png` → assets/logos/cadbim-yatay.png). Ek metin eklenmedi (Onur talebi). Mevcut `.nav-logo img` CSS'i (height:26px, filter beyaz) korundu → logo beyaz, ~109×26. Hover'da mevcut "draw/reveal" animasyonu (clip-path) uygulanıyor. Görsel 24862px'ten 640px'e küçültüldü (decompression-bomb boyutundaydı).
+- **Marka logo boyutları (index.html cred-row):** Kare/baskın logolar (hp/chaos/adobe/microsoft) küçültüldü, sketchup düşürüldü (Onur "çok büyük"), geniş olanlar (ultimaker/lumion) genişletildi. base max-height 66→48 + per-logo `[src*=]` ayarları. Yükseklik aralığı 22-66 → 22-56 (çoğu 44-56).
+- **Doğrulama:** localhost 1280px — nav logo 109×26 görünür; marka logoları dengeli. (Not: browser pane bir ara 0×0 viewport'a düştü, ölçümler yanıltıcıydı; düzgün boyutta doğrulandı.)
+- **Durum:** ✅ Logo + boyut dengeleme tamam. Animasyon seçeneği Onur'a soruluyor. SketchUp Pro ürünleri + derin mobil cila sıradaki iş.

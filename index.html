@@ -142,7 +142,14 @@ body{background:var(--navy);color:var(--white);font-family:var(--font-b);font-si
 .cred-row1{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1080px;margin:0 auto;}
 .cred-row1 a{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #e6ebf2;border-radius:14px;height:118px;padding:20px 26px;box-shadow:0 2px 14px rgba(15,30,60,.05);transition:transform .18s,box-shadow .18s;}
 .cred-row1 a:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(15,30,60,.11);}
-.cred-row1 img{max-height:66px;max-width:82%;width:auto;object-fit:contain;}
+.cred-row1 img{max-height:48px;max-width:84%;width:auto;object-fit:contain;}
+.cred-row1 img[src*="hp-logo"]{max-height:56px;}
+.cred-row1 img[src*="chaos"]{max-height:50px;}
+.cred-row1 img[src*="sketchup"]{max-height:44px;}
+.cred-row1 img[src*="microsoft"]{max-height:52px;max-width:70%;}
+.cred-row1 img[src*="ultimaker"]{max-width:96%;}
+.cred-row1 img[src*="lumion"]{max-width:94%;}
+.cred-row1 img[src*="adobe"]{max-height:52px;}
 
 /* ÇÖZÜMLER — ENDÜSTRİ SEKMELERİ */
 .soltabs{max-width:1180px;margin:0 auto;}
@@ -361,13 +368,7 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
 
 <!-- NAVBAR -->
 <nav class="nav">
-  <a href="/" class="nav-logo">
-    <img src="assets/logos/cadbim-logo.png" alt="Cadbim">
-    <div class="nav-logo-text">
-      <span class="nav-logo-name">Cadbim</span>
-      <span class="nav-logo-since">Est. 1993</span>
-    </div>
-  </a>
+  <a href="/" class="nav-logo"><img src="assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
     <ul class="nav-links">
     <li class="nav-dropdown">
       <a href="cadbim_urunler.html">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
