@@ -8,6 +8,20 @@
 
 ## 2026-07-21
 
+### DK-2026-07-21-24 — Site geneli logo-metin dikey hizalama denetimi ve düzeltmesi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Tetikleyici:** cadbim_alias.html sürüm kartlarında ürün ikonu ile sürüm rozeti (CONCEPT / SURFACE / AUTOSTUDIO) baseline hizasında kayık duruyordu.
+- **Denetim (152 sayfa, statik tarama + tarayıcıda piksel ölçümü):**
+  - `img + <span class="cmp-badge">` satır-içi deseni: **4 bulgu** (alias 3, vault_pdm 1) → ikisi birlikte `display:flex;align-items:center;gap:10px` sarmalayıcıya alındı, rozetin `margin-bottom:10px`'i satır içinde sıfırlandı.
+  - Öne çıkan kart başlıklarında `align-items:flex-start`: **3 bulgu** (chaos) → `center` yapıldı.
+  - `.cp`/`.cross-pill` içi 13px mini logolar (53 dosya, ~130 kullanım): sınıf zaten `display:flex;align-items:center` — tarayıcı ölçümüyle 0.0px merkez farkı doğrulandı, **değişiklik gerekmedi**.
+  - Flex dışı `vertical-align` img kullanımı: **0 bulgu**.
+- **Doğrulama (localhost, DOM merkez ölçümü):** alias 3/3 rozet 0.0px; vault_pdm PLM BUNDLE 0.0px; chaos 3/3 başlık 0.0px; sketchup .cp örneklemi 5/5 0.0px; div dengeleri değişmedi.
+- **Etkilenen dosyalar (3):** cadbim_alias.html, cadbim_vault_pdm.html, cadbim_chaos.html.
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-21-23 — Autodesk sayfası: filtreli tam ürün kataloğu (46 ürün)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
