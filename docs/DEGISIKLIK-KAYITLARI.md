@@ -8,6 +8,17 @@
 
 ## 2026-07-21
 
+### DK-2026-07-21-26 — Filtreli katalog deseni 7 endüstri sayfasına yayıldı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** Marka sayfalarındaki filtreli katalog mantığı (Tümü+kategori chipleri, isim arama, pcard grid, boş durum) endüstri sayfalarına taşındı:
+  - **Sekmeli gezgin dönüşümü (5 sayfa):** mimari (14), insaat (9), makine (15), medya (15), otomotiv (10) — eski `.solutions` sekme yapısı (tek kategori görünür, switchCat JS) kaldırıldı; tüm ürünler tek filtrelenebilir grid'de. Mevcut kategori adları chip oldu; kart içeriği (marka üst-etiketi + isim + rol + ikon) birebir korundu. Ölü switchCat script blokları silindi.
+  - **Pill şeridi yükseltmesi (2 sayfa):** egitim (7: Yazılım 4 / 3D Baskı 2 / Donanım 1), havacilik (8: Tasarım & Müh. 3 / Üretim & Sim. 3 / Veri 1 / Donanım 1) — "Bu sektörde kullanılan ürünler" 13px pill şeridi katalog kartlarına dönüştü; açıklamalar hedef ürün sayfalarının meta description'ından otomatik alındı. Kutunun içinde filtre çubuğu sticky değil (statik).
+- **Etkilenen dosyalar (7):** sektor_mimari, sektor_insaat, sektor_makine, sektor_medya, sektor_otomotiv, sektor_egitim, sektor_havacilik (+ scratchpad `sektor_catalogs.py`).
+- **Doğrulama:** localhost 1280/375 — 7 sayfada toplam 78 kart; tüm chip sayıları kategori toplamlarıyla tutarlı; arama çalışıyor (mimari "revit"→2); 0 gerçek kırık ikon (ilk ölçümdeki 10 "kırık" lazy-load'du, eager doğrulamayla çürütüldü); mobilde tek sütun, chip taşması ve yatay taşma yok; div dengeleri 0; switchCat kalıntısı 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-21-25 — Filtreli ürün kataloğu 5 marka sayfasına daha yayıldı
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)

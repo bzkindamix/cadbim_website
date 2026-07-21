@@ -113,6 +113,26 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
 .nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+/* filtreli ürün kataloğu */
+.pfilter{position:sticky;top:68px;z-index:40;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 0;background:rgba(6,12,26,0.9);backdrop-filter:blur(14px);}
+.fchip{padding:8px 16px;border-radius:22px;border:.5px solid var(--w10);background:transparent;color:var(--w50);font-family:var(--fb);font-size:12.5px;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.fchip:hover{border-color:var(--w30);color:var(--w80);}
+.fchip.active{background:var(--cyan);border-color:var(--cyan);color:var(--navy);font-weight:700;}
+.psearch{margin-left:auto;display:flex;align-items:center;gap:7px;border:.5px solid var(--w10);border-radius:22px;padding:7px 14px;background:rgba(255,255,255,0.03);}
+.psearch i{font-size:14px;color:var(--w30);}
+.psearch input{background:transparent;border:none;outline:none;color:var(--w);font-family:var(--fb);font-size:13px;width:150px;}
+.psearch input::placeholder{color:var(--w30);}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
+.pcard{display:flex;align-items:center;gap:14px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rm);padding:16px 18px;text-decoration:none;transition:border-color .18s,transform .15s,background .18s;}
+.pcard>div{min-width:0;}
+a.pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgba(0,200,240,.04);}
+.pico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:rgba(255,255,255,0.06);}
+.pbrand{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--w30);margin-bottom:2px;font-weight:600;}
+.pcard h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin:0 0 3px;}
+.pcard p{font-size:12px;color:var(--w50);line-height:1.45;margin:0;}
+.pcard .parr{margin-left:auto;font-size:15px;color:var(--w30);transition:color .2s,transform .2s;flex-shrink:0;}
+a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
+@media(max-width:600px){.pfilter{position:static;gap:6px;}.psearch{margin-left:0;width:100%;}.psearch input{flex:1;width:auto;}}
 </style>
 
 <!-- Google Analytics -->
@@ -298,7 +318,45 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="cross">
     <h3>Bu sektörde kullanılan ürünler</h3>
     <p class="cd">İlgili yazılım ve donanım sayfaları</p>
-    <div class="cpills"><a href="cadbim_autodesk.html" class="cp"><img src="assets/logos/autodesk-white.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;">Autodesk Portföyü</a><a href="cadbim_sketch_sprint.html" class="cp"><img src="assets/logos/ultimaker.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);">MakerBot Sketch Sprint</a><a href="cadbim_ultimaker.html" class="cp"><img src="assets/logos/ultimaker.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);">UltiMaker S Serisi</a><a href="cadbim_adobe_express.html" class="cp"><img src="assets/logos/adobe-logo.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;">Adobe Express</a><a href="cadbim_sketchup.html" class="cp"><img src="assets/logos/sketchup.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);">SketchUp</a><a href="cadbim_tinkercad.html" class="cp"><img src="assets/logos/products/tinkercad.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;">Tinkercad</a><a href="cadbim_hp_z_workstation.html" class="cp"><img src="assets/logos/hp-blue.png" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);">HP Z Workstation</a></div>
+      <div class="pfilter" id="pfilter" style="position:static;padding:14px 0 4px;">
+    <button class="fchip active" data-f="all">Tümü</button>
+    <button class="fchip" data-f="yazilim">Yazılım</button>
+    <button class="fchip" data-f="baski">3D Baskı</button>
+    <button class="fchip" data-f="donanim">Donanım</button>
+    <div class="psearch"><i class="ti ti-search"></i><input id="psearch" type="text" placeholder="Ürün ara..." aria-label="Ürün ara"></div>
+  </div>
+  <div class="pgrid" id="pgrid" style="margin-top:22px;">
+      <a href="cadbim_autodesk.html" class="pcard" data-cat="yazilim"><div class="pico"><img src="assets/logos/autodesk-white.svg" alt="" style="max-width:26px;max-height:26px;object-fit:contain;"></div><div><h3>Autodesk Portföyü</h3><p>AutoCAD, Revit, Inventor, Fusion ve tüm Autodesk koleksiyonları</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_sketch_sprint.html" class="pcard" data-cat="baski"><div class="pico"><img src="assets/logos/ultimaker.svg" alt="" style="max-width:26px;max-height:26px;object-fit:contain;filter:brightness(0) invert(1);"></div><div><h3>MakerBot Sketch Sprint</h3><p>MakerBot Sketch Sprint: sınıflar için tasarlanmış, UltiMaker'ın en hı...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_ultimaker.html" class="pcard" data-cat="baski"><div class="pico"><img src="assets/logos/ultimaker.svg" alt="" style="max-width:26px;max-height:26px;object-fit:contain;filter:brightness(0) invert(1);"></div><div><h3>UltiMaker S Serisi</h3><p>UltiMaker S8 (4x hız), S7, S5, S3 ve Method XL endüstriyel 3D yazıcılar</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_adobe_express.html" class="pcard" data-cat="yazilim"><div class="pico"><img src="assets/logos/adobe-logo.svg" alt="" style="max-width:26px;max-height:26px;object-fit:contain;"></div><div><h3>Adobe Express</h3><p>Adobe Express: sosyal medya görseli, sunum, video ve broşürü şablonla...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_sketchup.html" class="pcard" data-cat="yazilim"><div class="pico"><img src="assets/logos/sketchup.svg" alt="" style="max-width:26px;max-height:26px;object-fit:contain;filter:brightness(0) invert(1);"></div><div><h3>SketchUp</h3><p>SketchUp Studio ve SketchUp Pro lisansları</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_tinkercad.html" class="pcard" data-cat="yazilim"><div class="pico"><img src="assets/logos/products/tinkercad.svg" alt="" style="max-width:26px;max-height:26px;object-fit:contain;"></div><div><h3>Tinkercad</h3><p>Autodesk Tinkercad ile tarayıcıda ücretsiz 3B modelleme, elektronik v...</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cadbim_hp_z_workstation.html" class="pcard" data-cat="donanim"><div class="pico"><img src="assets/logos/hp-blue.png" alt="" style="max-width:26px;max-height:26px;object-fit:contain;filter:brightness(0) invert(1);"></div><div><h3>HP Z Workstation</h3><p>HP Z2, Z4, Z6 ve Z8 Fury iş istasyonları: CAD, BIM, simülasyon ve GPU...</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+  <p id="pempty" style="display:none;color:var(--w50);font-size:14px;margin-top:24px;">Aramanızla eşleşen ürün bulunamadı.</p>
+<script>
+(function(){
+  var chips=document.querySelectorAll('#pfilter .fchip');
+  var cards=[].slice.call(document.querySelectorAll('#pgrid .pcard'));
+  var f='all', q='';
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(f==='all'||c.getAttribute('data-cat')===f)&&(!q||c.textContent.toLowerCase().indexOf(q)>-1);
+      c.style.display=ok?'':'none'; if(ok)n++;
+    });
+    document.getElementById('pempty').style.display=n?'none':'';
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('active');});
+    ch.classList.add('active'); f=ch.getAttribute('data-f'); apply();
+  });});
+  document.getElementById('psearch').addEventListener('input',function(e){
+    q=e.target.value.trim().toLowerCase(); apply();
+  });
+})();
+</script>
   </div>
 </section>
 <section class="section" style="padding-top:0;">
