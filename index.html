@@ -269,6 +269,63 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
   .wordstrip{padding:16px 1.5rem;gap:10px 22px;}
 }
 
+
+/* ==== SANATSAL BASKI ATÖLYE ŞERİDİ ==== */
+.atolye{
+  display:block;position:relative;border-radius:var(--rxl);text-decoration:none;overflow:hidden;
+  border:1px solid transparent;
+  background:linear-gradient(var(--navy3),var(--navy3)) padding-box,
+             linear-gradient(100deg,rgba(0,200,240,.55),rgba(139,124,247,.55) 45%,rgba(242,107,216,.5)) border-box;
+  transition:transform .25s,box-shadow .3s;
+}
+.atolye:hover{transform:translateY(-4px);box-shadow:0 34px 70px -34px rgba(139,124,247,.4);}
+.atolye::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 95% at 82% 12%,rgba(139,124,247,.14),transparent 62%),
+             radial-gradient(ellipse 45% 85% at 65% 105%,rgba(0,200,240,.10),transparent 62%);
+}
+.atolye-in{
+  position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);
+  gap:2rem;align-items:center;
+  padding:clamp(28px,4vw,48px) clamp(22px,4vw,54px) clamp(20px,3vw,36px);
+}
+.atolye-tag{display:inline-flex;align-items:center;gap:10px;font-size:10.5px;letter-spacing:2.8px;font-weight:700;color:var(--w50);font-family:var(--font-d,'Space Grotesk',sans-serif);}
+.atolye-tag i{width:7px;height:7px;border-radius:50%;background:linear-gradient(120deg,var(--cyan),#8b7cf7,#f26bd8);box-shadow:0 0 12px rgba(139,124,247,.8);}
+.atolye h2{font-family:var(--font-d,'Space Grotesk',sans-serif);font-size:clamp(1.45rem,2.7vw,2.25rem);font-weight:800;line-height:1.14;color:var(--w);margin:14px 0 10px;letter-spacing:-.01em;text-wrap:balance;}
+.atolye h2 em{font-style:italic;background:linear-gradient(92deg,var(--cyan),#8b7cf7 55%,#f26bd8);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.atolye p{font-size:14px;color:var(--w50);line-height:1.7;max-width:56ch;}
+.atolye-cta{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--font-d,'Space Grotesk',sans-serif);font-size:13.5px;font-weight:700;color:var(--cyan);}
+.atolye-cta i{font-size:15px;transition:transform .25s;}
+.atolye:hover .atolye-cta i{transform:translate(3px,-3px);}
+/* mini 3D halka */
+.atolye-ring{display:flex;justify-content:center;perspective:900px;}
+.aring{--tz:150px;position:relative;width:106px;aspect-ratio:3/4;transform-style:preserve-3d;transform:rotateX(-10deg);}
+.ap{position:absolute;inset:0;border-radius:9px;border:1px solid rgba(255,255,255,.24);opacity:.95;box-shadow:0 16px 34px -16px rgba(0,0,0,.65);}
+.ap::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,rgba(255,255,255,.14),transparent 45%);}
+.ap1{transform:rotateY(0deg) translateZ(var(--tz));background:radial-gradient(circle at 50% 36%,#f6d9a0 0%,#e0955a 30%,#a34a2c 60%,#3a2020 100%);}
+.ap2{transform:rotateY(60deg) translateZ(var(--tz));background:linear-gradient(180deg,#c8d4e6 0%,#8ba2c4 36%,#51648e 62%,#22283f 100%);}
+.ap3{transform:rotateY(120deg) translateZ(var(--tz));background:repeating-linear-gradient(100deg,#191622 0 6px,#d9dde9 6px 12px,#3c3750 12px 14px,#d9dde9 14px 24px);}
+.ap4{transform:rotateY(180deg) translateZ(var(--tz));background:linear-gradient(160deg,#f26bd8 0%,#8b5cd6 45%,#2c2350 100%);}
+.ap5{transform:rotateY(240deg) translateZ(var(--tz));background:linear-gradient(180deg,#d6dfd2 0%,#93a68c 40%,#4f6250 70%,#243026 100%);}
+.ap6{transform:rotateY(300deg) translateZ(var(--tz));background:conic-gradient(from 210deg at 50% 42%,#00c8f0 0%,#8b7cf7 32%,#0a1225 55%,#3d78ff 78%,#00c8f0 100%);}
+@media (prefers-reduced-motion: no-preference){
+  .aring{animation:aringDon 22s linear infinite;}
+  @keyframes aringDon{from{transform:rotateX(-10deg) rotateY(0deg);}to{transform:rotateX(-10deg) rotateY(360deg);}}
+}
+/* akan kelime şeridi */
+.atolye-mq{position:relative;border-top:.5px solid var(--w10);padding:11px 0;overflow:hidden;white-space:nowrap;}
+.atolye-mq>div{display:inline-flex;}
+.atolye-mq span{font-size:10px;letter-spacing:2.8px;color:var(--w30);padding:0 24px;position:relative;font-family:var(--font-d,'Space Grotesk',sans-serif);}
+.atolye-mq span::after{content:'·';position:absolute;right:-4px;color:rgba(139,124,247,.9);}
+@media (prefers-reduced-motion: no-preference){
+  .atolye-mq>div{animation:atolyeAkis 26s linear infinite;}
+  @keyframes atolyeAkis{to{transform:translateX(-50%);}}
+}
+@media(max-width:860px){
+  .atolye-in{grid-template-columns:1fr;}
+  .atolye-ring{display:none;}
+}
+
 </style>
 <link rel="stylesheet" href="assets/css/design-system.css?v=7">
 
@@ -593,6 +650,28 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
     </div>
     <div class="soltabs-all"><a href="cadbim_cozumler.html">Tüm çözümleri görüntüleyin <i class="ti ti-arrow-right" style="font-size:12px;"></i></a></div>
   </div>
+</section>
+
+<!-- SANATSAL BASKI ATÖLYESİ ŞERİDİ -->
+<section class="section" style="padding-top:0;padding-bottom:0;">
+  <a href="cadbim_sanatsal_baski.html" class="atolye reveal" aria-label="Sanatsal Baskı Atölyesi sayfasına git">
+    <div class="atolye-in">
+      <div>
+        <span class="atolye-tag"><i></i>SANATSAL BASKI ATÖLYESİ</span>
+        <h2>Fotoğrafınız, duvarda bir <em>esere</em> dönüşür.</h2>
+        <p>12 renk pigment, müze kalitesi kağıtlar ve elle finisaj — kadrajınızdaki kare çerçevelenir, sergiye hazır teslim edilir. Ücretsiz Photoshop rötuşu dahil.</p>
+        <span class="atolye-cta">Atölyeyi keşfedin <i class="ti ti-arrow-up-right"></i></span>
+      </div>
+      <div class="atolye-ring" aria-hidden="true">
+        <div class="aring">
+          <i class="ap ap1"></i><i class="ap ap2"></i><i class="ap ap3"></i><i class="ap ap4"></i><i class="ap ap5"></i><i class="ap ap6"></i>
+        </div>
+      </div>
+    </div>
+    <div class="atolye-mq" aria-hidden="true">
+      <div><span>GICLÉE</span><span>KANVAS</span><span>FOTOBLOK</span><span>ÇERÇEVE</span><span>SERGİ BASKISI</span><span>REPRODÜKSİYON</span><span>GICLÉE</span><span>KANVAS</span><span>FOTOBLOK</span><span>ÇERÇEVE</span><span>SERGİ BASKISI</span><span>REPRODÜKSİYON</span></div>
+    </div>
+  </a>
 </section>
 
 <!-- NEDEN CADBİM -->

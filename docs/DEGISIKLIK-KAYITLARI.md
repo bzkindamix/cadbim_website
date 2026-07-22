@@ -8,6 +8,18 @@
 
 ## 2026-07-22
 
+### DK-2026-07-22-06 — Ana sayfaya Sanatsal Baskı Atölyesi şeridi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** index.html'de Çözümler ile Fark (Neden Cadbim) bölümleri arasına, atölye sayfasına yönlendiren tıklanabilir tanıtım şeridi. Ana sayfanın lacivert/cyan diline oturan ama atölye kimliğini taşıyan tasarım:
+  - **İridesan degrade çerçeve** (cyan→viyole→magenta, padding-box/border-box tekniği) + köşe ışımaları; hover'da yükselme + viyole gölge.
+  - **Mini 3D halka:** atölye sayfasındaki galeri halkasının 6 panelli kompakt versiyonu (saf CSS, 22s dönüş, -10° eğim; mobilde gizli).
+  - **Akan kelime şeridi:** alt kenarda GICLÉE · KANVAS · FOTOBLOK · ÇERÇEVE · SERGİ BASKISI · REPRODÜKSİYON (26s döngü).
+  - Metin: "Fotoğrafınız, duvarda bir *esere* dönüşür." (degrade em) + rötuş/finisaj özeti + "Atölyeyi keşfedin" oku.
+  - Ana sayfanın mevcut `.reveal` animasyon sistemine bağlandı; tüm hareket `prefers-reduced-motion` korumalı.
+- **Doğrulama:** localhost 1280/375 — konum doğru (Çözümler→şerit→Fark), hedef link doğru, 6 panel + `aringDon` animasyonu, 12 marquee span, 1169×312 yerleşim, mobilde halka gizli/335px genişlik, yatay taşma 0, div dengesi 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı. **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-22-05 — Sanatsal Baskı R2: tek-ekran hero, ray okları, 3+3 finisaj, 3D galeri halkası
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
