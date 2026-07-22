@@ -8,6 +8,15 @@
 
 ## 2026-07-22
 
+### DK-2026-07-22-07 — Atölye şeridi v2: tam genişlik + palet uyumu
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Onur'un iki maddesi:**
+  1. **Tam genişlik, çerçevesiz:** Yuvarlatılmış degrade çerçeveli kart kaldırıldı; şerit artık section sarmalayıcısız, kenardan kenara tam bleed bir bant (üst/alt ince w10 çizgiler, section-alt dilinde navy2 zemin + cyan ışımalar, hover'da navy3).
+  2. **Palet denetimi:** Ana sayfanın gerçek paleti ölçüldü — yalnız lacivert ailesi + cyan ailesi (#00c8f0/#0ea5e9/#38bdf8) + nötr açık (#e6ebf2). Şeritteki 5 yabancı renk (viyole #8b7cf7, magenta #f26bd8, mavi #3d78ff...) doğrulandı: palette YOK → tamamı temizlendi. Degrade çerçeve/em/tag/marquee vurguları cyan'a; **halka panelleri** palet-içi "baskı" görsellerine yeniden boyandı (cyan güneş, sis, s/b çizgiler, cyan konik, mimari çizgiler, nötr kağıt) — sıcak/viyole tonlar tamamen çıktı.
+- **Doğrulama:** Tam bleed (sol 0, genişlik = içerik genişliği 1265), border-radius 0, em/tag cyan (rgb 0,200,240), 6 panel, dosyada yabancı renk kalıntısı 0, taşma 0, div/section dengesi 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı. **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-22-06 — Ana sayfaya Sanatsal Baskı Atölyesi şeridi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
