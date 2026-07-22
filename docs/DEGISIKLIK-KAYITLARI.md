@@ -8,6 +8,13 @@
 
 ## 2026-07-22
 
+### DK-2026-07-22-04 — Sanatsal Baskı: Ankara kaldırıldı, WhatsApp hattı eklendi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** Onur'un talebi — bu sayfada Ankara'dan bahsedilmeyecek. "ANKARA HATTI" iletişim kartı (0553 353 99 20) kaldırıldı; yerine **WHATSAPP HATTI — 0554 740 37 57** kartı geldi. Kart `https://wa.me/905547403757` linkiyle, "Merhaba, sanatsal baskı talebim var." ön-dolu mesajıyla WhatsApp'ı açıyor (`target="_blank" rel="noopener"`). Süreç bölümündeki "E-posta ya da WhatsApp" ifadesiyle artık tutarlı.
+- **Doğrulama:** Sayfada Ankara/0553 referansı 0; wa.me/905547403757 ve görünür numara doğru.
+- **Durum:** ✅ Tamamlandı ve yayınlandı. **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-22-03 — Sanatsal Baskı: özel e-posta + metin tonu keskinleştirme
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
