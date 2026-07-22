@@ -8,6 +8,17 @@
 
 ## 2026-07-22
 
+### DK-2026-07-22-08 — Yeni DesignJet modelleri: T1600 / T2600 MFP Plus Edition (Build Connected)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kaynak:** Onur'un ilettiği resmi HP pazarlama toolkit'i (T1600/T2600 Plus Edition | Build Connected, Nisan 2026 verileri).
+- **Yeni sayfalar (2):** `cadbim_designjet_t1600_plus.html` (/designjet-t1600-plus) ve `cadbim_designjet_t2600_plus.html` (/designjet-t2600-plus) — baz sayfalardan cerrahî klon; başlık/meta/JSON-LD, YENİ rozeti, h1+hero, ürün bölümü (broşür yerine **HP Build Workspace** sayfa linki), 6'şar özellik kartı, varyant çipleri (dr Plus dahil), ilgili-ürün pilleri ve CTA yeniden yazıldı. Kaynak-dipnot satırı eklendi (180 baskı/saat = Hızlı mod + Economode; istifleme karşılaştırması 12.000 $ altı, Nisan 2026).
+- **Öne çıkanlar:** T1600 Plus — Build Workspace bulut iş akışı, saatte 180 baskı, tam entegre 100 sayfa istifleyici, gömülü Adobe PDF Print Engine, Wolf Pro Security, dr çift rulo. T2600 MFP Plus — ön panelden buluta tarama, **AI vektörizasyon** (raster→CAD, ilk bulut çözümü), **QR bağlantılı sürüm kontrolü** + mobil tarama.
+- **Bağlantılar:** baz T1600/T2600 sayfalarına "YENİ — Plus Edition çıktı" duyuru şeridi; hp.html kataloğuna 2 kart (DesignJet T filtresi 9→11, toplam 22→24); T serisi sayfasına 2 pill + tanıtım cümlesi; sitemap +2 URL; mobilenav aramasına 2 kayıt.
+- **Bonus düzeltme:** 23 DesignJet sayfasının breadcrumb'ında yapışmış hatalı nav linkleri (HP Workstations / Build Workspace) ve mükerrer "DesignJet" halkası temizlendi.
+- **Doğrulama:** localhost — iki sayfada 0 kırık link/asset, YENİ rozeti, 6 özellik kartı, 3 varyant çipi, video, canonical doğru; hp katalog +2 ve "24 ürün"; baz sayfa şeritleri yerinde; div/section dengeleri 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı. **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-22-07 — Atölye şeridi v2: tam genişlik + palet uyumu
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)

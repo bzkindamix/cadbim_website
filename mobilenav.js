@@ -79,6 +79,8 @@
     ["DesignJet T1600", "cadbim_designjet_t1600.html", "hp t1600 departman cift rulo plotter", "Ürün"],
     ["DesignJet T1700", "cadbim_designjet_t1700.html", "hp t1700 44 inc gis harita plotter", "Ürün"],
     ["DesignJet T2600 MFP", "cadbim_designjet_t2600.html", "hp t2600 tarama kopyalama departman", "Ürün"],
+    ["DesignJet T1600 Plus Edition", "cadbim_designjet_t1600_plus.html", "hp t1600 plus build connected workspace bulut plotter yeni", "Ürün"],
+    ["DesignJet T2600 MFP Plus Edition", "cadbim_designjet_t2600_plus.html", "hp t2600 plus build connected vektorizasyon qr tarama yeni", "Ürün"],
     ["DesignJet XL 3600", "cadbim_designjet_xl3600.html", "hp xl 3600 dayanikli uretim mfp", "Ürün"],
     ["DesignJet XL 3800", "cadbim_designjet_xl3800.html", "hp xl 3800 en hizli 6 a1 dakika", "Ürün"],
     ["DesignJet Z6810", "cadbim_designjet_z6810.html", "hp z6810 42 inc uretim fotograf", "Ürün"],
