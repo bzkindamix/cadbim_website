@@ -8,6 +8,17 @@
 
 ## 2026-07-22
 
+### DK-2026-07-22-05 — Sanatsal Baskı R2: tek-ekran hero, ray okları, 3+3 finisaj, 3D galeri halkası
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Onur'un 4 maddesi:**
+  1. **Hero her cihazda tek ekran:** Display tipografisi genişlik+yükseklik duyarlı ölçeğe alındı — `clamp(2.5rem, min(11.5vw, 15vh), 10.5rem)`; tüm dikey boşluklar (hero padding, h1/h-bottom/h-meta marjları, buton yükseklikleri) vh-clamp'e çevrildi. Doğrulama: 1366×700 → 668/700, 1600×860 → 797/860, 375×812 → 761/812 — hepsi sığıyor.
+  2. **Yüzey rayına ok düğmeleri:** başlık satırına ←/→ dairesel butonlar; kart genişliği+16px adımla smooth kaydırma + smooth'un çalışmadığı ortamlar için 320ms zamanlayıcı güvencesi (doğrudan scrollLeft). İki yön de test edildi.
+  3. **Finisaj 3+3:** auto-fit yerine sabit `repeat(3,1fr)` (≤900px: 2 sütun, ≤540px: 1). Doğrulama: 2 satır × 3 kutu.
+  4. **Girişe 3D animasyon:** Saf CSS **3D galeri halkası** — 8 "baskı paneli" (gradient eserler) `preserve-3d` + `rotateY(n·45°) translateZ()` ile halka dizilimi, 34s sonsuz dönüş, -8° eğim, imleçle ±8° paralaks (pointer:fine + hareket açıkken). Kütüphanesiz, `prefers-reduced-motion`'da statik yelpaze, ≤1180px'te gizli.
+- **Ek düzeltme:** 3D panellerin projeksiyonu scrollable alanı genişletiyordu → `html{overflow-x:clip}`. Başlık metni ile halka çakışması gerçek metin genişliğiyle ölçüldü: 1366'da 500px+ boşluk, çakışma yok.
+- **Durum:** ✅ Tamamlandı ve yayınlandı. **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-22-04 — Sanatsal Baskı: Ankara kaldırıldı, WhatsApp hattı eklendi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)

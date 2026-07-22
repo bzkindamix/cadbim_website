@@ -463,6 +463,77 @@ main,header,footer{position:relative;z-index:3;}
 .foot a{font-size:12px;color:var(--tx2);text-decoration:none;}
 .foot a:hover{color:var(--acc2);}
 @media(max-width:640px){.foot nav{margin-left:0;}}
+
+/* ============ R2 REVİZYONLARI ============ */
+/* 3D panellerin projeksiyonu scroll alanını genişletmesin */
+html{overflow-x:clip;}
+/* 1) hero: her cihazda tek ekran — tipografi ve boşluklar yükseklik-duyarlı */
+.display{font-size:clamp(2.5rem,min(11.5vw,15vh),10.5rem);margin:clamp(10px,2.4vh,26px) 0 0;}
+.hero{position:relative;padding:calc(68px + clamp(10px,3vh,40px)) clamp(18px,4vw,48px) clamp(12px,3vh,34px);}
+.hero>*{position:relative;z-index:1;}
+.hero .stage{z-index:0;}
+.h-bottom{margin-top:clamp(14px,3.4vh,42px);}
+.h-meta{margin-top:clamp(14px,3.4vh,42px);padding-top:clamp(12px,2.4vh,24px);}
+.h-sub{font-size:clamp(14px,min(1.2vw,2.1vh),17px);}
+.btn-w,.btn-o{padding:clamp(12px,1.8vh,16px) 28px;}
+
+/* 3) finisaj: masaüstünde 3+3 */
+.fin{grid-template-columns:repeat(3,1fr);}
+@media(max-width:900px){.fin{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:540px){.fin{grid-template-columns:1fr;}}
+
+/* 2) yüzey rayı ok düğmeleri */
+.rnav{display:flex;gap:10px;}
+.rnav button{
+  width:46px;height:46px;border-radius:50%;border:1.5px solid var(--ln);
+  background:transparent;color:var(--tx);font-size:17px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-family:var(--fd);
+  transition:border-color .2s,color .2s,transform .15s;
+}
+.rnav button:hover{border-color:var(--acc2);color:var(--acc2);transform:translateY(-2px);}
+.rnav button:active{transform:translateY(0);}
+
+/* 4) 3D galeri halkası — saf CSS, kütüphanesiz */
+.stage{
+  position:absolute;top:50%;right:clamp(10px,7vw,130px);
+  transform:translateY(-50%);pointer-events:none;
+  perspective:1300px;
+}
+.tilt{transform:rotateX(-8deg) rotateY(var(--my,0deg));transform-style:preserve-3d;transition:transform .4s ease-out;}
+.ring{
+  --tz:clamp(230px,19vw,310px);
+  position:relative;width:clamp(175px,14.5vw,235px);aspect-ratio:3/4;
+  transform-style:preserve-3d;
+}
+@media (prefers-reduced-motion: no-preference){
+  .ring{animation:donme 34s linear infinite;}
+  @keyframes donme{from{transform:rotateY(0deg);}to{transform:rotateY(360deg);}}
+}
+.panel{
+  position:absolute;inset:0;border-radius:12px;overflow:hidden;
+  border:1px solid rgba(233,236,247,.22);
+  box-shadow:0 24px 60px -22px rgba(0,0,0,.65);
+  backface-visibility:visible;opacity:.92;
+}
+.panel::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.13),transparent 42%);}
+.panel:nth-child(1){transform:rotateY(0deg) translateZ(var(--tz));}
+.panel:nth-child(2){transform:rotateY(45deg) translateZ(var(--tz));}
+.panel:nth-child(3){transform:rotateY(90deg) translateZ(var(--tz));}
+.panel:nth-child(4){transform:rotateY(135deg) translateZ(var(--tz));}
+.panel:nth-child(5){transform:rotateY(180deg) translateZ(var(--tz));}
+.panel:nth-child(6){transform:rotateY(225deg) translateZ(var(--tz));}
+.panel:nth-child(7){transform:rotateY(270deg) translateZ(var(--tz));}
+.panel:nth-child(8){transform:rotateY(315deg) translateZ(var(--tz));}
+.a1{background:radial-gradient(ellipse 90% 55% at 50% 88%,#241a12 0%,transparent 60%),radial-gradient(circle at 50% 36%,#f6d9a0 0%,#e0955a 30%,#a34a2c 60%,#3a2020 100%);}
+.a2{background:linear-gradient(180deg,#c8d4e6 0%,#8ba2c4 36%,#51648e 62%,#22283f 100%);}
+.a3{background:repeating-linear-gradient(100deg,#191622 0 8px,#d9dde9 8px 16px,#3c3750 16px 18px,#d9dde9 18px 32px);}
+.a4{background:radial-gradient(circle at 62% 30%,#ffe9b8 0%,#f2a65f 20%,transparent 46%),linear-gradient(180deg,#8fb6c9 0%,#5d84a6 40%,#2e3f63 72%,#161b2e 100%);}
+.a5{background:linear-gradient(160deg,#f26bd8 0%,#8b5cd6 45%,#2c2350 100%);}
+.a6{background:linear-gradient(180deg,#d6dfd2 0%,#93a68c 40%,#4f6250 70%,#243026 100%);}
+.a7{background:radial-gradient(circle at 50% 62%,#e8c87a 0%,#b98e45 34%,transparent 66%),linear-gradient(180deg,#22263c 0%,#3c3350 55%,#141221 100%);}
+.a8{background:conic-gradient(from 210deg at 50% 42%,#6ee7ff 0%,#8b7cf7 32%,#1a1626 55%,#3d78ff 78%,#6ee7ff 100%);}
+@media(max-width:1180px){.stage{display:none;}}
+
 </style>
 </head>
 <body>
@@ -491,6 +562,14 @@ main,header,footer{position:relative;z-index:3;}
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+  <div class="stage" aria-hidden="true">
+    <div class="tilt">
+      <div class="ring">
+        <div class="panel a1"></div><div class="panel a2"></div><div class="panel a3"></div><div class="panel a4"></div>
+        <div class="panel a5"></div><div class="panel a6"></div><div class="panel a7"></div><div class="panel a8"></div>
+      </div>
+    </div>
+  </div>
   <div class="h-eyebrow lm l1"><span style="display:inline-flex;align-items:center;gap:14px;"><span class="dot"></span>CADBİM ATÖLYE<span class="thin">/</span>İZMİR<span class="thin">/</span>EST. 1993</span></div>
   <h1 class="display" aria-label="Sanatsal Baskı Atölyesi">
     <span class="row lm l1"><span>SANATSAL</span></span>
@@ -571,6 +650,10 @@ main,header,footer{position:relative;z-index:3;}
     <span class="bno">02 — YÜZEYLER</span>
     <h2 class="btitle">Doğru kağıt, işin yarısı.</h2>
     <p class="bsub">Altı yüzey, tek soru: karenize hangisi hizmet ediyor? Kararsızsanız örnek baskıyla gösteririz.</p>
+    <div class="rnav">
+      <button type="button" id="rprev" aria-label="Önceki yüzeyler" data-hover>←</button>
+      <button type="button" id="rnext" aria-label="Sonraki yüzeyler" data-hover>→</button>
+    </div>
   </div>
   <div class="rail-wrap" data-rv>
     <div class="rail" id="rail">
@@ -740,6 +823,20 @@ main,header,footer{position:relative;z-index:3;}
     rail.addEventListener("pointerup",function(){asagi=false;});
     rail.addEventListener("pointercancel",function(){asagi=false;});
   }
+  /* ray ok düğmeleri */
+  var rprev=document.getElementById("rprev"),rnext=document.getElementById("rnext");
+  function raykay(yon){
+    if(!rail)return;
+    var k=rail.querySelector(".rcard");
+    var adim=(k?k.getBoundingClientRect().width+16:330)*yon;
+    var once=rail.scrollLeft;
+    rail.scrollBy({left:adim,behavior:"smooth"});
+    setTimeout(function(){ /* smooth çalışmayan ortam güvencesi */
+      if(Math.abs(rail.scrollLeft-once)<4){rail.scrollLeft=once+adim;}
+    },320);
+  }
+  if(rprev)rprev.addEventListener("click",function(){raykay(-1);});
+  if(rnext)rnext.addEventListener("click",function(){raykay(1);});
 
   var rvler=[].slice.call(document.querySelectorAll("[data-rv]"));
   var sayanlar=[].slice.call(document.querySelectorAll("[data-n]"));
@@ -821,6 +918,15 @@ main,header,footer{position:relative;z-index:3;}
       });
       b.addEventListener("mouseleave",function(){b.style.transform="";});
     });
+  }
+  /* 3D halka: imleç paralaksı */
+  if(ince&&!azalt){
+    var tilt=document.querySelector(".tilt");
+    if(tilt){
+      document.addEventListener("mousemove",function(e){
+        tilt.style.setProperty("--my",(((e.clientX/window.innerWidth)-.5)*16).toFixed(1)+"deg");
+      },{passive:true});
+    }
   }
 })();
 </script>
