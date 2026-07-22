@@ -6,6 +6,20 @@
 
 ---
 
+## 2026-07-22
+
+### DK-2026-07-22-01 — Sanatsal Baskı Atölyesi: özel tasarım one-pager
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Kapsam:** `cadbim_sanatsal_baski.html` sıfırdan, site genel temasından bilinçli ayrılan **galeri/editoryal estetikte** tek sayfalık tasarımla yeniden yazıldı (Onur'un talebi: "tamamen muhteşem, gerekirse tema dışı"). İçerik canlı cadbim.com.tr/sanatsalbaski + mevcut sayfadan derlendi.
+- **Tasarım dili:** Fildişi kağıt zemini + mürekkep siyahı + vermilyon vurgu; Fraunces (optik boyutlu serif) + Inter tipografisi; CSS gren/kağıt dokusu; navy/cyan temadan tam kopuş.
+- **Bölümler:** Minimal sabit üst bar → Hero (saf CSS "galeri duvarı": 3 çerçeveli eser + künye plaketi, kademeli yükleme animasyonu) → akan şerit (GICLÉE/KANVAS/FOTOBLOK...) → 5 hizmet satırı (editoryal liste) → 6 yüzey kartı (hover parlaklık süpürmeli doku çipleri) → **interaktif rötuş kıyas sürgüsü** (HAM DOSYA / ATÖLYE ÇIKIŞI) → 4 adımlı süreç (kontur rakamlar) → koyu ekipman bölümü (Z9+ Pro: 12 renk / 2400 dpi / 152 cm / 100+ yıl **animasyonlu sayaçlar**) → sergi alıntısı → 6 finisaj kartı (el çizimi SVG ikonlar) → iletişim (İzmir/Ankara/e-posta/form kartları).
+- **Etkileşim/erişilebilirlik:** Sayfaya özel zaman-eşikli scroll-reveal + hero paralaksı + sayaçlar; tümü `prefers-reduced-motion`'da devre dışı (içerik anında görünür). Uppercase metinler literal yazıldı — İ/I sorunu tasarımdan elendi (GICLÉE, FINE ART).
+- **SEO:** canonical `/sanatsal-baski` korundu; title/description yenilendi; JSON-LD **Service** şeması eklendi (Organization + WebPage + Breadcrumb ile).
+- **Doğrulama:** localhost 1280/375 — yapı sayımları tam (5+6+4+4+6+4 kart/bölüm, 3 çerçeve), logo/Fraunces yüklü, sürgü %25→%80 tepkili, şerit çoğaltıldı (18 span), reveal kademeli (17/41 kısmi kaydırmada), sayaçlar hedefe ulaştı (12/2400/152/100), yatay taşma yok, konsol hatası 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı.
+- **Referans:** commit (main) — aşağıda.
+
 ## 2026-07-21
 
 ### DK-2026-07-21-31 — Canlıya geçiş hazırlığı: eski site URL envanteri + 301 haritası
