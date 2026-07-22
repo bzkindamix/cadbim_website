@@ -8,6 +8,19 @@
 
 ## 2026-07-22
 
+### DK-2026-07-22-02 — Sanatsal Baskı one-pager'ı Noomo stiline geçirildi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **Tetikleyici:** Onur'un referansı — noomoagency.com (Awwwards). Canlı siteden tasarım imzaları çıkarıldı: menekşe-siyah zemin (#181520), buz-lavanta metin, elektrik mavisi (#007aff), NeueMachina display tipografisi, iridesan 3D küre.
+- **Uyarlama (DK-01'deki galeri/fildişi sürüm yerine):**
+  - **Palet:** #131019 menekşe-siyah + buz-lavanta (#e9ecf7) + elektrik mavisi/iridesan degrade (cyan→viyole→magenta). **Tipografi:** Space Grotesk (NeueMachina'nın Google Fonts karşılığı) + Inter.
+  - **Hero:** 11.5vw'lik 3 satır display — SANATSAL (dolu) / BASKI (iridesan degrade) / ATÖLYESİ (kontur) — satır-maskeli yükleme reveal'ları; arkada 2 iridesan CSS orb (WebGL küre öykünmesi, blur+drift).
+  - **Noomo imzaları:** özel imleç (nokta + gecikmeli halka, data-hover'da büyür; ilk mousemove'a kadar gizli), manyetik butonlar, marquee şerit, dev satır-listesi hizmetler (hover'da degrade dolgu + ok rotasyonu), yatay sürükle-kaydır yüzey rayı, degrade dev sayaçlar, kontur CTA tipografisi (BASKIYA HAZIR MISINIZ?).
+  - **Korunanlar:** interaktif rötuş sürgüsü (koyu restil), 4 adım süreç, 6 finisaj kartı, iletişim kartları; içerik birebir.
+- **Erişilebilirlik/dayanıklılık:** Tüm hareket `prefers-reduced-motion`'da kapalı; imleç/manyetik yalnız `hover:hover + pointer:fine`; sayaçlarda rAF + zamanlayıcı güvencesi; reveal zaman-eşikli scroll motoru. SEO bloğu (canonical, Service JSON-LD) değişmedi.
+- **Doğrulama:** localhost 1280/375 — yapı tam (5 iş + 6 yüzey + 4 adım + 4 sayaç + 6 finisaj + 4 iletişim + 2 orb), Space Grotesk aktif, sürgü %30→%75, marquee 18 span, reveal kademeli (16/36 kısmi), sayaçlar 12/2400/152/100, başlık mobilde sığıyor, ray kaydırılabilir, taşma 0, konsol hatası 0.
+- **Durum:** ✅ Tamamlandı ve yayınlandı. **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-22-01 — Sanatsal Baskı Atölyesi: özel tasarım one-pager
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
