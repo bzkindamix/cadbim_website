@@ -8,6 +8,14 @@
 
 ## 2026-07-22
 
+### DK-2026-07-22-03 — Sanatsal Baskı: özel e-posta + metin tonu keskinleştirme
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı)
+- **E-posta:** Sayfadaki görünür tüm iletişim noktaları **sanatsalbaski@cadbim.com.tr** oldu (CTA butonu + e-posta kartı; 2 mailto + 1 görünür metin). JSON-LD Organization kaydındaki cadbim@ bilinçli korundu — kurum kimliği site genelinde tektir. *Not: yeni adresin posta sunucusunda tanımlanması gerekir.*
+- **Metin tonu (38 metin bloğu):** Açıklayıcı ton, kısa-özgüvenli galeri diline çevrildi. Örnekler: hero → "Duvara astığınız şey artık bir çıktı değil — bir eser."; hizmetler başlığı → "Kadrajdan koleksiyona."; rötuş → "Ham dosya girer. Eser çıkar."; yüzeyler → "Doğru kağıt, işin yarısı."; süreç → "Renk doğruluğu pazarlık konusu değil."; finisaj → "Baskı yarısı; sunum diğer yarısı." CTA kartları ve kapanış notu sadeleştirildi; tüm iddialar içerik kaynaklı kaldı (yeni sayı/iddia eklenmedi).
+- **Doğrulama:** localhost — 5 yeni ton işaretçisi + sanatsalbaski@ görünür (2 mailto), eski adres görünür metinde 0, sürgü çalışıyor, taşma yok.
+- **Durum:** ✅ Tamamlandı ve yayınlandı. **Referans:** commit (main) — aşağıda.
+
 ### DK-2026-07-22-02 — Sanatsal Baskı one-pager'ı Noomo stiline geçirildi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı)
