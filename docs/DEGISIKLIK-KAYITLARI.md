@@ -8,6 +8,17 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-14 — Mega menü: "Dijital İkiz & Üretim" iki ayrı gruba bölündü (6 kolon)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "mega menüde üretim ve dijital ikiz çözümlerini 2 farklı çözüm grubu olarak ayır ve göster. ana sayfadaki çözümler şeridi, çözümler ana sayfası ve mega menü çözümler aynı mantıkta eş değer olmalı."
+- **Kök neden:** "Dijital İkiz" (cadbim_dijital_ikiz.html — AEC/yapı odaklı operasyonel twin, Autodesk Tandem) ile "Fabrika Tasarımı, CAM & İmalat, Eklemeli İmalat, Nesting" (üretim/imalat odaklı) tek bir "Dijital İkiz & Üretim" grubunda karışık gösteriliyordu; bunlar farklı disiplinler.
+- **Çözüm (155 sayfa, mega menü):** Grup ikiye ayrıldı — **"Dijital İkiz"** (yalnızca Dijital İkiz) ve **"Üretim"** (Fabrika Tasarımı, CAM & İmalat, Eklemeli İmalat & 3D Baskı, Nesting). Mega menü artık 5 değil 6 kolon.
+- **CSS (design-system.css, paylaşılan, v9→v10):** `.nav-mega-cols` `repeat(5,1fr)`→`repeat(6,1fr)`; `.nav-mega` genişliği 920px→1080px; 1200px kırılma noktası 1300px'e çekildi (6 kolon 3'e düşsün diye erken tetiklenmesin).
+- **Kapsam notu:** "sanatsal_baski"/aktif-link varyasyonlu 5 dosya (cam, dijital_ikiz, eklemeli_imalat, fabrika_tasarimi, nesting) `class="active"` içerdiği için toplu perl replace'e uymadı, elle düzeltildi.
+- **"Eş değer" notu:** cadbim_cozumler.html (çözümler ana sayfası) zaten tüm 17 çözümü tek düz gridde listeliyor, kategori başlığı yok — bu turda kategori gruplandırması eklenmedi (kapsam dışı bırakıldı, istenirse ayrı bir iş olarak yapılabilir). Ana sayfadaki soltabs widget'ı endüstri bazlı farklı bir eksende çalışıyor; Eklemeli İmalat'ın endüstri panellerindeki tutarlılığı bir önceki kayıtta (DK-13) zaten düzeltilmişti.
+- **Doğrulama (localhost, JS ile):** index.html'de 6 nav-dd-label ("Tasarım & Mühendislik, Dijital İkiz, Üretim, Veri & Süreç Yönetimi, Görselleştirme & Gerçeklik, Sanatsal Baskı"); masaüstünde (1600px) grid 6 sütun/1080px; cadbim_dijital_ikiz.html'de active link doğru "Dijital İkiz" kolonunda; konsol hatası yok.
+- **Durum:** ✅ Mega menüde Dijital İkiz ve Üretim artık ayrı gruplar.
+
 ### DK-2026-07-26-13 — Ana sayfa "Endüstrinize Göre Çözümler" widget'ında yanlış yerleşim düzeltildi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "sanatsal baskı çözüm filtresinde eklemeli imalat ve 3d baskı çözümü gözüküyor bu yanlış, bunu doğru çözümün içine taşı, buradan kaldır."
