@@ -75,10 +75,10 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .cross{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:32px;margin-top:16px;}
 .cross h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:6px;}
 .cross .cd{font-size:13px;color:var(--w50);margin-bottom:16px;}
-.cpills{display:flex;flex-wrap:wrap;gap:8px;}
-.cp{display:flex;align-items:center;gap:8px;padding:9px 14px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;}
+.cpills{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
+.cp{display:flex;align-items:center;gap:10px;padding:14px 16px;min-height:56px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;line-height:1.4;}
 .cp:hover{border-color:var(--cbor);color:var(--cyan);}
-.cp i{font-size:14px;color:var(--cyan);}
+.cp i{font-size:14px;color:var(--cyan);flex-shrink:0;}
 .cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 72px;}
 .cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
 .cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--w);margin-bottom:10px;}
@@ -309,9 +309,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         <h1 style="font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;line-height:1.1;color:var(--w);">Fabrikayı Kurmadan Önce Simüle Edin</h1>
       </div>
       <p style="font-size:16px;color:var(--w50);line-height:1.75;margin-bottom:32px;max-width:600px;">Autodesk Factory Design Utilities ile fabrika layout optimizasyonu ve üretim hattı simülasyonu.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="cadbim_iletisim.html" class="btn-p">Teklif & Danışmanlık <i class="ti ti-arrow-right"></i></a>
-      </div>
     </div>
   </div>
 </section>

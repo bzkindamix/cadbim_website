@@ -8,6 +8,16 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-07 — Çözüm sayfaları: hero'daki erken CTA kaldırıldı + cross kutuları eşit boyuta getirildi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, cadbim_bim.html'in canlı ekran görüntüsünü paylaşarak: "çözümler sayfasında cta sı sayfa sonunda olmalı, örnek BIM çözümünde teklif & danışmanlık ctası sayfa sonunda olmalı" ve ardından "bunu tüm çözümler için uygula" dedi. Ayrı bir mesajda çözüm sonu "Bu çözümde kullanılan ürünler / hangi endüstrilerde kullanılıyor" kutularının düzensiz (değişken genişlikte) görünümünü beğenmediğini belirtip "eşit büyüklükte kutucuklar" istedi.
+- **1) Hero CTA kaldırma (15 standart çözüm sayfası):** BIM, Simülasyon & Analiz, Tolerans Analizi, Tasarım Otomasyonu, Dijital İkiz, Fabrika Tasarımı, CAM & İmalat, Eklemeli İmalat, Nesting, PLM, PDM, İnşaat Proje Yönetimi, Görselleştirme & Render, Yaratıcı İçerik & Tasarım, Gerçeklik Yakalama & Tarama — hero'daki "Teklif & Danışmanlık" butonu (sayfa sonundaki cta-strip'in birebir tekrarıydı) kaldırıldı; hero artık yalnızca tanıtım metni + rozet, dönüşüm çağrısı yalnızca sayfa sonunda.
+- **cadbim_dijital_donusum.html (özel durum):** Hero'da iki buton vardı — "Dijital Dönüşüm Danışmanlığı" (iletişime giden, tekrar eden CTA) kaldırıldı; "Çözüm Haritasını İncele" (#harita'ya kaydıran sayfa-içi gezinme) korundu, CTA değil.
+- **cadbim_sanatsal_baski.html hariç tutuldu:** Bu sayfa bambaşka bir bespoke tasarım — hero CTA'ları zaten sayfa-içi anchor'lar (#iletisim, #isler), tekrar eden bir "sayfa sonu CTA" sorunu yok.
+- **2) Eşit boy kutucuklar (16 çözüm sayfası, yukarıdaki 15 + dijital_donusum):** `.cpills` `display:flex;flex-wrap:wrap` → `display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))`; `.cp` kutularına `min-height:56px` + `padding:14px 16px` eklendi. Sonuç: "Bu çözümde kullanılan ürünler" ve "hangi endüstrilerde kullanılıyor" pilleri artık düzensiz pill değil, tek tip genişlikte kutucuk gridi.
+- **Doğrulama (localhost, JS ile):** cadbim_bim.html — hero'da 0 buton, cta-strip sonda sağlam (2 buton); `.cpills` grid, 8 ürün kutusu da 262px eşit genişlikte. cadbim_dijital_donusum.html — hero'da yalnızca "Çözüm Haritasını İncele" kaldı. 16 dosyada div/a/section etiket dengesi tam, konsol hatası yok.
+- **Durum:** ✅ Çözüm sayfalarında CTA yalnızca sayfa sonunda; cross kutuları eşit boyutlu grid.
+
 ### DK-2026-07-26-06 — Endüstriler hub'ına "Çözüm & Ürün Haritası" eklendi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "endüstri sayfasında o endüstrideki çözümler ve o çözümdeki ürünleri göster."
