@@ -8,6 +8,14 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-13 — Ana sayfa "Endüstrinize Göre Çözümler" widget'ında yanlış yerleşim düzeltildi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "sanatsal baskı çözüm filtresinde eklemeli imalat ve 3d baskı çözümü gözüküyor bu yanlış, bunu doğru çözümün içine taşı, buradan kaldır."
+- **Kök neden:** index.html'deki `.soltab-panel[data-panel="sanatsal_baski"]` içinde "Eklemeli İmalat & 3D Baskı" çözüm çipi yanlışlıkla listelenmiş (3D baskı ile sanatsal/fine-art baskının karıştırılması) — bu ikisi alakasız süreçler. Aynı zamanda bu çözümün gerçek endüstrileri olan Otomotiv ve Eğitim panellerinde hiç görünmüyordu (yalnızca Makine ve Havacılık'ta vardı).
+- **Çözüm:** "Eklemeli İmalat & 3D Baskı" çipi `sanatsal_baski` panelinden kaldırıldı; `otomotiv` ve `egitim` panellerine eklendi (Makine ve Havacılık'ta zaten doğru şekilde vardı, dokunulmadı). Artık `cadbim_cozumler.html`'deki resmi endüstri eşleşmesiyle (Makine & Üretim, Otomotiv, Eğitim, Havacılık) birebir tutarlı.
+- **Doğrulama (localhost, JS ile):** 5 panelin içeriği kontrol edildi — sanatsal_baski artık yalnızca "Sanatsal Baskı Atölyesi" + "HP DesignJet Fine Art" (2 çip); makine/otomotiv/egitim/havacilik'in hepsinde "Eklemeli İmalat & 3D Baskı" mevcut.
+- **Durum:** ✅ Sanatsal Baskı filtresi artık yalnızca gerçekten ilgili çözümleri gösteriyor.
+
 ### DK-2026-07-26-12 — Ana sayfa marka şeridi: Microsoft için gerçek logo + Chaos/Microsoft sırası değişti
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "ana sayfadaki marka logolarının font büyüklüklerini eşit olacak şekilde logo boyutlarını ayarla" ve ardından "chaos ve microsoftun yerlerini değiştir."
