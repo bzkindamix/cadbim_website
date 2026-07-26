@@ -164,3 +164,21 @@ select:focus-visible {
   [data-rv]{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .55s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rvd,0s);will-change:opacity,transform;}
   [data-rv].rv-in{opacity:1;transform:none;}
 }
+
+/* ==== R5: Sanatsal Baskı — çok renkli/efektli menü etiketi (Onur 2026-07-26) ==== */
+.sanatsal-gradient{
+  background:linear-gradient(90deg,#00c8f0,#8b7cf7,#f26bd8,#00c8f0);
+  background-size:300% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+  font-weight:700;
+}
+@media (prefers-reduced-motion: no-preference){
+  .sanatsal-gradient{animation:sanatsalShift 5s ease-in-out infinite;}
+}
+@keyframes sanatsalShift{
+  0%,100%{background-position:0% center;}
+  50%{background-position:100% center;}
+}
