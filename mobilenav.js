@@ -643,18 +643,31 @@
   tara();
 })();
 
-/* ==== .cpills grid satır dengeleme ====
-   auto-fill container genişliğine göre kaç sütun sığdığını belirler; kalan
-   öğeler son satıra düzensiz dağılabiliyordu (ör. 8 öğe -> 5+3). Sütun
-   sayısını satır sayısına bölüp yeniden hesaplayarak satırları dengeliyoruz
-   (tek sayıda öğe varsa ilk satır bir fazla alır). */
+/* ==== grid satır dengeleme (.cpills, .grid.g2/g3/g4, "İyi Uygulamalar" tipi
+   inline grid'ler) ====
+   auto-fill/auto-fit yalnızca container genişliğine göre kaç sütun sığdığını
+   belirler; kalan öğeler son satıra düzensiz dağılabiliyordu (ör. 8 öğe ->
+   5+3, 6 öğe -> 4+2). Her grid'in doğal (CSS'ten gelen) sütun sayısını
+   ölçüp satır sayısına bölerek sütunları yeniden hesaplıyoruz (tek sayıda
+   öğe varsa ilk satır bir fazla alır). Doğal grid-template-columns değeri
+   (class'tan mı geliyor, inline style'tan mı) ilk ölçümde WeakMap'e
+   önbelleğe alınır; resize'da tekrar o değere dönülüp yeniden ölçülür. */
 (function(){
+  var dogal=new WeakMap();
+  function grupla(){
+    var gridler=[].slice.call(document.querySelectorAll(".cpills, .grid.g2, .grid.g3, .grid.g4"));
+    [].slice.call(document.querySelectorAll('[style*="minmax(280px,1fr)"]')).forEach(function(e){
+      if(gridler.indexOf(e)===-1)gridler.push(e);
+    });
+    return gridler;
+  }
   function dengele(){
-    document.querySelectorAll(".cpills").forEach(function(grid){
-      var items=[].slice.call(grid.querySelectorAll(".cp"));
+    grupla().forEach(function(grid){
+      var items=[].slice.call(grid.children).filter(function(c){return c.nodeType===1;});
       var n=items.length;
       if(n<2)return;
-      grid.style.gridTemplateColumns="repeat(auto-fill,minmax(200px,1fr))";
+      if(!dogal.has(grid))dogal.set(grid,grid.style.gridTemplateColumns);
+      grid.style.gridTemplateColumns=dogal.get(grid);
       var maxCols=getComputedStyle(grid).gridTemplateColumns.split(" ").length;
       if(!maxCols||maxCols<1)maxCols=1;
       var rows=Math.ceil(n/maxCols);

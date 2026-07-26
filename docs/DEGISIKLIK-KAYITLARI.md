@@ -8,6 +8,15 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-10 — Satır dengeleme .grid.g2/g3/g4 ve inline "İyi Uygulamalar" grid'lerine genişletildi (mobilenav.js v8)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, cadbim_bim.html'in canlı ekran görüntüsünü paylaşıp "Neler Yapabiliriz?" (4+2 dağılan 6 kart) ve "Projelerde Uyguladığımız Standartlar" (4+2 dağılan 6 kutu) bölümlerinin bir önceki satır-dengeleme düzeltmesinden etkilenmediğini bildirdi: "bu sayfada ss verdiğim alanlarda bir önceki promptta söylediğim değişiklikler olmamış... bunu tüm çözüm sayfaları için yap."
+- **Kök neden:** Önceki düzeltme yalnızca `.cpills` selector'üne bakıyordu; "Neler Yapabiliriz?" kartları `.grid.g3` class'ını, "İyi Uygulamalar" kutuları ise class'sız, tamamen inline `style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))"` kullanıyor — hiçbiri `.cpills` değil.
+- **Çözüm (mobilenav.js, v7→v8):** Satır dengeleme fonksiyonu genelleştirildi — artık `.cpills`, `.grid.g2/.g3/.g4` VE `[style*="minmax(280px,1fr)"]` inline grid'lerinin hepsini tarıyor. Her grid'in ilk ölçümde doğal `grid-template-columns` değeri (class'tan mı geliyor, inline'dan mı fark etmeksizin `element.style.gridTemplateColumns`'un o anki hali) bir WeakMap'e önbelleğe alınıyor; resize'da o doğal değere dönülüp yeniden ölçülüyor, böylece sabit "200px" gibi bir varsayım hardcode edilmek zorunda kalmıyor — her grid kendi min-width'ine göre doğru ölçülüyor.
+- **Kapsam:** Paylaşılan JS dosyası olduğu için otomatik olarak tüm 16 çözüm sayfasında (ve aynı `.grid.g3`/inline pattern'i kullanan diğer sayfalarda) devreye giriyor; versiyon 155 dosyada `mobilenav.js?v=7`→`v=8` güncellendi.
+- **Doğrulama (localhost, resize+JS ile):** cadbim_bim.html — `.grid.g3` (6 kart) → 3 sütun → [3,3]; inline "İyi Uygulamalar" grid'i (6 kutu) → 3 sütun → [3,3]; `.cpills` (8 ve 2 öğe) hâlâ doğru ([4,4] ve [2]). cadbim_gorsellestirme.html — `.grid.g3` → [3,3]. Konsol hatası yok.
+- **Durum:** ✅ Çözüm sayfalarındaki üç farklı grid türü de (cpills, grid g3, inline pratikler) artık aynı satır-dengeleme kuralına tabi.
+
 ### DK-2026-07-26-09 — Eşit-kutu + satır dengeleme kuralı site geneline yayıldı
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "son verdiğim 2 promptu bütün sayfalarda bir stil kuralı olarak uygula" (eşit büyüklükte kutucuklar + satır dengeleme kuralları yalnızca 16 çözüm sayfasına uygulanmıştı).
