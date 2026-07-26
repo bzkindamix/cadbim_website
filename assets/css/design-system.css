@@ -131,25 +131,29 @@ select:focus-visible {
 }
 
 /*
-  Çözümler mega-menüsü — 15+ öğe dikeyde ekrandan taşıyordu; 4 kolonlu
-  yatay düzene alındı. Menü nav öğesinin altında ortalanır; dar ekranlarda
-  2 kolona düşer (900px altında mobil menü devrededir).
+  Çözümler mega-menüsü — 17+ öğe dikeyde ekrandan taşıyordu; 5 kolonlu
+  yatay düzene alındı (Onur 2026-07-26: Sanatsal Baskı kendi grubu oldu).
+  Menü nav öğesinin altında ortalanır; dar ekranlarda 2 kolona düşer
+  (900px altında mobil menü devrededir).
 */
 .nav-mega {
   left: 50%;
   transform: translateX(-50%) translateY(-6px);
-  width: min(780px, calc(100vw - 32px));
+  width: min(920px, calc(100vw - 32px));
   padding: 12px;
 }
 .nav-dropdown:hover .nav-mega { transform: translateX(-50%) translateY(0); }
 .nav-mega .nav-dd-feat { margin-bottom: 8px; }
 .nav-mega-cols {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 4px 12px;
 }
 .nav-mega-col .nav-dd-label { border-top: none; margin-top: 0; padding: 6px 12px 4px; }
 .nav-mega-col a { white-space: normal; }
+@media (max-width: 1200px) {
+  .nav-mega-cols { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 1100px) {
   .nav-mega { width: min(520px, calc(100vw - 32px)); }
   .nav-mega-cols { grid-template-columns: 1fr 1fr; }
