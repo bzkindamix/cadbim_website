@@ -8,6 +8,18 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-03 — Filtre hatası, Autodesk/Adobe/DesignJet düzenlemeleri, Sanatsal Baskı entegrasyonu
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) — canlı site üzerinden gelen 6 ayrı bulgu/istek.
+- **Kök neden bulundu — site geneli filtre görünmezlik hatası:** `mobilenav.js`'deki scroll-reveal motoru `.pgrid .pcard` dahil her elemana `opacity:0` veriyor, yalnızca scroll/resize event'inde `rv-in` ekliyordu. Ürün filtresi tıklaması scroll tetiklemediğinden, filtrelenip yeniden görünür olan kartlar opacity:0'da kalabiliyordu — "filtreler çalışmıyor" hissi. **Düzeltme:** reveal motoruna `MutationObserver` eklendi (style/class değişikliğinde yeniden tarama). TÜM filtrelenebilir kataloglarda (autodesk/adobe/hp/chaos/ultimaker/sketchup/urunler/sektor) aynı hatayı çözüyor. `mobilenav.js` v5→v6, 154 sayfada güncellendi.
+- **cadbim_urunler.html:** Autodesk şeridinde uzmanlık-listeli dikey logo → sade yatay logo (dar şerit alanına uygun); HP şeridinde partner rozeti → standart HP logosu; HP Build Workspace kartına logo eklendi (jenerik bulut ikonu yerine); ürün logolarının etrafındaki renkli kutu kaldırıldı, logolar büyütüldü (42px) ve metinle hizalandı — TÜM marka kartlarında.
+- **cadbim_autodesk.html:** "Cadbim Farkı" şeridi (6 kutu) tek satıra alındı (feats grid minmax 220→170px) ve Koleksiyonlar'ın üstüne, hero'nun hemen ardına taşındı; section-alt/section alternasyonu yeniden dengelendi.
+- **cadbim_adobe.html:** Hero'daki elle çizilmiş sahte üçgen logo → gerçek Adobe logosu; "Creative Cloud" ibaresi (sayfanın CC'ye özel olduğu izlenimi veriyordu) → "Tüm Ürünler & Lisanslama"; title/meta/OG/JSON-LD genel Adobe sayfası çerçevesine güncellendi.
+- **cadbim_designjet.html:** "Neden Cadbim?" + "Cadbim Farkı" şeritleri Katalog'un üstüne taşındı. Sayfa sonu "İlgili ürünler ve çözümler" bloğu DesignJet ailesinin kendi alt sayfalarını tekrar listeliyordu (zaten yukarıda gösteriliyor) → "Birlikte kullanılan ürünler ve çözümler" oldu, içerik DesignJet DIŞI gerçek tamamlayıcılara değişti: AutoCAD, Revit, HP Z Workstation, Adobe Acrobat Pro, HP Build Workspace, Sanatsal Baskı Atölyesi.
+- **Sanatsal Baskı Atölyesi çözüm entegrasyonu:** Her sayfanın "Çözümler" mega-menüsüne (Görselleştirme & Gerçeklik kolonu) eklendi — 154 sayfa. Ana sayfada Mimarlık ve Medya & Eğlence çözüm sekmesi panellerine chip eklendi; 3D çözüm görselleştiricisine (`cozumSvg`) alias tanımlandı. `cadbim_gorsellestirme.html` ve `cadbim_yaratici_icerik.html`'in "kullanıldığı ürünler" çapraz-satış listelerine eklendi.
+- **Doğrulama:** Her değişiklik için ayrı ayrı — section/div/a etiket dengeleri 0 fark, yeni asset/link fetch ile 200 doğrulandı, reveal-fix senaryosu simüle edilerek (mock getBoundingClientRect + MutationObserver) çalıştığı kanıtlandı.
+- **Durum:** ✅ 6 commit halinde tamamlandı ve yayınlandı (438bef7, e3c999e, 3f2d98d, 2a3fa02, f1590e9, fd1120d).
+
 ### DK-2026-07-26-02 — Ürünler sayfası: marka logoları düzeltmesi (Autodesk/Adobe/HP/Chaos/UltiMaker/SketchUp/Lumion)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur'un 7 maddelik logo denetim talebi.
