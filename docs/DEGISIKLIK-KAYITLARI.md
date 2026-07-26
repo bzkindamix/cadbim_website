@@ -8,6 +8,15 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-09 — Eşit-kutu + satır dengeleme kuralı site geneline yayıldı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "son verdiğim 2 promptu bütün sayfalarda bir stil kuralı olarak uygula" (eşit büyüklükte kutucuklar + satır dengeleme kuralları yalnızca 16 çözüm sayfasına uygulanmıştı).
+- **Kapsam genişletmesi:** `.cpills`/`.cp` bileşenini kullanan ama hâlâ eski `display:flex;flex-wrap:wrap` tanımını taşıyan **75 sayfa** (tüm HP DesignJet/ürün ailesi sayfaları, Adobe/Chaos/UltiMaker/SketchUp/Lumion ürün sayfaları, sektör sayfaları — sektor_mimari/insaat/makine/otomotiv/egitim/havacilik — hakkımızda, iletişim, danışmanlık vb.) tarandı; `.cpills` → `display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))`, `.cp` → `min-height:56px` + `padding:14px 16px` + `line-height:1.4`, `.cp i` → `flex-shrink:0` olarak güncellendi. İki farklı `.cp` renk varyantı (rgba literal / CSS değişkeni) ayrı ayrı eşleştirilip güncellendi.
+- **Satır dengeleme (mobilenav.js v7):** Zaten paylaşılan dosyada olduğu için CSS artık `display:grid` olan her sayfada otomatik devreye giriyor — ayrıca bir JS değişikliği gerekmedi.
+- **Sonuç:** Artık 91 sayfada `.cpills` hem eşit boyutlu kutucuklar hem de satır-dengeli (çift sayıda eşit, tek sayıda ilk satır 1 fazla, küçük sayılar tek satırda) görünüyor.
+- **Doğrulama (localhost, JS ile):** cadbim_designjet.html — 6 öğe → 3 sütun → satırlar [3,3]. sektor_mimari.html — 3 öğe → tek satır [3]. 91 dosyanın tamamında `.cpills{display:grid;...}` + `.cp` içinde `min-height:56px` eşleşmesi doğrulandı (eksik kalan yok), konsol hatası yok.
+- **Durum:** ✅ Eşit-kutu + satır dengeleme kuralı artık site genelinde tutarlı bir stil kuralı.
+
 ### DK-2026-07-26-08 — .cpills grid'i satır bazında dengelendi (mobilenav.js v7)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, bir önceki eşit-kutu düzeltmesinin ekran görüntüsünü paylaşıp 8 öğenin 5+3 dağıldığını gösterdi: "bu sayfalarda kutucuk sayıları 2 satır varsa eşit miktarda ilk satır 5 ikinci satır 3 kutu olmasın ilk satır 4 ikinci satır 4 olsun. eğer kutu sayısı tek sayı ise ilk satır ikinci satırdan 1 fazla kutucuk sahibi olsun."
