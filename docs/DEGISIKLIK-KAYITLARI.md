@@ -8,6 +8,15 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-05 — Endüstriler ana sayfası (hub) oluşturuldu
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur bildirdi: "endüstriler ana sayfası yok, menüden basınca önce mimarlık sayfasına atıyor."
+- **Kök neden:** Nav'daki "Endüstriler" üst-seviye linki (ve ana sayfadaki hero "Endüstriler" butonu) doğrudan `sektor_mimari.html`'e gidiyordu — ayrı bir "tüm endüstriler" liste/tanıtım sayfası hiç yoktu; kullanıcı menüden tıklayınca yanlışlıkla Mimarlık sektör sayfasına düşüyordu.
+- **Çözüm:** `cadbim_cozumler.html` (Çözümler hub'ı) kalıbında yeni **cadbim_endustriler.html** oluşturuldu — hero + 7 endüstri kartı (Mimarlık, İnşaat & Altyapı, Makine & Üretim, Otomotiv, Medya & Eğlence, Eğitim, Havacılık & Savunma), her biri ilgili `sektor_*.html` sayfasına linkli, ikon/renk kodları mevcut sektör sayfalarındaki tabs-nav ile birebir eşleşiyor.
+- **Site geneli link düzeltmesi (155 dosya):** Nav'daki "Endüstriler" linki → `cadbim_endustriler.html` (154 sayfa + yeni sayfanın kendi nav'ı); 7 `sektor_*.html` sayfasının nav'ındaki `class="active"` varyantı da düzeltildi; bu 7 sayfanın breadcrumb'ındaki statik `<span>Endüstriler</span>` artık gerçek bir link (`<a href="cadbim_endustriler.html">`); index.html hero'daki "Endüstriler" butonu da hub'a yönlendirildi.
+- **Doğrulama (localhost):** Nav'dan "Endüstriler" tıklanınca yeni hub sayfası açılıyor, 7 kart da doğru sektör sayfasına gidiyor; sektör sayfasında breadcrumb'daki "Endüstriler" artık tıklanabilir ve hub'a dönüyor; konsol hatası yok; div/a etiket dengesi yeni sayfada 41/41 ve 58/58.
+- **Durum:** ✅ Endüstriler artık kendi ana/hub sayfasına sahip; menüden basınca doğrudan Mimarlık'a düşme sorunu giderildi.
+
 ### DK-2026-07-26-03 — Filtre hatası, Autodesk/Adobe/DesignJet düzenlemeleri, Sanatsal Baskı entegrasyonu
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) — canlı site üzerinden gelen 6 ayrı bulgu/istek.
