@@ -8,6 +8,14 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-06 — Endüstriler hub'ına "Çözüm & Ürün Haritası" eklendi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "endüstri sayfasında o endüstrideki çözümler ve o çözümdeki ürünleri göster."
+- **Çözüm:** `cadbim_endustriler.html`'e 7 endüstri kartının altına yeni bir bölüm eklendi: 7 sekmeli (`.ind-tab-btn`) endüstri seçici + her sekmede o endüstriye ait çözüm blokları (`.ind-sol-block`), her blokta çözümün adı + link + içindeki ürünler etiket olarak listeleniyor.
+- **Veri kaynağı:** Endüstri↔çözüm eşleşmeleri uydurulmadı — her `sektor_*.html` sayfasının kendi "Bu endüstride kullanılan çözümler" (cross) + "İlgili Çözüm Alanları" (newsol) bölümlerinden derlendi (ör. Mimarlık: BIM, Tasarım Otomasyonu, Görselleştirme & Render, Gerçeklik Yakalama, İnşaat Proje Yönetimi, Yaratıcı İçerik & Tasarım). Çözüm başına ürün etiketleri `cadbim_cozumler.html`'deki `sol-tag` listeleriyle birebir aynı. Sonuç: Mimarlık 6, İnşaat 5, Makine 10, Otomotiv 9, Medya 2, Eğitim 3, Havacılık 4 çözüm bloğu.
+- **Doğrulama (localhost, JS ile):** 7 sekme/7 panel mevcut; varsayılan aktif "Mimarlık" 6 blok gösteriyor; "Makine & Üretim" sekmesine tıklanınca panel 10 bloğa (PLM ilk sırada) geçiyor; div/a/button etiket dengesi tam (130/130, 97/97, 7/7); konsol hatası yok.
+- **Durum:** ✅ Endüstriler hub'ı artık her sektör için çözüm+ürün detayını sekmeli haritada gösteriyor.
+
 ### DK-2026-07-26-05 — Endüstriler ana sayfası (hub) oluşturuldu
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur bildirdi: "endüstriler ana sayfası yok, menüden basınca önce mimarlık sayfasına atıyor."
