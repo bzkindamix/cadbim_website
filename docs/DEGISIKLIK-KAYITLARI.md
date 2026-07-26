@@ -6,6 +6,19 @@
 
 ---
 
+## 2026-07-26
+
+### DK-2026-07-26-01 — Site geneli IA denetimi: "içerik/ürünler önce, ilgili+CTA sonra" kuralı (marka + endüstri sayfaları)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Önceki session'da DK-2026-07-20-08'de "site geneli denetle" kararı açık kalmıştı; bu turda tamamlandı.
+- **Bulgu:** DesignJet'te (DK-08) ve bazı sayfalarda uygulanan "içerik/ürünler önce, ilgili linkler + CTA sonra" mimarisi 11 sayfada ihlal ediliyordu — çapraz-satış/"ilgili" bloğu hero'nun HEMEN ardında, asıl ürün kataloğu/açıklayıcı içerikten ÖNCE duruyordu.
+- **Marka sayfaları (5):** adobe, chaos, ultimaker, sketchup, lumion. "X ile birlikte çalışan/sıkça tercih edilenler" bloğu (`.cross`) hero'nun ardından CTA'nın hemen öncesine taşındı. Referans: autodesk ve microsoft sayfaları zaten doğru sıradaydı (dokunulmadı); hp de doğruydu.
+- **Endüstri sayfaları (6):** sektor_insaat, sektor_makine, sektor_mimari, sektor_otomotiv — "Bu endüstride kullanılan Cadbim çözümleri" bloğu ürün kataloğundan (`.solutions`) önce duruyordu → kataloğun sonrasına, "İlgili Çözüm Alanları" (`data-newsol`) bloğunun hemen öncesine taşındı. sektor_egitim, sektor_havacilik — ikinci "İlgili çözüm alanları" bloğu "Neler Sunuyoruz" ve "Çalışma Modelimiz" bölümlerinden önce duruyordu → CTA'nın hemen öncesine taşındı (ürün kataloğu bloğu zaten doğru yerdeydi, dokunulmadı). sektor_medya'da bu blok hiç yoktu — değişiklik gerekmedi.
+- **Çözüm sayfaları (bim/plm/cam/dijital_ikiz/nesting/insaat_yonetimi/gerceklik_yakalama/simulasyon/pdm):** denetlendi, zaten doğru sırada (önceki turda düzeltilmiş) — değişiklik gerekmedi.
+- **Not:** sketchup ve lumion'da cross-sell içeriğiyle sayfa sonundaki "Entegrasyonlar" bölümü kısmen örtüşüyor (SketchUp/Chaos/Revit gibi ortak isimler) ama bilinçli olarak silinmedi — yalnızca sıralama düzeltildi, içerik kararı bu turun kapsamı dışında bırakıldı.
+- **Doğrulama:** 11 dosyada section/div dengesi 0 fark; localhost'ta iki örnek sayfa (adobe, sektor_mimari) DOM sırası JS ile doğrulandı; konsol hatası 0; yatay taşma 0; kırık link taraması 0 (yalnızca site genelinde zaten var olan kök-göreli `/favicon.svg` yanlış pozitifi, ilgisiz).
+- **Durum:** ✅ Tamamlandı ve doğrulandı.
+
 ## 2026-07-22
 
 ### DK-2026-07-22-08 — Yeni DesignJet modelleri: T1600 / T2600 MFP Plus Edition (Build Connected)
