@@ -70,13 +70,14 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .pt i{font-size:13px;flex-shrink:0;margin-top:2px;}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
 .tag{font-size:10px;padding:2px 8px;border-radius:4px;border:.5px solid;}
-.cross{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:32px;margin-top:16px;}
+.cross-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.cross{background:linear-gradient(160deg,rgba(0,200,240,0.07),transparent 60%),var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:28px;}
 .cross h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:6px;}
-.cross .cd{font-size:13px;color:var(--w50);margin-bottom:16px;}
+.cross .cd{font-size:13px;color:var(--w50);margin-bottom:18px;}
 .cpills{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
-.cp{display:flex;align-items:center;gap:10px;padding:14px 16px;min-height:56px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;line-height:1.4;}
-.cp:hover{border-color:var(--cbor);color:var(--cyan);}
-.cp i{font-size:14px;color:var(--cyan);flex-shrink:0;}
+.cp{display:flex;align-items:center;gap:12px;padding:12px 14px;min-height:56px;border-radius:var(--rm);background:rgba(255,255,255,0.03);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;line-height:1.4;}
+.cp:hover{border-color:var(--cbor);color:var(--cyan);background:rgba(0,200,240,0.06);transform:translateY(-2px);}
+.cp i{font-size:15px;color:var(--cyan);flex-shrink:0;width:30px;height:30px;border-radius:9px;background:rgba(0,200,240,0.12);display:inline-flex;align-items:center;justify-content:center;}
 .cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 72px;}
 .cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
 .cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--w);margin-bottom:10px;}
@@ -104,7 +105,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 .office-info{display:flex;flex-direction:column;gap:8px;}
 .oi{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--w50);}
 .oi i{font-size:14px;color:var(--cyan);flex-shrink:0;margin-top:2px;}
-@media(max-width:900px){.nav-links{display:none;}.cta-strip{margin:0 1.5rem 56px;}.form-row{grid-template-columns:1fr;}}
+@media(max-width:900px){.nav-links{display:none;}.cta-strip{margin:0 1.5rem 56px;}.form-row{grid-template-columns:1fr;}.cross-grid{grid-template-columns:1fr;}}
 @media(max-width:600px){.section{padding:52px 1.5rem;}.hero{padding:100px 1.5rem 56px;}}
 
 .nav-dropdown{position:relative;}
@@ -440,18 +441,17 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 <section class="section" style="padding-top:0;">
-  <div class="cross">
+  <div class="cross-grid">
+    <div class="cross">
     <h3>Bu çözümde kullanılan Cadbim ürünleri</h3>
     <p class="cd">İlgili yazılım ve donanım sayfaları</p>
     <div class="cpills"><a href="cadbim_inventor.html" class="cp"><img src="assets/logos/products/inventor.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk Inventor</a><a href="cadbim_simulasyon.html" class="cp"><i class="ti ti-chart-scatter"></i>Simülasyon & Analiz</a><a href="cadbim_danismanlik.html" class="cp"><i class="ti ti-chart-arrows-vertical"></i>Danışmanlık Hizmetleri</a><a href="cadbim_pdm_collection.html" class="cp"><img src="assets/logos/products/pdm-collection.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">PD&M Collection — tüm imalat araçları tek pakette</a></div>
   </div>
-</section>
-
-<section class="section" style="padding-top:0;">
-  <div class="cross">
+    <div class="cross">
     <h3>Bu çözüm hangi endüstrilerde kullanılıyor</h3>
     <p class="cd">İlgili endüstri sayfalarını inceleyin</p>
     <div class="cpills"><a href="sektor_makine.html" class="cp"><i class="ti ti-settings"></i>Makine & Üretim</a><a href="sektor_otomotiv.html" class="cp"><i class="ti ti-car"></i>Otomotiv</a></div>
+  </div>
   </div>
 </section>
 

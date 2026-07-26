@@ -8,6 +8,17 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-11 — Çözüm sayfaları sonu: "kullanılan ürünler / endüstriler" bölümleri yeniden tasarlandı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, canlı sitedeki ekran görüntüsünü paylaşıp: "çözümler sayfalarının sonlarındaki bu 2 bölümün görüntüsü hoşuma gitmedi, daha güzel bir düzen olsun."
+- **Sorun:** İki ayrı "cross" kartı ("Bu çözümde kullanılan Cadbim ürünleri" ve "Bu çözüm hangi endüstrilerde kullanılıyor") art arda tam genişlikte, aralarında büyük boş dikey boşlukla, içindeki birkaç pil'e kıyasla gereksiz büyük/boş görünüyordu.
+- **Çözüm (16 çözüm sayfası):**
+  - HTML: iki ayrı `<section>` içindeki `.cross` kartları tek bir `<section>` içinde yeni `.cross-grid` (2 sütunlu grid, masaüstünde yan yana, ≤900px'te tek sütun) ile birleştirildi — büyük dikey boşluk kayboldu, iki kart artık bir bütün gibi görünüyor.
+  - CSS: `.cross` arka planı düz `rgba(0,200,240,0.04)` yerine ince bir köşegen gradient (`linear-gradient(160deg,...)` + `var(--navy3)`) aldı; `.cp` pilleri biraz daha sıkı padding + hover'da hafif yukarı kalkma (`translateY(-2px)`) + hafif cyan arka plan aldı; `.cp i` ikonları artık çıplak glif değil, 30×30px yuvarlak köşeli renkli rozet (badge) içinde gösteriliyor — daha modern/profesyonel bir kart hissi.
+  - `cadbim_nesting.html`'de yalnızca tek cross bloğu olduğu için birleştirme uygulanmadı (zaten tek sütun, gereksiz), yalnızca yeni `.cp`/`.cross` görsel stili uygulandı.
+- **Doğrulama (localhost, JS ile):** cadbim_bim.html — `.cross-grid` 2×580px sütun (masaüstü), 700px'te 1 sütuna düşüyor; `.cp i` rozetleri 30×30px, `rgba(0,200,240,0.12)` arka plan, 9px köşe; `.cpills` satır dengelemesi yeni dar sütun genişliğinde de doğru çalışıyor (8 öğe → 2 sütun → 4 satır×2, hepsi eşit). div/section etiket dengesi 16 dosyada da tam, konsol hatası yok.
+- **Durum:** ✅ Çözüm sayfası sonu artık tek, yan yana iki sütunlu, daha kompakt ve modern bir blok.
+
 ### DK-2026-07-26-10 — Satır dengeleme .grid.g2/g3/g4 ve inline "İyi Uygulamalar" grid'lerine genişletildi (mobilenav.js v8)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, cadbim_bim.html'in canlı ekran görüntüsünü paylaşıp "Neler Yapabiliriz?" (4+2 dağılan 6 kart) ve "Projelerde Uyguladığımız Standartlar" (4+2 dağılan 6 kutu) bölümlerinin bir önceki satır-dengeleme düzeltmesinden etkilenmediğini bildirdi: "bu sayfada ss verdiğim alanlarda bir önceki promptta söylediğim değişiklikler olmamış... bunu tüm çözüm sayfaları için yap."
