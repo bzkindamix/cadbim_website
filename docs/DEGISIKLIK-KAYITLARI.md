@@ -8,6 +8,15 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-08 — .cpills grid'i satır bazında dengelendi (mobilenav.js v7)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, bir önceki eşit-kutu düzeltmesinin ekran görüntüsünü paylaşıp 8 öğenin 5+3 dağıldığını gösterdi: "bu sayfalarda kutucuk sayıları 2 satır varsa eşit miktarda ilk satır 5 ikinci satır 3 kutu olmasın ilk satır 4 ikinci satır 4 olsun. eğer kutu sayısı tek sayı ise ilk satır ikinci satırdan 1 fazla kutucuk sahibi olsun."
+- **Kök neden:** `.cpills{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}` yalnızca konteyner genişliğine göre kaç sütun sığdığını hesaplıyor, toplam öğe sayısını dikkate almıyor — 8 öğe + container'a sığan 5 sütun → son satırda 3 öğe kalıyor.
+- **Çözüm (mobilenav.js, paylaşılan dosya, v6→v7):** Sayfa yüklendiğinde/pencere yeniden boyutlandığında her `.cpills` için: önce auto-fill ile konteynere sığan maksimum sütun sayısı (`maxCols`) ölçülüyor, satır sayısı `rows=ceil(n/maxCols)` hesaplanıyor, ardından sütun sayısı `cols=ceil(n/rows)` olarak yeniden ayarlanıyor (`repeat(cols,1fr)`). Satır-öncelikli (row-major) grid doldurma sırası nedeniyle ilk satır otomatik olarak `cols` kadar (eşit ya da tek sayıda bir fazla), son satır kalanı alıyor — ör. n=8,maxCols=5 → rows=2,cols=4 → 4+4; n=9 → rows=2,cols=5 → 5+4; n=2,3 (tek satıra sığan küçük sayılar) tek satırda eşit genişlikte kalıyor, gereksiz yere 2 satıra bölünmüyor.
+- **Kapsam:** mobilenav.js paylaşılan dosya olduğu için düzeltme yalnızca `.cpills` class'ı taşıyan tüm sayfalarda otomatik devreye giriyor (16 çözüm sayfası + `.cpills` kullanan sektör sayfaları); versiyon 155 dosyada `mobilenav.js?v=6`→`v=7` olarak güncellendi.
+- **Doğrulama (localhost, resize+JS ile):** cadbim_bim.html — 8 öğe → 4 sütun → satırlar [4,4]; 2 öğe → 2 sütun → tek satır [2]. cadbim_yaratici_icerik.html — 9 öğe → 5 sütun → satırlar [5,4] (ilk satır bir fazla); 3 öğe → tek satır [3]. Konsol hatası yok.
+- **Durum:** ✅ `.cpills` grid'i artık satır bazında dengeli; tek sayıda öğede ilk satır bir fazla alıyor.
+
 ### DK-2026-07-26-07 — Çözüm sayfaları: hero'daki erken CTA kaldırıldı + cross kutuları eşit boyuta getirildi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, cadbim_bim.html'in canlı ekran görüntüsünü paylaşarak: "çözümler sayfasında cta sı sayfa sonunda olmalı, örnek BIM çözümünde teklif & danışmanlık ctası sayfa sonunda olmalı" ve ardından "bunu tüm çözümler için uygula" dedi. Ayrı bir mesajda çözüm sonu "Bu çözümde kullanılan ürünler / hangi endüstrilerde kullanılıyor" kutularının düzensiz (değişken genişlikte) görünümünü beğenmediğini belirtip "eşit büyüklükte kutucuklar" istedi.

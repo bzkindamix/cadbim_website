@@ -642,3 +642,29 @@
   window.__rv={tara:tara,bekleyen:bekleyen};
   tara();
 })();
+
+/* ==== .cpills grid satır dengeleme ====
+   auto-fill container genişliğine göre kaç sütun sığdığını belirler; kalan
+   öğeler son satıra düzensiz dağılabiliyordu (ör. 8 öğe -> 5+3). Sütun
+   sayısını satır sayısına bölüp yeniden hesaplayarak satırları dengeliyoruz
+   (tek sayıda öğe varsa ilk satır bir fazla alır). */
+(function(){
+  function dengele(){
+    document.querySelectorAll(".cpills").forEach(function(grid){
+      var items=[].slice.call(grid.querySelectorAll(".cp"));
+      var n=items.length;
+      if(n<2)return;
+      grid.style.gridTemplateColumns="repeat(auto-fill,minmax(200px,1fr))";
+      var maxCols=getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+      if(!maxCols||maxCols<1)maxCols=1;
+      var rows=Math.ceil(n/maxCols);
+      var cols=Math.ceil(n/rows);
+      grid.style.gridTemplateColumns="repeat("+cols+",1fr)";
+    });
+  }
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",dengele);}
+  else{dengele();}
+  window.addEventListener("load",dengele);
+  var zt=null;
+  window.addEventListener("resize",function(){clearTimeout(zt);zt=setTimeout(dengele,120);},{passive:true});
+})();
