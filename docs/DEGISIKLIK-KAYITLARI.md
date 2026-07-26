@@ -8,6 +8,15 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-12 — Ana sayfa marka şeridi: Microsoft için gerçek logo + Chaos/Microsoft sırası değişti
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "ana sayfadaki marka logolarının font büyüklüklerini eşit olacak şekilde logo boyutlarını ayarla" ve ardından "chaos ve microsoftun yerlerini değiştir."
+- **Kök neden:** Microsoft kartında gerçek bir logo yoktu — `microsoft-partner-black.png` yalnızca düz siyah "Microsoft Partner" yazısıydı (placeholder), bu yüzden diğer 7 gerçek vektör logonun yanında görsel ağırlığı belirgin şekilde zayıf kalıyordu; asıl sorun boyut değil, logonun kendisiydi.
+- **Çözüm:** `assets/logos/products/microsoft.svg`'deki resmi 4 renkli kare işaretini temel alarak PIL ile yeni **assets/logos/microsoft-logo.png** oluşturuldu (kareler + "Microsoft" kelimesi Segoe UI Light ile, şeffaf arkaplan, 669×201). index.html'de görsel kaynağı değiştirildi, `.cred-row1 img[src*="microsoft"]` boyut kuralı diğer logolarla tutarlı olacak şekilde `max-height:46px;max-width:84%` yapıldı.
+- **Sıralama:** Onur'un isteğiyle Chaos ve Microsoft'un şeritteki yerleri değiştirildi — yeni sıra: Autodesk, Adobe, HP, Chaos (1. satır) / SketchUp, Lumion, UltiMaker, Microsoft (2. satır).
+- **Doğrulama:** Yeni `microsoft-logo.png` dosyası `fetch` ile 200 OK + geçerli PNG (7KB) doğrulandı; DOM sırası JS ile kontrol edildi (Autodesk→Adobe→HP→Chaos→SketchUp→Lumion→UltiMaker→Microsoft). (Not: Browser pane bu oturumda arka planda/gizli kaldığı için `loading="lazy"` görseller hiç yüklenmedi — bu ortam kısıtı, canlı sitede normal şekilde çalışır.)
+- **Durum:** ✅ Microsoft artık gerçek bir logo kullanıyor, sıra Onur'un istediği gibi.
+
 ### DK-2026-07-26-11 — Çözüm sayfaları sonu: "kullanılan ürünler / endüstriler" bölümleri yeniden tasarlandı
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, canlı sitedeki ekran görüntüsünü paylaşıp: "çözümler sayfalarının sonlarındaki bu 2 bölümün görüntüsü hoşuma gitmedi, daha güzel bir düzen olsun."
