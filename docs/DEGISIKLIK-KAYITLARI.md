@@ -8,6 +8,19 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-02 — Ürünler sayfası: marka logoları düzeltmesi (Autodesk/Adobe/HP/Chaos/UltiMaker/SketchUp/Lumion)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur'un 7 maddelik logo denetim talebi.
+- **Autodesk:** `cadbim_urunler.html` şeridindeki jenerik `autodesk-primary-white.svg` → resmi **Autodesk Gold Partner** tam-liste beyaz logosu (`autodesk-gold-partner-full-white.png`, DK-21-21'de kullanılan asset).
+- **Adobe:** Acrobat Pro kartındaki yanlış jenerik `adobe.png` ikonu → doğru `products/acrobat.svg` (cadbim_adobe.html kataloğuyla artık tutarlı).
+- **HP:** `cadbim_urunler.html` ve `cadbim_hp.html`'de 6 ürün grubu kartının tamamı jenerik `hp-blue.png`/`hp-logo.png` kullanıyordu. DesignJet T/XL/Z için mevcut şeffaf ürün fotoğrafları (t1700/xl3600/z9pro) kullanıldı; **Z Workstation** ve **ZBook** için HP'nin resmi nav-menü temsilci görselleri indirilip (rembg ile) şeffaflaştırıldı (`assets/products/hp-z-workstation-group.png`, `hp-zbook-group.png`); Build Workspace (bulut/yazılım, fotoğrafı yok) ayırt edici `ti-cloud-share` ikonuna geçti. **Sıralama:** her iki sayfada da DesignJet → Workstations → Build Workspace olacak şekilde düzeltildi (cadbim_hp.html'de Workstations bölümü önceden Designjet'ten önceydi).
+- **Chaos:** Onur'un ilettiği resmi Chaos logo kitlerinden (`Downloads/OneDrive_1_26.07.2026`) her ürüne kendi logosu çıkarıldı — V-Ray ve Vantage için gerçek ürün ikonları, Veras için kırpılmış rozet, Corona/Enscape/Phoenix/Anima/Cosmos için Chaos'un kendi marka renkli "chaos" wordmark sistemi (her ürünün resmi aksan rengi). Chaos ana sayfasındaki (`cadbim_chaos.html`) elle çizilmiş sahte "C/CHAOS" SVG rozeti gerçek Chaos logosuyla değiştirildi. Her pico'nun arka plan rengi ürünün resmi aksan rengine güncellendi.
+- **UltiMaker:** ultimaker.com'un resmi nav-menü görselleri indirilip şeffaflaştırıldı — S Serisi (S8/S7/S5/S3 ortak, gerçekte aynı gövde), Factor 4, Method XL, Sketch Sprint, Cura, Digital Factory artık kendi gerçek ürün görselleriyle (`assets/products/ultimaker-*.png`).
+- **SketchUp:** Go/Pro/Studio yalnızca lisans kademeleri (Trimble ayrı bir logo yayınlamıyor, doğrulandı) — ikon aynı kalırken her kademenin pico arka planı kendi rozet rengine (GO=gri, PRO=cyan, STUDIO=mor) boyandı, en azından renk koduyla ayırt edilir hale geldi.
+- **Lumion:** lumion.com'da her ürünün (Pro/View/Cloud) kendi logosu bulundu (storyblok CDN), kırpılıp şeffaflaştırıldı; `cadbim_urunler.html`'de Lumion/View/Cloud artık kendi logolarıyla (Studio bundle'ı için ayrı resmi logo yok, temel marka işareti korundu).
+- **Doğrulama:** Tüm yeni asset'ler (23 dosya) tarayıcıda fetch ile 200 doğrulandı; section/div dengeleri 7 dosyada 0 fark; kırık link/asset taraması 0.
+- **Durum:** ✅ Tamamlandı ve doğrulandı.
+
 ### DK-2026-07-26-01 — Site geneli IA denetimi: "içerik/ürünler önce, ilgili+CTA sonra" kuralı (marka + endüstri sayfaları)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Önceki session'da DK-2026-07-20-08'de "site geneli denetle" kararı açık kalmıştı; bu turda tamamlandı.
