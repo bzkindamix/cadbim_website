@@ -632,6 +632,13 @@
   }
   window.addEventListener("scroll",planla,{passive:true});
   window.addEventListener("resize",planla,{passive:true});
+  /* Ürün filtreleri (pfilter/psearch) display:none'ı JS ile değiştiriyor —
+     bu scroll/resize tetiklemediği için filtre sonucu görünür hale gelen
+     kartlar tara()'ya hiç uğramadan opacity:0'da kalabiliyordu. */
+  if("MutationObserver" in window){
+    var mo=new MutationObserver(function(){planla();});
+    els.forEach(function(e){mo.observe(e,{attributes:true,attributeFilter:["style","class"]});});
+  }
   window.__rv={tara:tara,bekleyen:bekleyen};
   tara();
 })();

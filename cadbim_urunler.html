@@ -135,7 +135,8 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
 .pcard{display:flex;align-items:center;gap:14px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rm);padding:16px 18px;text-decoration:none;transition:border-color .18s,transform .15s,background .18s;}
 .pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgba(0,200,240,.04);}
-.pico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.pico{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:transparent!important;}
+.pico img{width:auto!important;height:auto!important;max-width:42px;max-height:42px;object-fit:contain;}
 .pcard h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin:0 0 3px;}
 .pcard p{font-size:12px;color:var(--w50);line-height:1.45;margin:0;}
 .pcard .parr{margin-left:auto;font-size:15px;color:var(--w30);transition:color .2s,transform .2s;flex-shrink:0;}
@@ -564,6 +565,6 @@ function filterBrand(f, btn){
   els.forEach(function(e){io.observe(e);});
 })();
 </script>
-<script src="mobilenav.js?v=5" defer></script>
+<script src="mobilenav.js?v=6" defer></script>
 </body>
 </html>
