@@ -8,6 +8,21 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-17 — Yeni sayfa: Adobe Creative Cloud, ilgili çözüm/endüstri/ürünlere entegre edildi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "adobe creative cloud'a ait bir ürün sayfası yok bunu oluştur. https://www.adobe.com/tr/creativecloud.html oluştururken bu linki referans al. bunu sitemizdeki adobe sayfasına, ilgili çözümlere ve endüstrilere. diğer ürünlerdeki birlikte kullanılanlar bölümlerine de entegre et."
+- **Araştırma:** Adobe'nin resmi Creative Cloud sayfası (adobe.com/tr/creativecloud.html) tarayıcıyla incelendi — 20+ uygulama (Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Lightroom, Audition, Acrobat Pro), Firefly AI entegrasyonu, 30.000+ Adobe Fonts, 1M+ Adobe Stock varlığı, bulut kütüphaneleri, sürekli güncelleme vurgusu not edildi. **Bireysel/Tek Uygulama planları ve fiyatları bilinçli olarak alınmadı** — Onur'un önceki talimatı gereği ("bireysel planları biz satmıyoruz") sayfa yalnızca Teams/Enterprise çerçevesinde yazıldı, hiçbir fiyat paylaşılmadı (org. politikası: teyitsiz fiyat/kampanya bilgisi resmi çıktıya konulmaz).
+- **Yeni sayfa:** `cadbim_creative_cloud.html` — hero, 6 özellik kartı, 8 uygulamalık "Pakette Neler Var" grid'i, 3 kullanım senaryosu, Cadbim Farkı bloğu (VIP/ETLA, Admin Console, eğitim, 4 adım), ilgili çözüm/endüstri/ürün cross-sell'i, CTA. Diğer Adobe ürün sayfalarıyla birebir aynı CSS/yapı (Firefly sayfası temel alındı).
+- **Entegrasyon:**
+  - `cadbim_adobe.html`: Ürün Kataloğu'ndaki mevcut ama linksiz "Creative Cloud — Tüm Uygulamalar" placeholder kartı artık gerçek sayfaya bağlı.
+  - `cadbim_urunler.html`: Aynı şekilde daha önce `cadbim_adobe.html`'e giden "Creative Cloud" kartı yeni sayfaya yönlendirildi.
+  - Çözümler: `cadbim_yaratici_icerik.html`'deki "Creative Cloud" pili (önceden yanlışlıkla genel Adobe sayfasına gidiyordu) düzeltildi; `cadbim_gorsellestirme.html`'e yeni bir "Creative Cloud — render son rötuşu" pili eklendi.
+  - Endüstriler: Yeni sayfanın kendi "Bu ürünle ilgili" bölümünde Medya & Eğlence, Mimarlık, Eğitim sektörlerine link verildi.
+  - **Diğer ürünlerin "Birlikte Çalıştığı Ürünler" bölümleri (10 sayfa):** Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Lightroom, Adobe Express, Adobe Stock, Substance 3D ve Firefly sayfalarının hepsine "Creative Cloud" pili eklendi (Adobe Marka Sayfası pilinin hemen yanına).
+- **Kapsam dışı bırakılan, ayrı göreve çevrilen bulgu:** sektor_medya.html'de Premiere Pro/After Effects/Photoshop kartlarının kendi sayfalarına değil genel cadbim_adobe.html'e gittiği fark edildi — bu, mevcut görevin kapsamı dışında olduğu için ayrı bir arka plan görevi olarak kaydedildi (task_68c5fbe8).
+- **Doğrulama (localhost):** Yeni sayfa hatasız açılıyor, 14 görselin hiçbiri kırık değil; cadbim_adobe.html ve cadbim_urunler.html'deki Creative Cloud kartları artık yeni sayfaya gidiyor; 15 dokunulan dosyada div/a/section etiket dengesi tam; JSON-LD geçerli; og:image üretildi (`assets/og/cadbim_creative_cloud.png`) ve sayfanın kendi meta etiketlerine baştan doğru yazıldı.
+- **Durum:** ✅ Adobe Creative Cloud artık kendi sayfasına sahip ve siteye tam entegre.
+
 ### DK-2026-07-26-16 — Adobe sayfası: yanlış rozet metni, dağınık özellik şeridi, satılmayan Bireysel plan kaldırıldı
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, cadbim_adobe.html'in 3 ekran görüntüsünü paylaşıp: (1) hero'daki "Gold Reseller Partner" rozet metninin yanlış olduğunu, doğrusunun "Gold Reseller - Education - Commercial - Government" olması gerektiğini, yanındaki küçük (görünmeyen) Adobe Gold Reseller logosunun kaldırılmasını; (2) "20+ Creative uygulama / Firefly AI / Acrobat & e-İmza / Teams & Enterprise" şeridinin dağınık (3+1) göründüğünü, daha düzenli olmasını; (3) ayrıca "bireysel planları biz satmıyoruz, bireysel planla ilgili sitede bilgi olmasın" dedi.
