@@ -133,6 +133,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 .hero-2col-img img{width:100%;max-width:400px;height:auto;display:block;filter:drop-shadow(0 30px 55px rgba(0,0,0,.5));}
 .hero-2col-img::before{content:'';position:absolute;inset:-10%;background:radial-gradient(ellipse at 50% 55%,rgba(56,189,248,0.16) 0%,rgba(56,189,248,0.04) 45%,transparent 72%);border-radius:50%;z-index:-1;}
 @media(max-width:900px){.hero-2col{grid-template-columns:1fr;}.hero-2col-img{margin-top:8px;}.hero-2col-img img{max-width:260px;margin:0 auto;}}
+
+.tour-pin{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--cyan);color:var(--navy);font-family:var(--fd);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px rgba(0,200,240,.18),0 4px 10px rgba(0,0,0,.45);transform:translate(-50%,-50%);cursor:pointer;transition:transform .15s,background .15s;}
+.tour-pin:hover{transform:translate(-50%,-50%) scale(1.1);}
+.tour-pin.active{background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.25),0 4px 14px rgba(0,0,0,.5);transform:translate(-50%,-50%) scale(1.18);}
+.tour-detail-hint{max-width:520px;margin:0 auto;font-size:13px;color:var(--w30);display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;}
+.tour-tip{position:absolute;max-width:220px;background:var(--navy3);border:1px solid var(--cbor);border-radius:12px;padding:12px 14px;box-shadow:0 12px 30px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .12s;z-index:6;}
+.tour-tip.show{opacity:1;}
+.tour-tip h3{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--cyan);margin:0 0 4px;}
+.tour-tip p{font-size:12px;color:var(--w80);line-height:1.5;margin:0;}
+.tour-tip::after{content:'';position:absolute;left:var(--arrow-x,50%);width:0;height:0;border:7px solid transparent;transform:translateX(-50%);}
+.tour-tip.above::after{top:100%;border-top-color:var(--navy3);}
+.tour-tip.below::after{bottom:100%;border-bottom-color:var(--navy3);}
+.tour-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--cyan);color:var(--navy);font-family:var(--fd);font-weight:800;font-size:12px;flex-shrink:0;margin-top:2px;}
 </style>
 
 <!-- Google Analytics -->
@@ -321,6 +334,15 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
     </div><div class="hero-2col-img"><img src="assets/products/hp-designjet-t1600.png" alt="HP DesignJet T1600 Plus Edition" loading="eager" decoding="async"></div></div>
   </div>
 </section>
+<section class="section">
+  <div class="sh"><div class="slabel">Ürün Turu</div><div class="stitle">T1600 Plus Edition'da Neler Var?</div></div>
+  <div id="tourImgWrap" style="position:relative;max-width:640px;margin:0 auto 8px;">
+    <img src="assets/products/hp-designjet-t1600.png" alt="T1600 Plus Edition'da Neler Var?" style="width:100%;height:auto;display:block;">
+    <div class="tour-pin" data-tour="1" data-align="left" onclick="tourSelect(this,'1')" style="top:19%;left:9%;">1</div><div class="tour-pin" data-tour="2" data-align="center" onclick="tourSelect(this,'2')" style="top:6%;left:49%;">2</div><div class="tour-pin" data-tour="3" data-align="right" onclick="tourSelect(this,'3')" style="top:26%;left:80%;">3</div><div class="tour-pin" data-tour="4" data-align="left" onclick="tourSelect(this,'4')" style="top:46%;left:14%;">4</div><div class="tour-pin" data-tour="5" data-align="center" onclick="tourSelect(this,'5')" style="top:60%;left:44%;">5</div>
+    <div id="tourTip" class="tour-tip"></div>
+  </div>
+  <div class="tour-detail-hint" id="tourHint"><i class="ti ti-hand-click" style="font-size:15px;"></i>Detayları görmek için görsel üzerindeki numaralara tıklayın.</div>
+</section>
 <section class="section section-alt">
   <div class="sh"><div class="slabel">Öne Çıkan Özellikler</div><div class="stitle">Plus Edition Neler Getiriyor?</div></div>
   <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-cloud-up" style="color:#38bdf8;"></i></div><h3>HP Build Workspace</h3><p>Baskı iş akışınız buluta bağlı: proje dokümanları tek merkezde, ekibiniz her zaman senkron.</p></div><div class="card"><div class="card-icon"><i class="ti ti-bolt" style="color:#38bdf8;"></i></div><h3>Saatte 180 Baskıya Kadar</h3><p>A1/D boyutta yüksek tempo — teslim tarihi bekletmeyen ekipler için.</p></div><div class="card"><div class="card-icon"><i class="ti ti-stack-2" style="color:#38bdf8;"></i></div><h3>Tam Entegre 100 Sayfa İstifleyici</h3><p>Sınıfında cihaza tam entegre istifleme sunan tasarım; çıktılar düzenli ve sıralı.</p></div><div class="card"><div class="card-icon"><i class="ti ti-file-check" style="color:#38bdf8;"></i></div><h3>Adobe PDF Print Engine</h3><p>Gömülü Adobe motoru: özel fontlar, PANTONE renkler ve saydamlıklarda en yüksek doğruluk.</p></div><div class="card"><div class="card-icon"><i class="ti ti-shield-check" style="color:#38bdf8;"></i></div><h3>HP Wolf Pro Security</h3><p>Cihazdan buluta veri koruması: şifreli disk, Secure Boot, erişim kontrolü.</p></div><div class="card"><div class="card-icon"><i class="ti ti-packages" style="color:#38bdf8;"></i></div><h3>T1600dr Plus — Çift Rulo</h3><p>Otomatik rulo geçişiyle farklı medyalar arasında kesintisiz baskı.</p></div></div>
@@ -437,5 +459,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
     </div>
   </div>
 </footer>
+
+<script>
+var TOUR_DATA = {
+  '1': ['HP Build Workspace', 'Baskı iş akışınızı buluta bağlar.'],
+  '2': ['QR Sürüm Kontrolü', 'Dijital ve fiziksel çizimler senkron kalır.'],
+  '3': ['AI Vektörizasyon', 'Taslak hazırlama süresini %80\'e kadar azaltır.'],
+  '4': ['Adobe PDF Print Engine', 'Gömülü, PANTONE doğru baskı.'],
+  '5': ['HP Wolf Pro Security', 'Cihazdan buluta veri koruması.']
+};
+function tourSelect(el,n){{
+  document.querySelectorAll('.tour-pin').forEach(function(p){{p.classList.toggle('active', p.dataset.tour===n);}});
+  var d = TOUR_DATA[n];
+  var tip = document.getElementById('tourTip');
+  var wrap = document.getElementById('tourImgWrap');
+  var hint = document.getElementById('tourHint');
+  if(!tip || !d) return;
+  if(hint) hint.style.display = 'none';
+  tip.innerHTML = '<h3>'+d[0]+'</h3><p>'+d[1]+'</p>';
+  tip.style.transform = 'none';
+  tip.className = 'tour-tip show';
+  var pr = el.getBoundingClientRect();
+  var cr = wrap.getBoundingClientRect();
+  var x = pr.left + pr.width/2 - cr.left;
+  var y = pr.top - cr.top;
+  var tipH = tip.offsetHeight;
+  var align = el.dataset.align || 'center';
+  var below = (y - tipH - 14) < 0;
+  var tx = align==='left' ? '-16px' : align==='right' ? 'calc(-100% + 16px)' : '-50%';
+  var ty = below ? '0' : '-100%';
+  var arrowX = align==='left' ? '22px' : align==='right' ? 'calc(100% - 22px)' : '50%';
+  tip.style.setProperty('--arrow-x', arrowX);
+  tip.style.left = x + 'px';
+  tip.style.top = (below ? pr.bottom - cr.top + 10 : y - 10) + 'px';
+  tip.style.transform = 'translate('+tx+','+ty+')';
+  tip.className = 'tour-tip show ' + (below ? 'below' : 'above');
+}}
+</script>
+
 <script src="mobilenav.js?v=9" defer></script>
 </body></html>

@@ -137,6 +137,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 .sh-img{display:grid;grid-template-columns:1fr 260px;gap:28px;align-items:center;}
 .sh-img img{width:100%;height:170px;object-fit:cover;border-radius:14px;display:block;border:.5px solid var(--w10);}
 @media(max-width:760px){.sh-img{grid-template-columns:1fr;}.sh-img img{height:190px;order:-1;margin-bottom:8px;}}
+
+.tour-pin{position:absolute;width:26px;height:26px;border-radius:50%;background:var(--cyan);color:var(--navy);font-family:var(--fd);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px rgba(0,200,240,.18),0 4px 10px rgba(0,0,0,.45);transform:translate(-50%,-50%);cursor:pointer;transition:transform .15s,background .15s;}
+.tour-pin:hover{transform:translate(-50%,-50%) scale(1.1);}
+.tour-pin.active{background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.25),0 4px 14px rgba(0,0,0,.5);transform:translate(-50%,-50%) scale(1.18);}
+.tour-detail-hint{max-width:520px;margin:0 auto;font-size:13px;color:var(--w30);display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;}
+.tour-tip{position:absolute;max-width:220px;background:var(--navy3);border:1px solid var(--cbor);border-radius:12px;padding:12px 14px;box-shadow:0 12px 30px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .12s;z-index:6;}
+.tour-tip.show{opacity:1;}
+.tour-tip h3{font-family:var(--fd);font-size:13.5px;font-weight:700;color:var(--cyan);margin:0 0 4px;}
+.tour-tip p{font-size:12px;color:var(--w80);line-height:1.5;margin:0;}
+.tour-tip::after{content:'';position:absolute;left:var(--arrow-x,50%);width:0;height:0;border:7px solid transparent;transform:translateX(-50%);}
+.tour-tip.above::after{top:100%;border-top-color:var(--navy3);}
+.tour-tip.below::after{bottom:100%;border-bottom-color:var(--navy3);}
+.tour-num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--cyan);color:var(--navy);font-family:var(--fd);font-weight:800;font-size:12px;flex-shrink:0;margin-top:2px;}
 </style>
 
 <!-- Google Analytics -->
@@ -325,6 +338,15 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
     </div><div class="hero-2col-img"><img src="assets/products/hp-designjet-t2600.png" alt="HP DesignJet T2600 MFP" loading="eager" decoding="async"></div></div>
   </div>
 </section>
+<section class="section">
+  <div class="sh"><div class="slabel">Ürün Turu</div><div class="stitle">T2600 MFP'de Neler Var?</div></div>
+  <div id="tourImgWrap" style="position:relative;max-width:640px;margin:0 auto 8px;">
+    <img src="assets/products/hp-designjet-t2600.png" alt="T2600 MFP'de Neler Var?" style="width:100%;height:auto;display:block;">
+    <div class="tour-pin" data-tour="1" data-align="left" onclick="tourSelect(this,'1')" style="top:19%;left:9%;">1</div><div class="tour-pin" data-tour="2" data-align="center" onclick="tourSelect(this,'2')" style="top:6%;left:49%;">2</div><div class="tour-pin" data-tour="3" data-align="right" onclick="tourSelect(this,'3')" style="top:26%;left:80%;">3</div><div class="tour-pin" data-tour="4" data-align="left" onclick="tourSelect(this,'4')" style="top:46%;left:14%;">4</div><div class="tour-pin" data-tour="5" data-align="center" onclick="tourSelect(this,'5')" style="top:60%;left:44%;">5</div>
+    <div id="tourTip" class="tour-tip"></div>
+  </div>
+  <div class="tour-detail-hint" id="tourHint"><i class="ti ti-hand-click" style="font-size:15px;"></i>Detayları görmek için görsel üzerindeki numaralara tıklayın.</div>
+</section>
 <div style="margin:18px clamp(1.5rem,4vw,3rem) 0;"><a href="cadbim_designjet_t2600_plus.html" style="display:flex;align-items:center;gap:14px;padding:14px 20px;border:1px solid rgba(0,200,240,.35);border-radius:14px;background:rgba(0,200,240,.06);text-decoration:none;"><span style="padding:3px 10px;border-radius:20px;background:rgba(0,200,240,.18);color:#00c8f0;font-size:10px;letter-spacing:1.5px;font-weight:700;flex-shrink:0;">YENİ</span><span style="color:var(--w80);font-size:13.5px;line-height:1.5;"><b style="color:#fff;">T2600 MFP Plus Edition | Build Connected</b> çıktı — HP Build Workspace bulut iş akışı ile.</span><i class="ti ti-arrow-right" style="margin-left:auto;color:#00c8f0;flex-shrink:0;"></i></a></div>
 
 <section class="section section-alt">
@@ -442,5 +464,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
     </div>
   </div>
 </footer>
+
+<script>
+var TOUR_DATA = {
+  '1': ['Entegre Renkli Tarayıcı', 'Ön panelden anında dijitalleştirme.'],
+  '2': ['Otomatik İstifleme', 'Tek/çift rulo seçenekleriyle kesintisiz üretim.'],
+  '3': ['HP Bright Office Mürekkep', 'Canlı renk aralığı.'],
+  '4': ['Adobe PDF Print Engine', 'Standart olarak dahil.'],
+  '5': ['HP Wolf Pro Security', 'Dünya standardında güvenlik.']
+};
+function tourSelect(el,n){{
+  document.querySelectorAll('.tour-pin').forEach(function(p){{p.classList.toggle('active', p.dataset.tour===n);}});
+  var d = TOUR_DATA[n];
+  var tip = document.getElementById('tourTip');
+  var wrap = document.getElementById('tourImgWrap');
+  var hint = document.getElementById('tourHint');
+  if(!tip || !d) return;
+  if(hint) hint.style.display = 'none';
+  tip.innerHTML = '<h3>'+d[0]+'</h3><p>'+d[1]+'</p>';
+  tip.style.transform = 'none';
+  tip.className = 'tour-tip show';
+  var pr = el.getBoundingClientRect();
+  var cr = wrap.getBoundingClientRect();
+  var x = pr.left + pr.width/2 - cr.left;
+  var y = pr.top - cr.top;
+  var tipH = tip.offsetHeight;
+  var align = el.dataset.align || 'center';
+  var below = (y - tipH - 14) < 0;
+  var tx = align==='left' ? '-16px' : align==='right' ? 'calc(-100% + 16px)' : '-50%';
+  var ty = below ? '0' : '-100%';
+  var arrowX = align==='left' ? '22px' : align==='right' ? 'calc(100% - 22px)' : '50%';
+  tip.style.setProperty('--arrow-x', arrowX);
+  tip.style.left = x + 'px';
+  tip.style.top = (below ? pr.bottom - cr.top + 10 : y - 10) + 'px';
+  tip.style.transform = 'translate('+tx+','+ty+')';
+  tip.className = 'tour-tip show ' + (below ? 'below' : 'above');
+}}
+</script>
+
 <script src="mobilenav.js?v=9" defer></script>
 </body></html>
