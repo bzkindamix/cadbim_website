@@ -8,6 +8,20 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-15 — Tüm sayfalara sayfaya-özel og:image/twitter:image üretildi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "tüm sayfaların google için gözüken başlıklarını, açıklamalarını ve sayfa görsellerini ayarla" → tarama sonrası tek eksik alan olarak "sayfa görselleri" (og:image) çıktı, tüm site tek bir genel `og-image.png` kullanıyordu. Onur "sayfaya özel benzersiz görseller" + "ürün logoları ve resimlerini kullan" seçeneklerini onayladı.
+- **Kök kısıt:** Ürün logolarının çoğu (özellikle en büyük grup olan Autodesk ailesi) yalnızca SVG formatında; bu ortamda (Windows, Cairo/rsvg yok) SVG'yi PNG'ye çevirecek güvenilir bir yol bulunamadı (cairosvg/svglib native kütüphane arıyor; tarayıcı-canvas yöntemi bu sandboxta arka plan sekmesi olarak boğuluyor). Onur'un onayıyla **hibrit yaklaşım** uygulandı.
+- **Üretim (Python/PIL, 156 sayfa):** Her sayfa için 1200×630 marka kimliğine uygun kart (koyu lacivert zemin + kategori rengine göre glow + ince grid çizgileri + CADBİM logosu + başlık/açıklama/kategori rozeti) otomatik üretildi:
+  - **44 sayfada gerçek ürün fotoğrafı/logosu kullanıldı** (PNG/WEBP olarak zaten var olanlar): HP DesignJet/Z Workstation/ZBook aile fotoğrafları, UltiMaker donanım fotoğrafları, Chaos/Lumion/Adobe/Microsoft/Autodesk marka logoları, Anima/Meshmixer/Tinkercad/Trimble Connect ikonları.
+  - **Kalan sayfalarda** (çoğunlukla SVG-only Autodesk ürünleri, çözüm/sektör/kurumsal sayfalar) temiz tipografi + kategori renk kodlaması (7 sektör rengi, 16 çözüm rengi, 8 marka rengi kendi paletiyle) korundu.
+  - Kategori tanıma başlık metninden + dosya adından otomatik yapıldı (Autodesk/Adobe/HP/Chaos/UltiMaker/SketchUp/Lumion/Microsoft/Sektör/Çözüm/Kurumsal); birkaç istisna (AEC Collection, Trimble Connect, Sketch Sprint vb.) elle override edildi.
+  - Görseller `assets/og/<sayfa-adı>.png` olarak kaydedildi (156 dosya, ~12MB toplam).
+- **HTML güncelleme:** Her sayfada `<meta property="og:image">`, `<meta name="twitter:image">` (mevcut olan 50 sayfada) VE JSON-LD `"image"` alanı (103 sayfada, Product/Service şemasında) kendi görseline güncellendi. JSON-LD `"logo"` alanı (Organization şeması, 58 sayfa) kasıtlı olarak dokunulmadı — bu CADBİM'in kurumsal logosu, sayfaya özel değil.
+- **Kapsam dışı bırakılan not:** cadbim_construction_cloud.html (noindex yönlendirme sayfası) hariç tutuldu — zaten arama motoruna kapalı.
+- **Doğrulama:** 34 gerçek asset yolu Python ile mevcut olduğu doğrulandı; üretimden sonra tüm JSON-LD blokları `json.loads` ile geçerli bulundu; örnek görseller (HP DesignJet Z, Chaos, Autodesk Revit, UltiMaker) görsel olarak incelendi — metin/logo çakışması yok, Türkçe karakterler doğru; localhost'ta og:image URL'i fetch ile 200 OK + geçerli PNG doğrulandı.
+- **Durum:** ✅ 156 sayfanın tamamında artık kendine özgü, sayfaya uygun bir sosyal/arama önizleme görseli var.
+
 ### DK-2026-07-26-14 — Mega menü: "Dijital İkiz & Üretim" iki ayrı gruba bölündü (6 kolon)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "mega menüde üretim ve dijital ikiz çözümlerini 2 farklı çözüm grubu olarak ayır ve göster. ana sayfadaki çözümler şeridi, çözümler ana sayfası ve mega menü çözümler aynı mantıkta eş değer olmalı."
