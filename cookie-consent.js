@@ -1,6 +1,6 @@
 (function () {
   var STORAGE_KEY = "cadbim_cookie_consent";
-  var GA_ID = "G-CADBIM2026";
+  var GA_ID = "G-DTTE7C82NB";
 
   function getConsent() {
     try {
