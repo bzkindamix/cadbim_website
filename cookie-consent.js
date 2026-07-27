@@ -1,6 +1,7 @@
 (function () {
   var STORAGE_KEY = "cadbim_cookie_consent";
   var GA_ID = "G-DTTE7C82NB";
+  var META_PIXEL_ID = "648741288903445";
 
   function getConsent() {
     try {
@@ -11,11 +12,11 @@
     }
   }
 
-  function setConsent(analytics) {
+  function setConsent(analytics, marketing) {
     try {
       localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ analytics: analytics, ts: Date.now() })
+        JSON.stringify({ analytics: analytics, marketing: marketing, ts: Date.now() })
       );
     } catch (e) {}
   }
@@ -31,11 +32,41 @@
     window.gtag("config", GA_ID);
   }
 
+  function loadMeta() {
+    if (window.__metaLoaded) return;
+    window.__metaLoaded = true;
+    (function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = true;
+      n.version = "2.0";
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", META_PIXEL_ID);
+    window.fbq("track", "PageView");
+  }
+
   function removeBanner() {
     var el = document.getElementById("cc-banner");
     if (el) el.remove();
     var pref = document.getElementById("cc-prefs");
     if (pref) pref.remove();
+  }
+
+  function applyConsent(analytics, marketing) {
+    setConsent(analytics, marketing);
+    removeBanner();
+    if (analytics) loadGA();
+    if (marketing) loadMeta();
   }
 
   function buildBanner() {
@@ -50,7 +81,7 @@
     );
     wrap.innerHTML =
       '<div style="flex:1;min-width:240px;font-size:13px;line-height:1.6;color:rgba(255,255,255,0.7);">' +
-      "Bu sitede deneyiminizi iyileştirmek ve site kullanımını analiz etmek için çerezler kullanıyoruz. " +
+      "Bu sitede deneyiminizi iyileştirmek, site kullanımını analiz etmek ve ilgi alanınıza uygun reklamlar sunmak için çerezler kullanıyoruz. " +
       '<a href="cadbim_kvkk_cerez_politikasi.html" style="color:#00c8f0;text-decoration:none;">Çerez Politikası</a>' +
       '</div><div style="display:flex;gap:10px;flex-wrap:wrap;">' +
       '<button id="cc-manage" style="background:transparent;color:rgba(255,255,255,0.7);border:.5px solid rgba(255,255,255,0.25);padding:10px 18px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;">Tercihleri Yönet</button>' +
@@ -60,13 +91,10 @@
     document.body.appendChild(wrap);
 
     document.getElementById("cc-accept").onclick = function () {
-      setConsent(true);
-      removeBanner();
-      loadGA();
+      applyConsent(true, true);
     };
     document.getElementById("cc-reject").onclick = function () {
-      setConsent(false);
-      removeBanner();
+      applyConsent(false, false);
     };
     document.getElementById("cc-manage").onclick = function () {
       removeBanner();
@@ -74,7 +102,44 @@
     };
   }
 
+  function toggleRow(id, label) {
+    return (
+      '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:.5px solid rgba(255,255,255,0.08);">' +
+      '<span style="font-size:13px;color:#fff;">' + label + "</span>" +
+      '<label style="position:relative;display:inline-block;width:40px;height:22px;">' +
+      '<input id="' + id + '" type="checkbox" checked style="opacity:0;width:0;height:0;">' +
+      '<span id="' + id + '-track" style="position:absolute;inset:0;background:rgba(255,255,255,0.2);border-radius:22px;transition:.2s;cursor:pointer;"></span>' +
+      '<span id="' + id + '-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.2s;pointer-events:none;"></span>' +
+      "</label></div>"
+    );
+  }
+
+  function wireToggle(id, existingValue) {
+    var toggle = document.getElementById(id);
+    var track = document.getElementById(id + "-track");
+    var knob = document.getElementById(id + "-knob");
+    if (existingValue !== undefined && existingValue !== null) {
+      toggle.checked = !!existingValue;
+    }
+    function sync() {
+      if (toggle.checked) {
+        track.style.background = "#00c8f0";
+        knob.style.left = "21px";
+      } else {
+        track.style.background = "rgba(255,255,255,0.2)";
+        knob.style.left = "3px";
+      }
+    }
+    track.onclick = function () {
+      toggle.checked = !toggle.checked;
+      sync();
+    };
+    sync();
+    return toggle;
+  }
+
   function buildPrefsPanel() {
+    var existing = getConsent();
     var overlay = document.createElement("div");
     overlay.id = "cc-prefs";
     overlay.setAttribute(
@@ -89,48 +154,30 @@
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:.5px solid rgba(255,255,255,0.08);">' +
       '<span style="font-size:13px;color:#fff;">Zorunlu Çerezler</span>' +
       '<span style="font-size:12px;color:rgba(255,255,255,0.4);">Her zaman aktif</span></div>' +
-      '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:.5px solid rgba(255,255,255,0.08);border-bottom:.5px solid rgba(255,255,255,0.08);">' +
-      '<span style="font-size:13px;color:#fff;">Analitik Çerezler (Google Analytics)</span>' +
-      '<label style="position:relative;display:inline-block;width:40px;height:22px;">' +
-      '<input id="cc-analytics-toggle" type="checkbox" checked style="opacity:0;width:0;height:0;">' +
-      '<span id="cc-toggle-track" style="position:absolute;inset:0;background:rgba(255,255,255,0.2);border-radius:22px;transition:.2s;cursor:pointer;"></span>' +
-      '<span id="cc-toggle-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.2s;pointer-events:none;"></span>' +
-      "</label></div>" +
+      toggleRow("cc-analytics-toggle", "Analitik Çerezler (Google Analytics)") +
+      toggleRow("cc-marketing-toggle", "Pazarlama Çerezleri (Meta Pixel, Google Ads)") +
       '<div style="display:flex;gap:10px;margin-top:22px;justify-content:flex-end;">' +
       '<button id="cc-prefs-cancel" style="background:transparent;color:rgba(255,255,255,0.6);border:.5px solid rgba(255,255,255,0.25);padding:10px 18px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;">Vazgeç</button>' +
       '<button id="cc-prefs-save" style="background:#00c8f0;color:#060c1a;border:none;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">Kaydet</button>' +
       "</div></div>";
     document.body.appendChild(overlay);
 
-    var toggle = document.getElementById("cc-analytics-toggle");
-    var track = document.getElementById("cc-toggle-track");
-    var knob = document.getElementById("cc-toggle-knob");
-    var existing = getConsent();
-    if (existing) toggle.checked = !!existing.analytics;
-    function syncToggleUI() {
-      if (toggle.checked) {
-        track.style.background = "#00c8f0";
-        knob.style.left = "21px";
-      } else {
-        track.style.background = "rgba(255,255,255,0.2)";
-        knob.style.left = "3px";
-      }
-    }
-    track.onclick = function () {
-      toggle.checked = !toggle.checked;
-      syncToggleUI();
-    };
-    syncToggleUI();
+    var analyticsToggle = wireToggle(
+      "cc-analytics-toggle",
+      existing ? existing.analytics : undefined
+    );
+    var marketingToggle = wireToggle(
+      "cc-marketing-toggle",
+      existing ? existing.marketing : undefined
+    );
 
     document.getElementById("cc-prefs-cancel").onclick = function () {
       overlay.remove();
       buildBanner();
     };
     document.getElementById("cc-prefs-save").onclick = function () {
-      var analytics = toggle.checked;
-      setConsent(analytics);
       overlay.remove();
-      if (analytics) loadGA();
+      applyConsent(analyticsToggle.checked, marketingToggle.checked);
     };
   }
 
@@ -140,9 +187,10 @@
   };
 
   var consent = getConsent();
-  if (consent && consent.analytics) {
-    loadGA();
-  } else if (!consent) {
+  if (consent) {
+    if (consent.analytics) loadGA();
+    if (consent.marketing) loadMeta();
+  } else {
     if (document.body) {
       buildBanner();
     } else {
