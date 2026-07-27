@@ -92,7 +92,7 @@
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:.5px solid rgba(255,255,255,0.08);border-bottom:.5px solid rgba(255,255,255,0.08);">' +
       '<span style="font-size:13px;color:#fff;">Analitik Çerezler (Google Analytics)</span>' +
       '<label style="position:relative;display:inline-block;width:40px;height:22px;">' +
-      '<input id="cc-analytics-toggle" type="checkbox" style="opacity:0;width:0;height:0;">' +
+      '<input id="cc-analytics-toggle" type="checkbox" checked style="opacity:0;width:0;height:0;">' +
       '<span id="cc-toggle-track" style="position:absolute;inset:0;background:rgba(255,255,255,0.2);border-radius:22px;transition:.2s;cursor:pointer;"></span>' +
       '<span id="cc-toggle-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.2s;pointer-events:none;"></span>' +
       "</label></div>" +
@@ -105,6 +105,8 @@
     var toggle = document.getElementById("cc-analytics-toggle");
     var track = document.getElementById("cc-toggle-track");
     var knob = document.getElementById("cc-toggle-knob");
+    var existing = getConsent();
+    if (existing) toggle.checked = !!existing.analytics;
     function syncToggleUI() {
       if (toggle.checked) {
         track.style.background = "#00c8f0";
