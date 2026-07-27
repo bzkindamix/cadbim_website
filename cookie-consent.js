@@ -2,6 +2,7 @@
   var STORAGE_KEY = "cadbim_cookie_consent";
   var GA_ID = "G-DTTE7C82NB";
   var META_PIXEL_ID = "648741288903445";
+  var LINKEDIN_PARTNER_ID = "516209";
 
   function getConsent() {
     try {
@@ -55,6 +56,27 @@
     window.fbq("track", "PageView");
   }
 
+  function loadLinkedIn() {
+    if (window.__linkedinLoaded) return;
+    window.__linkedinLoaded = true;
+    window._linkedin_partner_id = LINKEDIN_PARTNER_ID;
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(LINKEDIN_PARTNER_ID);
+    if (!window.lintrk) {
+      window.lintrk = function (a, b) {
+        window.lintrk.q.push([a, b]);
+      };
+      window.lintrk.q = [];
+    }
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    document.getElementsByTagName("script")[0].parentNode.insertBefore(
+      s,
+      document.getElementsByTagName("script")[0]
+    );
+  }
+
   function removeBanner() {
     var el = document.getElementById("cc-banner");
     if (el) el.remove();
@@ -66,7 +88,10 @@
     setConsent(analytics, marketing);
     removeBanner();
     if (analytics) loadGA();
-    if (marketing) loadMeta();
+    if (marketing) {
+      loadMeta();
+      loadLinkedIn();
+    }
   }
 
   function buildBanner() {
@@ -155,7 +180,7 @@
       '<span style="font-size:13px;color:#fff;">Zorunlu Çerezler</span>' +
       '<span style="font-size:12px;color:rgba(255,255,255,0.4);">Her zaman aktif</span></div>' +
       toggleRow("cc-analytics-toggle", "Analitik Çerezler (Google Analytics)") +
-      toggleRow("cc-marketing-toggle", "Pazarlama Çerezleri (Meta Pixel, Google Ads)") +
+      toggleRow("cc-marketing-toggle", "Pazarlama Çerezleri (Meta Pixel, Google Ads, LinkedIn)") +
       '<div style="display:flex;gap:10px;margin-top:22px;justify-content:flex-end;">' +
       '<button id="cc-prefs-cancel" style="background:transparent;color:rgba(255,255,255,0.6);border:.5px solid rgba(255,255,255,0.25);padding:10px 18px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;">Vazgeç</button>' +
       '<button id="cc-prefs-save" style="background:#00c8f0;color:#060c1a;border:none;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">Kaydet</button>' +
@@ -189,7 +214,10 @@
   var consent = getConsent();
   if (consent) {
     if (consent.analytics) loadGA();
-    if (consent.marketing) loadMeta();
+    if (consent.marketing) {
+      loadMeta();
+      loadLinkedIn();
+    }
   } else {
     if (document.body) {
       buildBanner();
