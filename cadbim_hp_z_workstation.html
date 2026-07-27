@@ -115,6 +115,10 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
 .nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+.hero-2col{display:grid;grid-template-columns:1.15fr 0.85fr;gap:2.5rem;align-items:center;}
+.hero-2col-img{position:relative;display:flex;align-items:center;justify-content:center;}
+.hero-2col-img img{width:100%;max-width:400px;height:auto;display:block;filter:drop-shadow(0 30px 55px rgba(0,0,0,.5));}
+@media(max-width:900px){.hero-2col{grid-template-columns:1fr;}.hero-2col-img{margin-top:8px;}.hero-2col-img img{max-width:260px;margin:0 auto;}}
 </style>
 
 <!-- Google Analytics -->
@@ -312,11 +316,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 <section class="section section-alt">
   <div class="sh"><div class="slabel">Öne Çıkan Özellikler</div><div class="stitle">HP Workstation Ürünleri ile Neler Yapabilirsiniz?</div></div>
-  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-certificate"></i></div><h3>ISV Sertifikasyonu</h3><p>Autodesk, Adobe ve önde gelen CAD yazılımlarıyla doğrulanmış kararlılık.</p></div><div class="card"><div class="card-icon"><i class="ti ti-cpu"></i></div><h3>Xeon & Core Seçenekleri</h3><p>İş yükünüze göre çekirdek sayısı ve frekans dengesi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-device-tv"></i></div><h3>Profesyonel GPU</h3><p>NVIDIA RTX serisi ile viewport ve GPU render performansı.</p></div><div class="card"><div class="card-icon"><i class="ti ti-stack-2"></i></div><h3>Genişletilebilir Mimari</h3><p>Bellek, depolama ve GPU’da alan bırakan kasalar.</p></div><div class="card"><div class="card-icon"><i class="ti ti-shield-check"></i></div><h3>HP Wolf Security</h3><p>Donanım seviyesinde kurumsal güvenlik.</p></div><div class="card"><div class="card-icon"><i class="ti ti-tool"></i></div><h3>Cadbim Konfigürasyon</h3><p>Kullandığınız yazılımlara göre konfigürasyon ve kurulum desteği.</p></div></div>
+  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-certificate"></i></div><h3>ISV Sertifikasyonu</h3><p>Autodesk, Adobe ve önde gelen CAD yazılımlarıyla doğrulanmış kararlılık ve sürücü uyumluluğu.</p></div><div class="card"><div class="card-icon"><i class="ti ti-cpu"></i></div><h3>Gelişmiş İşlemci Seçenekleri</h3><p>Giriş seviyesinde Intel Core, üst düzeyde Intel Xeon ve AMD Threadripper PRO — iş yükünüze göre çekirdek sayısı ve frekans dengesi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-device-tv"></i></div><h3>Profesyonel GPU Seçenekleri</h3><p>NVIDIA, AMD ve Intel markalı profesyonel grafik kartlarıyla viewport, GPU render ve yapay zeka geliştirme performansı.</p></div><div class="card"><div class="card-icon"><i class="ti ti-stack-2"></i></div><h3>Büyük Bellek Kapasitesi</h3><p>Masaüstü modellerde 2 TB'a, mobil modellerde 128 GB'a varan RAM ile bellek yoğun render ve simülasyon işleri.</p></div><div class="card"><div class="card-icon"><i class="ti ti-tool"></i></div><h3>Genişletilebilir & Araçsız Mimari</h3><p>Aletsiz açılabilen kasalarla bellek, depolama ve GPU'da kolay yükseltme; ince/hafif dizüstülerden mini masaüstülere kadar amaca yönelik tasarım.</p></div><div class="card"><div class="card-icon"><i class="ti ti-shield-check"></i></div><h3>HP Wolf Security</h3><p>Donanım seviyesinde kurumsal güvenlik; her cihazda yerleşik koruma.</p></div><div class="card"><div class="card-icon"><i class="ti ti-leaf"></i></div><h3>Sürdürülebilir Tasarım</h3><p>TCO Certified, ENERGY STAR ve EPEAT tescilli HP Z portföyü.</p></div><div class="card"><div class="card-icon"><i class="ti ti-settings"></i></div><h3>Cadbim Konfigürasyon</h3><p>Kullandığınız yazılımlara göre konfigürasyon ve kurulum desteği.</p></div></div>
 </section>
 <section class="section">
   <div class="sh"><div class="slabel">Kullanım Senaryoları</div><div class="stitle">Kimler İçin?</div></div>
-  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-building"></i></div><h3>BIM & CAD Ofisleri</h3><p>Revit ve Inventor’da büyük modellerde akıcı çalışma.</p></div><div class="card"><div class="card-icon"><i class="ti ti-sun-high"></i></div><h3>Render & Simülasyon</h3><p>V-Ray, Arnold ve CFD işlerinde iş istasyonu gücü.</p></div><div class="card"><div class="card-icon"><i class="ti ti-movie"></i></div><h3>Medya Prodüksiyon</h3><p>Kurgu, VFX ve renk işlerinde sertifikalı performans.</p></div></div>
+  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-building"></i></div><h3>BIM & CAD Ofisleri</h3><p>Revit ve Inventor'da büyük modellerde akıcı çalışma.</p></div><div class="card"><div class="card-icon"><i class="ti ti-sun-high"></i></div><h3>Render & Simülasyon</h3><p>V-Ray, Arnold ve CFD işlerinde iş istasyonu gücü.</p></div><div class="card"><div class="card-icon"><i class="ti ti-movie"></i></div><h3>Medya Prodüksiyon</h3><p>Kurgu, VFX ve renk işlerinde sertifikalı performans.</p></div><div class="card"><div class="card-icon"><i class="ti ti-server-2"></i></div><h3>BT Profesyonelleri</h3><p>Güvenli, yükseltilebilir ve uzaktan yönetilebilir filo — kesintisiz iş akışı.</p></div><div class="card"><div class="card-icon"><i class="ti ti-chart-dots"></i></div><h3>Veri Bilimciler & Analistler</h3><p>Karmaşık görselleştirme, yapay zeka ve makine öğrenmesi geliştirme için masaüstü ve mobil güç.</p></div></div>
+</section>
+<section class="section section-alt">
+  <div class="sh"><div class="slabel">Güvenilirlik</div><div class="stitle">İş İstasyonlarını Nasıl Üretiyoruz</div><p class="ssub">Karmaşık iş akışları için test edilen, optimize edilen ve ISV sertifikalı HP Z iş istasyonları, tipik bir bilgisayardan çok daha yüksek güvenilirlik standardında üretilir.</p></div>
+  <div class="hero-2col" style="align-items:center;">
+    <div>
+      <div class="pts" style="gap:14px;">
+        <div class="pt" style="font-size:14px;"><i class="ti ti-point" style="color:#38bdf8;"></i>Zorlu projeler için tasarlanmış, yoğun kullanıma dayanıklı bileşenler</div>
+        <div class="pt" style="font-size:14px;"><i class="ti ti-point" style="color:#38bdf8;"></i>Aletsiz erişimle bellek, depolama ve GPU'da kolay bakım/yükseltme</div>
+        <div class="pt" style="font-size:14px;"><i class="ti ti-point" style="color:#38bdf8;"></i>Bağımsız yazılım sağlayıcısı (ISV) sertifikasyonuyla doğrulanmış kararlılık</div>
+        <div class="pt" style="font-size:14px;"><i class="ti ti-point" style="color:#38bdf8;"></i>Hibrit çalışma için uzaktan erişim ve yönetim çözümleriyle uyum</div>
+      </div>
+    </div>
+    <div class="hero-2col-img"><img src="assets/products/hp-workstations/hp-z-manufacturing.jpg" alt="HP Z iş istasyonu üretiminde araçsız bileşen erişimi" style="max-width:420px;border-radius:16px;filter:none;" loading="lazy" decoding="async"></div>
+  </div>
 </section>
 
 
