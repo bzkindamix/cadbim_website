@@ -53,8 +53,8 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .hero h1{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;line-height:1.15;color:var(--w);margin-bottom:18px;}
 .hero h1 em{font-style:normal;color:var(--cyan);}
 .hero-sub{font-size:16px;color:var(--w50);max-width:640px;line-height:1.75;margin-bottom:32px;}
-.hero-features{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
-.hf{flex:1 1 170px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;font-weight:600;font-family:var(--fd);padding:12px 14px;border-radius:10px;background:rgba(255,255,255,0.03);border:.5px solid var(--w10);color:var(--w80);white-space:nowrap;transition:border-color .2s,background .2s,color .2s;}
+.hero-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:32px;}
+.hf{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;font-weight:600;font-family:var(--fd);padding:12px 14px;border-radius:10px;background:rgba(255,255,255,0.03);border:.5px solid var(--w10);color:var(--w80);white-space:nowrap;transition:border-color .2s,background .2s,color .2s;}
 .hf i{font-size:15px;color:var(--cyan);}
 .hf:hover{border-color:var(--cbor);background:rgba(0,200,240,0.06);color:var(--w);}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
@@ -368,11 +368,10 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-      <div class="hero-pill" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.3);color:#fbbf24;margin-bottom:0;"><i class="ti ti-award" style="font-size:13px;"></i>Gold Reseller Partner</div>
-      <img src="assets/img/emb-bc22fd8e82.png" alt="Adobe Gold Partner" style="height:22px;width:auto;opacity:.75;">
+      <div class="hero-pill" style="background:rgba(251,191,36,0.1);border-color:rgba(251,191,36,0.3);color:#fbbf24;margin-bottom:0;"><i class="ti ti-award" style="font-size:13px;"></i>Gold Reseller — Education, Commercial, Government</div>
     </div>
     <h1>Adobe — Yaratıcılık,<br>Pazarlama ve <em>Belge Yönetimi</em></h1>
-    <p class="hero-sub">Photoshop'tan Premiere Pro'ya, Acrobat'tan Adobe Sign'a — Creative Cloud'un tüm gücü. Bireysel, Teams ve Enterprise planlar için lisanslama ve destek.</p>
+    <p class="hero-sub">Photoshop'tan Premiere Pro'ya, Acrobat'tan Adobe Sign'a — Creative Cloud'un tüm gücü. Teams ve Enterprise planlar için lisanslama ve destek.</p>
     <div class="hero-features">
       <div class="hf"><i class="ti ti-brand-adobe"></i>20+ Creative uygulama</div>
       <div class="hf"><i class="ti ti-sparkles"></i>Adobe Firefly AI</div>
@@ -392,12 +391,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     <p class="ssub">Kişi sayısına ve kurumsal ihtiyaçlarınıza göre en verimli planı birlikte belirleyelim.</p>
   </div>
   <div class="cards">
-    <div class="card">
-      <div class="card-icon" style="background:rgba(226,89,34,0.1);"><i class="ti ti-user" style="color:#e25922;"></i></div>
-      <h3>Creative Cloud — Bireysel</h3>
-      <p class="desc">Photoshop, Illustrator, Premiere Pro ve 20+ uygulama. 100GB bulut depolama. Yıllık veya aylık abonelik.</p>
-      <div class="tags"><span class="tag" style="background:rgba(226,89,34,0.1);color:#fca5a5;border-color:rgba(226,89,34,0.2);">20+ Uygulama</span><span class="tag" style="background:rgba(226,89,34,0.1);color:#fca5a5;border-color:rgba(226,89,34,0.2);">Firefly AI</span></div>
-    </div>
     <div class="card hi" style="border-color:rgba(226,89,34,0.25);">
       <div class="card-icon" style="background:rgba(226,89,34,0.12);"><i class="ti ti-users" style="color:#e25922;"></i></div>
       <h3>Creative Cloud — Teams</h3>
@@ -497,7 +490,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 
 <div class="cta-strip">
   <h2>Adobe lisans teklifi alın</h2>
-  <p>Bireysel, Teams veya Enterprise — kaç kullanıcı, hangi plan en verimli, birlikte hesaplayalım.</p>
+  <p>Teams veya Enterprise — kaç kullanıcı, hangi plan en verimli, birlikte hesaplayalım.</p>
   <div class="cta-btns">
     <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
   </div>
@@ -513,6 +506,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     </div>
   </div>
 </footer>
-<script src="mobilenav.js?v=8" defer></script>
+<script src="mobilenav.js?v=9" defer></script>
 </body>
 </html>

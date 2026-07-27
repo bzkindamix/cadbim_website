@@ -655,7 +655,7 @@
 (function(){
   var dogal=new WeakMap();
   function grupla(){
-    var gridler=[].slice.call(document.querySelectorAll(".cpills, .grid.g2, .grid.g3, .grid.g4"));
+    var gridler=[].slice.call(document.querySelectorAll(".cpills, .grid.g2, .grid.g3, .grid.g4, .hero-features"));
     [].slice.call(document.querySelectorAll('[style*="minmax(280px,1fr)"]')).forEach(function(e){
       if(gridler.indexOf(e)===-1)gridler.push(e);
     });

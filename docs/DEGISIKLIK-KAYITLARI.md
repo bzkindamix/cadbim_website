@@ -8,6 +8,15 @@
 
 ## 2026-07-26
 
+### DK-2026-07-26-16 — Adobe sayfası: yanlış rozet metni, dağınık özellik şeridi, satılmayan Bireysel plan kaldırıldı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, cadbim_adobe.html'in 3 ekran görüntüsünü paylaşıp: (1) hero'daki "Gold Reseller Partner" rozet metninin yanlış olduğunu, doğrusunun "Gold Reseller - Education - Commercial - Government" olması gerektiğini, yanındaki küçük (görünmeyen) Adobe Gold Reseller logosunun kaldırılmasını; (2) "20+ Creative uygulama / Firefly AI / Acrobat & e-İmza / Teams & Enterprise" şeridinin dağınık (3+1) göründüğünü, daha düzenli olmasını; (3) ayrıca "bireysel planları biz satmıyoruz, bireysel planla ilgili sitede bilgi olmasın" dedi.
+- **1) Hero rozet + kırık logo:** `.hero-pill` metni "Gold Reseller Partner" → "Gold Reseller — Education, Commercial, Government" yapıldı (CADBİM'in gerçek 3 Adobe Gold Reseller yetkisi). Yanındaki `assets/img/emb-bc22fd8e82.png` (siyah metinli "Gold Reseller" rozeti, beyaz kartsız — koyu lacivert zemin üzerinde görünmüyordu) tamamen kaldırıldı.
+- **2) Özellik şeridi (4 sayfa: Adobe, Autodesk, Chaos, UltiMaker):** `.hero-features` `display:flex;flex-wrap:wrap` → `display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))` yapıldı; mobilenav.js'teki genel satır-dengeleme fonksiyonuna (`v8→v9`) `.hero-features` selector'ü eklendi. Adobe/Chaos/UltiMaker'da 4 öğe → 2+2, Autodesk'te 5 öğe → 3+2 olarak dengeleniyor (önceden 3+1 idi).
+- **3) Bireysel plan kaldırıldı:** "Creative Cloud — Bireysel" kartı (hero altındaki Lisans Planları gridinde) tamamen silindi; hero-sub ve CTA-strip paragraflarındaki "Bireysel, " ön eki kaldırıldı. Kalan planlar: Teams, Enterprise, Acrobat Pro.
+- **Doğrulama (localhost, JS ile):** Rozet metni doğru, kırık img DOM'da yok; cadbim_adobe.html'de 4 öğe → [2,2], cadbim_autodesk.html'de 5 öğe → [3,2]; kart başlıkları artık yalnızca Teams/Enterprise/Acrobat Pro; "Bireysel" metni dosyada hiç geçmiyor; konsol hatası yok.
+- **Durum:** ✅ Adobe sayfası: rozet doğru, özellik şeridi dengeli, Bireysel plan bilgisi tamamen kaldırıldı.
+
 ### DK-2026-07-26-15 — Tüm sayfalara sayfaya-özel og:image/twitter:image üretildi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "tüm sayfaların google için gözüken başlıklarını, açıklamalarını ve sayfa görsellerini ayarla" → tarama sonrası tek eksik alan olarak "sayfa görselleri" (og:image) çıktı, tüm site tek bir genel `og-image.png` kullanıyordu. Onur "sayfaya özel benzersiz görseller" + "ürün logoları ve resimlerini kullan" seçeneklerini onayladı.
