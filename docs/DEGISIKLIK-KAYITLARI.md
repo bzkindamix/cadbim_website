@@ -6,6 +6,24 @@
 
 ---
 
+## 2026-07-27
+
+### DK-2026-07-27-01 — Sektör sayfaları ürün kataloğu: dedike sayfası olan ürünler artık kendi sayfasına, genel marka sayfasına değil, gidiyor
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur: "sektor_medya.html'de Premiere Pro/After Effects/Photoshop kartları cadbim_adobe.html'e gidiyor, kendi sayfaları var, düzelt; diğer sektör sayfalarında da aynı kalıp var mı kontrol et — dedike sayfası varsa oraya, yoksa hiç linklenmesin." Bu bulgu daha önce DK-2026-07-26-16'da kapsam dışı bırakılıp ayrı görev (task_68c5fbe8) olarak not edilmişti.
+- **Kök neden:** Ürün kataloğu (`.pgrid`) kartları oluşturulurken bazı ürünler için doğru dedike sayfa yerine sektörün genel marka sayfası (cadbim_adobe.html, cadbim_autodesk.html, cadbim_hp.html, cadbim_chaos.html) href olarak bırakılmış — kart kendi ürününü tanıtırken tıklandığında alakasız genel marka sayfasına düşüyordu.
+- **sektor_medya.html (bildirilen 3 + taramada bulunan 7):** Adobe Premiere Pro→`cadbim_premiere_pro.html`, Adobe After Effects→`cadbim_after_effects.html`, Adobe Photoshop→`cadbim_photoshop.html` (bildirilen); ayrıca aynı dosyada Maya→`cadbim_maya.html`, MotionBuilder→`cadbim_motionbuilder.html`, Arnold→`cadbim_arnold.html`, Chaos Corona→`cadbim_corona.html`, Chaos Vantage→`cadbim_vantage.html`, HP Z Workstation→`cadbim_hp_z_workstation.html`, HP ZBook Studio→`cadbim_hp_zbook.html` düzeltildi. Adobe Audition'ın kendi sayfası yok, Onur'un onayıyla genel cadbim_adobe.html'e gitmeye devam ediyor.
+- **sektor_mimari.html:** Navisworks→`cadbim_navisworks.html`, Adobe InDesign→`cadbim_indesign.html`, HP Z Workstation→`cadbim_hp_z_workstation.html`, HP ZBook→`cadbim_hp_zbook.html`.
+- **sektor_insaat.html:** Navisworks→`cadbim_navisworks.html`, HP Z Workstation→`cadbim_hp_z_workstation.html`.
+- **sektor_makine.html:** HP Z Workstation→`cadbim_hp_z_workstation.html`, HP ZBook→`cadbim_hp_zbook.html`.
+- **sektor_otomotiv.html:** HP Z Workstation→`cadbim_hp_z_workstation.html`, HP ZBook→`cadbim_hp_zbook.html`.
+- **sektor_egitim.html / sektor_havacilik.html:** Tarandı, aynı kalıp bulunmadı — tüm kartlar zaten kendi dedike sayfasına gidiyor.
+- **Kasıtlı olarak değiştirilmeyenler (dedike sayfa yok veya belirsiz — genel sayfaya gitmeye devam ediyor):** Chaos V-Ray, Autodesk VRED Professional, Adobe Acrobat Pro (dedike sayfaları yok); HP Designjet Z9+/T-Z/T-XL/Designjet (birden fazla model sayfası var, hangisi kastedildiği net değil); sektor_mimari.html'deki "Autodesk Forma Design Collaboration" ve sektor_insaat.html'deki "Autodesk Forma" kartları — içerikleri (Bulut worksharing/saha yönetimi ve doküman yönetimi) aslında `cadbim_bim_collaborate_pro.html` ve `cadbim_autodesk_docs.html` sayfalarıyla örtüşüyor ama kart başlığı "Forma" dediği için yanlış ürüne linklemektense dokunulmadı — ayrı bir karar/isimlendirme incelemesi gerektiriyor.
+- **Doğrulama (localhost, JS ile):** 6 sektör sayfasının `#pgrid` kartları tek tek href listelendi; düzeltilen 19 karttan her biri artık doğru dedike sayfaya gidiyor; yeni hedeflenen 12 sayfa `fetch` ile 200 OK doğrulandı; konsol hatası yok.
+- **Durum:** ✅ 6 sektör sayfasındaki ürün kataloğu artık dedike sayfası olan her ürünü kendi sayfasına yönlendiriyor; belirsiz/dedike sayfası olmayan birkaç kart bilinçli olarak dokunulmadan bırakıldı (yukarıda listelendi).
+
+---
+
 ## 2026-07-26
 
 ### DK-2026-07-26-17 — Yeni sayfa: Adobe Creative Cloud, ilgili çözüm/endüstri/ürünlere entegre edildi
