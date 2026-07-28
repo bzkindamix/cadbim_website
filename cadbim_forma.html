@@ -507,22 +507,6 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
     <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div><div class="cpills"><a href="sektor_mimari.html" class="cp"><i class="ti ti-building"></i>Mimarlık</a><a href="sektor_insaat.html" class="cp"><i class="ti ti-crane"></i>İnşaat & Altyapı</a></div></div>
   </div>
 </section>
-<div class="cta-strip">
-  <h2>Forma demo & teklif alın</h2>
-  <p>Forma tekil abonelik mi, AEC Collection mı sizin için avantajlı — birlikte değerlendirelim. Erken aşama iş akışınızı Cadbim ile kurun.</p>
-  <div class="cta-btns">
-    <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
-    <a href="cadbim_egitimler.html" class="btn-g">Forma Eğitimi Al</a>
-  </div>
-</div>
-<script>
-function showSector(id, btn) {
-  document.querySelectorAll('.sector-content').forEach(el => el.classList.remove('show'));
-  document.querySelectorAll('.stab').forEach(el => el.classList.remove('active'));
-  document.getElementById('sector-' + id).classList.add('show');
-  btn.classList.add('active');
-}
-</script>
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Blog</div>
@@ -555,6 +539,22 @@ function showSector(id, btn) {
     }).join('');
   }).catch(function(){ var section=document.getElementById('blog-related-section'); if(section) section.style.display='none'; });
 })();
+</script>
+<div class="cta-strip">
+  <h2>Forma demo & teklif alın</h2>
+  <p>Forma tekil abonelik mi, AEC Collection mı sizin için avantajlı — birlikte değerlendirelim. Erken aşama iş akışınızı Cadbim ile kurun.</p>
+  <div class="cta-btns">
+    <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
+    <a href="cadbim_egitimler.html" class="btn-g">Forma Eğitimi Al</a>
+  </div>
+</div>
+<script>
+function showSector(id, btn) {
+  document.querySelectorAll('.sector-content').forEach(el => el.classList.remove('show'));
+  document.querySelectorAll('.stab').forEach(el => el.classList.remove('active'));
+  document.getElementById('sector-' + id).classList.add('show');
+  btn.classList.add('active');
+}
 </script>
 <footer>
   <div class="fbot">
