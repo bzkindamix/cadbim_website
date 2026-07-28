@@ -354,6 +354,8 @@ def main():
     notify_path = os.path.join(BASE, "new_videos_notify.txt")
     if new_items:
         header = (
+            f"Bu e-posta bir yapay zeka otomasyonu (GitHub Actions) tarafından, "
+            f"insan müdahalesi olmadan otomatik olarak gönderilmiştir.\n\n"
             f"Cadbim Teknik Destek YouTube kanalı otomatik olarak tarandı ve "
             f"{new_count} yeni video tespit edildi. Aşağıdaki içerikler için "
             f"blog.cadbim.com.tr üzerinde otomatik olarak birer sayfa oluşturuldu "
