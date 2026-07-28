@@ -16,8 +16,8 @@
 | Eşleme durumu | Adet | Anlamı |
 |---|---|---|
 | BIREBIR | 36 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
-| KURAL | 260 | Kesin hedef belirlendi — 301 listesine girer |
-| GOZDEN | 30 | Hedef önerildi ama Onur kararı/teyidi gerekli |
+| KURAL | 289 | Kesin hedef belirlendi — 301 listesine girer |
+| GOZDEN | 1 | Hedef önerildi ama Onur kararı/teyidi gerekli — sadece /blog (mimari kararına bağlı) |
 | GOZDEN-BLOG | 339 | Blog kararına bağlı (bkz. §5) |
 
 ## 2. Strateji
@@ -51,7 +51,7 @@
 | `/autocad-map` | `/autocad` | KURAL | toolset (Map 3D) |
 | `/autocad-mechanical` | `/autocad` | KURAL | toolset |
 | `/autocad-mep` | `/autocad` | KURAL | toolset |
-| `/autodesk-cfd` | `/simulasyon` | GOZDEN | CFD ürünü satıştan kalktı → simülasyon çözümü |
+| `/autodesk-cfd` | `/cfd` | KURAL | CFD hâlâ satılıyor, yeni ürün sayfası oluşturuldu |
 | `/basari` | `/basari-oykuleri` | KURAL | gerçek başarı öyküleri sayfası kuruldu (13 vaka) |
 | `/basari-oykuleri` | `/basari-oykuleri` | BIREBIR | gerçek başarı öyküleri sayfası kuruldu (13 vaka) |
 | `/blog` | `/` | GOZDEN | blog yeni sitede yok — karar bekliyor |
@@ -109,8 +109,8 @@
 | `/sanatsalbaski` | `/sanatsal-baski` | KURAL | slug farkı |
 | `/simulasyon-ve-analiz` | `/simulasyon` | KURAL |  |
 | `/simulasyon-ve-analiz-yazilimlari` | `/simulasyon` | KURAL |  |
-| `/statik` | `/robot-structural` | GOZDEN | statik kategori → Robot Structural |
-| `/statik-yazilimlari` | `/robot-structural` | GOZDEN |  |
+| `/statik` | `/revit` | KURAL | statik kategori → Revit'e yönlendirildi (onaylandı) |
+| `/statik-yazilimlari` | `/revit` | KURAL | statik kategori → Revit'e yönlendirildi (onaylandı) |
 | `/teklif-iste` | `/iletisim` | KURAL |  |
 | `/tesis-tasarimi-icin-bim` | `/bim` | KURAL |  |
 | `/ultimaker-3d-yazicilar` | `/ultimaker` | KURAL |  |
