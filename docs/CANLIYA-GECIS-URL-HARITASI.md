@@ -16,8 +16,8 @@
 | Eşleme durumu | Adet | Anlamı |
 |---|---|---|
 | BIREBIR | 34 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
-| KURAL | 210 | Kesin hedef belirlendi — 301 listesine girer |
-| GOZDEN | 82 | Hedef önerildi ama Onur kararı/teyidi gerekli |
+| KURAL | 243 | Kesin hedef belirlendi — 301 listesine girer |
+| GOZDEN | 49 | Hedef önerildi ama Onur kararı/teyidi gerekli |
 | GOZDEN-BLOG | 339 | Blog kararına bağlı (bkz. §5) |
 
 ## 2. Strateji
@@ -61,12 +61,12 @@
 | `/designjet-fotograf` | `/hp-designjet-z` | KURAL |  |
 | `/designjet-grafik` | `/hp-designjet-z` | KURAL |  |
 | `/designjet-ofis` | `/hp-designjet-t` | KURAL |  |
-| `/designjet-sarf` | `/designjet` | GOZDEN | sarf malzeme sayfası yeni sitede yok |
-| `/designjet-tarayici` | `/designjet-hd-pro` | GOZDEN | tarayıcı seri sayfası yok; HD Pro'ya |
+| `/designjet-sarf` | `/designjet` | KURAL | geçici — DesignJet sarf malzeme sayfası planlandı |
+| `/designjet-tarayici` | `/designjet-hd-pro` | KURAL | alt modeller ayrı eşleşti (hd-pro/sd-pro) |
 | `/designjet-uretim` | `/hp-designjet-xl` | KURAL |  |
 | `/endustri` | `/sektor-mimari` | GOZDEN | endüstriler indeks sayfası yok |
 | `/etkinlikler` | `/` | GOZDEN | etkinlik sayfası yeni sitede yok |
-| `/fabrication` | `/cam` | GOZDEN | Fabrication ürün ailesi → CAM çözümü |
+| `/fabrication` | `/fabrication-cadmep` | KURAL | CADmep/ESTmep/CAMduct için ayrı sayfalar oluşturuldu |
 | `/fabrika-tasarimi-ve-dijital-ikiz` | `/fabrika-tasarimi` | KURAL |  |
 | `/factory-design-utilities` | `/factory-design` | KURAL | slug farkı |
 | `/farkli-cad-sistemleri` | `/urunler` | KURAL |  |
@@ -78,10 +78,10 @@
 | `/hp-is-istasyonlari` | `/hp` | KURAL |  |
 | `/hp-masaustu-workstation` | `/hp-z-workstation` | KURAL |  |
 | `/hp-mobil-isistasyonu` | `/hp-zbook` | KURAL |  |
-| `/hp-performans-monitor` | `/hp` | GOZDEN | monitör sayfası yeni sitede yok — karar |
+| `/hp-performans-monitor` | `/hp-monitor` | KURAL | HP Z Monitör sayfası mevcut, canonical düzeltilip yönlendirildi |
 | `/hp-plotter` | `/designjet` | KURAL |  |
 | `/hp-plotter-servis` | `/hp` | GOZDEN | ayrı servis sayfası yok; HP hub servis bölümü |
-| `/hsm-works` | `/fusion` | GOZDEN | HSMWorks → Fusion CAM'e evrildi |
+| `/hsm-works` | `/fusion` | KURAL | HSMWorks → Fusion CAM'e evrildi (onaylandı) |
 | `/insaat-icin-bim` | `/bim` | KURAL |  |
 | `/insaat-proje-yönetimi` | `/insaat-yonetimi` | KURAL | URL'de Türkçe karakter vardı |
 | `/insaat-yazilimlari` | `/sektor-insaat` | KURAL |  |
@@ -96,14 +96,14 @@
 | `/mimari` | `/sektor-mimari` | KURAL |  |
 | `/mimarlik-icin-bim` | `/bim` | KURAL |  |
 | `/mimarlik-yazilimlari` | `/sektor-mimari` | KURAL |  |
-| `/nastran` | `/simulasyon` | GOZDEN | Nastran satıştan kalktı |
+| `/nastran` | `/inventor` | KURAL | Nastran → Inventor Nastran; Inventor sayfasına bölüm eklendi |
 | `/otomotiv` | `/sektor-otomotiv` | KURAL |  |
 | `/otomotiv-agirlik-azaltma` | `/sektor-otomotiv` | KURAL |  |
 | `/oyun-vr-yazilimlari` | `/sektor-medya` | KURAL |  |
 | `/pdmc` | `/pdm-collection` | KURAL | slug farkı |
 | `/plant-3d` | `/autocad` | KURAL | toolset (Plant 3D) |
 | `/plm-ve-pdm-yazilimlari` | `/plm` | KURAL |  |
-| `/point-layout` | `/bim` | GOZDEN | Point Layout EOL |
+| `/point-layout` | `/revit` | KURAL | Point Layout EOL → Revit'e yönlendirildi |
 | `/raster-design` | `/autocad` | KURAL | toolset |
 | `/robot-structure-analysis` | `/robot-structural` | KURAL | slug farkı |
 | `/sanatsalbaski` | `/sanatsal-baski` | KURAL | slug farkı |
@@ -114,7 +114,7 @@
 | `/teklif-iste` | `/iletisim` | KURAL |  |
 | `/tesis-tasarimi-icin-bim` | `/bim` | KURAL |  |
 | `/ultimaker-3d-yazicilar` | `/ultimaker` | KURAL |  |
-| `/ultimaker-aksesuar` | `/ultimaker` | GOZDEN | aksesuar/sarf sayfası yok |
+| `/ultimaker-aksesuar` | `/ultimaker` | KURAL | geçici — UltiMaker aksesuar sayfası planlandı |
 | `/urun-tasarimi-uretim-yazilimlari` | `/pdm-collection` | KURAL |  |
 | `/vault-plm` | `/vault-pdm` | KURAL | Vault PLM bölümü vault-pdm sayfasında |
 | `/video-oyun-tasarimi` | `/sektor-medya` | KURAL |  |
