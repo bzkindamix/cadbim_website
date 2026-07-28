@@ -1,0 +1,35 @@
+name: YouTube Blog Sync
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Yeni videoları tara ve blog postu oluştur
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: UCGLIaycdAkSFM3Q54d3zVQg
+        run: python scripts/sync_youtube_blog.py
+
+      - name: Değişiklik varsa commit ve push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add post assets/data/blog-posts.json
+          git diff --staged --quiet || git commit -m "chore: YouTube'daki yeni videolar blog'a otomatik eklendi"
+          git push
