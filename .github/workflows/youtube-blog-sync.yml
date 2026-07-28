@@ -53,6 +53,6 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: "Cadbim Blog: Yeni YouTube videosu eklendi"
-          to: cadbim@cadbim.com.tr
+          to: onur.bozok@cadbim.com.tr,marketing@cadbim.com.tr
           from: "Cadbim Blog Bot <${{ secrets.MAIL_USERNAME }}>"
           body: file://new_videos_notify.txt
