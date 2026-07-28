@@ -15,10 +15,10 @@
 
 | Eşleme durumu | Adet | Anlamı |
 |---|---|---|
-| BIREBIR | 43 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
-| KURAL | 289 | Kesin hedef belirlendi — 301 listesine girer |
+| BIREBIR | 277 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa). 739 blog yazısının tamamı (242 orijinal + 497 YouTube video) dahil |
+| KURAL | 388 | Kesin hedef belirlendi — 301 listesine girer. 97 blog taksonomi sayfası (/blog/categories/*) client-side filtreli /blog hub'ına yönlendiriliyor |
 | GOZDEN | 0 | — |
-| GOZDEN-BLOG | 333 | Blog mimarisi kuruldu (2026-07-28), 6 yazı taşındı; kalan 333 devam ediyor (bkz. §5) |
+| GOZDEN-BLOG | 0 | Blog migrasyonu tamamlandı (2026-07-28) — tüm gerçek Wix yazıları taşındı, taksonomi sayfaları /blog'a yönlendirildi (bkz. §5) |
 
 ## 2. Strateji
 
@@ -124,13 +124,14 @@
 | `/yapi-urunleri-uretim-ve-imalati` | `/bim` | KURAL |  |
 | `/yapisal-mühendislik-icin-bim` | `/bim` | KURAL | URL'de Türkçe karakter vardı |
 
-## 5. Blog (242 yazı + 97 taksonomi) — KARAR GEREKLİ
+## 5. Blog (242 yazı + 97 taksonomi) — TAMAMLANDI (2026-07-28)
 
-Yeni sitede blog yok. Seçenekler:
+Seçenek A uygulandı: Blog mimarisi kuruldu (kategori+ürün filtreli hub + `post/<slug>.html` şeması, aynı slug korunarak) — 301 gerekmedi, içerik SEO değeri korundu.
 
-- **A (önerilen):** Blog bir sonraki fazda yeni sitede kurulur; yazılar aynı `/post/<slug>` şemasıyla taşınır → 301 gerekmez, içerik SEO değeri korunur.
-- **B:** Blog kurulmayacaksa her yazı en ilgili ürün/çözüm sayfasına 301'lenir (CSV'de tümü şimdilik `/` — yayına almadan önce başlık bazlı hedef ataması yapılmalı; en çok trafik alan ~20 yazı öncelikli).
-- **C (kabul edilemez):** 404'e bırakmak — 242 indeksli sayfa kaybı.
+- **242 orijinal Wix yazısı:** Tamamı gerçek içerikle taşındı (WebFetch ile canlı siteden çekildi, uydurma metin kullanılmadı). 2 yazı gerçek içeriği olmadığı için (thin/duplicate) `/` anasayfaya yönlendirildi.
+- **497 YouTube videosu:** Kanaldaki teknik destek videoları da blog'a video-postu olarak eklendi (başlık/açıklama YouTube'dan aynen alındı). Kanal artık günlük otomatik taranıyor (`.github/workflows/youtube-blog-sync.yml`), yeni video geldikçe blog otomatik güncelleniyor.
+- **97 taksonomi sayfası** (`/blog/categories/*`): Ayrı statik sayfa olarak yeniden kurulmadı; client-side kategori/ürün filtre sistemi olan `/blog` hub'ına 301'lendi (aynı işlevi tek sayfada sağlıyor).
+- **Toplam blog yazısı:** 739 — hepsi `assets/data/blog-posts.json` içinde tek kaynak olarak tutuluyor.
 
 ## 6. Dinamik Koleksiyonlar — Kural Özetleri
 
