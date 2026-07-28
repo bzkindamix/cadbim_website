@@ -481,7 +481,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   if(!container) return;
   var topic=container.getAttribute('data-topic');
   function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  fetch('assets/data/blog-posts.json').then(function(r){return r.json();}).then(function(data){
+  fetch('assets/data/blog-posts.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
     var matched=data.filter(function(p){return (p.products||[]).indexOf(topic)!==-1 || p.cat===topic;})
       .sort(function(a,b){return b.date.localeCompare(a.date);}).slice(0,5);
     var section=document.getElementById('blog-related-section');
