@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cadbim müşterilerinin gerçek başarı öyküleri: Fusion, Inventor, Nastran, Maya, Revit, Vault PDM ile elde edilen somut sonuçlar. Autodesk resmi partner sayfası kaynaklıdır.">
+<title>Başarı Öyküleri — Müşteri Referansları | Cadbim</title>
+  <meta property="og:title" content="Başarı Öyküleri — Müşteri Referansları | Cadbim">
+  <meta property="og:description" content="Cadbim müşterilerinin gerçek Autodesk projeleri ve elde ettikleri sonuçlar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.cadbim.com.tr/basari-oykuleri">
+  <meta property="og:image" content="https://www.cadbim.com.tr/og-image.png">
+  <meta property="og:site_name" content="Cadbim">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Başarı Öyküleri — Müşteri Referansları | Cadbim">
+  <meta name="twitter:description" content="Cadbim müşterilerinin gerçek Autodesk projeleri ve elde ettikleri sonuçlar.">
+  <link rel="canonical" href="https://www.cadbim.com.tr/basari-oykuleri">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
+<style>
+:root{
+  --navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;
+  --cyan:#00c8f0;--cyan2:#0ea5e9;
+  --cdim:rgba(0,200,240,0.12);--cbor:rgba(0,200,240,0.2);
+  --w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);
+  --w30:rgba(255,255,255,0.3);--w10:rgba(255,255,255,0.1);--w06:rgba(255,255,255,0.06);
+  --fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;
+  --r:8px;--rm:12px;--rl:16px;--rxl:24px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.92);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
+.nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:var(--r);font-weight:700;font-size:13px;}
+.hero{padding:120px 3rem 56px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;}
+.hero-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(var(--w10) 1px,transparent 1px),linear-gradient(90deg,var(--w10) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:20px;position:relative;z-index:1;}
+.crumb a{color:var(--w30);text-decoration:none;}.crumb a:hover{color:var(--cyan);}
+.hero h1{font-family:var(--fd);font-size:clamp(1.9rem,3.2vw,2.9rem);font-weight:800;line-height:1.1;color:var(--w);margin-bottom:16px;position:relative;z-index:1;max-width:760px;}
+.hero h1 em{font-style:normal;color:var(--cyan);}
+.hero-sub{font-size:15px;color:var(--w50);line-height:1.75;margin-bottom:0;max-width:640px;position:relative;z-index:1;}
+.section{padding:48px 3rem 64px;}
+.section-alt{background:var(--navy2);}
+.sh{margin-bottom:32px;}
+.slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
+.stitle{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:var(--w);margin-bottom:8px;}
+.ssub{font-size:14px;color:var(--w50);max-width:540px;line-height:1.7;}
+.pfilter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.fchip{padding:8px 16px;border-radius:20px;font-size:12px;cursor:pointer;border:.5px solid var(--w10);background:transparent;color:var(--w50);transition:all .2s;font-family:var(--fb);}
+.fchip:hover{border-color:var(--w30);color:var(--w80);}
+.fchip.active{background:var(--cdim);border-color:var(--cbor);color:var(--cyan);}
+.story-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:32px;}
+.story-card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px;transition:border-color .2s;display:flex;flex-direction:column;}
+.story-card:hover{border-color:var(--cbor);}
+.story-video{aspect-ratio:16/9;border-radius:12px;overflow:hidden;margin-bottom:16px;background:#000;}
+.story-video iframe{width:100%;height:100%;border:0;}
+.story-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:14px;}
+.story-tag{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);margin-bottom:6px;}
+.story-card h3{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--w);margin-bottom:8px;line-height:1.35;}
+.story-card p{font-size:13px;color:var(--w50);line-height:1.65;margin-bottom:14px;flex-grow:1;}
+.story-tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.story-tool{font-size:11px;padding:4px 9px;border-radius:6px;background:rgba(255,255,255,.04);border:.5px solid var(--w10);color:var(--w50);}
+.story-src{font-size:12px;color:var(--cyan);text-decoration:none;display:inline-flex;align-items:center;gap:5px;margin-top:auto;}
+.story-src:hover{opacity:.8;}
+.cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 64px;}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
+.cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;color:var(--w);margin-bottom:10px;}
+.cta-strip p{font-size:14px;color:var(--w50);margin-bottom:26px;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-p{background:var(--cyan);color:var(--navy);padding:12px 26px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;}
+.btn-p:hover{opacity:.88;transform:translateY(-1px);}
+footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24px;}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fbot p{font-size:12px;color:rgba(255,255,255,0.2);}
+.socials{display:flex;gap:10px;}
+.socials a{width:32px;height:32px;border-radius:var(--r);border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}
+.socials a:hover{border-color:var(--cyan);color:var(--cyan);}
+@media(max-width:1000px){.nav-links{display:flex;}.cta-strip{margin:0 1.5rem 56px;}}
+@media(max-width:600px){.section{padding:40px 1.5rem 56px;}.hero{padding:96px 1.5rem 44px;}}
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+</style>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#060c1a">
+<meta property="og:locale" content="tr_TR">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.cadbim.com.tr/#organization",
+   "name": "Cadbim",
+   "url": "https://www.cadbim.com.tr/",
+   "logo": "https://www.cadbim.com.tr/og-image.png",
+   "foundingDate": "1993",
+   "email": "cadbim@cadbim.com.tr",
+   "telephone": "+902324643490",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901",
+    "addressLocality": "Çiğli",
+    "addressRegion": "İzmir",
+    "postalCode": "35620",
+    "addressCountry": "TR"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/cadbim/",
+    "https://www.youtube.com/c/CadbimTeknikDestek",
+    "https://www.instagram.com/cadbim_izmir/",
+    "https://www.facebook.com/cadbimizmir"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.cadbim.com.tr/basari-oykuleri#webpage",
+   "url": "https://www.cadbim.com.tr/basari-oykuleri",
+   "name": "Başarı Öyküleri — Müşteri Referansları | Cadbim",
+   "description": "Cadbim müşterilerinin gerçek başarı öyküleri: Fusion, Inventor, Nastran, Maya, Revit, Vault PDM ile elde edilen somut sonuçlar.",
+   "isPartOf": {"@id": "https://www.cadbim.com.tr/#website"},
+   "inLanguage": "tr-TR",
+   "publisher": {"@id": "https://www.cadbim.com.tr/#organization"}
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://www.cadbim.com.tr/"},
+    {"@type": "ListItem", "position": 2, "name": "Hakkımızda", "item": "https://www.cadbim.com.tr/hakkimizda"},
+    {"@type": "ListItem", "position": 3, "name": "Başarı Öyküleri", "item": "https://www.cadbim.com.tr/basari-oykuleri"}
+   ]
+  }
+ ]
+}
+</script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="stylesheet" href="assets/css/design-system.css?v=10">
+</head>
+<body><nav class="nav">
+  <a href="index.html" class="nav-logo"><img src="assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
+      <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="cadbim_urunler.html">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="cadbim_autodesk.html">Autodesk</a>
+        <a href="cadbim_adobe.html">Adobe</a>
+        <a href="cadbim_designjet.html">HP DesignJet</a>
+        <a href="cadbim_hp_z_workstation.html">HP Workstations</a>
+        <a href="cadbim_hp_build_workspace.html">HP Build Workspace</a>
+        <a href="cadbim_chaos.html">Chaos</a>
+        <a href="cadbim_ultimaker.html">UltiMaker</a>
+        <a href="cadbim_sketchup.html">SketchUp</a>
+        <a href="cadbim_lumion.html">Lumion</a>
+        <a href="cadbim_microsoft.html">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cadbim_cozumler.html">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="cadbim_dijital_donusum.html" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Tasarım & Mühendislik</div>
+            <a href="cadbim_bim.html">BIM</a>
+            <a href="cadbim_simulasyon.html">Simülasyon & Analiz</a>
+            <a href="cadbim_tolerans_analizi.html">Tolerans Analizi</a>
+            <a href="cadbim_tasarim_otomasyonu.html">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Dijital İkiz</div>
+            <a href="cadbim_dijital_ikiz.html">Dijital İkiz</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Üretim</div>
+            <a href="cadbim_fabrika_tasarimi.html">Fabrika Tasarımı</a>
+            <a href="cadbim_cam.html">CAM & İmalat</a>
+            <a href="cadbim_eklemeli_imalat.html">Eklemeli İmalat & 3D Baskı</a>
+            <a href="cadbim_nesting.html">Nesting</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="cadbim_plm.html">PLM</a>
+            <a href="cadbim_pdm.html">PDM</a>
+            <a href="cadbim_insaat_yonetimi.html">İnşaat Proje Yönetimi</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & Gerçeklik</div>
+            <a href="cadbim_gorsellestirme.html">Görselleştirme & Render</a>
+            <a href="cadbim_yaratici_icerik.html">Yaratıcı İçerik & Tasarım</a>
+            <a href="cadbim_gerceklik_yakalama.html">Gerçeklik Yakalama</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Sanatsal Baskı</div>
+            <a href="cadbim_sanatsal_baski.html"><span class="sanatsal-gradient">Sanatsal Baskı Atölyesi</span></a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cadbim_endustriler.html">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="sektor_mimari.html">Mimarlık</a>
+        <a href="sektor_insaat.html">İnşaat & Altyapı</a>
+        <a href="sektor_makine.html">Makine & Üretim</a>
+        <a href="sektor_otomotiv.html">Otomotiv</a>
+        <a href="sektor_medya.html">Medya & Eğlence</a>
+        <a href="sektor_egitim.html">Eğitim</a>
+        <a href="sektor_havacilik.html">Havacılık & Savunma</a>
+      </div>
+    </li>
+    <li><a href="cadbim_egitimler.html">Eğitimler</a></li>
+    <li><a href="cadbim_hakkimizda.html" class="active">Hakkımızda</a></li>
+    <li><a href="cadbim_iletisim.html">İletişim</a></li>
+    <li><a href="cadbim_kvkk.html">KVKK</a></li>
+    <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-bg" style="background:radial-gradient(ellipse 80% 60% at 10% -10%,rgba(0,200,240,0.1) 0%,transparent 60%);"></div>
+  <div class="hero-grid"></div>
+  <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cadbim_hakkimizda.html">Hakkımızda</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Başarı Öyküleri</span></div>
+  <h1>Müşterilerimizin <em>Başarı Öyküleri</em></h1>
+  <p class="hero-sub">1993'ten bu yana Türkiye'nin farklı sektörlerinden müşterilerimizle birlikte gerçekleştirdiğimiz Autodesk projeleri — somut zorluklar, uyguladığımız çözümler ve elde edilen ölçülebilir sonuçlar. Yazılı vakaların kaynağı Autodesk'in resmi Partner Finder platformudur.</p>
+</section>
+<section class="section" style="padding-top:0;">
+  <div class="pfilter" id="pfilter">
+    <button class="fchip active" data-f="all">Tümü</button>
+    <button class="fchip" data-f="makine">Makine & Üretim</button>
+    <button class="fchip" data-f="insaat">İnşaat & Mimarlık</button>
+    <button class="fchip" data-f="medya">Medya & Oyun</button>
+  </div>
+  <div class="story-grid" id="sgrid">
+
+    <div class="story-card" data-cat="makine" id="guralp-vinc">
+      <div class="story-video"><iframe src="https://www.youtube.com/embed/CDgCy6y2d8w" title="Güralp Vinç Başarı Hikayesi" loading="lazy" allowfullscreen></iframe></div>
+      <div class="story-tag">Video Başarı Öyküsü</div>
+      <h3>Güralp Vinç</h3>
+      <p>1991'den bu yana Torbalı'dan dünyaya vinç ve kaldırma makineleri üreten Güralp Vinç'in Autodesk üretim çözümleriyle tasarım ve üretim süreçlerini nasıl geliştirdiğini video başarı hikayesinde izleyin.</p>
+      <div class="story-tools"><span class="story-tool">Autodesk PD&M</span></div>
+    </div>
+
+    <div class="story-card" data-cat="makine" id="sistem-teknik">
+      <div class="story-video"><iframe src="https://www.youtube.com/embed/yxvDvyh_-vM" title="Sistem Teknik Başarı Öyküsü" loading="lazy" allowfullscreen></iframe></div>
+      <div class="story-tag">Video Başarı Öyküsü</div>
+      <h3>Sistem Teknik (Electron)</h3>
+      <p>Sistem Teknik'in Electron ürün ailesi geliştirme sürecinde Cadbim iş birliğiyle elde ettiği kazanımları video başarı hikayesinde izleyin.</p>
+      <div class="story-tools"><span class="story-tool">Autodesk</span></div>
+    </div>
+
+    <div class="story-card" data-cat="makine" id="efe-kalip-makina">
+      <div class="story-icon" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><i class="ti ti-settings"></i></div>
+      <div class="story-tag">Makine & Üretim</div>
+      <h3>Efe Kalıp Makina</h3>
+      <p>Manisa merkezli makine ve yedek parça üreticisi, yeni bir CAD/CAM çözümü arayışıyla Autodesk Fusion'a geçti. Takım yolu optimizasyonu ve setup sheet özelliğiyle CNC işleme süreleri kısaldı, hata oranları düştü.</p>
+      <div class="story-tools"><span class="story-tool">Fusion</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/innovating-manufacturing-efe-kalp-makinas-leap-with-autodesk-fusion-360/10973" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="makine" id="norm-additive">
+      <div class="story-icon" style="background:rgba(192,132,252,0.13);color:#c084fc;"><i class="ti ti-3d-cube-sphere"></i></div>
+      <div class="story-tag">Makine & Üretim</div>
+      <h3>Norm Additive</h3>
+      <p>Norm Holdings iştiraki, sensör/kamera tutucu bir sistemi oluşturan 5 ayrı sac metal parçayı Fusion Generative Design ile tek, hafifletilmiş bir parçaya indirdi. Tedarik süresi 3 haftadan 1 haftaya düştü, stok ve montaj maliyeti azaldı.</p>
+      <div class="story-tools"><span class="story-tool">Fusion — Generative Design</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/revolutionizing-manufacturing-how-norm-additive-used-autodesk-generative-design-to-transform-a-fivepart-system-into-a-lightweight-masterpiece/10650" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="makine" id="habas">
+      <div class="story-icon" style="background:rgba(248,113,113,0.13);color:#f87171;"><i class="ti ti-chart-scatter"></i></div>
+      <div class="story-tag">Makine & Üretim</div>
+      <h3>Habaş</h3>
+      <p>Türkiye'nin önde gelen çelik üreticilerinden Habaş, basınçlı kap ve endüstriyel gaz tüpü tasarımlarını Inventor ve Inventor Nastran ile FEA analiziyle doğruluyor — doğru malzeme ve üretim yöntemi seçimiyle pazara çıkış süresi kısalıyor.</p>
+      <div class="story-tools"><span class="story-tool">Inventor</span><span class="story-tool">Nastran</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/haba-uses-fea-analysis-to-improve-product-performance-and-decrease-gotomarket-time-with-autodesk-inventor-and-autodesk-nastran-/9223" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="makine" id="edvan">
+      <div class="story-icon" style="background:rgba(52,211,153,0.13);color:#34d399;"><i class="ti ti-wind"></i></div>
+      <div class="story-tag">Makine & Üretim</div>
+      <h3>EDVAN</h3>
+      <p>İzmir merkezli toz toplama ve endüstriyel havalandırma sistemleri üreticisi ED-VAN, yalnızca AutoCAD kullandığı süreçlerini Cadbim iş birliğiyle PD&M Collection ve Vault PDM'e taşıyarak veri yönetimi ve KPI performansını iyileştirdi.</p>
+      <div class="story-tools"><span class="story-tool">PD&M Collection</span><span class="story-tool">Vault PDM</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/edvan-delivers-value-and-achieves-kpis-with-cadbim-using-pdm-collection-and-vault-pdm/82" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="makine" id="eys-metal">
+      <div class="story-icon" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><i class="ti ti-recycle"></i></div>
+      <div class="story-tag">Makine & Üretim</div>
+      <h3>EYS Metal</h3>
+      <p>Gübre yönetimi ekipmanları ihracatçısı EYS Metal, 3D katı model eksikliği nedeniyle CAM otomasyonundan yararlanamıyordu. Inventor ile 3D modellemeye geçerek üretim departmanlarıyla hızlı iş birliği kurdu, servis taleplerini azalttı.</p>
+      <div class="story-tools"><span class="story-tool">Inventor</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/eys-metal-moving-to-3d/9067" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="makine" id="kutlusan">
+      <div class="story-icon" style="background:rgba(99,102,241,0.13);color:#a5b4fc;"><i class="ti ti-building-factory-2"></i></div>
+      <div class="story-tag">Makine & Üretim</div>
+      <h3>Kutlusan Kafes</h3>
+      <p>2D DWG dosyalarının 3D katı modele taşınması ve ERP entegrasyonu ihtiyacı olan Kutlusan Kafes, montaj analizi ve doküman yönetimini dijitalleştirerek üretim ve saha kurulum süreçlerini iyileştirdi.</p>
+      <div class="story-tools"><span class="story-tool">Inventor</span><span class="story-tool">Vault</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/kutlusan-digital-design-and-enterprise-resource-planning-integration-project/9068" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="insaat" id="decons">
+      <div class="story-icon" style="background:rgba(34,197,94,0.13);color:#22c55e;"><i class="ti ti-building"></i></div>
+      <div class="story-tag">İnşaat & Mimarlık</div>
+      <h3>DECONS</h3>
+      <p>30 yıllık geçmişe sahip EPC/Turnkey firması DECONS, 2D tasarımdan Autodesk AEC Collection ve Revit tabanlı BIM iş akışına geçti. Cadbim'in Revit ve BIM eğitimleriyle proje kalitesi arttı, süreler kısaldı, pazar rekabet gücü güçlendi.</p>
+      <div class="story-tools"><span class="story-tool">AEC Collection</span><span class="story-tool">Revit</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/engineering-excellence-decons-transformation-through-bim-technology/11027" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="insaat" id="bedesten-ahsap">
+      <div class="story-icon" style="background:rgba(217,70,239,0.13);color:#e879f9;"><i class="ti ti-armchair"></i></div>
+      <div class="story-tag">İnşaat & Mimarlık</div>
+      <h3>Bedesten Ahşap</h3>
+      <p>1953'ten beri hizmet veren ahşap mobilya firması, Revit, AutoCAD ve 3ds Max eğitimleriyle sunum ve görselleştirme kalitesini artırdı — rekabetçi tekliflerde fark yaratan gerçekçi tasarım sunumları üretti.</p>
+      <div class="story-tools"><span class="story-tool">Revit</span><span class="story-tool">3ds Max</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/training-and-implementation-of-the-autodesk-aec-collection/8138" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="insaat" id="ordinat">
+      <div class="story-icon" style="background:rgba(14,165,233,0.13);color:#38bdf8;"><i class="ti ti-pipe"></i></div>
+      <div class="story-tag">İnşaat & Mimarlık</div>
+      <h3>Ordinat İnşaat</h3>
+      <p>1997'den beri petrokimya, doğalgaz ve enerji sektörlerinde taahhüt işleri yürüten Ordinat, artan proje yoğunluğu ve dosya boyutu sorunlarını AutoCAD'den Plant 3D iş akışına geçerek çözdü.</p>
+      <div class="story-tools"><span class="story-tool">Plant 3D</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/ordinat-plant-3d-workflow-implementation/8217" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="medya" id="funjitsu">
+      <div class="story-icon" style="background:rgba(236,72,153,0.13);color:#f472b6;"><i class="ti ti-device-gamepad-2"></i></div>
+      <div class="story-tag">Medya & Oyun</div>
+      <h3>Funjitsu Oyun ve Teknoloji</h3>
+      <p>Türkiye'nin öncü oyun stüdyolarından Funjitsu Game, RPG oyunları için animasyon ve karakter tasarım hattını Autodesk Maya ile geliştirerek yüksek kaliteli 3D modeller ve platformlar arası optimize içerik üretti.</p>
+      <div class="story-tools"><span class="story-tool">Maya</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/unlocking-the-magic-of-animation-funjitsu-oyun-ve-teknoloji-a-success-story-with-autodesk-maya/10853" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+    <div class="story-card" data-cat="medya" id="tiplay-studio">
+      <div class="story-icon" style="background:rgba(236,72,153,0.13);color:#f472b6;"><i class="ti ti-device-gamepad-2"></i></div>
+      <div class="story-tag">Medya & Oyun</div>
+      <h3>tiplay studio</h3>
+      <p>Türkiye'nin hızla büyüyen oyun geliştirme ekosistemlerinden tiplay studio, küresel büyüme hedefi ve pandemi döneminde uzaktan iş birliği ihtiyacını Autodesk Maya tabanlı iş akışıyla çözerek dünya çapında oyunlar üretti.</p>
+      <div class="story-tools"><span class="story-tool">Maya</span></div>
+      <a href="https://www.autodesk.com/support/partners/success-stories/game-on-how-autodesk-maya-powered-tiplay-studios-global-domination/10857" target="_blank" rel="noopener" class="story-src">Autodesk'te kaynağı gör <i class="ti ti-external-link"></i></a>
+    </div>
+
+  </div>
+</section>
+<div class="cta-strip">
+  <h2>Sıradaki başarı öyküsü sizin projeniz olsun</h2>
+  <p>İhtiyacınızı dinleyip doğru Autodesk çözümünü birlikte belirleyelim.</p>
+  <div class="cta-btns">
+    <a href="cadbim_iletisim.html" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+<footer>
+  <div class="fbot">
+    <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a> · <a href="javascript:void(0)" onclick="window.openCookiePrefs&&window.openCookiePrefs()" style="color:rgba(255,255,255,0.3);text-decoration:none;">Çerez Ayarları</a></p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var chips=[].slice.call(document.querySelectorAll('#pfilter .fchip'));
+  var cards=[].slice.call(document.querySelectorAll('#sgrid .story-card'));
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('active');});
+      chip.classList.add('active');
+      var f=chip.getAttribute('data-f');
+      cards.forEach(function(card){
+        card.style.display=(f==='all'||card.getAttribute('data-cat')===f)?'':'none';
+      });
+    });
+  });
+})();
+</script>
+<script src="mobilenav.js?v=9" defer></script>
+<script src="whatsapp-widget.js?v=1" defer></script>
+<script src="cookie-consent.js?v=1" defer></script>
+</body>
+</html>

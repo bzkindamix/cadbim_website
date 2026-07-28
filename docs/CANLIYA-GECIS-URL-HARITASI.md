@@ -15,9 +15,9 @@
 
 | Eşleme durumu | Adet | Anlamı |
 |---|---|---|
-| BIREBIR | 34 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
-| KURAL | 243 | Kesin hedef belirlendi — 301 listesine girer |
-| GOZDEN | 49 | Hedef önerildi ama Onur kararı/teyidi gerekli |
+| BIREBIR | 35 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
+| KURAL | 260 | Kesin hedef belirlendi — 301 listesine girer |
+| GOZDEN | 31 | Hedef önerildi ama Onur kararı/teyidi gerekli |
 | GOZDEN-BLOG | 339 | Blog kararına bağlı (bkz. §5) |
 
 ## 2. Strateji
@@ -38,7 +38,7 @@
 |---|---|---|---|
 | `/3d-animasyon` | `/me-collection` | KURAL | kategori sayfası → M&E Collection |
 | `/3ds-max` | `/3dsmax` | KURAL | slug farkı |
-| `/abc-pro` | `/urunler` | GOZDEN | eski ürün tanımlanamadı — Onur teyidi gerekli |
+| `/abc-pro` | `/urunler` | KURAL | eski ürün tanımlanamadı, genel ürünler sayfası (onaylandı) |
 | `/acrobat-sign` | `/adobe` | KURAL | Acrobat Sign ayrı sayfa yok → Adobe hub |
 | `/adobe-acrobat` | `/adobe` | KURAL | Acrobat karta indirgendi → Adobe hub |
 | `/adobe-creative-cloud` | `/adobe` | KURAL |  |
@@ -52,8 +52,8 @@
 | `/autocad-mechanical` | `/autocad` | KURAL | toolset |
 | `/autocad-mep` | `/autocad` | KURAL | toolset |
 | `/autodesk-cfd` | `/simulasyon` | GOZDEN | CFD ürünü satıştan kalktı → simülasyon çözümü |
-| `/basari` | `/hakkimizda` | GOZDEN | başarı öyküleri bölümü yeni sitede yok |
-| `/basari-oykuleri` | `/hakkimizda` | GOZDEN | başarı öyküleri bölümü yeni sitede yok |
+| `/basari` | `/basari-oykuleri` | KURAL | gerçek başarı öyküleri sayfası kuruldu (13 vaka) |
+| `/basari-oykuleri` | `/basari-oykuleri` | BIREBIR | gerçek başarı öyküleri sayfası kuruldu (13 vaka) |
 | `/blog` | `/` | GOZDEN | blog yeni sitede yok — karar bekliyor |
 | `/bosalan` | `/` | KURAL | Wix boş sayfa |
 | `/cam-ve-imalat-teknolojileri` | `/cam` | KURAL |  |
@@ -64,7 +64,7 @@
 | `/designjet-sarf` | `/designjet` | KURAL | geçici — DesignJet sarf malzeme sayfası planlandı |
 | `/designjet-tarayici` | `/designjet-hd-pro` | KURAL | alt modeller ayrı eşleşti (hd-pro/sd-pro) |
 | `/designjet-uretim` | `/hp-designjet-xl` | KURAL |  |
-| `/endustri` | `/sektor-mimari` | GOZDEN | endüstriler indeks sayfası yok |
+| `/endustri` | `/endustriler` | KURAL | gerçek Endüstriler indeks sayfası bulundu, düzeltildi |
 | `/etkinlikler` | `/` | GOZDEN | etkinlik sayfası yeni sitede yok |
 | `/fabrication` | `/fabrication-cadmep` | KURAL | CADmep/ESTmep/CAMduct için ayrı sayfalar oluşturuldu |
 | `/fabrika-tasarimi-ve-dijital-ikiz` | `/fabrika-tasarimi` | KURAL |  |
@@ -80,7 +80,7 @@
 | `/hp-mobil-isistasyonu` | `/hp-zbook` | KURAL |  |
 | `/hp-performans-monitor` | `/hp-monitor` | KURAL | HP Z Monitör sayfası mevcut, canonical düzeltilip yönlendirildi |
 | `/hp-plotter` | `/designjet` | KURAL |  |
-| `/hp-plotter-servis` | `/hp` | GOZDEN | ayrı servis sayfası yok; HP hub servis bölümü |
+| `/hp-plotter-servis` | `/hp` | KURAL | HP hub sayfası zaten Yetkili Servis içeriyor (onaylandı) |
 | `/hsm-works` | `/fusion` | KURAL | HSMWorks → Fusion CAM'e evrildi (onaylandı) |
 | `/insaat-icin-bim` | `/bim` | KURAL |  |
 | `/insaat-proje-yönetimi` | `/insaat-yonetimi` | KURAL | URL'de Türkçe karakter vardı |
@@ -90,8 +90,8 @@
 | `/kampanyalar` | `/` | GOZDEN | kampanya sayfası yok — karar |
 | `/makine-ve-ekipman-uretimi` | `/sektor-makine` | KURAL |  |
 | `/mecollection` | `/me-collection` | KURAL | slug farkı |
-| `/mekanik-tesisat` | `/bim` | GOZDEN | MEP içerik BIM çözümünde |
-| `/mekanik-tesisat-yazilimlari` | `/bim` | GOZDEN | MEP |
+| `/mekanik-tesisat` | `/bim` | KURAL | MEP içerik BIM sayfasında (onaylandı) |
+| `/mekanik-tesisat-yazilimlari` | `/bim` | KURAL | MEP içerik BIM sayfasında (onaylandı) |
 | `/mep-icin-bim` | `/bim` | KURAL |  |
 | `/mimari` | `/sektor-mimari` | KURAL |  |
 | `/mimarlik-icin-bim` | `/bim` | KURAL |  |
@@ -137,7 +137,7 @@ Yeni sitede blog yok. Seçenekler:
 | Koleksiyon | Öğe | Kural |
 |---|---|---|
 | `/adobe-yaraticilik/*` | 30 | Uygulama bazlı (Photoshop...) |
-| `/basari-oykuleri/*` | 4 | → /hakkimizda (karar) |
+| `/basari-oykuleri/*` | 4 | Wix placeholder içerikti; gerçek DECONS vakası #decons'a, diğerleri hub sayfaya yönlendirildi |
 | `/chaos/*` | 15 | Ürün bazlı (Corona, Vantage, Phoenix, Anima, Cosmos) |
 | `/danismanlik/*` | 9 | → /danismanlik |
 | `/designjet-fotograf/*` | 2 | Model bazlı (Z) |
