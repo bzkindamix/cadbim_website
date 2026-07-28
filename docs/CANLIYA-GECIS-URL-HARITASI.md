@@ -15,10 +15,10 @@
 
 | Eşleme durumu | Adet | Anlamı |
 |---|---|---|
-| BIREBIR | 36 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
+| BIREBIR | 43 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
 | KURAL | 289 | Kesin hedef belirlendi — 301 listesine girer |
-| GOZDEN | 1 | Hedef önerildi ama Onur kararı/teyidi gerekli — sadece /blog (mimari kararına bağlı) |
-| GOZDEN-BLOG | 339 | Blog kararına bağlı (bkz. §5) |
+| GOZDEN | 0 | — |
+| GOZDEN-BLOG | 333 | Blog mimarisi kuruldu (2026-07-28), 6 yazı taşındı; kalan 333 devam ediyor (bkz. §5) |
 
 ## 2. Strateji
 
@@ -54,7 +54,7 @@
 | `/autodesk-cfd` | `/cfd` | KURAL | CFD hâlâ satılıyor, yeni ürün sayfası oluşturuldu |
 | `/basari` | `/basari-oykuleri` | KURAL | gerçek başarı öyküleri sayfası kuruldu (13 vaka) |
 | `/basari-oykuleri` | `/basari-oykuleri` | BIREBIR | gerçek başarı öyküleri sayfası kuruldu (13 vaka) |
-| `/blog` | `/` | GOZDEN | blog yeni sitede yok — karar bekliyor |
+| `/blog` | `/blog` | BIREBIR | blog mimarisi kuruldu, kategori+ürün filtreli yeni sayfa |
 | `/bosalan` | `/` | KURAL | Wix boş sayfa |
 | `/cam-ve-imalat-teknolojileri` | `/cam` | KURAL |  |
 | `/cam-ve-imalat-yazilimlari` | `/cam` | KURAL |  |
