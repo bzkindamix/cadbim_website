@@ -353,8 +353,15 @@ def main():
 
     notify_path = os.path.join(BASE, "new_videos_notify.txt")
     if new_items:
+        header = (
+            f"Cadbim Teknik Destek YouTube kanalı otomatik olarak tarandı ve "
+            f"{new_count} yeni video tespit edildi. Aşağıdaki içerikler için "
+            f"blog.cadbim.com.tr üzerinde otomatik olarak birer sayfa oluşturuldu "
+            f"ve siteye eklendi (video başlığı ve açıklaması olduğu gibi kullanıldı, "
+            f"kategori/ürün etiketi başlıktaki anahtar kelimelerden otomatik atandı):\n"
+        )
         with open(notify_path, "w", encoding="utf-8") as f:
-            f.write("\n\n".join(new_items))
+            f.write(header + "\n" + "\n\n".join(new_items))
     elif os.path.exists(notify_path):
         os.remove(notify_path)
 
