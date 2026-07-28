@@ -658,7 +658,7 @@
 "/vault-pdm","/vault-pdm",BIREBIR,ana,""
 "/vault-plm","/vault-pdm",KURAL,ana,"Vault PLM bölümü vault-pdm sayfasında"
 "/video-oyun-tasarimi","/sektor-medya",KURAL,ana,""
-"/vred","/gorsellestirme",GOZDEN,ana,"VRED sayfası yok — karar (otomotiv görselleştirme)"
+"/vred","/vred",BIREBIR,ana,"yeni VRED ürün sayfası oluşturuldu (2026-07-28)"
 "/webinar","/egitimler",GOZDEN,ana,"webinar arşivi yok"
 "/yapi-urunleri-ureticileri-icin-bim","/bim",KURAL,ana,""
 "/yapi-urunleri-uretim-ve-imalati","/bim",KURAL,ana,""

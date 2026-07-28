@@ -15,9 +15,9 @@
 
 | Eşleme durumu | Adet | Anlamı |
 |---|---|---|
-| BIREBIR | 33 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
+| BIREBIR | 34 | Aynı slug yeni sitede var — 301 gerekmez (host aynı davranırsa) |
 | KURAL | 210 | Kesin hedef belirlendi — 301 listesine girer |
-| GOZDEN | 83 | Hedef önerildi ama Onur kararı/teyidi gerekli |
+| GOZDEN | 82 | Hedef önerildi ama Onur kararı/teyidi gerekli |
 | GOZDEN-BLOG | 339 | Blog kararına bağlı (bkz. §5) |
 
 ## 2. Strateji
@@ -118,7 +118,7 @@
 | `/urun-tasarimi-uretim-yazilimlari` | `/pdm-collection` | KURAL |  |
 | `/vault-plm` | `/vault-pdm` | KURAL | Vault PLM bölümü vault-pdm sayfasında |
 | `/video-oyun-tasarimi` | `/sektor-medya` | KURAL |  |
-| `/vred` | `/gorsellestirme` | GOZDEN | VRED sayfası yok — karar (otomotiv görselleştirme) |
+| `/vred` | `/vred` | BIREBIR | yeni VRED ürün sayfası oluşturuldu (2026-07-28) |
 | `/webinar` | `/egitimler` | GOZDEN | webinar arşivi yok |
 | `/yapi-urunleri-ureticileri-icin-bim` | `/bim` | KURAL |  |
 | `/yapi-urunleri-uretim-ve-imalati` | `/bim` | KURAL |  |
