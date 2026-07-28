@@ -217,10 +217,11 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
         <a href="sektor_havacilik.html">Havacılık & Savunma</a>
       </div>
     </li>
-    <li><a href="cadbim_blog.html" class="active">Blog</a></li>
     <li><a href="cadbim_egitimler.html">Eğitimler</a></li>
     <li><a href="cadbim_hakkimizda.html">Hakkımızda</a></li>
     <li><a href="cadbim_iletisim.html">İletişim</a></li>
+    <li><a href="cadbim_kvkk.html">KVKK</a></li>
+    <li><a href="cadbim_blog.html" class="active">Blog</a></li>
     <li><a href="cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
   </ul>
 </nav>
@@ -259,58 +260,18 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
       <button class="fchip prod-chip" data-p="Fusion">Fusion</button>
     </div>
   </div>
-  <div class="blog-grid" id="bgrid">
-
-    <a href="post/autocad-lt-nedir.html" class="blog-card" data-cat="CAD" data-prod="AutoCAD LT">
-      <div class="bc-tag">CAD</div>
-      <h3>AutoCAD LT Nedir?</h3>
-      <p>AutoCAD LT'nin sunduğu 2B çizim, düzenleme ve dokümantasyon araçlarına genel bakış.</p>
-      <div class="bc-meta"><i class="ti ti-calendar" style="font-size:12px;"></i>20 Temmuz 2023</div>
-      <div class="bc-prods"><span class="bc-prod">AutoCAD LT</span></div>
-    </a>
-
-    <a href="post/alias-autostudio.html" class="blog-card" data-cat="Otomotiv" data-prod="Alias">
-      <div class="bc-tag">Otomotiv</div>
-      <h3>Alias AutoStudio</h3>
-      <p>Alias AutoStudio ile konsept modelleme, analiz, teknik yüzey oluşturma ve görselleştirme.</p>
-      <div class="bc-meta"><i class="ti ti-calendar" style="font-size:12px;"></i>5 Temmuz 2023</div>
-      <div class="bc-prods"><span class="bc-prod">Alias</span></div>
-    </a>
-
-    <a href="post/altyapi-ve-karayolu-projelerinde-saha-ve-yapi-tasarim-koordinasyonu.html" class="blog-card" data-cat="İnşaat" data-prod="Civil 3D InfraWorks BIM 360">
-      <div class="bc-tag">İnşaat</div>
-      <h3>Altyapı ve Karayolu Projelerinde Saha ve Yapı Tasarım Koordinasyonu</h3>
-      <p>Civil 3D, InfraWorks ve BIM 360 ile saha ve yapı tasarımı arasındaki koordinasyonu sağlama.</p>
-      <div class="bc-meta"><i class="ti ti-calendar" style="font-size:12px;"></i>18 Mart 2022</div>
-      <div class="bc-prods"><span class="bc-prod">Civil 3D</span><span class="bc-prod">InfraWorks</span><span class="bc-prod">BIM 360</span></div>
-    </a>
-
-    <a href="post/3-boyutlu-lazer-tarama-teknolojileri-ve-cad-yazilimlari-ile-uyumu.html" class="blog-card" data-cat="İnşaat" data-prod="ReCap Pro">
-      <div class="bc-tag">İnşaat</div>
-      <h3>3 Boyutlu Lazer Tarama Teknolojileri ve CAD Yazılımları ile Uyumu</h3>
-      <p>Lazer tarama teknolojisinin CAD yazılımlarıyla uyumu ve 3B modellemeye katkısı.</p>
-      <div class="bc-meta"><i class="ti ti-calendar" style="font-size:12px;"></i>10 Mart 2022</div>
-      <div class="bc-prods"><span class="bc-prod">ReCap Pro</span></div>
-    </a>
-
-    <a href="post/3d-yazicilar-ve-endustride-kullanim-ornekleri.html" class="blog-card" data-cat="3D Baskı" data-prod="Fusion">
-      <div class="bc-tag">3D Baskı</div>
-      <h3>3D Yazıcılar ve Endüstride Kullanım Örnekleri</h3>
-      <p>3D yazıcıların endüstride kullanım örnekleri ve Fusion ile eklemeli imalat iş akışı.</p>
-      <div class="bc-meta"><i class="ti ti-calendar" style="font-size:12px;"></i>22 Mart 2022</div>
-      <div class="bc-prods"><span class="bc-prod">Fusion</span></div>
-    </a>
-
-    <a href="post/arge-muhendisleri-icin-uzaktan-tasarim-cozumleri.html" class="blog-card" data-cat="CAD" data-prod="Fusion">
-      <div class="bc-tag">CAD</div>
-      <h3>Arge Mühendisleri için Uzaktan Tasarım Çözümleri</h3>
-      <p>Ar-Ge mühendisleri için bulut tabanlı Fusion ile uzaktan tasarım çözümleri.</p>
-      <div class="bc-meta"><i class="ti ti-calendar" style="font-size:12px;"></i>7 Nisan 2022</div>
-      <div class="bc-prods"><span class="bc-prod">Fusion</span></div>
-    </a>
-
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+    <div style="position:relative;flex:1;min-width:220px;max-width:360px;">
+      <i class="ti ti-search" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--w30);"></i>
+      <input id="bsearch" type="text" placeholder="Yazı veya video ara..." style="width:100%;padding:10px 14px 10px 36px;border-radius:var(--r);background:var(--navy3);border:.5px solid var(--w10);color:var(--w);font-size:13px;font-family:var(--fb);">
+    </div>
+    <div id="bcount" style="font-size:12px;color:var(--w30);"></div>
   </div>
+  <div class="blog-grid" id="bgrid"></div>
   <p id="bempty">Bu filtreyle eşleşen yazı bulunamadı.</p>
+  <div style="text-align:center;margin-top:28px;">
+    <button id="bmore" class="fchip" style="padding:10px 28px;">Daha Fazla Göster</button>
+  </div>
 </section>
 <div class="cta-strip">
   <h2>Blogda aradığınızı bulamadınız mı?</h2>
@@ -331,42 +292,92 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
 </footer>
 <script>
 (function(){
-  var catChips=[].slice.call(document.querySelectorAll('#catfilter .fchip'));
-  var prodChips=[].slice.call(document.querySelectorAll('#prodfilter .fchip'));
-  var cards=[].slice.call(document.querySelectorAll('#bgrid .blog-card'));
+  var allPosts=[];
+  var PAGE_SIZE=24;
+  var shown=0;
+  var activeCat='all', activeProd='all', searchQ='';
+
+  var grid=document.getElementById('bgrid');
   var empty=document.getElementById('bempty');
-  var activeCat='all', activeProd='all';
-  function apply(){
-    var visible=0;
-    cards.forEach(function(card){
-      var catOk = activeCat==='all' || card.getAttribute('data-cat')===activeCat;
-      var prodOk = activeProd==='all' || (card.getAttribute('data-prod')||'').indexOf(activeProd)!==-1;
-      var show = catOk && prodOk;
-      card.style.display = show ? '' : 'none';
-      if(show) visible++;
-    });
-    empty.style.display = visible===0 ? 'block' : 'none';
+  var countEl=document.getElementById('bcount');
+  var moreBtn=document.getElementById('bmore');
+  var searchInput=document.getElementById('bsearch');
+
+  function esc(s){return (s||'').replace(/[&<>"]/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+
+  function cardHtml(p){
+    var href = (p.type==='video' ? 'post/' : 'post/') + p.slug + '.html';
+    var prods = (p.products||[]).slice(0,3).map(function(x){return '<span class="bc-prod">'+esc(x)+'</span>';}).join('');
+    var icon = p.type==='video' ? '<i class="ti ti-brand-youtube" style="font-size:12px;"></i>' : '<i class="ti ti-calendar" style="font-size:12px;"></i>';
+    return '<a href="'+href+'" class="blog-card">'
+      + '<div class="bc-tag">'+esc(p.cat)+'</div>'
+      + '<h3>'+esc(p.title)+'</h3>'
+      + '<p>'+esc(p.desc)+'</p>'
+      + '<div class="bc-meta">'+icon+esc(p.trdate)+'</div>'
+      + '<div class="bc-prods">'+prods+'</div>'
+      + '</a>';
   }
-  catChips.forEach(function(chip){
+
+  function filtered(){
+    return allPosts.filter(function(p){
+      var catOk = activeCat==='all' || p.cat===activeCat;
+      var prodOk = activeProd==='all' || (p.products||[]).indexOf(activeProd)!==-1;
+      var qOk = !searchQ || p.title.toLowerCase().indexOf(searchQ)!==-1;
+      return catOk && prodOk && qOk;
+    });
+  }
+
+  function render(reset){
+    var list=filtered();
+    if(reset){ grid.innerHTML=''; shown=0; }
+    var next=list.slice(shown, shown+PAGE_SIZE);
+    grid.insertAdjacentHTML('beforeend', next.map(cardHtml).join(''));
+    shown+=next.length;
+    empty.style.display = list.length===0 ? 'block' : 'none';
+    moreBtn.style.display = shown>=list.length ? 'none' : '';
+    countEl.textContent = list.length + ' sonuç' + (list.length!==allPosts.length ? ' (toplam '+allPosts.length+')' : '');
+  }
+
+  moreBtn.addEventListener('click', function(){ render(false); });
+
+  var searchTimer;
+  searchInput.addEventListener('input', function(){
+    clearTimeout(searchTimer);
+    searchTimer=setTimeout(function(){
+      searchQ=searchInput.value.trim().toLowerCase();
+      render(true);
+    }, 200);
+  });
+
+  [].slice.call(document.querySelectorAll('#catfilter .fchip')).forEach(function(chip){
     chip.addEventListener('click',function(){
-      catChips.forEach(function(c){c.classList.remove('active');});
+      document.querySelectorAll('#catfilter .fchip').forEach(function(c){c.classList.remove('active');});
       chip.classList.add('active');
       activeCat=chip.getAttribute('data-f');
-      apply();
+      render(true);
     });
   });
-  prodChips.forEach(function(chip){
+  [].slice.call(document.querySelectorAll('#prodfilter .fchip')).forEach(function(chip){
     chip.addEventListener('click',function(){
-      prodChips.forEach(function(c){c.classList.remove('active');});
+      document.querySelectorAll('#prodfilter .fchip').forEach(function(c){c.classList.remove('active');});
       chip.classList.add('active');
       activeProd=chip.getAttribute('data-p');
-      apply();
+      render(true);
     });
+  });
+
+  fetch('assets/data/blog-posts.json').then(function(r){return r.json();}).then(function(data){
+    allPosts=data;
+    render(true);
+  }).catch(function(){
+    empty.textContent='Yazılar yüklenemedi.';
+    empty.style.display='block';
   });
 })();
 </script>
 <script src="mobilenav.js?v=9" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
+<script src="social-widget.js?v=1" defer></script>
 <script src="cookie-consent.js?v=1" defer></script>
 </body>
 </html>
