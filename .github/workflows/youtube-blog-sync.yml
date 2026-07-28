@@ -33,3 +33,25 @@ jobs:
           git add post assets/data/blog-posts.json
           git diff --staged --quiet || git commit -m "chore: YouTube'daki yeni videolar blog'a otomatik eklendi"
           git push
+
+      - name: Yeni video bildirimi var mı kontrol et
+        id: check
+        run: |
+          if [ -f new_videos_notify.txt ]; then
+            echo "has_new=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_new=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: E-posta ile bildir
+        if: steps.check.outputs.has_new == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.office365.com
+          server_port: 587
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "Cadbim Blog: Yeni YouTube videosu eklendi"
+          to: cadbim@cadbim.com.tr
+          from: "Cadbim Blog Bot <${{ secrets.MAIL_USERNAME }}>"
+          body: file://new_videos_notify.txt

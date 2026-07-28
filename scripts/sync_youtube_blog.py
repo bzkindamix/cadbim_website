@@ -314,6 +314,7 @@ def main():
 
     videos = fetch_recent_videos()
     new_count = 0
+    new_items = []
 
     for v in videos:
         if v["videoId"] in existing_video_ids:
@@ -342,12 +343,20 @@ def main():
             "products": products, "type": "video", "videoId": v["videoId"],
         })
         new_count += 1
+        new_items.append(f"- {title}\n  https://www.cadbim.com.tr/post/{slug}\n  Kategori: {category} · Ürün: {', '.join(products) or '-'}")
         print("eklendi:", slug)
 
     if new_count:
         data.sort(key=lambda p: p["date"], reverse=True)
         with open(POSTS_JSON, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
+
+    notify_path = os.path.join(BASE, "new_videos_notify.txt")
+    if new_items:
+        with open(notify_path, "w", encoding="utf-8") as f:
+            f.write("\n\n".join(new_items))
+    elif os.path.exists(notify_path):
+        os.remove(notify_path)
 
     print(f"toplam yeni video: {new_count}")
 
