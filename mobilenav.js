@@ -401,7 +401,7 @@
         '<div class="cbm-results" role="listbox"></div>' +
         '<div class="cbm-menu">' +
           groupsHtml + links +
-          '<a class="cbm-cta" href="/iletisim#form"><i class="ti ti-send"></i>Teklif Al</a>' +
+          '<a class="cbm-cta" href="' + withBase("/iletisim#form") + '"><i class="ti ti-send"></i>Teklif Al</a>' +
           '<div class="cbm-actions">' +
             '<a class="cbm-act" href="tel:+902324643490"><i class="ti ti-phone"></i>Ara</a>' +
             '<a class="cbm-act" href="mailto:cadbim@cadbim.com.tr"><i class="ti ti-mail"></i>E-posta</a>' +
