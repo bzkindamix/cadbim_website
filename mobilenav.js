@@ -6,6 +6,17 @@
 (function () {
   "use strict";
 
+  /* Sayfa derinligine gore ic link on eki (kok sayfalar icin "", post/ altindaki
+     blog yazilari icin "../") — ayni dosya hem kokten hem post/'tan yuklendigi
+     icin on ek calisma zamaninda hesaplanir. */
+  var BASE = /\/post\//.test(window.location.pathname) ? "../" : "";
+  function withBase(p) {
+    if (!p) return BASE || "./";
+    if (/^https?:\/\//.test(p) || p.indexOf("mailto:") === 0 || p.indexOf("tel:") === 0) return p;
+    if (p === "/") return BASE + "index.html";
+    return BASE + p.replace(/^\//, "");
+  }
+
   /* ---- IA: menü grupları ---- */
   var GROUPS = [
     {
@@ -363,14 +374,14 @@
   function buildPanel() {
     var groupsHtml = GROUPS.map(function (g) {
       var subs = g.items.map(function (it) {
-        return '<a href="' + it[1] + '">' + it[0] + "</a>";
+        return '<a href="' + withBase(it[1]) + '">' + it[0] + "</a>";
       }).join("");
       return '<div class="cbm-group"><button class="cbm-ghead" type="button">' + g.label +
         '<i class="ti ti-chevron-down"></i></button><div class="cbm-sub">' + subs + "</div></div>";
     }).join("");
 
     var links = TOP_LINKS.map(function (l) {
-      return '<a class="cbm-link" href="' + l[1] + '">' + l[0] + '<i class="ti ti-chevron-right"></i></a>';
+      return '<a class="cbm-link" href="' + withBase(l[1]) + '">' + l[0] + '<i class="ti ti-chevron-right"></i></a>';
     }).join("");
 
     var panel = document.createElement("div");
@@ -487,7 +498,7 @@
       }
       results.innerHTML = hits.slice(0, 12).map(function (r) {
         var ic = ICON[r[3]] || "ti-file";
-        return '<a class="cbm-res" href="' + r[1] + '"><i class="ti ' + ic + '"></i>' +
+        return '<a class="cbm-res" href="' + withBase(r[1]) + '"><i class="ti ' + ic + '"></i>' +
           '<div><div class="t">' + highlight(r[0], q) + '</div><div class="k">' + r[3] + "</div></div></a>";
       }).join("");
     }
@@ -549,7 +560,7 @@
       if (!current.length) { list.innerHTML = '<div class="cbk-empty">"' + q + '" için sonuç yok.</div>'; return; }
       list.innerHTML = current.slice(0, 14).map(function (r, i) {
         var ic = ICON[r[3]] || "ti-file";
-        return '<a class="cbk-item' + (i === 0 ? " active" : "") + '" href="' + r[1] + '" data-i="' + i + '">' +
+        return '<a class="cbk-item' + (i === 0 ? " active" : "") + '" href="' + withBase(r[1]) + '" data-i="' + i + '">' +
           '<i class="ti ' + ic + '"></i><div><div class="t">' + highlight(r[0], q) + '</div>' +
           '<div class="k">' + r[3] + '</div></div><span class="go">Enter ↵</span></a>';
       }).join("");

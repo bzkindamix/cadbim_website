@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-07-29-09 — ACİL (gerçek kök neden): tüm iç linkler kök-mutlak yerine göreli yapıldı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · DK-07'deki 404.html düzeltmesi kısmi kalmıştı — Onur ekran görüntüsüyle üst menü/mega-menü linklerinin (durum çubuğunda `https://bzkindamix.github.io/autodesk` göründüğü) hâlâ kırık olduğunu gösterdi.
+- **Gerçek kök neden:** DK-03'te iç linkler `href="/autodesk"` gibi **kök-mutlak** yapılmıştı. Kök-mutlak bir link her zaman alan adının KÖKÜNE göre çözülür — sayfanın kendi alt-yolunu (GitHub Pages'te `/cadbim_website/`) YOK SAYAR. Bu yüzden `/autodesk` linki `bzkindamix.github.io/autodesk`'e gidiyordu (proje deposunun tamamen dışında, 404.html'in bile devreye giremeyeceği bir adres). DK-07'deki 404.html yalnızca doğrudan yazdığım tam URL'lerde işe yaramıştı çünkü onlar zaten `/cadbim_website/` içindeydi; sayfa İÇİNDEKİ linkler için hiç işe yaramıyordu.
+- **Doğru çözüm:** Kök-mutlak (`/x`) yerine **göreli** linkler kullanmak — bu hem GitHub Pages'in alt-yolunda hem Natro'nun kök alan adında doğru çalışır (tarayıcı her zaman mevcut sayfanın dizinine göre çözer).
+  - **178 kök sayfa:** `href="/x"` → `href="x"`, `href="/"` → `href="index.html"` (11.122 değişiklik).
+  - **739 blog yazısı (`post/`):** `href="/x"` → `href="../x"`, `href="/"` → `href="../index.html"` (13.304 değişiklik) — bu dosyalar bir alt dizinde olduğu için `../` gerekli.
+  - **mobilenav.js + cookie-consent.js:** Bu 2 dosya HEM kök HEM `post/` sayfalarından aynı anda yüklendiği için tek bir sabit yol yazılamazdı — çalışma zamanında `location.pathname`'e bakıp derinliğe göre `""` veya `"../"` öneki hesaplayan `withBase()`/`CBM_BASE` mantığı eklendi; mega-menü, arama sonuçları ve ⌘K komut paleti artık bu fonksiyonu kullanıyor.
+  - Cache-buster'lar bir sürüm artırıldı (`cookie-consent.js?v=1→2`, `mobilenav.js?v=9→10`) — mevcut tarayıcı önbellekleri eski (kırık) sürümü tutmasın diye.
+- **Doğrulama:** `node --check` ile 2 JS dosyası hatasız; `grep` ile site genelinde `href="/[a-harf]` deseni sıfıra indi (yalnızca mobilenav.js'in veri dizisindeki ham slug'lar kaldı, onlar `withBase()`'den geçiyor); `div` denge kontrolü bozulmadı; localhost'ta çerez linki `kvkk-cerez-politikasi` (önek yok) doğru üretiliyor. **GitHub Pages'te nihai doğrulama push sonrası yapılacak** (yerel statik sunucu 404.html/rewrite davranışını taklit etmiyor).
+- **Durum:** ✅ Kod düzeltmesi tamamlandı, push edilecek. ⚠️ Canlı doğrulama bekleniyor.
+
 ---
 
 ## 2026-07-29
