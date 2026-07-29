@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-07-29-10 — Fabrication/CFD gerçek logoları + Autodesk cross-sell tasarımı + blog'da "Fusion 360" güncellemesi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı).
+- **1) Eksik logolar (Onur canlı önizlemede fark etti):** 28 Temmuz'da hızlıca eklenen Fabrication CADmep/ESTmep/CAMduct ve CFD ürünleri jenerik Tabler ikonlarıyla (ti-pipe/ti-calculator/ti-cut/ti-wind) kalmıştı — kendi ürün sayfaları dahil, hiçbir yerde gerçek logo yoktu. Autodesk'in resmi sitesinden (autodesk.com/products/fabrication, /cfd) gerçek ürün ikonları çekildi: `assets/logos/products/fabrication.svg` (ESTmep/CADmep/CAMduct — Autodesk bu 3 ürünü tek aile ikonuyla pazarlıyor) ve `assets/logos/products/cfd.png`. Uygulandı: `cadbim_autodesk.html` (4 pcard), `cadbim_aec_collection.html` (3 cpill), `cadbim_simulasyon.html` (1 cpill), `cadbim_fabrication_cadmep/estmep/camduct.html` (hero ikonu + çapraz cpill'ler), `cadbim_cfd.html` (hero ikonu). Karşılıklı çapraz linklerdeki dekoratif özellik ikonları (feat-icon) kasıtlı olarak dokunulmadı (logo değil, süsleme).
+- **2) Autodesk "sıkça tercih edilenler" tasarımı (Onur "sıkıcı ve düz" dedi):** `.cross` bölümüne çift radial-gradient glow arka plan + eyebrow etiket ("Ekosistem") eklendi. `.xp` kartları: marka rengine göre `--ac` CSS değişkeni (HP mavi, Chaos kırmızı, UltiMaker turkuaz, Adobe kırmızı), hover'da üstte renkli çizgi kayması + köşeli glow (box-shadow) + logo kutusunun marka rengiyle dolması + ok ikonunun kayıp renklenmesi. Logo kutusu 42→48px büyütüldü.
+- **3) Blog'da "Fusion 360" → "Autodesk Fusion":** Onur ürün adının güncel olmadığını fark etti. 129 blog yazısında (`post/*.html`) 1608 geçiş güncellendi: önce "Fusion 360 Manage" → "Fusion Manage" (13, ayrı ürün adı), sonra kalan "Fusion 360" → "Autodesk Fusion" (1595). Yan etki: bazı cümlelerde zaten "Autodesk Fusion 360" yazıyordu, bu da "Autodesk Autodesk Fusion" ikilemesi yarattı — 302 ek düzeltmeyle giderildi. Türkçe ek uyumu (Fusion'ın/'da/'a/'daki) sitenin kendi mevcut kullanım örnekleriyle (`Autodesk Fusion'a` zaten 10 yerde kullanılıyordu) doğrulanarak korundu.
+- **Kapsam dışı bırakılan, ayrı göreve çevrilen bulgu:** Blog'da hâlâ eski "BIM 360" (14 dosya) ve "Fusion Team" (2 dosya) isimleri geçiyor — bunlar bağlama duyarlı (tarihsel cümlelerde doğru kalabilir) olduğu için mekanik değiştirilmedi, ayrı arka plan görevine kaydedildi (task_0b5f7372).
+- **Doğrulama:** Tüm değiştirilen sayfalarda `div` denge kontrolü tam; tarayıcıda 52 benzersiz ürün ikonunun tamamı 200 OK; `Fusion 360` ve `Autodesk Autodesk` deseni sitede sıfıra indi; cross-sell CSS'i tarayıcıda computed-style ile doğrulandı (--ac değişkeni, 48px logo, gradient arka plan uygulanmış).
+- **Durum:** ✅ Üç madde de tamamlandı.
+
 ### DK-2026-07-29-09 — ACİL (gerçek kök neden): tüm iç linkler kök-mutlak yerine göreli yapıldı
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · DK-07'deki 404.html düzeltmesi kısmi kalmıştı — Onur ekran görüntüsüyle üst menü/mega-menü linklerinin (durum çubuğunda `https://bzkindamix.github.io/autodesk` göründüğü) hâlâ kırık olduğunu gösterdi.
@@ -19,6 +29,13 @@
 ---
 
 ## 2026-07-29
+
+### DK-2026-07-29-08 — Mobil menü "Teklif Al" CTA linki de göreli yapıldı
+
+- **Yapan:** Claude (PDM asistanı) · DK-09'un tamamlayıcısı — `withBase()` geçişinde `mobilenav.js`'teki mobil panelin sabit "Teklif Al" CTA butonu (`href="/iletisim#form"`) atlanmıştı, hâlâ kök-mutlak kalmıştı.
+- **Düzeltme:** `withBase("/iletisim#form")` kullanılacak şekilde düzeltildi; cache-buster `mobilenav.js?v=10→11`.
+- **Doğrulama:** `node --check mobilenav.js` hatasız; `grep 'href="/'` sitede sıfır sonuç.
+- **Durum:** ✅ Tamamlandı.
 
 ### DK-2026-07-29-07 — ACİL: GitHub Pages önizlemesinde üst menü linkleri 404 veriyordu, düzeltildi
 
