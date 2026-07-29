@@ -33,11 +33,11 @@
 /adobe-yaraticilik/portfolio,/adobe,KURAL,koleksiyon:adobe-yaraticilik,"ayrı satılan ürün değil, ana marka sayfasına yönlendirildi (onaylandı)"
 /adobe-yaraticilik/premiere-pro,/premiere-pro,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: premiere
 /adobe-yaraticilik/premiere-rush,/premiere-pro,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: premiere
-/adobe-yaraticilik/substance-3d-designer,/substance-3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
-/adobe-yaraticilik/substance-3d-modeler,/substance-3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
-/adobe-yaraticilik/substance-3d-painter,/substance-3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
-/adobe-yaraticilik/substance-3d-sampler,/substance-3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
-/adobe-yaraticilik/substance-3d-stager,/substance-3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
+/adobe-yaraticilik/substance-3d-designer,/substance3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
+/adobe-yaraticilik/substance-3d-modeler,/substance3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
+/adobe-yaraticilik/substance-3d-painter,/substance3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
+/adobe-yaraticilik/substance-3d-sampler,/substance3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
+/adobe-yaraticilik/substance-3d-stager,/substance3d,KURAL,koleksiyon:adobe-yaraticilik,model eşleşmesi: substance
 /advance-steel,/advance-steel,BIREBIR,ana,
 /aec-collection,/aec-collection,BIREBIR,ana,
 /alias,/alias,BIREBIR,ana,
@@ -188,21 +188,21 @@
 /danismanlik/plm---%C3%BCr%C3%BCn-ya%C5%9Fam-d%C3%B6ng%C3%BCs%C3%BC-projeleri,/danismanlik,KURAL,koleksiyon:danismanlik,
 /danismanlik/revit-family-olu%C5%9Fturma,/danismanlik,KURAL,koleksiyon:danismanlik,
 /danismanlik/tasar%C4%B1m---%C3%BCretim---sat%C4%B1%C5%9F-otomasyonlar%C4%B1,/danismanlik,KURAL,koleksiyon:danismanlik,
-/designjet-fotograf,/hp-designjet-z,KURAL,ana,
-/designjet-fotograf/hp-designjet-postscript-z9-44%22-yaz%C4%B1c%C4%B1,/designjet-z9-pro,KURAL,koleksiyon:designjet-fotograf,model eşleşmesi: z9
-/designjet-fotograf/hp-designjet-z9%2B-pro-64%22-yaz%C4%B1c%C4%B1,/designjet-z9-pro,KURAL,koleksiyon:designjet-fotograf,model eşleşmesi: z9
-/designjet-grafik,/hp-designjet-z,KURAL,ana,
-/designjet-grafik/hp-designjet-postscript-z6-yaz%C4%B1c%C4%B1-serisi,/designjet-z6-pro,KURAL,koleksiyon:designjet-grafik,model eşleşmesi: z6
-/designjet-grafik/hp-designjet-postscript-z9-yaz%C4%B1c%C4%B1-serisi,/designjet-z9-pro,KURAL,koleksiyon:designjet-grafik,model eşleşmesi: z9
-/designjet-grafik/hp-designjet-z9-pro-64-%22-yaz%C4%B1c%C4%B1,/designjet-z9-pro,KURAL,koleksiyon:designjet-grafik,model eşleşmesi: z9
-/designjet-ofis,/hp-designjet-t,KURAL,ana,
+/designjet-fotograf,/designjet,KURAL,ana,
+/designjet-fotograf/hp-designjet-postscript-z9-44%22-yaz%C4%B1c%C4%B1,/designjet-z9pro,KURAL,koleksiyon:designjet-fotograf,model eşleşmesi: z9
+/designjet-fotograf/hp-designjet-z9%2B-pro-64%22-yaz%C4%B1c%C4%B1,/designjet-z9pro,KURAL,koleksiyon:designjet-fotograf,model eşleşmesi: z9
+/designjet-grafik,/designjet,KURAL,ana,
+/designjet-grafik/hp-designjet-postscript-z6-yaz%C4%B1c%C4%B1-serisi,/designjet-z6pro,KURAL,koleksiyon:designjet-grafik,model eşleşmesi: z6
+/designjet-grafik/hp-designjet-postscript-z9-yaz%C4%B1c%C4%B1-serisi,/designjet-z9pro,KURAL,koleksiyon:designjet-grafik,model eşleşmesi: z9
+/designjet-grafik/hp-designjet-z9-pro-64-%22-yaz%C4%B1c%C4%B1,/designjet-z9pro,KURAL,koleksiyon:designjet-grafik,model eşleşmesi: z9
+/designjet-ofis,/designjet,KURAL,ana,
 /designjet-ofis/hp-t1600,/designjet-t1600,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t1600
 /designjet-ofis/hp-t1700,/designjet-t1700,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t1700
 /designjet-ofis/hp-t230,/designjet-t200,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t230
 /designjet-ofis/hp-t2600,/designjet-t2600,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t2600
 /designjet-ofis/hp-t630-24,/designjet-t600,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t630
 /designjet-ofis/hp-t630-36,/designjet-t600,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t630
-/designjet-ofis/hp-t730,/hp-designjet-t,KURAL,koleksiyon:designjet-ofis,"T730 EOL, yerine geçen model sayfası yok, seri hub sayfasına yönlendirildi (onaylandı)"
+/designjet-ofis/hp-t730,/designjet,KURAL,koleksiyon:designjet-ofis,"T730 EOL, yerine geçen model sayfası yok, seri hub sayfasına yönlendirildi (onaylandı)"
 /designjet-ofis/hp-t830-24,/designjet-t830,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t830
 /designjet-ofis/hp-t830-36,/designjet-t830,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t830
 /designjet-ofis/hp-t850,/designjet-t850,KURAL,koleksiyon:designjet-ofis,model eşleşmesi: t850
@@ -222,11 +222,11 @@
 /designjet-tarayici,/designjet-hd-pro,KURAL,ana,alt modeller ayrı eşleşti (hd-pro / sd-pro); genel slug HD Pro'ya
 /designjet-tarayici/hp-designjet-hd-pro-42%22-taray%C4%B1c%C4%B1,/designjet-hd-pro,KURAL,koleksiyon:designjet-tarayici,model eşleşmesi: hd-pro
 /designjet-tarayici/hp-sd-pro-44%22-taray%C4%B1c%C4%B1,/designjet-sd-pro,KURAL,koleksiyon:designjet-tarayici,model eşleşmesi: sd-pro
-/designjet-uretim,/hp-designjet-xl,KURAL,ana,
+/designjet-uretim,/designjet,KURAL,ana,
 /designjet-uretim/hp-designjet-xl-3600-36%22,/designjet-xl3600,KURAL,koleksiyon:designjet-uretim,model eşleşmesi: xl-3600
 /designjet-uretim/hp-designjet-xl-3800-36%22,/designjet-xl3800,KURAL,koleksiyon:designjet-uretim,model eşleşmesi: xl-3800
-/designjet-uretim/hp-designjet-z6-pro-64%22,/designjet-z6-pro,KURAL,koleksiyon:designjet-uretim,model eşleşmesi: z6-pro
-/designjet-uretim/hp-designjet-z9-pro-64%22,/designjet-z9-pro,KURAL,koleksiyon:designjet-uretim,model eşleşmesi: z9
+/designjet-uretim/hp-designjet-z6-pro-64%22,/designjet-z6pro,KURAL,koleksiyon:designjet-uretim,model eşleşmesi: z6-pro
+/designjet-uretim/hp-designjet-z9-pro-64%22,/designjet-z9pro,KURAL,koleksiyon:designjet-uretim,model eşleşmesi: z9
 /egitimler,/egitimler,BIREBIR,ana,
 /egitimler/3ds-max-egitimi,/egitimler,KURAL,koleksiyon:egitimler,eğitim detayları katalogda
 /egitimler/advance-steel-egitimi,/egitimler,KURAL,koleksiyon:egitimler,eğitim detayları katalogda

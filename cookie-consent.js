@@ -107,7 +107,7 @@
     wrap.innerHTML =
       '<div style="flex:1;min-width:240px;font-size:13px;line-height:1.6;color:rgba(255,255,255,0.7);">' +
       "Bu sitede deneyiminizi iyileştirmek, site kullanımını analiz etmek ve ilgi alanınıza uygun reklamlar sunmak için çerezler kullanıyoruz. " +
-      '<a href="cadbim_kvkk_cerez_politikasi.html" style="color:#00c8f0;text-decoration:none;">Çerez Politikası</a>' +
+      '<a href="/kvkk-cerez-politikasi" style="color:#00c8f0;text-decoration:none;">Çerez Politikası</a>' +
       '</div><div style="display:flex;gap:10px;flex-wrap:wrap;">' +
       '<button id="cc-manage" style="background:transparent;color:rgba(255,255,255,0.7);border:.5px solid rgba(255,255,255,0.25);padding:10px 18px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;">Tercihleri Yönet</button>' +
       '<button id="cc-reject" style="background:transparent;color:rgba(255,255,255,0.7);border:.5px solid rgba(255,255,255,0.25);padding:10px 18px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;">Reddet</button>' +

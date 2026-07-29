@@ -6,6 +6,148 @@
 
 ---
 
+## 2026-07-29
+
+### DK-2026-07-29-06 — HP sayfası: katalog ürün görselleri gerçeğiyle değiştirildi + servis başlığı düzeltildi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur canlı önizlemeden (bzkindamix.github.io/cadbim_website/cadbim_hp.html) 2 madde istedi.
+- **1) Ürün Kataloğu görselleri:** 24 ürün kartından 22'sinde jenerik HP logosu (26×26, `.pico` kutusu) yerine gerçek ürün fotoğrafı kondu (34×34, UltiMaker sayfasındaki mevcut site kuralıyla aynı boyut) — `assets/products/` altındaki mevcut gerçek görseller kullanıldı (ör. T850→`hp-designjet-t850.png`, Z9+ Pro→`hp-designjet-z9pro.png`, HD Pro 2 Tarayıcı→`hp-scanner-hd-pro.png`, Z Workstation→`hp-z-workstation-group.png`, Monitör→`hp-workstations/monitor-724pf.png`). **Build Workspace kartı bilinçli olarak değiştirilmedi** — fiziksel ürün değil bulut/yazılım platformu, zaten gerçek HP logosu kullanıyordu (sahte değildi).
+- **2) Başlık düzeltmesi:** "HP Teknik Servis Merkezi" → **"HP DesignJet Plotter Teknik Servisi"** (servis kapsamının yalnızca plotter olduğunu netleştirmek için — sayfadaki alt metin zaten "workstation ve diğer ürünler için servis verilmemektedir" diyordu, başlık artık bununla tutarlı).
+- **Doğrulama (localhost, tarayıcı `fetch` ile):** 22 görselin tamamı 200 OK; `div`/`a` etiket dengesi bozulmadı (102/102, 82/82); konsol hatası yok.
+- **Durum:** ✅ Her iki madde tamamlandı.
+
+### DK-2026-07-29-05 — mobilenav.js: 5 hayalet arama kaydı temizlendi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · DK-2026-07-29-03'te flag'lenen ayrı görev (task_53852110), Onur'un chip'i başlatmasıyla yapıldı.
+- **Düzeltmeler (`mobilenav.js` arama/komut paleti veri dizisi):**
+  1. `"DesignJet T870" → cadbim_designjet_t870.html` (hiç var olmamış model/sayfa) — satır tamamen silindi.
+  2. `"DesignJet Tarayıcılar" → cadbim_designjet_tarayicilar.html` (tekil hayalet sayfa) — gerçek iki sayfayı ayrı ayrı temsil edecek şekilde ikiye bölündü: "DesignJet HD Pro 2 Tarayıcı" → `/designjet-hd-pro`, "DesignJet SD Pro 2 Tarayıcı" → `/designjet-sd-pro`.
+  3. `"HP DesignJet T/XL/Z Serisi"` (3 satır, hiç yapılmamış "seri hub" sayfalarına işaret ediyordu) — aynı dizide zaten var olan `"HP DesignJet Ailesi" → /designjet` kaydıyla birebir aynı işlevi gördükleri için 3 satır da tamamen silindi (tekrar önlendi).
+- **Kapsam dışı bırakılan:** `nav.nav`/`.nav-links`/`.nav-cta` DOM seçicilerine dokunulmadı (talimat gereği).
+- **Doğrulama (localhost, tarayıcı):** `node -e "require('./mobilenav.js')"` ile sözdizimi hatası yok (yalnızca beklenen `document is not defined` runtime hatası, tarayıcı dışı ortamda normal); ana sayfada arama paneli açılıp "designjet" arandı — sonuçların tamamı gerçek `/designjet-*` sayfalarına gidiyor, hiçbir `cadbim_*.html` veya hayalet kayıt kalmadı; konsol hatası yok.
+- **Durum:** ✅ 5 hayalet kayıt temizlendi.
+
+### DK-2026-07-29-04 — HP sayfası: sahte logo değişti, partner rozeti küçültüldü, 3 tanıtım şeridi kaldırıldı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur canlıdaki GitHub Pages önizlemesini (bzkindamix.github.io/cadbim_website/cadbim_hp.html) inceleyip 3 madde istedi.
+- **1) Sol üst sahte HP logosu:** Hero'daki 72×72 kutu, elle çizilmiş inline SVG (mavi kare + "hp" yazısı) idi — gerçek HP marka logosu değildi. `assets/logos/hp-logo.png` (gerçek, resmi HP daire logosu, zaten ürün kartlarında kullanılıyordu) ile değiştirildi.
+- **2) Sağ üst partner rozeti büyük geliyordu:** `hp-amplify-insignia.png` (gerçek HP Amplify Synergy Partner sertifika rozeti — sahte değil, sadece boyutu orantısızdı) `clamp(190px,18vw,240px)` → `clamp(140px,13vw,170px)` yapıldı (site genelindeki Autodesk/Adobe hero-badge örnekleriyle daha tutarlı).
+- **3) 3 tanıtım şeridi kaldırıldı:** "Geniş Format Yazıcılar / HP Designjet Serisi", "İş İstasyonları / HP Z Serisi Workstation", "Bulut Platformu / HP Build Workspace" şeritleri (özet kartlarıyla) tamamen silindi; sayfa artık hero'dan direkt "Ürün Kataloğu" (24 ürün, filtre+arama) bölümüne geçiyor.
+- **Doğrulama (localhost):** `section`/`div` etiket dengesi tam (4/4, 102/102); ağ isteklerinde 3 logo da 200 OK; konsol hatası yok; sayfa metni hero→Ürün Kataloğu→Yetkili Servis→cross-sell→CTA sırasıyla akıyor. (Tarayıcı paneli bu oturumda görsel ekran görüntüsü alamadı — metin/ağ/konsol bazlı doğrulandı.)
+- **Durum:** ✅ 3 madde de tamamlandı.
+
+### DK-2026-07-29-03 — İç linkler temiz URL formatına çevrildi (922 dosya)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur "iç linkler temiz URL formatına çevrilsin" ve "T/XL/Z serisi için ayrı hub yapılmasın, genel /designjet yeterli" kararlarını onayladı.
+- **Kapsam:** Site kökündeki 178 sayfa + `mobilenav.js`/`cookie-consent.js` + **`post/` klasöründeki 739 blog yazısı** (toplam 922 dosya) taranıp `href="cadbim_x.html"` / `href="sektor_x.html"` / `href="index.html"` biçimindeki tüm iç linkler gerçek dosya adından üretilen temiz slug'a (`href="/x"`) çevrildi. Fragment/query korunuyor (`cadbim_iletisim.html#form` → `/iletisim#form`).
+- **Kendi kendini yakaladığım hata:** İlk geçişte yalnızca kök dizin taranmıştı; `post/` klasörünü unuttuğumu ikinci taramada fark ettim. Ayrıca post sayfaları bir alt dizinde olduğu için linkler `../cadbim_x.html` biçimindeydi — basit metin değişimi `..//x` gibi kırık bir çift-slash üretti; bunu `..//` → `/` toplu düzeltmesiyle giderdim. Düzeltme sonrası site genelinde çift-slash kalmadığı doğrulandı.
+- **Kapsam dışı bırakılan (ayrı bulgu):** `mobilenav.js`'teki arama/komut paleti veri listesinde **5 hayalet kayıt** var — var olmayan sayfalara işaret ediyor: `cadbim_designjet_t870.html`, `cadbim_designjet_tarayicilar.html`, `cadbim_hp_designjet_t.html`, `cadbim_hp_designjet_xl.html`, `cadbim_hp_designjet_z.html`. Bunlar mevcut dosya listesiyle eşleşmediği için bu turda dokunulmadı (script sadece gerçek dosyaları çevirdi). Ayrı bir düzeltme gerekiyor — muhtemelen arama sonuçlarında kırık link üretiyorlar.
+- **Doğrulama:** 922 dosyada 22.781 değişiklik; dönüşüm sonrası `cadbim_*.html`/`sektor_*.html` deseni (mobilenav.js'teki 5 hayalet hariç) sitede kalmadı; çift-slash 0; `../assets/...` gibi ilgisiz göreli yollar dokunulmadan kaldı; canonical/og:url etiketleri zaten mutlak temiz URL kullandığı için etkilenmedi.
+- **Durum:** ✅ İç linkler temiz URL formatına geçti. ⚠️ Ayrı görev: mobilenav.js'teki 5 hayalet arama kaydı temizlenmeli.
+
+### DK-2026-07-29-02 — Host kararı: Natro + .htaccess 301/temiz-URL taslağı üretildi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur host olarak **Natro**'yu seçtiğini bildirdi ve Natro'nun `.html` uzantısız çalıştığını gözlemlemiş.
+- **Araştırma:** Natro paylaşımlı hosting (Linux/cPanel) `.htaccess`, `mod_rewrite` ve sunucu-taraflı 301 yönlendirmeyi destekliyor (natro.com resmi blog kaynakları ile doğrulandı). Bu, [[cadbim-hosting-url-semasi]]'ndeki "host GitHub Pages olursa 301 yapılamaz" riskini ortadan kaldırıyor — Natro bunu native yapabiliyor.
+- **Bulgu (harita düzeltmesi):** `docs/redirects-taslak.csv`'deki 6 hedef URL gerçek dosya adlarıyla uyuşmuyordu (typo/tutarsızlık): `/designjet-z6-pro`→`/designjet-z6pro`, `/designjet-z9-pro`→`/designjet-z9pro`, `/substance-3d`→`/substance3d` (dosya adlarıyla eşleşecek şekilde düzeltildi, 17 satır etkilendi). Ayrıca 3 hedef (`/hp-designjet-t`, `/hp-designjet-xl`, `/hp-designjet-z`) siteye hiç eklenmemiş "seri hub" sayfalarını işaret ediyordu (harita hazırlanırken onaylanmış ama sayfa hiç yapılmamış) — geçici olarak genel `/designjet` kataloğuna yönlendirildi. **Karar (Onur, 2026-07-29):** Ayrı T/XL/Z hub sayfası yapılmayacak, genel `/designjet` kataloğu yeterli — nihai.
+- **Üretilen taslak:** `docs/htaccess-taslak.txt` (743 `RewriteRule`, UTF-8 BOM'suz) — 3 blok: (1) https+www kanonik yönlendirme, (2) 388 eski Wix URL → yeni site 301 haritası (CSV'den otomatik üretildi, Türkçe/yüzde-kodlu eski URL'ler `unquote()` ile çözülüp regex-escape edildi — hem düz hem yüzde-kodlu istek formunu kapsar), (3) temiz URL → gerçek dosya iç yeniden yazımı (177 sayfa, adres çubuğu değişmez) + eski `.html` erişimini temiz URL'e 301 ile tekilleştiren tamamlayıcı kural seti.
+- **Doğrulama:** Script çıktısı — 665 CSV satırından 388 KURAL, 277 BIREBIR (atlandı); 0 çakışma, 0 kendine-döngü, 0 eksik hedef (düzeltmeler sonrası); dosya adı↔slug eşlemesinde 0 çakışma (178 dosya).
+- **Durum:** ✅ Taslak hazır, **henüz sunucuya yüklenmedi**. Bekleyenler: (a) staging/test ortamında deneme, (b) T/XL/Z hub kararı, (c) iç linklerin (`cadbim_*.html` → temiz slug) siteye uygulanıp uygulanmayacağı kararı (aşağıya soruldu).
+
+### DK-2026-07-29-01 — Ürün logosu placeholder kontrolü: eksik logo yok, ölü CSS temizlendi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur 21 Temmuz'daki eksik logo listesinin hâlâ güncel olup olmadığını sordu.
+- **Bulgu:** `cadbim_designjet.html`, `cadbim_hp.html`, `cadbim_lumion.html`, `cadbim_sketchup.html` dosyalarında `.plogo-ph` CSS kuralı duruyordu ama hiçbir yerde `class="plogo-ph"` kullanımı yoktu — 21 Temmuz'daki 88/88 logo tamamlama turu placeholder'ları zaten gerçek logolarla değiştirmiş, geriye yalnızca kullanılmayan CSS kalmış.
+- **Düzeltme:** 4 dosyadaki kullanılmayan `.plogo-ph{...}` CSS kuralı silindi.
+- **Not:** `.claude/worktrees/stoic-wing-4f7009/` altında bu 4 dosyanın eski bir kopyası duruyordu (ajan çalışma alanı kalıntısı) — Onur onayıyla `git worktree remove` ile kaldırıldı (bekleyen değişiklik yoktu, veri kaybı olmadı).
+- **Durum:** ✅ Eksik ürün logosu yok; ölü CSS temizlendi; kalıntı worktree kaldırıldı.
+
+---
+
+## 2026-07-28
+
+> **Not (geriye dönük toplu kayıt):** Aşağıdaki 12 kayıt, 2026-07-28'de art arda yapılan ~39 commit'i özetler. PDM disiplini o gün için canlı tutulmadı (kayıtlar 2026-07-29'da geriye dönük işlendi); her commit ayrı DK olarak değil, mantıksal iş grupları halinde tek DK'da toplandı. Bundan sonra kayıtlar yine değişiklik anında açılacak.
+
+### DK-2026-07-28-12 — Site geneli temizlik: canonical/sitemap hataları + kullanılmayan sayfa silindi
+
+- **Kapsam:** Başıboş sayfa taraması yapıldı; birden fazla sayfada hatalı canonical URL ve sitemap'te eksik/yanlış girişler düzeltildi. Kullanılmayan `tesekkurler.html` sayfası ve ona ait OG görseli silindi (hiçbir yerden linklenmiyordu).
+- **Referans:** `d6155e3`, `1639955`.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-07-28-11 — Blog verisine cache-busting
+
+- **Kapsam:** Blog verisini çeken fetch çağrılarına cache-busting parametresi eklendi (66 sayfa) — tarayıcı önbelleği yeni/güncellenen yazıları geç göstermesin diye.
+- **Referans:** `dac815e`.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-07-28-10 — Blog migrasyonu tamamlandı: 242 gerçek Wix yazısı + 500 YouTube videosu
+
+- **Kapsam:** Wix'teki tüm gerçek blog yazıları (6 ilk yazı → 91 → +135, toplam 242) yeni blog mimarisine taşındı; ayrıca 500 YouTube videosu blog postuna dönüştürüldü (HP Build Workspace serisi dahil, 8 video). Blog mimarisi (kategori+ürün filtreli hub) kuruldu, "Blog" linki tüm sayfalara eklendi. Video postlarına başlık bazlı profesyonel açıklamalar yazıldı. Blog ürün filtresine Adobe ürünleri + eksik ana ürünler eklendi. Ürün/çözüm/endüstri sayfalarına "ilgili blog içerikleri" widget'ı eklendi, sonradan CTA öncesine taşındı; webinar ürün filtresi eklendi.
+- **Sonuç:** Canlıya geçiş haritasındaki **339 GOZDEN-BLOG kalemi kapandı** (bkz. `docs/CANLIYA-GECIS-URL-HARITASI.md` §1 özet tablosu — GOZDEN-BLOG artık 0).
+- **Referans:** `6e42cfe`, `5e33ee4`, `a68a5ee`, `66a4b8b`, `3bc3d46`, `4b1678d`, `4d5fbf6`, `83174a4`, `d210a1b`.
+- **Durum:** ✅ Blog migrasyonu tamamlandı.
+
+### DK-2026-07-28-09 — YouTube→blog otomasyonu + e-posta bildirimleri
+
+- **Kapsam:** YouTube'daki yeni videoları otomatik blog postuna çeviren bir workflow kuruldu; senkronizasyon sıklığı günde 1'e düşürüldü. Yeni video eklendiğinde Gmail SMTP üzerinden e-posta bildirimi gönderiliyor (alıcılar, özet açıklama, otomasyon/AI etiketi eklendi — bildirim test edildi).
+- **Not:** Bu otomasyon canlı bir arka plan işi (cron/scheduled task); repodaki kod bunun tetikleyicisi/şablonu.
+- **Referans:** `0164bf9`, `50dd73f`, `d59b210`, `d4ed2a0`, `9dc16f5`, `dc30595`, `7c65a42`, `1777613`, `222145a`, `b552371`.
+- **Durum:** ✅ Kuruldu ve çalışıyor.
+
+### DK-2026-07-28-08 — Sosyal medya ikon şeridi
+
+- **Kapsam:** Sitenin sol kenarına sabit, her sayfada görünür bir sosyal medya hesapları ikon şeridi eklendi.
+- **Referans:** `0cf79c5`.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-07-28-07 — Autodesk CFD ürün sayfası + kalan GÖZDEN kalemleri kapatıldı
+
+- **Kapsam:** Autodesk CFD hâlâ satılan bir ürün olduğu için yeni ürün sayfası oluşturuldu (`/cfd`). Bu adımla canlıya geçiş haritasındaki kalan **GOZDEN kalemleri de kapatıldı** (özet tabloda GOZDEN artık 0). Not: `docs/CANLIYA-GECIS-URL-HARITASI.md` §4 detay tablosunda `/etkinlikler` ve `/kampanyalar` satırları hâlâ eski "GOZDEN" etiketiyle görünüyor — özet ile detay arasında küçük bir doküman tutarsızlığı var, sonraki oturumda etiketler senkronize edilmeli.
+- **Referans:** `c9ac3e6`.
+- **Durum:** ✅ Sayfa eklendi; ⚠️ doküman etiket tutarsızlığı açık.
+
+### DK-2026-07-28-06 — Webinar Takvimi sayfası
+
+- **Kapsam:** Ağustos-Ekim 2026 dönemi için 9 aktif webinarı listeleyen yeni bir Webinar Takvimi sayfası eklendi; webinar kartlarına gerçek davetiye görselleri kondu.
+- **Referans:** `109528f`, `17e0f0c`.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-07-28-05 — Kurumsal metin/ton düzeltmeleri
+
+- **Kapsam:** Site genelinde doğrulanamayan iddialar, açıklanmamış kısaltmalar ve mekanik/robotik ifadeler tarandı ve düzeltildi (kurumsal, resmi Türkçe ton — org. talimatına uygun).
+- **Referans:** `fb3ec8e`.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-07-28-04 — Başarı Öyküleri sayfası (13 vaka)
+
+- **Kapsam:** Autodesk PDF arşivinden gerçek vaka çalışmaları derlenerek Başarı Öyküleri sayfası oluşturuldu ve ürün/çözüm/endüstri sayfalarına bağlandı; ilk 6 yazının ardından 6 yeni vaka daha eklendi (Limtaş, Epig Mimarlık, Demirce, Eltaş, Erdemgiller, BMC) — toplam 13 vaka.
+- **Referans:** `3574ee8`, `f545604`.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-07-28-03 — Fabrication ürün ailesi + Nastran/Point Layout/HP Monitör kararları + canonical düzeltmesi
+
+- **Kapsam:** Fabrication ürün ailesi (CADmep/ESTmep/CAMduct) için ayrı sayfalar eklendi; daha önce açık kalan Nastran ve Point Layout kararları uygulandı. HP Monitör sayfasında hatalı canonical URL ayrıca düzeltildi.
+- **Referans:** `0412dbf`, `3db504c`.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-07-28-02 — VRED ürün sayfası
+
+- **Kapsam:** VRED (Autodesk görselleştirme ürünü) için yeni ürün sayfası eklendi, resmi Autodesk ürün ikonları uygulandı, sayfaya özel OG/sosyal paylaşım görseli üretildi. Canlıya geçiş URL haritası bu yeni sayfayı yansıtacak şekilde güncellendi.
+- **Referans:** `eed3abe`, `47d5f3c`, `bda1c35`.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-07-28-01 — Analitik/pazarlama entegrasyonları: GA4 düzeltmesi, Meta Pixel, LinkedIn Insight Tag, WhatsApp butonu
+
+- **Kapsam:**
+  1. **Kritik düzeltme:** Sitede kullanılan Google Analytics ölçüm ID'sinin sahte/geçersiz olduğu tespit edildi, gerçek GA4 ölçüm kimliğiyle değiştirildi. Çerez tercih panelinde "üretici yanılgısı" (yanlış varsayım) düzeltildi, analitik kategorisi varsayılan açık yapıldı.
+  2. Meta Pixel entegre edildi; çerez onayına "Pazarlama" kategorisi eklendi (KVKK/rıza uyumu için).
+  3. LinkedIn Insight Tag eklendi (Partner ID 516209).
+  4. Sitenin tamamına (169 sayfa) sabit, görünür bir WhatsApp sohbet butonu eklendi.
+- **Referans:** `0f9d427`, `95777ff`, `001e01d`, `dbccc91`, `2a3b0e3`.
+- **Durum:** ✅ Tamamlandı. Meta Pixel ve LinkedIn Insight Tag ID'leri Onur tarafından 2026-07-29'da teyit edildi (kendisi bağlamış, doğru).
+
+---
+
 ## 2026-07-26
 
 ### DK-2026-07-26-17 — Yeni sayfa: Adobe Creative Cloud, ilgili çözüm/endüstri/ürünlere entegre edildi
