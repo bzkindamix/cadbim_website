@@ -8,6 +8,14 @@
 
 ## 2026-07-29
 
+### DK-2026-07-29-07 — ACİL: GitHub Pages önizlemesinde üst menü linkleri 404 veriyordu, düzeltildi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur canlı önizlemede (bzkindamix.github.io/cadbim_website/) hangi üst menü linkine tıklarsa tıklasın 404 aldığını bildirdi.
+- **Kök neden:** DK-2026-07-29-03'te iç linkler kasıtlı olarak temiz URL'e (`href="/bim"`) çevrilmişti — bu, gelecekteki Natro sunucusunda `.htaccess` ile çözülecek şekilde tasarlanmıştı. Ancak GitHub Pages önizlemesi (a) böyle bir sunucu-taraflı rewrite yapmıyor, (b) alt-yol (`/cadbim_website/...`) üzerinden yayın yapıyor — bu yüzden `/bim` gibi kök-mutlak bir link GitHub Pages'te doğrudan `bzkindamix.github.io/bim`'e gidip 404 veriyordu.
+- **Düzeltme:** Kök dizine `404.html` eklendi. GitHub Pages eşleşmeyen her yolda bu dosyayı sunar; sayfa istenen path'i (repo alt-yolu dahil) çözüp 177 sayfalık slug→dosya haritasından gerçek `cadbim_*.html`/`sektor_*.html` dosyasına anında yönlendirir (`location.replace`). Natro'da (kök alan adı) da güvenli çalışır ama orada `.htaccess` zaten sunucu tarafında çözeceği için pratikte devreye girmez.
+- **Doğrulama:** `node` ile JSON harita ayrıştırma test edildi (177 kayıt, `bim`→`cadbim_bim.html` gibi doğru eşleşiyor); path-çözme mantığı elle izlendi (github.io alt-yol senaryosu ve kök-alan senaryosu). GitHub Pages'in gerçek 404 davranışı yalnızca canlıda doğrulanabilir — Onur'un push sonrası (GitHub Pages yeniden derlemesi ~1 dakika sürer) sert yenileme ile teyit etmesi gerekiyor.
+- **Durum:** ✅ Düzeltme push edildi (commit `d60f1e9`). ⚠️ Canlıda son doğrulama Onur'dan bekleniyor.
+
 ### DK-2026-07-29-06 — HP sayfası: katalog ürün görselleri gerçeğiyle değiştirildi + servis başlığı düzeltildi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur canlı önizlemeden (bzkindamix.github.io/cadbim_website/cadbim_hp.html) 2 madde istedi.
