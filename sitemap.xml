@@ -185,6 +185,8 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-navisworks-manage-tasarimdan-sahaya-koordineli-proje-yonetimi</loc><lastmod>2026-06-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autocad-2027-geometry-cleanup-ozelligi</loc><lastmod>2026-06-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-2b-yuva-komutu</loc><lastmod>2026-06-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2027-parca-ortaminda-unsur-klasorleme</loc><lastmod>2026-06-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-professional-2027-yenilikleri</loc><lastmod>2026-06-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2027-yenilikleri</loc><lastmod>2026-05-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-2027-autodesk-ai-assistant-kullanimi</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2027-publish-assembly-kutuphaneye-montaj-ekleme</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -195,8 +197,15 @@
   <url><loc>https://www.cadbim.com.tr/post/autocad-2027-ai-assistant-yenilikleri-ve-2026-karsilastirmasi</loc><lastmod>2026-04-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2027-slot-yuva-komutu</loc><lastmod>2026-04-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-yapay-zeka-asistani-ile-cam</loc><lastmod>2026-04-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/gercegi-modele-donusturun-autodesk-recap-ve-point-cloud-surecleri</loc><lastmod>2026-03-29</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-manage-plm-kalite-sureclerinde-kurumsal-hafiza-olusturmak</loc><lastmod>2026-03-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-ile-tasarimdan-uretime-tek-platformda-uctan-uca-uretim</loc><lastmod>2026-03-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-professional-2026-section-komutundaki-ekstra-bilgilerin-kaldirilmasi</loc><lastmod>2026-02-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-build-issue-olusturma-adimlari</loc><lastmod>2026-02-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-yuz-temizleme</loc><lastmod>2026-02-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-docs-ile-issue-yonetimi</loc><lastmod>2026-02-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/creative-cloud-ai-yaratici-sureclerin-yeni-standardi</loc><lastmod>2026-02-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-pdm-plm-cozumleri-ile-kisiye-bagli-takipten-kurumsal-surec-yonetimine-gecis</loc><lastmod>2026-02-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-kullanim-alanlari-ve-gercek-senaryolar</loc><lastmod>2026-02-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-nedir-rasterdan-vektore-donusumun-onemi</loc><lastmod>2026-02-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-nasil-calisir-adim-adim-surec</loc><lastmod>2026-02-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -204,28 +213,58 @@
   <url><loc>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-ozellikleri-ve-son-guncellemeler</loc><lastmod>2026-02-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-hp-build-workspacee-genel-bakis</loc><lastmod>2026-02-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-2026-copy-monitor-komutu</loc><lastmod>2026-01-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-professional-item-master-ile-bom-olusturma</loc><lastmod>2026-01-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-3b-kalem-pencil</loc><lastmod>2026-01-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/eski-cizimleri-autocade-aktarmanin-akilli-yolu-hp-build-workspace-ile-vektorizasyon</loc><lastmod>2026-01-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-plm-cozumleri-ile-yalin-uretim-ve-5s-sureclerinin-kontrolu</loc><lastmod>2026-01-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-worksharing-ekip-tabanli-modelleme-ve-proje-koordinasyonu</loc><lastmod>2026-01-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/navisworks-manage-override-color-transparency-kullanimi</loc><lastmod>2026-01-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-3-2-index</loc><lastmod>2026-01-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2026-2-place-and-insert-komutu</loc><lastmod>2026-01-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-cam-ile-cy-eksen-tornalama-stratejileri</loc><lastmod>2025-12-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-forma-ile-konsept-tasarim-2-analizlerden-tasarim-kararlarina</loc><lastmod>2025-12-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-talas-swarf</loc><lastmod>2025-12-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-operations-fusion-ortamindan-urun-aktarma</loc><lastmod>2025-12-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/hp-ai-vectorization-basit-ve-guvenli-calisma-akisi</loc><lastmod>2025-12-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/hp-ile-akilli-insaatin-yeni-nesli-dijital-ve-fizikselin-bulusmasi</loc><lastmod>2025-12-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/3ds-max-ve-twinmotion-ile-mimari-gorsellestirme-surecleri</loc><lastmod>2025-11-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-ile-tasarimcilar-icin-temel-seviyede-analiz-viii</loc><lastmod>2025-11-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2026-ilogic-ile-form-nasil-olusturulur</loc><lastmod>2025-11-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/navisworks-manage-farkli-disiplin-modelleri-nasil-birlestirilir</loc><lastmod>2025-11-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-2b-oluk-pah</loc><lastmod>2025-11-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/yeni-adobe-acrobat-studio-yu-kesfet</loc><lastmod>2025-10-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-bom-bill-of-material-listesinin-duzenlenmesi</loc><lastmod>2025-10-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-forma-site-automation-araci-kullanimi</loc><lastmod>2025-10-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-parcalar-uzerinde-neden-degisiklik-yapamayiz</loc><lastmod>2025-10-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-autodesk-vault-ortamindan-montaja-parca-eklemek</loc><lastmod>2025-10-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-3b-jeodezik</loc><lastmod>2025-10-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bom-yonetiminde-autodesk-plm-cozumlerinin-rolu</loc><lastmod>2025-10-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-forma-ile-konsept-tasarima-hizli-baslangic-uygulamali-atolye</loc><lastmod>2025-09-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-ile-5-eksen-pozisyonlamali-parca-isleme</loc><lastmod>2025-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-nastran-ile-tasarimcilar-icin-temel-seviyede-analiz-vii</loc><lastmod>2025-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-2026-accelerated-graphics-tech-preview-ozelligi</loc><lastmod>2025-09-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-3b-yatay-isleme</loc><lastmod>2025-09-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-professional-2026-yeni-ozellikleri-ile-tasarimlarin-yonetimi</loc><lastmod>2025-08-29</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-toposolid-egimlerini-zemin-ve-catiya-kolayca-aktarin</loc><lastmod>2025-08-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-3b-rampa-yontemi</loc><lastmod>2025-08-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/taramadan-akilli-modele-autodesk-cozumleriyle-scan-to-bim</loc><lastmod>2025-08-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/yeni-baslayanlar-icin-revit-2026-ile-hizli-ve-etkili-baslangic</loc><lastmod>2025-08-14</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/adobe-programlarina-giris-hangi-program-ne-ise-yarar</loc><lastmod>2025-07-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-build-dijital-proje-ve-santiye-yonetimi</loc><lastmod>2025-07-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-nastran-daha-hizli-ve-daha-dogru-mesh-nasil-atilir</loc><lastmod>2025-06-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-2b-kontur-komutu-ile-rampalama</loc><lastmod>2025-06-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/naviswork-manage-ile-section-box-olusturma</loc><lastmod>2025-06-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-professional-2026-muhendislik-verisi-yonetiminde-yeni-nesil-cozumler</loc><lastmod>2025-06-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-2b-cep-komutu-ile-havuz-bosaltma</loc><lastmod>2025-06-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/dynamo-ile-autodesk-forma-entegrasyonu-parametrik-bina-tasarimi</loc><lastmod>2025-06-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-plm-cozumleri-ile-fikirden-urune-uygulamali-bir-yolculuk</loc><lastmod>2025-06-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-da-coklu-parcalari-fiksturde-isleme-stratejileri</loc><lastmod>2025-05-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2026-yenilikleri</loc><lastmod>2025-05-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autocad-2026-yenilikleri</loc><lastmod>2025-05-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2026-ile-yenilikler-ve-ipuclari</loc><lastmod>2025-05-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-forma-revit-ve-sketchup-entegrasyonu-ile-hizli-arazi-modelleme</loc><lastmod>2025-05-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-izle-komutu-ile-kontur-isleme</loc><lastmod>2025-05-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-professional-isim-degistirme-fonksiyonu-rename</loc><lastmod>2025-05-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/entegre-fabrika-modelleme-ile-dijital-ikiz-cozumleri</loc><lastmod>2025-04-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/adobe-express-genai-ile-yaraticiligi-yeniden-kesfedin-adobetutorial-adobeexpress</loc><lastmod>2025-04-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-tasarimda-delik-delme-ve-kilavuz-acma</loc><lastmod>2025-03-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -233,30 +272,37 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-forma-forma-board-ile-dijital-pano-hazirlama-ve-is-birligi</loc><lastmod>2025-03-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2026-part-ortaminda-basitlestirme-simplify-komutu-yeni</loc><lastmod>2025-03-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-toposurface-leri-toposolid-e-kolayca-donusturun</loc><lastmod>2025-03-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-cnc-tornada-keskin-koselere-pah-kirma</loc><lastmod>2025-03-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/navisworks-manage-ile-proje-koordinasyonu-bim-modellerinizde-kusursuz-koordinasy</loc><lastmod>2025-03-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/adobe-express-gen-ai</loc><lastmod>2025-03-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-ile-tasarimcilar-icin-temel-seviyede-analiz-vi</loc><lastmod>2025-03-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-docs-ile-belgelerinizi-dijitallestirin-verimli-proje-surecleri</loc><lastmod>2025-03-14</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/adobe-illustrator-2025-yeni-ozellikler</loc><lastmod>2025-03-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-ile-yatay-isleme-merkezinde-cam-programlama</loc><lastmod>2025-02-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-professional-pdm-ile-autodesk-fusion-yazilimi-ve-bulut-ortami-ile-entegrasyonu</loc><lastmod>2025-02-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-ve-twinmotion-entegrasyonu-revit-modellerinizi-twinmotion-ile-canlandirin</loc><lastmod>2025-02-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-frezede-dis-kateri-ile-dis-acma</loc><lastmod>2025-02-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-karanlik-tema-nasil-aktiflestirilir</loc><lastmod>2025-02-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-tandem-farkli-disiplinlerde-olusturulan-modelleri-autodesk-docs-araciligi-ile-aktarma</loc><lastmod>2025-02-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/uretimde-yenilikci-cozumler-ile-dijital-donusum</loc><lastmod>2025-01-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/adobe-photoshop-2025-yeni-ozellikler</loc><lastmod>2025-01-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-tandem-dijital-ikizler-ile-etkili-yonetim-stratejileri</loc><lastmod>2025-01-09</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-2025-te-yeni-ozellik-toposolid-ile-excavate-komutu</loc><lastmod>2025-01-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-cnc-freze-de-coklu-kontur-secimi</loc><lastmod>2025-01-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-ve-autodesk-vault-professional-senkronizasyonu</loc><lastmod>2025-01-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-ile-dynamo-ve-forma-is-birligi-kavramsal-analizler-ve-parametrik-tasarim-s</loc><lastmod>2024-12-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/photoshopta-bir-yol-boyunca-metin-nasil-olus-turulur</loc><lastmod>2024-12-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-ile-tasarimcilar-icin-temel-seviyede-analiz-v</loc><lastmod>2024-12-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-ile-entegre-hizli-plm-cozumu-fusion-manage-extension</loc><lastmod>2024-12-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-2025-ile-topografya-modelleme-yeni-ozellikler-ve-uygulama-teknikleri</loc><lastmod>2024-12-06</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-montaj-ortamindaki-her-parcanin-autocad-ortaminda-ayri-blocklar-olarak-</loc><lastmod>2024-11-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/excel-tablolarini-autocad-araciligiyla-revit-e-kolayca-aktarma</loc><lastmod>2024-11-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-cnc-tornada-kilavuz-cekme</loc><lastmod>2024-11-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/tasarimdan-montaja-autodesk-fusion-ile-teknik-resim-alma-surecleri</loc><lastmod>2024-11-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/adobe-acrobat-ile-pdf-yonetiminde-verimlilik-ve-guvenlik-gelismis-ozellikler-ve-</loc><lastmod>2024-11-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-baslangic-ekrani-kisisellestirme-template-ekleme</loc><lastmod>2024-11-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-dimension-sag-tik-menusu</loc><lastmod>2024-11-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-cnc-torna-modulunde-finish-tornalama</loc><lastmod>2024-11-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/adobe-illustrator-da-hizlica-3d-cizim-yapmak-isteyenler-adobeillustrator-illustr</loc><lastmod>2024-10-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-ile-cnc-torna-modulu-parca-programlama-surelerinde-80-lere-varan</loc><lastmod>2024-10-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/gelecegin-insaat-yonetimi-dijital-donusum-ve-isbirligi</loc><lastmod>2024-10-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -272,7 +318,9 @@
   <url><loc>https://www.cadbim.com.tr/post/adobe-illustrator-prompt-in-adobe-firefly</loc><lastmod>2024-09-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-autodesk-revit-modelini-twinmotion-a-aktarma-part-ii-malzeme-atama-ipuclar</loc><lastmod>2024-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/fusion-c-eksende-delik-delme</loc><lastmod>2024-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-plm-cozumleri-kalite-ve-performans-sorunlarini-onceden-onleyin</loc><lastmod>2024-08-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-high-performance-3d-milling-3dmilling-cam-autodeskfusion</loc><lastmod>2024-08-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/isbirligi-ve-veri-paylasimi-bim-collaborate-pro-nun-guclu-yonleri</loc><lastmod>2024-08-14</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-100-daha-hizli-4-eksen-cam-programlama</loc><lastmod>2024-08-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-ile-olusturulan-modelin-twinmotion-a-aktarimi-ve-senkronizasyonu</loc><lastmod>2024-07-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-ile-tasarimcilar-icin-temel-seviyede-analiz-iv</loc><lastmod>2024-07-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -290,8 +338,12 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-ile-2-5-eksen-freze-uygulamalari</loc><lastmod>2024-06-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2025-versiyonu-yenilikleri</loc><lastmod>2024-05-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/30-dakikada-photoshop-temel-konular</loc><lastmod>2024-05-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-2025-versiyonu-yenilikleri</loc><lastmod>2024-05-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/shortcuts-to-master-illustrator-adobe-illustrator-illustratortips-shortcut</loc><lastmod>2024-05-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/photoshop-remove-background-photoshop-background-remove-tips</loc><lastmod>2024-05-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autocad-2025-yenilikleri</loc><lastmod>2024-05-14</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/photoshop-quick-touch-adobe-ai-generativefill-mask</loc><lastmod>2024-05-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-part-i-roof-komutu-cizim-araclarinin-tanitilmasi</loc><lastmod>2024-05-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/fusion-farkli-duzlemlerde-stok-ve-referans-olusturma</loc><lastmod>2024-05-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/adobe-illustrator-2024-yenilikleri-ve-puf-noktalari</loc><lastmod>2024-04-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nesting-ile-sac-metalde-tasarimdan-uretime-is-akisi</loc><lastmod>2024-04-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -306,6 +358,7 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-advanced-steel-ile-celik-konstruksiyon-uygulama-ornekleri</loc><lastmod>2024-03-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/tasarim-ve-uretimde-dijital-donusum-autodesk-pdm-ve-plm-ile-surec-hizlandirma</loc><lastmod>2024-03-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-ile-tasarimcilar-icin-temel-seviyede-analiz-iii</loc><lastmod>2024-03-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/adobe-illustrator-mesh-tool-photoshoptips-creativity-meshtooltutorial</loc><lastmod>2024-03-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-da-step-dosyasi-olusturma</loc><lastmod>2024-02-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/fusion-cnc-torna-modulunde-dis-acma-komutu</loc><lastmod>2024-02-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-kamera-yerlesimi</loc><lastmod>2024-02-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -493,6 +546,7 @@
   <url><loc>https://www.cadbim.com.tr/post/autocad-match-layer-ve-match-properties-farki</loc><lastmod>2023-01-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/fusion-360-pan-orbit-ve-zoom-konfigurasyonlari</loc><lastmod>2023-01-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autocad-mechanical-power-dimension-komutu</loc><lastmod>2023-01-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/yapi-sektorundeki-firmalarin-is-sureclerini-bulut-cozumleri-ile-entegre-etmek</loc><lastmod>2023-01-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-360-ile-hesaplar-arasinda-dosya-yonetimi</loc><lastmod>2022-12-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-360-ve-autodesk-revit-ile-sektorler-arasinda-is-birligi-saglayin</loc><lastmod>2022-12-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/selection-cycling-araci-ile-autocad-yaziliminda-kolay-secim-yapmak</loc><lastmod>2022-12-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -505,6 +559,13 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-ve-dynamo-isbirligi-ile-akilli-tasarimlar-uretin</loc><lastmod>2022-09-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-maya-genel-bakis</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/3ds-max-genel-bakis</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/m-e-collection-en-karmasik-detaylari-sekillendirme</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/m-e-collection-bifrost-for-maya-ile-gercekci-efektler-olusturun</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/m-e-collection-en-karmasik-projeleriniz-icin-guclu-goruntuleme</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/m-e-collection-cozum-paketiyle-neler-yapabilirsiniz</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/m-e-collection-genel-bakis</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/maya-hizli-oynatma</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/maya-bifrost-gorsel-programlama-ortami</loc><lastmod>2022-09-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/fabrication-camduct-imalat-ozellikleri</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-formit-bir-eskiz-ile-baslayin-formit-pro-yu-kesfedin</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-lt-yerel-pdf-disa-aktarma</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -516,6 +577,17 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-point-layout-genel-bakis</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/point-layout-model-verilerini-disa-aktarma-ice-aktarma-ve-karsilastirma</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/formit-formit-3d-cizimlerini-dogrudan-revit-e-baglayin</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-lt-gelistirilmis-dokumantasyon-verimliligi</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-lt-konik-duvarlar</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-lt-iki-noktanin-ortasina-yasla</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-lt-yinelenen-sayfa</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-lt-2b-gorunumlerde-yer-degistiren-ogeleri-goster</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-lt-programlari-sayfalara-gore-filtreleyin</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/point-layout-otomatik-nokta-olusturma-ile-zamandan-tasarruf-edin</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-insight-daha-iyi-bina-performansi</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-insight-aia-2030-taahhudu-destegi</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fabrication-estmep-dogru-tahmin-ve-ongoruler</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fabrication-urun-portfoyune-genel-bakis</loc><lastmod>2022-09-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/structural-bridge-design-civil-3d-infraworks-revit</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/recap-pro-3d-modelleri-hizla-olusturun</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/advance-steel-genel-bakis</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -528,27 +600,101 @@
   <url><loc>https://www.cadbim.com.tr/post/robot-structure-analysis-katlar-icin-sirali-oz-agirlik-yuku</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/infraworks-hareketlilik-simulasyonu</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/recap-pro-koordinatlari-ve-yonlendirmeyi-ayarlayin</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/recap-pro-proje-navigasyonu</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/recap-pro-yayinlanmis-recap-pro-projelerini-goruntuleyin</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/recap-pro-yayinlanmis-recap-pro-projelerini-goruntuleyin-2</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/recap-pro-recap-ve-revit-is-akisi</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/recap-pro-infraworks-civil-3d-is-akisi</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/recap-pro-gerceklik-yakalama-verileriyle-icgoruleri-gelistirin</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/structural-bridge-design-civil-3d-infraworks-structural-bridge-design-is-akisi</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/structural-bridge-design-genel-bakis</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/robot-structure-analysis-mimarlik-muhendislik-ve-insaat-koleksiyonunda-edinin</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/robot-structure-analysis-ana-duvar-sonuc-iyilestirmeleri</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/robot-structure-analysis-bim-e-bagli-esnek-insa-edilebilir-tasarimlar-olusturun</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/advance-steel-aec-collection-senkronizasyonu</loc><lastmod>2022-09-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/infraworks-trafik-simulasyonu</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/infraworks-e-genel-bakis</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/navisworks-2d-veya-3d-tasarimlardan-malzeme-miktarlarini-kolayca-yakalayin</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/infraworks-kopru-profil-ve-jenerik-objeler</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/navisworks-4d-ve-5d-simulasyonu-kullanarak-programlari-ve-maliyetleri-kontrol-ed</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/infraworks-yeni-yol-suslemeleri-ve-bitki-ortusu-icerigi</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-arcgis-icin-autodesk-connector</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-parametrik-icerik-olusturma</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-yapisal-kopru-tasarimindan-guncelleme</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-kopru-guncellemelerini-icin-kontrol</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-storyboard-ve-animasyonlar</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-fotogercekci-gorseller</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-tasarim-seceneklerini-kesfedin-ve-gorsellestirin</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-zengin-baglam-modelleri-olusturun</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-model-builder-da-arayuz-gelistirmeleri</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-yeni-gelismis-ve-rafine-analiz-teknikleri</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/infraworks-tam-aciklikli-karmasik-3b-kopru-kirislerinin-modellenmesi</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/navisworks-autodesk-proje-teslim-araclariyla-sorunsuz-projeler-calistirin</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/navisworks-ve-nokta-bulutu-verileri</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/navisworks-koordinasyon-sorunlari-entegrasyonu</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/navisworks-navisworks-modellerini-assemble-da-yayinlamak</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-collaborate-pro-civil-3d-dosyalarinizi-tek-bir-yerde-depolayin</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-collaborate-pro-tasarimcilari-guvenle-bir-araya-getirerek-revit-is-birliklerini-kolaylastirin</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-collaborate-pro-autocad-plant-3d-kullanicilari-icin-verimli-is-birligi-saglayin</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-collaborate-pro-dokuman-yonetimi</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-collaborate-pro-model-koordinasyonu</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-collaborate-pro-tasarim-is-birligi</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-collaborate-pro-genel-bakis</loc><lastmod>2022-09-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-yerel-pdf-olarak-disa-aktarma</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-gelistirilmis-betonarme-demiri-modelleme-ve-detaylandirma</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-yapisal-analiz-modelleme-icin-yeni-is-akisi</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-sayfalari-cogaltma</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-2b-gorunumlerde-yer-degistiren-ogeleri-gosterin</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-gelistirilmis-dokumantasyon-verimliligi</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-birlikte-calisabilirlik-iyilestirmeleri</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-2b-gorunumlerde-yer-degistiren-ogeleri-gosterin-2</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-uretken-tasarim-ve-dynamo-iyilestirmeleri</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-planlari-sayfalara-gore-filtreleyin</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-formit-pro-ile-birlikte-calisabilirlik-iyilestirmeleri</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-elektrik-on-yuk-analizi</loc><lastmod>2022-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-icin-precast-uzantisi</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/yapi-muhendisligi-icin-revit-structure</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-fabrication-estmep-is-akisi</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-mep-insight-is-akisi</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-fabrication-cadmep-is-akisi</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/meknik-tesisat-icin-revit-mep</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-structure-eksiksiz-yapi-muhendisligi-is-akislari</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-ve-advance-steel-is-akisi</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-dynamo-is-akisi</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-insight-is-akisi</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-recap-is-akisi</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-architechture-revit-mimari-genel-bakis</loc><lastmod>2022-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-plm-bom-yonetimi</loc><lastmod>2022-09-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-proje-ekipleriyle-sorunsuz-bir-sekilde-baglanti-kurun</loc><lastmod>2022-09-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-nedir</loc><lastmod>2022-09-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-yapi-bilgi-modellemesi-nedir</loc><lastmod>2022-09-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-tasarim-kararlarini-kesfedin-yineleyin-ve-iyilestirin</loc><lastmod>2022-09-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-tasarim-amacini-hizla-tanimlayin-ve-belgeleyin</loc><lastmod>2022-09-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-genel-bakis</loc><lastmod>2022-09-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-2023-u-kesfedin</loc><lastmod>2022-09-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-aec-collection-ile-yapabilecekleriniz</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/aec-collection-revit-te-p-id-modellemesi</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-aec-collection-genel-bakis</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-model-koordinasyonu</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-verimli-mep-imalati</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-tasarimi-imalata-baglayin</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-prekast-imalati</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-malzeme-tedarik-miktar-tayini</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-tesis-tasarimi-icin-plant3d</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-saha-tasarimi</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-civil-3d-den-revit-e-yuzeyleri-tasiyin</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-gelismis-kopru-tasarimi</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-gelismis-saha-tasarimi</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-yol-ve-otoban-tasarimi</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-sorunsuz-mep-tasarimi-imalati-ve-koordinasyon-ozellikleri</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-yuksek-performansli-binalar-tasarlayin</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-yapisal-muhendislik-verimlilik-icin-otomasyon</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-celik-detaylandirma-ve-imalati</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-yapisal-muhendislik-is-akislari</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-erken-asama-tasarim-is-akislari</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-ve-dynamo-ile-rutin-is-akislarini-otomatiklestirin</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autocad-revit-is-akisi</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-formit-konsept-tasarim-is-akisi</loc><lastmod>2022-09-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-360-nesting-fabrication-extension</loc><lastmod>2022-09-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-nesting-genel-bakis</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-inventor-nastran-ve-autodesk-cfd-birlikte-calisabilirlik</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -557,6 +703,11 @@
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-civata-baglanti-elemani-analizleri</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-dogrusal-statik</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-isi-transferi-analizi</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-cfd-mesh-ice-aktarma-ve-uyarlanabilir-mesh</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-otomatik-dusme-testi</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-dogrusal-burkulma</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-frame-olusturucu</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-otomatik-orta-duzlem-mesh-araci</loc><lastmod>2022-08-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-genel-bakis</loc><lastmod>2022-08-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-nastran-gelismis-malzeme-modelleri</loc><lastmod>2022-08-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-ile-sunum-dilinizi-gelistirin</loc><lastmod>2022-08-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -574,11 +725,33 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-thin-client-aptal-terminal</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-cam-genel-bakis</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-pdm-dokuman-yonetimi</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/hsm-works-2-5-ve-3-eksenli-frezeleme</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-mobil-uygulama</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-paylasilan-gorunumler</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-inventor-model-states-ve-vault</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-malzeme-listesi-yonetimi</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-muhendislik-degisiklik-emirleri</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodek-vault-veri-yeniden-kullanimi-ve-tasarim-otomasyonu</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodek-vault-eszamanli-tasarim</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodek-vault-dogrudan-cad-entegrasyonu</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-autocad-eklentisi-gelistirmeleri</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-inventor-eklentisi-gelistirmeleri</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-isaretlemeler</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-ag-gecidi</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-kullanici-arayuzu-gelistirmeleri</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-ile-verilerinizle-istediginiz-zaman-ulasin-istediginiz-yerden-calisin</loc><lastmod>2022-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-fusion-360-urun-tasarimi-eklentisi</loc><lastmod>2022-07-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2023-yenilikleri</loc><lastmod>2022-07-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-ile-endustriyel-tesis-tasarim-sureclerinin-entegrasyonu</loc><lastmod>2022-07-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-yazilimlari-ile-yapi-urunlerinin-uretim-ve-imalatinin-gelecegi</loc><lastmod>2022-07-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/projenin-basarisi-icin-yapi-insa-surecindeki-kayiplarin-ortadan-kaldirilmasi</loc><lastmod>2022-07-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-factory-design-utilities-fabrika-tasarim-araci</loc><lastmod>2022-07-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vault-plm</loc><lastmod>2022-07-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-manage-plm</loc><lastmod>2022-07-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-factory-design-utilities-endustriyel-makineler</loc><lastmod>2022-07-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodes-factory-design-utilities-tesis-duzeni</loc><lastmod>2022-07-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-spacemaker-bulut-tabanli-yapay-zeka-yazilimi-ile-tasarim-surecinizi-hiz</loc><lastmod>2022-07-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/adobe-acrobat-ve-microsoft-entegrasyonlari</loc><lastmod>2022-07-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autocad-lt-nedir</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/fusion-360-orgu-mesh-modelleme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-cizim-olusturma</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -640,6 +813,160 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-autocad-docs-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-cfd-hvac-riskleri-azaltin-daha-fazla-is-kapatin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-otomatiklestirilmis-is-akislariyla-daha-hizli-tasarim-kararlari-a</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-is-birligi-zellikleri-genel-zel-tasarim-paylasimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-mimarlik-cozumleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-plm-cozumleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/yapi-urunleri-uretiminin-gelecegi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-dynamo</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-mimari-dokumantasyon</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-ve-fabrication-estmep-is-akisi-model-tabanli-proje-tahminleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/jeo-uzamsal-bir-baglamda-calisin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/otomotiv-sektorunde-autodesk-kalip-simulasyonu-ve-cam-cozumleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/tasarim-otomasyonu-nedir</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-nedir-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-genel-bakis</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-factory-design-gerceklik-yakalama-ile-as-is-sureclerini-yonetin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/mimarlar-icin-hp-z-is-istasyonlari</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/otomotiv-endustrisinde-uretim-otomasyonu-autodesk</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-navisworks-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-bim-birlikte-calisma</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-gelismis-simulasyon-ozellikleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-fabrication-camduct-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-ve-gis-is-akislarini-isinize-entegre-etmek</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-gelismis-uretim-teknolojileri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/staud-studyolari-autodesk-vred</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-ozel-urunler-icin-talepleri-karsilayin-ve-surecleri-otomatiklestirin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-factory-design-sanal-gezinmeler-gerceklestirin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/schneider-electric-autodesk-teknolojileri-ile-enerji-urunlerini-daha-guvenli-hale-getiriyor</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-fabrika-tasarimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autocad-ve-inventor-ile-2d-ve-3d-tasarim-gorevlerini-birbirine-baglayin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-factory-design-kurulumdan-once-olasi-cakismalari-tespit-edin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/airbus-autodesk-teknolojilerini-nasil-kullaniyor</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-bulutta-is-birligi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/otomotiv-endustrisinde-autodesk-hibrit-imalat-cozumleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-urun-tasarimi-ve-uretim-cozumleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-advance-steel-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-factory-design-kurulum-belgeleri-olusturun</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-mimari-analiz</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-factory-design-yapilandirilabilir-varliklardan-olusan-bir-kitaplik-olusturun</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-simulasyon-cozumleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-robot-structure-analysis-bim-collaborate-pro-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/mimarlar-bim-i-nasil-kullaniyor</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/factory-design-utilites-ve-navisworks-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/daha-iyi-bir-yol-olmali-bim-gis-is-akislari</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-cam-teknolojileri-precise-tooling-hassas-kaliplar-yapmak</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-ve-revit-is-birligi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/acik-isbirligine-dayali-ve-baglantili-bim-is-akislari</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/arcgis-geobim-ve-bim-collaborate-pro</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-model-tabanli-tanim</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-veri-yonetimi-bulut-depolama</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-is-birligi-ozellikleri-sinirsiz-erisim</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-direkt-direct-modelleme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-yerlesik-isbirligi-araclariyla-geri-bildirim-paylasin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-elektronik-imalat-drc-icin-tasarim</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-paylasilan-gorunum-isbirligi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-render-ozellikleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-cam-kurulum-problama-ve-parca-denetimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-ile-daha-iyi-tesis-tasarimlari</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-elektronik-sematik-yakalama</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/yapi-urunleri-ureticileri-icin-bim</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/f360-cam-3-eksen-isleme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-ile-bim-in-degerini-arttirin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-bim-birlikte-calisabilirligi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-elektronik-elektronik-sogutma</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-fff-fused-filament-fabrication-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-is-birligi-ozellikleri-kolay-paylasma</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-dokumantasyon-ozellikleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-veri-yonetimi-yonetici-araclari</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-elektronik-pcb-imalati-cam</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-generative-design-extension-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-veri-yonetimi-fusion-team</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-veri-yonetimi-versiyon-yonetimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-generative-design-maliyetlendirme-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-multibend-araci</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-simulasyon-calisma-genisligi-study-breadth</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-simulasyon-bulut-simulasyonu</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-alt-bolum-modelleme-iyilestirmeleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-veri-yonetimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-simulasyon-basitlestirme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-generative-design-cad-dosyalarini-disari-aktar</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-simulasyon-sekil-optimizasyonu</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-generative-design-bulut-ta-cozdur</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-veri-yonetimi-anycad</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-dokumantasyon-ozellikleri-animasyon</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-elektronik-spice-simulasyonu</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-simulasyon-sonuc-karsilastirma</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-is-birligi-ozellikleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-simulasyon-olay-simulasyonu</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-simulasyon-dogrusal-olmayan-gerilme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-is-birligi-ozellikleri-kullanici-yonetimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-is-birligi-ozellikleri-takim-katilimcisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-simulasyon-genel-bakis</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/pcb-duzeni</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-elektronik-bilesen-kitapligi-yonetimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-is-birligi-ozellikleri-yorumlama-ve-altini-cizme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-elektronik-mcad-ecad-birlestirme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-additive-build-extension-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/alias-concept-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-simulasyon-ve-analiz-cozumleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/plant-3d-revit-navisworks-infraworks-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-assemblies-ve-shotgrid-ile-isbirligini-gelistirin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-hassas-yuzey-olusturma</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/simulasyon-ve-analiz-cozumleri-optimizasyon</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-class-a-gelistirmeler</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/simulasyon-ve-analiz-autodesk-fusion-360-uretken-tasarim</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-subd-retopo-araci</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-subd-kullanici-profili</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/alias-autostudio-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/plant-3d-bim-360-design-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-deck-seam-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-tasarim-verilerinin-paylasilmasi-ve-yeniden-kullanilmasi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-manage-extension-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-alias-subd-ile-vr-olusturun</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-extensions-genel-bakis</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-generative-design-urun-gelistirme-surecinizi-hizlandirin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-product-design-extension</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-is-akisi-ve-surec-iyilestirmeleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/simulasyon-ve-analiz-dogrulama</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/3b-ile-hizli-tesis-modelleme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-tasarim-surecinizi-hizlandirin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-machining-extension-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-alias-montaj-is-akisi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-nesting-fabrication-extensions</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/simulasyon-ve-analiz-cozumleri-kesif</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/fusion-360-veri-yonetimi-kullanici-yonetimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/alias-surface</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-gelistirilmis-tasarim-verimliligi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-dynamo-player</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-veri-hazirlama-ve-sahne-isleme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-yeralti-sacilma-algoritmasi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-insan-makine-arayuzu</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-golgeleri-geometriye-onceden-isleme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-yeniden-islenmis-malzeme-editoru</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-guncellenmis-uv-duzenleyici</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-vred-go-disa-aktarilabilir-dosya</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-iyilestirilmis-kaliteli-render</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-sanal-gerceklik-etkilesimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-render-gelistirmeleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-varyantlari-donustur</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-nedir-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-etkilesimli-alan-derinligi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-malzeme-filtreleme-ve-gosterimi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-gercekci-prototipleri-inceleyin-dogrulayin-ve-sergileyin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-global-refit-2</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-streaming-cozumu</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-animasyon-modulu</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-karmasik-kontrol-modellerini-bir-araya-getirin-ve-bakimini-yapin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-veri-islemede-iyilestirmeler</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-ekran-alani-ortam-tikanikligi</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-eskiz-ve-illustrasyon-araclari</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-esnek-urun-modelleme</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-sorunsuz-karar-verme-icin-insanlari-ve-verileri-birbirine-baglayin</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-alias-mesh-aracindan-gelistirilmis-yuzey</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-vr-ve-performans-iyilestirmeleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-isbirliginde-esneklik</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vred-genisletilmis-akis-yetenekleri</loc><lastmod>2022-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/projenin-basarisi-icin-yapi-insa-surecindeki-kayiplarin-ortadan-kaldirilmasi-2</loc><lastmod>2022-06-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-scope-box-ile-calismak</loc><lastmod>2022-05-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-montaj-ortaminda-gorunmez-objeleri-toplu-secebilme</loc><lastmod>2022-05-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2023-yenilikleri</loc><lastmod>2022-05-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -675,6 +1002,13 @@
   <url><loc>https://www.cadbim.com.tr/post/factory-design-utilities</loc><lastmod>2022-04-14</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-için-dynamo-ya-giriş-iii</loc><lastmod>2022-04-14</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/upchain-plm-siemens-nx-ile-birlikte-nasil-calisir</loc><lastmod>2022-04-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/upchain-plm-solidworks-ile-birlikte-nasil-calisir</loc><lastmod>2022-04-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/upchain-plm-goruntuleyici-lisansi</loc><lastmod>2022-04-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/upchain-plm-catia-ile-birlikte-nasil-calisir</loc><lastmod>2022-04-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/upchain-plm-buyuk-montajlarda-performans</loc><lastmod>2022-04-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/upchain-plm-autodesk-inventor-entegrasyonu</loc><lastmod>2022-04-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/upchain-ecad-entegrasyonu</loc><lastmod>2022-04-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/upchain-plm-cad-dosya-isimlendirmesi-ve-parca-numaralandirilmasi</loc><lastmod>2022-04-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-ilogic-ile-işlemlerinizi-otomatikleştirin</loc><lastmod>2022-04-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-navisworks-ile-proje-koordinasyonu-ve-i-ncelemesi</loc><lastmod>2022-04-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-süreçlerinin-autodesk-2021-çözümleri-ile-yönetimi</loc><lastmod>2022-04-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -794,8 +1128,12 @@
   <url><loc>https://www.cadbim.com.tr/post/bim-collaborate-pro-ile-revit-is-birligi</loc><lastmod>2021-08-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-360-projelerinizi-bulutta-yonetin</loc><lastmod>2021-08-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-360-bulutta-model-koordinasyonu</loc><lastmod>2021-08-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-bulutta-tasarim-degisikliklerini-paylasma</loc><lastmod>2021-08-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-bulutta-ekipler-ile-calisma-ve-erisim-izinlerini-yonetme</loc><lastmod>2021-08-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/tum-yapi-surecini-uret-paylas-yonet-uctan-uca-ofis-santiye-entegrasyonu</loc><lastmod>2021-07-29</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-cfd-ile-akiskanlar-dinamigi-analizi</loc><lastmod>2021-07-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/yazilimlarin-uyumu-ile-gorsellestirmeye-adim-adim</loc><lastmod>2021-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/yazilimlarin-uyumu-ile-gorsellestirmeye-adim-adim-2</loc><lastmod>2021-07-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/pdm-ve-plm-arasindaki-farklar-nedir-neden-ikisine-de-ihtiyacimiz-var</loc><lastmod>2021-06-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-yaziliminda-topografya-modelleme</loc><lastmod>2021-06-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/uretim-sektoru-icin-bim-bim-objects-2</loc><lastmod>2021-06-15</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -811,6 +1149,8 @@
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2022-yenilikleri-coklu-deger-varies-gostergesi</loc><lastmod>2021-05-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2022-yenilikleri-donatilari-grup-halinde-hareket-ettirmek</loc><lastmod>2021-05-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-revit-isbirligi</loc><lastmod>2021-05-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2022-yenilikleri-yeni-model-bar-diameter-parametresi</loc><lastmod>2021-05-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2022-yenilikleri-etiket-tag-iyilestirmeleri</loc><lastmod>2021-05-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-2022-yenilikleri-inventor-da-teknik-resimdeki-yenilikler</loc><lastmod>2021-05-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-2022-yenilikleri-model-state-part</loc><lastmod>2021-05-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-2022-yenilikleri-model-state-montaj</loc><lastmod>2021-05-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -819,14 +1159,18 @@
   <url><loc>https://www.cadbim.com.tr/post/inventor-2022-yenilikleri-autodesk-inventor-arayuzundeki-koyu-tema</loc><lastmod>2021-05-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2022-yenilikleri-autodesk-inventor-performans-iyilestirmeleri</loc><lastmod>2021-05-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/inventor-2022-yenilikleri-model-state-parca-basitlestirme</loc><lastmod>2021-05-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/inventor-ile-diger-yazilimlarin-birlikte-calisabilirligi</loc><lastmod>2021-05-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/inventor-2022-yenilikleri-modellerinizi-olustururken-basitlestirme-islemleri-simplfy</loc><lastmod>2021-05-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2022-yenilikleri</loc><lastmod>2021-04-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2022-yenilikleri</loc><lastmod>2021-04-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim360-design-insaat-sektorunde-en-uygun-isbirligi-surecleri</loc><lastmod>2021-04-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/3d-yazicilar-ve-endustride-kullanim-ornekleri</loc><lastmod>2021-04-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-te-rampa-modelleme</loc><lastmod>2021-03-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-te-kapi-ve-pencere-ekleme</loc><lastmod>2021-03-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-te-doseme-olusturma</loc><lastmod>2021-03-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-te-wall-komutu-ve-yeni-duvar-tipi-olusturma</loc><lastmod>2021-03-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-te-grid-ile-aks-olusturma-ve-aks-cizgilerini-ozellestirme</loc><lastmod>2021-03-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/uretim-ve-yapi-sektorlerinin-birlikte-calisabilirlik-ve-surdurulebilirlik-prensipleri</loc><lastmod>2021-03-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-lisansi-yaziliminizi-indirin-ve-yukleyin</loc><lastmod>2021-03-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-pafta-olusturma</loc><lastmod>2021-03-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-hesabinizi-anlamak-autodesk-hesabiniza-giris</loc><lastmod>2021-03-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -843,6 +1187,7 @@
   <url><loc>https://www.cadbim.com.tr/post/dwg-dosyalari-nasil-revit-e-aktarilir</loc><lastmod>2021-01-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/pdf-dosyalarinizi-revit-e-aktarin</loc><lastmod>2021-01-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-tasarim-hizlandirici-araci-ile-makina-elemanlarinizi-daha-kola</loc><lastmod>2021-01-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/ofise-donus-zamani-geldiginde-insan-hareketliligi-ve-tasarim-simulasyonlari</loc><lastmod>2021-01-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/mekanik-ve-elektrik-tesisat-icin-bim-in-tum-gucunu-ortaya-cikarin</loc><lastmod>2021-01-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/karmasik-tasarimlarinizdaki-borulama-ve-kablolama-islemlerinizi-autodesk-invento</loc><lastmod>2020-12-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/cadbim-tutorials-revit-proje-sablonu</loc><lastmod>2020-12-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -862,12 +1207,15 @@
   <url><loc>https://www.cadbim.com.tr/post/prekast-ve-prefabrik-yapilarinizi-autodesk-urunleri-ile-hizlica-cozun</loc><lastmod>2020-10-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/tasarimdan-planlamaya-tedarikten-uretime-yeni-nesil-cad-cam-cae-cozumleri</loc><lastmod>2020-09-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-i-part-ozelligi</loc><lastmod>2020-09-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim360-design-proje-ciktilarini-gelistirmek-icin-tasarim-ekiplerinizi-bulutta-baglayin</loc><lastmod>2020-09-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/tasarimi-hizlandirip-uretimle-birlestiren-en-iyi-10-arac-seti</loc><lastmod>2020-09-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/yapi-sektoru-icin-bim-ve-kavramsal-tasarim-cozumleri</loc><lastmod>2020-08-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/cadbim-teknik-destek-canli-yayini</loc><lastmod>2020-08-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-cozumleri-ile-urunlerinizi-gorsellestirin-ve-anime-edin</loc><lastmod>2020-08-20</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-navisworks-ile-proje-koordinasyonu-ve-incelemesi</loc><lastmod>2020-08-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-ilogic-ile-islemlerinizi-otomatiklestirin</loc><lastmod>2020-08-04</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-sureclerinin-autodesk-2021-cozumleri-ile-yonetimi</loc><lastmod>2020-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/uretim-sektoru-icin-autodesk-2021-cozumleri-ile-dijitallesme</loc><lastmod>2020-07-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-nastran-ile-analiz-yontemleri</loc><lastmod>2020-07-14</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-icin-dynamo-ya-giris-iii</loc><lastmod>2020-07-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/fabrika-yerlesimlerini-factory-design-utilities-araci-ile-yapmayi-denediniz-mi</loc><lastmod>2020-06-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
@@ -898,22 +1246,61 @@
   <url><loc>https://www.cadbim.com.tr/post/sweep-komutu</loc><lastmod>2019-01-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-merdiven-cizimi</loc><lastmod>2019-01-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-live</loc><lastmod>2019-01-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-2019-1-what-s-new-revit-home-cloud-browser</loc><lastmod>2019-01-23</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/extrusion-swept-blend-rampa-cizimi</loc><lastmod>2019-01-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-te-aks-cizimi-kolon-yerlesimi</loc><lastmod>2019-01-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-design-collaboration</loc><lastmod>2019-01-17</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-2019</loc><lastmod>2019-01-09</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autucad-express-tools</loc><lastmod>2019-01-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-amorf-form</loc><lastmod>2019-01-03</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-docs-compare-changes-between-design-versions</loc><lastmod>2019-01-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autocad-ws-free</loc><lastmod>2019-01-02</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-ile-markup-ve-issues-olusturma</loc><lastmod>2018-12-28</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/revit-layer-atma</loc><lastmod>2018-12-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360</loc><lastmod>2018-12-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-360-ile-proje-olusturmak-ve-hizmetleri-etkinlestirmek</loc><lastmod>2018-12-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-e-gecis</loc><lastmod>2018-12-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-nastran-in-cad-2019-uygulamalari</loc><lastmod>2018-11-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-nedir</loc><lastmod>2018-10-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-design</loc><lastmod>2018-10-31</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-field</loc><lastmod>2018-10-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/kisayol-gorunumler</loc><lastmod>2018-10-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/3d-gorunum</loc><lastmod>2018-10-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-zamani</loc><lastmod>2018-10-25</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-plan-overview</loc><lastmod>2018-10-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-glue-overview-video</loc><lastmod>2018-10-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/collaboration-for-revit-c4r</loc><lastmod>2018-10-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-showreel-autodesk-bim-your-future-is-connected</loc><lastmod>2018-10-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-revit-structure-2019-celik-tasarimi</loc><lastmod>2018-10-19</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-autodesk-showreel</loc><lastmod>2018-10-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autocad-2019-shared-views</loc><lastmod>2018-10-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/cift-monitor-destegi</loc><lastmod>2018-10-16</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-docs</loc><lastmod>2018-10-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-team</loc><lastmod>2018-10-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autocad-mobile-app</loc><lastmod>2018-10-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/scope-box</loc><lastmod>2018-10-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autocad-2019-dwg-karsilastirma-dwg-compare</loc><lastmod>2018-10-09</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-aec-collection-building-workflow</loc><lastmod>2018-10-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/what-is-bim-building-information-modeling</loc><lastmod>2018-10-05</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-connected-bim-for-building-design</loc><lastmod>2018-10-01</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/audodesk-360-cloud-render</loc><lastmod>2018-09-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/navisworks-manage</loc><lastmod>2018-09-21</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-collection-infra-workflow-video-bridge-design-en</loc><lastmod>2018-09-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/3ds-max-tasariminda-revit-modellerinin-guncellenmesi</loc><lastmod>2018-09-18</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/insight-360-video-building-performance-en</loc><lastmod>2018-09-13</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/advance-steel-robot-structural-analysis-professional</loc><lastmod>2018-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-ve-advance-steel</loc><lastmod>2018-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/autodesk-vehicle-tracking-overviewtrim</loc><lastmod>2018-09-12</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/bim-360-a-dosya-yukleme</loc><lastmod>2018-09-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/building-design-suite-is-akisi-enerji-analizi</loc><lastmod>2018-09-11</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-rendering-walktrough-a360-rendering</loc><lastmod>2018-09-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/bim-360-takim-yoneticisi-kurulumu</loc><lastmod>2018-09-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/3d-to-vr-the-essentials-video-06-scene-lighting-en</loc><lastmod>2018-09-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/aec-excellence-awards-2017-showreel-buildings</loc><lastmod>2018-09-07</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/aec-collection-2019-revit-navisworks-ve-advance-steel-arasindaki-iliski</loc><lastmod>2018-07-24</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/revit-live</loc><lastmod>2018-05-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/inventor-2019-shared-views</loc><lastmod>2018-04-10</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.cadbim.com.tr/post/only-one-autocad</loc><lastmod>2018-03-30</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autodesk-inventor-2018-direct</loc><lastmod>2018-03-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://www.cadbim.com.tr/post/autocad-2019</loc><lastmod>2018-03-22</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>

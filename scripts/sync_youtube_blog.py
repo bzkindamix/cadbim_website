@@ -66,10 +66,10 @@ def tr_lower(s):
 def slugify(title):
     s = title.strip()
     s = s.replace("İ", "i").replace("I", "i")
+    s = s.lower()
     repl = {"ş": "s", "ğ": "g", "ü": "u", "ö": "o", "ç": "c", "ı": "i"}
     for k, v in repl.items():
         s = s.replace(k, v)
-    s = s.lower()
     s = re.sub(r"[^a-z0-9]+", "-", s)
     s = re.sub(r"-+", "-", s).strip("-")
     return s
