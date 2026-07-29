@@ -1,0 +1,28 @@
+name: Scan Missing YouTube Videos (dry run)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Tüm kanalı tara, eksikleri listele (DRY RUN — hiçbir şey yazılmaz/commitlenmez)
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: UCGLIaycdAkSFM3Q54d3zVQg
+        run: python scripts/scan_missing_videos.py
+
+      - name: missing_videos.json'u artifact olarak yükle
+        uses: actions/upload-artifact@v4
+        with:
+          name: missing-videos
+          path: missing_videos.json
