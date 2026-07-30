@@ -73,10 +73,11 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .cross{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:32px;margin-top:16px;}
 .cross h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:6px;}
 .cross .cd{font-size:13px;color:var(--w50);margin-bottom:16px;}
-.cpills{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
-.cp{display:flex;align-items:center;gap:10px;padding:14px 16px;min-height:56px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;line-height:1.4;}
-.cp:hover{border-color:var(--cbor);color:var(--cyan);}
-.cp i{font-size:14px;color:var(--cyan);flex-shrink:0;}
+.cpills{display:flex;flex-wrap:wrap;gap:10px;}
+.cp{display:inline-flex;align-items:center;gap:9px;padding:8px 18px 8px 8px;border-radius:999px;background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:border-color .2s,color .2s,transform .2s,background .2s;}
+.cp:hover{border-color:var(--cbor);color:var(--w);background:rgba(0,200,240,.06);transform:translateY(-2px);}
+.cp i{font-size:14px;color:var(--cyan);width:26px;height:26px;border-radius:50%;background:rgba(0,200,240,.13);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cp img{border-radius:50%;background:rgba(255,255,255,.08);padding:3px;flex-shrink:0;}
 .cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 72px;}
 .cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
 .cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--w);margin-bottom:10px;}
@@ -315,6 +316,27 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="cpills"><a href="maya" class="cp"><img src="assets/logos/products/maya.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Maya</a><a href="3dsmax" class="cp"><img src="assets/logos/products/3dsmax.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">3ds Max</a><a href="arnold" class="cp"><img src="assets/logos/products/arnold.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Arnold</a><a href="motionbuilder" class="cp"><img src="assets/logos/products/motionbuilder.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">MotionBuilder</a><a href="mudbox" class="cp"><img src="assets/logos/products/mudbox.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Mudbox</a><a href="golaem" class="cp"><img src="assets/logos/products/golaem.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Golaem</a><a href="recap-pro" class="cp"><img src="assets/logos/products/recap-pro.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">ReCap Pro</a><a href="flow-studio" class="cp"><img src="assets/logos/products/flow-studio.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk Flow Studio</a><a href="flow-production-tracking" class="cp"><img src="assets/logos/products/flow-production-tracking.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Flow Production Tracking</a><span class="cp" style="cursor:default;"><i class="ti ti-wind"></i>Bifrost (Maya eklentisi)</span></div>
 </section>
 
+<section class="section">
+  <div class="sh"><div class="slabel">Autodesk'ten</div><div class="stitle">M&E Collection'a Özel Avantajlar</div><p class="ssub">Autodesk'in resmi M&E Collection sayfasında öne çıkardığı, sadece koleksiyonla gelen avantajlar.</p></div>
+  <div class="grid g3">
+    <div class="card"><div class="card-icon"><i class="ti ti-wind"></i></div><h3>Bifrost'u 15 Makinede Çalıştırın</h3><p>Koleksiyon aboneliğiyle Bifrost simülasyonlarını işlem çiftliğinde 15 makineye kadar dağıtabilirsiniz.</p></div>
+    <div class="card"><div class="card-icon"><i class="ti ti-users-group"></i></div><h3>Golaem Kalabalık Simülasyonu</h3><p>M&E Collection'a özel Golaem eklentisiyle Maya'da birkaç karakterden binlercesine kadar kalabalık sahneleri.</p></div>
+    <div class="card"><div class="card-icon"><i class="ti ti-video"></i></div><h3>5× Arnold + Flow Studio</h3><p>Render çiftliği için 5 Arnold lisansı ve AI destekli VFX için Autodesk Flow Studio erişimi.</p></div>
+  </div>
+</section>
+<section class="section section-alt">
+  <div class="sh"><div class="slabel">Videolar</div><div class="stitle">M&E Collection Ürünlerini İzleyin</div><p class="ssub">Maya ve Bifrost üzerinde Cadbim Teknik Destek videoları.</p></div>
+  <div class="grid g2">
+    <div style="background:var(--navy3);border-radius:16px;border:.5px solid var(--w10);overflow:hidden;">
+      <div style="aspect-ratio:16/9;background:#000;"><iframe style="width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/tE4L382hffE" title="M&E Collection - Bifrost for Maya ile gerçekçi efektler oluşturun" loading="lazy" allowfullscreen></iframe></div>
+      <div style="padding:16px;"><h4 style="font-family:var(--fd);font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">M&E Collection – Bifrost for Maya ile Gerçekçi Efektler Oluşturun</h4></div>
+    </div>
+    <div style="background:var(--navy3);border-radius:16px;border:.5px solid var(--w10);overflow:hidden;">
+      <div style="aspect-ratio:16/9;background:#000;"><iframe style="width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/2EsTG2c4UC4" title="Autodesk Maya - Genel Bakış" loading="lazy" allowfullscreen></iframe></div>
+      <div style="padding:16px;"><h4 style="font-family:var(--fd);font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">Autodesk Maya – Genel Bakış</h4></div>
+    </div>
+  </div>
+</section>
 
 <section data-enrich-brand style="padding:60px 3rem;background:#0a1225;">
   <div style="max-width:1200px;margin:0 auto;">

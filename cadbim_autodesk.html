@@ -98,9 +98,11 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .cross h3{font-family:var(--fd);font-size:20px;font-weight:700;color:var(--w);margin-bottom:6px;position:relative;}
 .cross .desc{font-size:13px;color:var(--w50);margin-bottom:18px;position:relative;}
 .cross-pills{display:flex;flex-wrap:wrap;gap:10px;}
-.cp{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:var(--rm);background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:all .2s;}
-.cp:hover{border-color:var(--cbor);color:var(--cyan);}
-.cp i{font-size:15px;color:var(--cyan);}
+.cpills{display:flex;flex-wrap:wrap;gap:10px;}
+.cp{display:inline-flex;align-items:center;gap:9px;padding:8px 18px 8px 8px;border-radius:999px;background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:border-color .2s,color .2s,transform .2s,background .2s;}
+.cp:hover{border-color:var(--cbor);color:var(--w);background:rgba(0,200,240,.06);transform:translateY(-2px);}
+.cp i{font-size:14px;color:var(--cyan);width:26px;height:26px;border-radius:50%;background:rgba(0,200,240,.13);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cp img{border-radius:50%;background:rgba(255,255,255,.08);padding:3px;flex-shrink:0;}
 .cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:48px;text-align:center;position:relative;overflow:hidden;margin:0 3rem 72px;}
 .cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);pointer-events:none;}
 .cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--w);margin-bottom:10px;}
@@ -448,7 +450,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
         <a class="tag" href="infraworks" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">InfraWorks</a>
         <a class="tag" href="3dsmax" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">3ds Max</a>
         <a class="tag" href="forma" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">Forma</a>
-        <a class="tag" href="autodesk-docs" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">Autodesk Forma Data Management</a>
+        <a class="tag" href="autodesk-docs" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">Autodesk Docs</a>
         <a class="tag" href="recap-pro" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">ReCap Pro</a>
         <a class="tag" href="advance-steel" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">Advance Steel</a>
         <a class="tag" href="robot-structural" style="background:rgba(99,102,241,0.1);color:#a5b4fc;border-color:rgba(165,180,252,0.2);text-decoration:none;display:inline-block;">Robot Structural Analysis</a>
@@ -503,6 +505,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
     <button class="fchip" data-f="koleksiyon">Koleksiyonlar</button>
     <button class="fchip" data-f="aec">Mimarlık &amp; İnşaat</button>
     <button class="fchip" data-f="forma">Forma Platformu</button>
+    <button class="fchip" data-f="ccloud">Construction Cloud</button>
     <button class="fchip" data-f="pdm">Ürün Tasarımı &amp; İmalat</button>
     <button class="fchip" data-f="me">Medya &amp; Eğlence</button>
     <button class="fchip" data-f="genel">Genel Araçlar</button>
@@ -528,8 +531,8 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <a href="fabrication-camduct" class="pcard" data-cat="aec"><div class="pico" style="background:rgba(192,132,252,0.13);color:#c084fc;"><img src="assets/logos/products/fabrication.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Fabrication CAMduct</h3><p>Kanal imalatı</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="forma" class="pcard" data-cat="forma"><div class="pico" style="background:rgba(52,211,153,0.13);color:#34d399;"><img src="assets/logos/products/forma.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Forma Site Design</h3><p>Bulutta erken aşama tasarım</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="autodesk-forma" class="pcard" data-cat="forma"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><img src="assets/logos/products/forma.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Autodesk Forma</h3><p>Forma Build, Forma Takeoff, Forma Data Management — inşaat yönetimi</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <a href="bim-collaborate-pro" class="pcard" data-cat="forma"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><img src="assets/logos/products/bim-collaborate-pro.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Autodesk Forma Design Collaboration</h3><p>Bulutta Revit ortak çalışması</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <a href="autodesk-docs" class="pcard" data-cat="forma"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><img src="assets/logos/products/autodesk-docs.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Autodesk Forma Data Management</h3><p>Ortak veri ortamı (CDE)</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="bim-collaborate-pro" class="pcard" data-cat="ccloud"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><img src="assets/logos/products/bim-collaborate-pro.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Autodesk BIM Collaborate</h3><p>Bulutta Revit ortak çalışması</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="autodesk-docs" class="pcard" data-cat="ccloud"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><img src="assets/logos/products/autodesk-docs.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Autodesk Docs</h3><p>Ortak veri ortamı (CDE)</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="inventor" class="pcard" data-cat="pdm"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><img src="assets/logos/products/inventor.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Inventor</h3><p>Parametrik makine ve ürün tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="fusion" class="pcard" data-cat="pdm"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><img src="assets/logos/products/fusion.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Fusion</h3><p>Bulut CAD/CAM/CAE platformu</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="fusion-manage" class="pcard" data-cat="pdm"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><img src="assets/logos/products/fusion-manage.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Fusion Manage</h3><p>Bulut PLM</p></div><i class="ti ti-arrow-right parr"></i></a>

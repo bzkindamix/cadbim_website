@@ -698,7 +698,7 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
     <div class="why-card">
       <div class="why-icon"><i class="ti ti-certificate"></i></div>
       <h3>Eşsiz Akreditasyon</h3>
-      <p>Autodesk ve Adobe'de Gold iş ortağı, yetkili eğitim merkezi ve akademik iş birliği statülerini HP'nin küresel ortaklık ağıyla aynı çatı altında topluyoruz. Mimarlık ve inşaattan otomotiv ve makineye, altyapıdan animasyon ve oyun/VR'a kadar Autodesk'in tüm çözüm alanlarında derin uzmanlığa sahibiz.</p>
+      <p>Autodesk Gold Partner, Adobe Gold Reseller ve HP yetkili iş ortağıyız — satış, eğitim ve danışmanlıkta üçünde birden en üst seviye akreditasyona sahip, Türkiye'de az sayıda şirketten biriyiz.</p>
     </div>
     <div class="why-card">
       <div class="why-icon"><i class="ti ti-school"></i></div>
@@ -1572,7 +1572,10 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
   var cozumCap = document.getElementById('cozumCap');
   if (cozumSvg){
     var cozumViewer = createViewer(cozumSvg, solutions);
-    function solKey(a){ var m = (a.getAttribute('href')||'').match(/cadbim_(\w+)\.html/); return m ? m[1] : null; }
+    function solKey(a){
+      var href = (a.getAttribute('href')||'').replace(/^.*\//,'').replace(/\.html$/,'').replace(/-/g,'_');
+      return href || null;
+    }
     function showSol(chip){
       var k = solKey(chip);
       if (!k || !solutions[k]) return;
