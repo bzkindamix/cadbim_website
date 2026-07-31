@@ -353,7 +353,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   <div class="hero-inner">
     <div class="crumb"><a href="index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:12px;"></i><a href="autodesk">Ürünler</a><i class="ti ti-chevron-right" style="font-size:12px;"></i><span style="color:var(--w50);">Chaos</span></div>
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
-      <div style="width:72px;height:72px;border-radius:14px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,0.4);background:#e21f26;display:flex;align-items:center;justify-content:center;padding:14px;"><img src="assets/logos/chaos-logo-red.svg" alt="Chaos" style="width:100%;height:100%;object-fit:contain;filter:brightness(0) invert(1);"></div>
+      <div style="width:72px;height:72px;border-radius:14px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,0.4);"><img src="assets/logos/chaos.webp" alt="Chaos" style="width:100%;height:100%;object-fit:cover;"></div>
       <div>
         <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:3px;">Chaos</div>
         <div style="font-family:'Manrope',sans-serif;font-size:22px;font-weight:700;color:#fff;">Render Ekosistemi</div>
@@ -387,13 +387,13 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     <div class="psearch"><i class="ti ti-search"></i><input id="psearch" type="text" placeholder="Ürün ara..." aria-label="Ürün ara"></div>
   </div>
   <div class="pgrid" id="pgrid" style="margin-top:26px;">
-      <div class="pcard" data-cat="render" style="cursor:default;"><div class="pico" style="background:rgba(37,99,235,0.14);"><img src="assets/logos/products/vray.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Chaos V-Ray</h3><p>Endüstri standardı fotogerçekçi render</p></div></div>
+      <a href="vray" class="pcard" data-cat="render"><div class="pico" style="background:rgba(37,99,235,0.14);"><img src="assets/logos/products/vray.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Chaos V-Ray</h3><p>Endüstri standardı fotogerçekçi render</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="corona" class="pcard" data-cat="render"><div class="pico" style="background:rgba(249,115,22,0.14);"><img src="assets/logos/products/corona.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Corona Renderer</h3><p>Mimari render — kutudan fotogerçekçi</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <div class="pcard" data-cat="rt" style="cursor:default;"><div class="pico" style="background:rgba(251,146,60,0.14);"><img src="assets/logos/products/enscape.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Enscape</h3><p>Gerçek zamanlı render — tek tıkla</p></div></div>
+      <a href="enscape" class="pcard" data-cat="rt"><div class="pico" style="background:rgba(251,146,60,0.14);"><img src="assets/logos/products/enscape.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Enscape</h3><p>Gerçek zamanlı render — tek tıkla</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="vantage" class="pcard" data-cat="rt"><div class="pico" style="background:rgba(34,197,94,0.14);"><img src="assets/logos/products/vantage.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Chaos Vantage</h3><p>%100 ray-traced gerçek zamanlı sahne gezintisi</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="phoenix" class="pcard" data-cat="sim"><div class="pico" style="background:rgba(245,158,11,0.14);"><img src="assets/logos/products/phoenix.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Phoenix</h3><p>Ateş, duman & sıvı simülasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="anima" class="pcard" data-cat="sim"><div class="pico" style="background:rgba(167,139,250,0.14);"><img src="assets/logos/products/anima.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Anima</h3><p>3B kalabalık animasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <div class="pcard" data-cat="ai" style="cursor:default;"><div class="pico" style="background:rgba(37,99,235,0.14);"><img src="assets/logos/products/veras.png" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Veras AI</h3><p>AI destekli konsept görselleştirme</p></div></div>
+      <a href="veras" class="pcard" data-cat="ai"><div class="pico" style="background:rgba(37,99,235,0.14);"><img src="assets/logos/products/veras.png" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Veras AI</h3><p>AI destekli konsept görselleştirme</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="cosmos" class="pcard" data-cat="ai"><div class="pico" style="background:rgba(168,85,247,0.14);"><img src="assets/logos/products/cosmos.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Cosmos</h3><p>Render'a hazır 3B varlık kütüphanesi</p></div><i class="ti ti-arrow-right parr"></i></a>
   </div>
   <p id="pempty" style="display:none;color:var(--w50);font-size:14px;margin-top:24px;">Aramanızla eşleşen ürün bulunamadı.</p>
@@ -433,7 +433,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
       <p>Enscape ile tasarım aşamasında anlık görselleştirme, V-Ray ile final sunumlar. Mimari vizualizasyonun iki standartı.</p>
     </div>
     <div class="feat">
-      <div class="feat-icon"><i class="ti ti-couch"></i></div>
+      <div class="feat-icon"><i class="ti ti-sofa"></i></div>
       <h3>İç Mekan Tasarımı</h3>
       <p>Malzeme, aydınlatma ve mekan simülasyonu. Müşteri sunumları için fotogerçekçi görseller — hızlı iterasyonla.</p>
     </div>
