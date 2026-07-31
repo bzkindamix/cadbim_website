@@ -108,6 +108,19 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
 .nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+.faq{display:flex;flex-direction:column;gap:10px;max-width:820px;}
+.faq details{background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rl);padding:18px 22px;transition:border-color .2s;}
+.faq details:hover{border-color:var(--cbor);}
+.faq details[open]{border-color:var(--cbor);}
+.faq summary{font-family:var(--fd);font-size:14.5px;font-weight:600;color:var(--w);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';font-size:20px;font-weight:400;color:var(--cyan);flex-shrink:0;transition:transform .2s;}
+.faq details[open] summary::after{content:'−';}
+.faq .faq-a{font-size:13.5px;color:var(--w50);line-height:1.7;margin-top:12px;}
+.faq-group-title{font-family:var(--fd);font-size:13px;font-weight:700;color:var(--cyan);letter-spacing:.5px;text-transform:uppercase;margin:28px 0 12px;}
+.faq-group-title:first-child{margin-top:0;}
+.footnotes{font-size:11px;color:var(--w30);line-height:1.7;max-width:900px;margin-top:20px;}
+.footnotes p{margin-bottom:6px;}
 </style>
 
 <!-- Google Analytics -->
@@ -336,25 +349,50 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 <section class="section">
   <div class="sh">
     <div class="slabel">İş Akışı</div>
-    <div class="stitle">Kağıttan Dijitale, Tek Platformda</div>
+    <div class="stitle">Doğru Çizimden Güvenle İnşa Edin</div>
+    <p class="ssub">Dijital çizimleri ve basılı planları senkronize tutan bulut platformu — sahadaki planlar her zaman en güncel çizimle uyumlu kalsın.</p>
   </div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div><h4>Tara veya Yükle</h4><p>Kağıt teknik çizimleri HP DesignJet T2600 Plus üzerinden tarayın veya mevcut raster dosyaları platforma yükleyin.</p></div>
+
+  <div style="margin-top:8px;margin-bottom:8px;"><h3 style="font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);">Her Zaman En Güncel Versiyon</h3></div>
+  <div class="grid g3">
+    <div class="card"><div class="card-icon"><i class="ti ti-history"></i></div><h3>Dosya Güncellemelerini Takip Edin</h3><p>Çizim versiyonları kayıt altına alınır ve saklanır — versiyon geçmişiyle birlikte neyin, ne zaman ve kim tarafından değiştirildiğine dair açık, erişilebilir bir kayıt sağlar.</p></div>
+    <div class="card"><div class="card-icon"><i class="ti ti-git-compare"></i></div><h3>Dosyalar Arası Farkları Belirleyin</h3><p>Versiyon karşılaştırma ile versiyonlar arasında ne değiştiğini kolayca kontrol edin — işe devam etmeden önce neye dikkat etmeniz gerektiğini bilin.</p></div>
+    <div class="card"><div class="card-icon"><i class="ti ti-users"></i></div><h3>Paydaşlar Bilgilendirilsin</h3><p>Çizimler izin bazlı erişimle paylaşılır; doğru kişiler platform üzerinden doğru çizime erişir.</p></div>
+  </div>
+
+  <div style="margin-top:40px;margin-bottom:8px;"><h3 style="font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);">Dijital ve Kağıt Bağlantılı</h3></div>
+  <div class="grid g3">
+    <div class="card"><div class="card-icon"><i class="ti ti-qrcode"></i></div><h3>QR Kod Doğrulaması</h3><p>Ekip basılı bir plandan inşa ederken QR kodu tarayıp mevcut en güncel versiyonla eşleştiğini onaylayın — maliyetli bir hatadan önce, sonra değil.</p></div>
+    <div class="card"><div class="card-icon"><i class="ti ti-map-pin"></i></div><h3>Tam Konumu İşaretleyin</h3><p>Bir sorunu işaretleyin, yorum ekleyin ve bir fotoğrafı doğrudan çizime iğneleyin — ekip sorunun tam olarak nerede olduğunu ve neye benzediğini bilsin. Herkes aynı yerde bağlam ve bilgiye ulaşır.</p></div>
+    <div class="card"><div class="card-icon"><i class="ti ti-printer"></i></div><h3>DesignJet Bağlantısı</h3><p>Ekibin sahada değiştirdiği şey kağıtta kalmaz. HP Build Workspace'e geri tarayın, anında proje kaydının bir parçası olsun. HP DesignJet T2600 MFP Serisi Plus Edition | Build Connected ile kağıt çizimleri doğrudan ön panelden platforma taranır.</p></div>
+  </div>
+
+  <div style="margin-top:40px;margin-bottom:8px;"><h3 style="font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);">Yapay Zeka Destekli Otomasyonlar</h3></div>
+  <div class="grid g2">
+    <div class="card hi"><div class="card-icon"><i class="ti ti-wand"></i></div><h3>Çizimleri Otomatik Olarak Düzenlenebilir CAD'e Dönüştürün</h3><p>Basılı veya eski çizimleri düzenlenebilir dijital dosyalara dönüştürün — ekipler manuel yeniden çizim yapmadan dijital olarak çalışabilir ve bunları güncel proje çizimleriyle birlikte tutabilir. Çizim süresinden %80'e kadar tasarruf edin ve tasarım iş akışınızı hızlandırın.</p></div>
+    <div class="card hi"><div class="card-icon"><i class="ti ti-scan"></i></div><h3>DesignJet Entegrasyonu</h3><p>HP DesignJet T2600 MFP Serisi Plus Edition | Build Connected ile basılı bir çizimi tarayın ve doğrudan yazıcıdan düzenlenebilir bir CAD oluşturun.</p></div>
+  </div>
+
+  <div class="cross" style="margin-top:40px;">
+    <h3>Bağlantılı İş Akışları</h3>
+    <p class="cd">HP DesignJet T2600 MFP Serisi Plus Edition | Build Connected, kağıt çizimleri bulut iş akışlarına bağlayan ilk DesignJet MFP'dir. Kağıt çizimleri artık doğrudan ön panelden HP Build Workspace platformuna taranabilir. Herhangi bir HP DesignJet T2600 MFP Plus Edition | Build Connected alımıyla, ayda 20 vektörleştirme jetonu dahil olmak üzere 1 yıllık HP Build Workspace erişimi kazanın.</p>
+    <div class="cpills">
+      <a href="designjet-t2600-plus" class="cp"><i class="ti ti-cloud-upload"></i>Kağıdı buluta bağlayın — tek, akıllı, paylaşılabilir versiyon</a>
+      <a href="designjet-t2600-plus" class="cp"><i class="ti ti-file-cog"></i>Taramaları CAD'e hazır dosyalara dönüştürün</a>
     </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div><h4>AI ile Vektörleştir</h4><p>Yapay zeka, raster planı otomatik olarak düzenlenebilir CAD (vektör) dosyasına dönüştürür — manuel yeniden çizim gerekmez.</p></div>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div><h4>Senkronize Et</h4><p>Güncellenen plan, versiyon kontrolüyle birlikte ofis ve şantiye ekipleri arasında anında senkronize olur.</p></div>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div><h4>Raporla ve Yönet</h4><p>Saha raporlama araçlarıyla proje ilerlemesini takip edin, işbirliğini tek platformdan yönetin.</p></div>
-    </div>
+  </div>
+</section>
+
+<!-- HP AI VECTORIZATION -->
+<section class="section section-alt">
+  <div class="sh">
+    <div class="slabel">Yapay Zeka</div>
+    <div class="stitle">HP AI Vectorization</div>
+    <p class="ssub">Gerçek çizimler üzerine inşa edilmiş, sektörün ilk bulut tabanlı AI vektörleştirme aracıyla çizim süresini %80'e kadar azaltın.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card"><div class="card-icon"><i class="ti ti-brain"></i></div><h3>Çoğu İşi Yapay Zeka Halleder</h3><p>Yapay zeka vektörleştirme işinin büyük kısmını halleder, siz sadece nihai CAD ayarlarına odaklanırsınız.</p></div>
+    <div class="card"><div class="card-icon"><i class="ti ti-click"></i></div><h3>Tek Tıkla Dönüştürün</h3><p>Kağıt planlarınız mı var? Herhangi bir HP DesignJet'ten tarayıp tek tıkla düzenlenebilir CAD'lere dönüştürün.</p></div>
   </div>
 </section>
 
@@ -376,6 +414,55 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   </div>
 </section>
 
+
+<!-- SSS -->
+<section class="section">
+  <div class="sh">
+    <div class="slabel">SSS</div>
+    <div class="stitle">Sıkça Sorulan Sorular</div>
+    <p class="ssub">Herkesin, geçmişi veya mesleği ne olursa olsun kullanabileceği basit ve sezgisel bir arayüz.</p>
+  </div>
+  <div class="faq">
+    <div class="faq-group-title">Genel</div>
+    <details><summary>HP Build Workspace nedir?</summary><p class="faq-a">HP Build Workspace, dijital çizimleri ve basılı planları ofis ile şantiye arasında senkronize tutan bulut tabanlı bir platformdur. İnşaat ve tasarım ekiplerine, basılı planlarda dahi çizimin en güncel versiyonunun kullanıldığından emin olmalarını sağlayan araçlar sunar; böylece uygulama hataları ve proje gecikmeleri önlenir.</p></details>
+    <details><summary>HP Build Workspace hangi sorunları çözer?</summary><p class="faq-a">İnşaat ekipleri güncelliğini kaybetmiş çizimler kullanıldığında zaman ve para kaybeder. HP Build Workspace üç temel sorunu çözer: ekiplerin yanlış çizim versiyonuyla çalışması, sahadaki kağıt planlar ile dijital dosyalar arasında güvenilir bir bağlantı olmaması ve PDF'leri CAD'e yeniden çizmek gibi zaman alan manuel işler.</p></details>
+    <details><summary>HP Build Workspace kimler için tasarlandı?</summary><p class="faq-a">Genel Müteahhitler, Proje Yöneticileri, Saha Yöneticileri ve Mimarlık/Tasarım Ekipleri için tasarlanmıştır — genellikle küçük-orta ölçekli inşaat projelerinde çalışan ekipler. Çizimleri paylaşmak ve işi koordine etmek için hâlâ e-posta, SMS veya standart bulut depolarına dayanan şirketler için özellikle değerlidir.</p></details>
+    <details><summary>HP Build Workspace, AutoCAD veya BIM gibi mevcut araçların yerini mi alıyor?</summary><p class="faq-a">Hayır. HP Build Workspace bir tasarım veya modelleme aracı değildir. Tasarım dünyası (BIM, CAD) ile şantiye arasında konumlanan, senkronize bir uygulama katmanı olarak çalışır. Mevcut araçların yerini almak yerine onları tamamlar.</p></details>
+
+    <div class="faq-group-title">Fiyatlandırma & Jetonlar</div>
+    <details><summary>HP Build Workspace'i kullanmak için ödeme yapmam gerekiyor mu?</summary><p class="faq-a">Şu an için HP Build Workspace, AI Vectorization sonuçlarını indirme dışında tüm özellikleriyle ücretsiz kullanılabilir. Bir plan vektörleştirildiğinde sonuç ekranda ücretsiz olarak görüntülenir. Ücret yalnızca sonucu kabul edip vektörleştirilmiş dosyayı indirmeye karar verdiğinizde uygulanır; indirme başına bir jeton harcanır. Bir vektörleştirilmiş planın ilk indirmesinden sonra o vektör dosyası kilidi açılır; proje ekibindeki diğer üyelerin aynı dosyayı sonraki indirmeleri ek jeton harcamaz.</p></details>
+    <details><summary>Jetonlara nasıl ulaşabilirim?</summary><p class="faq-a">Vektörleştirmeleri indirmek veya paylaşmak için, yetkili HP iş ortağınızdan (Cadbim) peşin bir paket satın alarak jeton yüklemeniz gerekir. Bu jetonlar 1 yıl geçerlidir. Alternatif olarak, 1 yıl boyunca ayda 20 jeton sağlayan Yıllık Erişim Paketi'ni satın alabilirsiniz — kullanılmayan jetonlar bir sonraki aya taşınmaz. Yıllık Erişim Paketi, T2600 Plus Edition alımıyla birlikte cihazın seri numarası kullanılarak da etkinleştirilebilir.</p></details>
+    <details><summary>Daha büyük dosyalar daha fazla jeton mu harcıyor?</summary><p class="faq-a">Hayır. Dosya boyutundan bağımsız olarak her indirme bir jeton harcar.</p></details>
+    <details><summary>Kullanmadığım jetonlara ne olur?</summary><p class="faq-a">Peşin paketlerde jetonları satın alımdan sonraki ilk yıl içinde kullanabilirsiniz; süre sonunda kullanılmayan jetonlar geçerliliğini kaybeder ve iade edilmez. Yıllık Erişim Paketi'nde ise talep tarihinden itibaren 12 ay boyunca hesabınıza her ay 20 jeton tanımlanır; kullanılmayan jetonlar her aylık dönemin sonunda geçerliliğini kaybeder, sonraki aya taşınmaz veya iade edilmez.</p></details>
+    <details><summary>Paket Dahil Yıllık Erişim Paketi neleri kapsıyor?</summary><p class="faq-a">HP Build Workspace 1 yıllık erişim paketi, tam platform erişimi ve aylık bir vektörleştirme kotası sağlar. Bu paketle, talep tarihinden itibaren 12 ay boyunca hesabınıza her ay 20 jeton tanımlanır.</p></details>
+    <details><summary>Yıllık Erişim Paketimi nasıl etkinleştirebilirim?</summary><p class="faq-a">T2600 MFP Plus Edition satın aldıysanız, paketi cihazınızın seri numarasıyla doğrudan HP Build Workspace üzerinden etkinleştirebilirsiniz (Workspace Yöneticileri, Taranan Taslaklar ve Jetonlar sayfasından). Cadbim üzerinden satın aldıysanız, paket doğrudan hesabınıza tanımlanır ve etkinleştirilir — süreçle ilgili sorularınız için Cadbim temsilcinizle iletişime geçebilirsiniz.</p></details>
+
+    <div class="faq-group-title">AI Vectorization</div>
+    <details><summary>HP AI Vectorization'ı kullanmak için ödeme yapmam gerekiyor mu?</summary><p class="faq-a">Bir dosyayı vektörleştirmek tamamen ücretsizdir. Sonuçtan memnunsanız dosyayı indirebilirsiniz — yalnızca o zaman bir jeton harcanır. Bir vektörleştirilmiş planın ilk indirmesinden sonra vektör dosyasının kilidi açılır ve aynı dosyanın sonraki indirmeleri ek jeton harcamaz.</p></details>
+    <details><summary>Jetonlara neden gerek var?</summary><p class="faq-a">Jeton, vektörleştirilmiş bir dosyanın indirme veya paylaşım için kilidinin açılmasında kullanılan ücretlendirme birimidir. Bir jeton, yalnızca vektörleştirme sonucu kabul edildikten sonra, kuruluşunuzun yetkili herhangi bir üyesi tarafından bir vektörleştirilmiş dosyanın ilk kez indirilmesi veya paylaşılmasında harcanır. Bir dosyanın kilidi açıldıktan sonra, orijinal dosyaya erişimi olan diğer proje üyeleri tarafından yapılan sonraki tüm indirme ve paylaşımlar için ek jeton ücreti alınmaz.</p></details>
+    <details><summary>Vektörleştirme sonucu %100 doğru mu?</summary><p class="faq-a">Hayır. Yapay zeka, elle yeniden çizime kıyasla çizim süresinden %80'e kadar tasarruf gibi önemli zaman kazançları sağlar; ancak sonuçlar çizimin karmaşıklığına ve görüntü kalitesine göre değişebilir. Kullanıcıların çıktıyı gözden geçirip gerektiğinde düzenlemesi gerekir. Bunu desteklemek için orijinal plan her zaman Layer 0'da saklanır, böylece tamamlanması gereken alanları karşılaştırmak ve tespit etmek kolaylaşır. Yalnızca vektörleştirme sonucunu kabul edip dosyayı indirmeye karar verirseniz bir jeton harcanır.</p></details>
+    <details><summary>HP Build Workspace dosyalarımı yapay zeka motorunu geliştirmek için kullanıyor mu?</summary><p class="faq-a">Hayır. Müşteri dosyalarını AI Vectorization motorunu geliştirmek için kullanmıyoruz.</p></details>
+    <details><summary>Herhangi bir HP MFP ile Tara-Vektörleştir / Tara-HP Build yapabilir miyim?</summary><p class="faq-a">Hayır. Şu an için Tara-HP Build Workspace ve Tara-AI Vectorize iş akışları yalnızca HP DesignJet T2600 Plus Edition | Build Connected üzerinde kullanılabilir. Standart HP MFP'ler bu entegrasyonu desteklemez.</p></details>
+    <details><summary>Tara-Vektörleştir / Tara-HP Build iş akışlarında telefona neden ihtiyacım var?</summary><p class="faq-a">Telefon, her iki iş akışında da kimlik doğrulama aşamasında kullanılır; yazıcıyı HP Build Workspace hesabınızla geçici olarak bu şekilde eşleştirirsiniz.</p></details>
+    <details><summary>Yazıcının internete bağlı olması gerekiyor mu?</summary><p class="faq-a">Evet, dosyaları buluta göndermek için yazıcının internete bağlı olması gerekir. Bağlı değilse, iş akışı tetiklendiğinde bağlantı istendiğine dair bir mesaj görünür. Telefon ve yazıcının aynı ağda olması gerekmez.</p></details>
+    <details><summary>Telefonun yazıcıya bağlı olması gerekiyor mu?</summary><p class="faq-a">Hayır. Telefon doğrudan yazıcıya değil, HP Build Workspace bulut platformuna bağlanır. Her cihaz kendi ağına bağlı olabilir; ikisi de internete bağlı olduğu sürece iş akışı çalışır.</p></details>
+
+    <div class="faq-group-title">Yetkilendirme & İşbirliği</div>
+    <details><summary>Şirketimdeki herkes HP Build Workspace'teki tüm belgelere erişebilir mi?</summary><p class="faq-a">HP Build Workspace farklı yetki seviyelerine sahiptir. Bir şirket içinde kişiler Workspace Yöneticisi veya Proje Sahibi olarak davet edilebilir. Workspace Yöneticileri şirket ayarlarını, üyeleri ve faturalandırmayı yönetebilir; tüm projelerde çalışabilir ve harici işbirlikçileri davet edebilir. Proje Sahipleri tüm projelerde çalışabilir ve harici işbirlikçi davet edebilir, ancak şirket ayarlarını yönetemez.</p></details>
+    <details><summary>Çizimlerimi ve belgelerimi harici şirketlerle paylaşabilir miyim?</summary><p class="faq-a">Evet, bir Workspace Yöneticisi veya Proje Sahibi olarak belirli bir projede işbirliği yapmaları için harici kişileri davet edebilirsiniz. İşbirlikçiler o projedeki tüm dosyaları görüntüleyebilir; sadece kendilerinin yüklediği/sahip olduğu dosyaları oluşturabilir, ekleyebilir veya düzenleyebilir.</p></details>
+
+    <div class="faq-group-title">Güvenlik</div>
+    <details><summary>Verilerim güvende mi?</summary><p class="faq-a">Evet. Tüm bilgiler aktarım sırasında TLS 1.3 ve AES 128/256, depolamada ise AES 256 kullanılarak şifrelenir. Tüm veritabanları, Transparent Data Encryption (TDE) gibi yerleşik tam veritabanı şifreleme teknolojilerinden de yararlanır. HP ayrıca olası güvenlik açıklarını tespit etmek ve gidermek için düzenli siber güvenlik incelemeleri ve sızma testleri gerçekleştirir. Tüm kapsamlı sistemler ve veri erişimi için Çok Faktörlü Kimlik Doğrulama (MFA) zorunludur. HP, GDPR, CRA, CCPA ve AAPI'ye uyumludur; HP Servis ve Sistemleri ISO/IEC 27001:2013, SOC2/3 gibi tanınmış Endüstri Standartlarına sertifikalıdır.</p></details>
+
+    <div class="faq-group-title">Destek</div>
+    <details><summary>HP Build Workspace ile bir sorunum olursa hangi destek mevcut?</summary><p class="faq-a">Destek doğrudan HP Build Workspace platformu üzerinden sunulur. Talebinizi iletebileceğiniz özel bir "Yardım & Destek" bölümü mevcuttur. Türkçe teknik destek için Cadbim ekibiyle de her zaman iletişime geçebilirsiniz.</p></details>
+  </div>
+  <div class="footnotes">
+    <p>1. HP Click App, Windows ve Mac ile uyumludur. HP Click Driver yalnızca Windows 11 ile uyumludur. HP Click yazılımı yalnızca Orijinal HP mürekkep sarfları ile uyumludur. PDF, JPEG, TIFF, DWF ve HP-GL/2 dosyalarına uygulanır.</p>
+    <p>2. HP Build Workspace, raster çizimleri çalışan CAD dosyalarına dönüştürmek için bulut tabanlı AI Vectorization sunan, özellikle mimarlar için tasarlanmış ilk çözümdür. AutoCAD, HP'ye ait olmayan bir yazılım programıdır; HP AI Vectorization ve HP Build Workspace, AutoCAD için herhangi bir lisans içermez.</p>
+    <p>3. 1.000'den fazla müşteri çizimi kullanılarak yapılan pilot çalışmalardaki HP iç değerlendirmelerine dayanmaktadır. Karşılaştırmalar, çözümle çizim eforu ile manuel çizimi ölçmektedir. Gerçek sonuçlar ve zaman tasarrufu, çizim karmaşıklığı ve görüntü kalitesi gibi faktörlere bağlı olarak değişebilir.</p>
+  </div>
+</section>
 
 <section data-enrich-brand style="padding:60px 3rem;background:#0a1225;">
   <div style="max-width:1200px;margin:0 auto;">
