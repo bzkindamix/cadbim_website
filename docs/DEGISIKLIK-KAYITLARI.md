@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-07-31-01 — SketchUp sayfası hataları düzeltildi + 4 eksik ürün sayfası oluşturuldu
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur'un `cadbim_sketchup.html` canlı önizlemesinde sırayla fark ettiği 3 görsel/içerik hatası üzerine.
+- **1) Uydurma hero rozeti:** 31 Temmuz akşamki toplu ikon düzeltmesinde (bkz. commit 441f7e4) `cadbim_sketchup.html` gözden kaçmış, hero'da elle çizilmiş mavi "SU" SVG'si kalmıştı. Kardeş sayfalarla (Go/Studio) tutarlı şekilde gerçek `sketchup-icon.svg` ile değiştirildi.
+- **2) "Advanced Workflow" → "Advanced Workflows":** Trimble'ın resmi plan sayfası (sketchup.trimble.com/plans-and-pricing) doğrulandı; resmi isim çoğul "Advanced Workflows". 4 yerde (Planlar kartı, Studio açıklaması, ürün kataloğu kartı) düzeltildi.
+- **3) Entegrasyonlar bölümü bozuk ikon kutuları (Onur ekran görüntüsüyle gösterdi):** `.card-icon` kuralı genişlik/yükseklik/flex-ortalama tanımı olmadan yazılmıştı (`cadbim_lumion.html`'de de aynı hata var, ayrı görev olarak flag'lendi: task_6d88e7d9) — arka plan koyu bir çubuk gibi görünüyordu. UltiMaker hub sayfasındaki doğru desene (46×46, flex ortalanmış) göre düzeltildi.
+- **4) Gerçek ürün logoları:** Entegrasyonlar bölümünde Chaos Enscape ve Chaos V-Ray aynı jenerik `chaos.webp` şirket logosunu, Revit jenerik `autodesk-white.svg`'yi, Adobe CC jenerik `adobe-logo.svg` wordmark'ını kullanıyordu. Kendi resmi ürün ikonlarıyla (`enscape.svg`, `vray.svg`, `revit.svg`, `adobe.png`) değiştirildi.
+- **5) 4 eksik ürün sayfası oluşturuldu:** Ürün kataloğunda SketchUp Pro, Pro Scan, Pro Civil Contractor ve Advanced Workflows'un kendi sayfası yoktu (sadece Go/Studio/Trimble Connect'in vardı) — Onur önce "istemiyorum" dedi, sonra fikrini değiştirip istedi. Go/Studio şablonu temel alınarak `cadbim_sketchup_pro.html`, `cadbim_sketchup_pro_scan.html`, `cadbim_sketchup_pro_civil_contractor.html`, `cadbim_sketchup_advanced_workflows.html` oluşturuldu (hero, özellik/kullanım kartları, "Cadbim Farkı" bloğu, cross-sell, SEO meta + JSON-LD, CTA). İçerik Trimble'ın resmi plan sayfasından doğrulanan bilgilere dayanıyor (Pro Civil Contractor: Trimble Siteworks bağlantılı saha/hafriyat çözümü; Advanced Workflows: Pro Scan + Revit Importer). Hub sayfasındaki (Planlar + Ürün Kataloğu) ilgili kartlar bu 4 sayfaya bağlandı; kataloğun 3 kartındaki jenerik Tabler ikonları (`ti-scan`, `ti-bulldozer`, `ti-stack-2`) gerçek SketchUp logosuyla değiştirildi (Trimble bu alt-tierlar için ayrı resmi logo sağlamıyor).
+- **6) `.htaccess` taslağı güncellendi (henüz sunucuda değil):** `docs/htaccess-taslak.txt`'e 4 yeni sayfanın temiz-URL↔dosya eşlemesi (rewrite + `.html`→temiz-URL 301) eklendi; eski Wix yönlendirmesi `/sketchup/sketchup-pro` artık genel hub yerine doğrudan `/sketchup-pro`'ya işaret ediyor.
+- **Doğrulama:** Yeni sayfalardaki tüm Tabler ikon sınıfları CSS'te mevcut olduğu doğrulandı; `.card-icon` kutu boyutları tarayıcıda computed-style ile 46×46/flex doğrulandı; Trimble'ın resmi plan sayfası fetch edilerek Pro Scan/Civil Contractor/Advanced Workflows açıklamaları teyit edildi.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-07-29-11 — Blog'da "BIM 360" ve "Fusion Team" eski isimlendirmeleri güncellendi (16 dosya)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · DK-10'da kapsam dışı bırakılıp ayrı göreve (task_0b5f7372) kaydedilen bulgunun tamamlanması.
