@@ -416,6 +416,39 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   </div>
 </section>
 
+<section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
+  <div style="margin-bottom:32px;">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Blog</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:#fff;margin-bottom:8px;">İlgili İçerikler</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);max-width:540px;line-height:1.7;">Bu konuyla ilgili en güncel video ve yazılarımız.</p>
+  </div>
+  <div id="blogRelatedGrid" data-topic="Genel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;"></div>
+</section>
+<script>
+(function(){
+  var container=document.getElementById('blogRelatedGrid');
+  if(!container) return;
+  var topic=container.getAttribute('data-topic');
+  function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  fetch('assets/data/blog-posts.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
+    var matched=data.filter(function(p){return (p.products||[]).indexOf(topic)!==-1 || p.cat===topic;})
+      .sort(function(a,b){return b.date.localeCompare(a.date);}).slice(0,5);
+    var section=document.getElementById('blog-related-section');
+    if(matched.length===0){ if(section) section.style.display='none'; return; }
+    container.innerHTML=matched.map(function(p){
+      if(p.type==='video' && p.videoId){
+        return '<div style="background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);overflow:hidden;">'
+          + '<div style="aspect-ratio:16/9;background:#000;"><iframe style="width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/'+p.videoId+'" title="'+esc(p.title)+'" loading="lazy" allowfullscreen></iframe></div>'
+          + '<div style="padding:16px;"><h4 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'.html" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h4><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
+      }
+      return '<a href="post/'+p.slug+'.html" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);padding:20px;text-decoration:none;">'
+        + '<div style="font-size:10px;color:#00c8f0;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">'+esc(p.cat)+'</div>'
+        + '<h4 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h4>'
+        + '<p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></a>';
+    }).join('');
+  }).catch(function(){ var section=document.getElementById('blog-related-section'); if(section) section.style.display='none'; });
+})();
+</script>
 <footer>
   <div class="fbot">
     <p>© 2026 Cadbim — <a href="index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> · <a href="kvkk" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
