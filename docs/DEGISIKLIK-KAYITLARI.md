@@ -4,6 +4,14 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-01 — Kapsamlı site denetimi yapıldı ve rapor yayınlandı (kod değişikliği yok)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur'un "siteyi denetle, 20.000 USD'lik bir site gibi görünmesi/çalışması için öneri sun" talebi üzerine.
+- **Kapsam:** 1.318 HTML sayfa, 5 JS, 664 varlık dosyası (2,60 GiB), 16.050 iç link üç paralel kolda denetlendi (teknik SEO / performans-varlık / UX-dönüşüm-erişilebilirlik). Hiçbir site dosyası değiştirilmedi; çıktı salt rapor.
+- **Öne çıkan kritik bulgular:** (K1) `.htaccess` hâlâ taslakta — tüm temiz URL'ler sunucuda HTTP 404 + JS yönlendirme hilesi; (K2) 1.126 blog URL'si hiçbir rewrite haritasında yok; (K3) eğitim formu veriyi hiçbir yere göndermiyor (sahte onay); (K4) çerez onayı + GA4 ana sayfa dahil 23 sayfada eksik; (K5) tam footer yalnız 3 sayfada; (K6) 99 Türkçe-karakterli mükerrer post çifti; (K7) ilk yükün %73,5'i tabler-icons woff2 (462 KB), gzip/cache yönergesi hiç yok; (K8) DesignJet sayfaları 10–14 MB görsel; (K9) 2,46 GiB referanssız ham varlık site kökünde.
+- **Çıktı:** `docs/SITE-DENETIM-RAPORU-2026-08-02.md` — 9 kritik + 12 yüksek + 20 orta/düşük bulgu, güçlü yönler ve 4 fazlık "20.000 USD sınıfı" yol haritası (Faz 0: dağıtım/form/analitik yangın söndürme · Faz 1: performans+SEO · Faz 2: dönüşüm+güven, Dynamics 365 form entegrasyonu · Faz 3: SSG+CI/CD). Rapor ayrıca bulut artifact olarak yayınlandı.
+- **Durum:** ✅ Rapor tamamlandı; düzeltmeler Onur'un faz onayını bekliyor.
+
 ### DK-2026-07-31-01 — SketchUp sayfası hataları düzeltildi + 4 eksik ürün sayfası oluşturuldu
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur'un `cadbim_sketchup.html` canlı önizlemesinde sırayla fark ettiği 3 görsel/içerik hatası üzerine.
