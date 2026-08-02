@@ -188,6 +188,7 @@ Yeni site içeriği güncel adlandırmayla yazıldı. Eski site ziyaretçisi/ara
 
 ## 8. Geçiş Günü Kontrol Listesi
 
+- [ ] **`docs/htaccess-taslak.txt` UTF-8 (BOM'suz) olarak `.htaccess` adıyla Natro cPanel'de site köküne yüklendi** — bu olmadan hiçbir temiz URL (`/autocad`, `/post/...` dahil) çalışmaz, tüm site bu tek adıma bağımlı. Yüklemeden önce staging'de test edilmeli (bkz. dosyanın kendi başlığındaki uyarı).
 - [ ] Host 301 motoru hazır (CSV → `_redirects` dönüşümü)
 - [ ] GOZDEN satırları Onur onayından geçti
 - [ ] Blog kararı verildi (A/B)

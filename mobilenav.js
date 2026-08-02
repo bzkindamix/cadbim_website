@@ -244,7 +244,7 @@
 
   var ICON = {
     "Ürün": "ti-box", "Çözüm": "ti-topology-star-3", "Sektör": "ti-building-factory-2",
-    "Kurumsal": "ti-building", "Hizmet": "ti-tools", "Yasal": "ti-file-shield",
+    "Kurumsal": "ti-building", "Hizmet": "ti-tools", "Yasal": "ti-gavel",
     "Sayfa": "ti-home"
   };
 

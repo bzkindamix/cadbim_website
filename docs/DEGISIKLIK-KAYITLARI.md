@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-08 — Tabler ikon fontu yerelleştirildi ve 289 ikona subset edildi (K7 tamamlandı)
+
+- **Yapan:** Claude (PDM asistanı) — Onur'un "fontTools'u kur, yap" talebi üzerine.
+- **Sorun:** Site, 5.193 ikonluk tam Tabler Icons webfont'unu CDN'den (`cdn.jsdelivr.net`) çekiyordu (`tabler-icons.min.css` ~21KB brotli + `tabler-icons.woff2` 462KB — sıkıştırılamaz, olduğu gibi iner) ama sitede yalnızca ~289 farklı ikon kullanılıyordu.
+- **Yapılan:** `pip install fonttools brotli` ile kuruldu. CDN'den tam `.ttf` kaynak font + CSS indirildi; site genelinde (`*.html` + `post/*.html`, statik grep) kullanılan ikon sınıfları çıkarıldı, CSS'teki `content:"\eXXX"` eşlemesiyle codepoint'lere bağlandı. Ayrıca `mobilenav.js`'in JS içinde dinamik ürettiği arama/menü ikonları (`ti-box`, `ti-building`, `ti-file`, `ti-home`, `ti-mail`, `ti-phone`, `ti-search`, `ti-send`, `ti-tools`, `ti-topology-star-3`, `ti-x` vb.) da statik HTML taramasına dahil değildi — ayrıca kontrol edilip eklendi. Bu taramada `mobilenav.js`'de var olan bir hata da ortaya çıktı: "Yasal" kategori ikonu olarak Tabler'da hiç var olmayan `ti-file-shield` kullanılıyordu (CDN'in tam setinde bile karşılığı yok) — anlamlı bir alternatif olan `ti-gavel` ile değiştirildi.
+- `python -m fontTools.subset` ile 289 codepoint'e göre `.ttf`'den `.woff2` subset üretildi (`assets/fonts/tabler-icons-subset.woff2`, 33,4KB) ve yalnızca bu 289 kuralı içeren yerel CSS yazıldı (`assets/css/tabler-icons-subset.css`, 11,6KB — sistemin `@font-face` + `.ti` taban kuralı + her ikon için `.ti-xxx:before{content:"\eXXX"}`).
+- **1.319 sayfadaki CDN linki** (`<link rel="stylesheet" href="https://cdn.jsdelivr.net/...">`) yerel dosyaya çevrildi (kök: `assets/css/...`, post: `../assets/css/...`).
+- **Kazanç:** ~483KB (woff2 462KB + CSS ~21KB) → ~45KB (font 33,4KB + CSS 11,6KB, gzip'le daha da düşer) — tek sayfa ilk yükünde **~%91 azalma**, CDN bağımlılığı (DNS/TLS/round-trip) tamamen kalktı.
+- **Doğrulama:** Font glyph'leri canvas piksel testiyle doğrulandı (4 farklı ikon, her biri farklı piksel deseniyle doğru render oluyor; subset dışı rastgele bir codepoint boş dönüyor — subsetleme doğru çalışıyor). Kök ve post sayfalarında ağ isteği 200 OK, konsol hatası yok. `cdn.jsdelivr.net` referansı sitede 0'a indi.
+- **Bakım notu:** Yeni bir ikon sınıfı eklenirse bu subset'in yeniden üretilmesi gerekir (üretim script'leri `scratchpad`'de, tekrarlanabilir hale getirilmedi — sonraki oturumda `docs/`'a taşınabilir).
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-02-07 — Görsel/video ağırlığı büyük ölçüde düşürüldü (K7/K8 kısmen tamamlandı)
 
 - **Yapan:** Claude (PDM asistanı) — Onur'un "yapamadıkların" listesindeki görsel/font işleme gerekçesini sorgulaması üzerine önce gerçekten araç olup olmadığı kontrol edildi (ffmpeg ve Python Pillow mevcut çıktı — ImageMagick/cwebp/fontTools yok), bulunan araçlarla yapılabilecek her şey yapıldı.
