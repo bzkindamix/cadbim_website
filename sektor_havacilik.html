@@ -217,6 +217,62 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="assets/css/design-system.css?v=11">
+<style>
+/* === SEKTOR GECIS SERIDI ============================================== */
+.secnav{position:sticky;top:68px;z-index:100;margin-top:68px;background:rgba(10,18,37,.94);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.secnav-inner{position:relative;max-width:1180px;margin:0 auto;}
+.secnav-inner::after{content:'';position:absolute;top:0;right:0;bottom:0;width:52px;background:linear-gradient(90deg,transparent,rgba(10,18,37,.96));pointer-events:none;opacity:0;transition:opacity .25s;}
+.secnav-inner.has-more::after{opacity:1;}
+.secnav-track{display:flex;gap:9px;overflow-x:auto;padding:13px 0;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x proximity;}
+.secnav-track::-webkit-scrollbar{display:none;}
+.sec-card{position:relative;overflow:hidden;isolation:isolate;flex:0 0 auto;scroll-snap-align:start;display:flex;align-items:center;gap:11px;padding:9px 20px 9px 10px;border-radius:14px;border:.5px solid var(--w10);background:var(--navy3);text-decoration:none;transition:border-color .25s,transform .25s,background .25s,box-shadow .25s;}
+.sec-card::after{content:'';position:absolute;inset:0;z-index:-1;background-image:var(--art);background-size:auto 205%;background-position:right -14px center;background-repeat:no-repeat;opacity:0;transform:scale(1.2) translateX(10px);transition:opacity .4s ease,transform .9s cubic-bezier(.16,.8,.3,1);}
+.sec-card:hover{border-color:var(--sc);transform:translateY(-3px);background:#101d3a;box-shadow:0 10px 26px rgba(0,0,0,.35);}
+.sec-card:hover::after{opacity:.72;transform:scale(1) translateX(0);}
+.sec-ico{position:relative;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px;color:var(--sc);background:var(--scbg);flex-shrink:0;transition:transform .35s cubic-bezier(.16,.8,.3,1),box-shadow .25s;}
+.sec-card:hover .sec-ico{transform:scale(1.09) rotate(-4deg);box-shadow:0 0 0 1px var(--sc) inset;}
+.sec-name{position:relative;font-size:13.5px;font-weight:600;color:var(--w80);white-space:nowrap;transition:color .2s;}
+.sec-card:hover .sec-name{color:var(--w);}
+.sec-card.active{border-color:var(--sc);background:linear-gradient(180deg,rgba(255,255,255,.05),transparent),var(--navy3);}
+.sec-card.active .sec-ico{box-shadow:0 0 0 1px var(--sc) inset;}
+.sec-card.active .sec-name{color:var(--w);}
+.sec-bar{position:absolute;left:10px;right:10px;bottom:0;height:2px;border-radius:2px 2px 0 0;background:var(--sc);}
+@media(prefers-reduced-motion:reduce){.sec-card,.sec-card::after,.sec-ico{transition:none;}}
+
+/* === HERO GORSELI ===================================================== */
+.hero{padding:40px 3rem 56px;}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center;position:relative;z-index:1;}
+.hero-art{position:relative;border-radius:var(--rxl);border:.5px solid var(--w10);background:linear-gradient(165deg,rgba(255,255,255,.045),transparent 55%),var(--navy2);overflow:hidden;}
+.hero-art::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 72% 18%,rgba(165,180,252,.16),transparent 72%);}
+.hero-art img{display:block;width:100%;height:auto;}
+
+/* === MARKA SERIDI ===================================================== */
+.brands{padding:56px 3rem;background:var(--navy2);border-top:.5px solid var(--w06);border-bottom:.5px solid var(--w06);}
+.brand-stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:12px;}
+.brand-row{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,0.03);border:.5px solid rgba(255,255,255,0.08);border-radius:var(--rm);font-size:12px;color:var(--w50);transition:border-color .2s;}
+.brand-row:hover{border-color:var(--cbor);}
+.brand-name{font-weight:600;color:var(--w80);font-size:13px;}
+.partner-note{margin-top:16px;padding:13px 16px;background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rm);font-size:12.5px;color:var(--w50);line-height:1.6;}
+
+/* === COZUM PILL SATIRI ================================================ */
+.sol-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.sol-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:12px;background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:border-color .2s,color .2s,transform .2s;}
+.sol-pill:hover{border-color:var(--cbor);color:var(--w);transform:translateY(-2px);}
+.sol-pill i{font-size:13px;color:var(--cyan);}
+
+/* === ORTAK YERLESIM =================================================== */
+.section{padding:56px 3rem;}
+.hero-inner,.hero>.crumb,.brands>*,.solutions>*{max-width:1180px;margin-left:auto;margin-right:auto;}
+.secnav{padding:0 3rem;}
+
+@media(max-width:960px){
+  .hero{padding:32px 1.5rem 44px;}
+  .hero-inner{grid-template-columns:1fr;gap:2rem;}
+  .secnav{padding:0 1.5rem;}
+  .brands{padding:44px 1.5rem;}
+  .section{padding:44px 1.5rem;}
+}
+</style>
 </head>
 <body>
 <nav class="nav">
@@ -301,12 +357,36 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </ul>
 </nav>
 
+<nav class="secnav" aria-label="Endüstriler">
+  <div class="secnav-inner">
+  <div class="secnav-track" id="secnavTrack">
+    <a href="sektor-mimari" class="sec-card" style="--sc:#818cf8;--scbg:rgba(129,140,248,.13);--art:url(assets/img/sektor/mimari.svg);"><span class="sec-ico"><i class="ti ti-building"></i></span><span class="sec-name">Mimarlık</span></a>
+    <a href="sektor-insaat" class="sec-card" style="--sc:#22c55e;--scbg:rgba(34,197,94,.13);--art:url(assets/img/sektor/insaat.svg);"><span class="sec-ico"><i class="ti ti-crane"></i></span><span class="sec-name">İnşaat &amp; Altyapı</span></a>
+    <a href="sektor-makine" class="sec-card" style="--sc:#f59e0b;--scbg:rgba(245,158,11,.13);--art:url(assets/img/sektor/makine.svg);"><span class="sec-ico"><i class="ti ti-settings"></i></span><span class="sec-name">Makine &amp; Üretim</span></a>
+    <a href="sektor-otomotiv" class="sec-card" style="--sc:#ef4444;--scbg:rgba(239,68,68,.13);--art:url(assets/img/sektor/otomotiv.svg);"><span class="sec-ico"><i class="ti ti-car"></i></span><span class="sec-name">Otomotiv</span></a>
+    <a href="sektor-medya" class="sec-card" style="--sc:#c084fc;--scbg:rgba(192,132,252,.13);--art:url(assets/img/sektor/medya.svg);"><span class="sec-ico"><i class="ti ti-movie"></i></span><span class="sec-name">Medya &amp; Eğlence</span></a>
+    <a href="sektor-egitim" class="sec-card" style="--sc:#38bdf8;--scbg:rgba(56,189,248,.13);--art:url(assets/img/sektor/egitim.svg);"><span class="sec-ico"><i class="ti ti-school"></i></span><span class="sec-name">Eğitim</span></a>
+    <a href="sektor-havacilik" class="sec-card active" aria-current="page" style="--sc:#a5b4fc;--scbg:rgba(165,180,252,.13);--art:url(assets/img/sektor/havacilik.svg);"><span class="sec-ico"><i class="ti ti-plane"></i></span><span class="sec-name">Havacılık &amp; Savunma</span><span class="sec-bar"></span></a>
+  </div>
+  </div>
+</nav>
+<script>
+(function(){var t=document.getElementById("secnavTrack");if(!t)return;
+  var a=t.querySelector(".sec-card.active");
+  if(a&&t.scrollWidth>t.clientWidth){
+    t.scrollLeft=Math.max(0,a.offsetLeft-(t.clientWidth-a.offsetWidth)/2);}
+  function upd(){t.parentNode.classList.toggle("has-more",
+    t.scrollLeft+t.clientWidth<t.scrollWidth-2);}
+  t.addEventListener("scroll",upd,{passive:true});
+  window.addEventListener("resize",upd);upd();})();
+</script>
+
 <section class="hero">
   <div class="hero-bg" style="background:radial-gradient(ellipse 70% 50% at 20% 0%,rgba(165,180,252,0.1) 0%,transparent 60%);"></div>
   <div class="hero-grid"></div>
-  <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="endustriler">Endüstriler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Havacılık & Savunma</span></div>
-    <div style="max-width:720px;">
+  <div class="hero-inner">
+    <div>
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#a5b4fc;margin-bottom:12px;">Endüstri</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:#a5b4fc1f;display:flex;align-items:center;justify-content:center;border:.5px solid #a5b4fc40;">
@@ -314,17 +394,119 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
         </div>
         <h1 style="font-family:var(--fd);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;line-height:1.1;color:var(--w);">Havacılık ve Savunma için Tam Çözüm Portföyü</h1>
       </div>
-      <p style="font-size:16px;color:var(--w50);line-height:1.75;margin-bottom:32px;max-width:600px;">Yüksek hassasiyetli tasarım, simülasyon, izlenebilir eklemeli imalat ve veri güvenliği — savunma sanayii tedarik zincirinin yazılım ve donanım altyapısı.</p>
+      <p style="font-size:16px;color:var(--w50);line-height:1.75;margin-bottom:32px;">Yüksek hassasiyetli tasarım, simülasyon, izlenebilir eklemeli imalat ve veri güvenliği — savunma sanayii tedarik zincirinin yazılım ve donanım altyapısı.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
         <a href="iletisim" class="btn-p">Uzmanla Konuş <i class="ti ti-arrow-right"></i></a>
         <a href="egitimler" class="btn-g">Eğitim Programları</a>
       </div>
     </div>
+    <div class="hero-art">
+      <img src="assets/img/sektor/havacilik.svg" alt="Havacılık ve savunma iş akışı — uçak sonlu eleman ağı şeması" width="640" height="420" decoding="async">
+    </div>
   </div>
 </section>
+
+<section class="section section-alt">
+  <div class="sh"><div class="slabel">Çözüm Alanları</div><div class="stitle">Havacılık & Savunma İçin Neler Sunuyoruz?</div></div>
+  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-settings-2" style="color:#a5b4fc;"></i></div><h3>Hassas Parça Tasarımı</h3><p>Inventor ve Fusion ile tolerans kritik parça ve montaj tasarımı.</p></div><div class="card"><div class="card-icon"><i class="ti ti-chart-dots-3" style="color:#a5b4fc;"></i></div><h3>Simülasyon & Doğrulama</h3><p>Nastran, CFD ve Moldflow ile sanal test döngüleri.</p></div><div class="card"><div class="card-icon"><i class="ti ti-printer-3d" style="color:#a5b4fc;"></i></div><h3>İzlenebilir Eklemeli İmalat</h3><p>Factor 4 Plus ile sahada, talep anında, kayıtlı parça üretimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-database" style="color:#a5b4fc;"></i></div><h3>Güvenli Veri Yönetimi</h3><p>Vault PDM ile revizyon kontrolü ve erişim güvenliği.</p></div><div class="card"><div class="card-icon"><i class="ti ti-tool" style="color:#a5b4fc;"></i></div><h3>5 Eksen CAM</h3><p>PowerMill ile havacılık alaşımlarında ileri talaşlı imalat.</p></div><div class="card"><div class="card-icon"><i class="ti ti-shield-check" style="color:#a5b4fc;"></i></div><h3>Uyumluluk Danışmanlığı</h3><p>Savunma tedarik gereksinimlerine uygun yazılım altyapısı.</p></div></div>
+</section>
+
+<section data-enrich style="padding:64px 3rem;background:#0a1225;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">İş Akışı</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:800;color:#fff;margin-bottom:8px;">Gereksinimden Bakıma İzlenebilir Süreç</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 28px;max-width:640px;">Bu sektörde kullandığımız araç zinciri, sürecin her halkasını bir öncekine bağlar — veri kopmadan akar.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;">
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">01</div>
+    <i class="ti ti-clipboard-check" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Gereksinim & Uyum</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Standartlara uygun tasarım altyapısının kurulması.</p>
+    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #a5b4fc44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#a5b4fc;"></i></div>
+  </div>
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">02</div>
+    <i class="ti ti-settings-2" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Tasarım & Analiz</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Inventor/Nastran ile hassas parça geliştirme.</p>
+    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #a5b4fc44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#a5b4fc;"></i></div>
+  </div>
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">03</div>
+    <i class="ti ti-chart-dots-3" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Doğrulama</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Simülasyon + fiziksel test korelasyonu.</p>
+    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #a5b4fc44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#a5b4fc;"></i></div>
+  </div>
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">04</div>
+    <i class="ti ti-building-factory-2" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">İzlenebilir Üretim</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Factor 4 ile kayıtlı eklemeli imalat, CAM ile talaşlı üretim.</p>
+    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #a5b4fc44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#a5b4fc;"></i></div>
+  </div>
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">05</div>
+    <i class="ti ti-tool" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Bakım & MRO</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Teknik dokümantasyon ve yedek parça stratejisi.</p>
+    
+  </div></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="sh" style="margin-bottom:22px;">
+    <div class="slabel">Çözümler</div>
+    <div class="stitle" style="font-size:1.15rem;">İlgili çözüm alanları</div>
+    <p class="ssub">Bu sektöre hizmet eden Cadbim çözümleri</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-printer-3d"></i></div>
+      <h3><a href="eklemeli-imalat" style="color:inherit;text-decoration:none;">Eklemeli İmalat</a></h3>
+      <p>Hafif parça ve prototip üretimi için eklemeli imalat çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-dots-3"></i></div>
+      <h3><a href="simulasyon" style="color:inherit;text-decoration:none;">Simülasyon & Analiz</a></h3>
+      <p>Yapısal, termal ve akışkan analizleriyle tasarım doğrulama çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-tool"></i></div>
+      <h3><a href="cam" style="color:inherit;text-decoration:none;">CAM & İmalat</a></h3>
+      <p>CNC programlama ve talaşlı imalat süreçleri için CAM çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-database"></i></div>
+      <h3><a href="pdm" style="color:inherit;text-decoration:none;">PDM</a></h3>
+      <p>Ürün verilerinin merkezi, sürümlü ve güvenli yönetimi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="brands">
+  <div class="sh" style="margin-bottom:22px;">
+    <div class="slabel">Markalar</div>
+    <div class="stitle">Bu sektörde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner, HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="brand-stack"><div class="brand-row">
+          <div style="width:28px;height:28px;border-radius:6px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></div>
+          <div><div class="brand-name">Autodesk</div><div style="font-size:11px;color:var(--w30);">Inventor, Fusion, Vault PDM, PowerMill, Moldflow</div></div>
+        </div><div class="brand-row">
+          <div style="width:28px;height:28px;border-radius:6px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy"></div>
+          <div><div class="brand-name">UltiMaker</div><div style="font-size:11px;color:var(--w30);">UltiMaker Factor 4</div></div>
+        </div><div class="brand-row">
+          <div style="width:28px;height:28px;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></div>
+          <div><div class="brand-name">HP</div><div style="font-size:11px;color:var(--w30);">HP Z Workstation</div></div>
+        </div></div>
+  <div class="partner-note"><i class="ti ti-shield-check" style="color:var(--cyan);margin-right:6px;"></i><strong style="color:var(--w80);">Cadbim Gold Partner</strong> — Autodesk, Adobe, HP ve UltiMaker için tek yetkili çözüm ortağı.</div>
+</section>
+
 <section class="section" style="padding-top:0;">
   <div class="cross">
-    <h3>Bu sektörde kullanılan ürünler</h3>
+    <h3>Havacılık &amp; Savunma için kullandığımız ürünler</h3>
     <p class="cd">İlgili yazılım ve donanım sayfaları</p>
       <div class="pfilter" id="pfilter" style="position:static;padding:14px 0 4px;">
     <button class="fchip active" data-f="all">Tümü</button>
@@ -370,56 +552,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div>
 </section>
 
-<section class="section section-alt">
-  <div class="sh"><div class="slabel">Çözüm Alanları</div><div class="stitle">Havacılık & Savunma İçin Neler Sunuyoruz?</div></div>
-  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-settings-2" style="color:#a5b4fc;"></i></div><h3>Hassas Parça Tasarımı</h3><p>Inventor ve Fusion ile tolerans kritik parça ve montaj tasarımı.</p></div><div class="card"><div class="card-icon"><i class="ti ti-chart-dots-3" style="color:#a5b4fc;"></i></div><h3>Simülasyon & Doğrulama</h3><p>Nastran, CFD ve Moldflow ile sanal test döngüleri.</p></div><div class="card"><div class="card-icon"><i class="ti ti-printer-3d" style="color:#a5b4fc;"></i></div><h3>İzlenebilir Eklemeli İmalat</h3><p>Factor 4 Plus ile sahada, talep anında, kayıtlı parça üretimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-database" style="color:#a5b4fc;"></i></div><h3>Güvenli Veri Yönetimi</h3><p>Vault PDM ile revizyon kontrolü ve erişim güvenliği.</p></div><div class="card"><div class="card-icon"><i class="ti ti-tool" style="color:#a5b4fc;"></i></div><h3>5 Eksen CAM</h3><p>PowerMill ile havacılık alaşımlarında ileri talaşlı imalat.</p></div><div class="card"><div class="card-icon"><i class="ti ti-shield-check" style="color:#a5b4fc;"></i></div><h3>Uyumluluk Danışmanlığı</h3><p>Savunma tedarik gereksinimlerine uygun yazılım altyapısı.</p></div></div>
-</section>
-
-
-
-<section data-enrich style="padding:64px 3rem;background:#0a1225;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">İş Akışı</div>
-    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:800;color:#fff;margin-bottom:8px;">Gereksinimden Bakıma İzlenebilir Süreç</div>
-    <p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 28px;max-width:640px;">Bu sektörde kullandığımız araç zinciri, sürecin her halkasını bir öncekine bağlar — veri kopmadan akar.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;">
-  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
-    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">01</div>
-    <i class="ti ti-clipboard-check" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
-    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Gereksinim & Uyum</h3>
-    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Standartlara uygun tasarım altyapısının kurulması.</p>
-    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #a5b4fc44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#a5b4fc;"></i></div>
-  </div>
-  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
-    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">02</div>
-    <i class="ti ti-settings-2" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
-    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Tasarım & Analiz</h3>
-    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Inventor/Nastran ile hassas parça geliştirme.</p>
-    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #a5b4fc44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#a5b4fc;"></i></div>
-  </div>
-  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
-    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">03</div>
-    <i class="ti ti-chart-dots-3" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
-    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Doğrulama</h3>
-    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Simülasyon + fiziksel test korelasyonu.</p>
-    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #a5b4fc44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#a5b4fc;"></i></div>
-  </div>
-  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
-    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">04</div>
-    <i class="ti ti-building-factory-2" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
-    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">İzlenebilir Üretim</h3>
-    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Factor 4 ile kayıtlı eklemeli imalat, CAM ile talaşlı üretim.</p>
-    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #a5b4fc44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#a5b4fc;"></i></div>
-  </div>
-  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#a5b4fc0f,transparent 55%),#0d1830;border:.5px solid #a5b4fc33;border-radius:14px;padding:20px 18px;position:relative;">
-    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#a5b4fc22;">05</div>
-    <i class="ti ti-tool" style="font-size:22px;color:#a5b4fc;display:block;margin-bottom:12px;"></i>
-    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Bakım & MRO</h3>
-    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Teknik dokümantasyon ve yedek parça stratejisi.</p>
-    
-  </div></div>
-  </div>
-</section>
 <section data-enrich style="padding:64px 3rem;background:#0a1225;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Çalışma Modelimiz</div>
@@ -458,36 +590,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Sürekli Destek</h3>
     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Türkçe teknik destek, yıllık sağlık kontrolü ve yenileme planlamasıyla yanınızdayız.</p>
   </div></div>
-  </div>
-</section>
-
-<section class="section" style="padding-top:0;">
-  <div class="sh" style="margin-bottom:22px;">
-    <div class="slabel">İlgili Çözümler</div>
-    <div class="stitle" style="font-size:1.15rem;">İlgili çözüm alanları</div>
-    <p class="ssub">Bu sektöre hizmet eden Cadbim çözümleri</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <div class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-printer-3d"></i></div>
-      <h3><a href="eklemeli-imalat" style="color:inherit;text-decoration:none;">Eklemeli İmalat</a></h3>
-      <p>Hafif parça ve prototip üretimi için eklemeli imalat çözümleri.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-dots-3"></i></div>
-      <h3><a href="simulasyon" style="color:inherit;text-decoration:none;">Simülasyon & Analiz</a></h3>
-      <p>Yapısal, termal ve akışkan analizleriyle tasarım doğrulama çözümleri.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-tool"></i></div>
-      <h3><a href="cam" style="color:inherit;text-decoration:none;">CAM & İmalat</a></h3>
-      <p>CNC programlama ve talaşlı imalat süreçleri için CAM çözümleri.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-database"></i></div>
-      <h3><a href="pdm" style="color:inherit;text-decoration:none;">PDM</a></h3>
-      <p>Ürün verilerinin merkezi, sürümlü ve güvenli yönetimi.</p>
-    </div>
   </div>
 </section>
 
@@ -532,6 +634,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     <a href="egitimler" class="btn-g">Eğitim Programları</a>
   </div>
 </div>
+
 <footer id="iletisim">
   <div class="footer-grid">
     <div class="f-brand">

@@ -46,9 +46,13 @@ h1{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:800;line-hei
 .hero p.sub{font-size:16px;color:var(--w50);max-width:640px;line-height:1.75;position:relative;z-index:1;}
 .section{padding:20px 3rem 80px;}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;}
-.sol-card{display:block;background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:28px 26px;text-decoration:none;transition:border-color .2s,transform .15s;}
-.sol-card:hover{border-color:var(--cbor);transform:translateY(-3px);}
-.sol-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;}
+.sol-card{position:relative;overflow:hidden;isolation:isolate;display:block;background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:28px 26px;text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s;}
+.sol-card::after{content:'';position:absolute;inset:0;z-index:-1;background-image:var(--art);background-size:auto 118%;background-position:right -26px bottom -18px;background-repeat:no-repeat;opacity:0;transform:scale(1.14) translate(14px,10px);transition:opacity .45s ease,transform 1s cubic-bezier(.16,.8,.3,1);}
+.sol-card:hover{border-color:var(--sc,var(--cbor));transform:translateY(-4px);box-shadow:0 14px 34px rgba(0,0,0,.4);}
+.sol-card:hover::after{opacity:.5;transform:scale(1) translate(0,0);}
+.sol-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;transition:transform .35s cubic-bezier(.16,.8,.3,1);}
+.sol-card:hover .sol-icon{transform:scale(1.08) rotate(-4deg);}
+@media(prefers-reduced-motion:reduce){.sol-card,.sol-card::after,.sol-icon{transition:none;}}
 .sol-card h3{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--w);margin-bottom:8px;}
 .sol-card p{font-size:13px;color:var(--w50);line-height:1.65;margin-bottom:14px;}
 .sol-meta{display:flex;flex-wrap:wrap;gap:6px;}
@@ -253,7 +257,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 <section class="section">
   <div class="grid">
 
-    <a href="sektor-mimari" class="sol-card">
+    <a href="sektor-mimari" class="sol-card" style="--sc:#818cf8;--art:url(assets/img/sektor/mimari.svg);">
       <div class="sol-icon" style="background:rgba(129,140,248,0.12);color:#818cf8;"><i class="ti ti-building"></i></div>
       <h3>Mimarlık</h3>
       <p>Konseptten teslimata — BIM, görselleştirme, koordinasyon ve baskı için tam portföy.</p>
@@ -263,7 +267,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <div class="sol-arrow">Sektöre Git <i class="ti ti-arrow-right"></i></div>
     </a>
 
-    <a href="sektor-insaat" class="sol-card">
+    <a href="sektor-insaat" class="sol-card" style="--sc:#22c55e;--art:url(assets/img/sektor/insaat.svg);">
       <div class="sol-icon" style="background:rgba(34,197,94,0.12);color:#22c55e;"><i class="ti ti-crane"></i></div>
       <h3>İnşaat & Altyapı</h3>
       <p>Tasarımdan sahaya — altyapı, yapı, koordinasyon ve saha yönetimi için tam çözüm seti.</p>
@@ -273,7 +277,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <div class="sol-arrow">Sektöre Git <i class="ti ti-arrow-right"></i></div>
     </a>
 
-    <a href="sektor-makine" class="sol-card">
+    <a href="sektor-makine" class="sol-card" style="--sc:#f59e0b;--art:url(assets/img/sektor/makine.svg);">
       <div class="sol-icon" style="background:rgba(245,158,11,0.12);color:#f59e0b;"><i class="ti ti-settings"></i></div>
       <h3>Makine & Üretim</h3>
       <p>Tasarımdan üretime — CAD, CAM, simülasyon, 3D baskı ve veri yönetimi tek entegre ekosistemde.</p>
@@ -283,7 +287,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <div class="sol-arrow">Sektöre Git <i class="ti ti-arrow-right"></i></div>
     </a>
 
-    <a href="sektor-otomotiv" class="sol-card">
+    <a href="sektor-otomotiv" class="sol-card" style="--sc:#ef4444;--art:url(assets/img/sektor/otomotiv.svg);">
       <div class="sol-icon" style="background:rgba(239,68,68,0.12);color:#ef4444;"><i class="ti ti-car"></i></div>
       <h3>Otomotiv</h3>
       <p>Konsept tasarımdan üretim yüzeyine — otomotiv stüdyosunun endüstri standardı araçları.</p>
@@ -293,7 +297,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <div class="sol-arrow">Sektöre Git <i class="ti ti-arrow-right"></i></div>
     </a>
 
-    <a href="sektor-medya" class="sol-card">
+    <a href="sektor-medya" class="sol-card" style="--sc:#c084fc;--art:url(assets/img/sektor/medya.svg);">
       <div class="sol-icon" style="background:rgba(192,132,252,0.12);color:#c084fc;"><i class="ti ti-movie"></i></div>
       <h3>Medya & Eğlence</h3>
       <p>Film, VFX, animasyon ve oyun üretimi — Academy Award ve Engineering Emmy sahibi araçlarla.</p>
@@ -303,7 +307,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <div class="sol-arrow">Sektöre Git <i class="ti ti-arrow-right"></i></div>
     </a>
 
-    <a href="sektor-egitim" class="sol-card">
+    <a href="sektor-egitim" class="sol-card" style="--sc:#38bdf8;--art:url(assets/img/sektor/egitim.svg);">
       <div class="sol-icon" style="background:rgba(56,189,248,0.12);color:#38bdf8;"><i class="ti ti-school"></i></div>
       <h3>Eğitim</h3>
       <p>Autodesk, Adobe ve SketchUp akademik lisanslama, UltiMaker 3B baskı laboratuvarları, HP donanım ve ATC eğitmen eğitimi.</p>
@@ -313,7 +317,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <div class="sol-arrow">Sektöre Git <i class="ti ti-arrow-right"></i></div>
     </a>
 
-    <a href="sektor-havacilik" class="sol-card">
+    <a href="sektor-havacilik" class="sol-card" style="--sc:#a5b4fc;--art:url(assets/img/sektor/havacilik.svg);">
       <div class="sol-icon" style="background:rgba(165,180,252,0.12);color:#a5b4fc;"><i class="ti ti-plane"></i></div>
       <h3>Havacılık & Savunma</h3>
       <p>Autodesk tasarım/simülasyon yazılımları, UltiMaker Factor 4 ile izlenebilir eklemeli imalat, PDM/PLM veri yönetimi ve HP donanım.</p>
