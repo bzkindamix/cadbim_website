@@ -4,6 +4,15 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-05 — Yerel önizleme sunucusu temiz URL'leri artık çözüyor
+
+- **Yapan:** Onur Bozok "hiç bir link çalışmıyor?" diye sorunca Claude (PDM asistanı) teşhis etti ve düzeltti.
+- **Sorun:** Yerel önizleme (`.claude/launch.json` → `python -m http.server 8420`) düz bir statik dosya sunucusu; site ise her yerde uzantısız temiz URL kullanıyor (`href="autodesk"` vb. — gerçek dosya `cadbim_autodesk.html`). Canlıda bunu `404.html`'deki JS haritası (tarayıcı tarafı yönlendirme) kurtarıyor, ama bu numara sunucunun 404 yanıtına özel bir gövde koymasını gerektiriyor — Python'un `http.server`'ı bunu yapmıyor, düz 404 dönüyor. Sonuç: yerelde nav/footer'daki hemen hemen her link kırık görünüyordu (K1 bulgusunun yerel önizlemedeki yansıması).
+- **Düzeltme:** `dev_server.py` (yeni, kök) — `http.server`'ı `docs/htaccess-taslak.txt` ile aynı mantıkla genişletiyor: `/slug` isteğini `404.html`'deki MAP'i (tek doğru kaynak, ayrıştırılıyor) kullanarak `cadbim_slug.html`'e, `/post/slug` isteğini `post/slug.html`'e çeviriyor; eşleşme yoksa normal 404. `.claude/launch.json`'daki `cadbim-static` girdisi bu betiği çalıştıracak şekilde güncellendi (git'e girmez, sadece yerel — kalıcılık için not edildi).
+- **Doğrulama:** `/autodesk`, `/egitimler`, `/post/3d-gorunum`, `/teklif-iste` artık 200 dönüyor; var olmayan bir slug hâlâ 404 dönüyor (yanlış-pozitif yok). Tarayıcıda nav'dan "Eğitimler"e tıklanıp doğru sayfaya gittiği doğrulandı.
+- **Not:** Bu değişiklik canlı siteyi etkilemez — sadece yerel geliştirme/test deneyimini düzeltir. Canlıda gerçek çözüm hâlâ K1: `docs/htaccess-taslak.txt`'in Natro'ya kurulması.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-03-04 — Tüm `<img>` etiketlerine width/height eklendi + bozuk adobe.svg düzeltildi (Y11 tamamlandı)
 
 - **Yapan:** Onur Bozok'un "devam" talebi üzerine Claude (PDM asistanı).
