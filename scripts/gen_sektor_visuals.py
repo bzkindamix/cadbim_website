@@ -63,6 +63,10 @@ def head(accent):
 @keyframes sp{to{transform:rotate(360deg)}}
 .float{animation:fo 9s ease-in-out infinite}
 @keyframes fo{0%%,100%%{transform:translateY(0)}50%%{transform:translateY(-9px)}}
+.slide{animation:sl 8s cubic-bezier(.55,0,.45,1) infinite}
+@keyframes sl{0%%,6%%{transform:translateX(0)}94%%,100%%{transform:translateX(var(--d,480px))}}
+.comb{animation:cb 6s ease-in-out infinite}
+@keyframes cb{0%%,100%%{opacity:.45}50%%{opacity:.95}}
 </style>
 <rect width="%d" height="%d" fill="url(#g)"/>
 <rect width="%d" height="%d" fill="url(#glow)"/>
@@ -243,9 +247,89 @@ def makine():
 
 
 # --------------------------------------------------------------------------
-CAR = ("M78 292 C78 258 96 236 132 226 L186 210 C214 168 258 148 316 148 "
-       "C374 148 420 164 452 200 L520 216 C560 226 578 248 578 288 "
-       "L578 300 L78 300 Z")
+def _bez(p, t):
+    mt = 1 - t
+    return tuple(mt ** 3 * p[0][i] + 3 * mt * mt * t * p[1][i]
+                 + 3 * mt * t * t * p[2][i] + t ** 3 * p[3][i] for i in (0, 1))
+
+
+def _bez_d(p, t):
+    mt = 1 - t
+    return tuple(3 * mt * mt * (p[1][i] - p[0][i]) + 6 * mt * t * (p[2][i] - p[1][i])
+                 + 3 * t * t * (p[3][i] - p[2][i]) for i in (0, 1))
+
+
+def _bez_dd(p, t):
+    mt = 1 - t
+    return tuple(6 * mt * (p[2][i] - 2 * p[1][i] + p[0][i])
+                 + 6 * t * (p[3][i] - 2 * p[2][i] + p[1][i]) for i in (0, 1))
+
+
+def curvature_comb(p, n=30, scale=2600.0, cap=54.0, cls="cy"):
+    """Alias/VRED tarzi egrilik taragi: egri boyunca normal yonunde tuyler."""
+    spikes, tips = [], []
+    for i in range(n + 1):
+        t = i / float(n)
+        pt = _bez(p, t)
+        d = _bez_d(p, t)
+        dd = _bez_dd(p, t)
+        sp = math.hypot(d[0], d[1]) or 1e-6
+        k = abs(d[0] * dd[1] - d[1] * dd[0]) / sp ** 3
+        ln = min(cap, 6 + k * scale)
+        nx, ny = d[1] / sp, -d[0] / sp      # normal — yuzeyden disari
+        tip = (pt[0] + nx * ln, pt[1] + ny * ln)
+        tips.append(tip)
+        spikes.append('<line x1="%s" y1="%s" x2="%s" y2="%s"/>'
+                      % (f(pt[0]), f(pt[1]), f(tip[0]), f(tip[1])))
+    out = ('<g class="%s comb" stroke-opacity=".5" stroke-width=".9">%s</g>'
+           % (cls, "".join(spikes)))
+    out += '<polyline class="%s" points="%s" stroke-opacity=".8"/>' % (cls, pts(tips))
+    return out
+
+
+# --- otomotiv yan gorunus geometrisi -------------------------------------
+# Gercekci oranlar: uzunluk 516, yukseklik 150 (0.29), dingil mesafesi 300
+# (0.58), tekerlek capi 80 (0.155), uzun kaput + alcak cam alani.
+GND, WCY, WR = 330, 290, 40          # zemin, tekerlek merkezi, tekerlek yaricapi
+WF, WR_X = 170, 470                  # on / arka tekerlek merkez x
+ROCKER = 300                         # marspiyel (govde alt hatti)
+BELT = 222                           # kemer hatti (cam alt kenari)
+
+CAR = ("M62 300 "
+       "C62 276 66 259 80 249 "          # on tampon / burun
+       "L118 237 "
+       "C162 228 210 222 248 217 "       # uzun kaput
+       "C268 207 288 191 306 179 "       # on cam
+       "L372 179 "                       # tavan (kisa — coupe)
+       "C424 181 464 199 492 220 "       # fastback arka cam
+       "L556 229 "
+       "C572 232 578 243 578 261 "       # arka panel
+       "L578 300 "
+       "H520 A50 50 0 0 0 420 300 "      # arka davlumbaz
+       "H220 A50 50 0 0 0 120 300 "      # on davlumbaz
+       "Z")
+ROOF = [(248, 217), (300, 170), (424, 176), (492, 220)]   # egrilik taragi egrisi
+
+
+def _wheel(cx, accent):
+    o = ('<circle class="ln" cx="%d" cy="%d" r="%d"/>'
+         '<circle class="ln2" cx="%d" cy="%d" r="%d"/>'
+         '<circle class="ln2" cx="%d" cy="%d" r="9"/>\n'
+         % (cx, WCY, WR, cx, WCY, WR - 9, cx, WCY))
+    for k in range(5):                       # jant kollari
+        ang = k * 2 * math.pi / 5 - math.pi / 2
+        x1, y1 = cx + 10 * math.cos(ang), WCY + 10 * math.sin(ang)
+        x2, y2 = cx + 29 * math.cos(ang), WCY + 29 * math.sin(ang)
+        w = 3.4
+        px, py = -math.sin(ang) * w, math.cos(ang) * w
+        o += ('<polygon class="ln2" points="%s" stroke-opacity=".4" fill="none"/>'
+              % pts([(x1 + px, y1 + py), (x2 + px * .4, y2 + py * .4),
+                     (x2 - px * .4, y2 - py * .4), (x1 - px, y1 - py)]))
+    # fren diski + kaliper
+    o += ('\n<path class="cy" d="M%d %d A21 21 0 0 1 %d %d" stroke-opacity=".55"/>'
+          '<path class="cy" d="M%d %d l7 -4 v-9 l-7 -4" stroke-opacity=".55" fill="none"/>\n'
+          % (cx - 21, WCY, cx, WCY - 21, cx - 20, WCY - 4))
+    return o
 
 
 def otomotiv():
@@ -253,84 +337,185 @@ def otomotiv():
     o = head(a)
     o += '<defs><clipPath id="carclip"><path d="%s"/></clipPath></defs>\n' % CAR
     o += '<g class="float">\n'
-    o += '<path class="fl" d="%s"/><path class="ln" d="%s"/>\n' % (CAR, CAR)
-    # yuzey agi — dusey kesit cizgileri
+    o += '<path class="fl" d="%s"/>\n' % CAR
+
+    # --- Class-A yuzey agi (govdeye kirpilmis izoparametrik egriler) ---
     o += '<g clip-path="url(#carclip)">'
-    for x in range(84, 580, 22):
-        o += '<path class="ln2" d="M%d 130 C%d 200 %d 240 %d 310" stroke-opacity=".26"/>' % (
-            x, x + 6, x - 6, x)
-    for y in range(160, 301, 20):
-        o += '<path class="ln2" d="M70 %d C240 %d 420 %d 590 %d" stroke-opacity=".2"/>' % (
-            y, y - 10, y - 6, y)
+    for x in range(66, 580, 16):
+        o += ('<path class="ln2" d="M%d 160 C%d 224 %d 268 %d 312" stroke-opacity=".2"/>'
+              % (x, x + 6, x - 6, x))
+    for y in range(186, 302, 13):
+        o += ('<path class="ln2" d="M56 %d C200 %d 430 %d 590 %d" stroke-opacity=".15"/>'
+              % (y, y - 11, y - 7, y))
     o += "</g>\n"
-    # karakter cizgileri
-    o += ('<path class="cy" d="M96 262 C220 244 420 244 566 264" stroke-opacity=".55"/>'
-          '<path class="ln2" d="M186 210 C260 190 396 190 452 200"/>'
-          '<path class="ln2" d="M262 152 V212 M372 150 V208"/>\n')
-    # tekerlekler
-    for cx in (186, 470):
-        o += ('<circle class="ln" cx="%d" cy="300" r="46"/>'
-              '<circle class="ln2" cx="%d" cy="300" r="28"/>'
-              '<circle class="ln2" cx="%d" cy="300" r="9"/>\n' % (cx, cx, cx))
-        for k in range(5):
-            ang = k * 2 * math.pi / 5
-            o += '<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".3"/>' % (
-                f(cx + 10 * math.cos(ang)), f(300 + 10 * math.sin(ang)),
-                f(cx + 27 * math.cos(ang)), f(300 + 27 * math.sin(ang)))
-        o += "\n"
+    o += '<path class="ln" d="%s"/>\n' % CAR
+
+    # --- cam alani (A-direk / yan cam / arka ceyrek cam) ---
+    g1 = ("M258 214 C276 202 292 188 308 178 L366 178 C374 196 376 208 376 216 Z")
+    g2 = ("M386 178 C424 181 456 197 480 216 L386 216 Z")
+    for gp in (g1, g2):
+        o += ('<path d="%s" fill="#0a1225" fill-opacity=".72"/>'
+              '<path class="ln" d="%s" stroke-opacity=".8"/>' % (gp, gp))
+    # cam yansimasi
+    o += ('\n<path class="cy" d="M272 206 L318 182 M292 210 L340 182" '
+          'stroke-opacity=".28" stroke-width="1"/>'
+          '<path class="cy" d="M404 192 L436 210" stroke-opacity=".28" stroke-width="1"/>\n')
+
+    # --- karakter hatlari, kapi ayrimi, detaylar ---
+    o += ('<path class="cy" d="M104 252 C210 246 380 250 528 262" stroke-opacity=".65"/>'
+          '<path class="ln2" d="M92 268 C220 276 400 278 556 272" stroke-opacity=".4"/>'
+          '<path class="ln2" d="M220 300 H420" stroke-opacity=".5"/>\n')
+    o += ('<path class="ln2" d="M381 176 V300" stroke-opacity=".45"/>'          # B-direk
+          '<path class="ln2" d="M256 218 C254 250 254 274 255 298" stroke-opacity=".45"/>'
+          '<path class="ln2" d="M484 222 C486 246 487 266 488 288" stroke-opacity=".45"/>'
+          '<rect class="ln2" x="344" y="234" width="26" height="7" rx="3.5" fill="none"/>'
+          '<path class="ln2" d="M262 210 l-16 -7 l-6 8 l16 6 Z" stroke-opacity=".6"/>\n')
+    # far / stop / hava girisi
+    o += ('<path class="cy" d="M74 244 L112 238 L110 250 L76 254 Z" stroke-opacity=".7"/>'
+          '<path class="cy" d="M566 240 L578 241 L578 254 L564 252 Z" stroke-opacity=".7"/>'
+          '<path class="ln2" d="M66 276 L104 272 M68 284 L100 281" stroke-opacity=".45"/>\n')
+
+    o += _wheel(WF, a) + _wheel(WR_X, a)
     o += "</g>\n"
-    o += '<path class="dim" d="M78 340 H578 M78 332 V348 M578 332 V348"/>\n'
-    for x, y in ((316, 148), (186, 210), (452, 200), (578, 288), (78, 292)):
-        o += node(x, y, 3)
-    o += "\n" + scanline(a, 80)
+
+    # --- Class-A denetimi: egrilik taragi + NURBS kontrol poligonu ---
+    o += curvature_comb(ROOF, scale=2100.0, cap=46.0) + "\n"
+    o += '<polyline class="dim" points="%s"/>' % pts(ROOF)
+    for x, y in ROOF:
+        o += ('<rect x="%s" y="%s" width="7" height="7" fill="none" '
+              'stroke="rgba(255,255,255,.55)" stroke-width="1"/>' % (f(x - 3.5), f(y - 3.5)))
+    o += "\n"
+
+    # --- kesit duzlemi ---
+    o += ('<g><ellipse class="cy" cx="330" cy="242" rx="17" ry="62" stroke-opacity=".4" '
+          'stroke-dasharray="5 5"/>'
+          '<line class="dim" x1="330" y1="150" x2="330" y2="344"/>'
+          '<text x="338" y="160" fill="rgba(255,255,255,.45)" font-size="10" '
+          'font-family="monospace" letter-spacing="1">SEC A-A</text></g>\n')
+
+    # --- olculer: dingil mesafesi + toplam uzunluk ---
+    o += ('<path class="dim" d="M170 362 H470 M170 354 V370 M470 354 V370"/>'
+          '<path class="dim" d="M62 390 H578 M62 382 V398 M578 382 V398"/>'
+          '<line class="dim" x1="62" y1="330" x2="578" y2="330"/>\n')
+    for x, y in ((306, 179), (372, 179), (248, 217), (492, 220), (62, 276), (578, 261)):
+        o += node(x, y, 2.8)
+    o += "\n" + scanline(a, 96)
     return o + TAIL
 
 
 # --------------------------------------------------------------------------
 def medya():
+    """Prodüksiyon sahnesi: film kamerası + render viewport + zaman çizelgesi."""
     a = "#c084fc"
     o = head(a)
-    cx, cy, r = 250, 190, 122
+
+    # ---------------- film kamerasi ----------------
     o += '<g class="float">\n'
-    o += '<circle class="ln" cx="%d" cy="%d" r="%d"/>\n' % (cx, cy, r)
-    # boylam
-    for k in range(1, 6):
-        rx = r * math.cos(k * math.pi / 6)
-        o += '<ellipse class="ln2" cx="%d" cy="%d" rx="%s" ry="%d"/>' % (cx, cy, f(abs(rx)), r)
-    o += "\n"
-    # enlem
-    for k in range(1, 6):
-        yy = cy - r + 2 * r * k / 6.0
-        rx = math.sqrt(max(r * r - (yy - cy) ** 2, 1))
-        o += '<ellipse class="ln2" cx="%d" cy="%s" rx="%s" ry="%s"/>' % (
-            cx, f(yy), f(rx), f(rx * .22))
-    o += "\n"
-    # render bucket kareleri
-    for i, (bx, by) in enumerate([(196, 128), (240, 128), (196, 172), (284, 216)]):
-        o += ('<rect class="cy blink" x="%d" y="%d" width="44" height="44" '
-              'fill="none" stroke-opacity=".6"/>' % (bx, by))
-    o += "\n</g>\n"
-    # film seridi (perspektif)
-    o += ('<g><path class="ln" d="M392 132 L610 108 L610 288 L392 312 Z"/>'
-          '<path class="ln2" d="M392 168 L610 146 M392 276 L610 252"/>\n')
-    for k in range(5):
-        t = k / 4.0
-        y0 = 132 + t * 180
-        y1 = 108 + t * 180
-        o += '<path class="ln2" d="M%s %s L%s %s" stroke-opacity=".25"/>' % (
-            f(392 + t * 218), f(y0 - t * 0), f(392 + t * 218), f(y1))
-    for k in range(6):
-        yy = 140 + k * 28
-        o += ('<rect class="ln2" x="398" y="%d" width="12" height="10" fill="none"/>'
-              '<rect class="ln2" x="590" y="%d" width="12" height="10" fill="none"/>'
-              % (yy, yy - 22))
+    for rx in (128, 208):                       # iki makara
+        o += ('<circle class="ln" cx="%d" cy="146" r="33"/>'
+              '<circle class="ln2" cx="%d" cy="146" r="24"/>'
+              '<circle class="ln" cx="%d" cy="146" r="8"/>\n' % (rx, rx, rx))
+        for k in range(5):
+            ang = k * 2 * math.pi / 5 + .4
+            o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".38"/>'
+                  % (f(rx + 9 * math.cos(ang)), f(146 + 9 * math.sin(ang)),
+                     f(rx + 23 * math.cos(ang)), f(146 + 23 * math.sin(ang))))
+        o += "\n"
+    o += ('<rect class="fl" x="98" y="178" width="152" height="78" rx="9"/>'
+          '<rect class="ln" x="98" y="192" width="152" height="78" rx="9" fill="none"/>'
+          '<rect class="ln2" x="110" y="190" width="42" height="26" rx="4" fill="none"/>'
+          '<path class="ln2" d="M110 232 h64 M110 242 h40"/>\n')
+    # vizor + objektif
+    o += ('<rect class="ln2" x="206" y="162" width="30" height="18" rx="4" fill="none"/>'
+          '<path class="ln" d="M250 196 L292 186 L292 248 L250 238 Z"/>'
+          '<circle class="ln" cx="292" cy="217" r="27"/>'
+          '<circle class="ln2" cx="292" cy="217" r="17"/>'
+          '<circle class="cy blink" cx="292" cy="217" r="7"/>\n')
     o += "</g>\n"
-    # ses dalgasi
-    for k in range(22):
-        hgt = 8 + 34 * abs(math.sin(k * .7)) * (0.5 + 0.5 * math.cos(k * .3))
-        o += ('<line class="cy blink" x1="%d" y1="%s" x2="%d" y2="%s" stroke-opacity=".45"/>'
-              % (60 + k * 10, f(372 - hgt / 2), 60 + k * 10, f(372 + hgt / 2)))
-    o += "\n" + scanline(a, 60)
+    # tripod
+    o += ('<path class="ln2" d="M174 256 V270 M152 270 h44 M174 270 L142 302 '
+          'M174 270 L206 302 M174 270 V296 M136 302 h13 M199 302 h13 M167 296 h14"/>\n')
+
+    # ---------------- render viewport ----------------
+    o += ('<rect class="fl" x="332" y="100" width="272" height="190" rx="8"/>'
+          '<rect class="ln" x="332" y="100" width="272" height="190" rx="8" fill="none"/>'
+          '<path class="cy" d="M340 116 V108 h10 M596 108 h-10 M596 108 V116 '
+          'M340 274 v8 h10 M596 282 h-10 M596 282 v-8" stroke-opacity=".7"/>'
+          '<text x="346" y="276" fill="rgba(255,255,255,.4)" font-size="9" '
+          'font-family="monospace" letter-spacing="1.5">RENDER 01</text>\n')
+    # zemin perspektif izgarasi
+    o += '<g clip-path="url(#vp)">'
+    for k in range(-7, 8):
+        o += ('<line class="ln2" x1="%d" y1="290" x2="468" y2="212" stroke-opacity=".2"/>'
+              % (468 + k * 52))
+    for k in range(1, 6):
+        yy = 212 + (k ** 1.85) * 3.6
+        o += '<line class="ln2" x1="332" y1="%s" x2="604" y2="%s" stroke-opacity=".16"/>' % (
+            f(yy), f(yy))
+    o += "</g>\n"
+    o += ('<defs><clipPath id="vp"><rect x="332" y="100" width="272" height="190" rx="8"/>'
+          '</clipPath></defs>\n')
+    # telkafes kure (3B varlik)
+    scx, scy, sr = 462, 190, 46
+    o += '<circle class="ln" cx="%d" cy="%d" r="%d"/>' % (scx, scy, sr)
+    for k in range(1, 4):
+        o += '<ellipse class="ln2" cx="%d" cy="%d" rx="%s" ry="%d" stroke-opacity=".45"/>' % (
+            scx, scy, f(sr * math.cos(k * math.pi / 4)), sr)
+    for k in range(1, 4):
+        yy = scy - sr + 2 * sr * k / 4.0
+        rx = math.sqrt(max(sr * sr - (yy - scy) ** 2, 1))
+        o += ('<ellipse class="ln2" cx="%d" cy="%s" rx="%s" ry="%s" stroke-opacity=".45"/>'
+              % (scx, f(yy), f(rx), f(rx * .26)))
+    o += ('<ellipse class="ln2" cx="%d" cy="252" rx="52" ry="11" stroke-opacity=".3"/>\n'
+          % scx)
+    # isik kaynagi + isin konisi
+    o += ('<circle class="cy" cx="368" cy="124" r="9" stroke-opacity=".8"/>'
+          '<path class="cy" d="M368 124 L420 156 M368 124 L432 144" stroke-opacity=".28" '
+          'stroke-dasharray="4 4"/>\n')
+    for k in range(4):
+        ang = k * math.pi / 2 + .78
+        o += ('<line class="cy" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".55"/>'
+              % (f(368 + 13 * math.cos(ang)), f(124 + 13 * math.sin(ang)),
+                 f(368 + 19 * math.cos(ang)), f(124 + 19 * math.sin(ang))))
+    o += "\n"
+    # render bucket'lari
+    for bx, by in ((424, 152), (452, 152), (424, 180), (496, 208)):
+        o += ('<rect class="cy blink" x="%d" y="%d" width="28" height="28" '
+              'fill="none" stroke-opacity=".75"/>' % (bx, by))
+    o += "\n"
+
+    # ---------------- zaman cizelgesi ----------------
+    o += '<path class="ln2" d="M40 326 H604" stroke-opacity=".35"/>'
+    for k in range(0, 24):
+        x = 46 + k * 24
+        o += '<line class="ln2" x1="%d" y1="326" x2="%d" y2="%d" stroke-opacity=".28"/>' % (
+            x, x, 320 if k % 4 else 314)
+    o += "\n"
+    clips = [(46, 112), (164, 88), (258, 136), (400, 92), (498, 106)]
+    for cx0, cw in clips:
+        o += ('<rect class="fl" x="%d" y="338" width="%d" height="26" rx="4"/>'
+              '<rect class="ln" x="%d" y="338" width="%d" height="26" rx="4" fill="none" '
+              'stroke-opacity=".6"/>' % (cx0, cw, cx0, cw))
+    o += "\n"
+    # ses kanali + dalga formu
+    o += ('<rect class="ln2" x="46" y="370" width="558" height="26" rx="4" fill="none" '
+          'stroke-opacity=".35"/>')
+    for k in range(38):
+        hgt = 3 + 19 * abs(math.sin(k * .78)) * (.3 + .7 * abs(math.cos(k * .29)))
+        o += ('<line class="cy" x1="%d" y1="%s" x2="%d" y2="%s" stroke-opacity=".4" '
+              'stroke-width=".9"/>' % (58 + k * 14, f(383 - hgt / 2), 58 + k * 14, f(383 + hgt / 2)))
+    o += "\n"
+    # anahtar kareler
+    for kx in (72, 148, 236, 300, 372, 446, 528):
+        o += ('<path class="cy" d="M%d 326 l5 5 l-5 5 l-5 -5 Z" fill="%s" '
+              'fill-opacity=".55" stroke-opacity=".9"/>' % (kx, CYAN))
+    o += "\n"
+    # oynatma kafasi
+    o += ('<g class="slide" style="--d:520px"><path d="M40 308 h12 l-6 9 Z" fill="%s"/>'
+          '<line x1="46" y1="308" x2="46" y2="400" stroke="%s" stroke-width="1.2" '
+          'stroke-opacity=".85"/></g>\n' % (CYAN, CYAN))
+    for x, y in ((292, 217), (462, 190), (368, 124)):
+        o += node(x, y, 2.8)
     return o + TAIL
 
 

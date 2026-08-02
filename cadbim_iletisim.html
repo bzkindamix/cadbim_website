@@ -452,9 +452,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">İletişim Formu</div>
       <div style="font-family:'Manrope',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:24px;">Size Yardımcı Olalım</div>
 
-      <iframe width="100%" height="600px" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=yb40hKRLsky41Hmw6O0HxitWVcZUMXpBn6HJ_H_BdQxUMklTSjRUR1lON0U1MUVWVDNLN1BWMEkyTS4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border:none;max-width:100%;background:transparent;" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
-      <!-- ESKI FORM KALDIRILDI
-
+      <form id="iletisim-form" onsubmit="handleSubmit(event)" novalidate>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
           <div>
             <label style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Ad Soyad *</label>
@@ -512,7 +510,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
           </div>
           <div style="grid-column:1/-1;">
             <label style="display:flex;align-items:flex-start;gap:10px;font-size:12px;color:rgba(255,255,255,0.4);cursor:pointer;line-height:1.5;">
-              <input type="checkbox" name="kvkk" required style="margin-top:2px;flex-shrink:0;">
+              <input type="checkbox" name="kvkk" required style="width:16px;height:16px;min-width:16px;padding:0;margin-top:2px;flex-shrink:0;appearance:auto;-webkit-appearance:checkbox;accent-color:#00c8f0;cursor:pointer;">
               <span><a href="kvkk" style="color:#00c8f0;text-decoration:none;">KVKK Aydınlatma Metni</a>'ni okudum ve kişisel verilerimin işlenmesine onay veriyorum. *</span>
             </label>
           </div>
@@ -521,10 +519,10 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
               style="width:100%;padding:14px;border-radius:8px;background:#00c8f0;color:#060c1a;font-weight:700;font-size:15px;cursor:pointer;border:none;font-family:'Manrope',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .2s;">
               <i class="ti ti-send" style="font-size:16px;"></i>Gönder
             </button>
-            <p style="font-size:12px;color:rgba(255,255,255,0.25);text-align:center;margin-top:10px;">1 iş günü içinde size dönüyoruz.</p>
+            <p class="submit-note" style="font-size:12px;color:rgba(255,255,255,0.45);text-align:center;margin-top:10px;">1 iş günü içinde size dönüyoruz.</p>
           </div>
         </div>
-      -->
+      </form>
     </div>
   </div>
 </section>
@@ -577,18 +575,45 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 </footer>
 
 <script>
-function handleSubmit(e) {
-  const btn = document.getElementById('submit-btn');
-  btn.innerHTML = '<i class="ti ti-loader-2" style="font-size:16px;animation:spin 1s linear infinite;"></i>Gönderiliyor...';
+var POWER_AUTOMATE_URL = 'https://d73d9ced5d22438dbfeec8d7513a32.54.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/01/workflows/11acbf894aaf4038a4c5897b085ea223/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=-s8rWcDC34d9_ZRWJ1ScL5UUmjp-WsB-ahlmUKhyJpM';
+
+function handleSubmit(e){
+  e.preventDefault();
+  var f = e.target;
+  if (!f.reportValidity()) return;
+  function v(n){ var el = f.elements[n]; return el ? (el.value || '').trim() : ''; }
+  var ofis = v('ofis');
+  var mesaj = v('mesaj');
+  if (ofis && ofis !== 'Fark etmez') mesaj += (mesaj ? '\n\n' : '') + 'Tercih edilen ofis: ' + ofis;
+  var data = {
+    form_type: 'iletisim',
+    ad_soyad: v('ad_soyad'),
+    sirket: v('sirket'),
+    email: v('email'),
+    telefon: v('telefon'),
+    talep_turu: v('talep_turu'),
+    mesaj: mesaj
+  };
+  var btn = document.getElementById('submit-btn');
+  var note = document.querySelector('.submit-note');
   btn.disabled = true;
-  // Formspree ile gerçek gönderim — sayfayı durdurma
-  // Başarılı olunca teşekkür mesajı
-  setTimeout(() => {
-    btn.innerHTML = '<i class="ti ti-check" style="font-size:16px;"></i>Mesajınız alındı!';
+  btn.innerHTML = '<i class="ti ti-loader-2" style="font-size:16px;"></i> Gönderiliyor...';
+  fetch(POWER_AUTOMATE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function(res){
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    btn.innerHTML = '<i class="ti ti-check" style="font-size:16px;"></i> Mesajınız alındı!';
     btn.style.background = '#10b981';
-  }, 1500);
+    if (note) note.textContent = '1 iş günü içinde size dönüyoruz.';
+    f.reset();
+  }).catch(function(){
+    btn.disabled = false;
+    btn.innerHTML = '<i class="ti ti-send" style="font-size:16px;"></i>Gönder';
+    if (note) note.innerHTML = 'Bir sorun oluştu. Doğrudan <a href="mailto:cadbim@cadbim.com.tr" style="color:#00c8f0;">cadbim@cadbim.com.tr</a> adresine yazabilir veya <a href="tel:+902324643490" style="color:#00c8f0;">0232 464 34 90</a>\'ı arayabilirsiniz.';
+  });
 }
-@keyframes spin { to { transform: rotate(360deg); } }
 </script>
 <script src="mobilenav.js?v=11" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>

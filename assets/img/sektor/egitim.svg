@@ -33,6 +33,10 @@
 @keyframes sp{to{transform:rotate(360deg)}}
 .float{animation:fo 9s ease-in-out infinite}
 @keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.slide{animation:sl 8s cubic-bezier(.55,0,.45,1) infinite}
+@keyframes sl{0%,6%{transform:translateX(0)}94%,100%{transform:translateX(var(--d,480px))}}
+.comb{animation:cb 6s ease-in-out infinite}
+@keyframes cb{0%,100%{opacity:.45}50%{opacity:.95}}
 </style>
 <rect width="640" height="420" fill="url(#g)"/>
 <rect width="640" height="420" fill="url(#glow)"/>
