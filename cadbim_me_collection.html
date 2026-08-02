@@ -62,7 +62,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
 .card:hover{border-color:var(--cbor);}
 .card.hi{border-color:var(--cbor);}
-.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
 .card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .card p{font-size:13px;color:var(--w50);line-height:1.65;}
 .pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
@@ -313,7 +313,58 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 </section>
 <section class="section" style="padding-top:0;">
   <div class="sh"><div class="slabel">Pakete Dahil Yazılımlar</div><div class="stitle">M&E Collection İçindeki Yazılımlar</div><p class="ssub">Autodesk Media & Entertainment Collection ile gelen tüm yazılımlar. Ürün sayfası olanları tıklayıp inceleyebilirsiniz.</p></div>
-  <div class="cpills"><a href="maya" class="cp"><img src="assets/logos/products/maya.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Maya</a><a href="3dsmax" class="cp"><img src="assets/logos/products/3dsmax.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">3ds Max</a><a href="arnold" class="cp"><img src="assets/logos/products/arnold.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Arnold</a><a href="motionbuilder" class="cp"><img src="assets/logos/products/motionbuilder.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">MotionBuilder</a><a href="mudbox" class="cp"><img src="assets/logos/products/mudbox.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Mudbox</a><a href="golaem" class="cp"><img src="assets/logos/products/golaem.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Golaem</a><a href="recap-pro" class="cp"><img src="assets/logos/products/recap-pro.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">ReCap Pro</a><a href="flow-studio" class="cp"><img src="assets/logos/products/flow-studio.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk Flow Studio</a><a href="flow-production-tracking" class="cp"><img src="assets/logos/products/flow-production-tracking.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Flow Production Tracking</a><span class="cp" style="cursor:default;"><i class="ti ti-wind"></i>Bifrost (Maya eklentisi)</span></div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/maya.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="maya" style="color:inherit;text-decoration:none;">Maya</a></h3>
+      <p>Film, VFX ve oyun sektöründe kullanılan uçtan uca 3B animasyon ve modelleme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/3dsmax.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="3dsmax" style="color:inherit;text-decoration:none;">3ds Max</a></h3>
+      <p>İleri düzey 3B modelleme, animasyon ve render için görselleştirme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/arnold.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="arnold" style="color:inherit;text-decoration:none;">Arnold</a></h3>
+      <p>Film ve VFX prodüksiyonlarında kullanılan yüksek kaliteli ışınım izleme render motoru.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/motionbuilder.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="motionbuilder" style="color:inherit;text-decoration:none;">MotionBuilder</a></h3>
+      <p>Gerçek zamanlı karakter animasyonu ve motion capture verisi işleme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/mudbox.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="mudbox" style="color:inherit;text-decoration:none;">Mudbox</a></h3>
+      <p>Karakter ve organik yüzeyler için dijital heykel ve doku boyama yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/golaem.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="golaem" style="color:inherit;text-decoration:none;">Golaem</a></h3>
+      <p>Film ve VFX sahnelerinde büyük ölçekli kalabalık simülasyonu üreten yazılım.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/recap-pro.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="recap-pro" style="color:inherit;text-decoration:none;">ReCap Pro</a></h3>
+      <p>Nokta bulutu ve fotogrametri verilerini CAD ortamına hazırlayan tarama yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/flow-studio.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="flow-studio" style="color:inherit;text-decoration:none;">Autodesk Flow Studio</a></h3>
+      <p>Prodüksiyon ekipleri için bulut tabanlı içerik oluşturma ve iş birliği platformu.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/flow-production-tracking.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="flow-production-tracking" style="color:inherit;text-decoration:none;">Flow Production Tracking</a></h3>
+      <p>Prodüksiyon süreçlerini ve ekip görevlerini takip eden proje yönetim aracı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-wind"></i></div>
+      <h3>Bifrost (Maya eklentisi)</h3>
+      <p>Maya içinde prosedürel efekt ve simülasyon oluşturmayı sağlayan eklenti.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section">
@@ -394,9 +445,48 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 <section class="section" style="padding-top:0;">
   <div class="sh" style="margin-bottom:26px;"><div class="slabel">Keşfet</div><div class="stitle">Bu Ürünle İlgili</div></div>
   <div style="display:grid;gap:24px;">
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div><div class="cpills"><a href="gorsellestirme" class="cp"><i class="ti ti-sun-high"></i>Görselleştirme & Render</a><a href="yaratici-icerik" class="cp"><i class="ti ti-palette"></i>Yaratıcı İçerik</a></div></div>
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div><div class="cpills"><a href="sektor-medya" class="cp"><i class="ti ti-movie"></i>Medya & Eğlence</a></div></div>
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-box" style="color:var(--cyan);font-size:15px;"></i>Birlikte Çalıştığı Ürünler</div><div class="cpills"><a href="autodesk" class="cp"><i class="ti ti-box"></i>Autodesk Marka Sayfası</a><a href="maya" class="cp"><img src="assets/logos/products/maya.svg" alt="" style="height:15px;width:auto;margin-right:6px;vertical-align:-3px;" loading="lazy" decoding="async">Maya</a><a href="3dsmax" class="cp"><img src="assets/logos/products/3dsmax.svg" alt="" style="height:15px;width:auto;margin-right:6px;vertical-align:-3px;" loading="lazy" decoding="async">3ds Max</a></div></div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div>
+    <div class="grid g3" style="margin-top:0;">
+      <div class="card">
+        <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-sun-high"></i></div>
+        <h3><a href="gorsellestirme" style="color:inherit;text-decoration:none;">Görselleştirme & Render</a></h3>
+        <p>Render ve görselleştirme projelerinde kullanılan üst düzey görsel üretim araçları.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-palette"></i></div>
+        <h3><a href="yaratici-icerik" style="color:inherit;text-decoration:none;">Yaratıcı İçerik</a></h3>
+        <p>Dijital içerik üretiminde kullanılan tasarım ve prodüksiyon çözümleri.</p>
+      </div>
+    </div>
+    </div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div>
+    <div class="grid g3" style="margin-top:0;">
+      <div class="card">
+        <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-movie"></i></div>
+        <h3><a href="sektor-medya" style="color:inherit;text-decoration:none;">Medya & Eğlence</a></h3>
+        <p>Medya, animasyon ve görsel efekt üretiminde dijital dönüşüm çözümleri sunar.</p>
+      </div>
+    </div>
+    </div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-box" style="color:var(--cyan);font-size:15px;"></i>Birlikte Çalıştığı Ürünler</div>
+    <div class="grid g3" style="margin-top:0;">
+      <div class="card">
+        <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/autodesk-white.svg" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;" loading="lazy" decoding="async"></div>
+        <h3><a href="autodesk" style="color:inherit;text-decoration:none;">Autodesk Marka Sayfası</a></h3>
+        <p>Autodesk'in tüm ürün ailesini ve marka bilgilerini tek sayfada bir araya getirir.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/maya.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+        <h3><a href="maya" style="color:inherit;text-decoration:none;">Maya</a></h3>
+        <p>Film, VFX ve oyun sektöründe kullanılan uçtan uca 3B animasyon ve modelleme yazılımı.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/3dsmax.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+        <h3><a href="3dsmax" style="color:inherit;text-decoration:none;">3ds Max</a></h3>
+        <p>İleri düzey 3B modelleme, animasyon ve render için görselleştirme yazılımı.</p>
+      </div>
+    </div>
+    </div>
   </div>
 </section>
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">

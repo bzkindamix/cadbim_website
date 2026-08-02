@@ -140,6 +140,17 @@ a.pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgb
 .pcard .parr{margin-left:auto;font-size:15px;color:var(--w30);transition:color .2s,transform .2s;flex-shrink:0;}
 a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 @media(max-width:600px){.pfilter{position:static;gap:6px;}.psearch{margin-left:0;width:100%;}.psearch input{flex:1;width:auto;}}
+.sh{margin-bottom:48px;}
+.slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan,#00c8f0);margin-bottom:8px;}
+.stitle{font-family:'Manrope',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:#fff;margin-bottom:10px;}
+.ssub{font-size:15px;color:rgba(255,255,255,.5);max-width:560px;line-height:1.7;}
+.grid{display:grid;gap:16px;margin-top:40px;}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.card{background:var(--navy3,#0d1830);border-radius:16px;border:.5px solid rgba(255,255,255,0.1);padding:24px 22px;transition:border-color .2s;}
+.card:hover{border-color:rgba(0,200,240,0.2);}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
+.card h3{font-family:'Manrope',sans-serif;font-size:15px;font-weight:600;color:#fff;margin-bottom:8px;}
+.card p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;}
 </style>
 
 <!-- SEO -->
@@ -527,17 +538,121 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div>
 </section>
 <section class="section" style="padding-top:0;">
-  <div class="cross">
-    <h3>Bu endüstride kullanılan Cadbim çözümleri</h3>
-    <p class="cd">İlgili çözüm sayfalarını inceleyin — her çözümde kullanılan ürünleri görün</p>
-    <div class="cpills"><a href="plm" class="cp"><i class="ti ti-hierarchy-3"></i>PLM — Ürün Yaşam Döngüsü</a><a href="pdm" class="cp"><i class="ti ti-folders"></i>PDM — Ürün Veri Yönetimi</a><a href="simulasyon" class="cp"><i class="ti ti-chart-dots-3"></i>Simülasyon & Analiz</a><a href="cam" class="cp"><i class="ti ti-settings-2"></i>CAM & İmalat</a><a href="tolerans-analizi" class="cp"><i class="ti ti-ruler-2"></i>Tolerans Analizi</a><a href="nesting" class="cp"><img src="assets/logos/products/nesting.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Nesting — Yuvalama</a><a href="fabrika-tasarimi" class="cp"><i class="ti ti-building-factory-2"></i>Fabrika Tasarımı & Dijital İkiz</a><a href="tasarim-otomasyonu" class="cp"><i class="ti ti-robot"></i>Tasarım Otomasyonu</a><a href="pdm-collection" class="cp"><img src="assets/logos/products/pdm-collection.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk PD&M Collection</a></div>
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu endüstride kullanılan Cadbim çözümleri</div>
+    <p class="ssub">İlgili çözüm sayfalarını inceleyin — her çözümde kullanılan ürünleri görün</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-hierarchy-3"></i></div>
+      <h3><a href="plm" style="color:inherit;text-decoration:none;">PLM — Ürün Yaşam Döngüsü</a></h3>
+      <p>Ürün yaşam döngüsünü tasarımdan üretime kadar uçtan uca yöneten çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-folders"></i></div>
+      <h3><a href="pdm" style="color:inherit;text-decoration:none;">PDM — Ürün Veri Yönetimi</a></h3>
+      <p>Mühendislik verilerini merkezi olarak saklayan ve versiyon kontrolü sağlayan çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-dots-3"></i></div>
+      <h3><a href="simulasyon" style="color:inherit;text-decoration:none;">Simülasyon & Analiz</a></h3>
+      <p>Tasarımların üretime geçmeden önce dijital ortamda doğrulanmasını sağlayan simülasyon çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings-2"></i></div>
+      <h3><a href="cam" style="color:inherit;text-decoration:none;">CAM & İmalat</a></h3>
+      <p>Tasarımdan CNC işlemeye uzanan bilgisayar destekli imalat çözümleri sunulur.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-ruler-2"></i></div>
+      <h3><a href="tolerans-analizi" style="color:inherit;text-decoration:none;">Tolerans Analizi</a></h3>
+      <p>Parça ve montaj toleranslarının üretim öncesi istatistiksel olarak doğrulanmasını sağlar.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/nesting.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="nesting" style="color:inherit;text-decoration:none;">Nesting — Yuvalama</a></h3>
+      <p>Sac ve levha kesiminde malzeme israfını azaltan otomatik parça yerleştirme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building-factory-2"></i></div>
+      <h3><a href="fabrika-tasarimi" style="color:inherit;text-decoration:none;">Fabrika Tasarımı & Dijital İkiz</a></h3>
+      <p>Üretim hatlarının dijital ikizini oluşturarak fabrika tasarımını optimize eden çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-robot"></i></div>
+      <h3><a href="tasarim-otomasyonu" style="color:inherit;text-decoration:none;">Tasarım Otomasyonu</a></h3>
+      <p>Tekrarlayan tasarım adımlarını kural tabanlı otomasyonla hızlandıran çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="pdm-collection" style="color:inherit;text-decoration:none;">Autodesk PD&M Collection</a></h3>
+      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
+    </div>
   </div>
 </section>
 <section class="section" style="padding-top:0;">
-  <div class="cross">
-    <h3>Başarı Öyküleri</h3>
-    <p class="cd">Makine & üretim sektöründe Cadbim ile sonuç alan müşterilerimiz</p>
-    <div class="cpills"><a href="basari-oykuleri#efe-kalip-makina" class="cp"><i class="ti ti-trophy"></i>Efe Kalıp Makina — Kısalan CNC işleme süreleri, düşen hata oranı</a><a href="basari-oykuleri#norm-additive" class="cp"><i class="ti ti-trophy"></i>Norm Additive — 5 parçadan 1 parçaya: hafifletilmiş tasarım</a><a href="basari-oykuleri#habas" class="cp"><i class="ti ti-trophy"></i>Habaş — FEA doğrulamasıyla kısalan pazara çıkış süresi</a><a href="basari-oykuleri#edvan" class="cp"><i class="ti ti-trophy"></i>Edvan — Satış-Ar-Ge iletişiminde hız, iyileşen KPI'lar</a><a href="basari-oykuleri#eys-metal" class="cp"><i class="ti ti-trophy"></i>Eys Metal — 3D modellemeyle hızlanan üretim iş birliği</a><a href="basari-oykuleri#kutlusan" class="cp"><i class="ti ti-trophy"></i>Kutlusan Kafes — dijital dönüşüm</a><a href="basari-oykuleri#guralp-vinc" class="cp"><i class="ti ti-trophy"></i>Güralp Vinç — üretim & tasarım dönüşümü</a><a href="basari-oykuleri#sistem-teknik" class="cp"><i class="ti ti-trophy"></i>Sistem Teknik — Ürün geliştirme sürecinde kazanılan verimlilik</a><a href="basari-oykuleri#eltas" class="cp"><i class="ti ti-trophy"></i>Eltaş — Tasarım sürecini iki haftadan yarım güne indiren dönüşüm</a><a href="basari-oykuleri#erdemgiller" class="cp"><i class="ti ti-trophy"></i>Erdemgiller — 2-3 kat artan tasarım verimliliği</a><a href="basari-oykuleri#bmc" class="cp"><i class="ti ti-trophy"></i>BMC — Küresel ölçekte 2 boyuttan 3 boyuta dönüşüm</a></div>
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Başarı Öyküleri</div>
+    <p class="ssub">Makine & üretim sektöründe Cadbim ile sonuç alan müşterilerimiz</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#efe-kalip-makina" style="color:inherit;text-decoration:none;">Efe Kalıp Makina</a></h3>
+      <p>Efe Kalıp Makina, CNC işleme sürelerini kısalttı ve hata oranını düşürdü.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#norm-additive" style="color:inherit;text-decoration:none;">Norm Additive</a></h3>
+      <p>Norm Additive, 5 parçalı bir tasarımı tek parçaya indirerek hafifletti.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#habas" style="color:inherit;text-decoration:none;">Habaş</a></h3>
+      <p>Habaş, FEA doğrulamasıyla pazara çıkış süresini kısalttı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#edvan" style="color:inherit;text-decoration:none;">Edvan</a></h3>
+      <p>Edvan, satış-Ar-Ge iletişiminde hız kazandı ve KPI'larını iyileştirdi.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#eys-metal" style="color:inherit;text-decoration:none;">Eys Metal</a></h3>
+      <p>Eys Metal, 3D modellemeyle üretim iş birliğini hızlandırdı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#kutlusan" style="color:inherit;text-decoration:none;">Kutlusan Kafes</a></h3>
+      <p>Kutlusan Kafes, dijital dönüşüm sürecini başarıyla tamamladı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#guralp-vinc" style="color:inherit;text-decoration:none;">Güralp Vinç</a></h3>
+      <p>Güralp Vinç, üretim ve tasarım süreçlerinde dönüşüm gerçekleştirdi.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#sistem-teknik" style="color:inherit;text-decoration:none;">Sistem Teknik</a></h3>
+      <p>Sistem Teknik, ürün geliştirme sürecinde verimlilik kazandı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#eltas" style="color:inherit;text-decoration:none;">Eltaş</a></h3>
+      <p>Eltaş, tasarım sürecini iki haftadan yarım güne indirdi.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#erdemgiller" style="color:inherit;text-decoration:none;">Erdemgiller</a></h3>
+      <p>Erdemgiller, tasarım verimliliğini 2-3 kat artırdı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#bmc" style="color:inherit;text-decoration:none;">BMC</a></h3>
+      <p>BMC, küresel ölçekte 2 boyuttan 3 boyuta geçiş sağladı.</p>
+    </div>
   </div>
 </section>
 <section data-newsol style="padding:56px 3rem;background:#0a1225;">

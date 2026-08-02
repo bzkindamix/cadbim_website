@@ -62,7 +62,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
 .card:hover{border-color:var(--cbor);}
 .card.hi{border-color:var(--cbor);}
-.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
 .card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .card p{font-size:13px;color:var(--w50);line-height:1.65;}
 .pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
@@ -443,17 +443,49 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 <section class="section" style="padding-top:0;">
-  <div class="cross-grid">
-    <div class="cross">
-    <h3>Bu çözümde kullanılan Cadbim ürünleri</h3>
-    <p class="cd">İlgili yazılım ve donanım sayfaları</p>
-    <div class="cpills"><a href="inventor" class="cp"><img src="assets/logos/products/inventor.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk Inventor</a><a href="simulasyon" class="cp"><i class="ti ti-chart-scatter"></i>Simülasyon & Analiz</a><a href="danismanlik" class="cp"><i class="ti ti-chart-arrows-vertical"></i>Danışmanlık Hizmetleri</a><a href="pdm-collection" class="cp"><img src="assets/logos/products/pdm-collection.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">PD&M Collection — tüm imalat araçları tek pakette</a></div>
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
   </div>
-    <div class="cross">
-    <h3>Bu çözüm hangi endüstrilerde kullanılıyor</h3>
-    <p class="cd">İlgili endüstri sayfalarını inceleyin</p>
-    <div class="cpills"><a href="sektor-makine" class="cp"><i class="ti ti-settings"></i>Makine & Üretim</a><a href="sektor-otomotiv" class="cp"><i class="ti ti-car"></i>Otomotiv</a></div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="inventor" style="color:inherit;text-decoration:none;">Autodesk Inventor</a></h3>
+      <p>Parametrik 3B mekanik tasarım ve mühendislik dokümantasyonu için endüstri standardı yazılım.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-scatter"></i></div>
+      <h3><a href="simulasyon" style="color:inherit;text-decoration:none;">Simülasyon & Analiz</a></h3>
+      <p>Tasarımların üretime geçmeden önce dijital ortamda doğrulanmasını sağlayan simülasyon çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-arrows-vertical"></i></div>
+      <h3><a href="danismanlik" style="color:inherit;text-decoration:none;">Danışmanlık Hizmetleri</a></h3>
+      <p>Tolerans analizi ve montaj doğrulama projelerinde uçtan uca mühendislik danışmanlığı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="pdm-collection" style="color:inherit;text-decoration:none;">PD&M Collection</a></h3>
+      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
+    </div>
   </div>
+  <div class="sh" style="margin-top:40px;">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
+      <h3><a href="sektor-makine" style="color:inherit;text-decoration:none;">Makine & Üretim</a></h3>
+      <p>Makine imalat sektörüne özel tasarım, simülasyon ve üretim çözümleri sunulur.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
+      <h3><a href="sektor-otomotiv" style="color:inherit;text-decoration:none;">Otomotiv</a></h3>
+      <p>Otomotiv parça ve araç geliştirme süreçlerine yönelik uçtan uca mühendislik çözümleri.</p>
+    </div>
   </div>
 </section>
 

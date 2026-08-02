@@ -64,7 +64,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
 .card:hover{border-color:var(--cbor);}
 .card.hi{border-color:var(--cbor);}
-.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
 .card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .card p{font-size:13px;color:var(--w50);line-height:1.65;}
 .pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
@@ -315,7 +315,113 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 </section>
 <section class="section" style="padding-top:0;">
   <div class="sh"><div class="slabel">Pakete Dahil Yazılımlar</div><div class="stitle">AEC Collection İçindeki Yazılımlar</div><p class="ssub">Autodesk AEC Collection ile gelen tüm masaüstü ve bulut yazılımları. Ürün sayfası olanları tıklayıp inceleyebilirsiniz.</p></div>
-  <div class="cpills"><a href="revit" class="cp"><img src="assets/logos/products/revit.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Revit</a><a href="autocad" class="cp"><img src="assets/logos/products/autocad.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">AutoCAD</a><a href="civil3d" class="cp"><img src="assets/logos/products/civil3d.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Civil 3D</a><a href="navisworks" class="cp"><img src="assets/logos/products/navisworks.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Navisworks Manage</a><a href="infraworks" class="cp"><img src="assets/logos/products/infraworks.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">InfraWorks</a><a href="3dsmax" class="cp"><img src="assets/logos/products/3dsmax.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">3ds Max</a><a href="advance-steel" class="cp"><img src="assets/logos/products/advance-steel.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Advance Steel</a><a href="robot-structural" class="cp"><img src="assets/logos/products/robot-structural.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Robot Structural Analysis</a><a href="recap-pro" class="cp"><img src="assets/logos/products/recap-pro.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">ReCap Pro</a><a href="forma" class="cp"><img src="assets/logos/products/forma.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Forma Site Design</a><a href="autodesk-docs" class="cp"><img src="assets/logos/products/autodesk-docs.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Forma Data Management</a><a href="forma" class="cp"><img src="assets/logos/products/forma.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Forma for Buildings</a><a href="autodesk-drive" class="cp"><img src="assets/logos/products/autodesk-drive.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk Drive</a><a href="vehicle-tracking" class="cp"><img src="assets/logos/products/vehicle-tracking.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Vehicle Tracking</a><span class="cp" style="cursor:default;"><i class="ti ti-leaf"></i>Insight</span><span class="cp" style="cursor:default;"><i class="ti ti-bridge"></i>Structural Bridge Design</span><a href="fabrication-cadmep" class="cp"><img src="assets/logos/products/fabrication.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Fabrication CADmep</a><a href="fabrication-estmep" class="cp"><img src="assets/logos/products/fabrication.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Fabrication ESTmep</a><a href="fabrication-camduct" class="cp"><img src="assets/logos/products/fabrication.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Fabrication CAMduct</a><span class="cp" style="cursor:default;"><i class="ti ti-photo"></i>Rendering (bulut)</span><span class="cp" style="cursor:default;"><i class="ti ti-video"></i>Twinmotion for Revit</span></div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/revit.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="revit" style="color:inherit;text-decoration:none;">Revit</a></h3>
+      <p>BIM tabanlı mimari, strüktürel ve MEP modelleme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/autocad.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="autocad" style="color:inherit;text-decoration:none;">AutoCAD</a></h3>
+      <p>Endüstri standardı 2D ve 3D CAD tasarım yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/civil3d.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="civil3d" style="color:inherit;text-decoration:none;">Civil 3D</a></h3>
+      <p>Altyapı ve arazi projeleri için inşaat mühendisliği tasarım yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/navisworks.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="navisworks" style="color:inherit;text-decoration:none;">Navisworks Manage</a></h3>
+      <p>Model birleştirme, çakışma tespiti ve proje inceleme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/infraworks.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="infraworks" style="color:inherit;text-decoration:none;">InfraWorks</a></h3>
+      <p>Altyapı projelerinde kavramsal tasarım ve gerçek dünya modellemesi.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/3dsmax.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="3dsmax" style="color:inherit;text-decoration:none;">3ds Max</a></h3>
+      <p>Modelleme, animasyon ve render için profesyonel 3D yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/advance-steel.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="advance-steel" style="color:inherit;text-decoration:none;">Advance Steel</a></h3>
+      <p>Çelik yapı detaylandırma ve imalat çizimi hazırlama yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/robot-structural.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="robot-structural" style="color:inherit;text-decoration:none;">Robot Structural Analysis</a></h3>
+      <p>Yapıların statik ve dinamik analizleri için yapısal analiz yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/recap-pro.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="recap-pro" style="color:inherit;text-decoration:none;">ReCap Pro</a></h3>
+      <p>Lazer tarama ve fotogrametri verilerini 3D modellere dönüştürür.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/forma.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="forma" style="color:inherit;text-decoration:none;">Forma Site Design</a></h3>
+      <p>Erken tasarım aşaması için bulut tabanlı saha tasarım araçları.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/autodesk-docs.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="autodesk-docs" style="color:inherit;text-decoration:none;">Forma Data Management</a></h3>
+      <p>Proje verilerini bulutta merkezi olarak yöneten doküman ortamı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/forma.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="forma" style="color:inherit;text-decoration:none;">Forma for Buildings</a></h3>
+      <p>Bina projelerinin erken aşama tasarımı için bulut çalışma alanı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/autodesk-drive.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="autodesk-drive" style="color:inherit;text-decoration:none;">Autodesk Drive</a></h3>
+      <p>Tasarım verileri için güvenli bulut depolama hizmeti.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/vehicle-tracking.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="vehicle-tracking" style="color:inherit;text-decoration:none;">Vehicle Tracking</a></h3>
+      <p>Araç dönüş yolu analizi ve otopark tasarımı yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-leaf"></i></div>
+      <h3>Insight</h3>
+      <p>Bina enerji ve karbon performansı analizine yönelik araç.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-bridge"></i></div>
+      <h3>Structural Bridge Design</h3>
+      <p>Köprü projelerinde entegre yükleme, analiz ve tasarım yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/fabrication.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="fabrication-cadmep" style="color:inherit;text-decoration:none;">Fabrication CADmep</a></h3>
+      <p>Mekanik tesisat imalatı için detaylı MEP modelleme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/fabrication.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="fabrication-estmep" style="color:inherit;text-decoration:none;">Fabrication ESTmep</a></h3>
+      <p>Mekanik tesisat projelerinde maliyet tahmini ve teklif hazırlama aracı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/fabrication.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="fabrication-camduct" style="color:inherit;text-decoration:none;">Fabrication CAMduct</a></h3>
+      <p>Havalandırma kanalı imalatı için CAM tabanlı üretim yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-photo"></i></div>
+      <h3>Rendering (bulut)</h3>
+      <p>Görselleştirmeleri bulutta işleyerek yerel iş istasyonu yükünü azaltır.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-video"></i></div>
+      <h3>Twinmotion for Revit</h3>
+      <p>Revit modellerinden gerçek zamanlı görselleştirme ve sunum üretimi.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section">
@@ -400,10 +506,69 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 <section class="section" style="padding-top:0;">
   <div class="sh" style="margin-bottom:26px;"><div class="slabel">Keşfet</div><div class="stitle">Bu Ürünle İlgili</div></div>
   <div style="display:grid;gap:24px;">
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div><div class="cpills"><a href="bim" class="cp"><i class="ti ti-building"></i>BIM</a><a href="insaat-yonetimi" class="cp"><i class="ti ti-crane"></i>İnşaat Proje Yönetimi</a><a href="gorsellestirme" class="cp"><i class="ti ti-sun-high"></i>Görselleştirme & Render</a></div></div>
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div><div class="cpills"><a href="sektor-mimari" class="cp"><i class="ti ti-building"></i>Mimarlık</a><a href="sektor-insaat" class="cp"><i class="ti ti-crane"></i>İnşaat & Altyapı</a></div></div>
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-trophy" style="color:var(--cyan);font-size:15px;"></i>Başarı Öyküleri</div><div class="cpills"><a href="basari-oykuleri#decons" class="cp"><i class="ti ti-trophy"></i>Decons — 2D'den BIM tabanlı proje yönetimine geçiş</a><a href="basari-oykuleri#bedesten-ahsap" class="cp"><i class="ti ti-trophy"></i>Bedesten Ahşap — Sunum ve görselleştirme kalitesinde artış</a><a href="basari-oykuleri#ordinat" class="cp"><i class="ti ti-trophy"></i>Ordinat İnşaat — Artan proje yoğunluğuna ölçeklenen iş akışı</a></div></div>
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-box" style="color:var(--cyan);font-size:15px;"></i>Birlikte Çalıştığı Ürünler</div><div class="cpills"><a href="autodesk" class="cp"><i class="ti ti-box"></i>Autodesk Marka Sayfası</a><a href="revit" class="cp"><img src="assets/logos/products/revit.svg" alt="" style="height:15px;width:auto;margin-right:6px;vertical-align:-3px;" loading="lazy" decoding="async">Revit</a><a href="civil3d" class="cp"><img src="assets/logos/products/civil3d.svg" alt="" style="height:15px;width:auto;margin-right:6px;vertical-align:-3px;" loading="lazy" decoding="async">Civil 3D</a></div></div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div><div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+      <h3><a href="bim" style="color:inherit;text-decoration:none;">BIM</a></h3>
+      <p>Yapı bilgi modellemesi çözümlerini ve hizmetlerimizi keşfedin.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-crane"></i></div>
+      <h3><a href="insaat-yonetimi" style="color:inherit;text-decoration:none;">İnşaat Proje Yönetimi</a></h3>
+      <p>Saha ve ofis arasında inşaat süreçlerinin dijital yönetimi.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-sun-high"></i></div>
+      <h3><a href="gorsellestirme" style="color:inherit;text-decoration:none;">Görselleştirme & Render</a></h3>
+      <p>Fotogerçekçi görselleştirme ve render çözümlerini tek sayfada keşfedin.</p>
+    </div>
+  </div></div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div><div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+      <h3><a href="sektor-mimari" style="color:inherit;text-decoration:none;">Mimarlık</a></h3>
+      <p>Mimarlık ofislerine yönelik yazılım, eğitim ve danışmanlık çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-crane"></i></div>
+      <h3><a href="sektor-insaat" style="color:inherit;text-decoration:none;">İnşaat & Altyapı</a></h3>
+      <p>İnşaat ve altyapı firmalarına yönelik sektörel çözümlerimiz.</p>
+    </div>
+  </div></div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-trophy" style="color:var(--cyan);font-size:15px;"></i>Başarı Öyküleri</div><div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#decons" style="color:inherit;text-decoration:none;">Decons</a></h3>
+      <p>2D süreçlerden BIM tabanlı proje yönetimine geçişin başarı öyküsü.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#bedesten-ahsap" style="color:inherit;text-decoration:none;">Bedesten Ahşap</a></h3>
+      <p>Sunum ve görselleştirme kalitesinde artış sağlayan dönüşüm öyküsü.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3><a href="basari-oykuleri#ordinat" style="color:inherit;text-decoration:none;">Ordinat İnşaat</a></h3>
+      <p>Artan proje yoğunluğuna ölçeklenen iş akışının başarı öyküsü.</p>
+    </div>
+  </div></div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-box" style="color:var(--cyan);font-size:15px;"></i>Birlikte Çalıştığı Ürünler</div><div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/autodesk-white.svg" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="autodesk" style="color:inherit;text-decoration:none;">Autodesk Marka Sayfası</a></h3>
+      <p>Tüm Autodesk ürünlerini ve koleksiyonlarını tek sayfada inceleyin.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/revit.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="revit" style="color:inherit;text-decoration:none;">Revit</a></h3>
+      <p>BIM tabanlı mimari, strüktürel ve MEP modelleme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/civil3d.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="civil3d" style="color:inherit;text-decoration:none;">Civil 3D</a></h3>
+      <p>Altyapı ve arazi projeleri için inşaat mühendisliği tasarım yazılımı.</p>
+    </div>
+  </div></div>
   </div>
   <a href="egitimler?cat=aec#katalog" style="margin-top:28px;display:flex;align-items:center;gap:16px;padding:20px 24px;border-radius:16px;background:linear-gradient(100deg,rgba(0,200,240,0.10),rgba(0,200,240,0.02));border:.5px solid var(--cbor);text-decoration:none;transition:border-color .2s,transform .15s;" onmouseover="this.style.borderColor='var(--cyan)';this.style.transform='translateY(-1px)'" onmouseout="this.style.borderColor='rgba(0,200,240,0.2)';this.style.transform='none'"><div style="width:44px;height:44px;border-radius:12px;background:var(--cdim);border:.5px solid var(--cbor);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-school" style="font-size:22px;color:var(--cyan);"></i></div><div><div style="font-family:var(--fd);font-size:15px;font-weight:700;color:#fff;margin-bottom:2px;">Bu ürün için eğitim mi arıyorsunuz?</div><div style="font-size:13px;color:var(--w50);">Cadbim yetkili eğitim merkezi (ATC) — rol bazlı, sertifikalı eğitim programları.</div></div><i class="ti ti-arrow-right" style="margin-left:auto;font-size:20px;color:var(--cyan);flex-shrink:0;"></i></a>
 </section>

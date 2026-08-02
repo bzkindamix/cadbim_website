@@ -64,7 +64,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
 .card:hover{border-color:var(--cbor);}
 .card.hi{border-color:var(--cbor);}
-.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
 .card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .card p{font-size:13px;color:var(--w50);line-height:1.65;}
 .pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
@@ -406,17 +406,59 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 <section class="section" style="padding-top:0;">
-  <div class="cross-grid">
-    <div class="cross">
-    <h3>Bu çözümde kullanılan Cadbim ürünleri</h3>
-    <p class="cd">İlgili yazılım ve donanım sayfaları</p>
-    <div class="cpills"><a href="recap-pro" class="cp"><img src="assets/logos/products/recap-pro.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">ReCap Pro</a><a href="sketchup-studio" class="cp"><img src="assets/logos/sketchup.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);" loading="lazy" decoding="async">SketchUp Studio (Scan Essentials)</a><a href="revit" class="cp"><img src="assets/logos/products/revit.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Revit</a><a href="navisworks" class="cp"><img src="assets/logos/products/navisworks.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Navisworks</a><a href="aec-collection" class="cp"><img src="assets/logos/products/aec-collection.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">AEC Collection — tüm AEC araçları tek pakette</a></div>
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
   </div>
-    <div class="cross">
-    <h3>Bu çözüm hangi endüstrilerde kullanılıyor</h3>
-    <p class="cd">İlgili endüstri sayfalarını inceleyin</p>
-    <div class="cpills"><a href="sektor-mimari" class="cp"><i class="ti ti-building"></i>Mimarlık</a><a href="sektor-insaat" class="cp"><i class="ti ti-crane"></i>İnşaat & Altyapı</a><a href="sektor-makine" class="cp"><i class="ti ti-settings"></i>Makine & Üretim</a></div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/recap-pro.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="recap-pro" style="color:inherit;text-decoration:none;">ReCap Pro</a></h3>
+      <p>Lazer tarama ve fotogrametri verilerini 3D modellere dönüştürür.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/sketchup-icon.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="sketchup-studio" style="color:inherit;text-decoration:none;">SketchUp Studio</a></h3>
+      <p>Pro'nun üzerine V-Ray, Scan Essentials ve Revit Importer ekleyen en kapsamlı plan.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/revit.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="revit" style="color:inherit;text-decoration:none;">Revit</a></h3>
+      <p>BIM tabanlı mimari, strüktürel ve MEP modelleme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/navisworks.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="navisworks" style="color:inherit;text-decoration:none;">Navisworks</a></h3>
+      <p>Model birleştirme, çakışma tespiti ve proje inceleme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/aec-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="aec-collection" style="color:inherit;text-decoration:none;">AEC Collection</a></h3>
+      <p>Revit, Civil 3D ve AutoCAD'i tek pakette sunan Autodesk koleksiyonu.</p>
+    </div>
   </div>
+  <div class="sh" style="margin-top:56px;">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+      <h3><a href="sektor-mimari" style="color:inherit;text-decoration:none;">Mimarlık</a></h3>
+      <p>Mimarlık ofislerine yönelik yazılım, eğitim ve danışmanlık çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-crane"></i></div>
+      <h3><a href="sektor-insaat" style="color:inherit;text-decoration:none;">İnşaat & Altyapı</a></h3>
+      <p>İnşaat ve altyapı firmalarına yönelik sektörel çözümlerimiz.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
+      <h3><a href="sektor-makine" style="color:inherit;text-decoration:none;">Makine & Üretim</a></h3>
+      <p>Makine ve üretim sektörüne yönelik yazılım ve donanım çözümleri.</p>
+    </div>
   </div>
 </section>
 

@@ -64,7 +64,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
 .card:hover{border-color:var(--cbor);}
 .card.hi{border-color:var(--cbor);}
-.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
 .card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .card p{font-size:13px;color:var(--w50);line-height:1.65;}
 .pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
@@ -424,10 +424,22 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <section class="section" style="padding-top:0;">
-  <div class="cross">
-    <h3>İlgili ürünler ve çözümler</h3>
-    <p class="cd">Birlikte değerlendirin</p>
-    <div class="cpills"><a href="designjet" class="cp"><img src="assets/logos/hp-blue.png" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);" loading="lazy" decoding="async">DesignJet Ailesi</a><a href="designjet-t2600" class="cp"><i class="ti ti-scan"></i>T2600 MFP (36")</a></div>
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">İlgili ürünler ve çözümler</div>
+    <p class="ssub">Birlikte değerlendirin</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/hp-blue.png" alt="" style="width:30px;height:30px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="designjet" style="color:inherit;text-decoration:none;">DesignJet Ailesi</a></h3>
+      <p>Tüm HP DesignJet geniş format yazıcı modellerini tek sayfada karşılaştırın.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/hp-blue.png" alt="" style="width:30px;height:30px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="designjet-t2600" style="color:inherit;text-decoration:none;">T2600 MFP (36")</a></h3>
+      <p>Baskı, tarama ve kopyalamayı tek gövdede birleştiren çok fonksiyonlu DesignJet.</p>
+    </div>
   </div>
 </section>
 <div class="cta-strip">

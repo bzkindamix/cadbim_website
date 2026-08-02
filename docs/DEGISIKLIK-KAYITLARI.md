@@ -12,6 +12,16 @@
 - **Çıktı:** `docs/SITE-DENETIM-RAPORU-2026-08-02.md` — 9 kritik + 12 yüksek + 20 orta/düşük bulgu, güçlü yönler ve 4 fazlık "20.000 USD sınıfı" yol haritası (Faz 0: dağıtım/form/analitik yangın söndürme · Faz 1: performans+SEO · Faz 2: dönüşüm+güven, Dynamics 365 form entegrasyonu · Faz 3: SSG+CI/CD). Rapor ayrıca bulut artifact olarak yayınlandı.
 - **Durum:** ✅ Rapor tamamlandı; düzeltmeler Onur'un faz onayını bekliyor.
 
+### DK-2026-08-02-01 — Site genelinde "pill" tarzı çapraz-satış bölümleri kart stiline dönüştürüldü (158 dosya)
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur, SketchUp sayfasında aynı içeriği iki farklı stille tekrarlayan bölümleri gösterip (DK-2026-08-02 öncesi konuşma) beğendiği kart stilinin ("Entegrasyonlar" bölümü) siteye yaygınlaştırılmasını istedi.
+- **Kapsam:** Sitede sayfa sonlarında "İlgili ürünler/çözümler/endüstriler/başarı öyküleri" gibi bilgiyi gösteren `class="cpills"` (hap/pill) tasarımı — küçük yuvarlak linkler — tutarsız ve içerik olarak "zayıf" görünüyordu (Onur'un ifadesiyle). Kart stiline (`card-icon` + `h3` + açıklama cümlesi) dönüştürüldü: `.cross`/`.cross-grid` kutuları kaldırılıp `.sh` (slabel/stitle/ssub) + `.grid g3` desenine, kategori başlıklı gruplarda ise başlık korunup yalnızca `cpills` içeriği `grid g3`'e çevrildi.
+- **Ölçek:** 158 dosya, ~1930 kart. Sitede önceden `class="cpills"` içeren tüm dosyalar (129 orijinal + bu oturumda oluşturulan 4 yeni SketchUp sayfası) tek tek işlendi. İş, 6 arka plan ajan dalgasında (HP/ZBook 20 dosya, DesignJet ailesi 22 dosya, ardından kalan 52 dosya 4 paralel pakette: Adobe/Chaos/UltiMaker artıkları, Çözüm/Sektör sayfaları, Autodesk BIM/Reality/Core, Autodesk üretim/fabrication) yürütüldü; ilk dalgadaki bazı ajanlar hesap bazlı API rate-limit'e takılıp yarıda kesildi, limit sıfırlandıktan sonra sadece kalan dosyalarla yeniden başlatıldı.
+- **Kart ikonu seçimi:** Öncelik sırası (1) ürüne özel logo (`assets/logos/products/`), (2) marka logosu (`assets/logos/`), (3) hiçbiri yoksa pill'in kendi Tabler ikonu. Jenerik/paylaşılan marka logoları (örn. `chaos.webp` hem Enscape hem V-Ray için, `autodesk-white.svg` her Autodesk ürünü için) mümkün olduğunca ürüne özel logoyla değiştirildi.
+- **Kapsam dışı bırakılan (kasıtlı, dokunulmadı):** `.cross`/`.cpills`/`.cp` CSS kuralları (artık kullanılmıyor ama silinmedi — başka bir temizlik görevi); farklı class isimli benzer bloklar (`cross-pills`, `feat-grid`/`feat-card` gibi) — bunlar bu görevin kapsamındaki `cpills` deseniyle karışmasın diye ayrıştırıldı.
+- **Doğrulama:** Tüm 158 dosyada `class="cpills"` sıfıra indi (site-geneli grep); her dosyada `<div`/`</div` sayıları eşit (denge bozulmadı); her dosyada referans verilen tüm logo dosyalarının diskte var olduğu doğrulandı (0 eksik asset); tarayıcıda (yerel statik sunucu) 158 dosyanın tamamı fetch edilip her `.card` içindeki linklerin boş/kırık olmadığı ve `.cpills` kalıntısı kalmadığı script ile teyit edildi.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-07-31-01 — SketchUp sayfası hataları düzeltildi + 4 eksik ürün sayfası oluşturuldu
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur'un `cadbim_sketchup.html` canlı önizlemesinde sırayla fark ettiği 3 görsel/içerik hatası üzerine.

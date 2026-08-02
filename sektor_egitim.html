@@ -62,7 +62,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
 .card:hover{border-color:var(--cbor);}
 .card.hi{border-color:var(--cbor);}
-.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
 .card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .card p{font-size:13px;color:var(--w50);line-height:1.65;}
 .pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
@@ -460,10 +460,27 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 </section>
 
 <section class="section" style="padding-top:0;">
-  <div class="cross">
-    <h3>İlgili çözüm alanları</h3>
-    <p class="cd">Bu sektöre hizmet eden Cadbim çözümleri</p>
-    <div class="cpills"><a href="eklemeli-imalat" class="cp"><i class="ti ti-printer-3d"></i>Eklemeli İmalat</a><a href="yaratici-icerik" class="cp"><i class="ti ti-palette"></i>Yaratıcı İçerik</a><a href="bim" class="cp"><i class="ti ti-building"></i>BIM</a></div>
+  <div class="sh" style="margin-bottom:22px;">
+    <div class="slabel">İlgili Çözümler</div>
+    <div class="stitle" style="font-size:1.15rem;">İlgili çözüm alanları</div>
+    <p class="ssub">Bu sektöre hizmet eden Cadbim çözümleri</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-printer-3d"></i></div>
+      <h3><a href="eklemeli-imalat" style="color:inherit;text-decoration:none;">Eklemeli İmalat</a></h3>
+      <p>3D yazıcılar ve eklemeli üretim teknolojileri için uçtan uca çözümler.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-palette"></i></div>
+      <h3><a href="yaratici-icerik" style="color:inherit;text-decoration:none;">Yaratıcı İçerik</a></h3>
+      <p>Görselleştirme, animasyon ve medya prodüksiyonu için yazılım çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+      <h3><a href="bim" style="color:inherit;text-decoration:none;">BIM</a></h3>
+      <p>Yapı bilgi modellemesiyle proje süreçlerinin dijitalleştirilmesi.</p>
+    </div>
   </div>
 </section>
 

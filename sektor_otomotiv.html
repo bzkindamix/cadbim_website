@@ -140,6 +140,17 @@ a.pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgb
 .pcard .parr{margin-left:auto;font-size:15px;color:var(--w30);transition:color .2s,transform .2s;flex-shrink:0;}
 a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 @media(max-width:600px){.pfilter{position:static;gap:6px;}.psearch{margin-left:0;width:100%;}.psearch input{flex:1;width:auto;}}
+.sh{margin-bottom:48px;}
+.slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan,#00c8f0);margin-bottom:8px;}
+.stitle{font-family:'Manrope',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:#fff;margin-bottom:10px;}
+.ssub{font-size:15px;color:rgba(255,255,255,.5);max-width:560px;line-height:1.7;}
+.grid{display:grid;gap:16px;margin-top:40px;}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.card{background:var(--navy3,#0d1830);border-radius:16px;border:.5px solid rgba(255,255,255,0.1);padding:24px 22px;transition:border-color .2s;}
+.card:hover{border-color:rgba(0,200,240,0.2);}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
+.card h3{font-family:'Manrope',sans-serif;font-size:15px;font-weight:600;color:#fff;margin-bottom:8px;}
+.card p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;}
 </style>
 
 <!-- SEO -->
@@ -521,10 +532,52 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div>
 </section>
 <section class="section" style="padding-top:0;">
-  <div class="cross">
-    <h3>Bu endüstride kullanılan Cadbim çözümleri</h3>
-    <p class="cd">İlgili çözüm sayfalarını inceleyin — her çözümde kullanılan ürünleri görün</p>
-    <div class="cpills"><a href="plm" class="cp"><i class="ti ti-hierarchy-3"></i>PLM — Ürün Yaşam Döngüsü</a><a href="pdm" class="cp"><i class="ti ti-folders"></i>PDM — Ürün Veri Yönetimi</a><a href="simulasyon" class="cp"><i class="ti ti-chart-dots-3"></i>Simülasyon & Analiz</a><a href="cam" class="cp"><i class="ti ti-settings-2"></i>CAM & İmalat</a><a href="tolerans-analizi" class="cp"><i class="ti ti-ruler-2"></i>Tolerans Analizi</a><a href="fabrika-tasarimi" class="cp"><i class="ti ti-building-factory-2"></i>Fabrika Tasarımı & Dijital İkiz</a><a href="tasarim-otomasyonu" class="cp"><i class="ti ti-robot"></i>Tasarım Otomasyonu</a><a href="pdm-collection" class="cp"><img src="assets/logos/products/pdm-collection.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk PD&M Collection</a></div>
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu endüstride kullanılan Cadbim çözümleri</div>
+    <p class="ssub">İlgili çözüm sayfalarını inceleyin — her çözümde kullanılan ürünleri görün</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-hierarchy-3"></i></div>
+      <h3><a href="plm" style="color:inherit;text-decoration:none;">PLM — Ürün Yaşam Döngüsü</a></h3>
+      <p>Ürün yaşam döngüsünü tasarımdan üretime kadar uçtan uca yöneten çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-folders"></i></div>
+      <h3><a href="pdm" style="color:inherit;text-decoration:none;">PDM — Ürün Veri Yönetimi</a></h3>
+      <p>Mühendislik verilerini merkezi olarak saklayan ve versiyon kontrolü sağlayan çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-dots-3"></i></div>
+      <h3><a href="simulasyon" style="color:inherit;text-decoration:none;">Simülasyon & Analiz</a></h3>
+      <p>Tasarımların üretime geçmeden önce dijital ortamda doğrulanmasını sağlayan simülasyon çözümleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings-2"></i></div>
+      <h3><a href="cam" style="color:inherit;text-decoration:none;">CAM & İmalat</a></h3>
+      <p>Tasarımdan CNC işlemeye uzanan bilgisayar destekli imalat çözümleri sunulur.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-ruler-2"></i></div>
+      <h3><a href="tolerans-analizi" style="color:inherit;text-decoration:none;">Tolerans Analizi</a></h3>
+      <p>Parça ve montaj toleranslarının üretim öncesi istatistiksel olarak doğrulanmasını sağlar.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building-factory-2"></i></div>
+      <h3><a href="fabrika-tasarimi" style="color:inherit;text-decoration:none;">Fabrika Tasarımı & Dijital İkiz</a></h3>
+      <p>Üretim hatlarının dijital ikizini oluşturarak fabrika tasarımını optimize eden çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-robot"></i></div>
+      <h3><a href="tasarim-otomasyonu" style="color:inherit;text-decoration:none;">Tasarım Otomasyonu</a></h3>
+      <p>Tekrarlayan tasarım adımlarını kural tabanlı otomasyonla hızlandıran çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="pdm-collection" style="color:inherit;text-decoration:none;">Autodesk PD&M Collection</a></h3>
+      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
+    </div>
   </div>
 </section>
 <section data-newsol style="padding:56px 3rem;background:#0a1225;">

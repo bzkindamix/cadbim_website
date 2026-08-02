@@ -62,7 +62,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
 .card:hover{border-color:var(--cbor);}
 .card.hi{border-color:var(--cbor);}
-.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
 .card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .card p{font-size:13px;color:var(--w50);line-height:1.65;}
 .pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
@@ -313,7 +313,83 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 </section>
 <section class="section" style="padding-top:0;">
   <div class="sh"><div class="slabel">Pakete Dahil Yazılımlar</div><div class="stitle">PD&M Collection İçindeki Yazılımlar</div><p class="ssub">Autodesk Product Design & Manufacturing Collection ile gelen tüm yazılımlar. Ürün sayfası olanları tıklayıp inceleyebilirsiniz.</p></div>
-  <div class="cpills"><a href="inventor" class="cp"><img src="assets/logos/products/inventor.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Inventor</a><a href="autocad" class="cp"><img src="assets/logos/products/autocad.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">AutoCAD</a><a href="fusion" class="cp"><img src="assets/logos/products/fusion.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk Fusion</a><a href="vault-pdm" class="cp"><img src="assets/logos/products/vault-pdm.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Vault Basic</a><a href="navisworks" class="cp"><img src="assets/logos/products/navisworks.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Navisworks Manage</a><a href="3dsmax" class="cp"><img src="assets/logos/products/3dsmax.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">3ds Max</a><a href="recap-pro" class="cp"><img src="assets/logos/products/recap-pro.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">ReCap Pro</a><a href="autodesk-drive" class="cp"><img src="assets/logos/products/autodesk-drive.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Autodesk Drive</a><a href="factory-design" class="cp"><img src="assets/logos/products/factory-design.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Factory Design Utilities</a><span class="cp" style="cursor:default;"><i class="ti ti-tool"></i>HSMWorks</span><span class="cp" style="cursor:default;"><i class="ti ti-tool"></i>Inventor CAM</span><span class="cp" style="cursor:default;"><i class="ti ti-chart-dots"></i>Inventor Nastran</span><span class="cp" style="cursor:default;"><i class="ti ti-layout-grid"></i>Inventor Nesting</span><span class="cp" style="cursor:default;"><i class="ti ti-ruler-2"></i>Inventor Tolerance Analysis</span><span class="cp" style="cursor:default;"><i class="ti ti-photo"></i>Rendering (bulut)</span></div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="inventor" style="color:inherit;text-decoration:none;">Inventor</a></h3>
+      <p>Parametrik 3B mekanik tasarım ve mühendislik dokümantasyonu için endüstri standardı yazılım.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/autocad.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="autocad" style="color:inherit;text-decoration:none;">AutoCAD</a></h3>
+      <p>2B ve 3B teknik çizim için sektörün en yaygın kullanılan CAD yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/fusion.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="fusion" style="color:inherit;text-decoration:none;">Autodesk Fusion</a></h3>
+      <p>Tasarım, mühendislik ve CAE analizini tek platformda birleştiren bulut tabanlı çözüm.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/vault-pdm.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="vault-pdm" style="color:inherit;text-decoration:none;">Vault Basic</a></h3>
+      <p>Tasarım verilerini ve revizyon geçmişini merkezi olarak yöneten veri yönetim sistemi.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/navisworks.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="navisworks" style="color:inherit;text-decoration:none;">Navisworks Manage</a></h3>
+      <p>Farklı disiplinlerden gelen modelleri birleştirip çakışma kontrolü yapan koordinasyon yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/3dsmax.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="3dsmax" style="color:inherit;text-decoration:none;">3ds Max</a></h3>
+      <p>İleri düzey 3B modelleme, animasyon ve render için görselleştirme yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/recap-pro.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="recap-pro" style="color:inherit;text-decoration:none;">ReCap Pro</a></h3>
+      <p>Nokta bulutu ve fotogrametri verilerini CAD ortamına hazırlayan tarama yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/autodesk-drive.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="autodesk-drive" style="color:inherit;text-decoration:none;">Autodesk Drive</a></h3>
+      <p>Proje dosyalarını bulutta saklayan ve ekip içinde paylaşan depolama hizmeti.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/factory-design.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="factory-design" style="color:inherit;text-decoration:none;">Factory Design Utilities</a></h3>
+      <p>Fabrika yerleşim planlarını 2B ve 3B olarak tasarlayan yerleşim planlama aracı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-tool"></i></div>
+      <h3>HSMWorks</h3>
+      <p>SolidWorks içinde entegre çalışan CAM programlama eklentisi.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-tool"></i></div>
+      <h3>Inventor CAM</h3>
+      <p>Inventor içinden CNC takım yolu programlama imkanı sunan CAM modülü.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-dots"></i></div>
+      <h3>Inventor Nastran</h3>
+      <p>Yapısal ve termal davranışları doğrulayan sonlu elemanlar analizi modülü.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-layout-grid"></i></div>
+      <h3>Inventor Nesting</h3>
+      <p>Sac ve levha kesiminde malzeme israfını azaltan otomatik yerleştirme modülü.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-ruler-2"></i></div>
+      <h3>Inventor Tolerance Analysis</h3>
+      <p>Parça ve montaj toleranslarının istatistiksel olarak doğrulanmasını sağlayan modül.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-photo"></i></div>
+      <h3>Rendering (bulut)</h3>
+      <p>Bulutta yüksek kaliteli görsel render üretimi sağlayan bulut tabanlı hizmet.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section">
@@ -394,9 +470,58 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 <section class="section" style="padding-top:0;">
   <div class="sh" style="margin-bottom:26px;"><div class="slabel">Keşfet</div><div class="stitle">Bu Ürünle İlgili</div></div>
   <div style="display:grid;gap:24px;">
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div><div class="cpills"><a href="simulasyon" class="cp"><i class="ti ti-chart-scatter"></i>Simülasyon & Analiz</a><a href="cam" class="cp"><i class="ti ti-tool"></i>CAM & İmalat</a><a href="pdm" class="cp"><i class="ti ti-database"></i>PDM</a></div></div>
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div><div class="cpills"><a href="sektor-makine" class="cp"><i class="ti ti-settings"></i>Makine & Üretim</a><a href="sektor-otomotiv" class="cp"><i class="ti ti-car"></i>Otomotiv</a></div></div>
-    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-box" style="color:var(--cyan);font-size:15px;"></i>Birlikte Çalıştığı Ürünler</div><div class="cpills"><a href="autodesk" class="cp"><i class="ti ti-box"></i>Autodesk Marka Sayfası</a><a href="inventor" class="cp"><img src="assets/logos/products/inventor.svg" alt="" style="height:15px;width:auto;margin-right:6px;vertical-align:-3px;" loading="lazy" decoding="async">Inventor</a><a href="vault-pdm" class="cp"><img src="assets/logos/products/vault-pdm.svg" alt="" style="height:15px;width:auto;margin-right:6px;vertical-align:-3px;" loading="lazy" decoding="async">Vault</a></div></div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div>
+    <div class="grid g3" style="margin-top:0;">
+      <div class="card">
+        <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-scatter"></i></div>
+        <h3><a href="simulasyon" style="color:inherit;text-decoration:none;">Simülasyon & Analiz</a></h3>
+        <p>Tasarımların üretime geçmeden önce dijital ortamda doğrulanmasını sağlayan simülasyon çözümleri.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-tool"></i></div>
+        <h3><a href="cam" style="color:inherit;text-decoration:none;">CAM & İmalat</a></h3>
+        <p>Tasarımdan CNC işlemeye uzanan bilgisayar destekli imalat çözümleri sunulur.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-database"></i></div>
+        <h3><a href="pdm" style="color:inherit;text-decoration:none;">PDM</a></h3>
+        <p>Mühendislik verilerini merkezi olarak saklayan ve versiyon kontrolü sağlayan çözüm.</p>
+      </div>
+    </div>
+    </div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div>
+    <div class="grid g3" style="margin-top:0;">
+      <div class="card">
+        <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
+        <h3><a href="sektor-makine" style="color:inherit;text-decoration:none;">Makine & Üretim</a></h3>
+        <p>Makine imalat sektörüne özel tasarım, simülasyon ve üretim çözümleri sunulur.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
+        <h3><a href="sektor-otomotiv" style="color:inherit;text-decoration:none;">Otomotiv</a></h3>
+        <p>Otomotiv parça ve araç geliştirme süreçlerine yönelik uçtan uca mühendislik çözümleri.</p>
+      </div>
+    </div>
+    </div>
+    <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-box" style="color:var(--cyan);font-size:15px;"></i>Birlikte Çalıştığı Ürünler</div>
+    <div class="grid g3" style="margin-top:0;">
+      <div class="card">
+        <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/autodesk-white.svg" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;" loading="lazy" decoding="async"></div>
+        <h3><a href="autodesk" style="color:inherit;text-decoration:none;">Autodesk Marka Sayfası</a></h3>
+        <p>Autodesk'in tüm ürün ailesini ve marka bilgilerini tek sayfada bir araya getirir.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+        <h3><a href="inventor" style="color:inherit;text-decoration:none;">Inventor</a></h3>
+        <p>Parametrik 3B mekanik tasarım ve mühendislik dokümantasyonu için endüstri standardı yazılım.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/vault-pdm.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+        <h3><a href="vault-pdm" style="color:inherit;text-decoration:none;">Vault</a></h3>
+        <p>Mühendislik verilerini merkezi olarak saklayan ve versiyon kontrolünü sağlayan veri yönetim sistemi.</p>
+      </div>
+    </div>
+    </div>
   </div>
 </section>
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">

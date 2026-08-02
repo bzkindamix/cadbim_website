@@ -64,7 +64,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px 22px;transition:border-color .2s;}
 .card:hover{border-color:var(--cbor);}
 .card.hi{border-color:var(--cbor);}
-.card-icon{font-size:26px;color:var(--cyan);margin-bottom:14px;}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
 .card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .card p{font-size:13px;color:var(--w50);line-height:1.65;}
 .pts{display:flex;flex-direction:column;gap:5px;margin-top:10px;}
@@ -552,10 +552,47 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 </script>
 
 <section class="section section-alt" style="padding-top:0;">
-  <div class="cross">
-    <h3>Birlikte kullanılan ürünler ve çözümler</h3>
-    <p class="cd">DesignJet çıktısına giden ve onu tamamlayan araçlar</p>
-    <div class="cpills"><a href="autocad" class="cp"><img src="assets/logos/products/autocad.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">AutoCAD — kaynak çizimler</a><a href="revit" class="cp"><img src="assets/logos/products/revit.svg" alt="" style="height:14px;width:auto;margin-right:6px;vertical-align:-2px;" loading="lazy" decoding="async">Revit — BIM projeleri</a><a href="hp-z-workstation" class="cp"><img src="assets/logos/hp-blue.png" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);" loading="lazy" decoding="async">HP Z Workstation</a><a href="adobe" class="cp"><img src="assets/logos/adobe-logo.svg" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);" loading="lazy" decoding="async">Adobe Acrobat Pro</a><a href="hp-build-workspace" class="cp"><img src="assets/logos/hp-blue.png" alt="" style="height:13px;width:auto;margin-right:6px;vertical-align:-2px;opacity:.85;filter:brightness(0) invert(1);" loading="lazy" decoding="async">HP Build Workspace</a><a href="sanatsal-baski" class="cp"><i class="ti ti-palette"></i>Sanatsal Baskı Atölyesi</a><a href="designjet-sarf-malzeme" class="cp"><i class="ti ti-droplet"></i>Sarf Malzemeleri</a></div>
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Birlikte kullanılan ürünler ve çözümler</div>
+    <p class="ssub">DesignJet çıktısına giden ve onu tamamlayan araçlar</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/autocad.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="autocad" style="color:inherit;text-decoration:none;">AutoCAD</a></h3>
+      <p>Baskıya giden 2B ve 3B teknik çizimlerin hazırlandığı CAD yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/revit.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="revit" style="color:inherit;text-decoration:none;">Revit</a></h3>
+      <p>BIM projelerinin modellendiği ve paftaların baskıya hazırlandığı Autodesk yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/hp-blue.png" alt="" style="width:30px;height:30px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="hp-z-workstation" style="color:inherit;text-decoration:none;">HP Z Workstation</a></h3>
+      <p>CAD ve BIM yazılımları için tasarlanmış HP profesyonel iş istasyonları.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/products/acrobat.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="adobe" style="color:inherit;text-decoration:none;">Adobe Acrobat Pro</a></h3>
+      <p>Proje dokümanlarını PDF olarak oluşturma, düzenleme ve paylaşma yazılımı.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img src="assets/logos/hp-blue.png" alt="" style="width:30px;height:30px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3><a href="hp-build-workspace" style="color:inherit;text-decoration:none;">HP Build Workspace</a></h3>
+      <p>İnşaat projelerinde baskı ve dijital iş akışlarını birleştiren HP bulut çözümü.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-palette"></i></div>
+      <h3><a href="sanatsal-baski" style="color:inherit;text-decoration:none;">Sanatsal Baskı Atölyesi</a></h3>
+      <p>Fotoğraf ve sanat eseri reprodüksiyonuna yönelik baskı çözümlerini keşfedin.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-droplet"></i></div>
+      <h3><a href="designjet-sarf-malzeme" style="color:inherit;text-decoration:none;">Sarf Malzemeleri</a></h3>
+      <p>Orijinal HP mürekkep kartuşu, baskı kafası ve kağıt seçeneklerini inceleyin.</p>
+    </div>
   </div>
 </section>
 <div class="cta-strip">
