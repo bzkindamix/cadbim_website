@@ -169,6 +169,24 @@ select:focus-visible {
   [data-rv].rv-in{opacity:1;transform:none;}
 }
 
+/* ==== R6: Site geneli tam footer (marka + ofis + link kolonları) — K5 (2026-08-03) ====
+   Önceden 188 sayfada sadece telif hakkı + sosyal ikon şeridi vardı; index.html/
+   teklif-iste'de zaten var olan footer-grid yapısı artık tüm sayfalarda kullanılıyor.
+   Kurallar burada (sayfa içi <style>'lardan SONRA yüklenir) tanımlanır ki 190 sayfada
+   tekrar etmesin. */
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:48px;max-width:1240px;margin-left:auto;margin-right:auto;}
+.f-brand img{height:36px;width:auto;filter:brightness(0) invert(1);margin-bottom:14px;display:block;}
+.f-brand p{font-size:13.5px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:12px;}
+.f-offices{font-size:12.5px;color:rgba(255,255,255,0.5);display:flex;flex-direction:column;gap:5px;}
+.footer-col h4{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--w30, rgba(255,255,255,0.58));margin-bottom:16px;font-family:var(--font-d);font-weight:500;}
+.footer-col a{display:block;font-size:13.5px;text-decoration:none;margin-bottom:9px;transition:color .15s;}
+.footer-col a:hover{color:#00c8f0;}
+.footer-bot{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:.5px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:12px;max-width:1240px;margin:0 auto;}
+.footer-bot p a{color:rgba(255,255,255,0.58);text-decoration:none;}
+.footer-bot p a:hover{color:#00c8f0;}
+@media (max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+@media (max-width:600px){ .footer-grid{grid-template-columns:1fr;} }
+
 /* ==== R5: Sanatsal Baskı — çok renkli/efektli menü etiketi (Onur 2026-07-26) ==== */
 .sanatsal-gradient{
   background:linear-gradient(90deg,#00c8f0,#8b7cf7,#f26bd8,#00c8f0);
