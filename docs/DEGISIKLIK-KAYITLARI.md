@@ -4,6 +4,26 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-10 — İletişim formundan "Tercih ettiğiniz ofis" alanı kaldırıldı
+
+- **Yapan:** Onur Bozok'un "hiçbir formda tercih ettiğiniz ofis olmasın" talimatı üzerine Claude (PDM asistanı).
+- **Yapılan:** Alan sitede yalnızca `cadbim_iletisim.html`'de vardı (DK-2026-08-03-08'de canlandırılan formda). Hem `<select name="ofis">` bloğu hem de gönderim betiğindeki "Tercih edilen ofis: …" mesaj ekleme mantığı kaldırıldı.
+- **Doğrulama:** Site genelinde `name="ofis"` / "Tercih ettiğiniz ofis" / "Tercih edilen ofis" araması 0 sonuç. Etiket dengesi korunuyor (1/1 `form`, 70/70 `div`, 1/1 `select`). Tarayıcıda form alanları artık `ad_soyad, sirket, email, telefon, talep_turu, mesaj, kvkk`; taklit edilmiş gönderimde JSON gövdesinde ofis bilgisi yok.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
+### DK-2026-08-03-09 — Görünmeyen 9 ikon ve siyah render edilen "beyaz" Autodesk logosu düzeltildi
+
+- **Yapan:** Onur Bozok'un "eklemeli imalat için ikon yok" ve "markalarda siyah Autodesk logosu kullanılmış, site genelinde beyaz olanıyla değiştir" bildirimi üzerine Claude (PDM asistanı).
+- **Sorun 1 — Autodesk logosu:** `assets/logos/autodesk-white.svg` (ve `autodesk-primary-white.svg`) adı beyaz olsa da **siyah render ediliyordu**: dosyalardaki 9 şeklin tamamı `class="a"` taşıyor ama `<defs>` bloğu **boştu**, yani `.a` için hiçbir `fill` tanımlı değildi → SVG varsayılanı olan siyaha düşüyordu. Koyu zeminde logo görünmez/siyah lekeydi. 26 sayfada, filtresiz olarak kullanılıyordu.
+- **Düzeltme 1:** Her iki dosyaya `<defs><style>.a{fill:#ffffff}</style></defs>` eklendi — tek dosya düzeltmesi 26 sayfayı birden çözdü. Ayrıca `cadbim_lumion.html`'deki var olmayan `ti-brand-autodesk` ikonu, sitedeki diğer 19 kartla aynı biçimde gerçek Autodesk logosu `<img>`'ine çevrildi.
+- **Sorun 2 — eksik ikonlar:** Sitede kullanılan 9 `ti-*` sınıfının ikon fontu subset'inde karşılığı yoktu; bunların **8'i Tabler'da hiç var olmayan sınıf adlarıydı** (yani CDN'deki tam set kullanılsa bile boş çıkardı — subset'leme hatası değil, yanlış sınıf adı). En yaygını `ti-printer-3d`: 20 sayfada, eklemeli imalat/3B baskı kartlarında boş görünüyordu (Onur'un fark ettiği).
+- **Düzeltme 2 — gerçek Tabler karşılıkları:** `printer-3d`→`cube-3d-sphere` (20 sayfa), `bridge`→`building-bridge`, `circuit-board`→`cpu`, `device-vr`→`badge-vr`, `pipe`→`air-conditioning` (sitede MEP zaten bu ikonla gösteriliyor), `roll`→`cylinder`, `structure`→`building-arch`, `brand-autodesk`→Autodesk logosu. Dokuzuncusu (`player-play-filled`) Tabler'da mevcuttu, yalnızca subset'e girmemişti — eklendi.
+- **`scripts/build_icon_subset.py` (yeni):** DK-2026-08-02-08'de "üretim script'leri scratchpad'de, tekrarlanabilir hale getirilmedi" diye bırakılan boşluk kapatıldı. Betik; HTML + JS'i tarayıp kullanılan sınıfları çıkarır, Tabler CDN'inden kaynak CSS/TTF'i çeker (`.icon-subset-cache/`, .gitignore'da), codepoint eşlemesini kurar, woff2 subset'i ve eşleşen CSS'i üretir. **Tabler'da karşılığı olmayan sınıfları isim isim uyarı olarak listeler** — bu hatanın tekrarını engeller. Yeni ikon eklenince: `python scripts/build_icon_subset.py`.
+- **Önbellek kırma (kritik):** Her iki düzeltme de **aynı URL'deki dosyayı değiştirdiği** için mevcut ziyaretçilerin tarayıcı önbelleğinde eski (siyah logo / eksik glif) sürüm kalırdı — nitekim doğrulama sırasında tarayıcı ilk denemede hâlâ siyah logo gösterdi. `tabler-icons-subset.css` (1.319 sayfa) ve `autodesk-white.svg` (26 sayfa, 29 referans) referanslarına `?v=2` eklendi; CSS içindeki woff2 URL'ine de `?v=2` eklendi (betikte kalıcı).
+- **Doğrulama:** (1) Programatik: sitede kullanılan **293 sınıfın tamamı** artık CSS'te listeli, hepsinin fontta glif karşılığı var ve **hiçbiri boş konturlu değil** (0 boş ikon). (2) Tarayıcıda canvas piksel testiyle `cozumler` (30 ikon) ve `eklemeli-imalat` (26 ikon) sayfalarındaki her ikonun gerçekten çizildiği doğrulandı — 0 boş. (3) Autodesk logosu koyu zemine çizilip piksel sayıldı: **6.156 beyaz / 0 siyah** piksel (düzeltme öncesi 0 beyaz / 7.195 siyah).
+- **Bilinen ödün:** Yeni subset 294 ikon için 55,5 KB; önceki 289 ikonluk subset 32,6 KB'tı. Fark ikon sayısından değil kaynak font sürümünden geliyor — Tabler 3.19 ve 3.31 aynı 292 glif için 56,7 / 55,5 KB veriyor, yani eski subset daha eski (daha yalın çizimli) bir Tabler sürümünden üretilmiş. Subset seçenekleri (hinting kapalı, glyph adları atılmış, desubroutinize) boyutu değiştirmedi. ~23 KB artış kabul edildi: karşılığında 9 kırık ikon düzeldi ve CDN'e göre kazanç hâlâ ~%88.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-08 — İletişim sayfasındaki MS Forms iframe'i gerçek forma çevrildi (O4 kapandı)
 
 - **Yapan:** Onur Bozok'un "uzmanla konuş butonları iletişim sayfasına gidiyor, iletişim sayfasında eski form var" uyarısı üzerine Claude (PDM asistanı).

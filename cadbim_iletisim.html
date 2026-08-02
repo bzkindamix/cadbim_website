@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/tabler-icons-subset.css">
+<link rel="stylesheet" href="assets/css/tabler-icons-subset.css?v=2">
 <style>
 
 :root{
@@ -493,15 +493,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
               <option>Diğer</option>
             </select>
           </div>
-          <div>
-            <label style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Tercih ettiğiniz ofis</label>
-            <select name="ofis"
-              style="width:100%;background:#0d1830;border:.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;font-size:14px;color:rgba(255,255,255,0.8);font-family:'Manrope',sans-serif;outline:none;appearance:none;cursor:pointer;">
-              <option>Fark etmez</option>
-              <option>İzmir</option>
-              <option>Ankara</option>
-            </select>
-          </div>
           <div style="grid-column:1/-1;">
             <label style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Mesajınız</label>
             <textarea name="mesaj" placeholder="İhtiyacınızı, soru veya talebinizi kısaca açıklayın..." rows="5"
@@ -582,9 +573,6 @@ function handleSubmit(e){
   var f = e.target;
   if (!f.reportValidity()) return;
   function v(n){ var el = f.elements[n]; return el ? (el.value || '').trim() : ''; }
-  var ofis = v('ofis');
-  var mesaj = v('mesaj');
-  if (ofis && ofis !== 'Fark etmez') mesaj += (mesaj ? '\n\n' : '') + 'Tercih edilen ofis: ' + ofis;
   var data = {
     form_type: 'iletisim',
     ad_soyad: v('ad_soyad'),
@@ -592,7 +580,7 @@ function handleSubmit(e){
     email: v('email'),
     telefon: v('telefon'),
     talep_turu: v('talep_turu'),
-    mesaj: mesaj
+    mesaj: v('mesaj')
   };
   var btn = document.getElementById('submit-btn');
   var note = document.querySelector('.submit-note');

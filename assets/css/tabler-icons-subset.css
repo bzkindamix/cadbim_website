@@ -1,5 +1,6 @@
-/* Tabler Icons - CADBIM subset (286 ikon). Tam settin (5193 ikon) yerine sadece sitede kullanilan siniflari icerir. Yeni ikon eklenirse bu dosya yeniden uretilmeli - bkz. docs/DEGISIKLIK-KAYITLARI.md K7 kaydi. */
-@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;src:url("../fonts/tabler-icons-subset.woff2") format("woff2")}
+/* Tabler Icons - CADBIM subset (294 ikon, Tabler 3.31.0). Tam setin (5000+ ikon) yerine sadece sitede kullanilan siniflari icerir.
+   Yeni ikon eklenirse yeniden uret: python scripts/build_icon_subset.py */
+@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;src:url("../fonts/tabler-icons-subset.woff2?v=2") format("woff2")}
 .ti{font-family:"tabler-icons" !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block}
 .ti-3d-cube-sphere:before{content:"\ecd7"}
 .ti-ad-2:before{content:"\ef1f"}
@@ -30,6 +31,7 @@
 .ti-augmented-reality:before{content:"\f023"}
 .ti-award:before{content:"\ea2c"}
 .ti-badge:before{content:"\efc2"}
+.ti-badge-vr:before{content:"\f55f"}
 .ti-battery-4:before{content:"\ea32"}
 .ti-bolt:before{content:"\ea38"}
 .ti-book:before{content:"\ea39"}
@@ -103,8 +105,10 @@
 .ti-cpu:before{content:"\ef8e"}
 .ti-crane:before{content:"\ef27"}
 .ti-cube:before{content:"\fa97"}
+.ti-cube-3d-sphere:before{content:"\ecd7"}
 .ti-cube-send:before{content:"\f61b"}
 .ti-cut:before{content:"\ea86"}
+.ti-cylinder:before{content:"\f54c"}
 .ti-database:before{content:"\ea88"}
 .ti-device-desktop:before{content:"\ea89"}
 .ti-device-desktop-analytics:before{content:"\ee77"}
@@ -186,6 +190,7 @@
 .ti-map-pin:before{content:"\eae8"}
 .ti-map-pin-2:before{content:"\fc48"}
 .ti-maximize:before{content:"\eaea"}
+.ti-menu-2:before{content:"\ec42"}
 .ti-message:before{content:"\eaef"}
 .ti-message-2:before{content:"\eaec"}
 .ti-message-circle:before{content:"\eaed"}
@@ -204,6 +209,7 @@
 .ti-photo-off:before{content:"\ecf6"}
 .ti-plane:before{content:"\eb6f"}
 .ti-player-play:before{content:"\ed46"}
+.ti-player-play-filled:before{content:"\f691"}
 .ti-plug:before{content:"\ebd9"}
 .ti-plug-connected:before{content:"\f00a"}
 .ti-point:before{content:"\eb0c"}
