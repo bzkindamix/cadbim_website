@@ -337,7 +337,7 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
         <button type="submit" id="submit-btn" class="submit-btn">
           <i class="ti ti-send" style="font-size:16px;"></i>Teklif Talebi Gönder
         </button>
-        <p class="submit-note">Gönder'e bastığınızda, bilgilerinizle hazırlanmış bir e-posta taslağı açılır — göndermeniz yeterli. 1 iş günü içinde size dönüyoruz.</p>
+        <p class="submit-note">1 iş günü içinde size dönüyoruz.</p>
       </form>
     </div>
 
@@ -391,27 +391,40 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
 </footer>
 
 <script>
+var POWER_AUTOMATE_URL = 'https://d73d9ced5d22438dbfeec8d7513a32.54.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/01/workflows/11acbf894aaf4038a4c5897b085ea223/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=-s8rWcDC34d9_ZRWJ1ScL5UUmjp-WsB-ahlmUKhyJpM';
+
 function handleSubmit(e){
   e.preventDefault();
   var f = e.target;
   function v(n){ var el = f.elements[n]; return el ? (el.value || '').trim() : ''; }
-  var subject = 'Teklif Talebi — ' + (v('talep_turu') || 'Genel') + ' — ' + (v('sirket') || v('ad_soyad'));
-  var body = [
-    'Ad Soyad: ' + v('ad_soyad'),
-    'Şirket: ' + v('sirket'),
-    'E-posta: ' + v('email'),
-    'Telefon: ' + v('telefon'),
-    'Talep Türü: ' + v('talep_turu'),
-    '',
-    'Mesaj:',
-    v('mesaj')
-  ].join('\n');
+  var data = {
+    form_type: 'teklif_iste',
+    ad_soyad: v('ad_soyad'),
+    sirket: v('sirket'),
+    email: v('email'),
+    telefon: v('telefon'),
+    talep_turu: v('talep_turu'),
+    mesaj: v('mesaj')
+  };
   var btn = document.getElementById('submit-btn');
-  btn.innerHTML = '<i class="ti ti-mail" style="font-size:16px;"></i> E-posta istemciniz açılıyor...';
-  window.location.href = 'mailto:cadbim@cadbim.com.tr?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  setTimeout(function(){
-    btn.innerHTML = '<i class="ti ti-send" style="font-size:16px;"></i>Teklif Talebi Gönder';
-  }, 4000);
+  var note = document.querySelector('.submit-note');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="ti ti-loader-2" style="font-size:16px;"></i> Gönderiliyor...';
+  fetch(POWER_AUTOMATE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function(res){
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    btn.innerHTML = '<i class="ti ti-check" style="font-size:16px;"></i> Talebiniz alındı!';
+    btn.style.background = '#10b981';
+    if (note) note.textContent = '1 iş günü içinde size dönüyoruz.';
+    f.reset();
+  }).catch(function(){
+    btn.disabled = false;
+    btn.innerHTML = '<i class="ti ti-send" style="font-size:16px;"></i> Teklif Talebi Gönder';
+    if (note) note.innerHTML = 'Bir sorun oluştu. Doğrudan <a href="mailto:cadbim@cadbim.com.tr" style="color:#00c8f0;">cadbim@cadbim.com.tr</a> adresine yazabilir veya <a href="tel:+902324643490" style="color:#00c8f0;">0232 464 34 90</a>\'ı arayabilirsiniz.';
+  });
 }
 </script>
 <script src="mobilenav.js?v=11" defer></script>

@@ -849,7 +849,7 @@ html{overflow-x:clip;}
         </label>
       </div>
       <button type="submit" id="baski-submit-btn" class="cta-btn" data-hover data-mag>Talebimi Gönder ↗</button>
-      <p class="bf-note">Gönder'e bastığınızda bilgilerinizle hazırlanmış bir e-posta taslağı açılır — dosyanızı eklemeniz yeterli. Aynı gün fiyat dönüşü yapıyoruz.</p>
+      <p class="bf-note">Aynı gün fiyat dönüşü yapıyoruz. Dosyanızı ayrıca e-posta veya WhatsApp ile iletebilirsiniz.</p>
     </form>
   </div>
 
@@ -871,28 +871,42 @@ html{overflow-x:clip;}
 </section>
 
 <script>
+var POWER_AUTOMATE_URL = 'https://d73d9ced5d22438dbfeec8d7513a32.54.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/01/workflows/11acbf894aaf4038a4c5897b085ea223/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=-s8rWcDC34d9_ZRWJ1ScL5UUmjp-WsB-ahlmUKhyJpM';
+
 function formuGonder(e){
   e.preventDefault();
   var f = e.target;
   function v(n){ var el = f.elements[n]; return el ? (el.value || '').trim() : ''; }
-  var subject = 'Sanatsal Baskı Talebi — ' + (v('baski_turu') || 'Genel');
-  var body = [
-    'Ad Soyad: ' + v('ad_soyad'),
-    'E-posta: ' + v('email'),
-    'Telefon: ' + v('telefon'),
-    'Baskı Türü: ' + v('baski_turu'),
-    'Yüzey / Kağıt: ' + v('yuzey'),
-    'Finisaj: ' + v('finisaj'),
-    'Ebat / Ölçü: ' + v('ebat'),
-    'Adet: ' + v('adet'),
-    '',
-    'Mesaj:',
-    v('mesaj')
-  ].join('\n');
+  var data = {
+    form_type: 'sanatsal_baski',
+    ad_soyad: v('ad_soyad'),
+    email: v('email'),
+    telefon: v('telefon'),
+    baski_turu: v('baski_turu'),
+    yuzey: v('yuzey'),
+    finisaj: v('finisaj'),
+    ebat: v('ebat'),
+    adet: v('adet'),
+    mesaj: v('mesaj')
+  };
   var btn = document.getElementById('baski-submit-btn');
-  btn.innerHTML = 'E-posta istemciniz açılıyor...';
-  window.location.href = 'mailto:sanatsalbaski@cadbim.com.tr?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  setTimeout(function(){ btn.innerHTML = 'Talebimi Gönder ↗'; }, 4000);
+  var note = document.querySelector('.bf-note');
+  btn.disabled = true;
+  btn.innerHTML = 'Gönderiliyor...';
+  fetch(POWER_AUTOMATE_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function(res){
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    btn.innerHTML = 'Talebiniz alındı ✓';
+    if (note) note.textContent = 'Aynı gün fiyat dönüşü yapıyoruz. Dosyanızı e-posta veya WhatsApp ile iletmeniz yeterli.';
+    f.reset();
+  }).catch(function(){
+    btn.disabled = false;
+    btn.innerHTML = 'Talebimi Gönder ↗';
+    if (note) note.innerHTML = 'Bir sorun oluştu. Doğrudan <a href="mailto:sanatsalbaski@cadbim.com.tr" style="color:var(--acc2);">sanatsalbaski@cadbim.com.tr</a> adresine yazabilirsiniz.';
+  });
 }
 </script>
 

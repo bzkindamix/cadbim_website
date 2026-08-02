@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-04 — Power Automate akışı kuruldu ve iki form gerçek gönderime bağlandı
+
+- **Yapan:** Onur Bozok (Power Automate'te akışı kurdu, Chrome oturumu üzerinden Claude ile birlikte) + Claude (PDM asistanı) · DK-02/03'teki mailto-taslağı geçici çözümünün kalıcı hale getirilmesi.
+- **Power Automate akışı ("Web sitesi form gonderimi", ortam: Cadbim Bilgisayar Özel...):** "Bir HTTP isteği alındığında" tetikleyicisi (erişim: Herkes) → `form_type` alanına göre Koşul → `sanatsal_baski` ise `sanatsalbaski@cadbim.com.tr`'ye, aksi halde `cadbim@cadbim.com.tr`'ye "E-posta gönder (V2)" → "Yanıt" (200, `{"ok":true}`). Akış Power Automate arayüzünde Türkçe dinamik içerik seçici JSON şemasını ayrıştırmadığı için (tekrarlanan denemelerde şema alanı kayıt sonrası boşaldı — kozmetik bir Power Automate arayüz kısıtı, işlevi etkilemiyor), alan erişimleri `@{triggerBody()?['alan_adi']}` düz metin ifadesiyle yazıldı; bu, koşul ve e-posta gövdelerinde doğrulanan şekilde çalışıyor.
+- **`cadbim_teklif_iste.html` ve `cadbim_sanatsal_baski.html`:** `handleSubmit`/`formuGonder` fonksiyonları artık mailto taslağı açmıyor; doğrudan Power Automate'in HTTP tetikleyici URL'sine (imzalı, `POWER_AUTOMATE_URL` sabiti içinde) `fetch()` ile JSON POST atıyor. Gerçek başarı/hata durumları gösteriliyor (başarıda buton "Talebiniz alındı" olup form sıfırlanıyor; başarısızlıkta buton eski haline dönüp doğrudan e-posta/telefon alternatifi gösteriliyor) — hiçbir zaman sahte "alındı" mesajı yok.
+- **Güvenlik notu:** Tetikleyici URL'si "Herkes" erişimine açık imzalı bir bağlantı; bu imza fiilen paylaşılan bir sır işlevi görüyor ve şu an istemci tarafı JS içinde (herkese açık sayfa kaynağında) yer alıyor. Bu, kod tarafında değiştirilmeden bırakıldı (mevcut MS Forms/Formspree tarzı entegrasyonlarla aynı risk profili) ancak Onur'a bilgi verildi; istismar edilirse Power Automate'te URL yeniden üretilebilir (yeniden imzalama). İleride bir honeypot alanı veya basit oran sınırlama eklenebilir.
+- **Doğrulama:** `curl` ile doğrudan uç nokta testi (HTTP 200) + tarayıcıda her iki formda gerçek `fetch()` gönderimi simüle edilip buton/not metinlerinin başarı durumuna geçtiği doğrulandı (konsol hatası yok, CORS engeli yok). Test gönderimleri sırasında `cadbim@cadbim.com.tr` kutusuna 2, `sanatsalbaski@cadbim.com.tr` kutusuna 1 test e-postası gitti — bunlar gerçek talep değildir, silinebilir.
+- **Kapsam dışı (bilinen, kozmetik):** Koşul adımındaki zararsız boş ikinci satır (DK-03'te not edildi) ve Power Automate arayüzünde JSON şemasının kalıcı olmaması — ikisi de işlevi etkilemiyor, ileride temizlenebilir.
+- **Durum:** ✅ Tamamlandı, push edilecek. HP Servis ve Eğitim formlarının aynı akışa (yeni `form_type` dalları eklenerek) bağlanması sıradaki adım.
+
 ### DK-2026-08-02-03 — Sanatsal Baskı'ya kendi formu eklendi; Teklif İste formundan "Tercih Edilen Ofis" kaldırıldı
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · DK-02'deki 4-form planının ikinci adımı.
