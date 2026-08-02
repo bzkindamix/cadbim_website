@@ -8,3 +8,7 @@ assets/products/designjet/
 
 # Tabler ikon subset uretiminde indirilen kaynak font/CSS onbellegi (build_icon_subset.py)
 .icon-subset-cache/
+
+# Python bytecode
+__pycache__/
+*.pyc
