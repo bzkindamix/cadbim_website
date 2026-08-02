@@ -35,7 +35,7 @@ h1, h2, .htitle { font-family: var(--fd); }
 
 /* Footer'daki satır içi (değişken kullanmayan) düşük kontrastlı renkler */
 .footer-col a { color: rgba(255, 255, 255, 0.6); }
-.footer-bot p { color: rgba(255, 255, 255, 0.45); }
+.footer-bot p { color: rgba(255, 255, 255, 0.5); }
 
 /* Sabit navigasyon yüksekliği yüzünden sayfa içi bağlantılarda (#hakkimizda vb.)
    başlığın nav bar altında kalmasını önler */

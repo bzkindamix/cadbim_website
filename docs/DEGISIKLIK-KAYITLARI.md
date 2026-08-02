@@ -4,6 +4,22 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-06 — Denetim raporundaki Faz 0 mekanik düzeltmelerinin tamamı uygulandı
+
+- **Yapan:** Onur Bozok'un "sonnet'in yapabileceği ne varsa listede belirlediğimiz hepsini yap" talebi üzerine Claude (PDM asistanı) — DK-01'deki denetim raporunun (SITE-DENETIM-RAPORU-2026-08-02.md) sunucu erişimi/görsel işleme/içerik yazımı gerektirmeyen, salt dosya düzenlemesiyle yapılabilecek tüm bulguları toplu olarak düzeltti.
+- **Htaccess taslağı (K2, Y1, Y2):** `docs/htaccess-taslak.txt`'e blog yazıları için genel kural (`^post/(.+?)/?$`) ve `vray`/`enscape`/`veras` için eksik bölüm-3+4 kuralları eklendi. 4 SketchUp sayfasının (`sketchup-pro`, `-pro-scan`, `-pro-civil-contractor`, `advanced-workflows`) taslakta zaten var olduğu doğrulandı; asıl eksik oldukları `sitemap.xml` ve `404.html` haritasıydı — ikisine de eklendi.
+- **Sitemap/robots temizliği (Y5):** 11 `noindex` KVKK sayfası `sitemap.xml`'den çıkarıldı; `robots.txt`'teki var olmayan `/tesekkurler` sayfasına ait `Disallow` satırı kaldırıldı.
+- **`cadbim_construction_cloud.html` (Y10):** Silinmedi — denetimdeki "0 link" bulgusu güncel değildi, 6 blog yazısı hâlâ `../construction-cloud`'a link veriyor. Ancak stub'ın yönlendirdiği `/autodesk-forma` hedefinin doğru eşleşme olup olmadığı bir içerik kararı; Onur'a soruldu, dokunulmadı.
+- **`cookie-consent.js` eklendi (K4):** `index.html` dahil eksik 20 sayfaya (5 sektör sayfası, çözümler/eğitimler/endüstriler, 13 KVKK sayfası) script etiketi eklendi. `404.html` ve `cadbim_construction_cloud.html` kasıtlı hariç tutuldu (anlık yönlendirme sayfaları, kalıcı içerik değil).
+- **`href="index.html"` → `href="/"` (Y4):** Kök sayfalardaki 570 örnek düzeltildi.
+- **Post içi eski linkler (Y3):** `post/*.html` içindeki 8.067 `../cadbim_X.html` / `../sektor_X.html` / `../index.html` linki, `404.html`'deki güncel harita kullanılarak 1.129 dosyada temiz URL'e (`../X`, `../`) çevrildi — 0 eşlenemeyen dosya adı kaldı. Bu, her post ziyaretinde oluşan gereksiz 301 zincirini ortadan kaldırıyor.
+- **Footer/legal link kontrastı (Y7):** `.fbot`/`.footer-bot` metin rengi (0.2→0.5) ve footer linklerinin rengi (0.3→0.58, 2.835 örnek) site genelinde WCAG AA eşiğinin üzerine çekildi; `assets/css/design-system.css`'teki fallback değer de (0.45→0.5) güncellendi.
+- **Script/CSS sürüm tekilleştirmesi:** `mobilenav.js` (389 sayfada `?v=9` → `?v=11`) ve `cookie-consent.js` (389 sayfada `?v=1` → `?v=2`) sürümleri site genelinde eşitlendi — artık tarayıcı önbelleğinde çift giriş yok.
+- **Erişilebilirlik (Y6):** `assets/css/design-system.css`'te `:focus-visible` kuralının önceki bir oturumdan zaten mevcut ve 1.319 sayfada aktif olduğu doğrulandı (rakip bir `:focus` kuralı bulunmadığı statik analizle teyit edildi). Skip-link EKLENMEDİ: sayfa yapıları nav sonrası ortak bir landmark ID paylaşmıyor, körlemesine eklemek kırık çapa riski taşır.
+- **Doğrulama:** Yerel önizlemede kök (`index.html`), post (`3d-gorunum.html`), KVKK (`kvkk_cerez_politikasi.html`) ve `teklif-iste`/`sanatsal-baski` sayfaları açılıp konsol hatası olmadığı, `cookie-consent.js`'in yüklendiği, footer link renginin `rgba(255,255,255,0.58)` hesaplandığı, Power Automate URL'sinin ve formların bozulmadığı doğrulandı.
+- **Kapsam dışı (bu oturumda yapılamayanlar):** `.htaccess`'in canlı sunucuya yüklenmesi (barındırma erişimi gerekiyor); K6 — 99 Türkçe-karakterli mükerrer post çifti (içerik farkı olabileceği için körlemesine silinmedi, ayrı karar gerektiriyor); K7/K8 — ikon fontu subset'i, DesignJet/UltiMaker görsellerinin WebP'ye çevrilmesi, autoplay video optimizasyonu (görsel/font işleme araçları gerektiriyor); O6 — başarı öykülerine müşteri logosu/metrik (gerçek müşteri verisi gerektiriyor); skip-link (yukarıda açıklandı).
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-02-05 — Power Automate e-postalarına marketing@cadbim.com.tr CC olarak eklendi
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı, Chrome oturumu üzerinden Power Automate'te doğrudan düzenleme yaptı).
