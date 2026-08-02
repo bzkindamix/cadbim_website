@@ -4,6 +4,15 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-04 — Tüm `<img>` etiketlerine width/height eklendi + bozuk adobe.svg düzeltildi (Y11 tamamlandı)
+
+- **Yapan:** Onur Bozok'un "devam" talebi üzerine Claude (PDM asistanı).
+- **Sorun (Y11):** Sitedeki 3.011 `<img>` etiketinin **hiçbirinde** `width`/`height` niteliği yoktu — tarayıcı, görsel gerçek boyutuyla inene kadar yer ayıramıyor, bu da yüklenme sırasında sayfanın zıplamasına (CLS — Cumulative Layout Shift) yol açıyordu.
+- **Bonus bulgu:** Tarama sırasında `assets/logos/products/adobe.svg`'nin **0 bayt (boş/bozuk)** olduğu ortaya çıktı — 10 sayfada (adobe_express, adobe_stock, after_effects, creative_cloud, firefly, illustrator, indesign, lightroom, photoshop, premiere_pro) 32×32'lik ürün ikonu olarak kullanılıyordu, yani bu sayfalarda kırık görsel ikonu gösteriliyordu. Sitede zaten var olan çalışan `assets/logos/products/adobe.png` (128×128, aynı ikon) ile değiştirildi.
+- **Yapılan:** 297 benzersiz yerel görsel kaynağının gerçek piksel boyutu okundu (raster için Pillow, SVG için `viewBox`/`width`/`height` XML ayrıştırması). 1.320 sayfadaki (191 kök + 1.129 post) 3.010 yerel `<img>` etiketine (harici tek 1 YouTube-benzeri img hariç) gerçek `width`/`height` niteliği eklendi — CSS/`object-fit` her zaman görünen boyutu kontrol ettiği için görsel render değişmedi, sadece tarayıcı artık doğru en-boy oranını önceden ayırabiliyor.
+- **Doğrulama:** Python ile her dosyada işlem öncesi/sonrası `<img>` sayısı eşit kaldığı (denge), hiçbir etikette çift `width=`/`height=` oluşmadığı doğrulandı. Tarayıcıda 5 farklı sayfa tipinde (index, egitimler, designjet, bir post, başarı öyküleri — tümü kaydırılarak lazy-load tetiklendi) `naturalWidth===0` (kırık) ve niteliği eksik `<img>` sayısı 0 çıktı.
+- **Durum:** ✅ Y11 tamamlandı, push edilecek.
+
 ### DK-2026-08-03-03 — apple-touch-icon PNG + site.webmanifest eklendi (D1 tamamlandı)
 
 - **Yapan:** Onur Bozok'un "devam" talebi üzerine Claude (PDM asistanı) · K3/K5'ten sonra denetim raporundaki bir sonraki mekanik/düşük-riskli kalem.
