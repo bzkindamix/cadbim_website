@@ -4,6 +4,14 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-03 — Sanatsal Baskı'ya kendi formu eklendi; Teklif İste formundan "Tercih Edilen Ofis" kaldırıldı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · DK-02'deki 4-form planının ikinci adımı.
+- **Sanatsal Baskı formu (`cadbim_sanatsal_baski.html`):** Sayfanın kendi CTA bölümünde (`#iletisim`), önceden var olan tek satırlık mailto butonu ve genel `iletisim#form`'a (yanlış hedef — MS Forms iframe) giden "ÇEVRİM İÇİ FORM" kartı kaldırılıp yerine sayfanın kendi menekşe/elektrik-mavisi cam-kart estetiğine uygun, alana özel bir form eklendi. Alanlar: Ad Soyad*, E-posta*, Telefon, Baskı Türü (Fotoğraf Baskısı/Fine Art Reprodüksiyon/Sanatsal Kanvas/Sergi Üretimi/Sertifika & Poster), Yüzey/Kağıt (Mat/Yarı Mat-Parlak/Parlak/Kanvas/Cotton Rag/Bayrak Bezi), Finisaj (Çerçeve/Dekota/Fotoblok/Kasnak/Parçalı Kanvas/Paravan), Ebat/Ölçü, Adet, Mesaj, KVKK. Seçenekler sayfanın kendi İşler/Yüzeyler/Finisaj bölümlerindeki terminolojiden alındı. Gönderim, teklif-iste formundaki gibi dürüst mailto-taslağı yöntemiyle `sanatsalbaski@cadbim.com.tr`'ye gidiyor (sahte "alındı" mesajı yok). Kalan 3 hızlı-iletişim kartı (telefon/WhatsApp/e-posta) korundu. Yeni CSS "R3" revizyon bloğu olarak dosyanın kendi versiyonlama kuralına (R2 bloğu) uyularak eklendi.
+- **Teklif İste formu düzeltmesi (`cadbim_teklif_iste.html`):** Onur'un "tercih edilen ofis diye bir seçenek olmamalı" geri bildirimiyle "Tercih Ettiğiniz Ofis" (İzmir/Ankara/Fark etmez) alanı formdan ve `handleSubmit`'in e-posta gövdesi oluşturma mantığından kaldırıldı; "Talep Türü" tek başına tam genişlik aldı.
+- **Doğrulama:** Her iki sayfada da form alanları JS ile sayıldı (Sanatsal Baskı: 11 alan; Teklif İste: 8 alan, "ofis" yok), `formuGonder`/`handleSubmit` fonksiyonları simüle edilip hatasız çalıştığı ve sayfanın yönlenmediği doğrulandı, konsol hatası yok, ekran görüntüsüyle görsel uyum kontrol edildi.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-02-02 — Yeni "Teklif İste" sayfası oluşturuldu, nav CTA'sı buraya bağlandı
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Denetim raporundaki (DK-2026-08-02-01) dönüşüm bulgularının ilk uygulama adımı.

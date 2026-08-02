@@ -531,6 +531,35 @@ html{overflow-x:clip;}
 .a8{background:conic-gradient(from 210deg at 50% 42%,#6ee7ff 0%,#8b7cf7 32%,#1a1626 55%,#3d78ff 78%,#6ee7ff 100%);}
 @media(max-width:1180px){.stage{display:none;}}
 
+/* ============ R3 — SANATSAL BASKI FORMU ============ */
+.cta-lead{font-size:15px;color:var(--tx2);max-width:56ch;margin:18px auto 0;line-height:1.7;}
+.cta-form-wrap{max-width:720px;margin:52px auto 0;text-align:left;}
+.baski-form{
+  background:rgba(233,236,247,.03);border:1px solid var(--ln);border-radius:22px;
+  padding:clamp(24px,4vw,40px);backdrop-filter:blur(6px);
+}
+.bf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.bf-full{margin-bottom:16px;}
+.baski-form label{font-family:var(--fd);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--mut);margin-bottom:7px;display:block;}
+.baski-form input,.baski-form select,.baski-form textarea{
+  width:100%;background:rgba(19,16,25,.55);border:1px solid var(--ln);border-radius:10px;
+  padding:12px 14px;font-family:var(--fb);font-size:14px;color:var(--tx);outline:none;
+  appearance:none;transition:border-color .2s,box-shadow .2s;
+}
+.baski-form select{cursor:pointer;}
+.baski-form textarea{min-height:100px;resize:vertical;}
+.baski-form input:focus,.baski-form select:focus,.baski-form textarea:focus{
+  border-color:var(--acc2);box-shadow:0 0 0 3px rgba(110,231,255,.14);
+}
+.bf-kvkk{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--tx2);line-height:1.6;cursor:pointer;}
+.bf-kvkk input{width:auto;margin-top:3px;flex-shrink:0;}
+.bf-kvkk a{color:var(--acc2);text-decoration:none;}
+.bf-kvkk a:hover{text-decoration:underline;}
+.baski-form button.cta-btn{border:none;cursor:pointer;font-family:var(--fd);margin-top:6px;}
+.bf-note{font-size:12px;color:var(--mut);margin-top:16px;line-height:1.7;}
+.cta-grid-alt{margin-top:56px;max-width:900px;}
+@media(max-width:700px){.bf-row{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -761,8 +790,70 @@ html{overflow-x:clip;}
   <h2 class="big" data-rv>
     <span class="out">BASKIYA</span><br>HAZIR MISINIZ?
   </h2>
-  <a href="mailto:sanatsalbaski@cadbim.com.tr?subject=Sanatsal%20Bask%C4%B1%20Talebi" class="cta-btn" data-rv data-hover data-mag>Dosyanızı gönderin ↗</a>
-  <div class="cta-grid">
+  <p class="cta-lead" data-rv style="--d:.05s;">Ebat, yüzey ve adedi belirtin — aynı gün fiyat dönüşü yapalım.</p>
+
+  <div class="cta-form-wrap" data-rv style="--d:.1s;">
+    <form id="baski-form" class="baski-form" onsubmit="formuGonder(event)">
+      <input type="hidden" name="form_type" value="sanatsal_baski">
+      <div class="bf-row">
+        <div><label>Ad Soyad *</label><input type="text" name="ad_soyad" placeholder="Adınız Soyadınız" required></div>
+        <div><label>E-posta *</label><input type="email" name="email" placeholder="ornek@eposta.com" required></div>
+      </div>
+      <div class="bf-row">
+        <div><label>Telefon</label><input type="tel" name="telefon" placeholder="0532 000 00 00"></div>
+        <div><label>Baskı Türü</label>
+          <select name="baski_turu">
+            <option>Fotoğraf Baskısı</option>
+            <option>Fine Art Reprodüksiyon</option>
+            <option>Sanatsal Kanvas</option>
+            <option>Sergi Üretimi</option>
+            <option>Sertifika &amp; Poster</option>
+            <option>Bilmiyorum — önerinizi isterim</option>
+          </select>
+        </div>
+      </div>
+      <div class="bf-row">
+        <div><label>Yüzey / Kağıt</label>
+          <select name="yuzey">
+            <option>Bilmiyorum — önerinizi isterim</option>
+            <option>Mat Fotoğraf Kağıdı</option>
+            <option>Yarı Mat / Yarı Parlak</option>
+            <option>Parlak Fotoğraf Kağıdı</option>
+            <option>Kanvas</option>
+            <option>Cotton Rag (Fine Art)</option>
+            <option>Bayrak Bezi &amp; Paravan</option>
+          </select>
+        </div>
+        <div><label>Finisaj</label>
+          <select name="finisaj">
+            <option>Bilmiyorum — önerinizi isterim</option>
+            <option>Çerçeve</option>
+            <option>Dekota Kaşe</option>
+            <option>Fotoblok</option>
+            <option>Kasnaklı Germe</option>
+            <option>Parçalı Kanvas</option>
+            <option>Paravan &amp; Bez</option>
+            <option>Finisaj istemiyorum</option>
+          </select>
+        </div>
+      </div>
+      <div class="bf-row">
+        <div><label>Ebat / Ölçü</label><input type="text" name="ebat" placeholder="örn. 50x70 cm veya bilmiyorum"></div>
+        <div><label>Adet</label><input type="number" name="adet" min="1" placeholder="1"></div>
+      </div>
+      <div class="bf-full"><label>Mesajınız</label><textarea name="mesaj" placeholder="Dosya durumu, sergi tarihi ya da eklemek istediğiniz detay..."></textarea></div>
+      <div class="bf-full">
+        <label class="bf-kvkk">
+          <input type="checkbox" name="kvkk" required>
+          <span><a href="kvkk" data-hover>KVKK Aydınlatma Metni</a>'ni okudum ve kişisel verilerimin işlenmesine onay veriyorum. *</span>
+        </label>
+      </div>
+      <button type="submit" id="baski-submit-btn" class="cta-btn" data-hover data-mag>Talebimi Gönder ↗</button>
+      <p class="bf-note">Gönder'e bastığınızda bilgilerinizle hazırlanmış bir e-posta taslağı açılır — dosyanızı eklemeniz yeterli. Aynı gün fiyat dönüşü yapıyoruz.</p>
+    </form>
+  </div>
+
+  <div class="cta-grid cta-grid-alt" data-rv style="--d:.15s;">
     <a class="ccard" href="tel:+902324643490" data-rv data-hover>
       <small>ATÖLYE — İZMİR</small><b>0232 464 34 90</b>
       <span>Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901, Çiğli</span>
@@ -773,15 +864,37 @@ html{overflow-x:clip;}
     </a>
     <a class="ccard" href="mailto:sanatsalbaski@cadbim.com.tr" data-rv data-hover style="--d:.1s;">
       <small>E-POSTA</small><b>sanatsalbaski@cadbim.com.tr</b>
-      <span>Ebat + yüzey + adet — aynı gün fiyat dönüşü</span>
-    </a>
-    <a class="ccard" href="iletisim#form" data-rv data-hover style="--d:.15s;">
-      <small>ÇEVRİM İÇİ FORM</small><b>Teklif formu →</b>
-      <span>Kurumsal işler ve sergi projeleri için</span>
+      <span>Dosyanızı doğrudan gönderin</span>
     </a>
   </div>
   <p class="cta-not" data-rv>Şehir dışı işler itinayla paketlenir, sergilenmeye hazır halde kargoyla ulaşır. Sergi sevkiyatlarında takvim birlikte planlanır. Rötuş ücretsiz; fiyat dönüşü aynı gün.</p>
 </section>
+
+<script>
+function formuGonder(e){
+  e.preventDefault();
+  var f = e.target;
+  function v(n){ var el = f.elements[n]; return el ? (el.value || '').trim() : ''; }
+  var subject = 'Sanatsal Baskı Talebi — ' + (v('baski_turu') || 'Genel');
+  var body = [
+    'Ad Soyad: ' + v('ad_soyad'),
+    'E-posta: ' + v('email'),
+    'Telefon: ' + v('telefon'),
+    'Baskı Türü: ' + v('baski_turu'),
+    'Yüzey / Kağıt: ' + v('yuzey'),
+    'Finisaj: ' + v('finisaj'),
+    'Ebat / Ölçü: ' + v('ebat'),
+    'Adet: ' + v('adet'),
+    '',
+    'Mesaj:',
+    v('mesaj')
+  ].join('\n');
+  var btn = document.getElementById('baski-submit-btn');
+  btn.innerHTML = 'E-posta istemciniz açılıyor...';
+  window.location.href = 'mailto:sanatsalbaski@cadbim.com.tr?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  setTimeout(function(){ btn.innerHTML = 'Talebimi Gönder ↗'; }, 4000);
+}
+</script>
 
 </main>
 

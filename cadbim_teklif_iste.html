@@ -312,27 +312,17 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
             <input type="tel" name="telefon" placeholder="0532 000 00 00">
           </div>
         </div>
-        <div class="form-row">
-          <div>
-            <label>Talep Türü</label>
-            <select name="talep_turu">
-              <option>Yazılım / Lisans Teklifi</option>
-              <option>HP Workstation / Plotter</option>
-              <option>UltiMaker 3D Yazıcı</option>
-              <option>Danışmanlık Projesi</option>
-              <option>Sanatsal Baskı</option>
-              <option>Yazılım Geliştirme</option>
-              <option>Diğer</option>
-            </select>
-          </div>
-          <div>
-            <label>Tercih Ettiğiniz Ofis</label>
-            <select name="ofis">
-              <option>Fark etmez</option>
-              <option>İzmir</option>
-              <option>Ankara</option>
-            </select>
-          </div>
+        <div class="form-full">
+          <label>Talep Türü</label>
+          <select name="talep_turu">
+            <option>Yazılım / Lisans Teklifi</option>
+            <option>HP Workstation / Plotter</option>
+            <option>UltiMaker 3D Yazıcı</option>
+            <option>Danışmanlık Projesi</option>
+            <option>Sanatsal Baskı</option>
+            <option>Yazılım Geliştirme</option>
+            <option>Diğer</option>
+          </select>
         </div>
         <div class="form-full">
           <label>Mesajınız</label>
@@ -412,7 +402,6 @@ function handleSubmit(e){
     'E-posta: ' + v('email'),
     'Telefon: ' + v('telefon'),
     'Talep Türü: ' + v('talep_turu'),
-    'Tercih Edilen Ofis: ' + v('ofis'),
     '',
     'Mesaj:',
     v('mesaj')
