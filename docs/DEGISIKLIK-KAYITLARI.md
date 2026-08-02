@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-09 — Başarı öykülerine 19 gerçek müşteri logosu eklendi
+
+- **Yapan:** Claude (PDM asistanı) — Onur'un "logoları internetten al" talebi üzerine.
+- **Kapsam:** `cadbim_basari_oykuleri.html`'deki 19 müşteri kartının her birindeki jenerik Tabler ikon rozeti (veya video-only kartlarda hiç olmayan rozet), o şirketin **kendi resmi web sitesinden** alınan gerçek logo ile değiştirildi/eklendi: Güralp Vinç, Sistem Teknik (Electron), Efe Kalıp Makina, Norm Additive, Habaş, Edvan, Eys Metal, Kutlusan Kafes, Eltaş, Erdemgiller, BMC, Decons, Bedesten Ahşap, Ordinat İnşaat, Limtaş Mühendislik, Epig Mimarlık, Demirce, Funjitsu Oyun ve Teknoloji, Tiplay Studio.
+- **Kaynak yöntemi:** Autodesk'in orijinal vaka çalışması sayfaları çoğunlukla artık 403/yönlendirme veriyor (ayrı bir bulgu — bkz. kapsam dışı notu), bu yüzden her şirketin kendi resmi sitesine gidilip header/footer'daki logo görseli (veya CSS `background-image`'ı) bulunup indirildi. Her logo Pillow ile şeffaf kenar boşluğu kırpıldı ve 90px yüksekliğe (retina için) ölçeklendi; SVG'ler orijinal haliyle korundu. Yeni dosyalar `assets/logos/success-stories/` altında.
+- **Tasarım:** Logolar beyaz yuvarlak köşeli bir rozet (`.story-logo`) içinde gösteriliyor (çoğu logo koyu/renkli, beyaz zeminde okunur oluyor). 2 istisna — Funjitsu ve Norm Additive'in logoları şeffaf zeminde beyaz — bu ikisi `.story-logo-dark` ile koyu rozet alıyor.
+- **Güvenlik notu:** GPU/Browser-pane çökme riskini (bkz. sohbet) azaltmak için son 3 logo (Funjitsu, Tiplay Studio, BMC) `curl` ile ham HTML çekilip regex'le logo yolu bulunarak indirildi, tarayıcı penceresi açılmadan.
+- **Telif hatırlatması (bilgi amaçlı):** Bu logolar her şirketin kendi resmi sitesinden alındı, üçüncü taraf logo bankalarından değil. Ancak bir müşterinin logosunu "referans" olarak sergilemek genelde o müşterinin bilgisi/onayı dahilinde yapılan bir B2B pratiğidir — bu 19 şirketin çoğu zaten Autodesk'in kendi yayınladığı vaka çalışmalarında adı geçtiği için bu türden bir kullanıma açık olduklarını gösteriyor, ama nihai karar ve ilişki yönetimi Onur'da.
+- **Doğrulama:** Yerel önizlemede sayfa açılıp 19 logonun tamamı için `fetch()` ile HTTP 200 doğrulandı, konsol hatası yok, `div` etiket dengesi sağlam (103=103).
+- **Kapsam dışı / not edildi:** Kart içindeki "Autodesk'te kaynağı gör" linklerinden en az biri (Efe Kalıp Makina) artık 403/yönlendirme veriyor — Autodesk bu vaka çalışması sayfalarını taşımış/kaldırmış olabilir; bu linklerin toplu kontrolü ayrı bir görev olarak bırakıldı. Ölçülebilir metrik + isimli alıntı eklenmesi de hâlâ bekliyor (ayrı konuşma konusu).
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-02-08 — Tabler ikon fontu yerelleştirildi ve 289 ikona subset edildi (K7 tamamlandı)
 
 - **Yapan:** Claude (PDM asistanı) — Onur'un "fontTools'u kur, yap" talebi üzerine.
