@@ -4,6 +4,20 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-07 — Görsel/video ağırlığı büyük ölçüde düşürüldü (K7/K8 kısmen tamamlandı)
+
+- **Yapan:** Claude (PDM asistanı) — Onur'un "yapamadıkların" listesindeki görsel/font işleme gerekçesini sorgulaması üzerine önce gerçekten araç olup olmadığı kontrol edildi (ffmpeg ve Python Pillow mevcut çıktı — ImageMagick/cwebp/fontTools yok), bulunan araçlarla yapılabilecek her şey yapıldı.
+- **4 Chaos otomatik oynatılan hero videosu yeniden kodlandı** (`assets/videos/chaos/*.mp4`, 1280px genişlik, CRF 28, sessiz): vray 17,5MB→1,6MB, corona 8,8MB→1,2MB, veras 6,6MB→0,74MB, enscape 5,4MB→1,2MB. Toplam 38,3MB→4,6MB (%88). Görsel kalite karşılaştırmalı kare çıkarımıyla doğrulandı, fark yok. Orijinaller güvenlik için repo dışına yedeklendi.
+- **16 DesignJet karşılaştırma görseli** (`assets/products/hp-designjet-*.png`, 220px kartlarda gösteriliyor) 500px genişliğe indirilip WebP'ye çevrildi: 10,95MB→0,30MB (%97). Tüm HTML referansları (`*.html` + `post/*.html`, 240 örnek) `.png`→`.webp` olarak güncellendi.
+- **11 UltiMaker WebP dosyası** (factor4-hero, s5/s7/s8/s3-hero, pvars, cura-ui, sketch-sprint-hero, materials-hero, digital-factory-hero, material-station) aynı boyutta yeniden sıkıştırıldı (kalite 82): 8,46MB→0,90MB (%89) — dosya adı değişmedi, referans güncellemesi gerekmedi.
+- **11 ek PNG → WebP**: Chaos video posterleri (corona/enscape/vray-hero), HP tarayıcı görselleri (hd-pro/sd-pro), HP ZBook Ultra + workstation/zbook grup görselleri, UltiMaker Factor4 + PET-CF kit + Method XL hero: 3,70MB→0,47MB (%87). 55 HTML referansı güncellendi.
+- **41 JPG yeniden sıkıştırıldı** (`assets/img/webinar/`, `assets/products/designjet-web/`, kalite 80, progressive): 7,71MB→4,74MB (%38, dosya adları değişmedi).
+- **1 aşırı yüksek bit hızlı ürün videosu** (`assets/products/designjet-web/video-z6pro.mp4`, 1080p → 1280px'e indirildi, CRF 26, ses korunarak): 17,97MB→1,76MB (%90). Diğer 2 DesignJet videosu (t1600, z9pro) zaten makul bit hızındaydı, dokunulmadı.
+- **Toplam:** Bu tek oturumda gerçek kullanıcı tarafından indirilen ~87 MB'lık görsel/video ağırlığı ~13,5 MB'a düşürüldü (~%84 azalma), 0 görsel/video kalite kaybı gözlenmedi (karşılaştırmalı kare/görsel kontrolüyle).
+- **Doğrulama:** Yerel önizlemede DesignJet, V-Ray (video+poster), UltiMaker Factor4 sayfaları açılıp `naturalWidth===0` kontrolüyle 0 kırık görsel doğrulandı; video `currentSrc`/`poster` doğru çözümlendiği teyit edildi; konsol hatası yok.
+- **Kapsam dışı (hâlâ yapılamayan):** Tabler ikon fontu subset'i — `fontTools` kurulu değil, `pip install` denenmedi (kullanıcı onayı gerektirir); `assets/og/*.png` (153 dosya, ~10,6 MB) — sosyal medya crawler'ları dışında kullanıcı performansını etkilemediği için düşük öncelikli bırakıldı; `assets/products/designjet/` (2,46 GiB, referanssız) — silme/taşıma kararı gerektiriyor, dokunulmadı.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-02-06 — Denetim raporundaki Faz 0 mekanik düzeltmelerinin tamamı uygulandı
 
 - **Yapan:** Onur Bozok'un "sonnet'in yapabileceği ne varsa listede belirlediğimiz hepsini yap" talebi üzerine Claude (PDM asistanı) — DK-01'deki denetim raporunun (SITE-DENETIM-RAPORU-2026-08-02.md) sunucu erişimi/görsel işleme/içerik yazımı gerektirmeyen, salt dosya düzenlemesiyle yapılabilecek tüm bulguları toplu olarak düzeltti.
