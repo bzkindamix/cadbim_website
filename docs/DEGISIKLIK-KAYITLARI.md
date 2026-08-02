@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-02 — 190 sayfaya tam footer içeriği eklendi (K5 tamamlandı)
+
+- **Yapan:** Onur Bozok'un "sonnetle olanları yapalım hemen" talebi üzerine Claude (PDM asistanı) · K3'ün ardından listenin ikinci Sonnet-uygun kalemi.
+- **Sorun (K5):** `index.html` ve `cadbim_teklif_iste.html` dışındaki ~188 kök sayfa, footer'da sadece "© 2026 Cadbim — Anasayfaya Dön · KVKK · Çerez Ayarları" + sosyal ikonlardan ibaret minimal bir şerit (`.fbot`) gösteriyordu — telefon/e-posta, ofis adresi, ürün/hizmet linkleri yoktu. 9 küçük varyant (Facebook linki olan/olmayan, "Ürünler" linki olan/olmayan, boşluk farkları, ve `cadbim_iletisim.html`'in kendine özgü satır-içi stilli sürümü) tespit edildi, tamamı tek bir regex (`<footer.*?</footer>`, DOTALL) ile eşleşti.
+- **Yapılan:** `index.html`/`cadbim_teklif_iste.html`'deki mevcut `footer-grid` yapısı (marka + Ürünler/Hizmetler/İletişim kolonları) **190 sayfanın tamamına** (bu ikisi dahil, tutarlılık için) genelleştirildi. Eklenenler: **Ankara Temsilcilik** ofis satırı (İzmir Merkez'in yanına — bkz. [[cadbim-ankara-ofis]] hafıza notu, sadece temsilcilik olarak, eğitim/sınıf ima etmeden), **KVKK + Çerez Ayarları** linkleri footer-bot'a (önceden index.html dahil hiçbir sayfada çerez tercihlerini sonradan yeniden açma yolu yoktu — bu bir eksiklikti, düzeltildi), marka logosu artık `<a href="/">` ile ana sayfaya link, ve `index.html`'deki eski/güncelliğini kaybetmiş "Teklif İste" linki (`iletisim#form` → gerçek MS Forms iframe'ine gidiyordu) → `teklif-iste` (gerçek özel sayfa) olarak düzeltildi.
+- **CSS:** `.footer-grid`/`.f-brand`/`.f-offices`/`.footer-col`/`.footer-bot` (+responsive 900px/600px kırılımları) artık sayfa-içi tekrar yerine **`assets/css/design-system.css`**'te tek yerden tanımlı (190 sayfada tekrarlanmıyor); her sayfanın kendi `.fbot`/`.socials` kuralları dokunulmadı (yeni markup `.socials`'ı zaten kullanıyor, `.fbot` artık ölü kod — kaldırılmadı, risk/getiri dengesi düşük). Cache-busting: `design-system.css?v=10` → `?v=11` (1.319 sayfa, root + post).
+- **Doğrulama:** Python ile 190 sayfanın hepsinde önce tam olarak 1 `<footer>` eşleşmesi doğrulandı; değişiklik sonrası her dosyada `<footer>`/`</footer>` sayısı 1/1, `<div>`/`</div>` dengesi eşit, `footer-grid` ve "Ankara Temsilcilik" metni mevcut — 0 sorunlu dosya. Tarayıcıda 4 farklı sayfa tipi (`cadbim_autodesk.html`, `cadbim_iletisim.html`'in özel satır-içi varyantı, `index.html`, `cadbim_teklif_iste.html`) kontrol edildi: grid doğru render, ofis satırları doğru, KVKK/Çerez Ayarları linkleri çalışıyor (`window.openCookiePrefs` tanımlı), marka linki `/`'e gidiyor, konsol hatası yok.
+- **Kapsam dışı:** `post/*.html` (1.129 blog sayfası) bu değişikliğe dahil değil — onlar zaten kendi ayrı (daha basit) blog footer'ını kullanıyor, ayrı bir karar/görev.
+- **Durum:** ✅ K5 tamamlandı, push edilecek.
+
 ### DK-2026-08-03-01 — Eğitimler formu: MS Forms iframe kaldırıldı, gerçek Power Automate gönderimine bağlandı (K3 tamamlandı)
 
 - **Yapan:** Onur Bozok'un "sonnetle olanları yapalım hemen" talebi üzerine Claude (PDM asistanı).
