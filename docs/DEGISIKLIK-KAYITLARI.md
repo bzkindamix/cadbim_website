@@ -4,6 +4,17 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-02 — Yeni "Teklif İste" sayfası oluşturuldu, nav CTA'sı buraya bağlandı
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı) · Denetim raporundaki (DK-2026-08-02-01) dönüşüm bulgularının ilk uygulama adımı.
+- **Yeni sayfa:** `cadbim_teklif_iste.html` (temiz URL: `/teklif-iste`) — sitenin tasarım sistemiyle uyumlu, kendi teklif isteme formuna sahip özel sayfa. Alanlar: Ad Soyad*, Şirket, E-posta*, Telefon, Talep Türü (Yazılım/Lisans, HP Workstation/Plotter, UltiMaker, Danışmanlık, Sanatsal Baskı, Yazılım Geliştirme, Diğer — "Eğitim Talebi" ve "Teknik Destek" kasıtlı olarak çıkarıldı, bunların kendi ayrı formları planlanıyor), Tercih Edilen Ofis, Mesaj, KVKK onay kutusu. Hızlı erişim linkleri (telefon/WhatsApp/ofisler) ve tam footer (index.html'deki footer-grid) dahil edildi. `cookie-consent.js` bilinçli olarak eklendi (denetimde K4 bulgusunun tekrarlanmaması için).
+- **Gönderim mekanizması (geçici, dürüst):** Backend/CRM entegrasyonu (Power Automate → Dynamics 365) henüz kurulmadığı için form `cadbim_egitimler.html`'deki gibi sahte bir "alındı" mesajı GÖSTERMİYOR (bkz. denetimde K3 bulgusu — o hataya düşülmedi). Gönder'e basınca form verileriyle doldurulmuş bir `mailto:cadbim@cadbim.com.tr` taslağı açılıyor; buton metni bunu doğru şekilde yansıtıyor ("E-posta istemciniz açılıyor..."). Power Automate uç noktası kurulduğunda `handleSubmit` gerçek bir POST'a çevrilecek.
+- **Nav CTA yönlendirmesi:** "Teklif Al" linki daha önce `iletisim`'e gidiyordu; artık 1.319 sayfanın tamamında (190 kök + 1.129 post, 3 farklı eski href deseni: `iletisim`, `../iletisim`, `../cadbim_iletisim.html`) `teklif-iste`'ye yönlendirildi (toplu `sed` ile, yalnızca `class="nav-cta"` ile eşleşen link hedeflendi — sayfa içindeki diğer "iletisim" linklerine dokunulmadı).
+- **Harita/config güncellemeleri:** `404.html` JS MAP'ine `teklif-iste` eklendi; `docs/htaccess-taslak.txt`'te eski Wix-legacy yönlendirmesi (`/teklif-iste → /iletisim`) kaldırılıp bölüm 3/4'e gerçek sayfa kuralları eklendi; `sitemap.xml`'e `/teklif-iste` (priority 0.8) eklendi; `docs/CANLIYA-GECIS-URL-HARITASI.md`'deki ilgili satır KURAL'dan BIREBIR'e güncellendi.
+- **Kapsam dışı (kasıtlı):** Sitedeki diğer ~116 "Teklif İste" CTA'sı (hero butonları, footer linkleri vb.) hâlâ `iletisim#form`'a gidiyor — bu görev yalnızca nav'daki üst-sağ "Teklif Al" butonunu kapsıyordu. `cadbim_iletisim.html` sayfası ve içindeki MS Forms iframe'i değiştirilmedi.
+- **Doğrulama:** Yerel önizlemede (`localhost:8420`) sayfa render, form alanları (9/9), mobil hamburger menü, `handleSubmit` fonksiyonu (JS ile simüle edilip hatasız/`preventDefault` çalıştığı, sayfanın yönlenmediği doğrulandı), ve nav-cta hedefinin kök + post sayfalarında doğru güncellendiği kontrol edildi. Konsol hatası yok.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-02-01 — Kapsamlı site denetimi yapıldı ve rapor yayınlandı (kod değişikliği yok)
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı) · Onur'un "siteyi denetle, 20.000 USD'lik bir site gibi görünmesi/çalışması için öneri sun" talebi üzerine.

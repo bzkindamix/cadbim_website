@@ -111,7 +111,7 @@
 | `/simulasyon-ve-analiz-yazilimlari` | `/simulasyon` | KURAL |  |
 | `/statik` | `/revit` | KURAL | statik kategori → Revit'e yönlendirildi (onaylandı) |
 | `/statik-yazilimlari` | `/revit` | KURAL | statik kategori → Revit'e yönlendirildi (onaylandı) |
-| `/teklif-iste` | `/iletisim` | KURAL |  |
+| `/teklif-iste` | `/teklif-iste` | BIREBIR | 2026-08-02: artık `/iletisim`'e yönlenmiyor — kendi teklif isteme formuna sahip özel sayfa (`cadbim_teklif_iste.html`); nav'daki "Teklif Al" butonu buraya bağlandı |
 | `/tesis-tasarimi-icin-bim` | `/bim` | KURAL |  |
 | `/ultimaker-3d-yazicilar` | `/ultimaker` | KURAL |  |
 | `/ultimaker-aksesuar` | `/ultimaker` | KURAL | geçici — UltiMaker aksesuar sayfası planlandı |
