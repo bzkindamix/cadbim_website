@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-01 — Eğitimler formu: MS Forms iframe kaldırıldı, gerçek Power Automate gönderimine bağlandı (K3 tamamlandı)
+
+- **Yapan:** Onur Bozok'un "sonnetle olanları yapalım hemen" talebi üzerine Claude (PDM asistanı).
+- **Düzeltilen bulgu (K3, düzeltilmiş teşhis):** Orijinal denetimde bu sayfadaki form "sahte, hiçbir yere göndermiyor" olarak işaretlenmişti; dosya tam okunduğunda bu markup'ın (`handleSubmit` çağıran `<form>`) fiilen bir HTML yorum bloğu (`<!-- ESKI FORM KALDIRILDI ... -->`) içinde, yani ölü kod olduğu görüldü. Sayfadaki gerçek canlı eleman, `cadbim_iletisim.html`'dekiyle aynı türden ölçülemez bir **MS Forms iframe**'di (`forms.cloud.microsoft/...`) — bulgunun asıl niteliği O4'e (marka-kopuk iframe) daha yakın, ama düzeltme aynı: gerçek gönderim yapan yerel bir form.
+- **Yapılan (`cadbim_egitimler.html`):**
+  1. Kontrast: `--w30:rgba(255,255,255,0.3)` → `0.58` (7 kullanım, WCAG AA).
+  2. MS Forms iframe kaldırıldı; yorumdaki eski form canlandırıldı — tüm alanlara `name` eklendi (`ad_soyad`, `sirket`, `email`, `telefon`, `egitim_konusu`, `katilimci_sayisi`, `format`, `baslangic_tarihi`, `beklentiler`), yeni zorunlu KVKK onay kutusu eklendi, form/buton/not paragrafına sabit ID'ler verildi (`egitim-form`, `submit-btn`, `form-note-text`).
+  3. Sahte 3 saniyelik `handleSubmit` (ağ isteği yok) → teklif-iste/sanatsal-baski'de kullanılan **aynı `POWER_AUTOMATE_URL`**'e gerçek `fetch()` POST'u yapan uygulama ile değiştirildi. Akışın mevcut "else" dalının beklediği alan adlarına (`sirket`, `talep_turu`, `mesaj`) eğitime özel veriler (yazılım/katılımcı/format/tarih/beklenti) biçimlendirilerek paketlendi — akışta yeni dal açmaya gerek kalmadı.
+- **Doğrulama (yerel önizleme):** Etiket dengesi kod incelemesiyle teyit edildi (245/245 div, 1/1 form), `forms.cloud.microsoft` referansı 0. Tarayıcıda form alanları dolduruldu, gerçek gönderim tetiklendi (`requestSubmit`) — `fetch()` doğru `POWER_AUTOMATE_URL`'e doğru JSON gövdeyle (form_type: egitim_talebi) gitti, buton "Talebiniz alındı!" başarı durumuna geçti, konsol hatası yok. (Not: sayfadaki bazı ürün logosu görselleri `naturalWidth=0` gösterdi ama bu `loading="lazy"` + henüz viewport'a girmemiş olmalarından kaynaklanıyor — dosyalar `assets/logos/products/`'ta mevcut, bu değişiklikle ilgisiz, ayrı doğrulanabilir.)
+- **Güvenlik notu:** Test gönderimi sırasında `cadbim@cadbim.com.tr` kutusuna 1 test e-postası gitmiş olabilir (CC: marketing@) — gerçek talep değildir.
+- **Durum:** ✅ K3 tamamlandı, push edilecek. Sıradaki: K5 (189 sayfada footer içeriği).
+
 ### DK-2026-08-02-09 — Başarı öykülerine 19 gerçek müşteri logosu eklendi
 
 - **Yapan:** Claude (PDM asistanı) — Onur'un "logoları internetten al" talebi üzerine.
