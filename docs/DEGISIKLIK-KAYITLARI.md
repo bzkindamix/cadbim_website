@@ -4,6 +4,13 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-02-05 — Power Automate e-postalarına marketing@cadbim.com.tr CC olarak eklendi
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı, Chrome oturumu üzerinden Power Automate'te doğrudan düzenleme yaptı).
+- **Kapsam:** DK-04'te kurulan "Web sitesi form gonderimi" akışındaki her iki "E-posta gönder (V2)" eyleminde (sanatsal_baski → sanatsalbaski@cadbim.com.tr ve teklif_iste → cadbim@cadbim.com.tr) "Gelişmiş parametreler" açılıp "Bilgi" (CC) alanına `marketing@cadbim.com.tr` eklendi (tenant dizininde bulunan "Marketing" kişisi olarak çözümlendi). Kod tarafında (site dosyaları) hiçbir değişiklik yok — bu tamamen Power Automate akış konfigürasyonu.
+- **Doğrulama:** Akış kaydedildi (hata yok), ardından `curl` ile her iki dal için ayrı test isteği gönderildi (sanatsal_baski ve teklif_iste, ikisi de HTTP 200). Test e-postaları `cadbim@cadbim.com.tr`, `sanatsalbaski@cadbim.com.tr` ve CC olarak `marketing@cadbim.com.tr`'ye gitti — gerçek talep değildir.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-02-04 — Power Automate akışı kuruldu ve iki form gerçek gönderime bağlandı
 
 - **Yapan:** Onur Bozok (Power Automate'te akışı kurdu, Chrome oturumu üzerinden Claude ile birlikte) + Claude (PDM asistanı) · DK-02/03'teki mailto-taslağı geçici çözümünün kalıcı hale getirilmesi.
