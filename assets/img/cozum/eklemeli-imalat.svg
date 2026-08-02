@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img">
+<defs>
+<pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+</pattern>
+<radialGradient id="glow" cx="50%" cy="45%" r="60%">
+<stop offset="0%" stop-color="#10b981" stop-opacity=".18"/>
+<stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#10b981" stop-opacity=".55"/>
+<stop offset="100%" stop-color="#10b981" stop-opacity=".08"/>
+</linearGradient>
+</defs>
+<style>
+.ln{fill:none;stroke:#10b981;stroke-opacity:.75;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
+.ln2{fill:none;stroke:#10b981;stroke-opacity:.32;stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
+.cy{fill:none;stroke:#00c8f0;stroke-opacity:.7;stroke-width:1.2;stroke-linecap:round}
+.fl{fill:#10b981;fill-opacity:.06}
+.nd{fill:#10b981}
+.dim{fill:none;stroke:rgba(255,255,255,.28);stroke-width:.8;stroke-dasharray:3 4}
+.blink{animation:bk 3.2s ease-in-out infinite}
+.blink:nth-of-type(2n){animation-delay:.5s}
+.blink:nth-of-type(3n){animation-delay:1.1s}
+.blink:nth-of-type(5n){animation-delay:1.7s}
+@keyframes bk{0%,100%{opacity:.2}50%{opacity:1}}
+.draw{stroke-dasharray:6 8;animation:dr 5s linear infinite}
+@keyframes dr{to{stroke-dashoffset:-56}}
+.scan{animation:sc 7s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes sc{0%{opacity:0;transform:translateY(-40px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translateY(400px)}}
+.spin{transform-box:fill-box;transform-origin:center;animation:sp 24s linear infinite}
+.spinr{transform-box:fill-box;transform-origin:center;animation:sp 24s linear infinite reverse}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fo 9s ease-in-out infinite}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.slide{animation:sl 8s cubic-bezier(.55,0,.45,1) infinite}
+@keyframes sl{0%,6%{transform:translateX(0)}94%,100%{transform:translateX(var(--d,480px))}}
+.comb{animation:cb 6s ease-in-out infinite}
+@keyframes cb{0%,100%{opacity:.45}50%{opacity:.95}}
+</style>
+<rect width="640" height="420" fill="url(#g)"/>
+<rect width="640" height="420" fill="url(#glow)"/>
+<rect class="ln" x="66" y="78" width="300" height="268" rx="3" fill="rgba(255,255,255,.015)"/><line class="ln2" x1="66" y1="300" x2="366" y2="300"/>
+<line class="ln" x1="86" y1="300" x2="346" y2="300"/>
+<line class="ln" x1="66" y1="128" x2="366" y2="128"/>
+<g class="slide" style="--d:150px"><rect class="ln" x="150" y="118" width="34" height="20" rx="3"/><polygon class="ln" points="158,138 176,138 167,152"/></g>
+<rect x="168" y="292" width="96" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="171.3" y="284" width="89.5" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="174.4" y="276" width="83.2" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="177.3" y="268" width="77.3" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="179.9" y="260" width="72.2" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="182" y="252" width="68" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="183.6" y="244" width="64.8" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="184.6" y="236" width="62.8" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="185" y="228" width="62" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="184.7" y="220" width="62.5" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="183.9" y="212" width="64.3" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="182.4" y="204" width="67.2" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="180.4" y="196" width="71.2" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="177.9" y="188" width="76.2" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="175.1" y="180" width="81.9" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/><rect x="172" y="172" width="88.1" height="6.4" rx="1.6" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity=".45" stroke-width=".6"/>
+<text x="216" y="172" font-family="Manrope,sans-serif" font-size="9" fill="#10b981" fill-opacity=".85" letter-spacing="1" text-anchor="middle">16 / 240 katman</text><line class="ln2" x1="176" y1="300" x2="176" y2="248" stroke-opacity=".3" stroke-dasharray="2 3"/><line class="ln2" x1="256" y1="300" x2="256" y2="248" stroke-opacity=".3" stroke-dasharray="2 3"/>
+<line class="dim" x1="56" y1="128" x2="56" y2="300"/><line class="dim" x1="50" y1="128" x2="62" y2="128"/><line class="dim" x1="50" y1="300" x2="62" y2="300"/><text x="46" y="220" font-family="Manrope,sans-serif" font-size="9" fill="#fff" fill-opacity=".4" letter-spacing="1" text-anchor="end">Z</text><rect class="ln2" x="414" y="92" width="186" height="226" rx="3" fill="rgba(255,255,255,.02)"/><text x="430" y="112" font-family="Manrope,sans-serif" font-size="9" fill="#10b981" fill-opacity=".85" letter-spacing="1" text-anchor="start">DILIMLEME</text><ellipse class="ln2" cx="506" cy="158" rx="42" ry="12" stroke-opacity=".4"/><line class="cy" x1="472.4" y1="151.2" x2="539.6" y2="151.2" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="472.4" y1="154.6" x2="539.6" y2="154.6" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="472.4" y1="158" x2="539.6" y2="158" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="472.4" y1="161.4" x2="539.6" y2="161.4" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="472.4" y1="164.8" x2="539.6" y2="164.8" stroke-opacity=".3" stroke-width=".8"/>
+<ellipse class="ln2" cx="506" cy="196" rx="37" ry="11" stroke-opacity=".4"/><line class="cy" x1="476.4" y1="189.2" x2="535.6" y2="189.2" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="476.4" y1="192.6" x2="535.6" y2="192.6" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="476.4" y1="196" x2="535.6" y2="196" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="476.4" y1="199.4" x2="535.6" y2="199.4" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="476.4" y1="202.8" x2="535.6" y2="202.8" stroke-opacity=".3" stroke-width=".8"/>
+<ellipse class="ln2" cx="506" cy="234" rx="32" ry="9" stroke-opacity=".4"/><line class="cy" x1="480.4" y1="227.2" x2="531.6" y2="227.2" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="480.4" y1="230.6" x2="531.6" y2="230.6" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="480.4" y1="234" x2="531.6" y2="234" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="480.4" y1="237.4" x2="531.6" y2="237.4" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="480.4" y1="240.8" x2="531.6" y2="240.8" stroke-opacity=".3" stroke-width=".8"/>
+<ellipse class="ln2" cx="506" cy="272" rx="27" ry="8" stroke-opacity=".4"/><line class="cy" x1="484.4" y1="265.2" x2="527.6" y2="265.2" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="484.4" y1="268.6" x2="527.6" y2="268.6" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="484.4" y1="272" x2="527.6" y2="272" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="484.4" y1="275.4" x2="527.6" y2="275.4" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="484.4" y1="278.8" x2="527.6" y2="278.8" stroke-opacity=".3" stroke-width=".8"/>
+<ellipse class="ln2" cx="506" cy="310" rx="22" ry="6" stroke-opacity=".4"/><line class="cy" x1="488.4" y1="303.2" x2="523.6" y2="303.2" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="488.4" y1="306.6" x2="523.6" y2="306.6" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="488.4" y1="310" x2="523.6" y2="310" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="488.4" y1="313.4" x2="523.6" y2="313.4" stroke-opacity=".3" stroke-width=".8"/><line class="cy" x1="488.4" y1="316.8" x2="523.6" y2="316.8" stroke-opacity=".3" stroke-width=".8"/>
+<text x="430" y="336" font-family="Manrope,sans-serif" font-size="9" fill="#fff" fill-opacity=".4" letter-spacing="1" text-anchor="start">0,15 mm katman · %20 dolgu</text><text x="430" y="356" font-family="Manrope,sans-serif" font-size="9" fill="#10b981" fill-opacity=".85" letter-spacing="1" text-anchor="start">PLA · PETG · ABS · CF-PA</text><g class="scan"><line x1="40" y1="60" x2="600" y2="60" stroke="#00c8f0" stroke-opacity=".5" stroke-width="1"/></g>
+</svg>

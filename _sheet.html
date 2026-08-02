@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>cozum visuals</title>
+<style>body{background:#0d1830;margin:0;padding:16px;font-family:sans-serif;color:#fff}
+.g{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.c{background:#0d1830;border:.5px solid rgba(255,255,255,.1);border-radius:12px;padding:6px}
+.c img{width:100%;display:block}
+.c b{font-size:11px;color:#00c8f0;letter-spacing:1px}</style></head><body>
+<div class="g" id="g"></div>
+<script>
+var k=["bim","cam","dijital-donusum","dijital-ikiz","eklemeli-imalat","fabrika-tasarimi","gerceklik-yakalama","gorsellestirme","insaat-yonetimi","nesting","pdm","plm","simulasyon","tasarim-otomasyonu","tolerans-analizi","yaratici-icerik"];
+document.getElementById('g').innerHTML=k.map(function(x){return '<div class="c"><b>'+x+'</b><img src="/assets/img/cozum/'+x+'.svg"></div>';}).join('');
+</script></body></html>

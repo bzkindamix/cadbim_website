@@ -4,6 +4,23 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-11 — Ana sayfadaki 3B sahneler sektör sayfalarının teknik çizim diline taşındı
+
+- **Yapan:** Onur Bozok'un "ana sayfadaki animasyonlu görselleri de daha sofistike bir hale getir, endüstrilerdeki tasarım dilin hoşuma gitti" talebi üzerine Claude (PDM asistanı).
+- **Kapsam:** Ana sayfadaki iki interaktif 3B görüntüleyici (`#sectorSvg` — "Sektörünüze Özel Yaklaşım"; `#cozumSvg` — "Tüm Çözümlerimiz, Endüstrinize Göre") ile hero'daki kalıcı izometrik sahne (`#isoSvg`). Mevcut 3B tel kafes modellerinin **geometrisine dokunulmadı** — yalnızca çizim dili zenginleştirildi.
+- **Önceki durum:** Her iki görüntüleyici de modeli düz lacivert zemine, tek renk (cyan) ve tek çizgi kalınlığıyla çiziyordu; zemin düzlemi, ızgara, düğüm noktası, eksen göstergesi yoktu. Hero sahnesi zaten ızgara/yüzey/ölçü çizgisi taşıyordu, düğüm noktası yoktu.
+- **Eklenenler (`createViewer`, iki panel):**
+  - **Sektöre özel aksan rengi:** 25 model anahtarının her biri kendi rengiyle çiziliyor — 7 sektör rengi sektör sayfalarıyla birebir aynı (`#818cf8`, `#22c55e`, `#f59e0b`, `#ef4444`, `#c084fc`, `#38bdf8`, `#a5b4fc`), 18 çözüm anahtarı da endüstriler sayfasındaki çözüm renkleriyle eşleşiyor. Renk `--acc` / `--accGlow` CSS değişkenleriyle panele yayılıyor: kenarlık, parıltı, köşe işaretleri, alt yazı ve tarama çizgisi hep birlikte geçiş yapıyor.
+  - **Mavi kopya ızgarası + aksan parıltısı:** SVG'nin içine değil panelin tamamına (`.sectorsel-view`) uygulandı — SVG 430 px'te sabitlendiği için içeri konsaydı panel ortasında sert kenarlı bir dikdörtgen olarak görünecekti.
+  - **İzometrik zemin düzlemi:** modelin ayak izini 0,6 birim taşan, 0,7 adımlı ızgara; ön iki kenarı daha belirgin. Modelle birlikte dönüyor, nesneyi "havada" olmaktan çıkarıyor.
+  - **Düğüm noktaları:** modelin en üst %45'indeki köşelerden en fazla 7 tanesi, kademeli gecikmeli nabız animasyonuyla.
+  - **Eksen üçlüsü (X/Y/Z) ve canlı okuma:** sol altta, modelle birlikte dönen birim vektör göstergesi; sağ altta `ISO · ORBIT nnn°` — uydurma bir ölçü değil, sahnenin gerçek dönüş açısı.
+  - **Köşe işaretleri ve tarama çizgisi:** sektör görselleriyle aynı hareket (7 sn'de bir yukarıdan aşağı süzülen ince aksan çizgisi).
+- **Hero sahnesi:** kule ve ek binanın üst köşeleri, vinç direği tepesi ve kanca noktasına 8 düğüm noktası eklendi. Çizilme animasyonu bitmeden görünmesinler diye başlangıçta gizli; `free()` çağrısında nabza geçiyorlar. Kanca düğümü bomla birlikte dönüyor.
+- **Erişilebilirlik:** `prefers-reduced-motion: reduce` altında tarama çizgisi gizleniyor, düğümler sabit opaklıkta duruyor.
+- **Doğrulama:** Tarayıcıda 7 sektörün ve 8 çözüm sekmesinin tamamı tek tek gezildi — her biri kendi aksan rengiyle, doğru çizgi sayısıyla (42–233 arası) ve düğüm noktalarıyla çiziliyor; hero'da 8 düğüm `vnode` sınıfıyla aktif. 1000 / 1280 / 1440 px genişliklerde görsel kontrol yapıldı, konsol hatası yok.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-10 — İletişim formundan "Tercih ettiğiniz ofis" alanı kaldırıldı
 
 - **Yapan:** Onur Bozok'un "hiçbir formda tercih ettiğiniz ofis olmasın" talimatı üzerine Claude (PDM asistanı).

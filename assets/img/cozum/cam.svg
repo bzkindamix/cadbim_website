@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img">
+<defs>
+<pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
+<path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+</pattern>
+<radialGradient id="glow" cx="50%" cy="45%" r="60%">
+<stop offset="0%" stop-color="#f87171" stop-opacity=".18"/>
+<stop offset="100%" stop-color="#f87171" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#f87171" stop-opacity=".55"/>
+<stop offset="100%" stop-color="#f87171" stop-opacity=".08"/>
+</linearGradient>
+</defs>
+<style>
+.ln{fill:none;stroke:#f87171;stroke-opacity:.75;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
+.ln2{fill:none;stroke:#f87171;stroke-opacity:.32;stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
+.cy{fill:none;stroke:#00c8f0;stroke-opacity:.7;stroke-width:1.2;stroke-linecap:round}
+.fl{fill:#f87171;fill-opacity:.06}
+.nd{fill:#f87171}
+.dim{fill:none;stroke:rgba(255,255,255,.28);stroke-width:.8;stroke-dasharray:3 4}
+.blink{animation:bk 3.2s ease-in-out infinite}
+.blink:nth-of-type(2n){animation-delay:.5s}
+.blink:nth-of-type(3n){animation-delay:1.1s}
+.blink:nth-of-type(5n){animation-delay:1.7s}
+@keyframes bk{0%,100%{opacity:.2}50%{opacity:1}}
+.draw{stroke-dasharray:6 8;animation:dr 5s linear infinite}
+@keyframes dr{to{stroke-dashoffset:-56}}
+.scan{animation:sc 7s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes sc{0%{opacity:0;transform:translateY(-40px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translateY(400px)}}
+.spin{transform-box:fill-box;transform-origin:center;animation:sp 24s linear infinite}
+.spinr{transform-box:fill-box;transform-origin:center;animation:sp 24s linear infinite reverse}
+@keyframes sp{to{transform:rotate(360deg)}}
+.float{animation:fo 9s ease-in-out infinite}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.slide{animation:sl 8s cubic-bezier(.55,0,.45,1) infinite}
+@keyframes sl{0%,6%{transform:translateX(0)}94%,100%{transform:translateX(var(--d,480px))}}
+.comb{animation:cb 6s ease-in-out infinite}
+@keyframes cb{0%,100%{opacity:.45}50%{opacity:.95}}
+</style>
+<rect width="640" height="420" fill="url(#g)"/>
+<rect width="640" height="420" fill="url(#glow)"/>
+<polygon class="fl" points="250,170 379.9,245 284.6,300 154.7,225"/><polygon class="ln" points="250,170 379.9,245 284.6,300 154.7,225"/>
+<line class="ln" x1="379.9" y1="245" x2="379.9" y2="285"/><line class="ln" x1="284.6" y1="300" x2="284.6" y2="340"/><line class="ln" x1="154.7" y1="225" x2="154.7" y2="265"/><polyline class="ln" points="379.9,285 284.6,340 154.7,265"/>
+<polygon class="ln2" points="256.9,200 327.9,241 277.7,270 206.7,229" stroke-opacity=".5"/>
+<polyline class="cy draw" points="256.9,205 317.5,240 311.1,243.8 250.4,208.8 243.9,212.5 304.6,247.5 298.1,251.2 237.4,216.2 230.9,220 291.6,255 285.1,258.8 224.5,223.8 218,227.5 278.6,262.5" stroke-opacity=".75"/>
+<polyline class="cy" points="256.9,195 334.9,240 277.7,273 199.8,228 256.9,195" stroke-opacity=".45" stroke-dasharray="4 4"/>
+<g class="float"><polygon class="ln" points="262.1,203 276.1,203 269.1,233"/><rect class="ln" x="259.1" y="157" width="20" height="46" rx="2"/><line class="ln2" x1="269.1" y1="157" x2="269.1" y2="125"/></g>
+<text x="289.1" y="171" font-family="Manrope,sans-serif" font-size="9" fill="#f87171" fill-opacity=".85" letter-spacing="1" text-anchor="start">Ø10 R2</text><g><line class="ln2" x1="72" y1="356" x2="112" y2="336"/><line class="ln2" x1="72" y1="356" x2="32" y2="336"/><line class="ln2" x1="72" y1="356" x2="72" y2="312"/></g><text x="116" y="334" font-family="Manrope,sans-serif" font-size="9" fill="#f87171" fill-opacity=".85" letter-spacing="1" text-anchor="start">X</text><text x="22" y="334" font-family="Manrope,sans-serif" font-size="9" fill="#f87171" fill-opacity=".85" letter-spacing="1" text-anchor="start">Y</text><text x="68" y="306" font-family="Manrope,sans-serif" font-size="9" fill="#f87171" fill-opacity=".85" letter-spacing="1" text-anchor="start">Z</text><rect class="ln2" x="432" y="92" width="170" height="226" rx="3" fill="rgba(255,255,255,.02)"/><text x="446" y="112" font-family="Manrope,sans-serif" font-size="9" fill="#f87171" fill-opacity=".85" letter-spacing="1" text-anchor="start">NC ÇIKTISI</text><text x="446" y="134" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".38">G90 G54 G17</text><text x="446" y="149" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".5">T04 M06</text><text x="446" y="164" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".38">S9500 M03</text><text x="446" y="179" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".5">G43 H04 Z25.</text><text x="446" y="194" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".38">X-32. Y-18.</text><text x="446" y="209" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".5">G01 Z-4.5 F420</text><text x="446" y="224" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".38">X32. F1150</text><text x="446" y="239" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".5">Y-10.5</text><text x="446" y="254" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".38">X-32.</text><text x="446" y="269" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".5">G00 Z25.</text><text x="446" y="284" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".38">M09</text><text x="446" y="299" font-family="monospace" font-size="9" fill="#fff" fill-opacity=".5">M30</text>
+<rect x="440" y="199" width="154" height="13" rx="2" fill="#f87171" fill-opacity=".1" class="blink"/>
+<text x="432" y="344" font-family="Manrope,sans-serif" font-size="9" fill="#fff" fill-opacity=".38" letter-spacing="1" text-anchor="start">3+2 / 5 eksen · sanal tezgah dogrulamasi</text><g class="scan"><line x1="40" y1="60" x2="600" y2="60" stroke="#00c8f0" stroke-opacity=".5" stroke-width="1"/></g>
+</svg>
