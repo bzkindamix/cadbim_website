@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-03 — apple-touch-icon PNG + site.webmanifest eklendi (D1 tamamlandı)
+
+- **Yapan:** Onur Bozok'un "devam" talebi üzerine Claude (PDM asistanı) · K3/K5'ten sonra denetim raporundaki bir sonraki mekanik/düşük-riskli kalem.
+- **Sorun (D1):** 1.320 sayfanın tamamında `<link rel="apple-touch-icon" href="favicon.svg">` vardı — iOS Safari SVG'yi apple-touch-icon olarak desteklemediği için "Ana Ekrana Ekle" yapan kullanıcılar ikon yerine sayfa başlığının ilk harfini görüyordu. `site.webmanifest` de hiç yoktu (Android/PWA "Ana ekrana ekle" istemi için gerekli).
+- **Yapılan:** `favicon.svg`'nin geometrisi (navy yuvarlak köşeli kare + cyan "C" yay) SVG arc endpoint-to-center formülüyle merkez/açı hesaplanıp Pillow ile 180×180 (`assets/apple-touch-icon-180.png`) ve 512×512 (`assets/icon-512.png`) olarak yeniden çizildi — 4x supersample + Lanczos ile kenar yumuşatma. **Not:** İlk denemede tarayıcı canvas'ından `toDataURL()` ile üretilen PNG'yi sohbet üzerinden kopyalamayı denedim; SHA-256 karşılaştırması base64'ün aktarım sırasında bozulduğunu gösterdi (uzunluk aynı, içerik farklı) — bu yöntem güvenilir değil, terk edildi ve doğrudan Pillow ile üretime geçildi.
+- **`site.webmanifest`** (yeni, kök): name/short_name "Cadbim", theme/background `#060c1a`, icons: `favicon.svg` (sizes:any) + `icon-512.png`.
+- **1.320 sayfa** (191 kök + 1.129 post): `apple-touch-icon` linki yeni PNG'ye çevrildi (3 farklı eski href biçimi işlendi: kök `favicon.svg`, post `../favicon.svg`, post `/favicon.svg`), hemen altına `<link rel="manifest" href="...site.webmanifest">` eklendi (yol derinliğine göre `site.webmanifest` / `../site.webmanifest` / `/site.webmanifest`). `404.html` ve `construction_cloud` stub'ı kasıtlı hariç (apple-touch-icon zaten yoktu).
+- **Doğrulama:** Python ile 1.320 dosyada tam olarak 1 `apple-touch-icon-180.png` + 1 `rel="manifest"` referansı doğrulandı (404/construction_cloud hariç, beklenen). Tarayıcıda 3 sayfa (index.html, normal post, `/favicon.svg` varyantlı post) için ikon+manifest linkleri `fetch()` ile HTTP 200 doğrulandı, manifest JSON doğru parse edildi.
+- **Durum:** ✅ D1 tamamlandı, push edilecek.
+
 ### DK-2026-08-03-02 — 190 sayfaya tam footer içeriği eklendi (K5 tamamlandı)
 
 - **Yapan:** Onur Bozok'un "sonnetle olanları yapalım hemen" talebi üzerine Claude (PDM asistanı) · K3'ün ardından listenin ikinci Sonnet-uygun kalemi.

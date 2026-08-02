@@ -1,0 +1,12 @@
+{
+  "name": "Cadbim",
+  "short_name": "Cadbim",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060c1a",
+  "theme_color": "#060c1a",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
