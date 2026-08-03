@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/tabler-icons-subset.css?v=2">
+<link rel="stylesheet" href="assets/css/tabler-icons-subset.css?v=3">
 <style>
 :root {
   --navy:#060c1a; --navy2:#0a1225; --navy3:#0d1830; --navy4:#111f3d;
@@ -131,6 +131,8 @@ body{background:var(--navy);color:var(--white);font-family:var(--font-b);font-si
 .sectorsel-view .vcorner.bl{bottom:13px;left:13px;border-bottom:1.5px solid;border-left:1.5px solid;}
 .sectorsel-view .vcorner.br{bottom:13px;right:13px;border-bottom:1.5px solid;border-right:1.5px solid;}
 .sectorsel-view svg{position:relative;width:100%;max-width:430px;height:auto;}
+.sectorsel-view img{position:relative;width:100%;max-width:470px;height:auto;transition:opacity .16s ease,transform .6s cubic-bezier(.16,.8,.3,1);}
+.sectorsel-view img.swap{opacity:0;transform:scale(1.03);}
 .sectorsel-cap{position:absolute;left:20px;bottom:16px;font-family:var(--font-d);font-size:11px;letter-spacing:2.6px;color:var(--acc);text-transform:uppercase;transition:color .5s ease;}
 .vscan{animation:vscanMove 7s cubic-bezier(.6,0,.4,1) infinite;}
 @keyframes vscanMove{0%{opacity:0;transform:translateY(-30px);}12%{opacity:1;}88%{opacity:1;}100%{opacity:0;transform:translateY(360px);}}
@@ -577,11 +579,13 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
   <div class="section-head reveal">
     <div class="slabel">Sektörler</div>
     <div class="stitle">Sektörünüze Özel Yaklaşım</div>
-    <p class="ssub">Alanınızın üzerine gelin, sektörünüzü üç boyutta görün; tıklayın, yazılım, donanım ve eğitim çözümlerine ulaşın.</p>
+    <p class="ssub">Alanınızın üzerine gelin, sektörünüzün iş akışını görün; tıklayın, yazılım, donanım ve eğitim çözümlerine ulaşın.</p>
   </div>
   <div class="sectorsel reveal">
-    <div class="sectorsel-view" aria-hidden="true">
-      <svg id="sectorSvg" viewBox="0 0 420 340"></svg>
+    <div class="sectorsel-view" id="sectorView" aria-hidden="true">
+      <div class="vcorner tl"></div><div class="vcorner tr"></div>
+      <div class="vcorner bl"></div><div class="vcorner br"></div>
+      <img id="sectorArt" src="assets/img/sektor/mimari.svg" alt="" width="640" height="420" decoding="async">
       <div class="sectorsel-cap" id="sectorCap">MİMARLIK</div>
     </div>
     <nav class="sectorsel-list" id="sectorList" aria-label="Sektörler">
@@ -1784,22 +1788,44 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
     }
   };
 
-  var sectorSvg = document.getElementById('sectorSvg');
+  /* Endüstriler paneli: sektör sayfalarındaki teknik illüstrasyonları gösterir */
+  var sectorArt = document.getElementById('sectorArt');
+  var sectorView = document.getElementById('sectorView');
   var list = document.getElementById('sectorList');
   var cap = document.getElementById('sectorCap');
-  if (sectorSvg && list){
-    var sectorViewer = createViewer(sectorSvg, objects);
+  if (sectorArt && list){
     var links = list.querySelectorAll('a[data-obj]');
+    var fadeT = null;
+    /* görselleri önden ısıt — ilk hover'da beklenmesin */
+    links.forEach(function(a){
+      var im = new Image();
+      im.src = 'assets/img/sektor/' + a.getAttribute('data-obj') + '.svg';
+    });
+    function apply(key){
+      var acc = ACCENT[key] || '#00c8f0';
+      if (sectorView){
+        sectorView.style.setProperty('--acc', acc);
+        sectorView.style.setProperty('--accGlow', hexRgba(acc, .16));
+      }
+      sectorArt.src = 'assets/img/sektor/' + key + '.svg';
+    }
     function select(a){
       links.forEach(function(x){ x.classList.toggle('on', x === a); });
       if (cap) cap.textContent = a.querySelector('b').textContent.toLocaleUpperCase('tr-TR');
-      sectorViewer.show(a.getAttribute('data-obj'));
+      var key = a.getAttribute('data-obj');
+      if (reduce){ apply(key); return; }
+      sectorArt.classList.add('swap');
+      if (fadeT) clearTimeout(fadeT);
+      fadeT = setTimeout(function(){
+        apply(key);
+        sectorArt.classList.remove('swap');
+      }, 160);
     }
     links.forEach(function(a){
       a.addEventListener('mouseenter', function(){ select(a); });
       a.addEventListener('focus', function(){ select(a); });
     });
-    sectorViewer.show('mimari');
+    apply('mimari');
   }
 
   var cozumSvg = document.getElementById('cozumSvg');

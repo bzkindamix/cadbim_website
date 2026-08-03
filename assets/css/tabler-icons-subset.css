@@ -1,6 +1,6 @@
-/* Tabler Icons - CADBIM subset (294 ikon, Tabler 3.31.0). Tam setin (5000+ ikon) yerine sadece sitede kullanilan siniflari icerir.
+/* Tabler Icons - CADBIM subset (295 ikon, Tabler 3.31.0). Tam setin (5000+ ikon) yerine sadece sitede kullanilan siniflari icerir.
    Yeni ikon eklenirse yeniden uret: python scripts/build_icon_subset.py */
-@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;src:url("../fonts/tabler-icons-subset.woff2?v=2") format("woff2")}
+@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;src:url("../fonts/tabler-icons-subset.woff2?v=3") format("woff2")}
 .ti{font-family:"tabler-icons" !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block}
 .ti-3d-cube-sphere:before{content:"\ecd7"}
 .ti-ad-2:before{content:"\ef1f"}
@@ -212,6 +212,7 @@
 .ti-player-play-filled:before{content:"\f691"}
 .ti-plug:before{content:"\ebd9"}
 .ti-plug-connected:before{content:"\f00a"}
+.ti-plus:before{content:"\eb0b"}
 .ti-point:before{content:"\eb0c"}
 .ti-presentation:before{content:"\eb70"}
 .ti-printer:before{content:"\eb0e"}
