@@ -226,14 +226,50 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     "@type": "Country",
     "name": "Türkiye"
    }
-  }
- ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Revit varken Fabrication ailesine neden ihtiyaç duyayım?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Revit tesisatı tasarım ve koordinasyon seviyesinde modeller; Fabrication CADmep aynı sistemi üretici parçalarıyla LOD 400 imalat detayına indirir. Taahhüt tarafında spool çizimi, kesim listesi ve CNC çıkışı gerekiyorsa Fabrication devreye girer; yalnızca tasarım yapıyorsanız Revit yeterli olabilir. Kapsamı iş modelinize göre birlikte netleştiririz."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "CADmep, ESTmep ve CAMduct'ı birlikte mi almalıyım?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Zorunlu değil; ancak üçlü aynı veritabanını paylaştığı için birlikte en yüksek verimi verir. Teklif ağırlıklı çalışan firmalarda ESTmep, imalathanesi olan firmalarda CAMduct öncelik kazanır. Cadbim ihtiyaç analiziyle doğru başlangıç noktasını belirler."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Autodesk CFD'yi kimler kullanmalı?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Klima santrali seçimi, temiz oda, veri merkezi soğutması gibi akışın kritik olduğu projelerde; sıcaklık dağılımını ve basınç kaybını üretimden önce doğrulamak isteyen mekanik proje ofisleri ile Ar-Ge ekiplerinde. CAD modelinden doğrudan analiz ortamına geçilir; geometri yeniden oluşturulmaz."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Mevcut AutoCAD çizimlerimizle başlayabilir miyiz?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Evet. CADmep, AutoCAD tabanı üzerinde çalışır ve DWG altyapınız korunur; geçiş genellikle pilot bir proje üzerinde şablon ve kütüphane kurulumuyla başlar. Cadbim kurulumu, içeriği ve rol bazlı eğitimi tek planda yürütür."
+     }
+    }
+   ]
+  } ]
 }
 </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 <style>
 /* === SEKTOR GECIS SERIDI ============================================== */
 .secnav{position:sticky;top:68px;z-index:100;margin-top:68px;background:rgba(10,18,37,.94);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
@@ -424,6 +460,9 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
         <a href="iletisim#form" class="btn-p">Uzmanla Konuş <i class="ti ti-arrow-right"></i></a>
         <a href="egitimler" class="btn-g">Eğitim Programları</a>
       </div>
+      <!-- cz-stats -->
+      <div class="cz-stats" style="--cz:#2dd4bf;"><div class="cz-stat"><b>LOD 400</b><span>imalat detayında MEP modelleme — Fabrication CADmep</span></div><div class="cz-stat"><b>7.000+</b><span>üretici katalog öğesiyle gerçek maliyet verisi — ESTmep</span></div><div class="cz-stat"><b>Tek veritabanı</b><span>tahmin, detay ve imalat aynı model üzerinde</span></div></div>
+      <!-- /cz-stats -->
     </div>
     <div class="hero-art">
       <img src="assets/img/sektor/tesisat.svg" alt="Mekanik tesisat iş akışı — klima santrali, kanal hattı ve borulama şeması" width="640" height="420" decoding="async">
@@ -431,6 +470,26 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div>
 </section>
 
+<!-- cz-intro -->
+<section class="section cz-sec" style="--cz:#2dd4bf;">
+  <div class="cz-intro">
+    <div class="cz-intro-h">
+      <div class="slabel" style="color:var(--cz);">Bu Sektörde Yaklaşımımız</div>
+      <div class="stitle">Tesisatta model, imalatın kendisidir</div>
+    </div>
+    <div class="cz-intro-b">
+        <p class="cz-p">Mekanik tesisatta en pahalı hatalar, çizim ile imalat arasındaki kopukluktan doğar. Autodesk'in MEP yaklaşımında model yalnızca bir koordinasyon aracı değil, <strong>imalatın doğrudan girdisidir</strong>: Revit'te kurulan kanal, boru ve elektrik sistemleri, Fabrication ailesiyle LOD 400 imalat detayına indirilir.</p>
+        <p class="cz-p">Fabrication CADmep, ESTmep ve CAMduct <strong>ortak bir veritabanını</strong> paylaşır — maliyet tahmini, detaylandırma ve imalat aynı model üzerinden ilerler; veri yeniden girilmez, parça yeniden modellenmez. Kanal geometrisi yeniden çizilmeden doğrudan CNC kesim makinelerine gönderilir.</p>
+        <p class="cz-p">Hesap tarafında Autodesk CFD, hava ve sıvı akışını üretim öncesinde simüle eder; basınç kaybı, türbülans ve sıcaklık dağılımı masada doğrulanır. Bu, Navisworks çakışma rutiniyle birleştiğinde, şantiyede kesip kaynakla çözülecek çarpışmalar tasarım aşamasında kapanır.</p>
+    </div>
+  </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>LOD 400 detay</h3><p>Kanal, boru ve kablo tesisatı imalat detayında modellenir; çakışma riski şantiyeden önce görünür.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Ortak veritabanı</h3><p>CADmep, ESTmep ve CAMduct aynı proje verisini paylaşır — tekrar modelleme ve veri kaybı olmaz.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Üretici bazlı maliyet</h3><p>90'dan fazla üreticinin 7.000'i aşkın katalog öğesiyle gerçek fiyat ve ürün verisine dayanan tahmin.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>CNC'ye doğrudan çıkış</h3><p>CAMduct parça geometrisini yeniden çizmeden kesim makinelerine aktarır; sac kanal imalatı hızlanır.</p></div></div></div>
+</section>
+<!-- /cz-intro -->
+<section class="section section-alt">
+  <div class="sh"><div class="slabel">Kapsam</div><div class="stitle">Mekanik Tesisat İçin Neler Sunuyoruz?</div></div>
+  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-wind" style="color:#2dd4bf;"></i></div><h3>Havalandırma & Kanal Tasarımı</h3><p>Revit MEP ile mimari modelle koordineli kanal sistemleri; debi ve kesit bilgisi modelin içinde taşınır.</p></div><div class="card"><div class="card-icon"><i class="ti ti-droplet" style="color:#2dd4bf;"></i></div><h3>Sıhhi Tesisat & Borulama</h3><p>Gidiş-dönüş hatları, kolon şemaları ve bağlantı detayları tek modelden pafta üretimiyle belgelenir.</p></div><div class="card"><div class="card-icon"><i class="ti ti-temperature" style="color:#2dd4bf;"></i></div><h3>HVAC Analizi</h3><p>Autodesk CFD ile sıcaklık dağılımı, basınç düşüşü ve ısıl konfor analizi — üretimden önce, masada.</p></div><div class="card"><div class="card-icon"><i class="ti ti-settings" style="color:#2dd4bf;"></i></div><h3>İmalat Detaylandırma</h3><p>Fabrication CADmep ile spool çizimleri; üretici kütüphanelerinden gerçek parçalarla LOD 400 model.</p></div><div class="card"><div class="card-icon"><i class="ti ti-file-text" style="color:#2dd4bf;"></i></div><h3>Metraj & Maliyet</h3><p>ESTmep detaylandırma modelinden doğrudan miktar çeker; teklif süresi kısalır, isabet artar.</p></div><div class="card"><div class="card-icon"><i class="ti ti-crane" style="color:#2dd4bf;"></i></div><h3>Saha Koordinasyonu</h3><p>Navisworks çakışma kontrolü ve BIM Collaborate Pro ile montaj planlaması, pafta dağıtımı ve as-built.</p></div></div>
+</section>
 <section data-enrich style="padding:64px 3rem;background:#0a1225;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">İş Akışı</div>
@@ -611,6 +670,20 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div></div>
   </div>
 </section>
+
+<!-- cz-faq -->
+<section class="section section-alt cz-sec" style="--cz:#2dd4bf;">
+  <div class="sh">
+    <div class="slabel" style="color:var(--cz);">Sıkça Sorulanlar</div>
+    <div class="stitle">Bu sektör hakkında merak edilenler</div>
+  </div>
+  <div class="cz-faq"><details class="cz-faq-i"><summary>Revit varken Fabrication ailesine neden ihtiyaç duyayım?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Revit tesisatı tasarım ve koordinasyon seviyesinde modeller; Fabrication CADmep aynı sistemi üretici parçalarıyla LOD 400 imalat detayına indirir. Taahhüt tarafında spool çizimi, kesim listesi ve CNC çıkışı gerekiyorsa Fabrication devreye girer; yalnızca tasarım yapıyorsanız Revit yeterli olabilir. Kapsamı iş modelinize göre birlikte netleştiririz.</div></details><details class="cz-faq-i"><summary>CADmep, ESTmep ve CAMduct'ı birlikte mi almalıyım?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Zorunlu değil; ancak üçlü aynı veritabanını paylaştığı için birlikte en yüksek verimi verir. Teklif ağırlıklı çalışan firmalarda ESTmep, imalathanesi olan firmalarda CAMduct öncelik kazanır. Cadbim ihtiyaç analiziyle doğru başlangıç noktasını belirler.</div></details><details class="cz-faq-i"><summary>Autodesk CFD'yi kimler kullanmalı?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Klima santrali seçimi, temiz oda, veri merkezi soğutması gibi akışın kritik olduğu projelerde; sıcaklık dağılımını ve basınç kaybını üretimden önce doğrulamak isteyen mekanik proje ofisleri ile Ar-Ge ekiplerinde. CAD modelinden doğrudan analiz ortamına geçilir; geometri yeniden oluşturulmaz.</div></details><details class="cz-faq-i"><summary>Mevcut AutoCAD çizimlerimizle başlayabilir miyiz?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Evet. CADmep, AutoCAD tabanı üzerinde çalışır ve DWG altyapınız korunur; geçiş genellikle pilot bir proje üzerinde şablon ve kütüphane kurulumuyla başlar. Cadbim kurulumu, içeriği ve rol bazlı eğitimi tek planda yürütür.</div></details></div>
+  <div class="cz-faq-cta">
+    <span>Sorunuz listede yok mu?</span>
+    <a href="iletisim#form" class="btn-p">Uzmanımıza Sorun <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+<!-- /cz-faq -->
 
 <div class="cta-wrap">
   <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">

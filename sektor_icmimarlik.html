@@ -226,14 +226,50 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     "@type": "Country",
     "name": "Türkiye"
    }
-  }
- ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Corona mı V-Ray mi seçmeliyim?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Corona, iç mekân görselleştirmede sadelik ve hız için tasarlandı — fiziksel doğruluk varsayılan açık, sahneyi kurup render alırsınız. V-Ray ışık ve malzemede daha derin kontrol ister ve büyük ya da karma sahnelerde esneklik sunar. İkisi de Chaos ekosistemindedir; ekibinizin profiline göre yönlendiririz."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "SketchUp Pro iç mimarlık ofisi için yeterli mi?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Modelleme ve LayOut belgeleme için çoğu ofiste evet; 1.000'den fazla eklentiyle genişletilir. Tarama verisiyle rölöve (Scan Essentials) veya V-Ray render'ını da tek pakette isteyen ekipler için SketchUp Studio planı bulunur."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Render için nasıl bir iş istasyonu gerekir?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Motora bağlıdır: Enscape ve Lumion GPU ağırlıklı çalışır; Corona ve V-Ray CPU-GPU dengesi ister. HP Z serisinde, kullandığınız yazılıma göre konfigürasyon öneriyoruz — ne eksik ne fazla."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Sunum panolarımızı sizde basabilir miyiz?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Evet. Sanatsal Baskı Atölyemizde HP DesignJet Z9+ ile 64 inç genişliğe kadar, 12'ye varan pigment mürekkeple galeri kalitesinde baskı alıyoruz; kanvas dahil medya seçeneklerini birlikte belirleriz."
+     }
+    }
+   ]
+  } ]
 }
 </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 <style>
 /* === SEKTOR GECIS SERIDI ============================================== */
 .secnav{position:sticky;top:68px;z-index:100;margin-top:68px;background:rgba(10,18,37,.94);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
@@ -424,6 +460,9 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
         <a href="iletisim#form" class="btn-p">Uzmanla Konuş <i class="ti ti-arrow-right"></i></a>
         <a href="egitimler" class="btn-g">Eğitim Programları</a>
       </div>
+      <!-- cz-stats -->
+      <div class="cz-stats" style="--cz:#f472b6;"><div class="cz-stat"><b>1.000+</b><span>SketchUp eklentisi; LayOut belgeleme ve Trimble Connect dahil</span></div><div class="cz-stat"><b>12'ye varan</b><span>pigment mürekkeple galeri kalitesinde baskı — DesignJet Z9+</span></div><div class="cz-stat"><b>Gerçek zamanlı</b><span>Enscape ve Lumion ile anında müşteri sunumu</span></div></div>
+      <!-- /cz-stats -->
     </div>
     <div class="hero-art">
       <img src="assets/img/sektor/icmimarlik.svg" alt="İç mimarlık iş akışı — izometrik oda, mobilya ve aydınlatma şeması" width="640" height="420" decoding="async">
@@ -431,6 +470,26 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div>
 </section>
 
+<!-- cz-intro -->
+<section class="section cz-sec" style="--cz:#f472b6;">
+  <div class="cz-intro">
+    <div class="cz-intro-h">
+      <div class="slabel" style="color:var(--cz);">Bu Sektörde Yaklaşımımız</div>
+      <div class="stitle">Konsept ile sunum arasındaki mesafeyi kapatıyoruz</div>
+    </div>
+    <div class="cz-intro-b">
+        <p class="cz-p">İç mimarlık projelerinde karar, müşteri sunumunda verilir — kazanan, fikrini en hızlı ve en inandırıcı gösteren ekiptir. SketchUp Pro; masaüstü, web ve iPad'de çalışan modelleme ortamıyla mekân kurgusunu hızlandırır, <strong>LayOut ile teknik belgeleme aynı dosyadan</strong> üretilir.</p>
+        <p class="cz-p">Görselleştirmede Chaos Corona, iç mekân için tasarlanmış render motorudur: <strong>fiziksel doğruluk varsayılan olarak açıktır</strong> — karmaşık ayar denizine girmeden doğal ışık ve gerçekçi malzemeyle sonuç alınır; kumaş, deri ve metal yüzeyler gerçek dünyadan taranmış, fizik tabanlı kütüphaneden gelir. Daha derin kontrol isteyen stüdyolar aynı ekosistem içinde V-Ray'e geçer.</p>
+        <p class="cz-p">Sunum tarafında Enscape, SketchUp'ın içinde gerçek zamanlı çalışır — modeldeki her değişiklik render görünümüne eş zamanlı yansır; Lumion sürükle-bırak sadelikte atmosferik iç mekân animasyonu üretir. Son adımda panolar HP DesignJet Z ile galeri kalitesinde basılır.</p>
+    </div>
+  </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Üç platformda modelleme</h3><p>SketchUp Pro masaüstü, web ve iPad'de çalışır; Trimble Connect bulut depolama dahildir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Kutudan çıkan fotogerçekçilik</h3><p>Corona'da sahneyi kurun, render alın — malzeme ve ışık değişiklikleri anında görünür.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Eş zamanlı tasarım-render</h3><p>Enscape'te SketchUp, Revit veya Rhino'daki her değişiklik render penceresinde canlı güncellenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Sunumdan baskıya</h3><p>Photoshop ve InDesign panoları, DesignJet Z'de 12'ye varan pigment mürekkeple basılır.</p></div></div></div>
+</section>
+<!-- /cz-intro -->
+<section class="section section-alt">
+  <div class="sh"><div class="slabel">Kapsam</div><div class="stitle">İç Mimarlık İçin Neler Sunuyoruz?</div></div>
+  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-armchair" style="color:#f472b6;"></i></div><h3>Mekân Planlama & Yerleşim</h3><p>SketchUp ile hacim etüdü, mobilya yerleşimi ve alternatif senaryolar; LayOut ile ölçekli pafta.</p></div><div class="card"><div class="card-icon"><i class="ti ti-sun-high" style="color:#f472b6;"></i></div><h3>Fotogerçekçi İç Mekân Render</h3><p>Chaos Corona ve V-Ray ile doğal ışık, doğru malzeme ve stüdyo kalitesinde kare.</p></div><div class="card"><div class="card-icon"><i class="ti ti-movie" style="color:#f472b6;"></i></div><h3>Gerçek Zamanlı Gezinti & Animasyon</h3><p>Enscape ile model içinde canlı gezinti ve VR; Lumion ile atmosferik tanıtım videosu.</p></div><div class="card"><div class="card-icon"><i class="ti ti-palette" style="color:#f472b6;"></i></div><h3>Malzeme & Doku Kurgusu</h3><p>Fizik tabanlı malzeme kütüphaneleri; kumaş, ahşap ve metalin ışıkla doğru ilişkisi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-file-text" style="color:#f472b6;"></i></div><h3>Sunum Panoları & Portfolyo</h3><p>Photoshop post-prodüksiyonu ve InDesign ile konsept panoları, teklif ve portfolyo dosyaları.</p></div><div class="card"><div class="card-icon"><i class="ti ti-wand" style="color:#f472b6;"></i></div><h3>Galeri Kalitesinde Baskı</h3><p>Sanatsal Baskı Atölyesi'nde 64 inç genişliğe kadar fine art baskı — kanvas dahil medya seçenekleri.</p></div></div>
+</section>
 <section data-enrich style="padding:64px 3rem;background:#0a1225;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">İş Akışı</div>
@@ -622,6 +681,20 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div></div>
   </div>
 </section>
+
+<!-- cz-faq -->
+<section class="section section-alt cz-sec" style="--cz:#f472b6;">
+  <div class="sh">
+    <div class="slabel" style="color:var(--cz);">Sıkça Sorulanlar</div>
+    <div class="stitle">Bu sektör hakkında merak edilenler</div>
+  </div>
+  <div class="cz-faq"><details class="cz-faq-i"><summary>Corona mı V-Ray mi seçmeliyim?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Corona, iç mekân görselleştirmede sadelik ve hız için tasarlandı — fiziksel doğruluk varsayılan açık, sahneyi kurup render alırsınız. V-Ray ışık ve malzemede daha derin kontrol ister ve büyük ya da karma sahnelerde esneklik sunar. İkisi de Chaos ekosistemindedir; ekibinizin profiline göre yönlendiririz.</div></details><details class="cz-faq-i"><summary>SketchUp Pro iç mimarlık ofisi için yeterli mi?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Modelleme ve LayOut belgeleme için çoğu ofiste evet; 1.000'den fazla eklentiyle genişletilir. Tarama verisiyle rölöve (Scan Essentials) veya V-Ray render'ını da tek pakette isteyen ekipler için SketchUp Studio planı bulunur.</div></details><details class="cz-faq-i"><summary>Render için nasıl bir iş istasyonu gerekir?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Motora bağlıdır: Enscape ve Lumion GPU ağırlıklı çalışır; Corona ve V-Ray CPU-GPU dengesi ister. HP Z serisinde, kullandığınız yazılıma göre konfigürasyon öneriyoruz — ne eksik ne fazla.</div></details><details class="cz-faq-i"><summary>Sunum panolarımızı sizde basabilir miyiz?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Evet. Sanatsal Baskı Atölyemizde HP DesignJet Z9+ ile 64 inç genişliğe kadar, 12'ye varan pigment mürekkeple galeri kalitesinde baskı alıyoruz; kanvas dahil medya seçeneklerini birlikte belirleriz.</div></details></div>
+  <div class="cz-faq-cta">
+    <span>Sorunuz listede yok mu?</span>
+    <a href="iletisim#form" class="btn-p">Uzmanımıza Sorun <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+<!-- /cz-faq -->
 
 <div class="cta-wrap">
   <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
