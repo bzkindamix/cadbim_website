@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-28 — Ürün/çözüm/endüstri sayfalarındaki "İlgili İçerikler" widget'ına Blog'a giden filtreli "Tümünü gör" bağlantısı
+
+- **Yapan:** Onur Bozok'un "5 videodan fazlasını görmek isteyenleri blog sayfamıza ilgili filtre ile gönderen bir link olmalı hem ürünlerde hem endüstrilerde hem çözümlerde" talebi üzerine Claude (PDM asistanı).
+- **Bağlam:** Önceki turda doğrulanan davranış (YouTube→blog otomatik senkron; ürün/çözüm/endüstri sayfalarında konuya göre en yeni 5 içerik) korunuyor; eksik olan tek şey, 5'in ötesindeki içeriğe ulaşma yoluydu.
+- **Kapsam:** `blogRelatedGrid` widget'ını barındıran **79 sayfa** (ürün sayfaları + çözüm sayfaları + 8 `sektor_*.html` endüstri sayfası) — script bloğu tüm dosyalarda bayt-bayt özdeşti (MD5 doğrulandı), tek bir Python betiğiyle (`scripts/` dışı, scratchpad) toplu değiştirildi.
+- **Widget tarafı:** Filtrelenmiş+sıralanmış tam liste artık `allMatched` değişkeninde tutuluyor; ekrana basılan `matched` bunun `slice(0,5)`'i. `allMatched.length>5` olduğunda grid'in altına `Tüm N içeriği gör` bağlantısı ekleniyor → `blog?topic=<konu>` (temiz URL şemasıyla uyumlu, relative href).
+- **cadbim_blog.html tarafı:** `filtered()` içindeki `prodOk` kontrolüne `|| p.cat===activeProd` eklendi (var olan ürün-chip davranışını bozmadan, artık kategori-tipi konuları da kabul ediyor). Sayfa yüklenince `location.search`'ten `?topic=` okunuyor, `activeProd`'a atanıyor, eşleşen chip (kategori veya ürün filtresinde) varsa görsel olarak aktif işaretleniyor, `render(true)` çağrılıyor.
+- **Doğruluk garantisi:** Widget'ın kullandığı eşleştirme (`products.indexOf(topic) || cat===topic`) ile blog.html'e eklenen mantık birebir aynı — yani `?topic=X` her zaman widget'ın `allMatched` listesiyle tam örtüşüyor, ayrı bir bakım noktası yok.
+- **Doğrulama (localhost:8420):** 47 benzersiz `data-topic` değeri `blog-posts.json` karşısında taranıp sınıflandırıldı — 0 eşleşen (bölüm gizleniyor, önceden var olan davranış), 1-5 eşleşen (link yok, doğru), 5'in üzeri (link var). Sınır durumu AutoCAD LT (tam 6) canlı test edildi: link doğru metinle çıktı, mobilde (375px) taşma yok. AutoCAD (48) ve sektor-mimari→BIM (299) üzerinden linke gidiş: blog sayfasında doğru sonuç sayısı ve doğru chip vurgusu doğrulandı.
+- **Not:** Bazı `data-topic` değerleri (Autodesk Docs, Dynamo, Genel, HP Build Workspace, Netfabb, Robot Structural vb.) blog sayfasındaki mevcut chip listesinde karşılığı yok — filtreleme yine de doğru çalışıyor, sadece o durumda hiçbir chip görsel olarak aktif işaretlenmiyor (kozmetik, işlevi etkilemiyor).
+- **Durum:** ✅ 80 dosya (79 widget + cadbim_blog.html) güncellendi ve doğrulandı.
+
 ### DK-2026-08-03-27 — Ana sayfa görsel tutarlılık turu: sektör/çözüm sahneleri ortalama, Sanatsal Baskı sıra dengesi, marka rozeti kartları
 
 - **Yapan:** Onur Bozok'un art arda dört bulgusu üzerine Claude (PDM asistanı): (1) ekran görüntüsüyle "bazı endüstri görselleri karenin içine tam ortalanmış değil", (2) "ana sayfadaki marka logolarının olduğu alandaki beyaz arka planlar gözümü tırmalıyor... sitenin genelinden farklı ve kalitesiz görünüyor", (3) "çözümler de görsellerde ortalama problemi var gibi, sanatsal baskı altta tek duruyor", (4) "footer'daki whatsapp ibaresine gerek yok, zaten sağ altta buton var".

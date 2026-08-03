@@ -392,7 +392,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   function filtered(){
     return allPosts.filter(function(p){
       var catOk = activeCat==='all' || p.cat===activeCat;
-      var prodOk = activeProd==='all' || (p.products||[]).indexOf(activeProd)!==-1;
+      var prodOk = activeProd==='all' || (p.products||[]).indexOf(activeProd)!==-1 || p.cat===activeProd;
       var qOk = !searchQ || p.title.toLowerCase().indexOf(searchQ)!==-1;
       return catOk && prodOk && qOk;
     });
@@ -439,6 +439,18 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
 
   fetch('assets/data/blog-posts.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
     allPosts=data;
+    var topicParam=new URLSearchParams(location.search).get('topic');
+    if(topicParam){
+      activeProd=topicParam;
+      var topicChip=null;
+      [].slice.call(document.querySelectorAll('#catfilter .fchip, #prodfilter .fchip')).forEach(function(c){
+        if(!topicChip && (c.getAttribute('data-f')===topicParam || c.getAttribute('data-p')===topicParam)) topicChip=c;
+      });
+      if(topicChip){
+        document.querySelectorAll('#catfilter .fchip, #prodfilter .fchip').forEach(function(c){c.classList.remove('active');});
+        topicChip.classList.add('active');
+      }
+    }
     render(true);
   }).catch(function(){
     empty.textContent='Yazılar yüklenemedi.';

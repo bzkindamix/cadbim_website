@@ -308,8 +308,9 @@
   var topic=container.getAttribute('data-topic');
   function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   fetch('assets/data/blog-posts.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
-    var matched=data.filter(function(p){return (p.products||[]).indexOf(topic)!==-1 || p.cat===topic;})
-      .sort(function(a,b){return b.date.localeCompare(a.date);}).slice(0,5);
+    var allMatched=data.filter(function(p){return (p.products||[]).indexOf(topic)!==-1 || p.cat===topic;})
+      .sort(function(a,b){return b.date.localeCompare(a.date);});
+    var matched=allMatched.slice(0,5);
     var section=document.getElementById('blog-related-section');
     if(matched.length===0){ if(section) section.style.display='none'; return; }
     container.innerHTML=matched.map(function(p){
@@ -323,6 +324,9 @@
         + '<h4 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h4>'
         + '<p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></a>';
     }).join('');
+    if(allMatched.length>5){
+      container.insertAdjacentHTML('afterend','<a href="blog?topic='+encodeURIComponent(topic)+'" style="display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13px;font-weight:600;color:#00c8f0;text-decoration:none;">Tüm '+allMatched.length+' içeriği gör <i class="ti ti-arrow-right" style="font-size:12px;"></i></a>');
+    }
   }).catch(function(){ var section=document.getElementById('blog-related-section'); if(section) section.style.display='none'; });
 })();
 </script>
