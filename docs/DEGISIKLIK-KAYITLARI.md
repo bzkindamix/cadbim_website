@@ -4,6 +4,17 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-12 — Çözümler mega menüsü ekranın soluna taşıp kesiliyordu (menüden çözüm sayfalarına ulaşılamıyordu)
+
+- **Yapan:** Onur Bozok'un "çözüm sayfalarını göremiyorum" bildirimi üzerine Claude (PDM asistanı).
+- **Belirti:** Üst menüdeki **Çözümler** mega menüsü açıldığında sol kenardan taşıyordu. `body{overflow-x:hidden}` nedeniyle taşan kısım hiç görünmüyor, dolayısıyla ilk ve dördüncü kolondaki bağlantılara (Dijital Dönüşüm, BIM, Simülasyon & Analiz, Tolerans Analizi, PLM, PDM, İnşaat Proje Yönetimi) menüden erişilemiyordu.
+- **Kök neden:** `design-system.css` içindeki `.nav-mega{left:50%;transform:translateX(-50%)}` kuralı menüyü **nav öğesine göre** ortalıyordu. `.nav-dropdown` `position:relative` olduğu için 1080 px genişliğindeki menünün kapsayan bloğu 72,8 px'lik "Çözümler" öğesiydi; `left:50%` 36,4 px'e karşılık geliyor, `translateX(-50%)` ise 540 px sola çekiyordu. "Çözümler" öğesi ekran ortasının solunda olduğundan menü **x = −32 px**'e oturuyordu; ölçümde 17 bağlantının 8'i görünüm alanı dışındaydı.
+- **Yapılan:** `.nav-mega` `position:fixed; top:38px; left:50%; right:auto` yapıldı. `.nav` üzerindeki `backdrop-filter` fixed öğeler için kapsayan blok oluşturur; `.nav` tam genişlikte ve `top:0` olduğu için menü artık **görünüm alanına göre** ortalanır. Dikey konum korundu (menü üstü y=44, nav öğesinin altıyla aynı) — böylece imleç menüye inerken hover kopmuyor.
+- **Not:** Bu kural, aynı gün başka bir oturumun attığı `da7c12c5` ("Post nav'ı kök mega-menü ile eşitlendi") commit'inden geliyordu; hata çözüm sayfalarına değil, tüm sayfaların üst menüsüne aitti.
+- **Doğrulama:** 9 sayfada (plm, bim, cozumler, gorsellestirme, nesting, anasayfa, endustriler, urunler, egitimler) ölçüldü — hepsinde `position:fixed`, menü x=85, sağ kenar=1165, **17 bağlantı, 0 kesilen**. Genişlik taraması 1280 / 1200 / 1150 / 1100 / 1050 px: taşma yok, kesilen bağlantı yok, hover boşluğu 0 px. 1000 px altında masaüstü menüsü kapanıp mobil menü devrede olduğu için ölçüm dışı. Ayrıca 18 çözüm URL'sinin tamamı yerel sunucuda 200 dönüyor ve `cz-intro / cz-fark / cz-art-hero` blokları yerinde.
+- **Yan bulgu:** Tarayıcıda sayfa eski `design-system.css?v=15` ile önbelleğe alındığı için düzeltme ilk ölçümde görünmedi; cache sürümü `v=16`'ya çekildi (1321 dosya). Yayına alırken tarayıcı önbelleğinin yenilenmesi bu sürüm parametresine bağlıdır.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-19 — Autodesk-dışı ürünler için eğitim iddiaları site genelinde kaldırıldı
 
 - **Yapan:** Onur'un "biz sadece autodesk ürünleri için eğitim veriyoruz; sitede bu duruma zıtlık oluşturan ifadeleri bul ve düzelt" talebi üzerine Claude (PDM asistanı, Fable). Kural hafızaya da kaydedildi (cadbim-egitim-sadece-autodesk).

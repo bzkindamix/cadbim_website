@@ -136,8 +136,17 @@ select:focus-visible {
   Menü nav öğesinin altında ortalanır; dar ekranlarda 2 kolona düşer
   (900px altında mobil menü devrededir).
 */
+/* DUZELTME (Onur 2026-08-03: "cozum sayfalarini goremiyorum"):
+   left:50% + translateX(-50%) menuyu NAV OGESINE gore ortaliyordu. "Cozumler"
+   ogesi ekran ortasinin solunda oldugu icin 1080px'lik menu sol kenardan
+   tasiyor, body{overflow-x:hidden} yuzunden ilk kolon (Dijital Donusum, BIM,
+   Simulasyon, Tolerans Analizi) hic gorunmuyordu.
+   position:fixed ile menu artik gorunum alanina gore ortalanir. */
 .nav-mega {
+  position: fixed;
+  top: 38px;
   left: 50%;
+  right: auto;
   transform: translateX(-50%) translateY(-6px);
   width: min(1080px, calc(100vw - 32px));
   padding: 12px;
