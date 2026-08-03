@@ -25,8 +25,9 @@
     "#social-rail:hover a,#social-rail.open a{transform:translateX(-8px);opacity:1;}" +
     "#social-rail a:hover,#social-rail a:focus-visible,#social-rail.open a{transform:translateX(0);}" +
     "#social-rail a:hover,#social-rail a:focus-visible{transform:translateX(0) scale(1.18);}" +
+    "#social-rail a svg{width:22px;height:22px;}" +
     "@media (prefers-reduced-motion:reduce){#social-rail a{transition:none;}}" +
-    "@media (max-width:600px){#social-rail a{width:32px;height:32px;}#social-rail a svg{width:15px;height:15px;}}";
+    "@media (max-width:600px){#social-rail a{width:32px;height:32px;}#social-rail a svg{width:18px;height:18px;}}";
   document.head.appendChild(style);
 
   var rail = document.createElement("div");

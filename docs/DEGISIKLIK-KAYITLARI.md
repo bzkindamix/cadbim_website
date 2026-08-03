@@ -4,6 +4,13 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-36 — Sosyal medya rayındaki logolar büyütüldü (22px masaüstü / 18px mobil)
+
+- **Yapan:** Onur'un "kutuların içindeki logoları biraz büyüt de daha görünür olsun" talebi üzerine Claude (PDM asistanı, Fable).
+- **Yapılan (`social-widget.js` v4):** İkon SVG boyutu masaüstünde 18-19px → **22px** (38px kutuda), mobilde 15px → **18px** (32px kutuda) — CSS kuralıyla merkezi olarak (`#social-rail a svg`). Gömülü (çekmece) durumda görünür kısımda artık daha iri logo okunuyor. Cache bust: `?v=3` → `?v=4` (196 sayfa).
+- **Doğrulama:** Yerel önizlemede v4 yüklendi; masaüstü 22px kuralı ve mobil 18px media kuralı CSSOM'da doğrulandı (panel arka planda 0x0 olduğundan canlı ölçüm mobil kırılıma düştü — beklenen davranış, kural seti doğru). Konsol hatası 0.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-04-35 — Sanatsal Baskı sayfası dil cilası: zorlama/"keko" ifadeler inceltildi, havalı-sakin ton korundu
 
 - **Yapan:** Onur Bozok'un "sanatsal baskıda dil biraz keko; havalı olmalı ama 'şey' gibi ifadelerden kaçınmalıyız" talebi üzerine Claude (PDM asistanı).
