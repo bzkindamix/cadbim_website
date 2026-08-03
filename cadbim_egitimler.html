@@ -38,7 +38,8 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:var(--r);font-weight:700;font-size:13px;}
 
 /* HERO */
-.hero{padding:120px 3rem 72px;position:relative;overflow:hidden;}
+.hero{padding:120px 3rem 72px;position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:flex-start;gap:2rem;flex-wrap:wrap;}
+.hero-badges{display:flex;flex-direction:column;align-items:flex-end;gap:14px;flex-shrink:0;position:relative;z-index:1;margin-top:4px;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% -10%,rgba(0,200,240,0.1) 0%,transparent 60%);pointer-events:none;}
 .hero-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(var(--w10) 1px,transparent 1px),linear-gradient(90deg,var(--w10) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
 .hero-inner{position:relative;z-index:1;max-width:760px;}
@@ -143,7 +144,8 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
 .socials a:hover{border-color:var(--cyan);color:var(--cyan);}
 
 @media(max-width:900px){.nav-links{display:none;}.format-grid{grid-template-columns:1fr;}.steps{grid-template-columns:1fr 1fr;}.steps::before{display:none;}}
-@media(max-width:600px){.section{padding:52px 1.5rem;}.hero{padding:100px 1.5rem 56px;}.form-grid{grid-template-columns:1fr;}.steps{grid-template-columns:1fr;}.hero-pills{flex-direction:column;align-items:stretch;}.hero-pill{justify-content:center;}.hero-btns{flex-direction:column;align-items:stretch;}.hero-btns .btn-p,.hero-btns .btn-g{justify-content:center;}}
+@media(max-width:900px){.hero-badges{flex-direction:row;align-items:center;justify-content:center;width:100%;margin-top:12px;gap:28px;}}
+@media(max-width:600px){.section{padding:52px 1.5rem;}.hero{padding:100px 1.5rem 56px;}.form-grid{grid-template-columns:1fr;}.steps{grid-template-columns:1fr;}.hero-pills{flex-direction:column;align-items:stretch;}.hero-pill{justify-content:center;}.hero-btns{flex-direction:column;align-items:stretch;}.hero-btns .btn-p,.hero-btns .btn-g{justify-content:center;}.hero-badges{flex-direction:column;gap:16px;}}
 
 .nav-dropdown{position:relative;}
 .nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
@@ -362,10 +364,10 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
       <a href="#katalog" class="btn-g">Eğitim Kataloğunu İncele</a>
       <a href="webinar" class="btn-g"><i class="ti ti-broadcast"></i> Ücretsiz Webinar Takvimi</a>
     </div>
-    <div style="display:flex;align-items:center;gap:32px;margin-top:36px;flex-wrap:wrap;">
-      <img width="839" height="214" src="assets/logos/autodesk-atc-black.png" alt="Autodesk Authorized Training Center" style="height:36px;width:auto;opacity:.9;filter:brightness(0) invert(1);">
-      <img width="839" height="214" src="assets/img/emb-9ed6a8044e.png" alt="Autodesk Authorized Academic Partner" style="height:36px;width:auto;opacity:.85;">
-    </div>
+  </div>
+  <div class="hero-badges">
+    <img width="839" height="214" src="assets/logos/autodesk-atc-black.png" alt="Autodesk Authorized Training Center" style="height:36px;width:auto;opacity:.9;filter:brightness(0) invert(1);">
+    <img width="839" height="214" src="assets/img/emb-9ed6a8044e.png" alt="Autodesk Authorized Academic Partner" style="height:36px;width:auto;opacity:.85;">
   </div>
 </section>
 
