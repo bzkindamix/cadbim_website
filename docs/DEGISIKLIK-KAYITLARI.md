@@ -15,6 +15,9 @@
   - Süreç/3: "Renk doğruluğu pazarlık konusu değil." → "Renk doğruluğundan ödün verilmez."
   - Alıntı: "birçok **prestijli** serginin" → "pek çok serginin" (iddia sergi sayısı ve zamanında teslimle zaten kurulu).
   - CTA başlığı: "BASKIYA / HAZIR MISINIZ?" → "BASKIYA / BAŞLAYALIM."
+- **Takip (Onur'un 2. tur notları, aynı gün — 5 satır):**
+  - "Fiyat" sözcüğü metinlerden çıkarıldı ([[cadbim-fiyat-gosterilmez]] ilkesinin dil düzeyine genişletilmesi): "aynı gün fiyat dönüşü yapalım" → "teklifinizi aynı gün iletelim"; form notu + JS başarı mesajı "Talebinize aynı gün dönüş yapıyoruz…"; WhatsApp kartı "hızlı fiyat alın" → "aynı gün teklif alın"; kapanış notu "fiyat dönüşü aynı gün" → "teklifiniz aynı gün elinizde".
+  - "Şehir dışı işler **itinayla paketlenir**" (pideci tabelası çağrışımı) → "Şehir dışı işler, sergilenmeye hazır halde **korumalı ambalajla yola çıkar**."
 - **Kapsam dışı (bilinçli):** "Ham dosya girer. Eser çıkar.", "Kadrajdan koleksiyona.", "Baskı yarısı; sunum diğer yarısı." gibi sayfanın karakterini kuran kısa cümleler korundu. "KAYDIR" / "SÜRÜKLE / KAYDIR" mikro-etiketleri bu tür sayfalarda tür-standardı görsel ipucu olduğundan bırakıldı. `<head>` meta metinleri zaten kurumsal, dokunulmadı.
 - **Durum:** ✅ Tamamlandı.
 

@@ -792,7 +792,7 @@ html{overflow-x:clip;}
   <h2 class="big" data-rv>
     <span class="out">BASKIYA</span><br>BAŞLAYALIM.
   </h2>
-  <p class="cta-lead" data-rv style="--d:.05s;">Ebat, yüzey ve adedi belirtin — aynı gün fiyat dönüşü yapalım.</p>
+  <p class="cta-lead" data-rv style="--d:.05s;">Ebat, yüzey ve adedi belirtin — teklifinizi aynı gün iletelim.</p>
 
   <div class="cta-form-wrap" id="form" data-rv style="--d:.1s;">
     <form id="baski-form" class="baski-form" onsubmit="formuGonder(event)">
@@ -851,7 +851,7 @@ html{overflow-x:clip;}
         </label>
       </div>
       <button type="submit" id="baski-submit-btn" class="cta-btn" data-hover data-mag>Talebimi Gönder ↗</button>
-      <p class="bf-note">Aynı gün fiyat dönüşü yapıyoruz. Dosyanızı ayrıca e-posta veya WhatsApp ile iletebilirsiniz.</p>
+      <p class="bf-note">Talebinize aynı gün dönüş yapıyoruz. Dosyanızı ayrıca e-posta veya WhatsApp ile iletebilirsiniz.</p>
     </form>
   </div>
 
@@ -862,14 +862,14 @@ html{overflow-x:clip;}
     </a>
     <a class="ccard" href="https://wa.me/905547403757?text=Merhaba%2C%20sanatsal%20bask%C4%B1%20talebim%20var." target="_blank" rel="noopener" data-rv data-hover style="--d:.05s;">
       <small>WHATSAPP HATTI</small><b>0554 740 37 57</b>
-      <span>Dosyanızı iletin, hızlı fiyat alın</span>
+      <span>Dosyanızı iletin, aynı gün teklif alın</span>
     </a>
     <a class="ccard" href="mailto:sanatsalbaski@cadbim.com.tr" data-rv data-hover style="--d:.1s;">
       <small>E-POSTA</small><b>sanatsalbaski@cadbim.com.tr</b>
       <span>Dosyanızı doğrudan gönderin</span>
     </a>
   </div>
-  <p class="cta-not" data-rv>Şehir dışı işler itinayla paketlenir, sergilenmeye hazır halde kargoyla ulaşır. Sergi sevkiyatlarında takvim birlikte planlanır. Rötuş ücretsiz; fiyat dönüşü aynı gün.</p>
+  <p class="cta-not" data-rv>Şehir dışı işler, sergilenmeye hazır halde korumalı ambalajla yola çıkar. Sergi sevkiyatlarında takvim birlikte planlanır. Rötuş ücretsiz; teklifiniz aynı gün elinizde.</p>
 </section>
 
 <script>
@@ -902,7 +902,7 @@ function formuGonder(e){
   }).then(function(res){
     if (!res.ok) throw new Error('HTTP ' + res.status);
     btn.innerHTML = 'Talebiniz alındı ✓';
-    if (note) note.textContent = 'Aynı gün fiyat dönüşü yapıyoruz. Dosyanızı e-posta veya WhatsApp ile iletmeniz yeterli.';
+    if (note) note.textContent = 'Talebinize aynı gün dönüş yapıyoruz. Dosyanızı e-posta veya WhatsApp ile iletmeniz yeterli.';
     f.reset();
   }).catch(function(){
     btn.disabled = false;
