@@ -268,7 +268,7 @@ footer{{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24
     <li><a href="iletisim">İletişim</a></li>
     <li><a href="kvkk">KVKK</a></li>
     <li><a href="blog">Blog</a></li>
-    <li><a href="iletisim" class="nav-cta">Teklif Al</a></li>
+    <li><a href="teklif-iste" class="nav-cta">Teklif Al</a></li>
   </ul>
 </nav>
 
@@ -373,7 +373,7 @@ footer{{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24
   <h2>{name} teklifi alın</h2>
   <p>İhtiyacınıza uygun konfigürasyon ve eğitim planını birlikte belirleyelim.</p>
   <div class="cta-btns">
-    <a href="iletisim" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
+    <a href="teklif-iste" class="btn-p">Teklif İste <i class="ti ti-arrow-right"></i></a>
     <a href="egitimler" class="btn-g">Eğitim Programları</a>
   </div>
 </div>
