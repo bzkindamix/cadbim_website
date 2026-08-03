@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-20 — Ana sayfa title + meta description SEO revizyonu
+
+- **Yapan:** Onur Bozok'un "site açıklamamız 'Autodesk Gold Partner & Tasarım Teknolojileri' bizi tam yansıtmıyor; title ve meta tanımını iyi yazalım, Google'da nasıl görüneceğini görelim" talebi üzerine Claude (PDM asistanı).
+- **Yeni title (61 kr):** `Cadbim | Autodesk Gold Partner — Yazılım, Eğitim, Danışmanlık` — partner statüsü + üç hizmet ayağı; ilk 33 karakter kesilse bile marka+statü taşır.
+- **Yeni description (149 kr):** `1993'ten beri Autodesk Gold Partner ve Adobe Gold Reseller. Mimarlık, inşaat, üretim ve medya için CAD, BIM ve 3D yazılımları, eğitim ve danışmanlık.` — iki Gold statüsü + 4 sektör + hizmetler; 160 kr sınırının altında.
+- **Senkron:** og:title ve twitter:title yeni title ile eşitlendi (og/twitter description'lar sosyal odaklı uzun haliyle korundu). JSON-LD Organization + WebSite düğümlerine `alternateName: "CADBİM"` eklendi (Google site adı seçimi için).
+- **Tarama:** 197 kök sayfanın 195'inde description mevcut; eksik 2 sayfa (404, construction_cloud) noindex'li yönlendirme sayfası — işlem gerekmedi.
+- **Not:** Google SERP'teki sitelink'ler (Eğitimler, İletişim, Ürünler…) Google tarafından otomatik seçilir, elle belirlenemez; canlı sitede yeni meta'nın görünmesi yayın + yeniden tarama sonrası olur.
+- **Durum:** ✅ index.html güncellendi; SERP önizlemesi Onur'a sunuldu.
+
 ### DK-2026-08-03-13 — Yeni çözüm: BIM İçerik & Obje Üretimi (Revit Family / BIM objesi)
 
 - **Yapan:** Onur Bozok'un "çözümlerimize BIM içerik üretimi, BIM obje üretimi çözümümüzü ekleyelim… cadbim.com.tr'de bir sayfa var ama bilgiler çok detay olabilir, sen bir güzel anlamlı sayfa oluştur. Ayrıca bu konuyla ilgili YouTube videolarımız da var" talebi üzerine Claude (PDM asistanı).
