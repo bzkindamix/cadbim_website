@@ -1,0 +1,59 @@
+name: GitHub Pages onizleme yayini
+
+# main'e her push'ta onizleme sitesini yeniden yayinlar.
+# https://bzkindamix.github.io/cadbim_website/
+#
+# NEDEN DONUSTURME ADIMI VAR: site cadbim.com.tr'nin alan kokunde yayinlanmak
+# uzere yazildi; `/`, `/favicon.svg`, `/feed.xml` gibi mutlak yollar uretimde
+# dogrudur ama Pages proje sitesi bir alt dizinde servis edildigi icin orada
+# kirilir. scripts/build_pages.py yalnizca onizleme kopyasinda bu yollari
+# onekler ve her sayfaya noindex ekler; main dali uretim icin dogru kalir.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Ayni anda tek yayin; kuyrukta bekleyeni iptal etmeyiz ki son push kaybolmasin
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Onizleme kopyasini uret (_site)
+        run: python scripts/build_pages.py
+
+      - name: Pages yapilandirmasi
+        uses: actions/configure-pages@v5
+
+      - name: Artifact yukle
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Pages'e yayinla
+        id: deployment
+        uses: actions/deploy-pages@v4

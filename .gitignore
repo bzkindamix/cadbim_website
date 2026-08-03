@@ -12,3 +12,6 @@ assets/products/designjet/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# GitHub Pages onizleme cikti klasoru (scripts/build_pages.py uretir)
+_site/
