@@ -318,6 +318,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Dijital ikiz için binanın Revit modeli şart mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Şart değil ama en kısa yol odur. Modeli olmayan mevcut yapılarda önce gerçeklik yakalama (lazer tarama) ile as-built model üretilir; Cadbim bu iki adımı tek proje olarak yürütebilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sensör altyapım yoksa dijital ikiz kurulur mu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. İkizin ilk değeri varlık verisinin düzenlenmesinden gelir; sensör bağlantısı sonraki olgunluk adımıdır. Tandem'in ücretsiz sürümüyle test senaryosu kurup örnek sensör bağlamak mümkündür."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bunu kim kullanır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Öncelikle tesis yönetimi ve bakım ekipleri. Yapıyı teslim eden müteahhit ve tasarım ofisi için ise farklılaşan bir teslim kalemi hâline gelir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Veri nerede tutuluyor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tandem, Autodesk bulut altyapısında çalışır. Kurumsal veri yönetimi ve erişim yetkileri konusunda KVKK uyumlu bir yapı kurulması için Cadbim danışmanlık verir."
+        }
+      }
+    ]
   }
  ]
 }
@@ -325,7 +362,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -417,7 +454,8 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Dijital İkiz</span></div>
-    <div style="max-width:720px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#818cf8;margin-bottom:12px;">Dijital İkiz & Varlık Operasyonu</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:rgba(99,102,241,0.12);display:flex;align-items:center;justify-content:center;border:.5px solid #818cf840;">
@@ -429,27 +467,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#5eead4;"><div class="cz-stat"><b>Tandem</b><span>Autodesk dijital ikiz platformu</span></div><div class="cz-stat"><b>Revit · IFC</b><span>mevcut modelden ikiz oluşturma</span></div><div class="cz-stat"><b>%25</b><span>Metro İstanbul'un bildirdiği enerji ve bakım maliyeti düşüşü</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/dijital-ikiz.svg" width="640" height="420" alt="Dijital ikiz, üç boyutlu modelden nasıl ayrılır? — Cadbim teknik şeması" decoding="async"></div>
+    </div>
   </div>
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#5eead4;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">Dijital ikiz, üç boyutlu modelden nasıl ayrılır?</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Autodesk'in tanımıyla dijital ikiz; fiziksel bir nesnenin, sistemin veya ortamın <strong>sürekli güncellenen sanal karşılığıdır</strong>. Sensörlerden, yapı bilgi modelinden ve nesnelerin interneti cihazlarından gelen veriyle birlikte yaşar. Statik bir model geçmişi anlatır; dijital ikiz o anki durumu gösterir.</p>
         <p class="cz-p">Autodesk Tandem, Revit ve IFC modellerini alıp bunları varlık kayıtlarıyla zenginleştirir: her ekipmanın markası, garanti süresi, bakım geçmişi ve dokümanları model üzerindeki nesneye bağlanır. Böylece devir-teslim bir kutu dolusu klasör değil, sorgulanabilir bir veri kümesi hâline gelir.</p>
         <p class="cz-p">Getirisi işletme tarafında ortaya çıkar. Autodesk'in yayımladığı Metro İstanbul örneğinde, pilot uygulamanın ardından enerji tüketimi ve bakım maliyetlerinde yaklaşık %25 azalma bildirilmiştir. Stanford CIFE'nin tahminlerine göre ise dijital ikiz kullanımı, bütçe dışı değişiklik taleplerinde belirgin bir düşüşle ilişkilendirilmektedir.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>İkiz kurulumu</h3><p>Revit veya IFC modeli Tandem'e aktarılır; sınıflandırma ve varlık şablonları tanımlanır.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Varlık verisi</h3><p>Ekipman kimliği, garanti, bakım planı ve dokümanlar model nesnesine bağlanır; arama modelin üzerinden yapılır.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Operasyon içgörüsü</h3><p>Sensör ve otomasyon verisi bağlanarak enerji, konfor ve kullanım göstergeleri izlenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Devir-teslim kalitesi</h3><p>İşveren, projeyi fiziksel yapıyla birlikte kullanılabilir bir dijital varlık olarak teslim alır.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/dijital-ikiz.svg" width="640" height="420"
-           alt="Dijital ikiz, üç boyutlu modelden nasıl ayrılır? — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>İkiz kurulumu</h3><p>Revit veya IFC modeli Tandem'e aktarılır; sınıflandırma ve varlık şablonları tanımlanır.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Varlık verisi</h3><p>Ekipman kimliği, garanti, bakım planı ve dokümanlar model nesnesine bağlanır; arama modelin üzerinden yapılır.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Operasyon içgörüsü</h3><p>Sensör ve otomasyon verisi bağlanarak enerji, konfor ve kullanım göstergeleri izlenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Devir-teslim kalitesi</h3><p>İşveren, projeyi fiziksel yapıyla birlikte kullanılabilir bir dijital varlık olarak teslim alır.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -481,6 +517,70 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
           <p>COBie ve sınıflandırma standartlarıyla teslim verisini tutarlı, denetlenebilir ve devredilebilir kılıyoruz.</p>
         </div></div>
 </section>
+<section class="section" style="padding-top:56px;">
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="tandem" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/tandem.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Tandem</h3>
+      <p>Fiziksel varlıkların gerçek zamanlı verilerle izlendiği dijital ikiz platformu.</p>
+    </a>
+    <a href="revit" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/revit.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Revit</h3>
+      <p>Dijital ikiz için temel BIM verisini oluşturan yapı bilgi modelleme yazılımı.</p>
+    </a>
+    <a href="autodesk-forma" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Forma</h3>
+      <p>İnşaat sahasına bağlı teslim verilerini dijital ikiz sürecine aktaran AEC bulut platformu.</p>
+    </a>
+    <a href="autodesk-docs" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/autodesk-docs.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Docs</h3>
+      <p>Proje dokümanlarını ve model verilerini tek ortak veri ortamında buluşturan doküman yönetimi.</p>
+    </a>
+    <a href="forma" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="40" height="40" src="assets/logos/products/forma.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Forma Building Design</h3>
+      <p>Saha analizi ve erken tasarım simülasyonlarını dijital ikiz sürecine bağlayan bulut aracı.</p>
+    </a>
+  </div>
+  <div class="sh" style="margin-top:40px;">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="sektor-mimari" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+      <h3>Mimarlık</h3>
+      <p>Mimari projelerde yapının dijital ikizini oluşturmaya yönelik çözümler sunulur.</p>
+    </a>
+    <a href="sektor-insaat" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-road"></i></div>
+      <h3>İnşaat & Altyapı</h3>
+      <p>İnşaat ve altyapı projelerinde saha verisini dijital ikize bağlayan çözümler sunar.</p>
+    </a>
+  </div>
+</section>
+
+<!-- cz-brands -->
+<section class="section section-alt cz-sec" style="--cz:#5eead4;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Markalar</div>
+    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
+      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a></div>
+</section>
+<!-- /cz-brands -->
+
 <section data-enrich style="padding:64px 3rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Yöntemimiz</div>
@@ -582,70 +682,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 
-<!-- cz-brands -->
-<section class="section section-alt cz-sec" style="--cz:#5eead4;">
-  <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
-      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a></div>
-</section>
-<!-- /cz-brands -->
-
-<section class="section" style="padding-top:56px;">
-  <div class="sh">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
-    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="tandem" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/tandem.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Tandem</h3>
-      <p>Fiziksel varlıkların gerçek zamanlı verilerle izlendiği dijital ikiz platformu.</p>
-    </a>
-    <a href="revit" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/revit.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Revit</h3>
-      <p>Dijital ikiz için temel BIM verisini oluşturan yapı bilgi modelleme yazılımı.</p>
-    </a>
-    <a href="autodesk-forma" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Forma</h3>
-      <p>İnşaat sahasına bağlı teslim verilerini dijital ikiz sürecine aktaran AEC bulut platformu.</p>
-    </a>
-    <a href="autodesk-docs" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/autodesk-docs.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Docs</h3>
-      <p>Proje dokümanlarını ve model verilerini tek ortak veri ortamında buluşturan doküman yönetimi.</p>
-    </a>
-    <a href="forma" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="40" height="40" src="assets/logos/products/forma.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Forma Building Design</h3>
-      <p>Saha analizi ve erken tasarım simülasyonlarını dijital ikiz sürecine bağlayan bulut aracı.</p>
-    </a>
-  </div>
-  <div class="sh" style="margin-top:40px;">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
-    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="sektor-mimari" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
-      <h3>Mimarlık</h3>
-      <p>Mimari projelerde yapının dijital ikizini oluşturmaya yönelik çözümler sunulur.</p>
-    </a>
-    <a href="sektor-insaat" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-road"></i></div>
-      <h3>İnşaat & Altyapı</h3>
-      <p>İnşaat ve altyapı projelerinde saha verisini dijital ikize bağlayan çözümler sunar.</p>
-    </a>
-  </div>
-</section>
-
 <!-- cz-faq -->
 <section class="section section-alt cz-sec" style="--cz:#5eead4;">
   <div class="sh" style="margin-bottom:26px;">
@@ -660,6 +696,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#5eead4;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">

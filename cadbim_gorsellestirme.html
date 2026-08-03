@@ -303,6 +303,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Lumion mu, V-Ray mi almalıyım?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beklentiye bağlı. Hız, kolay öğrenme ve geniş hazır varlık kütüphanesi önceliğinizse Lumion; malzeme, ışık ve kompozisyon üzerinde tam kontrol ile prodüksiyon kalitesi arıyorsanız V-Ray. Birçok ofis ikisini birlikte kullanır — iş akışınıza göre karşılaştırmalı öneri sunabiliriz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Render için nasıl bir bilgisayar gerekir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Motoru neyin belirlediğine bağlıdır: CPU tabanlı render çok çekirdekten, GPU tabanlı render ise ekran kartı belleğinden fayda sağlar. HP Z serisi iş istasyonu ve ZBook yapılandırmalarını kullandığınız motora göre boyutlandırıyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Revit modelimi doğrudan kullanabilir miyim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. V-Ray for Revit, Enscape ve Lumion, Revit ile doğrudan çalışır. Verimli sonuç için modelin malzeme ve kesit temizliği önem taşır; bu hazırlığı eğitim kapsamında aktarıyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Eğitim veriyor musunuz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. 3ds Max, V-Ray, Corona ve Lumion eğitimleri İzmir merkez ofisimizdeki programda yer alır; kuruma özel, kendi projeleriniz üzerinden ilerleyen içerikler de hazırlanabilir."
+        }
+      }
+    ]
   }
  ]
 }
@@ -310,7 +347,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -402,7 +439,8 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler" class="active">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Görselleştirme & Render</span></div>
-    <div style="max-width:720px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#f59e0b;margin-bottom:12px;">Görselleştirme & Render</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:#f59e0b1f;display:flex;align-items:center;justify-content:center;border:.5px solid #f59e0b40;">
@@ -414,27 +452,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#f59e0b;"><div class="cz-stat"><b>Gerçek zamanlı → final</b><span>aynı sahne, iki farklı hız</span></div><div class="cz-stat"><b>CAD ve BIM uyumlu</b><span>Revit, 3ds Max, SketchUp, Rhino</span></div><div class="cz-stat"><b>HP Z</b><span>render için doğru donanım yapılandırması</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/gorsellestirme.svg" width="640" height="420" alt="Hangi render aracı, hangi işe? — Cadbim teknik şeması" decoding="async"></div>
+    </div>
   </div>
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#f59e0b;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">Hangi render aracı, hangi işe?</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Görselleştirmede tek bir doğru araç yoktur; belirleyici olan projenin hangi aşamasında olduğunuzdur. Tasarım devam ederken hızlı geri bildirim gerekir; sunum aşamasında ise <strong>fotogerçekçilik ve kontrol</strong> öne çıkar.</p>
         <p class="cz-p">Chaos V-Ray, ödüllü ışın izleme motoruyla yüksek uçlu görselleştirme ve prodüksiyon işlerinin karşılığıdır; milyarlarca poligon ve binlerce ışık içeren sahneleri kaldırır, CPU ve GPU'yu birlikte kullanır. Chaos Corona mimari görselleştirmede sadeliğiyle, Chaos Vantage ise %100 ışın izlemeli gerçek zamanlı gezinti ve doğrulama ile devreye girer.</p>
         <p class="cz-p">Lumion tarafında öncelik hızdır: SketchUp, Revit ve Archicad eklentileriyle modelleme aracının içinden gerçek zamanlı geri bildirim alınır, geniş varlık kütüphanesiyle bağlam hızla kurulur. Cadbim, bu araçları birbirinin alternatifi olarak değil, tek bir hattın farklı hızlardaki durakları olarak konumlandırır.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Tasarım aşaması</h3><p>Enscape ve Lumion View ile modelleme ortamının içinden anlık görsel geri bildirim; tasarım akışı bölünmez.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Sunum ve pazarlama</h3><p>V-Ray ve Corona ile fotogerçekçi still görseller, malzeme ve ışık üzerinde tam kontrol.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Gerçek zamanlı sunum</h3><p>Chaos Vantage ile ışın izlemeli gezinti; müşteriyle canlı oturumda değişiklik gösterme.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Renk ve son işlem</h3><p>ACEScg gibi açık standartlarla renk yönetimi; Adobe Creative Cloud ile son işlem ve sunum paketleme.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/gorsellestirme.svg" width="640" height="420"
-           alt="Hangi render aracı, hangi işe? — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Tasarım aşaması</h3><p>Enscape ve Lumion View ile modelleme ortamının içinden anlık görsel geri bildirim; tasarım akışı bölünmez.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Sunum ve pazarlama</h3><p>V-Ray ve Corona ile fotogerçekçi still görseller, malzeme ve ışık üzerinde tam kontrol.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Gerçek zamanlı sunum</h3><p>Chaos Vantage ile ışın izlemeli gezinti; müşteriyle canlı oturumda değişiklik gösterme.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Renk ve son işlem</h3><p>ACEScg gibi açık standartlarla renk yönetimi; Adobe Creative Cloud ile son işlem ve sunum paketleme.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -442,6 +478,105 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="sh"><div class="slabel">Çözüm Kapsamı</div><div class="stitle">Neler Yapabiliriz?</div></div>
   <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-sun-high" style="color:#f59e0b;"></i></div><h3>Fotogerçekçi Render</h3><p>V-Ray ve Corona ile prodüksiyon kalitesinde imaj üretimi; motor seçimi ve pipeline kurulumu.</p></div><div class="card"><div class="card-icon"><i class="ti ti-bolt" style="color:#f59e0b;"></i></div><h3>Gerçek Zamanlı Görselleştirme</h3><p>Enscape, Vantage ve Lumion ile canlı sunum ve anlık tasarım geri bildirimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-sparkles" style="color:#f59e0b;"></i></div><h3>AI Destekli Konsept</h3><p>Veras ve Firefly ile eskizden konsept görsele dakikalar içinde.</p></div><div class="card"><div class="card-icon"><i class="ti ti-movie" style="color:#f59e0b;"></i></div><h3>Animasyon & Tur</h3><p>Kamera turları, 360° panorama ve VR sunumları.</p></div><div class="card"><div class="card-icon"><i class="ti ti-device-desktop" style="color:#f59e0b;"></i></div><h3>Render Donanımı</h3><p>HP Z iş istasyonları ile GPU/CPU render yapılandırması.</p></div><div class="card"><div class="card-icon"><i class="ti ti-school" style="color:#f59e0b;"></i></div><h3>Ekip Eğitimi</h3><p>Render motoru ve görselleştirme iş akışı eğitimleri.</p></div></div>
 </section>
+<section class="section" style="padding-top:56px;">
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="me-collection" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/me-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>M&E Collection</h3>
+      <p>Medya ve eğlence prodüksiyonu için gerekli tüm Autodesk araçlarını tek pakette sunar.</p>
+    </a>
+    <a href="3dsmax" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/3dsmax.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>3ds Max</h3>
+      <p>Modelleme, animasyon ve render için profesyonel 3D yazılımı.</p>
+    </a>
+    <a href="chaos" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Chaos V-Ray & Enscape</h3>
+      <p>Chaos'un mimari render motorlarıyla fotogerçekçi görseller üretin.</p>
+    </a>
+    <a href="corona" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="100" height="100" src="assets/logos/products/corona.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Chaos Corona</h3>
+      <p>Mimari görselleştirmeye odaklanan, kolay öğrenilen fotogerçekçi render motoru.</p>
+    </a>
+    <a href="vantage" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="120" height="120" src="assets/logos/products/vantage.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Chaos Vantage</h3>
+      <p>Sahnelerinizi gerçek zamanlı ışın izleme ile anında keşfedin.</p>
+    </a>
+    <a href="lumion" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="800" height="153" src="assets/logos/lumion.png" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;filter:brightness(0) invert(1);" loading="lazy" decoding="async"></div>
+      <h3>Lumion Marka Sayfası</h3>
+      <p>Tüm Lumion planlarını ve ürün ailesini tek sayfada karşılaştırın.</p>
+    </a>
+    <a href="lumion-view" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="394" height="141" src="assets/logos/products/lumion-view.png" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Lumion View</h3>
+      <p>Tasarım modelinizi çalışırken gerçek zamanlı olarak görselleştirin.</p>
+    </a>
+    <a href="substance3d" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="64" height="64" src="assets/logos/products/substance3d.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Substance 3D</h3>
+      <p>Malzeme ve doku üretimi için Adobe'nin 3D tasarım araç seti.</p>
+    </a>
+    <a href="creative-cloud" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="128" height="128" src="assets/logos/products/adobe.png" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Creative Cloud</h3>
+      <p>Photoshop, Illustrator ve daha fazlasını içeren Adobe uygulama paketi.</p>
+    </a>
+    <a href="hp-z-workstation" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="" style="width:30px;height:30px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>HP Z Workstation</h3>
+      <p>Büyük modelleri ve render işlemlerini hızlandıran güçlü iş istasyonları.</p>
+    </a>
+    <a href="sanatsal-baski" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-palette"></i></div>
+      <h3>Sanatsal Baskı Atölyesi</h3>
+      <p>Render çıktılarınızı yüksek kalitede sanatsal baskıya dönüştüren atölye hizmeti.</p>
+    </a>
+  </div>
+  <div class="sh" style="margin-top:56px;">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="sektor-mimari" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+      <h3>Mimarlık</h3>
+      <p>Mimarlık ofislerine yönelik yazılım, eğitim ve danışmanlık çözümleri.</p>
+    </a>
+    <a href="sektor-medya" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-movie"></i></div>
+      <h3>Medya & Eğlence</h3>
+      <p>Medya ve eğlence sektörüne yönelik içerik üretim çözümlerimiz.</p>
+    </a>
+    <a href="sektor-otomotiv" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
+      <h3>Otomotiv</h3>
+      <p>Otomotiv sektörüne yönelik tasarım ve görselleştirme çözümleri.</p>
+    </a>
+  </div>
+</section>
+
+<!-- cz-brands -->
+<section class="section section-alt cz-sec" style="--cz:#f59e0b;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Markalar</div>
+    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
+      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="chaos" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/chaos-logo-red.svg" alt="Chaos" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Chaos</b><em>Yetkili is ortagi</em></span></a><a href="lumion" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/lumion.png" alt="Lumion" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Lumion</b><em>Yetkili satici</em></span></a><a href="adobe" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/adobe-logo.svg" alt="Adobe" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Adobe</b><em>Gold Reseller Partner</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
+</section>
+<!-- /cz-brands -->
+
 <section data-enrich style="padding:64px 3rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Yöntemimiz</div>
@@ -543,105 +678,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 
-<!-- cz-brands -->
-<section class="section section-alt cz-sec" style="--cz:#f59e0b;">
-  <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
-      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="chaos" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/chaos-logo-red.svg" alt="Chaos" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Chaos</b><em>Yetkili is ortagi</em></span></a><a href="lumion" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/lumion.png" alt="Lumion" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Lumion</b><em>Yetkili satici</em></span></a><a href="adobe" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/adobe-logo.svg" alt="Adobe" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Adobe</b><em>Gold Reseller Partner</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
-</section>
-<!-- /cz-brands -->
-
-<section class="section" style="padding-top:56px;">
-  <div class="sh">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
-    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="me-collection" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/me-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>M&E Collection</h3>
-      <p>Medya ve eğlence prodüksiyonu için gerekli tüm Autodesk araçlarını tek pakette sunar.</p>
-    </a>
-    <a href="3dsmax" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/3dsmax.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>3ds Max</h3>
-      <p>Modelleme, animasyon ve render için profesyonel 3D yazılımı.</p>
-    </a>
-    <a href="chaos" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Chaos V-Ray & Enscape</h3>
-      <p>Chaos'un mimari render motorlarıyla fotogerçekçi görseller üretin.</p>
-    </a>
-    <a href="corona" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="100" height="100" src="assets/logos/products/corona.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Chaos Corona</h3>
-      <p>Mimari görselleştirmeye odaklanan, kolay öğrenilen fotogerçekçi render motoru.</p>
-    </a>
-    <a href="vantage" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="120" height="120" src="assets/logos/products/vantage.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Chaos Vantage</h3>
-      <p>Sahnelerinizi gerçek zamanlı ışın izleme ile anında keşfedin.</p>
-    </a>
-    <a href="lumion" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="800" height="153" src="assets/logos/lumion.png" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;filter:brightness(0) invert(1);" loading="lazy" decoding="async"></div>
-      <h3>Lumion Marka Sayfası</h3>
-      <p>Tüm Lumion planlarını ve ürün ailesini tek sayfada karşılaştırın.</p>
-    </a>
-    <a href="lumion-view" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="394" height="141" src="assets/logos/products/lumion-view.png" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Lumion View</h3>
-      <p>Tasarım modelinizi çalışırken gerçek zamanlı olarak görselleştirin.</p>
-    </a>
-    <a href="substance3d" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="64" height="64" src="assets/logos/products/substance3d.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Substance 3D</h3>
-      <p>Malzeme ve doku üretimi için Adobe'nin 3D tasarım araç seti.</p>
-    </a>
-    <a href="creative-cloud" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="128" height="128" src="assets/logos/products/adobe.png" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Creative Cloud</h3>
-      <p>Photoshop, Illustrator ve daha fazlasını içeren Adobe uygulama paketi.</p>
-    </a>
-    <a href="hp-z-workstation" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="" style="width:30px;height:30px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>HP Z Workstation</h3>
-      <p>Büyük modelleri ve render işlemlerini hızlandıran güçlü iş istasyonları.</p>
-    </a>
-    <a href="sanatsal-baski" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-palette"></i></div>
-      <h3>Sanatsal Baskı Atölyesi</h3>
-      <p>Render çıktılarınızı yüksek kalitede sanatsal baskıya dönüştüren atölye hizmeti.</p>
-    </a>
-  </div>
-  <div class="sh" style="margin-top:56px;">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
-    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="sektor-mimari" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
-      <h3>Mimarlık</h3>
-      <p>Mimarlık ofislerine yönelik yazılım, eğitim ve danışmanlık çözümleri.</p>
-    </a>
-    <a href="sektor-medya" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-movie"></i></div>
-      <h3>Medya & Eğlence</h3>
-      <p>Medya ve eğlence sektörüne yönelik içerik üretim çözümlerimiz.</p>
-    </a>
-    <a href="sektor-otomotiv" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
-      <h3>Otomotiv</h3>
-      <p>Otomotiv sektörüne yönelik tasarım ve görselleştirme çözümleri.</p>
-    </a>
-  </div>
-</section>
-
 <!-- cz-faq -->
 <section class="section section-alt cz-sec" style="--cz:#f59e0b;">
   <div class="sh" style="margin-bottom:26px;">
@@ -656,6 +692,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#f59e0b;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">

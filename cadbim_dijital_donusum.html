@@ -313,6 +313,43 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Dijital dönüşüme hangi yazılımla başlamalıyım?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yazılımla değil, ölçümle başlanır. Hangi verinin nerede elle yeniden üretildiğini tespit etmeden alınan lisans, çoğunlukla eski süreci daha pahalı biçimde tekrarlar. Cadbim ücretsiz olgunluk analiziyle bu haritayı çıkarır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mevcut çizim arşivimiz ne olacak?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Arşiv atılmaz. DWG tabanlı geçmiş veri, yeni model ortamına referans olarak bağlanır; hangi projelerin modele taşınacağı, hangilerinin arşivde kalacağı göç planında karara bağlanır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Dönüşüm ne kadar sürer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tek bir cevabı yoktur; ekip büyüklüğüne ve hedef basamağa bağlıdır. Buna karşılık her faz, sonuç üreten bağımsız bir paket olarak planlanır — aylarca sürecek bir projenin sonunu beklemeden kazanç görülür."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Eğitim dahil mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cadbim Autodesk Yetkili Eğitim Merkezi'dir (ATC). Rol bazlı eğitim planı dönüşüm projesinin ayrılmaz parçasıdır; İzmir merkez ofisimizdeki sınıf eğitimleri ve çevrim içi oturumlar birlikte kurgulanır."
+        }
+      }
+    ]
   }
  ]
 }
@@ -320,7 +357,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -412,13 +449,16 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Dijital Dönüşüm</span></div>
-    <div style="max-width:680px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div class="slabel">Dijital Dönüşüm</div>
       <h1 style="font-family:var(--fd);font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;line-height:1.15;color:var(--w);margin-bottom:16px;">Tasarımdan Üretime <span style="color:var(--cyan);">Uçtan Uca Dijital Dönüşüm</span></h1>
       <p style="font-size:16px;color:var(--w50);line-height:1.75;">Akıllı tasarım, dijital ikiz, üretim otomasyonu, veri yönetimi ve görselleştirmeyi tek çatı altında birleştiriyoruz. Autodesk Gold Partner ve Adobe Gold Reseller Partner olarak; HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağı sıfatıyla, işletmenizin dijitalleşme yolculuğunun her adımında yazılım, donanım ve danışmanlıkla yanınızdayız.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
         <a href="#harita" class="btn-g">Çözüm Haritasını İncele</a>
       </div>
+    </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/dijital-donusum.svg" width="640" height="420" alt="Dijital dönüşüm nedir, nereden başlanır? — Cadbim teknik şeması" decoding="async"></div>
     </div>
     <div class="hero-stats">
       <div class="hstat"><b>11.000+</b><span>hizmet verilen kuruluş</span></div>
@@ -430,22 +470,18 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#00c8f0;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">Dijital dönüşüm nedir, nereden başlanır?</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Autodesk'in tanımıyla dijital dönüşümün çekirdeği <strong>veri sürekliliğidir</strong>: tasarım aşamasında üretilen bilginin, sonraki her fazda yeniden çizilmeden, yeniden girilmeden kullanılabilmesi. Çoğu kurumda kopma noktası yazılımın kendisi değil, iki yazılım arasındaki elle yapılan aktarımdır.</p>
         <p class="cz-p">Bu yüzden dönüşümü tek bir sıçrama olarak değil, beş basamaklı bir olgunluk eğrisi olarak ele alıyoruz: <strong>çizim → model → veri → otomasyon → dijital ikiz</strong>. Her basamak bir öncekinin ürettiği veriyi tüketir; basamak atlandığında yatırım geri dönmez, çünkü üst basamağın besleneceği veri yoktur.</p>
         <p class="cz-p">Cadbim'in rolü bu haritayı sizin süreçlerinize göre çıkarmak ve her basamakta doğru Autodesk, Adobe, HP, Chaos ve UltiMaker bileşenini konumlandırmaktır. Lisans satışı işin başlangıcıdır; kurulum, göç planı, rol bazlı eğitim ve yenileme dönemine kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Olgunluk analizi</h3><p>Mevcut yazılım, süreç ve yetkinlik envanteriniz çıkarılır; kopma noktaları somut olarak işaretlenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Öncelikli kazanç</h3><p>En kısa sürede geri dönen adım ilk sıraya alınır; bütçe tek seferde değil, kazanç ürettikçe genişler.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Standart ve şablon</h3><p>Şablon, adlandırma, klasör ve yetki yapısı en baştan kurulur; dönüşüm kişiye değil kuruma bağlanır.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Ölçülebilir hedef</h3><p>Her fazda takip edilecek gösterge (çevrim süresi, hata oranı, fire, teslim gecikmesi) önceden tanımlanır.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/dijital-donusum.svg" width="640" height="420"
-           alt="Dijital dönüşüm nedir, nereden başlanır? — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Olgunluk analizi</h3><p>Mevcut yazılım, süreç ve yetkinlik envanteriniz çıkarılır; kopma noktaları somut olarak işaretlenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Öncelikli kazanç</h3><p>En kısa sürede geri dönen adım ilk sıraya alınır; bütçe tek seferde değil, kazanç ürettikçe genişler.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Standart ve şablon</h3><p>Şablon, adlandırma, klasör ve yetki yapısı en baştan kurulur; dönüşüm kişiye değil kuruma bağlanır.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Ölçülebilir hedef</h3><p>Her fazda takip edilecek gösterge (çevrim süresi, hata oranı, fire, teslim gecikmesi) önceden tanımlanır.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -809,6 +845,19 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#00c8f0;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">

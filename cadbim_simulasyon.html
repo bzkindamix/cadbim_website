@@ -316,6 +316,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Simülasyon için ayrı bir uzman istihdam etmek gerekir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tüm senaryolar için gerekmez. Inventor Nastran ve Fusion Simulation, tasarımcının kendi ortamında çalıştırabileceği doğrulama analizleri için tasarlanmıştır. Sertifikasyona esas, doğrusal olmayan veya çok fizikli analizlerde uzman desteği önerilir; bu noktada Cadbim danışmanlık verir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Analiz sonucuna ne kadar güvenebilirim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sonuç, girdilerin kalitesi kadar iyidir: malzeme kartı, sınır koşulları ve ağ yoğunluğu doğru kurulmadıysa çıktı yanıltıcı olur. Bu nedenle ilk kurulumda bilinen bir vaka üzerinde doğrulama (korelasyon) çalışması yapılmasını öneriyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Analiz için nasıl bir donanım gerekir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Çözüm süresi büyük ölçüde çekirdek sayısı ve bellek kapasitesine bağlıdır. CFD ve büyük montaj analizlerinde HP Z serisi iş istasyonları belirgin fark yaratır; ihtiyaç profilinize göre donanım yapılandırmasını da biz çıkarıyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Simülasyon fiziksel prototipi tamamen ortadan kaldırır mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır, sayısını azaltır. Amaç, prototibe giden tasarımın çoktan elenmiş alternatiflerden değil, en güçlü adaydan seçilmesidir."
+        }
+      }
+    ]
   }
  ]
 }
@@ -323,7 +360,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -415,7 +452,8 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Simülasyon & Analiz</span></div>
-    <div style="max-width:720px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#f87171;margin-bottom:12px;">Simülasyon & Analiz</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:rgba(239,68,68,0.12);display:flex;align-items:center;justify-content:center;border:.5px solid #f8717140;">
@@ -427,27 +465,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#f87171;"><div class="cz-stat"><b>FEA · CFD</b><span>yapısal, termal ve akış analizi</span></div><div class="cz-stat"><b>CAD içinde</b><span>Inventor ve Fusion'a gömülü çalışır</span></div><div class="cz-stat"><b>PD&amp;M</b><span>Collection kapsamında</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/simulasyon.svg" width="640" height="420" alt="Simülasyon hangi soruyu cevaplar? — Cadbim teknik şeması" decoding="async"></div>
+    </div>
   </div>
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#f87171;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">Simülasyon hangi soruyu cevaplar?</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Autodesk'in tanımıyla simülasyon; bir tasarımın gerçek dünyadaki kuvvet ve etkilere <strong>üretilmeden önce</strong> nasıl tepki vereceğini gösterir. Girdi, parça geometrisi ile ona etki edecek yükler ve sınır koşullarıdır; çıktı ise tasarımın hangi noktada, hangi yükte yetersiz kaldığının raporudur.</p>
         <p class="cz-p">Sonlu elemanlar analizi (FEA) parçayı mikro ölçekte ağa böler ve her elemanda gerilme, yer değiştirme ve emniyet katsayısını hesaplar. Hesaplamalı akışkanlar dinamiği (CFD) ise gaz ve sıvı davranışını çözer: soğutma performansı, basınç kaybı, hava direnci. Plastik enjeksiyon için Moldflow, kalıp ve malzeme kararlarını dolum öncesinde değerlendirir.</p>
         <p class="cz-p">Kazancın büyüklüğü zamanlamayla ilgilidir. Tasarımın erken evresinde yapılan analiz, malzeme kalınlığını gereksiz yere artırmayı önler; geç evrede yapılan analiz ise yalnızca hatayı doğrular. Cadbim, analizi ayrı bir uzmanlık adası olarak değil, tasarım akışının içinde bir kontrol noktası olarak kurar.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Yapısal analiz (FEA)</h3><p>Inventor Nastran ile statik, modal, burkulma ve yorulma çalışmaları; gerilme yığılmalarının erken tespiti.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Akış ve termal (CFD)</h3><p>Autodesk CFD ile soğutma, havalandırma, basınç kaybı ve katı cisim hareketi analizleri.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Plastik enjeksiyon</h3><p>Moldflow ile dolum, çarpılma ve soğuma davranışı; kalıp ve yolluk kararlarının doğrulanması.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Jeneratif tasarım</h3><p>Fusion içinde yük ve kısıtlar tanımlanır; hafifletilmiş ve üretilebilir alternatifler otomatik türetilir.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/simulasyon.svg" width="640" height="420"
-           alt="Simülasyon hangi soruyu cevaplar? — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Yapısal analiz (FEA)</h3><p>Inventor Nastran ile statik, modal, burkulma ve yorulma çalışmaları; gerilme yığılmalarının erken tespiti.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Akış ve termal (CFD)</h3><p>Autodesk CFD ile soğutma, havalandırma, basınç kaybı ve katı cisim hareketi analizleri.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Plastik enjeksiyon</h3><p>Moldflow ile dolum, çarpılma ve soğuma davranışı; kalıp ve yolluk kararlarının doğrulanması.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Jeneratif tasarım</h3><p>Fusion içinde yük ve kısıtlar tanımlanır; hafifletilmiş ve üretilebilir alternatifler otomatik türetilir.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -479,6 +515,75 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
           <p>Plastik enjeksiyon kalıp akışı simülasyonu. Çekme, çarpılma ve kaynak hatlarını önceden tespit edin.</p>
         </div></div>
 </section>
+<section class="section" style="padding-top:56px;">
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="pdm-collection" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>PD&M Collection</h3>
+      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
+    </a>
+    <a href="fusion" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/fusion.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Fusion</h3>
+      <p>Tasarım, mühendislik ve CAE analizini tek platformda birleştiren bulut tabanlı çözüm.</p>
+    </a>
+    <a href="inventor" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Inventor</h3>
+      <p>Parametrik 3B tasarımın yanı sıra yerleşik simülasyon araçları sunan mühendislik yazılımı.</p>
+    </a>
+    <a href="cfd" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="75" height="75" src="assets/logos/products/cfd.png" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk CFD</h3>
+      <p>Akışkan dinamiği ve termal davranışları dijital ortamda analiz eden simülasyon yazılımı.</p>
+    </a>
+    <a href="hp" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="" style="width:30px;height:30px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>HP Z Workstation</h3>
+      <p>Ağır simülasyon iş yüklerini karşılayan yüksek performanslı mühendislik iş istasyonları.</p>
+    </a>
+  </div>
+  <div class="sh" style="margin-top:40px;">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="sektor-makine" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
+      <h3>Makine & Üretim</h3>
+      <p>Makine imalat sektörüne özel tasarım, simülasyon ve üretim çözümleri sunulur.</p>
+    </a>
+    <a href="sektor-otomotiv" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
+      <h3>Otomotiv</h3>
+      <p>Otomotiv parça ve araç geliştirme süreçlerine yönelik uçtan uca mühendislik çözümleri.</p>
+    </a>
+    <a href="sektor-insaat" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-road"></i></div>
+      <h3>İnşaat & Altyapı</h3>
+      <p>İnşaat ve altyapı projelerinde dijitalleşmeyi hızlandıran çözüm ve araçlar.</p>
+    </a>
+  </div>
+</section>
+
+<!-- cz-brands -->
+<section class="section section-alt cz-sec" style="--cz:#f87171;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Markalar</div>
+    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
+      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
+</section>
+<!-- /cz-brands -->
+
 <section data-enrich style="padding:64px 3rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Yöntemimiz</div>
@@ -580,75 +685,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 
-<!-- cz-brands -->
-<section class="section section-alt cz-sec" style="--cz:#f87171;">
-  <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
-      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
-</section>
-<!-- /cz-brands -->
-
-<section class="section" style="padding-top:56px;">
-  <div class="sh">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
-    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="pdm-collection" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>PD&M Collection</h3>
-      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
-    </a>
-    <a href="fusion" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/fusion.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Fusion</h3>
-      <p>Tasarım, mühendislik ve CAE analizini tek platformda birleştiren bulut tabanlı çözüm.</p>
-    </a>
-    <a href="inventor" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Inventor</h3>
-      <p>Parametrik 3B tasarımın yanı sıra yerleşik simülasyon araçları sunan mühendislik yazılımı.</p>
-    </a>
-    <a href="cfd" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="75" height="75" src="assets/logos/products/cfd.png" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk CFD</h3>
-      <p>Akışkan dinamiği ve termal davranışları dijital ortamda analiz eden simülasyon yazılımı.</p>
-    </a>
-    <a href="hp" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="" style="width:30px;height:30px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>HP Z Workstation</h3>
-      <p>Ağır simülasyon iş yüklerini karşılayan yüksek performanslı mühendislik iş istasyonları.</p>
-    </a>
-  </div>
-  <div class="sh" style="margin-top:40px;">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
-    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="sektor-makine" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
-      <h3>Makine & Üretim</h3>
-      <p>Makine imalat sektörüne özel tasarım, simülasyon ve üretim çözümleri sunulur.</p>
-    </a>
-    <a href="sektor-otomotiv" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
-      <h3>Otomotiv</h3>
-      <p>Otomotiv parça ve araç geliştirme süreçlerine yönelik uçtan uca mühendislik çözümleri.</p>
-    </a>
-    <a href="sektor-insaat" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-road"></i></div>
-      <h3>İnşaat & Altyapı</h3>
-      <p>İnşaat ve altyapı projelerinde dijitalleşmeyi hızlandıran çözüm ve araçlar.</p>
-    </a>
-  </div>
-</section>
-
 <!-- cz-faq -->
 <section class="section section-alt cz-sec" style="--cz:#f87171;">
   <div class="sh" style="margin-bottom:26px;">
@@ -663,6 +699,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#f87171;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">

@@ -318,6 +318,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mevcut tezgâhıma uygun post işlemci var mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Fusion geniş bir post işlemci kütüphanesiyle gelir; kütüphanede bulunmayan veya özel yapılandırılmış tezgâhlar için post işlemci düzenlemesi yapılır. Tezgâh markası ve kontrol ünitesi bilgisini paylaşmanız yeterlidir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "SolidWorks veya Catia modelleriyle çalışabilir miyim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. Fusion yaygın CAD biçimlerini içe aktarır; Inventor tarafında ise HSMWorks ile SolidWorks içinde doğrudan çalışma seçeneği bulunur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Operatör eğitimi veriyor musunuz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. Cadbim Autodesk Yetkili Eğitim Merkezi olarak Fusion CAM eğitimlerini İzmir merkez ofisinde ve kuruma özel programlarla yürütür; eğitim, kendi parçalarınız üzerinden kurgulanabilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Eklemeli imalat da CAM kapsamında mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. Fusion, talaşlı imalatın yanında eklemeli imalat için de iş hazırlığı sunar; parça yönlendirme, destek yapıları ve malzeme bazlı parametreler aynı ortamda yönetilir."
+        }
+      }
+    ]
   }
  ]
 }
@@ -325,7 +362,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -417,7 +454,8 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">CAM & İmalat</span></div>
-    <div style="max-width:720px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#34d399;margin-bottom:12px;">CAM & İmalat</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:rgba(52,211,153,0.12);display:flex;align-items:center;justify-content:center;border:.5px solid #34d39940;">
@@ -429,27 +467,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#f87171;"><div class="cz-stat"><b>2B → 5 eksen</b><span>frezeleme, tornalama, torna-freze</span></div><div class="cz-stat"><b>Tek ortam</b><span>CAD ve CAM aynı dosyada</span></div><div class="cz-stat"><b>Sanal doğrulama</b><span>tezgâha göndermeden önce çarpışma kontrolü</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/cam.svg" width="640" height="420" alt="CAD ile CAM arasındaki kopuş nerede maliyet üretir? — Cadbim teknik şeması" decoding="async"></div>
+    </div>
   </div>
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#f87171;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">CAD ile CAM arasındaki kopuş nerede maliyet üretir?</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Autodesk'in tanımıyla CAM yazılımı, CAD tasarımlarını CNC tezgâhların çalıştırabileceği <strong>makine talimatlarına dönüştürür</strong>; takım yolu üretimi, tezgâh kurulumu ve süreç iyileştirmesi bu yazılımın kapsamındadır.</p>
         <p class="cz-p">Ayrık CAD ve CAM kullanan atölyelerde asıl kayıp, revizyon anında ortaya çıkar: model değiştiğinde dosya yeniden dışa aktarılır, CAM'e yeniden alınır ve takım yolları yeniden kurulur. Fusion'da tasarım ile imalat aynı veri üzerinde durduğu için revizyon takım yollarına yansır ve yalnızca etkilenen işlemler yeniden hesaplanır.</p>
         <p class="cz-p">İkinci kazanç doğrulamadadır. Takım yolu, malzeme ve tezgâh kinematiği ekranda simüle edilerek çarpışma ve aşırı kesme riskleri talaş kaldırılmadan görülür. Tezgâhta yapılan bir deneme kesiminin maliyeti yalnızca malzeme değil, duran tezgâh zamanıdır.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Takım yolu stratejileri</h3><p>2B, 2,5B, 3, 4 ve 5 eksen frezeleme; adaptif kaba talaş ve yüksek hızlı işleme stratejileri.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Tornalama ve torna-freze</h3><p>Çok görevli tezgâhlar için birleşik torna ve freze işlemleri, uygun NC kodu üretimi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Post işlemci</h3><p>Tezgâhınıza özel post işlemci yapılandırması; kodun tezgâhın özel yapılandırmalarından yararlanması.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Ölçüm ve prob</h3><p>Tezgâh içi prob ile kurulum otomasyonu ve süreç içi kontrol; hurda oranının düşürülmesi.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/cam.svg" width="640" height="420"
-           alt="CAD ile CAM arasındaki kopuş nerede maliyet üretir? — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Takım yolu stratejileri</h3><p>2B, 2,5B, 3, 4 ve 5 eksen frezeleme; adaptif kaba talaş ve yüksek hızlı işleme stratejileri.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Tornalama ve torna-freze</h3><p>Çok görevli tezgâhlar için birleşik torna ve freze işlemleri, uygun NC kodu üretimi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Post işlemci</h3><p>Tezgâhınıza özel post işlemci yapılandırması; kodun tezgâhın özel yapılandırmalarından yararlanması.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Ölçüm ve prob</h3><p>Tezgâh içi prob ile kurulum otomasyonu ve süreç içi kontrol; hurda oranının düşürülmesi.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -481,6 +517,71 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
           <p>CAM simülasyonu ile tezgah çarpışması tespiti. Gerçek kesim öncesi sanal doğrulama.</p>
         </div></div>
 </section>
+<section class="section" style="padding-top:56px;">
+  <div class="cross-grid">
+    <div>
+      <div class="sh" style="margin-bottom:24px;">
+        <div class="slabel">Ürünler</div>
+        <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+        <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
+      </div>
+      <div class="grid g3" style="margin-top:0;">
+        <a href="pdm-collection" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>PD&M Collection</h3>
+          <p>Tüm imalat araçlarını tek pakette bir araya getiren Autodesk koleksiyonu.</p>
+        </a>
+        <a href="fusion" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/fusion.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Autodesk Fusion</h3>
+          <p>CAM modülü dahil, tasarımdan üretime uzanan bulut tabanlı entegre platform.</p>
+        </a>
+        <a href="inventor" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Autodesk Inventor + HSMWorks</h3>
+          <p>Inventor içinde entegre HSMWorks eklentisiyle CNC programlama yapın.</p>
+        </a>
+        <a href="ultimaker" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;filter:brightness(0) invert(1);" loading="lazy" decoding="async"></div>
+          <h3>UltiMaker</h3>
+          <p>Eklemeli imalat için profesyonel 3D yazıcı ve yazılım ekosistemi.</p>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="sh" style="margin-bottom:24px;">
+        <div class="slabel">Endüstriler</div>
+        <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+        <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+      </div>
+      <div class="grid g3" style="margin-top:0;">
+        <a href="sektor-makine" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
+          <h3>Makine & Üretim</h3>
+          <p>Makine imalatı ve üretim sektörüne yönelik tasarım ve mühendislik çözümleri.</p>
+        </a>
+        <a href="sektor-otomotiv" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
+          <h3>Otomotiv</h3>
+          <p>Otomotiv sektörüne yönelik tasarım, mühendislik ve görselleştirme çözümleri.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- cz-brands -->
+<section class="section section-alt cz-sec" style="--cz:#f87171;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Markalar</div>
+    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
+      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
+</section>
+<!-- /cz-brands -->
+
 <section data-enrich style="padding:64px 3rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Yöntemimiz</div>
@@ -582,71 +683,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 
-<!-- cz-brands -->
-<section class="section section-alt cz-sec" style="--cz:#f87171;">
-  <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
-      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
-</section>
-<!-- /cz-brands -->
-
-<section class="section" style="padding-top:56px;">
-  <div class="cross-grid">
-    <div>
-      <div class="sh" style="margin-bottom:24px;">
-        <div class="slabel">Ürünler</div>
-        <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
-        <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
-      </div>
-      <div class="grid g3" style="margin-top:0;">
-        <a href="pdm-collection" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>PD&M Collection</h3>
-          <p>Tüm imalat araçlarını tek pakette bir araya getiren Autodesk koleksiyonu.</p>
-        </a>
-        <a href="fusion" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/fusion.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Autodesk Fusion</h3>
-          <p>CAM modülü dahil, tasarımdan üretime uzanan bulut tabanlı entegre platform.</p>
-        </a>
-        <a href="inventor" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Autodesk Inventor + HSMWorks</h3>
-          <p>Inventor içinde entegre HSMWorks eklentisiyle CNC programlama yapın.</p>
-        </a>
-        <a href="ultimaker" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="" style="width:34px;height:auto;max-height:26px;object-fit:contain;filter:brightness(0) invert(1);" loading="lazy" decoding="async"></div>
-          <h3>UltiMaker</h3>
-          <p>Eklemeli imalat için profesyonel 3D yazıcı ve yazılım ekosistemi.</p>
-        </a>
-      </div>
-    </div>
-    <div>
-      <div class="sh" style="margin-bottom:24px;">
-        <div class="slabel">Endüstriler</div>
-        <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
-        <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
-      </div>
-      <div class="grid g3" style="margin-top:0;">
-        <a href="sektor-makine" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
-          <h3>Makine & Üretim</h3>
-          <p>Makine imalatı ve üretim sektörüne yönelik tasarım ve mühendislik çözümleri.</p>
-        </a>
-        <a href="sektor-otomotiv" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
-          <h3>Otomotiv</h3>
-          <p>Otomotiv sektörüne yönelik tasarım, mühendislik ve görselleştirme çözümleri.</p>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- cz-faq -->
 <section class="section section-alt cz-sec" style="--cz:#f87171;">
   <div class="sh" style="margin-bottom:26px;">
@@ -661,6 +697,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#f87171;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">

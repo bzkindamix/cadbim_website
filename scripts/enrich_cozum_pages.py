@@ -26,6 +26,7 @@ M_STATS = ("cz-stats", "<!-- /cz-stats -->")
 M_INTRO = ("cz-intro", "<!-- /cz-intro -->")
 M_BRANDS = ("cz-brands", "<!-- /cz-brands -->")
 M_FAQ = ("cz-faq", "<!-- /cz-faq -->")
+M_FARK = ("cz-fark", "<!-- /cz-fark -->")
 
 
 def esc(t):
@@ -59,6 +60,11 @@ def build_stats(cfg):
 
 
 def build_intro(cfg):
+    """Tanitim bolumu: baslik solda, anlatim sagda, maddeler tam genislikte.
+
+    Illustrasyon bu bolumde degil, hero'nun sag sutununda durur
+    (bkz. build_hero_art) -- Onur'un 2026-08-03 tarihli yerlesim notu.
+    """
     ps = "".join('<p class="cz-p">%s</p>\n        ' % p for p in cfg["intro"])
     buls = "".join(
         '<div class="cz-bul"><i class="ti ti-circle-check"></i>'
@@ -66,25 +72,77 @@ def build_intro(cfg):
         for t, d in cfg["bullets"])
     return u'''<!-- cz-intro -->
 <section class="section cz-sec" style="--cz:%(accent)s;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">%(title)s</div>
-      <div style="margin-top:18px;">
-        %(ps)s
-      </div>
-      <div class="cz-buls">%(buls)s</div>
     </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/%(visual)s.svg" width="640" height="420"
-           alt="%(alt)s" loading="lazy" decoding="async">
+    <div class="cz-intro-b">
+        %(ps)s
     </div>
   </div>
+  <div class="cz-buls">%(buls)s</div>
 </section>
 <!-- /cz-intro -->
 ''' % dict(accent=cfg["accent"], title=esc(cfg["intro_title"]), ps=ps.strip(),
-           buls=buls, visual=cfg["visual"],
-           alt=esc(cfg["intro_title"]) + u" — Cadbim teknik şeması")
+           buls=buls)
+
+
+def build_hero_art(cfg):
+    return ('<div class="cz-art cz-art-hero">'
+            '<img src="assets/img/cozum/%s.svg" width="640" height="420" alt="%s" '
+            'decoding="async"></div>'
+            % (cfg["visual"],
+               esc(cfg["intro_title"]) + u" — Cadbim teknik şeması"))
+
+
+FARK_CARDS = [
+    ("ti-license", u"Esnek Abonelik ve Lisans Modelleri",
+     u"Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon "
+     u"avantajı — kullanım profilinize uygun planı birlikte belirliyoruz."),
+    ("ti-school", u"Yetkili Eğitim Merkezi (ATC)",
+     u"Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez "
+     u"ofisimizde sınıf ve çevrim içi programlar."),
+    ("ti-headset", u"Türkçe Teknik Destek",
+     u"Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, "
+     u"aynı gün yanıt."),
+]
+
+FARK_STEPS = [
+    ("ti-message", u"1. Teklif & İhtiyaç Analizi",
+     u"Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz."),
+    ("ti-file-check", u"2. Lisanslama / Tedarik",
+     u"Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin."),
+    ("ti-settings", u"3. Kurulum & Eğitim",
+     u"Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi."),
+    ("ti-headset", u"4. Sürekli Destek",
+     u"Türkçe teknik destek ve yenileme dönemi hatırlatmaları."),
+]
+
+
+def build_fark(cfg):
+    """Cadbim Farki seridi -- SSS'ten sonra gelir, 16 sayfada da ayni."""
+    cards = "".join(
+        '<div class="cz-fark-c"><span><i class="ti %s"></i></span>'
+        '<h3>%s</h3><p>%s</p></div>' % (ic, esc(t), esc(d))
+        for ic, t, d in FARK_CARDS)
+    steps = "".join(
+        '<div class="cz-step"><span><i class="ti %s"></i></span>'
+        '<div><b>%s</b><em>%s</em></div></div>' % (ic, esc(t), esc(d))
+        for ic, t, d in FARK_STEPS)
+    return u'''<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:%(accent)s;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark">%(cards)s</div>
+  <div class="cz-steps">%(steps)s</div>
+</section>
+<!-- /cz-fark -->
+''' % dict(accent=cfg["accent"], cards=cards, steps=steps)
 
 
 def build_brands(cfg):
@@ -250,6 +308,89 @@ def insert_before(html, needle, block):
     return html[:i] + block + "\n" + html[i:], True
 
 
+HERO_TEXT_DIV = re.compile(r'<div style="max-width:(?:720|680)px;">')
+
+
+def apply_hero_art(html, cfg):
+    """Hero'yu iki sutuna cevirip sag sutuna illustrasyonu koyar."""
+    hs = html.find('<section class="hero"')
+    he = html.find('</section>', hs)
+    hero = html[hs:he]
+    if 'cz-hero-grid' in hero:                       # zaten sarilmis: sadece gorseli tazele
+        new_hero = re.sub(r'<div class="cz-art cz-art-hero">.*?</div>',
+                          build_hero_art(cfg), hero, flags=re.S)
+        return html[:hs] + new_hero + html[he:], 'hero-art(guncel)'
+    m = HERO_TEXT_DIV.search(hero)
+    if not m:
+        return html, 'hero-art(atlandi)'
+    close = _close_div(hero, m.start())
+    if close < 0:
+        return html, 'hero-art(atlandi)'
+    inner = hero[m.end():close]
+    new_hero = (hero[:m.start()]
+                + '<div class="cz-hero-grid">\n      <div class="cz-hero-text">'
+                + inner + '</div>\n      ' + build_hero_art(cfg) + '\n    </div>'
+                + hero[close + len('</div>'):])
+    return html[:hs] + new_hero + html[he:], 'hero-art'
+
+
+# --------------------------------------------------------------------------
+# bolum siralamasi
+# --------------------------------------------------------------------------
+SECTION_SPLIT = re.compile(r'(?m)^(?:<!-- cz-\w+ -->\n)?<section')
+
+# Onur'un 2026-08-03 notu: Ilgili Urunler "Neler Yapabiliriz"den hemen sonra,
+# Cadbim Farki seridi SSS'ten sonra gelir.
+ORDER = ['hero', 'intro', 'yetenek', 'urun', 'endustri', 'other',
+         'marka', 'enrich', 'sss', 'fark', 'blog']
+
+
+def classify(chunk):
+    if '<section class="hero"' in chunk:
+        return 'hero'
+    if '<!-- cz-intro -->' in chunk:
+        return 'intro'
+    if '<!-- cz-brands -->' in chunk:
+        return 'marka'
+    if '<!-- cz-faq -->' in chunk:
+        return 'sss'
+    if '<!-- cz-fark -->' in chunk or 'data-enrich-brand' in chunk:
+        return 'fark'
+    if 'id="blog-related-section"' in chunk:
+        return 'blog'
+    if u'Neler Yapabiliriz' in chunk:
+        return 'yetenek'
+    if PRODUCTS_HEAD in chunk or ALT_HEAD in chunk:
+        return 'urun'
+    if u'hangi endüstrilerde kullanılıyor' in chunk:
+        return 'endustri'
+    if 'data-enrich' in chunk:
+        return 'enrich'
+    return 'other'
+
+
+def reorder_sections(html):
+    """Govdeyi bolumlere ayirip ORDER dizisine gore yeniden dizer."""
+    bs = html.index('</nav>') + len('</nav>')
+    be = html.index('<footer')
+    body = html[bs:be]
+    starts = [m.start() for m in SECTION_SPLIT.finditer(body)]
+    if not starts:
+        return html, False
+    lead = body[:starts[0]]
+    chunks = []
+    for i, s in enumerate(starts):
+        e = starts[i + 1] if i + 1 < len(starts) else len(body)
+        chunks.append(body[s:e])
+    buckets = {k: [] for k in ORDER}
+    for c in chunks:
+        buckets[classify(c)].append(c)
+    new_body = lead + "".join("".join(buckets[k]) for k in ORDER)
+    if new_body == body:
+        return html, False
+    return html[:bs] + new_body + html[be:], True
+
+
 def add_faq_jsonld(html, cfg):
     """FAQPage nesnesini mevcut @graph dizisine ekler."""
     if '"@type": "FAQPage"' in html:
@@ -309,6 +450,22 @@ def process(key, cfg):
         html, '<section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">',
         build_faq(cfg))
     log.append('sss' if ok else 'sss(atlandi)')
+
+    # 6. Cadbim Farki seridi -- eskisi (varsa) atilir, 16 sayfada ayni surum kurulur
+    html = strip_block(html, M_FARK)
+    html = re.sub(r'<section data-enrich-brand.*?</section>\n*', '', html, flags=re.S)
+    html, ok = insert_before(
+        html, '<section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">',
+        build_fark(cfg))
+    log.append('cadbim-farki' if ok else 'cadbim-farki(atlandi)')
+
+    # 7. gorsel hero'ya tasinir
+    html, msg = apply_hero_art(html, cfg)
+    log.append(msg)
+
+    # 8. bolum sirasi
+    html, ok = reorder_sections(html)
+    log.append('sira' if ok else 'sira(degismedi)')
 
     html, ok = add_faq_jsonld(html, cfg)
     log.append('faq-jsonld' if ok else 'faq-jsonld(atlandi)')

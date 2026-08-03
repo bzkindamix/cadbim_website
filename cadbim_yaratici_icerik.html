@@ -301,6 +301,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Bireysel aboneliklerden kurumsal plana geçmeli miyiz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ekipte birden fazla kullanıcı varsa genellikle evet. Kurumsal planlarda koltuklar merkezî yönetilir, çalışan değişiminde lisans ve varlıklar kurumda kalır; ayrıca yönetici konsolu ve kurumsal depolama devreye girer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Adobe lisanslarını doğrudan Adobe'den de alabiliriz, farkı ne?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yetkili iş ortağı üzerinden alımda lisans yönetimi, kurulum, Türkçe destek ve yenileme takibi tek muhatapta toplanır. Ayrıca kurum içi kullanım profiline göre doğru plan bileşimini birlikte belirleriz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Firefly ile üretilen görseller ticari olarak kullanılabilir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adobe, Firefly'ın ticari kullanıma uygun olacak şekilde eğitildiğini belirtmektedir. Kullanım koşulları plan türüne göre değişebildiğinden, yayına almadan önce güncel Adobe şartlarını birlikte teyit etmenizi öneririz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Eğitim ve baskı desteği de veriyor musunuz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. Adobe uygulamalarına yönelik eğitimlerin yanında, HP DesignJet altyapımızla sanatsal ve teknik baskı hizmeti sunuyoruz."
+        }
+      }
+    ]
   }
  ]
 }
@@ -308,7 +345,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -400,7 +437,8 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler" class="active">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Yaratıcı İçerik & Grafik Tasarım</span></div>
-    <div style="max-width:720px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#e25922;margin-bottom:12px;">Yaratıcı İçerik & Grafik Tasarım</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:#e259221f;display:flex;align-items:center;justify-content:center;border:.5px solid #e2592240;">
@@ -412,27 +450,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#e25922;"><div class="cz-stat"><b>20+</b><span>Creative Cloud uygulaması tek planda</span></div><div class="cz-stat"><b>Gold Reseller</b><span>Adobe yetkili iş ortağı</span></div><div class="cz-stat"><b>Merkezî yönetim</b><span>koltuk ataması ve kurumsal depolama</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/yaratici-icerik.svg" width="640" height="420" alt="Creative Cloud'u kurumsal ölçekte yönetmek — Cadbim teknik şeması" decoding="async"></div>
+    </div>
   </div>
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#e25922;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">Creative Cloud'u kurumsal ölçekte yönetmek</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Adobe Creative Cloud for teams; Photoshop, Illustrator, InDesign, Premiere ve Acrobat Pro dahil <strong>20'yi aşkın uygulamayı</strong> üretken yapay zekâ özellikleri, iş birliği araçları ve kurumsal yönetim yetenekleriyle birlikte sunar.</p>
         <p class="cz-p">Kurumsal ölçekte belirleyici olan uygulamaların kendisi değil, çevresindeki düzendir: koltukların merkezî atanması ve geri alınması, çalışan ayrıldığında varlıkların kaybolmaması, marka kitaplığının tek yerden dağıtılması ve lisans envanterinin denetime hazır tutulması. Cadbim bu düzeni kurar ve yenileme dönemine kadar takip eder.</p>
         <p class="cz-p">İçerik hattının teknik ucu da bizim kapsamımızdadır. Mimari ve mühendislik görsellerinin son işlemi, Substance 3D ile malzeme üretimi, Adobe Stock ile lisanslı içerik tedariki ve sanatsal baskı atölyemizle fiziksel çıktı — tasarımdan baskıya kadar tek muhatap.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Lisans ve koltuk yönetimi</h3><p>Admin Console üzerinden merkezî atama, ekip bazlı raporlama ve yenileme planlaması.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Marka tutarlılığı</h3><p>Kurumsal renk, tipografi ve şablon kitaplıklarının paylaşımı; her tasarımcının aynı kaynaktan çalışması.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Üretken yapay zekâ</h3><p>Adobe Firefly ile ticari kullanıma uygun görsel üretimi ve mevcut varlıkların hızla türetilmesi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Eğitim</h3><p>Photoshop, Illustrator, InDesign, Premiere Pro ve After Effects eğitimleri; kuruma özel program seçeneğiyle.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/yaratici-icerik.svg" width="640" height="420"
-           alt="Creative Cloud'u kurumsal ölçekte yönetmek — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Lisans ve koltuk yönetimi</h3><p>Admin Console üzerinden merkezî atama, ekip bazlı raporlama ve yenileme planlaması.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Marka tutarlılığı</h3><p>Kurumsal renk, tipografi ve şablon kitaplıklarının paylaşımı; her tasarımcının aynı kaynaktan çalışması.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Üretken yapay zekâ</h3><p>Adobe Firefly ile ticari kullanıma uygun görsel üretimi ve mevcut varlıkların hızla türetilmesi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Eğitim</h3><p>Photoshop, Illustrator, InDesign, Premiere Pro ve After Effects eğitimleri; kuruma özel program seçeneğiyle.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -440,6 +476,101 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="sh"><div class="slabel">Çözüm Kapsamı</div><div class="stitle">Neler Yapabiliriz?</div></div>
   <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-photo-edit" style="color:#e25922;"></i></div><h3>Görsel Tasarım</h3><p>Photoshop ve Illustrator ile marka görselleri ve kimlik üretimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-file-text" style="color:#e25922;"></i></div><h3>Yayın & Doküman</h3><p>InDesign ile katalog, rapor ve pafta dizgisi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-video" style="color:#e25922;"></i></div><h3>Video Prodüksiyon</h3><p>Premiere Pro ve After Effects ile kurgu ve motion.</p></div><div class="card"><div class="card-icon"><i class="ti ti-sparkles" style="color:#e25922;"></i></div><h3>Üretken AI Entegrasyonu</h3><p>Firefly ile ticari güvenli AI iş akışları.</p></div><div class="card"><div class="card-icon"><i class="ti ti-bolt" style="color:#e25922;"></i></div><h3>Ekip İçin Express</h3><p>Tasarımcı olmayan ekiplerin marka standardında üretimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-license" style="color:#e25922;"></i></div><h3>Kurumsal Lisanslama</h3><p>VIP/ETLA planları, dağıtım ve yönetim danışmanlığı.</p></div></div>
 </section>
+<section class="section" style="padding-top:56px;">
+  <div class="cross-grid">
+    <div>
+      <div class="sh" style="margin-bottom:24px;">
+        <div class="slabel">Ürünler</div>
+        <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+        <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
+      </div>
+      <div class="grid g3" style="margin-top:0;">
+        <a href="creative-cloud" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="128" height="128" src="assets/logos/products/adobe.png" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Creative Cloud</h3>
+          <p>Photoshop, Illustrator ve daha fazlasını içeren Adobe uygulama paketi.</p>
+        </a>
+        <a href="photoshop" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/photoshop.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Photoshop</h3>
+          <p>Fotoğraf düzenleme ve dijital görsel tasarımın endüstri standardı yazılımı.</p>
+        </a>
+        <a href="illustrator" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/illustrator.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Illustrator</h3>
+          <p>Vektör tabanlı logo, ikon ve illüstrasyon tasarımı için profesyonel araç.</p>
+        </a>
+        <a href="indesign" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="24" height="24" src="assets/logos/products/indesign.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>InDesign</h3>
+          <p>Kurumsal doküman, dergi ve baskı tasarımı için sayfa düzenleme yazılımı.</p>
+        </a>
+        <a href="premiere-pro" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/premiere-pro.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Premiere Pro</h3>
+          <p>Profesyonel video kurgu ve prodüksiyon için Adobe'nin temel yazılımı.</p>
+        </a>
+        <a href="after-effects" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/after-effects.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>After Effects</h3>
+          <p>Hareketli grafik ve görsel efekt üretimi için Adobe'nin animasyon yazılımı.</p>
+        </a>
+        <a href="firefly" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/firefly.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Firefly</h3>
+          <p>Metinden görsel üreten Adobe'nin üretken yapay zeka aracı.</p>
+        </a>
+        <a href="adobe-stock" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/adobe-stock.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Adobe Stock</h3>
+          <p>Milyonlarca telifsiz fotoğraf, video ve şablona erişim sağlayan stok platformu.</p>
+        </a>
+        <a href="sanatsal-baski" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-palette"></i></div>
+          <h3>Sanatsal Baskı Atölyesi</h3>
+          <p>Dijital tasarımlarınızı fiziksel sanat eserlerine dönüştüren baskı atölyesi hizmeti.</p>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="sh" style="margin-bottom:24px;">
+        <div class="slabel">Endüstriler</div>
+        <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+        <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+      </div>
+      <div class="grid g3" style="margin-top:0;">
+        <a href="sektor-medya" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-movie"></i></div>
+          <h3>Medya & Eğlence</h3>
+          <p>Film, oyun ve yayıncılık sektörüne yönelik içerik üretim çözümleri.</p>
+        </a>
+        <a href="sektor-mimari" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+          <h3>Mimarlık</h3>
+          <p>Mimarlık ofislerine yönelik tasarım, görselleştirme ve BIM çözümleri.</p>
+        </a>
+        <a href="sektor-egitim" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-school"></i></div>
+          <h3>Eğitim</h3>
+          <p>Eğitim kurumlarına yönelik yazılım lisanslama ve öğretim çözümleri.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- cz-brands -->
+<section class="section section-alt cz-sec" style="--cz:#e25922;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Markalar</div>
+    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
+      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="adobe" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/adobe-logo.svg" alt="Adobe" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Adobe</b><em>Gold Reseller Partner</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
+</section>
+<!-- /cz-brands -->
+
 <section data-enrich style="padding:64px 3rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Yöntemimiz</div>
@@ -541,101 +672,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 
-<!-- cz-brands -->
-<section class="section section-alt cz-sec" style="--cz:#e25922;">
-  <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
-      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="adobe" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/adobe-logo.svg" alt="Adobe" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Adobe</b><em>Gold Reseller Partner</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
-</section>
-<!-- /cz-brands -->
-
-<section class="section" style="padding-top:56px;">
-  <div class="cross-grid">
-    <div>
-      <div class="sh" style="margin-bottom:24px;">
-        <div class="slabel">Ürünler</div>
-        <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
-        <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
-      </div>
-      <div class="grid g3" style="margin-top:0;">
-        <a href="creative-cloud" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="128" height="128" src="assets/logos/products/adobe.png" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Creative Cloud</h3>
-          <p>Photoshop, Illustrator ve daha fazlasını içeren Adobe uygulama paketi.</p>
-        </a>
-        <a href="photoshop" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/photoshop.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Photoshop</h3>
-          <p>Fotoğraf düzenleme ve dijital görsel tasarımın endüstri standardı yazılımı.</p>
-        </a>
-        <a href="illustrator" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/illustrator.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Illustrator</h3>
-          <p>Vektör tabanlı logo, ikon ve illüstrasyon tasarımı için profesyonel araç.</p>
-        </a>
-        <a href="indesign" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="24" height="24" src="assets/logos/products/indesign.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>InDesign</h3>
-          <p>Kurumsal doküman, dergi ve baskı tasarımı için sayfa düzenleme yazılımı.</p>
-        </a>
-        <a href="premiere-pro" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/premiere-pro.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Premiere Pro</h3>
-          <p>Profesyonel video kurgu ve prodüksiyon için Adobe'nin temel yazılımı.</p>
-        </a>
-        <a href="after-effects" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/after-effects.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>After Effects</h3>
-          <p>Hareketli grafik ve görsel efekt üretimi için Adobe'nin animasyon yazılımı.</p>
-        </a>
-        <a href="firefly" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/firefly.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Firefly</h3>
-          <p>Metinden görsel üreten Adobe'nin üretken yapay zeka aracı.</p>
-        </a>
-        <a href="adobe-stock" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="54" height="54" src="assets/logos/products/adobe-stock.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Adobe Stock</h3>
-          <p>Milyonlarca telifsiz fotoğraf, video ve şablona erişim sağlayan stok platformu.</p>
-        </a>
-        <a href="sanatsal-baski" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-palette"></i></div>
-          <h3>Sanatsal Baskı Atölyesi</h3>
-          <p>Dijital tasarımlarınızı fiziksel sanat eserlerine dönüştüren baskı atölyesi hizmeti.</p>
-        </a>
-      </div>
-    </div>
-    <div>
-      <div class="sh" style="margin-bottom:24px;">
-        <div class="slabel">Endüstriler</div>
-        <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
-        <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
-      </div>
-      <div class="grid g3" style="margin-top:0;">
-        <a href="sektor-medya" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-movie"></i></div>
-          <h3>Medya & Eğlence</h3>
-          <p>Film, oyun ve yayıncılık sektörüne yönelik içerik üretim çözümleri.</p>
-        </a>
-        <a href="sektor-mimari" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
-          <h3>Mimarlık</h3>
-          <p>Mimarlık ofislerine yönelik tasarım, görselleştirme ve BIM çözümleri.</p>
-        </a>
-        <a href="sektor-egitim" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-school"></i></div>
-          <h3>Eğitim</h3>
-          <p>Eğitim kurumlarına yönelik yazılım lisanslama ve öğretim çözümleri.</p>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- cz-faq -->
 <section class="section section-alt cz-sec" style="--cz:#e25922;">
   <div class="sh" style="margin-bottom:26px;">
@@ -650,6 +686,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#e25922;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">

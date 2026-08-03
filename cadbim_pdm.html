@@ -316,6 +316,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Küçük bir ekibiz, PDM'e gerçekten ihtiyacımız var mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ekip iki kişiye çıktığı anda \"hangi dosya güncel\" sorusu doğar. Vault Basic küçük ekipler için giriş seviyesidir; ihtiyaç büyüdükçe Workgroup ve Professional sürümlerine geçilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mevcut klasör yapımız Vault'a nasıl taşınır?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Doğrudan kopyalayarak değil, planlı bir göçle. Önce yinelenen ve ölü dosyalar ayıklanır, adlandırma ve özellik standardı tanımlanır, ardından toplu aktarım yapılır. Cadbim bu göçü proje olarak yürütür."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Vault ile Vault PLM arasındaki fark nedir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vault, mühendislik verisini yönetir. Vault PLM ise Vault Professional ile Autodesk Fusion Manage bulut PLM'ini tek pakette birleştirir; veri yönetimine departmanlar arası süreç yönetimi eklenir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Sunucu gerekiyor mu?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vault şirket içi sunucuda çalışır; uzaktan erişim için Vault Gateway ve ince istemci seçenekleri vardır. Sunucu boyutlandırmasını kullanıcı sayısı ve veri hacmine göre birlikte belirliyoruz."
+        }
+      }
+    ]
   }
  ]
 }
@@ -323,7 +360,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -415,7 +452,8 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">PDM Çözümleri</span></div>
-    <div style="max-width:720px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#fbbf24;margin-bottom:12px;">PDM Çözümleri</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;border:.5px solid #fbbf2440;">
@@ -427,27 +465,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#34d399;"><div class="cz-stat"><b>Tek kaynak</b><span>sürüm ve revizyon merkezî yönetilir</span></div><div class="cz-stat"><b>Check-in / out</b><span>eşzamanlı çalışmada üzerine yazma riski yok</span></div><div class="cz-stat"><b>Mobil ve tarayıcı</b><span>ofis dışından güvenli erişim</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/pdm.svg" width="640" height="420" alt="Dosya sunucusu neden yetmiyor? — Cadbim teknik şeması" decoding="async"></div>
+    </div>
   </div>
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#34d399;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">Dosya sunucusu neden yetmiyor?</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Autodesk Vault, Autodesk araçlarıyla ve diğer CAD sistemleriyle derin biçimde bütünleşen bir <strong>ürün veri yönetimi</strong> yazılımıdır. Paylaşılan bir klasörden farkı, dosyaları saklamakla kalmayıp aralarındaki bağımlılıkları da bilmesidir: bir parçayı değiştirdiğinizde hangi montajların ve teknik resimlerin etkilendiğini gösterir.</p>
         <p class="cz-p">İkinci fark süreçtir. Veri oluşturma, revizyon, inceleme ve serbest bırakma adımları tanımlı hâle geldiğinde, onaylanmamış bir revizyondan üretim yapılması engellenir. Check-in / check-out mekanizması ise aynı dosya üzerinde çalışan iki kişinin birbirinin işini silmesini yapısal olarak imkânsız kılar.</p>
         <p class="cz-p">Vault ayrıca uzaktan çalışma senaryolarını kapsar: mobil uygulama, tarayıcı tabanlı ince istemci ve Vault Gateway ile veriye ofis dışından da erişilir. Mühendislik verisi büyüdükçe Vault Professional'a, oradan da Vault PLM paketiyle süreç yönetimine ölçeklenir.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Doğrudan CAD entegrasyonu</h3><p>Inventor, AutoCAD ve diğer CAD ortamlarından çıkmadan veri yönetimi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Sürüm ve revizyon</h3><p>Her kaydın geçmişi tutulur; hangi revizyonun ne zaman ve kim tarafından serbest bırakıldığı izlenebilir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Eşzamanlı tasarım</h3><p>Büyük montajlarda birden çok kullanıcının çakışmadan çalışması; kilit ve yetki yönetimi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Veri yeniden kullanımı</h3><p>Var olan parçanın aranıp bulunması; aynı parçanın yeniden çizilmesinin ve stok kalabalığının önlenmesi.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/pdm.svg" width="640" height="420"
-           alt="Dosya sunucusu neden yetmiyor? — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Doğrudan CAD entegrasyonu</h3><p>Inventor, AutoCAD ve diğer CAD ortamlarından çıkmadan veri yönetimi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Sürüm ve revizyon</h3><p>Her kaydın geçmişi tutulur; hangi revizyonun ne zaman ve kim tarafından serbest bırakıldığı izlenebilir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Eşzamanlı tasarım</h3><p>Büyük montajlarda birden çok kullanıcının çakışmadan çalışması; kilit ve yetki yönetimi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Veri yeniden kullanımı</h3><p>Var olan parçanın aranıp bulunması; aynı parçanın yeniden çizilmesinin ve stok kalabalığının önlenmesi.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -479,6 +515,82 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
           <p>Vault Connector ile PDM'den PLM'ye native köprü. BOM ve item otomatik senkronizasyonu.</p>
         </div></div>
 </section>
+<section class="section" style="padding-top:56px;">
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="pdm-collection" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>PD&M Collection</h3>
+      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
+    </a>
+    <a href="vault-pdm" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/vault-pdm.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Vault PDM</h3>
+      <p>Mühendislik verilerini merkezi olarak saklayan ve versiyon kontrolünü sağlayan veri yönetim sistemi.</p>
+    </a>
+    <a href="fusion-manage" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/fusion-manage.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Fusion Manage PLM</h3>
+      <p>Ürün yaşam döngüsünü uçtan uca yöneten bulut tabanlı PLM platformu.</p>
+    </a>
+    <a href="inventor" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Inventor</h3>
+      <p>Parametrik 3B mekanik tasarım ve mühendislik dokümantasyonu için endüstri standardı yazılım.</p>
+    </a>
+  </div>
+  <div class="sh" style="margin-top:40px;">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="sektor-makine" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
+      <h3>Makine & Üretim</h3>
+      <p>Makine imalat sektörüne özel tasarım, simülasyon ve üretim çözümleri sunulur.</p>
+    </a>
+    <a href="sektor-otomotiv" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
+      <h3>Otomotiv</h3>
+      <p>Otomotiv parça ve araç geliştirme süreçlerine yönelik uçtan uca mühendislik çözümleri.</p>
+    </a>
+  </div>
+  <div class="sh" style="margin-top:40px;">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Başarı Öyküleri</div>
+    <p class="ssub">PDM çözümüyle sonuç alan müşterilerimiz</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="basari-oykuleri#edvan" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3>Edvan</h3>
+      <p>PDM çözümüyle satış-Ar-Ge iletişiminde hız kazandı, KPI'ları iyileşti.</p>
+    </a>
+    <a href="basari-oykuleri#kutlusan" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
+      <h3>Kutlusan Kafes</h3>
+      <p>PDM çözümüyle dijital dönüşüm sürecini başarıyla tamamladı.</p>
+    </a>
+  </div>
+</section>
+
+<!-- cz-brands -->
+<section class="section section-alt cz-sec" style="--cz:#34d399;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Markalar</div>
+    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
+      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a></div>
+</section>
+<!-- /cz-brands -->
+
 <section data-enrich style="padding:64px 3rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Yöntemimiz</div>
@@ -580,82 +692,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 
-<!-- cz-brands -->
-<section class="section section-alt cz-sec" style="--cz:#34d399;">
-  <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
-      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a></div>
-</section>
-<!-- /cz-brands -->
-
-<section class="section" style="padding-top:56px;">
-  <div class="sh">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
-    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="pdm-collection" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>PD&M Collection</h3>
-      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
-    </a>
-    <a href="vault-pdm" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/vault-pdm.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Vault PDM</h3>
-      <p>Mühendislik verilerini merkezi olarak saklayan ve versiyon kontrolünü sağlayan veri yönetim sistemi.</p>
-    </a>
-    <a href="fusion-manage" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/fusion-manage.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Fusion Manage PLM</h3>
-      <p>Ürün yaşam döngüsünü uçtan uca yöneten bulut tabanlı PLM platformu.</p>
-    </a>
-    <a href="inventor" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Inventor</h3>
-      <p>Parametrik 3B mekanik tasarım ve mühendislik dokümantasyonu için endüstri standardı yazılım.</p>
-    </a>
-  </div>
-  <div class="sh" style="margin-top:40px;">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
-    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="sektor-makine" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
-      <h3>Makine & Üretim</h3>
-      <p>Makine imalat sektörüne özel tasarım, simülasyon ve üretim çözümleri sunulur.</p>
-    </a>
-    <a href="sektor-otomotiv" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
-      <h3>Otomotiv</h3>
-      <p>Otomotiv parça ve araç geliştirme süreçlerine yönelik uçtan uca mühendislik çözümleri.</p>
-    </a>
-  </div>
-  <div class="sh" style="margin-top:40px;">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Başarı Öyküleri</div>
-    <p class="ssub">PDM çözümüyle sonuç alan müşterilerimiz</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="basari-oykuleri#edvan" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
-      <h3>Edvan</h3>
-      <p>PDM çözümüyle satış-Ar-Ge iletişiminde hız kazandı, KPI'ları iyileşti.</p>
-    </a>
-    <a href="basari-oykuleri#kutlusan" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-trophy"></i></div>
-      <h3>Kutlusan Kafes</h3>
-      <p>PDM çözümüyle dijital dönüşüm sürecini başarıyla tamamladı.</p>
-    </a>
-  </div>
-</section>
-
 <!-- cz-faq -->
 <section class="section section-alt cz-sec" style="--cz:#34d399;">
   <div class="sh" style="margin-bottom:26px;">
@@ -670,6 +706,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#34d399;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">

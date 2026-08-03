@@ -4,6 +4,34 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-11 — Çözüm sayfası yerleşimi yeniden kurgulandı; endüstri filtresi eklendi, mükerrer endüstri haritası tekilleştirildi
+
+- **Yapan:** Onur Bozok'un ekran görüntülü notları ("buraya taşı", "enine sayfayı doldur"), ardından "cadbim farkı şeridi SSS'ten sonra gelsin, ilgili ürünler neler yapabilirizden sonra gelsin", "çözümler ana sayfasına çözüm kutularının üstüne endüstri filtreleri koy" ve "alt taraftaki detaylı incele ile arasında bir tutarsızlık var aynı zamanda bu alanlar mükerrer" geri bildirimleri üzerine Claude (PDM asistanı).
+
+**1) Yerleşim (16 çözüm sayfası)**
+  - Teknik illüstrasyon "Bu Çözüm Nedir" bölümünden alınıp **hero'nun sağ sütununa** taşındı; hero iki sütunlu ızgaraya (`.cz-hero-grid`) çevrildi. 980 px altında tek sütuna düşer, görsel 560 px ile sınırlanır.
+  - "Bu Çözüm Nedir" bölümü yeniden kuruldu: solda başlık, sağda anlatım (`.cz-intro`), **altında tam sayfa genişliğinde dört sütunlu madde ızgarası** (`.cz-buls`, 1280 px'te 4 × 279 px = 1154 px). Önceden maddeler dar sol sütuna sıkışıp sağ yarıyı boş bırakıyordu.
+  - **Yeni bölüm sırası:** Hero → Bu Çözüm Nedir → Neler Yapabiliriz → **İlgili Ürünler** → Markalar → Yöntemimiz → İyi Uygulamalar → SSS → **Cadbim Farkı** → Blog → CTA. Sıralama, gövdeyi bölümlere ayırıp sınıflandıran ve `ORDER` dizisine göre yeniden dizen `reorder_sections()` ile yapılıyor; blog bölümünün kendi betiği ve CTA şeridi bloğuna bağlı kalıyor.
+  - **Cadbim Farkı şeridi 16 sayfada da standart hâle getirildi.** Önceden yalnızca `plm` ve `fabrika-tasarimi` sayfalarında vardı ve metni "Autodesk Yatırımınızı..." diye başladığı için Adobe ağırlıklı sayfalara uymuyordu. Eski `data-enrich-brand` blokları kaldırılıp yerine marka-nötr, üç kart (esnek lisans modelleri / ATC / Türkçe destek) ve dört adımlı süreç şeridi içeren tek bir sürüm kuruldu.
+
+**2) Çözümler merkezinde endüstri filtresi**
+  - Çözüm kartlarının üstüne 9 endüstri sekmesinden oluşan filtre şeridi eklendi (Tüm Çözümler + Mimarlık, İç Mimarlık & Tasarım, İnşaat & Altyapı, Mekanik Tesisat, Makine & Üretim, Otomotiv, Medya & Eğlence, Eğitim, Havacılık & Savunma). Her sekmede o endüstrideki çözüm sayısı rozet olarak görünür; seçim `#mimari` gibi bir adres parçası olarak URL'ye yazılır.
+  - Bağımlılıksız vanilla JS; `aria-pressed`, `role="status"` canlı bölge ve `:focus-visible` odak halkası ile klavye/ekran okuyucu uyumlu. JavaScript kapalıysa tüm kartlar görünür kalır.
+
+**3) Mükerrerlik ve tutarsızlık düzeltmesi (Onur'un notu)**
+  - Endüstri ↔ çözüm eşleşmesi **iki ayrı yerde** ve **birbiriyle çelişerek** duruyordu: yeni filtrede elle yazdığım 7 endüstrilik liste ile `cadbim_endustriler.html` içindeki mevcut "Detaylı İnceleme — Endüstriye Göre Çözüm & Ürün Haritası" bölümünün 9 endüstrilik listesi. Örnek çelişki: PLM/CAM/Tolerans kartları filtrede "Havacılık" altındayken kart altındaki metin yalnızca "Makine & Üretim, Otomotiv" diyordu.
+  - Çözüm: **`cadbim_endustriler.html` tek doğru kaynak ilan edildi.** `scripts/sync_endustri_haritasi.py` o sayfadaki sekmeleri ve panelleri okuyup filtreyi, sekme renklerini/ikonlarını, rozet sayılarını ve kartlardaki `data-ind` değerlerini üretiyor. İki sayfa artık yapısal olarak çelişemez.
+  - Çözüm kartlarının altındaki endüstri listesi **kaldırıldı**, yerine "Detaylı İncele" bağlantısı kondu — aynı bilgi hem filtrede hem her kartın altında tekrarlanıyordu.
+  - Filtre seçildiğinde çıkan satıra "bu endüstrinin ürün haritası" bağlantısı eklendi; `cadbim_endustriler.html`'e **adres parçasıyla sekme seçme** desteği verildi (`endustriler#havacilik` doğrudan ilgili sekmeyi açıp oraya kaydırıyor, `hashchange` dinleniyor).
+  - Kaynak haritadaki bir eksik giderildi: `dijital-ikiz` yalnızca "Mekanik Tesisat" altındaydı; kendi sayfası ve çözüm kartı "Mimarlık, İnşaat & Altyapı" diyordu — Mimarlık ve İnşaat panellerine de eklendi.
+
+**4) Yan bulgu**
+  - Duyarlı kurallar `design-system.css` içinde temel kurallardan **önce** geldiği için 375 ve 768 px'te hero iki sütun kalmaya devam ediyordu (görsel 126 px'e düşüyordu). Medya sorguları dosyanın sonuna taşındı; artık 980 px altında tek sütun, 375 px'te görsel 320 px tam genişlik.
+  - Cache sürümü `v=12` → `v=15` (1321 dosya).
+
+- **Doğrulama:** 195 HTML dosyasında etiket dengesi ve JSON-LD geçerliliği: **0 sorun**. Filtrenin 10 düğmesi tek tek tıklanıp rozet sayısı ile görünen kart sayısı karşılaştırıldı — **10/10 eşleşti** (Tümü 16, Mimarlık 8, İç Mimarlık 4, İnşaat 7, Tesisat 5, Makine 11, Otomotiv 10, Medya 3, Eğitim 4, Havacılık 5). `endustriler#havacilik` doğru sekmeyi ve paneli açıyor. PLM sayfasında ölçüldü: hero görseli x=697'de, başlığın sağında; madde ızgarası 1154 px genişlikte 4 sütun; bölüm sırası Hero → Nedir → Neler Yapabiliriz → Ürünler → Markalar → SSS → Cadbim Farkı → Blog. 375 / 768 / 1024 / 1280 px'te yerleşim ve taşma ölçüldü: yatay taşma 0, metin kutusundan taşma 0. Çözüm kartlarının alt satırının 16'sında da "Detaylı İncele" yazdığı, endüstri metninin kalmadığı doğrulandı. **Not:** bu oturumda tarayıcı paneli görüntülenemediği için ekran görüntüsü alınamadı; doğrulama ölçüm tabanlı.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-10 — Çözüm sayfaları marka kaynaklı içerikle zenginleştirildi; kart kutuları tıklanabilir yapıldı
 
 - **Yapan:** Onur Bozok'un "sitemizdeki çözümler sayfalarındaki içerikler az … markaların sitelerine girip hem görsel hem yazılı içerik alıp mevcut sayfalarımızı düzgün bir akış sıralamasıyla, temamızı bozmadan güncelle" ve ardından "çözümlerdeki kutular ilgili linki açmıyor" talepleri üzerine Claude (PDM asistanı).

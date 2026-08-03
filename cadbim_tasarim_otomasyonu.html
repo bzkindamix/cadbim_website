@@ -316,6 +316,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Otomasyon için yazılım geliştirici olmak gerekir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Temel iLogic kuralları için gerekmez; parametre ve basit koşul mantığını bilen bir mühendis kısa sürede üretken hâle gelir. Konfigüratör, ERP entegrasyonu veya web arayüzü gibi ileri senaryolarda Cadbim yazılım geliştirme ekibi devreye girer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hangi ürünler otomasyona uygundur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aynı mantığın farklı ölçülerde tekrar ettiği her ürün: çelik konstrüksiyon, konveyör, asansör, kalıp, pano, tank, makine kabini. Tekrar oranı ne kadar yüksekse geri dönüş o kadar hızlıdır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mevcut modellerim kullanılabilir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Genellikle evet, ancak önce sadeleştirme gerekir. Elle biriktirilmiş modellerde çoğu kez gereksiz özellik ve kırılgan bağımlılık bulunur; otomasyona hazır bir ana model (master) kurmak daha sağlıklı sonuç verir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Geri dönüşü nasıl ölçeriz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Otomasyon öncesi ve sonrası, aynı işin çevrim süresi ölçülerek. Projeye başlarken bu ölçümü birlikte tanımlıyoruz ki kazanç tahmin değil, veri olsun."
+        }
+      }
+    ]
   }
  ]
 }
@@ -323,7 +360,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -415,7 +452,8 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Tasarım Otomasyonu</span></div>
-    <div style="max-width:720px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#a78bfa;margin-bottom:12px;">Tasarım Otomasyonu</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:rgba(167,139,250,0.12);display:flex;align-items:center;justify-content:center;border:.5px solid #a78bfa40;">
@@ -427,27 +465,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#fbbf24;"><div class="cz-stat"><b>iLogic</b><span>kod yazmadan kural tabanlı tasarım</span></div><div class="cz-stat"><b>Konfigüratör</b><span>müşteri özelinde otomatik varyant</span></div><div class="cz-stat"><b>Çizim + CAM</b><span>otomasyon imalata kadar uzanır</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/tasarim-otomasyonu.svg" width="640" height="420" alt="Neyi otomatikleştiriyoruz? — Cadbim teknik şeması" decoding="async"></div>
+    </div>
   </div>
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#fbbf24;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">Neyi otomatikleştiriyoruz?</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Autodesk'in tanımıyla tasarım otomasyonu, <strong>mühendislik bilgisinin ve tasarım niyetinin yakalanıp yeniden kullanılmasıdır</strong>. Sac parçalar, kaynaklı çerçeveler ve standart bağlantılar gibi basit ama yorucu modelleme işleri, bir kez kurala bağlandığında her seferinde elle yapılmaz.</p>
         <p class="cz-p">Inventor içindeki iLogic teknolojisi bunu karmaşık kodlama gerektirmeden sağlar: parametreler tanımlanır, aralarındaki ilişkiler kural olarak yazılır ve model bu kurallara göre kendini yeniden kurar. Olgunlaştıkça aynı yapı, satış ekibinin kullanabileceği bir ürün konfigüratörüne dönüşür.</p>
         <p class="cz-p">Otomasyonun sınırı model değildir. Kurallar; teknik resim üretimini, parça listesini, malzeme kartlarını ve CAM takım yollarını da kapsayacak biçimde genişletilebilir. Cadbim bu noktada hem uygulama hem de kurum içi yazılım geliştirme tarafında destek verir.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Kural tabanlı model</h3><p>Parametreler ve iLogic kuralları ile geometri, özellik ve malzeme otomatik belirlenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Ürün konfigüratörü</h3><p>Müşteri seçimlerine göre modelin, teknik resmin ve parça listesinin otomatik türetilmesi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Doküman otomasyonu</h3><p>Teknik resim, BOM ve teklif ekleri tek adımda ve standardına uygun üretilir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Kurumsal entegrasyon</h3><p>Vault, ERP ve web arayüzleriyle bağlantı; Cadbim yazılım geliştirme ekibi tarafından yazılan özel eklentiler.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/tasarim-otomasyonu.svg" width="640" height="420"
-           alt="Neyi otomatikleştiriyoruz? — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Kural tabanlı model</h3><p>Parametreler ve iLogic kuralları ile geometri, özellik ve malzeme otomatik belirlenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Ürün konfigüratörü</h3><p>Müşteri seçimlerine göre modelin, teknik resmin ve parça listesinin otomatik türetilmesi.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Doküman otomasyonu</h3><p>Teknik resim, BOM ve teklif ekleri tek adımda ve standardına uygun üretilir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Kurumsal entegrasyon</h3><p>Vault, ERP ve web arayüzleriyle bağlantı; Cadbim yazılım geliştirme ekibi tarafından yazılan özel eklentiler.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -479,6 +515,70 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
           <p>Autodesk Platform Services ile web tabanlı 3D görüntüleme ve cloud otomasyon uygulamaları.</p>
         </div></div>
 </section>
+<section class="section" style="padding-top:56px;">
+  <div class="sh">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="pdm-collection" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>PD&M Collection</h3>
+      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
+    </a>
+    <a href="inventor" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Autodesk Inventor + iLogic</h3>
+      <p>Kural tabanlı tasarım otomasyonu için iLogic eklentisiyle güçlendirilmiş parametrik modelleme.</p>
+    </a>
+    <a href="vault-pdm" class="card">
+      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/vault-pdm.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+      <h3>Vault PDM</h3>
+      <p>Otomatik üretilen tasarım verilerini güvenli biçimde saklayan ve yöneten veri yönetim sistemi.</p>
+    </a>
+    <a href="yazilim-gelistirme" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-code"></i></div>
+      <h3>Yazılım Geliştirme</h3>
+      <p>Tasarım otomasyonu kurallarını ve özel eklentileri hayata geçiren yazılım geliştirme hizmeti.</p>
+    </a>
+  </div>
+  <div class="sh" style="margin-top:40px;">
+    <div class="slabel">İlgili Ürünler</div>
+    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <a href="sektor-mimari" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+      <h3>Mimarlık</h3>
+      <p>Mimari proje süreçlerinde tasarım otomasyonuyla tekrarlayan işleri hızlandıran çözümler.</p>
+    </a>
+    <a href="sektor-makine" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
+      <h3>Makine & Üretim</h3>
+      <p>Makine imalat sektörüne özel tasarım, simülasyon ve üretim çözümleri sunulur.</p>
+    </a>
+    <a href="sektor-otomotiv" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
+      <h3>Otomotiv</h3>
+      <p>Otomotiv parça ve araç geliştirme süreçlerine yönelik uçtan uca mühendislik çözümleri.</p>
+    </a>
+  </div>
+</section>
+
+<!-- cz-brands -->
+<section class="section section-alt cz-sec" style="--cz:#fbbf24;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Markalar</div>
+    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
+      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a></div>
+</section>
+<!-- /cz-brands -->
+
 <section data-enrich style="padding:64px 3rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Yöntemimiz</div>
@@ -580,70 +680,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 
-<!-- cz-brands -->
-<section class="section section-alt cz-sec" style="--cz:#fbbf24;">
-  <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
-      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a></div>
-</section>
-<!-- /cz-brands -->
-
-<section class="section" style="padding-top:56px;">
-  <div class="sh">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
-    <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="pdm-collection" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>PD&M Collection</h3>
-      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
-    </a>
-    <a href="inventor" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk Inventor + iLogic</h3>
-      <p>Kural tabanlı tasarım otomasyonu için iLogic eklentisiyle güçlendirilmiş parametrik modelleme.</p>
-    </a>
-    <a href="vault-pdm" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/vault-pdm.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Vault PDM</h3>
-      <p>Otomatik üretilen tasarım verilerini güvenli biçimde saklayan ve yöneten veri yönetim sistemi.</p>
-    </a>
-    <a href="yazilim-gelistirme" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-code"></i></div>
-      <h3>Yazılım Geliştirme</h3>
-      <p>Tasarım otomasyonu kurallarını ve özel eklentileri hayata geçiren yazılım geliştirme hizmeti.</p>
-    </a>
-  </div>
-  <div class="sh" style="margin-top:40px;">
-    <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
-    <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
-  </div>
-  <div class="grid g3" style="margin-top:0;">
-    <a href="sektor-mimari" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
-      <h3>Mimarlık</h3>
-      <p>Mimari proje süreçlerinde tasarım otomasyonuyla tekrarlayan işleri hızlandıran çözümler.</p>
-    </a>
-    <a href="sektor-makine" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
-      <h3>Makine & Üretim</h3>
-      <p>Makine imalat sektörüne özel tasarım, simülasyon ve üretim çözümleri sunulur.</p>
-    </a>
-    <a href="sektor-otomotiv" class="card">
-      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
-      <h3>Otomotiv</h3>
-      <p>Otomotiv parça ve araç geliştirme süreçlerine yönelik uçtan uca mühendislik çözümleri.</p>
-    </a>
-  </div>
-</section>
-
 <!-- cz-faq -->
 <section class="section section-alt cz-sec" style="--cz:#fbbf24;">
   <div class="sh" style="margin-bottom:26px;">
@@ -658,6 +694,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#fbbf24;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">

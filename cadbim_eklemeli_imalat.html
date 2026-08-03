@@ -303,6 +303,43 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "3B yazıcı satın alırken nelere dikkat etmeliyim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Baskı hacmi, malzeme uyumluluğu, tekrarlanabilirlik ve yerel servis desteğine. Cihazın kendisi kadar arkasındaki malzeme profili ekosistemi ve eğitim de sonucu belirler; Cadbim cihazı kurulum ve kullanıcı eğitimiyle birlikte teslim eder."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hangi malzemeyi kullanmalıyım?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Uygulamaya bağlıdır: kavramsal model için PLA, dayanıklı aparat için PETG veya ABS, esnek parça için TPU, yüksek mukavemet gereken fikstürler için karbon takviyeli naylon. İhtiyaç profilinizi birlikte çıkarıp öneri sunuyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Cura ücretli mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "UltiMaker Cura ücretsiz ve açık kaynaklıdır. Kurumsal ortamlarda merkezî dağıtım, uzun destek süresi ve güvenlik taraması gerektiren ekipler için Cura Enterprise sürümü tercih edilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Eğitim ve servis desteğiniz var mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. Kurulum, ilk baskı eğitimi, bakım ve sarf tedariki Cadbim tarafından yürütülür; eğitim kurumları için sınıf ortamına uygun yapılandırma da sunulur."
+        }
+      }
+    ]
   }
  ]
 }
@@ -310,7 +347,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<link rel="stylesheet" href="assets/css/design-system.css?v=15">
 </head>
 <body>
 <nav class="nav">
@@ -402,7 +439,8 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="hero-grid"></div>
   <div style="position:relative;z-index:1;">
     <div class="crumb"><a href="/">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="cozumler" class="active">Çözümler</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">Eklemeli İmalat & 3D Baskı</span></div>
-    <div style="max-width:720px;">
+    <div class="cz-hero-grid">
+      <div class="cz-hero-text">
       <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#10b981;margin-bottom:12px;">Eklemeli İmalat & 3D Baskı</div>
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
         <div style="width:52px;height:52px;border-radius:12px;background:#10b9811f;display:flex;align-items:center;justify-content:center;border:.5px solid #10b98140;">
@@ -414,27 +452,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#10b981;"><div class="cz-stat"><b>300+</b><span>UltiMaker ekosisteminde uyumlu malzeme</span></div><div class="cz-stat"><b>400+</b><span>Cura'da ayarlanabilir dilimleme parametresi</span></div><div class="cz-stat"><b>Kurulum + eğitim</b><span>donanım tek başına teslim edilmez</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
+      <div class="cz-art cz-art-hero"><img src="assets/img/cozum/eklemeli-imalat.svg" width="640" height="420" alt="Eklemeli imalat kurumda neyi değiştirir? — Cadbim teknik şeması" decoding="async"></div>
+    </div>
   </div>
 </section>
 <!-- cz-intro -->
 <section class="section cz-sec" style="--cz:#10b981;">
-  <div class="cz-grid">
-    <div>
+  <div class="cz-intro">
+    <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
       <div class="stitle">Eklemeli imalat kurumda neyi değiştirir?</div>
-      <div style="margin-top:18px;">
+    </div>
+    <div class="cz-intro-b">
         <p class="cz-p">Eklemeli imalat, parçayı bir bloktan eksilterek değil, malzemeyi katman katman ekleyerek üretir. Bunun ilk sonucu <strong>hızlı prototipleme</strong>dir: tasarımcı, mühendis ve üretici tasarımı hızla iyileştirebilir; kalıp ve takım maliyeti ortadan kalktığı için deneme yapmanın bedeli düşer.</p>
         <p class="cz-p">İkinci sonuç geleneksel yöntemlerle üretilmesi zor ya da imkânsız geometrilerin mümkün hâle gelmesidir; iç kanallar, kafes yapılar ve tek parçaya indirgenmiş montajlar gibi. Üçüncüsü ise talep anında üretimdir: aparat, mastar ve yedek parça stokta tutulmak yerine gerektiğinde basılır.</p>
         <p class="cz-p">UltiMaker tarafında S serisi, 2,85 mm filamentle çalışan açık malzeme ekosistemi sunar; Marketplace üzerinden üretici onaylı baskı profilleri indirilerek üçüncü taraf malzemeler elle ayar yapmadan kullanılabilir. Yeni nesil S serisinde Cheetah hareket planlayıcı, hız ile kalite arasındaki ödünleşmeyi belirgin biçimde azaltmaktadır.</p>
-      </div>
-      <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Doğru cihaz seçimi</h3><p>Parça boyutu, malzeme ve tolerans beklentinize göre S serisi, Factor 4 veya Method ailesinden uygun model belirlenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Malzeme danışmanlığı</h3><p>PLA, PETG, ABS, TPU, naylon ve karbon takviyeli kompozitler arasında uygulamaya uygun seçim ve profil kurulumu.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Yazılım zinciri</h3><p>UltiMaker Cura ile dilimleme, kurumsal dağıtım için Cura Enterprise, filo yönetimi için Digital Factory.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Tasarım tarafı</h3><p>Autodesk Fusion ve Netfabb ile baskıya hazırlık, parça yönlendirme, destek ve kafes yapı optimizasyonu.</p></div></div></div>
-    </div>
-    <div class="cz-art">
-      <img src="assets/img/cozum/eklemeli-imalat.svg" width="640" height="420"
-           alt="Eklemeli imalat kurumda neyi değiştirir? — Cadbim teknik şeması" loading="lazy" decoding="async">
     </div>
   </div>
+  <div class="cz-buls"><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Doğru cihaz seçimi</h3><p>Parça boyutu, malzeme ve tolerans beklentinize göre S serisi, Factor 4 veya Method ailesinden uygun model belirlenir.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Malzeme danışmanlığı</h3><p>PLA, PETG, ABS, TPU, naylon ve karbon takviyeli kompozitler arasında uygulamaya uygun seçim ve profil kurulumu.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Yazılım zinciri</h3><p>UltiMaker Cura ile dilimleme, kurumsal dağıtım için Cura Enterprise, filo yönetimi için Digital Factory.</p></div></div><div class="cz-bul"><i class="ti ti-circle-check"></i><div><h3>Tasarım tarafı</h3><p>Autodesk Fusion ve Netfabb ile baskıya hazırlık, parça yönlendirme, destek ve kafes yapı optimizasyonu.</p></div></div></div>
 </section>
 <!-- /cz-intro -->
 
@@ -442,6 +478,101 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   <div class="sh"><div class="slabel">Çözüm Kapsamı</div><div class="stitle">Neler Yapabiliriz?</div></div>
   <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-cube-3d-sphere" style="color:#10b981;"></i></div><h3>Yazıcı Seçimi & Kurulum</h3><p>İhtiyaca göre S, Factor veya Method serisi; kurulum ve devreye alma.</p></div><div class="card"><div class="card-icon"><i class="ti ti-flask" style="color:#10b981;"></i></div><h3>Malzeme Danışmanlığı</h3><p>PLA’dan PPS-CF kompozite 300+ malzemede doğru seçim.</p></div><div class="card"><div class="card-icon"><i class="ti ti-slice" style="color:#10b981;"></i></div><h3>Baskı Hazırlığı</h3><p>Cura profilleri ve Netfabb ile geometri optimizasyonu.</p></div><div class="card"><div class="card-icon"><i class="ti ti-cloud-cog" style="color:#10b981;"></i></div><h3>Filo & İş Yönetimi</h3><p>Digital Factory ile çok yazıcılı ortam yönetimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-settings-2" style="color:#10b981;"></i></div><h3>Uygulama Geliştirme</h3><p>Fikstür, aparat ve son kullanım parça senaryoları.</p></div><div class="card"><div class="card-icon"><i class="ti ti-tool" style="color:#10b981;"></i></div><h3>Servis & Destek</h3><p>Yetkili servis, yedek parça ve bakım anlaşmaları.</p></div></div>
 </section>
+<section class="section" style="padding-top:56px;">
+  <div class="cross-grid">
+    <div>
+      <div class="sh" style="margin-bottom:24px;">
+        <div class="slabel">Ürünler</div>
+        <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+        <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
+      </div>
+      <div class="grid g3" style="margin-top:0;">
+        <a href="netfabb" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/netfabb.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Autodesk Netfabb</h3>
+          <p>Eklemeli imalat için baskı hazırlığı ve üretim optimizasyonu yazılımı.</p>
+        </a>
+        <a href="fusion" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/fusion.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Fusion</h3>
+          <p>Tasarımdan üretime uzanan bulut tabanlı entegre CAD/CAM/CAE platformu.</p>
+        </a>
+        <a href="ultimaker" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="192" height="192" src="assets/logos/products/ultimaker-icon.webp" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>UltiMaker S Serisi</h3>
+          <p>Profesyonel masaüstü 3D yazıcılarla güvenilir ve hassas üretim.</p>
+        </a>
+        <a href="factor4" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="192" height="192" src="assets/logos/products/ultimaker-icon.webp" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Factor 4 Serisi</h3>
+          <p>Endüstriyel üretime uygun UltiMaker 3D yazıcı serisi.</p>
+        </a>
+        <a href="method-xl" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-box"></i></div>
+          <h3>Method XL</h3>
+          <p>Büyük parçaların üretimine uygun endüstriyel 3D yazıcı.</p>
+        </a>
+        <a href="sketch-sprint" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="192" height="192" src="assets/logos/products/ultimaker-icon.webp" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Sketch Sprint</h3>
+          <p>Hızlı konsept doğrulama için kompakt 3D yazıcı çözümü.</p>
+        </a>
+        <a href="cura" class="card">
+          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="192" height="192" src="assets/logos/products/ultimaker-icon.webp" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <h3>Cura</h3>
+          <p>3D baskı hazırlığı için ücretsiz, endüstri standardı dilimleme yazılımı.</p>
+        </a>
+        <a href="digital-factory" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-cloud-cog"></i></div>
+          <h3>Digital Factory</h3>
+          <p>Üretim süreçlerini dijitalleştiren uçtan uca akıllı fabrika çözümleri.</p>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="sh" style="margin-bottom:24px;">
+        <div class="slabel">Endüstriler</div>
+        <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+        <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
+      </div>
+      <div class="grid g3" style="margin-top:0;">
+        <a href="sektor-makine" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
+          <h3>Makine & Üretim</h3>
+          <p>Makine imalatı ve üretim sektörüne yönelik tasarım ve mühendislik çözümleri.</p>
+        </a>
+        <a href="sektor-otomotiv" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
+          <h3>Otomotiv</h3>
+          <p>Otomotiv sektörüne yönelik tasarım, mühendislik ve görselleştirme çözümleri.</p>
+        </a>
+        <a href="sektor-egitim" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-school"></i></div>
+          <h3>Eğitim</h3>
+          <p>Eğitim kurumlarına yönelik yazılım lisanslama ve öğretim çözümleri.</p>
+        </a>
+        <a href="sektor-havacilik" class="card">
+          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-plane"></i></div>
+          <h3>Havacılık & Savunma</h3>
+          <p>Havacılık ve savunma sektörüne yönelik ileri mühendislik çözümleri.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- cz-brands -->
+<section class="section section-alt cz-sec" style="--cz:#10b981;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Markalar</div>
+    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
+      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="ultimaker" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/ultimaker.svg" alt="UltiMaker" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>UltiMaker</b><em>Yetkili is ortagi</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
+</section>
+<!-- /cz-brands -->
+
 <section data-enrich style="padding:64px 3rem;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Yöntemimiz</div>
@@ -543,101 +674,6 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
 
 
 
-<!-- cz-brands -->
-<section class="section section-alt cz-sec" style="--cz:#10b981;">
-  <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
-      HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="cz-brands"><a href="autodesk" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/autodesk-primary-white.svg" alt="Autodesk" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>Autodesk</b><em>Gold Partner</em></span></a><a href="ultimaker" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/ultimaker.svg" alt="UltiMaker" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>UltiMaker</b><em>Yetkili is ortagi</em></span></a><a href="hp" class="cz-brand"><span class="cz-brand-logo"><img src="assets/logos/hp-logo.png" alt="HP" loading="lazy" decoding="async"></span><span class="cz-brand-txt"><b>HP</b><em>Yetkili is ortagi</em></span></a></div>
-</section>
-<!-- /cz-brands -->
-
-<section class="section" style="padding-top:56px;">
-  <div class="cross-grid">
-    <div>
-      <div class="sh" style="margin-bottom:24px;">
-        <div class="slabel">Ürünler</div>
-        <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
-        <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
-      </div>
-      <div class="grid g3" style="margin-top:0;">
-        <a href="netfabb" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/netfabb.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Autodesk Netfabb</h3>
-          <p>Eklemeli imalat için baskı hazırlığı ve üretim optimizasyonu yazılımı.</p>
-        </a>
-        <a href="fusion" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="965" height="1024" src="assets/logos/products/fusion.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Fusion</h3>
-          <p>Tasarımdan üretime uzanan bulut tabanlı entegre CAD/CAM/CAE platformu.</p>
-        </a>
-        <a href="ultimaker" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="192" height="192" src="assets/logos/products/ultimaker-icon.webp" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>UltiMaker S Serisi</h3>
-          <p>Profesyonel masaüstü 3D yazıcılarla güvenilir ve hassas üretim.</p>
-        </a>
-        <a href="factor4" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="192" height="192" src="assets/logos/products/ultimaker-icon.webp" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Factor 4 Serisi</h3>
-          <p>Endüstriyel üretime uygun UltiMaker 3D yazıcı serisi.</p>
-        </a>
-        <a href="method-xl" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-box"></i></div>
-          <h3>Method XL</h3>
-          <p>Büyük parçaların üretimine uygun endüstriyel 3D yazıcı.</p>
-        </a>
-        <a href="sketch-sprint" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="192" height="192" src="assets/logos/products/ultimaker-icon.webp" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Sketch Sprint</h3>
-          <p>Hızlı konsept doğrulama için kompakt 3D yazıcı çözümü.</p>
-        </a>
-        <a href="cura" class="card">
-          <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="192" height="192" src="assets/logos/products/ultimaker-icon.webp" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <h3>Cura</h3>
-          <p>3D baskı hazırlığı için ücretsiz, endüstri standardı dilimleme yazılımı.</p>
-        </a>
-        <a href="digital-factory" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-cloud-cog"></i></div>
-          <h3>Digital Factory</h3>
-          <p>Üretim süreçlerini dijitalleştiren uçtan uca akıllı fabrika çözümleri.</p>
-        </a>
-      </div>
-    </div>
-    <div>
-      <div class="sh" style="margin-bottom:24px;">
-        <div class="slabel">Endüstriler</div>
-        <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
-        <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
-      </div>
-      <div class="grid g3" style="margin-top:0;">
-        <a href="sektor-makine" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings"></i></div>
-          <h3>Makine & Üretim</h3>
-          <p>Makine imalatı ve üretim sektörüne yönelik tasarım ve mühendislik çözümleri.</p>
-        </a>
-        <a href="sektor-otomotiv" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-car"></i></div>
-          <h3>Otomotiv</h3>
-          <p>Otomotiv sektörüne yönelik tasarım, mühendislik ve görselleştirme çözümleri.</p>
-        </a>
-        <a href="sektor-egitim" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-school"></i></div>
-          <h3>Eğitim</h3>
-          <p>Eğitim kurumlarına yönelik yazılım lisanslama ve öğretim çözümleri.</p>
-        </a>
-        <a href="sektor-havacilik" class="card">
-          <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-plane"></i></div>
-          <h3>Havacılık & Savunma</h3>
-          <p>Havacılık ve savunma sektörüne yönelik ileri mühendislik çözümleri.</p>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- cz-faq -->
 <section class="section section-alt cz-sec" style="--cz:#10b981;">
   <div class="sh" style="margin-bottom:26px;">
@@ -652,6 +688,19 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
   </div>
 </section>
 <!-- /cz-faq -->
+
+<!-- cz-fark -->
+<section class="section cz-sec" style="--cz:#10b981;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
+    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
+    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
+      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+  </div>
+  <div class="cz-fark"><div class="cz-fark-c"><span><i class="ti ti-license"></i></span><h3>Esnek Abonelik ve Lisans Modelleri</h3><p>Tek ve çok kullanıcılı abonelikler, 1 ve 3 yıllık dönemler, koleksiyon avantajı — kullanım profilinize uygun planı birlikte belirliyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-school"></i></span><h3>Yetkili Eğitim Merkezi (ATC)</h3><p>Autodesk Yetkili Eğitim Merkezi olarak sertifikalı eğitimler; İzmir merkez ofisimizde sınıf ve çevrim içi programlar.</p></div><div class="cz-fark-c"><span><i class="ti ti-headset"></i></span><h3>Türkçe Teknik Destek</h3><p>Kurulum, lisans yönetimi ve teknik sorularınızda Türkiye'den, Türkçe, aynı gün yanıt.</p></div></div>
+  <div class="cz-steps"><div class="cz-step"><span><i class="ti ti-message"></i></span><div><b>1. Teklif &amp; İhtiyaç Analizi</b><em>Kullanım profilinizi dinleyip doğru ürün ve adet planını çıkarıyoruz.</em></div></div><div class="cz-step"><span><i class="ti ti-file-check"></i></span><div><b>2. Lisanslama / Tedarik</b><em>Resmî kanaldan, doğru fiyatla ve kayıtlı sözleşmeyle temin.</em></div></div><div class="cz-step"><span><i class="ti ti-settings"></i></span><div><b>3. Kurulum &amp; Eğitim</b><em>Dağıtım, yapılandırma ve rol bazlı kullanıcı eğitimi.</em></div></div><div class="cz-step"><span><i class="ti ti-headset"></i></span><div><b>4. Sürekli Destek</b><em>Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</em></div></div></div>
+</section>
+<!-- /cz-fark -->
 
 <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
   <div style="margin-bottom:32px;">
