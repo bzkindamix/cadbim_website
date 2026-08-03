@@ -4,6 +4,37 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-10 — Çözüm sayfaları marka kaynaklı içerikle zenginleştirildi; kart kutuları tıklanabilir yapıldı
+
+- **Yapan:** Onur Bozok'un "sitemizdeki çözümler sayfalarındaki içerikler az … markaların sitelerine girip hem görsel hem yazılı içerik alıp mevcut sayfalarımızı düzgün bir akış sıralamasıyla, temamızı bozmadan güncelle" ve ardından "çözümlerdeki kutular ilgili linki açmıyor" talepleri üzerine Claude (PDM asistanı).
+- **Kural olarak verilenler:** Autodesk her zaman ilk gösterilen marka; koleksiyonlar (AEC / PD&M / M&E) her zaman ilk gösterilen ürün; beyaz arka planlı marka görseli kullanılmayacak; site teması bozulmayacak.
+
+**1) Kart kutularının tamamı tıklanabilir yapıldı (`scripts/fix_card_links.py`)**
+Ürün, endüstri, marka ve başarı öyküsü kartlarında yalnızca `<h3>` içindeki bağlantı tıklanabiliyordu; kartın gövdesine tıklamak hiçbir şey yapmıyordu. Bu, çözüm sayfalarına özgü değil site geneline yayılmış bir hataydı. `<div class="card"> … <h3><a href="X">Başlık</a></h3> … </div>` kalıbı, iç içe geçme sayan bir çözümleyiciyle `<a href="X" class="card"> … <h3>Başlık</h3> … </a>` hâline getirildi. **160 dosyada 948 kart** dönüştürüldü; kart gövdesinde bağımsız başka bir `<a>` bulunan kartlar (geçersiz iç içe bağlantı üretmemek için) dokunulmadan bırakıldı. `design-system.css`'e `a.card` kuralları eklendi (blok görünüm, alt çizgi yok, hover'da kenarlık ve başlık rengi, klavye için `:focus-visible` halkası).
+
+**2) Marka kaynaklı içerik derlemesi**
+Autodesk WebFetch'i 403 döndürdüğü için içerik, uygulama içi tarayıcıyla ilgili resmî sayfalar gezilerek toplandı: Autodesk BIM / Digital Twin / Simulation / CAM / Design Automation / Additive Manufacturing çözüm sayfaları, Fusion Manage, Vault, ReCap Pro, Factory Design Utilities, Inventor Nesting, Inventor Tolerance Analysis ürün sayfaları, AEC / PD&M / M&E koleksiyon sayfaları, Autodesk Tandem, Autodesk Construction Cloud (Forma ürün ailesi), Chaos V-Ray, Lumion, UltiMaker S serisi ve Cura, Adobe Creative Cloud for teams. Metinler kopyalanmadı; teknik olgular ve güncel ürün terminolojisi alınıp CADBİM kurumsal Türkçesiyle yeniden yazıldı. Fiyat bilgisi bilinçli olarak hiçbir yere konmadı. İçerik tek kaynakta toplandı: `scripts/cozum_icerik.py`.
+
+**3) Sayfa akışı ve yeni bölümler (16 çözüm sayfası, `scripts/enrich_cozum_pages.py`)**
+Yeni sıra: Hero → **Bu Çözüm Nedir (görsel + anlatı)** → Neler Yapabiliriz → Yöntemimiz → İyi Uygulamalar → **Markalar** → Ürünler → Endüstriler → **SSS** → Blog → CTA.
+  - **Hero:** tek cümlelik açıklama, marka kaynaklarına dayanan dört cümlelik bir girişle değiştirildi; altına üç kutuluk ölçüt şeridi eklendi.
+  - **"Bu Çözüm Nedir":** iki sütun — solda üç paragraflık anlatı ve dört maddelik yetenek listesi, sağda o çözüme ait teknik illüstrasyon (yapışkan konumlu; 980 px altında tek sütuna düşüp görsel öne alınır).
+  - **Markalar şeridi:** her sayfada **Autodesk ilk**. Logolar `filter:brightness(0) invert(1)` ile tek renk beyaza indirgenip koyu kutu içinde gösterilir — beyaz arka planlı logo kutusu kullanılmadı, tema korundu.
+  - **SSS:** sayfa başına dört soru-cevap; JavaScript'siz `<details>/<summary>` ile, `prefers-reduced-motion` uyumlu. Ayrıca her sayfanın `@graph` dizisine **FAQPage** yapısal verisi eklendi.
+  - **Ürün sıralaması:** koleksiyonlar birinci, Autodesk ürünleri ikinci, diğer markalar üçüncü grup olacak şekilde kararlı sıralama uygulandı (54 slug'lık Autodesk portföy listesiyle). Marka şeridi koyu bant olduğu için hemen altındaki ürün bölümünün `padding-top:0` değeri 56 px'e çekildi.
+  - `cadbim_cozumler.html` (çözüm merkezi): marka şeridi (Autodesk ilk) ve "hangi çözüm size uygun" danışma CTA'sı eklendi.
+
+**4) Görseller (`scripts/gen_cozum_visuals.py`, 16 SVG · ~155 KB)**
+Marka sitelerindeki görseller beyaz arka planlı ürün ekran görüntüleri olduğu için tema dışı kalıyordu; bunun yerine sektör sayfalarındaki çizim diliyle aynı dilde, şeffaf zeminli ve sitenin paletine göre renklendirilmiş teknik illüstrasyonlar üretildi: olgunluk basamakları (dijital dönüşüm), ayrışık disiplin katmanları + çakışma işareti (BIM), FEA ağı ve gerilme bantları (simülasyon), tolerans zinciri + normal dağılım (tolerans), kural paneli → varyantlar (otomasyon), bina + telemetri paneli (dijital ikiz), izometrik fabrika yerleşimi (fabrika), takım yolu + NC çıktısı (CAM), katman katman baskı (eklemeli), yuvalanmış sac (nesting), yaşam döngüsü halkası + BOM (PLM), revizyon ağacı + kasa (PDM), şantiye + iş programı + CDE (inşaat yönetimi), sahne + ışık + render bucket'ları (görselleştirme), artboard + zaman çizelgesi (yaratıcı içerik), tarayıcı + nokta bulutu (gerçeklik yakalama). `gen_sektor_visuals.py`'nin yardımcıları yeniden kullanıldı.
+
+**5) Yan bulgular ve düzeltmeler**
+  - `cadbim_dijital_donusum.html`'de hem hero metninde hem meta açıklamada **"Autodesk, Adobe ve HP Gold Partner"** yazıyordu. HP'de Gold Partner statüsü yok; ifade "Autodesk Gold Partner ve Adobe Gold Reseller Partner; HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağı" olarak düzeltildi.
+  - `cadbim_hp_monitor.html`'deki JSON-LD **geçersizdi** (`23.8"-39.7"` içindeki kaçışsız tırnak JSON'u bozuyordu, HEAD'de de bozuk). İnç işareti (″) kullanılarak düzeltildi; artık sitedeki tüm JSON-LD blokları geçerli.
+  - Cache-busting: `design-system.css` ve `mobilenav.js` `v=11` → `v=12` (1319 dosya). Yeni CSS kuralları eski sürümle önbellekten gelmiyor.
+
+- **Doğrulama:** Yerel sunucuda (`dev_server.py`, :8420) tarayıcıyla yapıldı. 193 HTML dosyasında etiket dengesi ve JSON-LD geçerliliği denetlendi — 1 sorunlu dosya bulundu (yukarıdaki hp_monitor, düzeltildi), kalan 0. Sekiz çözüm sayfasında bölüm sırası, marka sırası, ürün sırası, SSS sayısı ve kırık görsel kontrolü yapıldı: kırık görsel 0, iç içe bağlantı 0, yatay taşma 0. 375 / 768 / 1280 px genişliklerde yerleşim ölçüldü: 980 px altında iki sütun tek sütuna düşüyor, görsel öne alınıyor, hiçbir metin kutusundan taşmıyor. Kart yapısı ölçüldü: 280×206 px `<a>` kutusu, içinde ikon + başlık + açıklama, iç bağlantı yok — yani kutunun tamamı tıklanabilir. Tüm logo ve illüstrasyon dosyaları sunucudan 200 ile geliyor. SSS aç/kapa etkileşimi denetlendi. **Not:** bu oturumda tarayıcı paneli görüntülenemediği için ekran görüntüsü alınamadı; doğrulama ölçüm tabanlı yapıldı, illüstrasyonlar ise SVG'den PNG'ye rasterleştirilerek gözle kontrol edildi ve ilk turda tespit edilen yerleşim çakışmaları (etiket üst üste binmeleri, panel taşmaları) düzeltildi.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-11 — Ana sayfadaki 3B sahneler sektör sayfalarının teknik çizim diline taşındı
 
 - **Yapan:** Onur Bozok'un "ana sayfadaki animasyonlu görselleri de daha sofistike bir hale getir, endüstrilerdeki tasarım dilin hoşuma gitti" talebi üzerine Claude (PDM asistanı).

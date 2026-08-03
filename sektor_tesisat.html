@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Cadbim Mekanik Tesisat (MEP) çözümleri — Revit MEP, Fabrication CADmep/CAMduct, Autodesk CFD ve HP donanımıyla modelden imalata uçtan uca tesisat teknolojisi.">
+<title>Mekanik Tesisat (MEP) Çözümleri — Cadbim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tabler-icons-subset.css?v=2">
+<style>
+:root{--navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;--cyan:#00c8f0;--cbor:rgba(0,200,240,0.2);
+--w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);--w30:rgba(255,255,255,0.3);
+--w10:rgba(255,255,255,0.1);--w06:rgba(255,255,255,0.06);
+--fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;--r:8px;--rm:12px;--rl:16px;--rxl:24px;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:15px;line-height:1.6;overflow-x:hidden;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.92);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo img{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.92;}
+.nav-logo-name{font-family:var(--fd);font-size:15px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--w);line-height:1;}
+.nav-logo-since{font-size:9px;color:rgba(0,200,240,0.8);letter-spacing:4px;text-transform:uppercase;margin-top:5px;line-height:1;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
+.nav-links a{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-cta{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:var(--r);font-weight:700;font-size:13px;}
+/* HERO */
+.hero{padding:64px 3rem 56px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;}
+.hero-grid{position:absolute;inset:0;opacity:.02;background-image:linear-gradient(var(--w10) 1px,transparent 1px),linear-gradient(90deg,var(--w10) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.crumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:24px;}
+.crumb a{color:var(--w30);text-decoration:none;}.crumb a:hover{color:var(--cyan);}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:20px;border:.5px solid;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;}
+h1.sec-h1{font-family:var(--fd);font-size:clamp(1.9rem,3.2vw,2.8rem);font-weight:800;line-height:1.1;color:var(--w);margin-bottom:14px;}
+.sec-desc{font-size:15px;color:var(--w50);line-height:1.75;margin-bottom:28px;}
+.btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-p{background:var(--cyan);color:var(--navy);padding:12px 26px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);display:inline-flex;align-items:center;gap:8px;transition:opacity .15s,transform .15s;}
+.btn-p:hover{opacity:.88;transform:translateY(-1px);}
+.btn-g{background:transparent;color:var(--w80);border:.5px solid var(--w30);padding:12px 26px;border-radius:var(--r);font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;}
+.btn-g:hover{border-color:var(--cyan);color:var(--cyan);}
+/* ÜRÜN ÖZETİ — sağ panel */
+.brand-stack{display:flex;flex-direction:column;gap:10px;}
+.brand-row{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(255,255,255,0.03);border:.5px solid rgba(255,255,255,0.08);border-radius:var(--rm);font-size:12px;color:var(--w50);}
+.brand-name{font-weight:500;color:var(--w80);font-size:13px;}
+/* ÇÖZÜMLER */
+.solutions{padding:0 3rem 64px;}
+.sol-header{padding:40px 0 32px;}
+.sol-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
+.sol-title{font-family:var(--fd);font-size:clamp(1.3rem,2.2vw,1.75rem);font-weight:700;color:var(--w);}
+/* SOL: kategori listesi, SAĞ: ürünler */
+.sol-layout{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start;}
+.cat-list{position:sticky;top:120px;display:flex;flex-direction:column;gap:4px;}
+.cat-btn{padding:10px 14px;border-radius:var(--rm);font-size:13px;color:var(--w50);background:none;border:none;cursor:pointer;text-align:left;font-family:var(--fb);transition:all .2s;display:flex;align-items:center;gap:8px;}
+.cat-btn:hover{color:var(--w80);background:rgba(255,255,255,0.04);}
+.cat-btn.active{color:var(--w);background:rgba(0,200,240,0.08);border:.5px solid rgba(0,200,240,0.15);}
+.cat-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);flex-shrink:0;opacity:0;}
+.cat-btn.active .cat-dot{opacity:1;}
+/* ürün kartları */
+.products-panel{display:flex;flex-direction:column;gap:0;}
+.cat-section{display:none;}
+.cat-section.active{display:flex;flex-direction:column;gap:12px;}
+.cat-title{font-family:var(--fd);font-size:13px;font-weight:600;color:var(--w);padding:16px 0 8px;border-bottom:.5px solid var(--w06);margin-bottom:4px;}
+.product-card{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:var(--navy2);border-radius:var(--rl);border:.5px solid var(--w10);text-decoration:none;transition:border-color .2s,transform .15s;}
+.product-card:hover{border-color:var(--cbor);transform:translateX(3px);}
+.product-card-info{flex:1;}
+.product-card-name{font-size:14px;font-weight:500;color:var(--w80);margin-bottom:3px;}
+.product-card-role{font-size:12px;color:var(--w30);line-height:1.5;}
+.product-card-brand{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--w30);margin-bottom:4px;}
+/* CTA */
+.cta-wrap{padding:0 3rem 64px;}
+.cta-strip{background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rxl);padding:44px;text-align:center;position:relative;overflow:hidden;}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 120%,rgba(0,200,240,.08),transparent 70%);}
+.cta-strip h2{font-family:var(--fd);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:var(--w);margin-bottom:10px;position:relative;}
+.cta-strip p{font-size:14px;color:var(--w50);margin-bottom:26px;position:relative;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;}
+footer{background:#040810;border-top:.5px solid var(--w06);padding:32px 3rem 20px;}
+.fbot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.fbot p{font-size:12px;color:rgba(255,255,255,0.5);}
+.socials{display:flex;gap:10px;}
+.socials a{width:32px;height:32px;border-radius:var(--r);border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;}
+.socials a:hover{border-color:var(--cyan);color:var(--cyan);}
+@media(max-width:960px){
+  .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;}
+  .sol-layout{grid-template-columns:1fr;}
+  .cat-list{position:static;flex-direction:row;flex-wrap:wrap;overflow-x:auto;}
+  .hero{padding:56px 1.5rem 48px;}
+  .solutions{padding:0 1.5rem 56px;}
+  .cta-wrap{padding:0 1.5rem 56px;}
+}
+
+.cross{background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:16px;padding:32px;margin:0 3rem 48px;}
+.cross h3{font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;}
+.cross .cd{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:16px;}
+.cpills{display:flex;flex-wrap:wrap;gap:10px;}
+.cp{display:inline-flex;align-items:center;gap:9px;padding:8px 18px 8px 8px;border-radius:999px;background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:border-color .2s,color .2s,transform .2s,background .2s;}
+.cp:hover{border-color:var(--cbor);color:var(--w);background:rgba(0,200,240,.06);transform:translateY(-2px);}
+.cp i{font-size:14px;color:var(--cyan);width:26px;height:26px;border-radius:50%;background:rgba(0,200,240,.13);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cp img{border-radius:50%;background:rgba(255,255,255,.08);padding:3px;flex-shrink:0;}
+
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+/* filtreli ürün kataloğu */
+.pfilter{position:sticky;top:68px;z-index:40;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:14px 0;background:rgba(6,12,26,0.9);backdrop-filter:blur(14px);}
+.fchip{padding:8px 16px;border-radius:22px;border:.5px solid var(--w10);background:transparent;color:var(--w50);font-family:var(--fb);font-size:12.5px;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.fchip:hover{border-color:var(--w30);color:var(--w80);}
+.fchip.active{background:var(--cyan);border-color:var(--cyan);color:var(--navy);font-weight:700;}
+.psearch{margin-left:auto;display:flex;align-items:center;gap:7px;border:.5px solid var(--w10);border-radius:22px;padding:7px 14px;background:rgba(255,255,255,0.03);}
+.psearch i{font-size:14px;color:var(--w30);}
+.psearch input{background:transparent;border:none;outline:none;color:var(--w);font-family:var(--fb);font-size:13px;width:150px;}
+.psearch input::placeholder{color:var(--w30);}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;}
+.pcard{display:flex;align-items:center;gap:14px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rm);padding:16px 18px;text-decoration:none;transition:border-color .18s,transform .15s,background .18s;}
+.pcard>div{min-width:0;}
+a.pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgba(0,200,240,.04);}
+.pico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:rgba(255,255,255,0.06);}
+.pbrand{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--w30);margin-bottom:2px;font-weight:600;}
+.pcard h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin:0 0 3px;}
+.pcard p{font-size:12px;color:var(--w50);line-height:1.45;margin:0;}
+.pcard .parr{margin-left:auto;font-size:15px;color:var(--w30);transition:color .2s,transform .2s;flex-shrink:0;}
+a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
+@media(max-width:600px){.pfilter{position:static;gap:6px;}.psearch{margin-left:0;width:100%;}.psearch input{flex:1;width:auto;}}
+.sh{margin-bottom:48px;}
+.slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan,#00c8f0);margin-bottom:8px;}
+.stitle{font-family:'Manrope',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:#fff;margin-bottom:10px;}
+.ssub{font-size:15px;color:rgba(255,255,255,.5);max-width:560px;line-height:1.7;}
+.grid{display:grid;gap:16px;margin-top:40px;}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.card{background:var(--navy3,#0d1830);border-radius:16px;border:.5px solid rgba(255,255,255,0.1);padding:24px 22px;transition:border-color .2s;}
+.card:hover{border-color:rgba(0,200,240,0.2);}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
+.card h3{font-family:'Manrope',sans-serif;font-size:15px;font-weight:600;color:#fff;margin-bottom:8px;}
+.card p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;}
+</style>
+
+<!-- SEO -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://www.cadbim.com.tr/sektor-tesisat">
+<meta name="theme-color" content="#060c1a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cadbim">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Mekanik Tesisat (MEP) Çözümleri — Cadbim">
+<meta property="og:description" content="Cadbim Mekanik Tesisat (MEP) çözümleri — Revit MEP, Fabrication CADmep/CAMduct, Autodesk CFD ve HP donanımıyla modelden imalata uçtan uca tesisat teknolojisi.">
+<meta property="og:url" content="https://www.cadbim.com.tr/sektor-tesisat">
+<meta property="og:image" content="https://www.cadbim.com.tr/assets/og/sektor_tesisat.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mekanik Tesisat (MEP) Çözümleri — Cadbim">
+<meta name="twitter:description" content="Cadbim Mekanik Tesisat (MEP) çözümleri — Revit MEP, Fabrication CADmep/CAMduct, Autodesk CFD ve HP donanımıyla modelden imalata uçtan uca tesisat teknolojisi.">
+<meta name="twitter:image" content="https://www.cadbim.com.tr/assets/og/sektor_tesisat.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.cadbim.com.tr/#organization",
+   "name": "Cadbim",
+   "url": "https://www.cadbim.com.tr/",
+   "logo": "https://www.cadbim.com.tr/og-image.png",
+   "foundingDate": "1993",
+   "email": "cadbim@cadbim.com.tr",
+   "telephone": "+902324643490",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901",
+    "addressLocality": "Çiğli",
+    "addressRegion": "İzmir",
+    "postalCode": "35620",
+    "addressCountry": "TR"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/cadbim/",
+    "https://www.youtube.com/c/CadbimTeknikDestek",
+    "https://www.instagram.com/cadbim_izmir/",
+    "https://www.facebook.com/cadbimizmir"
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://www.cadbim.com.tr/sektor-tesisat#webpage",
+   "url": "https://www.cadbim.com.tr/sektor-tesisat",
+   "name": "Mekanik Tesisat (MEP) Çözümleri — Cadbim",
+   "description": "Cadbim Mekanik Tesisat (MEP) çözümleri — Revit MEP, Fabrication CADmep/CAMduct, Autodesk CFD ve HP donanımıyla modelden imalata uçtan uca tesisat teknolojisi.",
+   "isPartOf": {
+    "@id": "https://www.cadbim.com.tr/#website"
+   },
+   "inLanguage": "tr-TR",
+   "publisher": {
+    "@id": "https://www.cadbim.com.tr/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Ana Sayfa",
+     "item": "https://www.cadbim.com.tr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Mekanik Tesisat (MEP) Çözümleri",
+     "item": "https://www.cadbim.com.tr/sektor-tesisat"
+    }
+   ]
+  },
+  {
+   "@type": "Service",
+   "name": "Mekanik Tesisat (MEP) Çözümleri",
+   "description": "Cadbim Mekanik Tesisat (MEP) çözümleri — Revit MEP, Fabrication CADmep/CAMduct, Autodesk CFD ve HP donanımıyla modelden imalata uçtan uca tesisat teknolojisi.",
+   "url": "https://www.cadbim.com.tr/sektor-tesisat",
+   "serviceType": "Sektörel çözüm",
+   "provider": {
+    "@id": "https://www.cadbim.com.tr/#organization"
+   },
+   "areaServed": {
+    "@type": "Country",
+    "name": "Türkiye"
+   }
+  }
+ ]
+}
+</script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="assets/css/design-system.css?v=12">
+<style>
+/* === SEKTOR GECIS SERIDI ============================================== */
+.secnav{position:sticky;top:68px;z-index:100;margin-top:68px;background:rgba(10,18,37,.94);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
+.secnav-inner{position:relative;max-width:1180px;margin:0 auto;}
+.secnav-inner::after{content:'';position:absolute;top:0;right:0;bottom:0;width:52px;background:linear-gradient(90deg,transparent,rgba(10,18,37,.96));pointer-events:none;opacity:0;transition:opacity .25s;}
+.secnav-inner.has-more::after{opacity:1;}
+.secnav-track{display:flex;gap:9px;overflow-x:auto;padding:13px 0;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x proximity;}
+.secnav-track::-webkit-scrollbar{display:none;}
+.sec-card{position:relative;overflow:hidden;isolation:isolate;flex:0 0 auto;scroll-snap-align:start;display:flex;align-items:center;gap:11px;padding:9px 20px 9px 10px;border-radius:14px;border:.5px solid var(--w10);background:var(--navy3);text-decoration:none;transition:border-color .25s,transform .25s,background .25s,box-shadow .25s;}
+.sec-card::after{content:'';position:absolute;inset:0;z-index:-1;background-image:var(--art);background-size:auto 205%;background-position:right -14px center;background-repeat:no-repeat;opacity:0;transform:scale(1.2) translateX(10px);transition:opacity .4s ease,transform .9s cubic-bezier(.16,.8,.3,1);}
+.sec-card:hover{border-color:var(--sc);transform:translateY(-3px);background:#101d3a;box-shadow:0 10px 26px rgba(0,0,0,.35);}
+.sec-card:hover::after{opacity:.72;transform:scale(1) translateX(0);}
+.sec-ico{position:relative;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px;color:var(--sc);background:var(--scbg);flex-shrink:0;transition:transform .35s cubic-bezier(.16,.8,.3,1),box-shadow .25s;}
+.sec-card:hover .sec-ico{transform:scale(1.09) rotate(-4deg);box-shadow:0 0 0 1px var(--sc) inset;}
+.sec-name{position:relative;font-size:13.5px;font-weight:600;color:var(--w80);white-space:nowrap;transition:color .2s;}
+.sec-card:hover .sec-name{color:var(--w);}
+.sec-card.active{border-color:var(--sc);background:linear-gradient(180deg,rgba(255,255,255,.05),transparent),var(--navy3);}
+.sec-card.active .sec-ico{box-shadow:0 0 0 1px var(--sc) inset;}
+.sec-card.active .sec-name{color:var(--w);}
+.sec-bar{position:absolute;left:10px;right:10px;bottom:0;height:2px;border-radius:2px 2px 0 0;background:var(--sc);}
+@media(prefers-reduced-motion:reduce){.sec-card,.sec-card::after,.sec-ico{transition:none;}}
+
+/* === HERO GORSELI ===================================================== */
+.hero{padding:40px 3rem 56px;}
+.hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center;position:relative;z-index:1;}
+.hero-art{position:relative;border-radius:var(--rxl);border:.5px solid var(--w10);background:linear-gradient(165deg,rgba(255,255,255,.045),transparent 55%),var(--navy2);overflow:hidden;}
+.hero-art::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 72% 18%,rgba(45,212,191,.16),transparent 72%);}
+.hero-art img{display:block;width:100%;height:auto;}
+
+/* === MARKA SERIDI ===================================================== */
+.brands{padding:56px 3rem;background:var(--navy2);border-top:.5px solid var(--w06);border-bottom:.5px solid var(--w06);}
+.brand-stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:12px;}
+.brand-row{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,0.03);border:.5px solid rgba(255,255,255,0.08);border-radius:var(--rm);font-size:12px;color:var(--w50);transition:border-color .2s;}
+.brand-row:hover{border-color:var(--cbor);}
+.brand-name{font-weight:600;color:var(--w80);font-size:13px;}
+.partner-note{margin-top:16px;padding:13px 16px;background:rgba(0,200,240,0.04);border:.5px solid var(--cbor);border-radius:var(--rm);font-size:12.5px;color:var(--w50);line-height:1.6;}
+
+/* === COZUM PILL SATIRI ================================================ */
+.sol-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.sol-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:12px;background:var(--navy3);border:.5px solid var(--w10);font-size:13px;color:var(--w50);text-decoration:none;transition:border-color .2s,color .2s,transform .2s;}
+.sol-pill:hover{border-color:var(--cbor);color:var(--w);transform:translateY(-2px);}
+.sol-pill i{font-size:13px;color:var(--cyan);}
+
+/* === ORTAK YERLESIM =================================================== */
+.section{padding:56px 3rem;}
+.hero-inner,.hero>.crumb,.brands>*,.solutions>*{max-width:1180px;margin-left:auto;margin-right:auto;}
+.secnav{padding:0 3rem;}
+
+@media(max-width:960px){
+  .hero{padding:32px 1.5rem 44px;}
+  .hero-inner{grid-template-columns:1fr;gap:2rem;}
+  .secnav{padding:0 1.5rem;}
+  .brands{padding:44px 1.5rem;}
+  .section{padding:44px 1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo"><img width="640" height="153" src="assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
+      <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="urunler">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="autodesk">Autodesk</a>
+        <a href="adobe">Adobe</a>
+        <a href="designjet">HP DesignJet</a>
+        <a href="hp-z-workstation">HP Workstations</a>
+        <a href="hp-build-workspace">HP Build Workspace</a>
+        <a href="chaos">Chaos</a>
+        <a href="ultimaker">UltiMaker</a>
+        <a href="sketchup">SketchUp</a>
+        <a href="lumion">Lumion</a>
+        <a href="microsoft">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="cozumler">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="dijital-donusum" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Tasarım & Mühendislik</div>
+            <a href="bim">BIM</a>
+            <a href="simulasyon">Simülasyon & Analiz</a>
+            <a href="tolerans-analizi">Tolerans Analizi</a>
+            <a href="tasarim-otomasyonu">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Dijital İkiz</div>
+            <a href="dijital-ikiz">Dijital İkiz</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Üretim</div>
+            <a href="fabrika-tasarimi">Fabrika Tasarımı</a>
+            <a href="cam">CAM & İmalat</a>
+            <a href="eklemeli-imalat">Eklemeli İmalat & 3D Baskı</a>
+            <a href="nesting">Nesting</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="plm">PLM</a>
+            <a href="pdm">PDM</a>
+            <a href="insaat-yonetimi">İnşaat Proje Yönetimi</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & Gerçeklik</div>
+            <a href="gorsellestirme">Görselleştirme & Render</a>
+            <a href="yaratici-icerik">Yaratıcı İçerik & Tasarım</a>
+            <a href="gerceklik-yakalama">Gerçeklik Yakalama</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Sanatsal Baskı</div>
+            <a href="sanatsal-baski"><span class="sanatsal-gradient">Sanatsal Baskı Atölyesi</span></a>
+            
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="endustriler" class="active">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="sektor-mimari">Mimarlık</a>
+        <a href="sektor-icmimarlik">İç Mimarlık & Tasarım</a>
+        <a href="sektor-insaat">İnşaat & Altyapı</a>
+        <a href="sektor-tesisat">Mekanik Tesisat</a>
+        <a href="sektor-makine">Makine & Üretim</a>
+        <a href="sektor-otomotiv">Otomotiv</a>
+        <a href="sektor-medya">Medya & Eğlence</a>
+        <a href="sektor-egitim">Eğitim</a>
+        <a href="sektor-havacilik">Havacılık & Savunma</a>
+      </div>
+    </li>
+    <li><a href="egitimler">Eğitimler</a></li>
+    <li><a href="hakkimizda">Hakkımızda</a></li>
+    <li><a href="iletisim">İletişim</a></li>
+    <li><a href="kvkk">KVKK</a></li>
+    <li><a href="blog">Blog</a></li>
+    <li><a href="teklif-iste" class="nav-cta">Teklif Al</a></li>
+  </ul>
+</nav>
+
+<nav class="secnav" aria-label="Endüstriler">
+  <div class="secnav-inner">
+  <div class="secnav-track" id="secnavTrack">
+    <a href="sektor-mimari" class="sec-card" style="--sc:#818cf8;--scbg:rgba(129,140,248,.13);--art:url(assets/img/sektor/mimari.svg);"><span class="sec-ico"><i class="ti ti-building"></i></span><span class="sec-name">Mimarlık</span></a>
+    <a href="sektor-icmimarlik" class="sec-card" style="--sc:#f472b6;--scbg:rgba(244,114,182,.13);--art:url(assets/img/sektor/icmimarlik.svg);"><span class="sec-ico"><i class="ti ti-armchair"></i></span><span class="sec-name">İç Mimarlık &amp; Tasarım</span></a>
+    <a href="sektor-insaat" class="sec-card" style="--sc:#22c55e;--scbg:rgba(34,197,94,.13);--art:url(assets/img/sektor/insaat.svg);"><span class="sec-ico"><i class="ti ti-crane"></i></span><span class="sec-name">İnşaat &amp; Altyapı</span></a>
+    <a href="sektor-tesisat" class="sec-card active" aria-current="page" style="--sc:#2dd4bf;--scbg:rgba(45,212,191,.13);--art:url(assets/img/sektor/tesisat.svg);"><span class="sec-ico"><i class="ti ti-air-conditioning"></i></span><span class="sec-name">Mekanik Tesisat</span><span class="sec-bar"></span></a>
+    <a href="sektor-makine" class="sec-card" style="--sc:#f59e0b;--scbg:rgba(245,158,11,.13);--art:url(assets/img/sektor/makine.svg);"><span class="sec-ico"><i class="ti ti-settings"></i></span><span class="sec-name">Makine &amp; Üretim</span></a>
+    <a href="sektor-otomotiv" class="sec-card" style="--sc:#ef4444;--scbg:rgba(239,68,68,.13);--art:url(assets/img/sektor/otomotiv.svg);"><span class="sec-ico"><i class="ti ti-car"></i></span><span class="sec-name">Otomotiv</span></a>
+    <a href="sektor-medya" class="sec-card" style="--sc:#c084fc;--scbg:rgba(192,132,252,.13);--art:url(assets/img/sektor/medya.svg);"><span class="sec-ico"><i class="ti ti-movie"></i></span><span class="sec-name">Medya &amp; Eğlence</span></a>
+    <a href="sektor-egitim" class="sec-card" style="--sc:#38bdf8;--scbg:rgba(56,189,248,.13);--art:url(assets/img/sektor/egitim.svg);"><span class="sec-ico"><i class="ti ti-school"></i></span><span class="sec-name">Eğitim</span></a>
+    <a href="sektor-havacilik" class="sec-card" style="--sc:#a5b4fc;--scbg:rgba(165,180,252,.13);--art:url(assets/img/sektor/havacilik.svg);"><span class="sec-ico"><i class="ti ti-plane"></i></span><span class="sec-name">Havacılık &amp; Savunma</span></a>
+  </div>
+  </div>
+</nav>
+<script>
+(function(){var t=document.getElementById("secnavTrack");if(!t)return;
+  var a=t.querySelector(".sec-card.active");
+  if(a&&t.scrollWidth>t.clientWidth){
+    t.scrollLeft=Math.max(0,a.offsetLeft-(t.clientWidth-a.offsetWidth)/2);}
+  function upd(){t.parentNode.classList.toggle("has-more",
+    t.scrollLeft+t.clientWidth<t.scrollWidth-2);}
+  t.addEventListener("scroll",upd,{passive:true});
+  window.addEventListener("resize",upd);upd();})();
+</script>
+
+<section class="hero">
+  <div class="hero-bg" style="background:radial-gradient(ellipse 80% 60% at 0% -10%,rgba(45,212,191,0.15) 0%,transparent 60%);"></div>
+  <div class="hero-grid"></div>
+  <div class="crumb" style="position:relative;z-index:1;">
+    <a href="/">Anasayfa</a>
+    <i class="ti ti-chevron-right" style="font-size:11px;"></i>
+    <a href="endustriler">Endüstriler</a>
+    <i class="ti ti-chevron-right" style="font-size:11px;"></i>
+    <span style="color:var(--w80);">Mekanik Tesisat</span>
+  </div>
+  <div class="hero-inner">
+    <div>
+      <div lang="en" class="hero-badge" style="background:rgba(45,212,191,0.12);border-color:#2dd4bf40;color:#2dd4bf;">
+        <i class="ti ti-air-conditioning" style="font-size:18px;color:#2dd4bf;"></i>  MEP Engineering
+      </div>
+      <h1 class="sec-h1">Mekanik Tesisat için<br><span style="color:#2dd4bf;">Tam Çözüm Portföyü</span></h1>
+      <p class="sec-desc">Isıtma, soğutma, havalandırma ve sıhhi tesisat — modelden imalata, hesaptan sahaya uçtan uca dijital akış.</p>
+      <div class="btns">
+        <a href="iletisim#form" class="btn-p">Uzmanla Konuş <i class="ti ti-arrow-right"></i></a>
+        <a href="egitimler" class="btn-g">Eğitim Programları</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="assets/img/sektor/tesisat.svg" alt="Mekanik tesisat iş akışı — klima santrali, kanal hattı ve borulama şeması" width="640" height="420" decoding="async">
+    </div>
+  </div>
+</section>
+
+<section data-enrich style="padding:64px 3rem;background:#0a1225;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">İş Akışı</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:800;color:#fff;margin-bottom:8px;">Modelden İmalata Koordineli Tesisat Süreci</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 28px;max-width:640px;">Bu sektörde kullandığımız araç zinciri, sürecin her halkasını bir öncekine bağlar — veri kopmadan akar.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;">
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#2dd4bf0f,transparent 55%),#0d1830;border:.5px solid #2dd4bf33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#2dd4bf22;">01</div>
+    <i class="ti ti-pencil" style="font-size:22px;color:#2dd4bf;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Tasarım & Modelleme</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Revit MEP ile mimari modelle koordineli kanal, boru ve elektrik tesisatı.</p>
+    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #2dd4bf44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#2dd4bf;"></i></div>
+  </div>
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#2dd4bf0f,transparent 55%),#0d1830;border:.5px solid #2dd4bf33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#2dd4bf22;">02</div>
+    <i class="ti ti-wind" style="font-size:22px;color:#2dd4bf;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Hesap & Analiz</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Autodesk CFD ile akış, basınç ve ısıl konfor doğrulaması.</p>
+    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #2dd4bf44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#2dd4bf;"></i></div>
+  </div>
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#2dd4bf0f,transparent 55%),#0d1830;border:.5px solid #2dd4bf33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#2dd4bf22;">03</div>
+    <i class="ti ti-settings" style="font-size:22px;color:#2dd4bf;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">İmalat Detayı</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Fabrication CADmep ve CAMduct ile spool çizimleri ve sac kanal imalatı.</p>
+    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #2dd4bf44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#2dd4bf;"></i></div>
+  </div>
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#2dd4bf0f,transparent 55%),#0d1830;border:.5px solid #2dd4bf33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#2dd4bf22;">04</div>
+    <i class="ti ti-building" style="font-size:22px;color:#2dd4bf;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Koordinasyon</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Navisworks ile disiplinler arası çakışma kontrolü (clash detection).</p>
+    <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #2dd4bf44;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#2dd4bf;"></i></div>
+  </div>
+  <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#2dd4bf0f,transparent 55%),#0d1830;border:.5px solid #2dd4bf33;border-radius:14px;padding:20px 18px;position:relative;">
+    <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#2dd4bf22;">05</div>
+    <i class="ti ti-helmet" style="font-size:22px;color:#2dd4bf;display:block;margin-bottom:12px;"></i>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Saha & Devreye Alma</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">BIM Collaborate Pro ile montaj paftaları, as-built ve teslim.</p>
+  </div></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="sh">
+    <div class="slabel">Çözümler</div>
+    <div class="stitle">Bu endüstride kullanılan Cadbim çözümleri</div>
+    <p class="ssub">İlgili çözüm sayfalarını inceleyin — her çözümde kullanılan ürünleri görün</p>
+  </div>
+  <div class="grid g3" style="margin-top:0;">
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
+      <h3><a href="bim" style="color:inherit;text-decoration:none;">BIM — Yapı Bilgi Modellemesi</a></h3>
+      <p>Mekanik, elektrik ve sıhhi tesisatı mimari ve strüktürle aynı koordineli modelde birleştirir.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-dots-3"></i></div>
+      <h3><a href="simulasyon" style="color:inherit;text-decoration:none;">Simülasyon & Analiz</a></h3>
+      <p>Autodesk CFD ile hava dağılımı, basınç kaybı ve ısıl konfor analizleri.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-crane"></i></div>
+      <h3><a href="insaat-yonetimi" style="color:inherit;text-decoration:none;">İnşaat Proje Yönetimi</a></h3>
+      <p>Tesisat montajının saha planlaması ve pafta dağıtımı için bulut tabanlı süreç.</p>
+    </div>
+  </div>
+  <div class="sol-pills">
+    <a href="dijital-ikiz" class="sol-pill"><i class="ti ti-arrow-right"></i>Dijital İkiz</a>
+    <a href="gerceklik-yakalama" class="sol-pill"><i class="ti ti-arrow-right"></i>Gerçeklik Yakalama & Tarama</a>
+  </div>
+</section>
+
+<section class="brands">
+  <div class="sh" style="margin-bottom:22px;">
+    <div class="slabel">Markalar</div>
+    <div class="stitle">Bu sektörde çalıştığımız markalar</div>
+    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner, HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
+  </div>
+  <div class="brand-stack"><div class="brand-row">
+          <div style="width:28px;height:28px;border-radius:8px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <div><div class="brand-name">Autodesk</div><div style="font-size:11px;color:var(--w30);">Revit, Fabrication CADmep/CAMduct, Autodesk CFD, Navisworks</div></div>
+        </div><div class="brand-row">
+          <div style="width:28px;height:28px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div>
+          <div><div class="brand-name">HP</div><div style="font-size:11px;color:var(--w30);">HP Designjet T, HP Z Workstation, HP ZBook</div></div>
+        </div></div>
+  <div class="partner-note"><i class="ti ti-shield-check" style="color:var(--cyan);margin-right:6px;"></i><strong style="color:var(--w80);">Cadbim Gold Partner</strong> — Autodesk, Adobe, HP ve UltiMaker için tek yetkili çözüm ortağı.</div>
+</section>
+
+<section class="solutions" id="urun-katalogu">
+  <div class="sol-header">
+    <div class="sol-label">Ürünler</div>
+    <div class="sol-title">Mekanik Tesisat için kullandığımız ürünler</div>
+  </div>
+  <div class="pfilter" id="pfilter">
+    <button class="fchip active" data-f="all">Tümü</button>
+    <button class="fchip" data-f="c0">Tasarım</button>
+    <button class="fchip" data-f="c1">İmalat & Detay</button>
+    <button class="fchip" data-f="c2">Analiz</button>
+    <button class="fchip" data-f="c3">Koordinasyon & Saha</button>
+    <button class="fchip" data-f="c4">Donanım</button>
+    <div class="psearch"><i class="ti ti-search"></i><input id="psearch" type="text" placeholder="Ürün ara..." aria-label="Ürün ara"></div>
+  </div>
+  <div class="pgrid" id="pgrid" style="margin-top:22px;">
+      <a href="revit" class="pcard" data-cat="c0"><img width="64" height="64" src="assets/img/emb-7a5b9dd8eb.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Revit</h3><p>Mekanik, elektrik ve sıhhi tesisat için BIM modelleme</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="autocad" class="pcard" data-cat="c0"><img width="64" height="64" src="assets/img/emb-d437006e38.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>AutoCAD</h3><p>2D tesisat şemaları ve detay çizimleri</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="fabrication-cadmep" class="pcard" data-cat="c1"><div style="width:40px;height:40px;border-radius:8px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Autodesk</div><h3>Fabrication CADmep</h3><p>İmalata yönelik kanal ve boru detaylandırma</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="fabrication-camduct" class="pcard" data-cat="c1"><div style="width:40px;height:40px;border-radius:8px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Autodesk</div><h3>Fabrication CAMduct</h3><p>Sac kanal imalatı ve kesim optimizasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="fabrication-estmep" class="pcard" data-cat="c1"><div style="width:40px;height:40px;border-radius:8px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Autodesk</div><h3>Fabrication ESTmep</h3><p>Tesisat maliyet tahmini ve metraj</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cfd" class="pcard" data-cat="c2"><div style="width:40px;height:40px;border-radius:8px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Autodesk</div><h3>Autodesk CFD</h3><p>Akış ve ısıl analiz — HVAC doğrulama</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="autodesk" class="pcard" data-cat="c3"><img width="64" height="64" src="assets/img/emb-9ab064fc9a.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Navisworks</h3><p>Clash detection ve model koordinasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="bim-collaborate-pro" class="pcard" data-cat="c3"><img width="64" height="64" src="assets/img/emb-cc5dc22000.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Autodesk BIM Collaborate</h3><p>Bulut worksharing ve saha yönetimi</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="designjet" class="pcard" data-cat="c4"><div style="width:40px;height:40px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">HP</div><h3>HP Designjet T</h3><p>Tesisat paftaları için geniş format baskı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="hp-z-workstation" class="pcard" data-cat="c4"><div style="width:40px;height:40px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">HP</div><h3>HP Z Workstation</h3><p>Revit ve CFD için sertifikalı iş istasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+  </div>
+  <p id="pempty" style="display:none;color:var(--w50);font-size:14px;margin-top:24px;">Aramanızla eşleşen ürün bulunamadı.</p>
+</section>
+<script>
+(function(){
+  var chips=document.querySelectorAll('#pfilter .fchip');
+  var cards=[].slice.call(document.querySelectorAll('#pgrid .pcard'));
+  var f='all', q='';
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(f==='all'||c.getAttribute('data-cat')===f)&&(!q||c.textContent.toLowerCase().indexOf(q)>-1);
+      c.style.display=ok?'':'none'; if(ok)n++;
+    });
+    document.getElementById('pempty').style.display=n?'none':'';
+  }
+  chips.forEach(function(ch){ch.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('active');});
+    ch.classList.add('active'); f=ch.getAttribute('data-f'); apply();
+  });});
+  document.getElementById('psearch').addEventListener('input',function(e){
+    q=e.target.value.trim().toLowerCase(); apply();
+  });
+})();
+</script>
+
+<section data-enrich style="padding:64px 3rem;background:#0a1225;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Çalışma Modelimiz</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:800;color:#fff;margin-bottom:8px;">Projelerinizi Nasıl Yürütüyoruz?</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 28px;max-width:640px;">Satın almadan sonra yalnız bırakmayan, dört adımlı uygulama modelimiz.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px;">
+  <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:34px;height:34px;border-radius:10px;background:#2dd4bf1a;color:#2dd4bf;display:flex;align-items:center;justify-content:center;"><i class="ti ti-search" style="font-size:17px;"></i></div>
+      <span style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;color:#2dd4bf;letter-spacing:1px;">ADIM 1</span>
+    </div>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Keşif Ziyareti</h3>
+    <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Ekibinizi, projelerinizi ve mevcut araçlarınızı yerinde dinliyoruz; ihtiyaç haritası çıkarıyoruz.</p>
+  </div>
+  <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:34px;height:34px;border-radius:10px;background:#2dd4bf1a;color:#2dd4bf;display:flex;align-items:center;justify-content:center;"><i class="ti ti-route" style="font-size:17px;"></i></div>
+      <span style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;color:#2dd4bf;letter-spacing:1px;">ADIM 2</span>
+    </div>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Çözüm Tasarımı & Teklif</h3>
+    <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Yazılım + donanım + eğitim bileşenlerini tek planda, şeffaf kapsamla sunuyoruz.</p>
+  </div>
+  <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:34px;height:34px;border-radius:10px;background:#2dd4bf1a;color:#2dd4bf;display:flex;align-items:center;justify-content:center;"><i class="ti ti-settings" style="font-size:17px;"></i></div>
+      <span style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;color:#2dd4bf;letter-spacing:1px;">ADIM 3</span>
+    </div>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Kurulum & Adaptasyon</h3>
+    <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Lisans dağıtımı, şablon kurulumu ve rol bazlı eğitimle ekip üretime geçiyor.</p>
+  </div>
+  <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+      <div style="width:34px;height:34px;border-radius:10px;background:#2dd4bf1a;color:#2dd4bf;display:flex;align-items:center;justify-content:center;"><i class="ti ti-headset" style="font-size:17px;"></i></div>
+      <span style="font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;color:#2dd4bf;letter-spacing:1px;">ADIM 4</span>
+    </div>
+    <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Sürekli Destek</h3>
+    <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Türkçe teknik destek, yıllık sağlık kontrolü ve yenileme planlamasıyla yanınızdayız.</p>
+  </div></div>
+  </div>
+</section>
+
+<div class="cta-wrap">
+  <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
+  <div style="margin-bottom:32px;">
+    <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Blog</div>
+    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:700;color:#fff;margin-bottom:8px;">İlgili İçerikler</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);max-width:540px;line-height:1.7;">Bu konuyla ilgili en güncel video ve yazılarımız.</p>
+  </div>
+  <div id="blogRelatedGrid" data-topic="Revit" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;"></div>
+</section>
+<script>
+(function(){
+  var container=document.getElementById('blogRelatedGrid');
+  if(!container) return;
+  var topic=container.getAttribute('data-topic');
+  function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  fetch('assets/data/blog-posts.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
+    var matched=data.filter(function(p){return (p.products||[]).indexOf(topic)!==-1 || p.cat===topic;})
+      .sort(function(a,b){return b.date.localeCompare(a.date);}).slice(0,5);
+    var section=document.getElementById('blog-related-section');
+    if(matched.length===0){ if(section) section.style.display='none'; return; }
+    container.innerHTML=matched.map(function(p){
+      if(p.type==='video' && p.videoId){
+        return '<div style="background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);overflow:hidden;">'
+          + '<div style="aspect-ratio:16/9;background:#000;"><iframe style="width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/'+p.videoId+'" title="'+esc(p.title)+'" loading="lazy" allowfullscreen></iframe></div>'
+          + '<div style="padding:16px;"><h4 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'.html" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h4><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
+      }
+      return '<a href="post/'+p.slug+'.html" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);padding:20px;text-decoration:none;">'
+        + '<div style="font-size:10px;color:#00c8f0;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">'+esc(p.cat)+'</div>'
+        + '<h4 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h4>'
+        + '<p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></a>';
+    }).join('');
+  }).catch(function(){ var section=document.getElementById('blog-related-section'); if(section) section.style.display='none'; });
+})();
+</script>
+<div class="cta-strip">
+    <h2>Tesisat projeniz için konuşalım</h2>
+    <p>Hangi ürünler iş akışınıza uygun — ücretsiz ihtiyaç analizi için bize ulaşın.</p>
+    <div class="cta-btns">
+      <a href="iletisim#form" class="btn-p">Uzmanla Konuş <i class="ti ti-arrow-right"></i></a>
+      <a href="egitimler" class="btn-g">Eğitim Programları</a>
+    </div>
+  </div>
+</div>
+<footer id="iletisim">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <a href="/"><img width="500" height="461" src="assets/logos/cadbim-logo.png" alt="Cadbim" loading="lazy" decoding="async"></a>
+      <p>Tasarım, Mühendislik ve Simülasyon için yazılım & donanım çözümleri. Autodesk Gold Partner ve Adobe Gold Reseller Partner; HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağı.</p>
+      <div class="f-offices">
+        <span><i class="ti ti-map-pin" style="font-size:12px;margin-right:4px;"></i>İzmir Merkez Ofis</span>
+        <span><i class="ti ti-map-pin" style="font-size:12px;margin-right:4px;"></i>Ankara Temsilcilik</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Ürünler</h4>
+      <a href="autodesk">Autodesk</a>
+      <a href="adobe">Adobe</a>
+      <a href="designjet">HP DesignJet</a>
+      <a href="hp-z-workstation">HP Workstations</a>
+      <a href="chaos">Chaos / V-Ray</a>
+      <a href="ultimaker">UltiMaker 3D</a>
+    </div>
+    <div class="footer-col">
+      <h4>Hizmetler</h4>
+      <a href="egitimler">Eğitimler & Sertifikasyon</a>
+      <a href="bim">BIM Danışmanlığı</a>
+      <a href="iletisim">Teknik Destek</a>
+      <a href="hp">HP Yetkili Servis</a>
+      <a href="yazilim-gelistirme">Yazılım Geliştirme</a>
+    </div>
+    <div class="footer-col">
+      <h4>İletişim</h4>
+      <a href="mailto:cadbim@cadbim.com.tr">cadbim@cadbim.com.tr</a>
+      <a href="tel:+902324643490">0232 464 34 90</a>
+      <a href="https://wa.me/905532426737" target="_blank">WhatsApp: 0553 242 67 37</a>
+      <a href="teklif-iste">Teklif İste</a>
+      <a href="egitimler">Eğitim Kayıt</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Cadbim. Tüm hakları saklıdır. · <a href="kvkk">KVKK</a> · <a href="javascript:void(0)" onclick="window.openCookiePrefs&amp;&amp;window.openCookiePrefs()">Çerez Ayarları</a></p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+      <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+      <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="mobilenav.js?v=12" defer></script>
+<script src="whatsapp-widget.js?v=1" defer></script>
+<script src="social-widget.js?v=1" defer></script>
+<script src="cookie-consent.js?v=2" defer></script>
+</body></html>

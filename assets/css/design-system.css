@@ -204,3 +204,108 @@ select:focus-visible {
   0%,100%{background-position:0% center;}
   50%{background-position:100% center;}
 }
+
+/* ==== Kart kutularinin tamami tiklanabilir (Onur 2026-08-03) ====
+   Urun / endustri / marka / basari oykusu kartlarinda eskiden yalnizca
+   baslikdaki baglanti tiklanabiliyordu. Kartin kendisi artik <a>. */
+a.card{display:block;text-decoration:none;color:inherit;cursor:pointer;}
+a.card h3{color:#fff;}
+a.card:hover{border-color:rgba(0,200,240,.35);transform:translateY(-2px);}
+a.card:hover h3{color:#00c8f0;}
+a.card{transition:border-color .2s,transform .15s,background .2s;}
+a.card:focus-visible{outline:2px solid #00c8f0;outline-offset:3px;}
+
+/* ==== Cozum sayfalari: tanitim, marka seridi, olcut seridi, SSS
+        (Onur 2026-08-03 — "cozum sayfalarindaki icerikler az") ==== */
+.cz-sec{--cz:#00c8f0;}
+
+/* hero altindaki olcut seridi */
+.cz-stats{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;}
+.cz-stats .cz-stat{
+  flex:0 1 auto;min-width:150px;padding:12px 18px;border-radius:12px;
+  background:#0d1830;border:.5px solid rgba(255,255,255,.09);
+  border-left:2px solid var(--cz);
+}
+.cz-stats .cz-stat b{
+  display:block;font-family:'Manrope',sans-serif;font-size:19px;font-weight:800;
+  color:var(--cz);line-height:1.2;letter-spacing:.3px;
+}
+.cz-stats .cz-stat span{
+  display:block;font-size:12px;color:rgba(255,255,255,.45);line-height:1.45;margin-top:3px;
+}
+
+/* "Bu cozum nedir" — metin + illustrasyon */
+.cz-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:start;}
+.cz-p{font-size:15px;color:rgba(255,255,255,.58);line-height:1.85;margin-bottom:15px;}
+.cz-p:last-child{margin-bottom:0;}
+.cz-p strong{color:rgba(255,255,255,.92);font-weight:700;}
+.cz-buls{display:grid;gap:10px;margin-top:26px;}
+.cz-bul{display:flex;gap:11px;background:#0d1830;border:.5px solid rgba(255,255,255,.08);
+  border-radius:12px;padding:14px 16px;}
+.cz-bul>i{font-size:17px;color:var(--cz);flex-shrink:0;margin-top:1px;}
+.cz-bul h3{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 4px;}
+.cz-bul p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;}
+.cz-art{
+  position:sticky;top:92px;border:.5px solid rgba(255,255,255,.1);border-radius:18px;
+  background:linear-gradient(160deg,rgba(255,255,255,.05),transparent 62%),#0b1327;
+  padding:14px;overflow:hidden;
+}
+.cz-art img{width:100%;height:auto;display:block;border-radius:12px;}
+
+/* marka seridi */
+.cz-brands{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
+.cz-brand{
+  display:flex;align-items:center;gap:13px;padding:14px 16px;border-radius:12px;
+  background:#0d1830;border:.5px solid rgba(255,255,255,.09);text-decoration:none;
+  transition:border-color .2s,transform .15s,background .2s;
+}
+.cz-brand:hover{border-color:rgba(0,200,240,.35);transform:translateY(-2px);background:#0f1c36;}
+.cz-brand-logo{
+  width:38px;height:38px;border-radius:9px;flex-shrink:0;display:flex;
+  align-items:center;justify-content:center;padding:7px;
+  background:rgba(255,255,255,.05);border:.5px solid rgba(255,255,255,.1);
+}
+.cz-brand-logo img{
+  max-width:100%;max-height:100%;object-fit:contain;
+  filter:brightness(0) invert(1);opacity:.9;
+}
+.cz-brand:hover .cz-brand-logo img{opacity:1;}
+.cz-brand-txt b{display:block;font-family:'Manrope',sans-serif;font-size:14px;
+  font-weight:700;color:#fff;line-height:1.3;}
+.cz-brand-txt em{display:block;font-style:normal;font-size:11px;
+  color:rgba(255,255,255,.42);margin-top:2px;}
+
+/* SSS */
+.cz-faq{display:grid;gap:10px;max-width:900px;}
+.cz-faq-i{background:#0d1830;border:.5px solid rgba(255,255,255,.09);border-radius:12px;
+  overflow:hidden;transition:border-color .2s;}
+.cz-faq-i[open]{border-color:rgba(0,200,240,.3);}
+.cz-faq-i summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:16px 18px;font-family:'Manrope',sans-serif;font-size:14px;
+  font-weight:700;color:#fff;
+}
+.cz-faq-i summary::-webkit-details-marker{display:none;}
+.cz-faq-i summary i{font-size:16px;color:var(--cz);flex-shrink:0;transition:transform .2s;}
+.cz-faq-i[open] summary i{transform:rotate(45deg);}
+.cz-faq-i summary:hover{color:var(--cz);}
+.cz-faq-a{padding:0 18px 17px;font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.75;}
+.cz-faq-cta{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  max-width:900px;margin-top:20px;padding:20px 24px;border-radius:14px;
+  background:linear-gradient(120deg,rgba(0,200,240,.07),transparent 65%),#0d1830;
+  border:.5px solid rgba(0,200,240,.2);
+}
+.cz-faq-cta span{font-size:14px;color:rgba(255,255,255,.7);}
+
+@media(max-width:980px){
+  .cz-grid{grid-template-columns:1fr;gap:32px;}
+  .cz-art{position:static;order:-1;}
+}
+@media(max-width:600px){
+  .cz-stats .cz-stat{flex:1 1 100%;min-width:0;}
+  .cz-faq-cta{flex-direction:column;align-items:flex-start;}
+}
+@media(prefers-reduced-motion:reduce){
+  .cz-brand:hover,a.card:hover{transform:none;}
+}

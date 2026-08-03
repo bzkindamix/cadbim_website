@@ -239,7 +239,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=11">
+<link rel="stylesheet" href="assets/css/design-system.css?v=12">
 <style>
 /* === SEKTOR GECIS SERIDI ============================================== */
 .secnav{position:sticky;top:68px;z-index:100;margin-top:68px;background:rgba(10,18,37,.94);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
@@ -363,7 +363,9 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
       <a href="endustriler" class="active">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
       <div class="nav-dropdown-menu">
         <a href="sektor-mimari">Mimarlık</a>
+        <a href="sektor-icmimarlik">İç Mimarlık & Tasarım</a>
         <a href="sektor-insaat">İnşaat & Altyapı</a>
+        <a href="sektor-tesisat">Mekanik Tesisat</a>
         <a href="sektor-makine">Makine & Üretim</a>
         <a href="sektor-otomotiv">Otomotiv</a>
         <a href="sektor-medya">Medya & Eğlence</a>
@@ -384,7 +386,9 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   <div class="secnav-inner">
   <div class="secnav-track" id="secnavTrack">
     <a href="sektor-mimari" class="sec-card" style="--sc:#818cf8;--scbg:rgba(129,140,248,.13);--art:url(assets/img/sektor/mimari.svg);"><span class="sec-ico"><i class="ti ti-building"></i></span><span class="sec-name">Mimarlık</span></a>
+    <a href="sektor-icmimarlik" class="sec-card" style="--sc:#f472b6;--scbg:rgba(244,114,182,.13);--art:url(assets/img/sektor/icmimarlik.svg);"><span class="sec-ico"><i class="ti ti-armchair"></i></span><span class="sec-name">İç Mimarlık &amp; Tasarım</span></a>
     <a href="sektor-insaat" class="sec-card" style="--sc:#22c55e;--scbg:rgba(34,197,94,.13);--art:url(assets/img/sektor/insaat.svg);"><span class="sec-ico"><i class="ti ti-crane"></i></span><span class="sec-name">İnşaat &amp; Altyapı</span></a>
+    <a href="sektor-tesisat" class="sec-card" style="--sc:#2dd4bf;--scbg:rgba(45,212,191,.13);--art:url(assets/img/sektor/tesisat.svg);"><span class="sec-ico"><i class="ti ti-air-conditioning"></i></span><span class="sec-name">Mekanik Tesisat</span></a>
     <a href="sektor-makine" class="sec-card" style="--sc:#f59e0b;--scbg:rgba(245,158,11,.13);--art:url(assets/img/sektor/makine.svg);"><span class="sec-ico"><i class="ti ti-settings"></i></span><span class="sec-name">Makine &amp; Üretim</span></a>
     <a href="sektor-otomotiv" class="sec-card active" aria-current="page" style="--sc:#ef4444;--scbg:rgba(239,68,68,.13);--art:url(assets/img/sektor/otomotiv.svg);"><span class="sec-ico"><i class="ti ti-car"></i></span><span class="sec-name">Otomotiv</span><span class="sec-bar"></span></a>
     <a href="sektor-medya" class="sec-card" style="--sc:#c084fc;--scbg:rgba(192,132,252,.13);--art:url(assets/img/sektor/medya.svg);"><span class="sec-ico"><i class="ti ti-movie"></i></span><span class="sec-name">Medya &amp; Eğlence</span></a>
@@ -483,46 +487,46 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     <p class="ssub">İlgili çözüm sayfalarını inceleyin — her çözümde kullanılan ürünleri görün</p>
   </div>
   <div class="grid g3" style="margin-top:0;">
-    <div class="card">
+    <a href="plm" class="card">
       <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-hierarchy-3"></i></div>
-      <h3><a href="plm" style="color:inherit;text-decoration:none;">PLM — Ürün Yaşam Döngüsü</a></h3>
+      <h3>PLM — Ürün Yaşam Döngüsü</h3>
       <p>Ürün yaşam döngüsünü tasarımdan üretime kadar uçtan uca yöneten çözüm.</p>
-    </div>
-    <div class="card">
+    </a>
+    <a href="pdm" class="card">
       <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-folders"></i></div>
-      <h3><a href="pdm" style="color:inherit;text-decoration:none;">PDM — Ürün Veri Yönetimi</a></h3>
+      <h3>PDM — Ürün Veri Yönetimi</h3>
       <p>Mühendislik verilerini merkezi olarak saklayan ve versiyon kontrolü sağlayan çözüm.</p>
-    </div>
-    <div class="card">
+    </a>
+    <a href="simulasyon" class="card">
       <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-chart-dots-3"></i></div>
-      <h3><a href="simulasyon" style="color:inherit;text-decoration:none;">Simülasyon & Analiz</a></h3>
+      <h3>Simülasyon & Analiz</h3>
       <p>Tasarımların üretime geçmeden önce dijital ortamda doğrulanmasını sağlayan simülasyon çözümleri.</p>
-    </div>
-    <div class="card">
+    </a>
+    <a href="cam" class="card">
       <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-settings-2"></i></div>
-      <h3><a href="cam" style="color:inherit;text-decoration:none;">CAM & İmalat</a></h3>
+      <h3>CAM & İmalat</h3>
       <p>Tasarımdan CNC işlemeye uzanan bilgisayar destekli imalat çözümleri sunulur.</p>
-    </div>
-    <div class="card">
+    </a>
+    <a href="tolerans-analizi" class="card">
       <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-ruler-2"></i></div>
-      <h3><a href="tolerans-analizi" style="color:inherit;text-decoration:none;">Tolerans Analizi</a></h3>
+      <h3>Tolerans Analizi</h3>
       <p>Parça ve montaj toleranslarının üretim öncesi istatistiksel olarak doğrulanmasını sağlar.</p>
-    </div>
-    <div class="card">
+    </a>
+    <a href="fabrika-tasarimi" class="card">
       <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building-factory-2"></i></div>
-      <h3><a href="fabrika-tasarimi" style="color:inherit;text-decoration:none;">Fabrika Tasarımı & Dijital İkiz</a></h3>
+      <h3>Fabrika Tasarımı & Dijital İkiz</h3>
       <p>Üretim hatlarının dijital ikizini oluşturarak fabrika tasarımını optimize eden çözüm.</p>
-    </div>
-    <div class="card">
+    </a>
+    <a href="tasarim-otomasyonu" class="card">
       <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-robot"></i></div>
-      <h3><a href="tasarim-otomasyonu" style="color:inherit;text-decoration:none;">Tasarım Otomasyonu</a></h3>
+      <h3>Tasarım Otomasyonu</h3>
       <p>Tekrarlayan tasarım adımlarını kural tabanlı otomasyonla hızlandıran çözüm.</p>
-    </div>
-    <div class="card">
+    </a>
+    <a href="pdm-collection" class="card">
       <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3><a href="pdm-collection" style="color:inherit;text-decoration:none;">Autodesk PD&M Collection</a></h3>
+      <h3>Autodesk PD&M Collection</h3>
       <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
-    </div>
+    </a>
   </div>
   <div class="sol-pills">
       <a href="eklemeli-imalat" class="sol-pill"><i class="ti ti-arrow-right"></i>Eklemeli İmalat & 3D Baskı</a>
@@ -736,7 +740,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 </footer>
 
 
-<script src="mobilenav.js?v=11" defer></script>
+<script src="mobilenav.js?v=12" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
 <script src="social-widget.js?v=1" defer></script>
 <script src="cookie-consent.js?v=2" defer></script>

@@ -180,17 +180,17 @@ def bim():
           % (f(c[0] + 20), f(c[1] - 12)))
 
     # federe model paneli
-    o += box(430, 292, 172, 96, "ln2", 'fill="rgba(255,255,255,.02)"')
-    o += accent_text(442, 310, "FEDERE MODEL", a, 9)
-    rows = [("Mimari", ".72"), ("Statik", ".55"), ("MEP", ".55"), ("Zemin", ".38")]
+    o += box(418, 318, 184, 84, "ln2", 'fill="rgba(255,255,255,.02)"')
+    o += accent_text(432, 338, "FEDERE MODEL", a, 9)
+    rows = [("Mimari", ".72"), ("Statik", ".55"), ("MEP", ".4")]
     for i, (t, op) in enumerate(rows):
-        y = 326 + i * 15
-        o += ('<rect x="442" y="%d" width="9" height="9" rx="2" fill="%s" fill-opacity="%s"/>'
+        y = 360 + i * 15
+        o += ('<rect x="432" y="%d" width="9" height="9" rx="2" fill="%s" fill-opacity="%s"/>'
               % (y - 7, a, op))
-        o += label(458, y, t, 9, "start", ".5")
-        o += ('<rect x="530" y="%d" width="60" height="4" rx="2" fill="%s" fill-opacity=".18"/>'
-              '<rect x="530" y="%d" width="%d" height="4" rx="2" fill="%s" fill-opacity=".6"/>'
-              % (y - 4, a, y - 4, int(60 * (0.9 - i * .14)), a))
+        o += label(448, y, t, 9, "start", ".5")
+        o += ('<rect x="524" y="%d" width="62" height="4" rx="2" fill="%s" fill-opacity=".18"/>'
+              '<rect x="524" y="%d" width="%d" height="4" rx="2" fill="%s" fill-opacity=".6"/>'
+              % (y - 4, a, y - 4, int(62 * (0.9 - i * .16)), a))
     o += "\n" + scanline(a, 70)
     return o + TAIL
 
@@ -254,11 +254,11 @@ def simulasyon():
     o += accent_text(dp[-1][0] - 74, dp[-1][1] + 18, "deforme", a, 9)
 
     # legend
-    o += label(120, 336, "VON MISES", 9, "start", ".45")
+    o += label(120, 378, "VON MISES", 9, "start", ".45")
     for i, (c, t) in enumerate([("#38bdf8", "dusuk"), (a, "orta"), ("#f87171", "kritik")]):
-        o += ('<rect x="%d" y="328" width="46" height="7" rx="2" fill="%s" fill-opacity=".45"/>'
+        o += ('<rect x="%d" y="370" width="46" height="7" rx="2" fill="%s" fill-opacity=".45"/>'
               % (200 + i * 58, c))
-        o += label(200 + i * 58, 350, t, 8, "start", ".35")
+        o += label(200 + i * 58, 392, t, 8, "start", ".35")
     o += dim_line(x0, y0 + h + 40, x0 + w, y0 + h + 40)
     o += label(x0 + w / 2, y0 + h + 56, "L = 1 250 mm", 9, "middle", ".35")
     o += "\n" + scanline(a, 70)
@@ -404,32 +404,30 @@ def dijital_ikiz():
         o += arrow(q[0] + 12, q[1], 350, 132 + k * 66, a, "cy", ".4")
 
     # operasyon paneli
-    o += box(360, 78, 240, 268, "ln2", 'fill="rgba(255,255,255,.02)"')
-    o += accent_text(376, 100, "OPERASYON PANELI", a, 9)
-    o += '<line class="ln2" x1="376" y1="110" x2="586" y2="110" stroke-opacity=".3"/>\n'
+    o += box(360, 72, 242, 300, "ln2", 'fill="rgba(255,255,255,.02)"')
+    o += accent_text(376, 94, "OPERASYON PANELI", a, 9)
+    o += '<line class="ln2" x1="376" y1="104" x2="586" y2="104" stroke-opacity=".3"/>\n'
     # cizgi grafik
-    lp = [(378 + i * 12, 168 - 26 * abs(math.sin(i / 2.6)) - 4 * ((i * 7) % 5))
+    lp = [(378 + i * 12, 160 - 26 * abs(math.sin(i / 2.6)) - 4 * ((i * 7) % 5))
           for i in range(18)]
     o += '<polyline class="cy" points="%s" stroke-opacity=".7"/>\n' % pts(lp)
-    o += label(376, 186, "Enerji tuketimi ↓ %25", 9, "start", ".5")
+    o += label(376, 182, "Enerji tuketimi ↓ %25", 9, "start", ".5")
     # cubuk grafik
-    for i in range(9):
+    for i in range(11):
         hh = 12 + ((i * 13) % 34)
         o += ('<rect x="%d" y="%d" width="10" height="%d" rx="2" fill="%s" fill-opacity=".%d"/>'
-              % (378 + i * 16, 250 - hh, hh, a, 3 + (i % 4)))
-    o += '\n' + label(376, 268, "Varlik kullanimi", 9, "start", ".5")
-    # gosterge
-    o += ('<path class="ln2" d="M470 250 a44 44 0 0 1 88 0" stroke-opacity=".3"/>'
-          '<path class="cy" d="M470 250 a44 44 0 0 1 66 -38" stroke-opacity=".75"/>\n')
-    o += accent_text(514, 244, "%92", a, 13, "middle")
-    o += label(514, 268, "Calisir durum", 9, "middle", ".45")
+              % (378 + i * 19, 244 - hh, hh, a, 3 + (i % 4)))
+    o += '\n' + label(376, 264, "Varlik kullanim orani", 9, "start", ".5")
+    o += '<line class="ln2" x1="376" y1="278" x2="586" y2="278" stroke-opacity=".22"/>\n'
     # telemetri satirlari
     for i, (t, v) in enumerate((("HVAC-03", "22,4 °C"), ("Pompa-11", "4,1 bar"),
                                 ("Sayac-A", "318 kWh"))):
-        y = 296 + i * 17
+        y = 300 + i * 18
         o += node(378, y - 3, 2.4)
-        o += label(390, y, t, 9, "start", ".45")
+        o += label(392, y, t, 9, "start", ".45")
         o += accent_text(586, y, v, a, 9, "end")
+    o += "\n" + accent_text(376, 360, "%92", a, 15)
+    o += label(412, 360, "varlik calisir durumda", 9, "start", ".45")
     o += "\n" + scanline(a, 60)
     return o + TAIL
 
@@ -439,7 +437,7 @@ def fabrika_tasarimi():
     """Izometrik fabrika yerlesimi + malzeme akisi."""
     a = "#38bdf8"
     o = head(a)
-    ox, oy, s = 320, 128, 1.0
+    ox, oy, s = 320, 92, 1.22
     W_, D_ = 230, 170
     # zemin izgarasi
     for i in range(0, W_ + 1, 23):
@@ -482,14 +480,14 @@ def fabrika_tasarimi():
         o += node(q[0], q[1], 2.6)
     # hareketli tasiyici
     q0 = iso(8, 60, 8, ox, oy, s)
-    o += ('<g class="slide" style="--d:190px"><circle cx="%s" cy="%s" r="4.5" fill="%s" '
+    o += ('<g class="slide" style="--d:210px"><circle cx="%s" cy="%s" r="5" fill="%s" '
           'fill-opacity=".9"/></g>\n' % (f(q0[0]), f(q0[1]), a))
     # olcu
     p1, p2 = iso(0, D_, 0, ox, oy, s), iso(W_, D_, 0, ox, oy, s)
-    o += dim_line(p1[0] - 10, p1[1] + 16, p2[0] - 10, p2[1] + 16)
-    o += label((p1[0] + p2[0]) / 2 - 10, p1[1] + 34, "60 m", 9, "middle", ".4")
-    o += accent_text(40, 380, "MALZEME AKISI", a, 9)
-    o += label(40, 396, "cakisma kontrolu · kurulum takvimi", 9, "start", ".38")
+    o += dim_line(p1[0] - 14, p1[1] + 26, p2[0] - 14, p2[1] + 26)
+    o += label((p1[0] + p2[0]) / 2 - 22, (p1[1] + p2[1]) / 2 + 42, "60 m", 9, "middle", ".4")
+    o += accent_text(34, 52, "MALZEME AKISI", a, 9)
+    o += label(34, 70, "cakisma kontrolu · kurulum takvimi", 9, "start", ".38")
     o += scanline(a, 46)
     return o + TAIL
 
@@ -556,7 +554,8 @@ def cam():
               'fill-opacity="%s">%s</text>' % (134 + i * 15, ".5" if i % 2 else ".38", ln))
     o += "\n" + ('<rect x="440" y="%d" width="154" height="13" rx="2" fill="%s" '
                  'fill-opacity=".1" class="blink"/>\n' % (124 + 5 * 15, a))
-    o += label(432, 344, "3+2 / 5 eksen · sanal tezgah dogrulamasi", 9, "start", ".38")
+    o += label(432, 340, "3+2 / 5 eksen", 9, "start", ".38")
+    o += label(432, 356, "sanal tezgah dogrulamasi", 9, "start", ".38")
     o += scanline(a, 60)
     return o + TAIL
 
@@ -580,12 +579,12 @@ def eklemeli_imalat():
     for i in range(layers_n):
         y = 300 - (i + 1) * 8
         t = i / float(layers_n)
-        w = 96 - 34 * abs(math.sin(t * 3.1))
+        w = 104 - 52 * t - 8 * math.sin(t * 6.2)
         o += ('<rect x="%s" y="%s" width="%s" height="6.4" rx="1.6" fill="%s" '
               'fill-opacity="%s" stroke="%s" stroke-opacity=".45" stroke-width=".6"/>'
               % (f(216 - w / 2), f(y), f(w), a, f(.07 + .12 * (1 - t)), a))
     o += "\n"
-    o += accent_text(216, 172, "16 / 240 katman", a, 9, "middle")
+    o += accent_text(216, 158, "16 / 240 katman", a, 9, "middle")
     # destek yapilari
     for x in (176, 256):
         o += ('<line class="ln2" x1="%d" y1="300" x2="%d" y2="248" stroke-opacity=".3" '
@@ -630,7 +629,7 @@ def nesting():
         [(320, 14), (372, 14), (372, 104), (320, 104)],
         [(16, 108), (96, 108), (96, 168), (54, 190), (16, 158)],
         [(108, 100), (196, 100), (208, 156), (150, 186), (108, 150)],
-        [(220, 88), (300, 106), (306, 172), (232, 178)],
+        [(228, 90), (306, 108), (310, 172), (240, 178)],
         [(318, 118), (372, 118), (372, 196), (318, 196)],
         [(18, 200), (104, 200), (104, 236), (60, 236), (18, 224)],
         [(120, 198), (206, 210), (198, 236), (120, 236)],
@@ -672,7 +671,7 @@ def plm():
     """Yasam dongusu halkasi + BOM agaci + degisim karti."""
     a = "#38bdf8"
     o = head(a)
-    cx, cy, r = 200, 200, 116
+    cx, cy, r = 196, 200, 100
     o += ('<circle class="ln2" cx="%d" cy="%d" r="%d" stroke-opacity=".3" '
           'stroke-dasharray="5 6"/>\n' % (cx, cy, r))
     phases = ["Fikir", "Tasarim", "Dogrulama", "Uretim", "Servis", "Emeklilik"]
@@ -682,8 +681,8 @@ def plm():
         o += ('<circle cx="%s" cy="%s" r="15" fill="%s" fill-opacity=".1" stroke="%s" '
               'stroke-opacity=".6" stroke-width="1.1"/>' % (f(x), f(y), a, a))
         o += accent_text(x, y + 4, "%02d" % (i + 1), a, 9, "middle")
-        lx = cx + (r + 34) * math.cos(ang)
-        ly = cy + (r + 34) * math.sin(ang)
+        lx = cx + (r + 30) * math.cos(ang)
+        ly = cy + (r + 30) * math.sin(ang)
         anc = "middle" if abs(math.cos(ang)) < .3 else ("start" if math.cos(ang) > 0 else "end")
         o += label(lx, ly + 3, name, 9, anc, ".5")
     o += "\n"
@@ -692,14 +691,14 @@ def plm():
           'stroke-opacity=".8" stroke-width="1.8"/></g>\n'
           % (cx, cy - r, r, r, r * .86, r * .5))
     # merkezde BOM agaci
-    o += box(cx - 62, cy - 46, 124, 92, "ln", 'fill="rgba(6,12,26,.85)"')
-    o += accent_text(cx - 48, cy - 26, "BOM", a, 9)
+    o += box(cx - 54, cy - 44, 108, 88, "ln", 'fill="rgba(6,12,26,.88)"')
+    o += accent_text(cx - 42, cy - 25, "BOM", a, 9)
     rows = [(0, "Urun A"), (1, "Govde"), (2, "Mil"), (2, "Rulman"), (1, "Kapak")]
     for i, (lvl, t) in enumerate(rows):
-        y = cy - 10 + i * 13
+        y = cy - 9 + i * 13
         o += ('<line class="ln2" x1="%d" y1="%s" x2="%d" y2="%s" stroke-opacity=".3"/>'
-              % (cx - 48 + lvl * 10, f(y - 3), cx - 42 + lvl * 10, f(y - 3)))
-        o += label(cx - 38 + lvl * 10, y, t, 8, "start", ".45")
+              % (cx - 42 + lvl * 9, f(y - 3), cx - 36 + lvl * 9, f(y - 3)))
+        o += label(cx - 32 + lvl * 9, y, t, 8, "start", ".45")
     o += "\n"
     # degisim karti
     o += box(392, 108, 210, 96, "ln2", 'fill="rgba(255,255,255,.02)"')
@@ -733,10 +732,10 @@ def pdm():
     o = head(a)
     # revizyon grafigi
     base_y = 150
-    xs = [80 + i * 62 for i in range(8)]
+    xs = [68 + i * 52 for i in range(7)]
     o += '<polyline class="cy" points="%s" stroke-opacity=".7"/>\n' % pts(
         [(x, base_y) for x in xs])
-    revs = ["A", "B", "C", "D", "E", "F", "G", "H"]
+    revs = ["A", "B", "C", "D", "E", "F", "G"]
     for i, x in enumerate(xs):
         o += node(x, base_y, 5 if i == len(xs) - 1 else 3.6, "nd" if i == len(xs) - 1 else "nd blink")
         o += label(x, base_y + 20, "Rev %s" % revs[i], 8, "middle", ".42")
@@ -768,13 +767,14 @@ def pdm():
               'fill-opacity=".7">%s</text>' % (x + 48, y + 38, col, st))
     o += "\n"
     # kasa
-    o += ('<circle class="ln" cx="520" cy="152" r="52"/>'
-          '<circle class="ln2" cx="520" cy="152" r="40" stroke-opacity=".4"/>'
-          '<g class="spin"><line class="cy" x1="520" y1="122" x2="520" y2="182" '
-          'stroke-opacity=".55"/><line class="cy" x1="490" y1="152" x2="550" y2="152" '
-          'stroke-opacity=".55"/></g>' + node(520, 152, 4) + "\n")
-    o += accent_text(520, 224, "TEK KAYNAK", a, 9, "middle")
-    o += label(520, 240, "surum · revizyon · yetki", 8, "middle", ".38")
+    o += arrow(452, 150, 494, 150, a, "cy", ".5")
+    o += ('<circle class="ln" cx="546" cy="150" r="48"/>'
+          '<circle class="ln2" cx="546" cy="150" r="37" stroke-opacity=".4"/>'
+          '<g class="spin"><line class="cy" x1="546" y1="122" x2="546" y2="178" '
+          'stroke-opacity=".55"/><line class="cy" x1="518" y1="150" x2="574" y2="150" '
+          'stroke-opacity=".55"/></g>' + node(546, 150, 4) + "\n")
+    o += accent_text(546, 218, "TEK KAYNAK", a, 9, "middle")
+    o += label(546, 234, "surum · revizyon · yetki", 8, "middle", ".38")
     o += accent_text(66, 372, "CHECK-IN / CHECK-OUT · TAM IZLENEBILIRLIK", a, 9)
     o += dim_line(66, 382, 460, 382)
     o += scanline(a, 60)
@@ -804,44 +804,41 @@ def insaat_yonetimi():
               % (bx + 1, by + k * 31 + 1, bw - 2, a))
     o += "\n"
     # kule vinc
-    o += ('<g class="ln"><path d="M300 352 V132 M318 352 V132 M300 132 H318"/>'
-          '<path d="M236 132 H424 M236 132 L309 116 M424 132 L309 116"/>'
-          '<path d="M372 132 V174" stroke-dasharray="4 4"/>'
-          '<rect x="360" y="174" width="24" height="15" fill="none"/></g>\n')
-    for k in range(134, 352, 24):
-        o += '<line class="ln2" x1="300" y1="%d" x2="318" y2="%d" stroke-opacity=".25"/>' % (
+    o += ('<g class="ln"><path d="M266 352 V148 M284 352 V148 M266 148 H284"/>'
+          '<path d="M196 148 H356 M196 148 L275 132 M356 148 L275 132"/>'
+          '<path d="M330 148 V186" stroke-dasharray="4 4"/>'
+          '<rect x="318" y="186" width="24" height="15" fill="none"/></g>\n')
+    for k in range(150, 352, 24):
+        o += '<line class="ln2" x1="266" y1="%d" x2="284" y2="%d" stroke-opacity=".25"/>' % (
             k, k + 24)
     o += "\n"
     # is programi (Gantt)
-    o += box(392, 202, 210, 150, "ln2", 'fill="rgba(255,255,255,.02)"')
-    o += accent_text(406, 222, "IS PROGRAMI", a, 9)
+    o += box(376, 196, 226, 156, "ln2", 'fill="rgba(255,255,255,.02)"')
+    o += accent_text(392, 216, "IS PROGRAMI", a, 9)
     tasks = [(0, 74, "Kazi", 1.0), (22, 66, "Temel", 1.0), (58, 82, "Kaba yapi", .62),
              (104, 62, "Cephe", .0), (128, 58, "MEP", .0), (150, 40, "Ince", .0)]
     for i, (off, wdt, t, done) in enumerate(tasks):
         y = 240 + i * 18
-        o += label(406, y + 4, t, 8, "start", ".45")
+        o += label(392, y + 4, t, 8, "start", ".45")
         o += ('<rect x="%d" y="%d" width="%d" height="8" rx="3" fill="%s" fill-opacity=".14"/>'
-              % (466 + off * .72, y - 2, int(wdt * .72), a))
+              % (456 + off * .74, y - 2, int(wdt * .74), a))
         if done:
             o += ('<rect x="%d" y="%d" width="%d" height="8" rx="3" fill="%s" fill-opacity=".7"/>'
-                  % (466 + off * .72, y - 2, int(wdt * .72 * done), a))
-    o += '\n<line class="cy" x1="524" y1="232" x2="524" y2="348" stroke-opacity=".6" stroke-dasharray="3 3"/>'
-    o += accent_text(524, 228, "bugun", a, 8, "middle")
+                  % (456 + off * .74, y - 2, int(wdt * .74 * done), a))
+    o += '\n<line class="cy" x1="516" y1="232" x2="516" y2="346" stroke-opacity=".6" stroke-dasharray="3 3"/>'
+    o += accent_text(516, 228, "bugun", a, 8, "middle")
 
     # CDE bulutu + dokuman akisi
-    o += ('<path class="ln" d="M232 74 a30 30 0 0 1 58 -12 a24 24 0 0 1 44 10 '
-          'a22 22 0 0 1 -6 43 H252 a24 24 0 0 1 -20 -41 Z" fill="rgba(255,255,255,.02)"/>\n')
-    o += accent_text(288, 68, "CDE", a, 12, "middle")
-    o += label(288, 86, "ISO 19650", 8, "middle", ".42")
-    for x, lbl in ((132, "Model"), (450, "Saha")):
-        o += arrow(x + (46 if x < 288 else -46), 96, 288 + (-58 if x < 288 else 58), 96,
-                   a, "cy", ".45") if False else ""
-    o += arrow(160, 108, 236, 96, a, "cy", ".45")
-    o += arrow(416, 96, 344, 96, a, "cy", ".45")
-    o += label(120, 118, "Model / çizim", 9, "start", ".42")
-    o += label(424, 118, "Saha raporu", 9, "start", ".42")
+    o += ('<path class="ln" d="M406 86 a30 30 0 0 1 58 -12 a24 24 0 0 1 44 10 '
+          'a22 22 0 0 1 -6 43 H426 a24 24 0 0 1 -20 -41 Z" fill="rgba(255,255,255,.02)"/>\n')
+    o += accent_text(462, 80, "CDE", a, 12, "middle")
+    o += label(462, 98, "ISO 19650", 8, "middle", ".42")
+    o += arrow(248, 190, 398, 124, a, "cy", ".4")
+    o += arrow(462, 130, 462, 188, a, "cy", ".4")
+    o += label(70, 182, "Model · çizim · saha raporu", 9, "start", ".42")
+    o += accent_text(478, 164, "tek dogru kaynak", a, 8)
     # konu isaretleri
-    for x, y in ((118, 244), (196, 300), (334, 186)):
+    for x, y in ((116, 246), (192, 302), (330, 208)):
         o += ('<g class="blink"><path d="M%d %d a7 7 0 1 0 -0.1 0 Z" fill="none" stroke="%s" '
               'stroke-opacity=".8" stroke-width="1.2"/><circle cx="%d" cy="%d" r="2.4" '
               'fill="%s" fill-opacity=".9"/></g>' % (x, y, "#fbbf24", x, y - 4, "#fbbf24"))
@@ -949,25 +946,26 @@ def yaratici_icerik():
     o += "\n"
     o += accent_text(96, 100, "ARTBOARD  1920 × 1080", a, 9)
     # katman etiketleri
+    o += accent_text(382, 112, "KATMANLAR", a, 9)
     for i, t in enumerate(("Metin", "Vektor", "Foto", "Zemin")):
-        o += label(316, 130 + i * 17, t, 9, "start", ".45")
-        o += ('<rect x="300" y="%d" width="8" height="8" rx="2" fill="%s" fill-opacity=".%d"/>'
-              % (123 + i * 17, a, 8 - i * 2))
+        o += label(382, 136 + i * 18, t, 9, "start", ".45")
+        o += ('<rect x="366" y="%d" width="8" height="8" rx="2" fill="%s" fill-opacity=".%d"/>'
+              % (129 + i * 18, a, 8 - i * 2))
     o += "\n"
     # renk paleti
-    o += accent_text(316, 224, "MARKA PALETI", a, 9)
+    o += accent_text(382, 228, "MARKA PALETI", a, 9)
     for i, c in enumerate(("#e25922", "#00c8f0", "#0d1830", "#f59e0b", "#ffffff")):
-        o += ('<rect x="%d" y="234" width="26" height="26" rx="5" fill="%s" fill-opacity=".85" '
-              'stroke="rgba(255,255,255,.2)" stroke-width=".6"/>' % (316 + i * 31, c))
+        o += ('<rect x="%d" y="238" width="26" height="26" rx="5" fill="%s" fill-opacity=".85" '
+              'stroke="rgba(255,255,255,.2)" stroke-width=".6"/>' % (382 + i * 31, c))
     o += "\n"
     # tipografi
-    o += ('<text x="316" y="296" font-family="Manrope,sans-serif" font-size="22" '
+    o += ('<text x="382" y="300" font-family="Manrope,sans-serif" font-size="22" '
           'font-weight="800" fill="#fff" fill-opacity=".7">Aa</text>')
-    o += label(354, 296, "Manrope · 800 / 400", 9, "start", ".42")
+    o += label(426, 300, "Manrope · 800 / 400", 9, "start", ".42")
 
     # video zaman cizelgesi
     o += box(66, 322, 508, 62, "ln2", 'fill="rgba(255,255,255,.02)"')
-    o += label(80, 342, "TIMELINE", 8, "start", ".4")
+    o += label(80, 366, "TIMELINE", 8, "start", ".4")
     tracks = [(150, 120, ".55"), (280, 96, ".4"), (390, 150, ".3")]
     for i, (tx, tw, op) in enumerate(tracks):
         o += ('<rect x="%d" y="%d" width="%d" height="12" rx="3" fill="%s" fill-opacity="%s"/>'
@@ -978,7 +976,7 @@ def yaratici_icerik():
                   % (pts([(180 + k * 78, 338 + i * 15), (184 + k * 78, 342 + i * 15),
                           (180 + k * 78, 346 + i * 15), (176 + k * 78, 342 + i * 15)]), CYAN))
     o += "\n"
-    o += ('<g class="slide" style="--d:380px"><line x1="120" y1="326" x2="120" y2="380" '
+    o += ('<g class="slide" style="--d:390px"><line x1="140" y1="326" x2="140" y2="380" '
           'stroke="%s" stroke-opacity=".8" stroke-width="1.4"/></g>\n' % CYAN)
     o += scanline(a, 60)
     return o + TAIL
@@ -1053,8 +1051,8 @@ def gerceklik_yakalama():
         o += label(484, y, t, 9, "start", ".5")
         o += accent_text(590, y, v, a, 8, "end")
     o += "\n"
-    o += accent_text(452, 296, "FOTOGRAMETRI · LIDAR", a, 9)
-    o += label(452, 314, "mevcut durum → as-built model", 9, "start", ".4")
+    o += accent_text(452, 298, "FOTOGRAMETRI · LIDAR", a, 9)
+    o += label(452, 320, "mevcut durum → as-built model", 9, "start", ".4")
     o += dim_line(300, 330, 404, 330)
     o += label(352, 346, "as-built", 9, "middle", ".38")
     o += scanline(a, 50)

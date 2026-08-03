@@ -250,7 +250,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=11">
+<link rel="stylesheet" href="assets/css/design-system.css?v=12">
 </head>
 <body><nav class="nav">
   <a href="/" class="nav-logo"><img width="640" height="153" src="assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
@@ -317,7 +317,9 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
       <a href="endustriler">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
       <div class="nav-dropdown-menu">
         <a href="sektor-mimari">Mimarlık</a>
+        <a href="sektor-icmimarlik">İç Mimarlık & Tasarım</a>
         <a href="sektor-insaat">İnşaat & Altyapı</a>
+        <a href="sektor-tesisat">Mekanik Tesisat</a>
         <a href="sektor-makine">Makine & Üretim</a>
         <a href="sektor-otomotiv">Otomotiv</a>
         <a href="sektor-medya">Medya & Eğlence</a>
@@ -512,33 +514,33 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <div class="sh" style="margin-bottom:26px;"><div class="slabel">Keşfet</div><div class="stitle">Bu Ürünle İlgili</div></div>
   <div style="display:grid;gap:24px;">
     <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div><div class="grid g3" style="margin-top:0;">
-      <div class="card">
+      <a href="bim" class="card">
         <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
-        <h3><a href="bim" style="color:inherit;text-decoration:none;">BIM</a></h3>
+        <h3>BIM</h3>
         <p>Yapı bilgi modellemesi çözümlerini ve hizmetlerimizi keşfedin.</p>
-      </div>
-      <div class="card">
+      </a>
+      <a href="insaat-yonetimi" class="card">
         <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-crane"></i></div>
-        <h3><a href="insaat-yonetimi" style="color:inherit;text-decoration:none;">İnşaat Proje Yönetimi</a></h3>
+        <h3>İnşaat Proje Yönetimi</h3>
         <p>Saha ve ofis arasında inşaat süreçlerinin dijital yönetimi.</p>
-      </div>
-      <div class="card">
+      </a>
+      <a href="gorsellestirme" class="card">
         <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-sun-high"></i></div>
-        <h3><a href="gorsellestirme" style="color:inherit;text-decoration:none;">Görselleştirme & Render</a></h3>
+        <h3>Görselleştirme & Render</h3>
         <p>Fotogerçekçi görselleştirme ve render çözümlerini tek sayfada keşfedin.</p>
-      </div>
+      </a>
     </div></div>
     <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-building-community" style="color:var(--cyan);font-size:15px;"></i>Endüstriler</div><div class="grid g3" style="margin-top:0;">
-      <div class="card">
+      <a href="sektor-mimari" class="card">
         <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-building"></i></div>
-        <h3><a href="sektor-mimari" style="color:inherit;text-decoration:none;">Mimarlık</a></h3>
+        <h3>Mimarlık</h3>
         <p>Mimarlık ofislerine yönelik yazılım, eğitim ve danışmanlık çözümleri.</p>
-      </div>
-      <div class="card">
+      </a>
+      <a href="sektor-insaat" class="card">
         <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-crane"></i></div>
-        <h3><a href="sektor-insaat" style="color:inherit;text-decoration:none;">İnşaat & Altyapı</a></h3>
+        <h3>İnşaat & Altyapı</h3>
         <p>İnşaat ve altyapı firmalarına yönelik sektörel çözümlerimiz.</p>
-      </div>
+      </a>
     </div></div>
   </div>
 </section>
@@ -603,7 +605,7 @@ function showSector(id, btn) {
       <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
     </div>
   </div>
-</footer><script src="mobilenav.js?v=11" defer></script>
+</footer><script src="mobilenav.js?v=12" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
 <script src="social-widget.js?v=1" defer></script>
 <script src="cookie-consent.js?v=2" defer></script>

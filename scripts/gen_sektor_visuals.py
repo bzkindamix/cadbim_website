@@ -640,6 +640,247 @@ def havacilik():
     return o + TAIL
 
 
+# --------------------------------------------------------------------------
+def tesisat():
+    """Mekanik tesisat: klima santrali, kanal hatti, difuzorler, borulama."""
+    a = "#2dd4bf"
+    o = head(a)
+    o += '<g class="float">\n'
+
+    # --- klima santrali (AHU) — izometrik govde + fan ---
+    ox, oy, s = 150, 240, 1.0
+    W_, D_, H_ = 96, 66, 78
+    base = [(0, 0), (W_, 0), (W_, D_), (0, D_)]
+    b0 = [iso(x, y, 0, ox, oy, s) for x, y in base]
+    b1 = [iso(x, y, H_, ox, oy, s) for x, y in base]
+    o += '<polygon class="fl" points="%s"/>' % pts(b1 + [b0[3], b0[0], b0[1]])
+    o += '<polygon class="ln" points="%s"/>' % pts(b1)
+    for i in range(4):
+        op = ".85" if i in (0, 3) else ".4"
+        o += ('<line class="ln" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity="%s"/>'
+              % (f(b0[i][0]), f(b0[i][1]), f(b1[i][0]), f(b1[i][1]), op))
+    o += '<polygon class="ln" points="%s" stroke-opacity=".55"/>\n' % pts(b0)
+    # on yuzde fan — donen kanat
+    fc = iso(W_ * .5, D_, H_ * .52, ox, oy, s)
+    fx, fy = fc
+    o += ('<ellipse class="ln" cx="%s" cy="%s" rx="21" ry="24"/>'
+          '<ellipse class="ln2" cx="%s" cy="%s" rx="13" ry="15"/>' % (f(fx), f(fy), f(fx), f(fy)))
+    o += '<g class="spin" style="animation-duration:10s">'
+    for k in range(3):
+        ang = k * 2 * math.pi / 3
+        o += ('<line x1="%s" y1="%s" x2="%s" y2="%s" stroke="%s" stroke-opacity=".7" '
+              'stroke-width="1.2" stroke-linecap="round"/>'
+              % (f(fx), f(fy), f(fx + 12 * math.cos(ang)), f(fy + 14 * math.sin(ang)), a))
+    o += "</g>\n"
+    # panel cizgileri + ayaklar
+    m1 = iso(W_ * .5, 0, 0, ox, oy, s); m2 = iso(W_ * .5, 0, H_, ox, oy, s)
+    o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".3"/>'
+          % (f(m1[0]), f(m1[1]), f(m2[0]), f(m2[1])))
+    for x, y in ((6, 6), (W_ - 6, 6), (W_ - 6, D_ - 6), (6, D_ - 6)):
+        p0 = iso(x, y, 0, ox, oy, s)
+        o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s"/>'
+              % (f(p0[0]), f(p0[1]), f(p0[0]), f(p0[1] + 10)))
+    o += "\n"
+
+    # --- ana kanal hatti (dikdortgen kesit, izometrik) ---
+    def duct(p0, p1, w=14):
+        """Iki 3B nokta arasi kanal — dort paralel ayrit."""
+        x0, y0, z0 = p0; x1, y1, z1 = p1
+        segs = []
+        for dy, dz in ((0, 0), (w, 0), (0, w), (w, w)):
+            a0 = iso(x0, y0 + dy, z0 + dz, ox, oy, s)
+            a1 = iso(x1, y1 + dy, z1 + dz, ox, oy, s)
+            op = ".8" if (dy, dz) in ((0, w),) else (".5" if dz == w else ".35")
+            segs.append('<line class="ln" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity="%s"/>'
+                        % (f(a0[0]), f(a0[1]), f(a1[0]), f(a1[1]), op))
+        return "".join(segs)
+
+    ZD = H_ * .78          # kanal kotu
+    o += duct((W_, D_ * .3, ZD), (W_ + 300, D_ * .3, ZD)) + "\n"
+    # kesit halkalari (flanslar)
+    for t in (60, 150, 240):
+        c4 = [iso(W_ + t, D_ * .3 + dy, ZD + dz, ox, oy, s)
+              for dy, dz in ((0, 0), (14, 0), (14, 14), (0, 14))]
+        o += '<polygon class="ln2" points="%s" stroke-opacity=".5"/>' % pts(c4)
+    o += "\n"
+    # dikey bransman + difuzor (2 adet)
+    for t, drop in ((100, 46), (200, 46)):
+        bx0 = W_ + t
+        o += duct((bx0, D_ * .3, ZD), (bx0, D_ * .3, ZD - drop), w=14)
+        # difuzor: ic ice kareler (tavan menfezi)
+        for k, r_ in enumerate((16, 10, 4)):
+            q = [iso(bx0 + 7 - r_ / 2 + dx, D_ * .3 + 7 - r_ / 2 + dy, ZD - drop, ox, oy, s)
+                 for dx, dy in ((0, 0), (r_, 0), (r_, r_), (0, r_))]
+            o += '<polygon class="cy" points="%s" stroke-opacity="%s"/>' % (
+                pts(q), (.7, .45, .3)[k])
+        o += "\n"
+    # akis oklari (kanal ustunde, draw animasyonu)
+    fl0 = iso(W_ + 14, D_ * .3 + 7, ZD + 20, ox, oy, s)
+    fl1 = iso(W_ + 286, D_ * .3 + 7, ZD + 20, ox, oy, s)
+    o += ('<line class="cy draw" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".5"/>'
+          % (f(fl0[0]), f(fl0[1]), f(fl1[0]), f(fl1[1])))
+    ah = iso(W_ + 286, D_ * .3 + 7, ZD + 20, ox, oy, s)
+    o += ('<path class="cy" d="M%s %s l-9 -4 m9 4 l-10 3" stroke-opacity=".7"/>\n'
+          % (f(ah[0]), f(ah[1])))
+
+    # --- borulama (alt kot): gidis-donus + vana ---
+    for zoff, op in ((6, ".7"), (16, ".45")):
+        p0 = iso(W_ + 6, D_ * .95, zoff, ox, oy, s)
+        p1 = iso(W_ + 290, D_ * .95, zoff, ox, oy, s)
+        o += ('<line class="ln" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity="%s"/>'
+              % (f(p0[0]), f(p0[1]), f(p1[0]), f(p1[1]), op))
+        for t in (40, 130, 220):
+            q = iso(W_ + t, D_ * .95, zoff, ox, oy, s)
+            o += '<ellipse class="ln2" cx="%s" cy="%s" rx="2.6" ry="5" stroke-opacity=".55"/>' % (
+                f(q[0]), f(q[1]))
+    # vana (kelebek)
+    v = iso(W_ + 175, D_ * .95, 6, ox, oy, s)
+    o += ('<path class="cy" d="M%s %s l-8 -5 v10 Z M%s %s l8 -5 v10 Z" fill="none" '
+          'stroke-opacity=".8"/>'
+          '<line class="cy" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".6"/>\n'
+          % (f(v[0]), f(v[1]), f(v[0]), f(v[1]), f(v[0]), f(v[1] - 5), f(v[0]), f(v[1] - 13)))
+
+    o += "</g>\n"
+    # olcu cizgisi + dugumler
+    d0 = iso(W_, D_ * .3, ZD + 34, ox, oy, s)
+    d1 = iso(W_ + 300, D_ * .3, ZD + 34, ox, oy, s)
+    o += ('<line class="dim" x1="%s" y1="%s" x2="%s" y2="%s"/>\n'
+          % (f(d0[0]), f(d0[1]), f(d1[0]), f(d1[1])))
+    for pt3 in ((W_ * .5, D_, H_ * .52), (W_ + 100, D_ * .3 + 7, ZD - 46),
+                (W_ + 200, D_ * .3 + 7, ZD - 46), (W_ + 175, D_ * .95, 6)):
+        q = iso(pt3[0], pt3[1], pt3[2], ox, oy, s)
+        o += node(q[0], q[1], 2.8)
+    o += "\n" + scanline(a, 60)
+    return o + TAIL
+
+
+# --------------------------------------------------------------------------
+def icmimarlik():
+    """Ic mimarlik: izometrik oda kosesi — kanepe, sehpa, sarkit, tablo, hali."""
+    a = "#f472b6"
+    o = head(a)
+    ox, oy, s = 320, 300, 1.05
+    RW, RD, RH = 210, 150, 120        # oda olculeri
+
+    o += '<g class="float">\n'
+    # zemin izgara
+    for t in range(0, RW + 1, 30):
+        p0 = iso(t, 0, 0, ox, oy, s); p1 = iso(t, RD, 0, ox, oy, s)
+        o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".16"/>'
+              % (f(p0[0]), f(p0[1]), f(p1[0]), f(p1[1])))
+    for t in range(0, RD + 1, 30):
+        p0 = iso(0, t, 0, ox, oy, s); p1 = iso(RW, t, 0, ox, oy, s)
+        o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".16"/>'
+              % (f(p0[0]), f(p0[1]), f(p1[0]), f(p1[1])))
+    o += "\n"
+    # iki duvar (arka kose)
+    for wall in ((((0, 0), (RW, 0))), (((0, 0), (0, RD)))):
+        (x0, y0), (x1, y1) = wall
+        c0 = iso(x0, y0, 0, ox, oy, s); c1 = iso(x1, y1, 0, ox, oy, s)
+        c2 = iso(x1, y1, RH, ox, oy, s); c3 = iso(x0, y0, RH, ox, oy, s)
+        o += '<polygon class="fl" points="%s"/>' % pts([c0, c1, c2, c3])
+        o += '<polyline class="ln" points="%s" stroke-opacity=".7"/>' % pts([c1, c2, c3, c0])
+    o += "\n"
+    # pencere (sag duvarda: x sabit 0 duvari yerine RW,0 duvari... arka duvar boyunca)
+    wx0, wx1, wz0, wz1 = 120, 195, 34, 96
+    win = [iso(wx0, 0, wz0, ox, oy, s), iso(wx1, 0, wz0, ox, oy, s),
+           iso(wx1, 0, wz1, ox, oy, s), iso(wx0, 0, wz1, ox, oy, s)]
+    o += '<polygon points="%s" fill="#0a1225" fill-opacity=".7"/>' % pts(win)
+    o += '<polygon class="ln" points="%s" stroke-opacity=".8"/>' % pts(win)
+    mid = iso((wx0 + wx1) / 2, 0, wz0, ox, oy, s); mid2 = iso((wx0 + wx1) / 2, 0, wz1, ox, oy, s)
+    o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".5"/>'
+          % (f(mid[0]), f(mid[1]), f(mid2[0]), f(mid2[1])))
+    h1 = iso(wx0, 0, (wz0 + wz1) / 2, ox, oy, s); h2 = iso(wx1, 0, (wz0 + wz1) / 2, ox, oy, s)
+    o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".5"/>'
+          % (f(h1[0]), f(h1[1]), f(h2[0]), f(h2[1])))
+    # cam yansimasi
+    g1 = iso(wx0 + 12, 0, wz0 + 10, ox, oy, s); g2 = iso(wx0 + 34, 0, wz1 - 10, ox, oy, s)
+    o += ('<line class="cy" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".3"/>\n'
+          % (f(g1[0]), f(g1[1]), f(g2[0]), f(g2[1])))
+    # tablo (sol duvarda)
+    for tx0, tx1, tz0, tz1, op in ((30, 70, 56, 92, ".7"), (82, 106, 62, 86, ".5")):
+        fr = [iso(0, tx0, tz0, ox, oy, s), iso(0, tx1, tz0, ox, oy, s),
+              iso(0, tx1, tz1, ox, oy, s), iso(0, tx0, tz1, ox, oy, s)]
+        o += '<polygon class="ln" points="%s" stroke-opacity="%s"/>' % (pts(fr), op)
+    # tablo icine soyut cizgi
+    a1 = iso(0, 38, 64, ox, oy, s); a2 = iso(0, 52, 84, ox, oy, s); a3 = iso(0, 64, 68, ox, oy, s)
+    o += ('<polyline class="cy" points="%s" stroke-opacity=".5"/>\n'
+          % pts([a1, a2, a3]))
+
+    # hali (elips)
+    rc = iso(120, 92, 0, ox, oy, s)
+    o += ('<ellipse class="ln2" cx="%s" cy="%s" rx="72" ry="30" stroke-opacity=".4"/>'
+          '<ellipse class="ln2" cx="%s" cy="%s" rx="56" ry="22" stroke-opacity=".25"/>\n'
+          % (f(rc[0]), f(rc[1]), f(rc[0]), f(rc[1])))
+
+    # kanepe (L)
+    def isobox(x, y, w, d, h, z=0, op=".8"):
+        bb0 = [iso(px, py, z, ox, oy, s) for px, py in
+               ((x, y), (x + w, y), (x + w, y + d), (x, y + d))]
+        bb1 = [iso(px, py, z + h, ox, oy, s) for px, py in
+               ((x, y), (x + w, y), (x + w, y + d), (x, y + d))]
+        out = '<polygon class="ln" points="%s" stroke-opacity="%s"/>' % (pts(bb1), op)
+        for i2 in range(4):
+            out += ('<line class="ln" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".35"/>'
+                    % (f(bb0[i2][0]), f(bb0[i2][1]), f(bb1[i2][0]), f(bb1[i2][1])))
+        out += '<polygon class="ln2" points="%s" stroke-opacity=".3"/>' % pts(bb0)
+        return out
+    # oturma + sirt + kolcaklar
+    o += isobox(28, 96, 84, 40, 16)                 # oturma
+    o += isobox(28, 88, 84, 10, 34)                 # sirt
+    o += isobox(20, 88, 10, 48, 24)                 # sol kolcak
+    o += isobox(110, 88, 10, 48, 24) + "\n"         # sag kolcak
+    # minderler
+    m1 = iso(48, 98, 17, ox, oy, s); m2 = iso(68, 98, 17, ox, oy, s)
+    o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".4"/>\n'
+          % (f(m1[0]), f(m1[1]), f(m2[0]), f(m2[1])))
+
+    # sehpa (yuvarlak, iki elips + ayak)
+    tc = iso(150, 118, 0, ox, oy, s)
+    tt = iso(150, 118, 22, ox, oy, s)
+    o += ('<ellipse class="ln" cx="%s" cy="%s" rx="26" ry="11" stroke-opacity=".8"/>'
+          '<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".5"/>'
+          '<ellipse class="ln2" cx="%s" cy="%s" rx="8" ry="3.4" stroke-opacity=".5"/>\n'
+          % (f(tt[0]), f(tt[1]), f(tt[0]), f(tt[1]), f(tc[0]), f(tc[1]), f(tc[0]), f(tc[1])))
+
+    # sarkit lamba + isik konisi
+    lp = iso(150, 118, RH + 26, ox, oy, s)
+    lb = iso(150, 118, 78, ox, oy, s)
+    o += ('<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".5"/>'
+          '<path class="ln" d="M%s %s l-11 14 h22 Z" fill="none" stroke-opacity=".8"/>'
+          % (f(lp[0]), f(lp[1]), f(lb[0]), f(lb[1] - 14), f(lb[0]), f(lb[1] - 14)))
+    o += ('<path class="cy blink" d="M%s %s L%s %s M%s %s L%s %s" stroke-opacity=".3"/>\n'
+          % (f(lb[0] - 11), f(lb[1]), f(tt[0] - 24), f(tt[1]),
+             f(lb[0] + 11), f(lb[1]), f(tt[0] + 24), f(tt[1])))
+
+    # saksi bitkisi (sag on)
+    pp = iso(196, 30, 0, ox, oy, s)
+    o += ('<path class="ln" d="M%s %s h14 l-2.5 13 h-9 Z" fill="none" stroke-opacity=".6"/>'
+          % (f(pp[0] - 7), f(pp[1] - 13)))
+    for ang in (-.7, -.2, .35, .8):
+        o += ('<path class="ln2" d="M%s %s q %s -14 %s -22" stroke-opacity=".55"/>'
+              % (f(pp[0]), f(pp[1] - 13), f(10 * math.sin(ang)), f(16 * math.sin(ang))))
+    o += "\n</g>\n"
+
+    # malzeme paleti (sag ust — kumas/renk ornekleri)
+    o += '<g>'
+    for k in range(4):
+        o += ('<rect class="ln2" x="%d" y="%d" width="24" height="24" rx="4" fill="%s" '
+              'fill-opacity="%s" stroke-opacity=".5"/>'
+              % (516, 58 + k * 32, a, (0.28, 0.16, 0.08, 0.02)[k]))
+    o += ('<line class="dim" x1="510" y1="52" x2="510" y2="182"/>'
+          '</g>\n')
+    # olcu
+    d0 = iso(0, 0, RH + 8, ox, oy, s); d1 = iso(RW, 0, RH + 8, ox, oy, s)
+    o += ('<line class="dim" x1="%s" y1="%s" x2="%s" y2="%s"/>\n'
+          % (f(d0[0]), f(d0[1]), f(d1[0]), f(d1[1])))
+    for pt3 in ((150, 118, 78), (0, 50, 92), (157.5, 0, 96), (110, 88, 24)):
+        q = iso(pt3[0], pt3[1], pt3[2], ox, oy, s)
+        o += node(q[0], q[1], 2.8)
+    o += "\n" + scanline(a, 70)
+    return o + TAIL
+
+
 BUILDERS = {
     "mimari": mimari,
     "insaat": insaat,
@@ -648,6 +889,8 @@ BUILDERS = {
     "medya": medya,
     "egitim": egitim,
     "havacilik": havacilik,
+    "tesisat": tesisat,
+    "icmimarlik": icmimarlik,
 }
 
 if __name__ == "__main__":
