@@ -16,7 +16,7 @@
   - **6 sektör sayfası** (mimari, makine, otomotiv, insaat, tesisat, icmimarlik): "İlgili çözüm sayfalarını inceleyin — … görün" → "İlgili çözüm sayfalarında, her çözümde kullanılan ürünleri de bulabilirsiniz".
   - `cadbim_autodesk.html`: sen-kipindeki "Yazılımı satın al, hemen eğitime başla — aynı çatı altında." → "Yazılım tedariki ve yetkili eğitimi aynı çatı altında sunuyoruz."
   - `cadbim_sanatsal_baski.html`: "Sürgüyü kaydırın, farka bakın." → "Baskı öncesi ve sonrası arasındaki farkı karşılaştırma görselinde inceleyebilirsiniz."
-  - **Takip (Onur onayı):** 3 sayfada (`cadbim_iletisim`, `cadbim_teklif_iste`, `cadbim_designjet_teknik_servis`) hızlı bağlantı etiketi "Hemen Ara" → "Telefonla Ulaşın".
+  - **Takip (Onur onayı):** 3 sayfada (`cadbim_iletisim`, `cadbim_teklif_iste`, `cadbim_designjet_teknik_servis`) hızlı bağlantı etiketi "Hemen Ara" → "Telefonla Ulaşın" → (Onur'un ikinci revizyonuyla) "Telefon".
 - **Doğrulama:** Site genelinde `üzerine gelin | tıklayın/tıklayarak/tıklayıp | Endüstrinizi seçin | Sürgüyü kaydırın | satın al, hemen` kalıpları için grep → görünür sayfa metinlerinde **0 eşleşme** (blog yazılarındaki ürün işlevi anlatımları — ör. "tek bir tıklama ile gerber dosyaları" — Autodesk kaynaklı içerik olduğundan kapsam dışı). Tur ipucu statik metindir, JS yalnızca ilk pin seçiminde gizler — davranış değişmedi.
 - **Durum:** ✅ Tamamlandı.
 
