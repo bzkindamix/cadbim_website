@@ -1060,7 +1060,97 @@ def gerceklik_yakalama():
 
 
 # --------------------------------------------------------------------------
+def bim_icerik_uretimi():
+    """Uretim modeli -> sadelestirme -> parametrik BIM objesi (.rfa) + tip katalogu."""
+    a = "#818cf8"
+    o = head(a)
+
+    # --- sol: detayli uretim modeli
+    o += box(38, 96, 186, 176, "ln2", 'fill="rgba(255,255,255,.02)"')
+    o += accent_text(52, 116, "CAD / URETIM MODELI", a, 9)
+    cx, cy = 131, 196
+    # govde + kanatlar (yogun hat isi = yuksek yuzey sayisi)
+    o += box(cx - 52, cy - 40, 104, 80, "ln", 'fill="%s" fill-opacity=".05"' % a)
+    for k in range(1, 13):
+        x = cx - 52 + k * 8
+        o += ('<line class="ln2" x1="%d" y1="%d" x2="%d" y2="%d" stroke-opacity=".3"/>'
+              % (x, cy - 40, x, cy + 40))
+    o += "\n"
+    # flans + civatalar
+    for sx in (cx - 62, cx + 52):
+        o += box(sx, cy - 26, 10, 52, "ln")
+        for k in range(3):
+            o += ('<circle class="ln2" cx="%d" cy="%d" r="2.6" stroke-opacity=".6"/>'
+                  % (sx + 5, cy - 16 + k * 16))
+    o += "\n"
+    # yuvarlatmalar / pah detaylari
+    for dx, dy in ((-52, -40), (52, -40), (52, 40), (-52, 40)):
+        o += ('<path class="ln2" d="M%d %d q%d 0 %d %d" stroke-opacity=".45"/>'
+              % (cx + dx - (6 if dx > 0 else -6), cy + dy,
+                 6 if dx > 0 else -6, 6 if dx > 0 else -6, 6 if dy > 0 else -6))
+    o += "\n"
+    o += label(131, 258, "1 240 yüzey · 38 MB", 9, "middle", ".4")
+
+    # --- orta: sadelestirme
+    o += gear(300, 184, 26, 12, "ln")
+    o += arrow(232, 184, 268, 184, a)
+    o += arrow(332, 184, 372, 184, a)
+    o += accent_text(300, 236, "SADELESTIRME", a, 9, "middle")
+    o += label(300, 252, "LOD · veri", 9, "middle", ".38")
+
+    # --- sag: BIM objesi
+    o += box(382, 96, 220, 176, "ln2", 'fill="rgba(255,255,255,.02)"')
+    o += accent_text(396, 116, "BIM OBJESI  ·  .rfa", a, 9)
+    bx, by = 402, 138
+    o += box(bx, by, 78, 62, "ln", 'fill="%s" fill-opacity=".07"' % a)
+    o += ('<line class="ln2" x1="%d" y1="%d" x2="%d" y2="%d" stroke-opacity=".4"/>'
+          % (bx, by + 31, bx + 78, by + 31))
+    # baglanti noktalari (MEP connector)
+    for px_, py_ in ((bx, by + 31), (bx + 78, by + 31)):
+        o += ('<g class="blink"><circle cx="%d" cy="%d" r="7" fill="none" stroke="%s" '
+              'stroke-opacity=".55" stroke-width="1.1"/></g>' % (px_, py_, CYAN))
+        o += node(px_, py_, 2.8)
+    o += "\n"
+    o += label(bx + 39, by + 78, "bağlantı noktaları", 8, "middle", ".38")
+    # parametre tablosu
+    params = [("Tip", "R-600"), ("Genislik", "600 mm"), ("Malzeme", "Celik"),
+              ("Kod", "AC-1180"), ("Guc", "918 W")]
+    for i, (k, v) in enumerate(params):
+        y = 150 + i * 17
+        o += ('<rect x="490" y="%d" width="100" height="13" rx="3" fill="%s" '
+              'fill-opacity=".05"/>' % (y - 10, a))
+        o += label(495, y, k, 8, "start", ".45")
+        o += accent_text(585, y, v, a, 8, "end")
+    o += "\n"
+    o += label(490, 254, "paylasilan parametreler", 8, "start", ".38")
+
+    # --- alt: tip katalogu
+    o += box(38, 296, 564, 96, "ln2", 'fill="rgba(255,255,255,.02)"')
+    o += accent_text(52, 316, "TIP KATALOGU", a, 9)
+    cols = ["Tip", "G (mm)", "Y (mm)", "Guc (W)", "Agirlik"]
+    rows = [["R-400", "400", "600", "612", "9,4 kg"],
+            ["R-600", "600", "600", "918", "13,1 kg"],
+            ["R-800", "800", "600", "1 224", "16,8 kg"]]
+    xs = [56, 176, 266, 356, 456]
+    for i, c in enumerate(cols):
+        o += label(xs[i], 336, c, 8, "start", ".38")
+    o += ('<line class="ln2" x1="52" y1="342" x2="588" y2="342" stroke-opacity=".22"/>\n')
+    for r, row in enumerate(rows):
+        y = 358 + r * 14
+        for i, v in enumerate(row):
+            if i == 0:
+                o += accent_text(xs[i], y, v, a, 8)
+            else:
+                o += label(xs[i], y, v, 8, "start", ".45")
+    o += "\n"
+    o += accent_text(588, 316, "IFC · rfa · IFC4", a, 9, "end")
+    o += scanline(a, 60)
+    return o + TAIL
+
+
+# --------------------------------------------------------------------------
 BUILDERS = {
+    "bim-icerik-uretimi": bim_icerik_uretimi,
     "dijital-donusum": dijital_donusum,
     "bim": bim,
     "simulasyon": simulasyon,

@@ -148,6 +148,71 @@ COZUM["bim"] = dict(
     ],
 )
 
+COZUM["bim_icerik_uretimi"] = dict(
+    slug="bim-icerik-uretimi", visual="bim-icerik-uretimi", accent="#818cf8",
+    lead=u"Bir yapı ürünü, mimarın modeline giremiyorsa o projede yok sayılır. "
+         u"BIM içerik üretimi; ürününüzün üretim CAD modelini, mimarın Revit "
+         u"projesine sorunsuz yerleşen, veri taşıyan ve doğru davranan bir BIM "
+         u"objesine dönüştürür.",
+    stats=[(u".rfa · IFC", u"Revit ailesi ve açık format çıktısı"),
+           (u"LOD 200–400", u"faz bazlı detay seviyesi"),
+           (u"Tip kataloğu", u"tek aileden tüm ürün gamı")],
+    intro_title=u"BIM objesi, ürünün küçültülmüş CAD modeli değildir",
+    intro=[
+        u"Üretim CAD modeli imalat için çizilir: her pah, her diş, her civata yerinde "
+        u"durur. Bu model mimarın projesine olduğu gibi konduğunda dosya şişer, "
+        u"görünüm kilitlenir ve model kullanılamaz hale gelir. BIM objesi ise "
+        u"<strong>tasarım kararı vermek için</strong> üretilir — geometri sadeleşir, "
+        u"buna karşılık ürünün verisi eksiksiz taşınır.",
+        u"Autodesk'in yapı ürünü üreticilerine yönelik yaklaşımı bunu üç başlıkta "
+        u"toplar: katalog ürünleri için, modelleri meta veri ve MEP bağlantılarıyla "
+        u"sadeleştirilmiş 3B dijital temsillere dönüştürmek; özel ürün ve sistemler "
+        u"için, CAD verisini bina veya tesis bağlamındaki BIM modeliyle bütünleştirmek; "
+        u"büyük ölçekli projelerde ise tüm paydaşların buluştuğu ortak veri ortamını kurmak.",
+        u"Bunun ticari karşılığı nettir: ürününüz mimarın kütüphanesinde hazır "
+        u"duruyorsa şartnameye girmesi kolaylaşır. Doğru kurulmuş bir aile, tek "
+        u"dosyadan tüm ürün gamınızı (tip kataloğu) sunar; yanlış kurulmuş bir aile "
+        u"ise ilk revizyonda çöp olur. Cadbim, Autodesk Gold Partner olarak bu içeriği "
+        u"standardıyla birlikte üretir.",
+    ],
+    bullets=[
+        (u"Sıfırdan Revit ailesi", u"Parametrik, tip kataloglu ve doğru kategoride "
+                                   u"aileler; Revit'in kendi araçlarıyla, eklenti bağımlılığı olmadan."),
+        (u"CAD'den BIM objesine", u"Inventor, SolidWorks veya STEP verisinin "
+                                  u"sadeleştirilip veri zenginleştirilerek .rfa ve IFC olarak yayınlanması."),
+        (u"Veri ve parametre standardı", u"Paylaşılan parametreler, adlandırma kuralı, "
+                                         u"malzeme ve MEP bağlantı noktaları; teslim öncesi kontrol listesi."),
+        (u"Kütüphane yönetimi", u"Ofis şablonu ve onaylı aile kütüphanesinin tek "
+                                u"kaynaktan yönetimi; sürüm ve güncelleme düzeni."),
+    ],
+    brands=["autodesk", "trimble", "hp"],
+    faq=[
+        (u"Elimde sadece üretim CAD modeli var, yeterli mi?",
+         u"Başlangıç için yeterli. STEP, IPT, IAM veya SLDPRT verisinden yola "
+         u"çıkılabilir. Yalnızca teknik resim (PDF/DWG) varsa geometri yeniden "
+         u"kurulur; bu durumda süre uzar. En sağlıklı sonuç, ürün gamının parametre "
+         u"listesiyle birlikte paylaşılmasıyla alınır."),
+        (u"Hangi LOD seviyesinde üretilmeli?",
+         u"Kullanım amacına göre. Tasarım aşamasında yerleşim ve çakışma için LOD 200–300 "
+         u"yeterlidir; imalat ve montaj detayı gerekiyorsa LOD 400'e çıkılır. Her "
+         u"seviyeyi en yükseğe çekmek dosyayı gereksiz ağırlaştırır — hedefi baştan "
+         u"tanımlıyoruz."),
+        (u"IFC de veriyor musunuz, sadece Revit mi?",
+         u"Revit ailesi (.rfa) ana çıktıdır; bunun yanında IFC olarak da yayınlanır. "
+         u"Böylece Revit kullanmayan paydaşlar (Archicad, Tekla, Solibri) da ürününüzü "
+         u"kendi ortamlarında kullanabilir."),
+        (u"Ürün gamım geniş, her ürün için ayrı dosya mı gerekiyor?",
+         u"Hayır — doğrusu da bu değildir. Aynı geometri mantığını paylaşan ürünler tek "
+         u"ailede toplanıp tip kataloğuyla sunulur; mimar açılır listeden ölçüyü seçer. "
+         u"Bu hem bakımı kolaylaştırır hem kütüphanenizi derli tutar."),
+        (u"Ekibime bu işi öğretebilir misiniz?",
+         u"Evet. Cadbim Autodesk Yetkili Eğitim Merkezi'dir (ATC); aile oluşturma ve "
+         u"kütüphane yönetimi eğitimlerini İzmir merkez ofisimizde ve kuruma özel "
+         u"programlarla veriyoruz. İsterseniz içeriği biz üretiriz, isterseniz ekibiniz "
+         u"üretir biz standardı ve denetimi kurarız."),
+    ],
+)
+
 COZUM["simulasyon"] = dict(
     slug="simulasyon", visual="simulasyon", accent="#f87171",
     lead=u"Simülasyon, üretmeden önce bilmektir. Yapısal, termal ve akış davranışını "
