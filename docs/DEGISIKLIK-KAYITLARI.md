@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-14 — Satır içi CSS konsolidasyonu Faz 1: 1.276 sayfanın CSS'i 21 ortak dosyaya çıkarıldı (Y8 kısmen)
+
+- **Yapan:** Onur'un "fable ile yapılacaklara geç ve sıradan başla ve bitir" talebi üzerine Claude (PDM asistanı, Fable) · Denetimdeki Y8 bulgusunun (satır içi CSS'in %95,6'sı sayfalar arası tekrar, ~6 MB) düşük-riskli ilk fazı.
+- **Yöntem (sıfır kaskad riski):** Tüm sayfaların `<style>` blokları SHA-256 ile gruplandı; yalnızca **bayt-bayt aynı** bloklar dışa çıkarıldı. `<link>` etiketi bloğun tam yerine konduğu için kaskad sırası birebir korunuyor; inline CSS'te hiç `url()` olmadığı doğrulandı (yol kırılması imkânsız). Farklı olan sayfalara (45 singleton kök sayfa + 9 iki-bloklu sektör sayfası + 1 istisna post) dokunulmadı.
+- **Sonuç:**
+  - `post/*.html`: 1.129 postun 1.128'i birebir aynı ~3,5KB bloğu taşıyordu → **`assets/css/blog-post.css`** (tek istisna `alias-autostudio.html`, eski şablon tipografisi — inline bırakıldı). Tek başına ~4,3 MB tekrar temizlendi.
+  - Kök sayfalar: 20 bayt-aynı şablon grubu (148 dosya) → **20 adet `assets/css/tpl-*.css`** (tpl-urun-a…f, tpl-hp-workstation, tpl-designjet-a…c, tpl-kvkk, tpl-cozum-a…c, tpl-sketchup, tpl-ultimaker, tpl-chaos, tpl-fabrication, tpl-autocad, tpl-kurumsal). Dosya başlıklarında üye sayfalar listeleniyor.
+- **Kazanç:** Repo genelinde ~5,4 MB CSS tekrarı silindi; kullanıcı tarafında ikinci sayfa görüntülemeden itibaren CSS önbellekten geliyor (post HTML'leri ~3,5KB, kök HTML'ler ~8-12KB küçüldü). Bakım: bir şablonun CSS düzeltmesi artık tek dosyada.
+- **Doğrulama:** Python assert'leri — her dosyada tam 1 blok değişti, swap bölgesi dışı baytlar birebir aynı, çıkarılan içerik grup içinde özdeş; sonrasında `<style>` kalıntısı 0 (istisna hariç), `</head>`/`</html>` yapısı sağlam. Tarayıcıda 3 sayfa tipi (tpl-urun-a, blog-post, tpl-kvkk) yüklendi: stylesheet sırası `tabler → tpl → design-system` (eski inline pozisyonuyla aynı), hesaplanan stiller doğru, 6 yeni CSS dosyası HTTP 200, konsol hatası 0.
+- **Kalan (Faz 2, ayrı iş):** 45 singleton kök sayfanın ortak çekirdeği + tpl dosyaları arası ortak taban — kural-bazlı analiz gerektirir, ayrı oturumda değerlendirilecek.
+- **Durum:** ✅ Faz 1 tamamlandı, push edilecek.
+
 ### DK-2026-08-03-11 — Çözüm sayfası yerleşimi yeniden kurgulandı; endüstri filtresi eklendi, mükerrer endüstri haritası tekilleştirildi
 
 - **Yapan:** Onur Bozok'un ekran görüntülü notları ("buraya taşı", "enine sayfayı doldur"), ardından "cadbim farkı şeridi SSS'ten sonra gelsin, ilgili ürünler neler yapabilirizden sonra gelsin", "çözümler ana sayfasına çözüm kutularının üstüne endüstri filtreleri koy" ve "alt taraftaki detaylı incele ile arasında bir tutarsızlık var aynı zamanda bu alanlar mükerrer" geri bildirimleri üzerine Claude (PDM asistanı).
