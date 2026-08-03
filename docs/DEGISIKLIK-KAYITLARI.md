@@ -4,6 +4,21 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-34 — Kurumsal ton denetimi: arayüz-talimatı ifadeleri ("üzerine gelin / tıklayın / seçin") açıklayıcı metinlerle değiştirildi
+
+- **Yapan:** Onur Bozok'un "'Alanınızın üzerine gelin…' ve 'endüstrinizi seçin…' gibi profesyonel gözükmeyen ifadeler istemiyorum; siteyi sadece text olarak incele" talebi üzerine Claude (PDM asistanı, marketing:brand-review skill'i ile).
+- **Kök neden / kriter:** Bölüm alt metinlerinde kullanıcıya arayüzü nasıl kullanacağını komut kipiyle anlatan mikro-metinler ("üzerine gelin", "tıklayın", "seçin", "sürgüyü kaydırın") kurumsal tonla çelişiyordu. Kriter: metin arayüz işlemini değil, sunulan değeri/içeriği anlatmalı. Kısa CTA buton etiketleri ("Teklif İste", "Hemen Ara") yerleşik kalıp olduğundan kapsam dışı bırakıldı.
+- **Değişiklikler (32 dosya, 34 satır):**
+  - `index.html` (3): Sektör Seçici alt metni → "Yazılım, donanım ve eğitim çözümlerimizi her sektörün kendi iş akışına göre yapılandırıyoruz."; Çözümler alt metni → "Her endüstri için öne çıkan çözüm alanlarını bir arada sunuyoruz."; Akreditasyonlar alt metnindeki "Logoya tıklayarak…" cümlesi kaldırıldı.
+  - **19 DesignJet ürün sayfası:** tur ipucu "Detayları görmek için görsel üzerindeki numaralara tıklayın." → "Görsel üzerindeki numaralı noktalar, ürün özelliklerinin detaylarını gösterir."
+  - `cadbim_designjet.html`: video bölümü alt metnindeki "— oynatmak için tıklayın" ibaresi kaldırıldı.
+  - **3 koleksiyon sayfası** (AEC/M&E/PD&M): "Ürün sayfası olanları tıklayıp inceleyebilirsiniz." → "Ürün sayfası bulunan yazılımların detaylarına bağlantılar üzerinden ulaşabilirsiniz."
+  - **6 sektör sayfası** (mimari, makine, otomotiv, insaat, tesisat, icmimarlik): "İlgili çözüm sayfalarını inceleyin — … görün" → "İlgili çözüm sayfalarında, her çözümde kullanılan ürünleri de bulabilirsiniz".
+  - `cadbim_autodesk.html`: sen-kipindeki "Yazılımı satın al, hemen eğitime başla — aynı çatı altında." → "Yazılım tedariki ve yetkili eğitimi aynı çatı altında sunuyoruz."
+  - `cadbim_sanatsal_baski.html`: "Sürgüyü kaydırın, farka bakın." → "Baskı öncesi ve sonrası arasındaki farkı karşılaştırma görselinde inceleyebilirsiniz."
+- **Doğrulama:** Site genelinde `üzerine gelin | tıklayın/tıklayarak/tıklayıp | Endüstrinizi seçin | Sürgüyü kaydırın | satın al, hemen` kalıpları için grep → görünür sayfa metinlerinde **0 eşleşme** (blog yazılarındaki ürün işlevi anlatımları — ör. "tek bir tıklama ile gerber dosyaları" — Autodesk kaynaklı içerik olduğundan kapsam dışı). Tur ipucu statik metindir, JS yalnızca ilk pin seçiminde gizler — davranış değişmedi.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-03-33 — Beyaz zeminli iç görseller kaldırıldı; eksik ikonlar subset fontuna eklendi
 
 - **Yapan:** Onur Bozok'un "beyaz backgroundlu görsel istemiyorum sitede, ya png yapalım ya da kaldıralım" (karar: *"Adobe gibi marka logosuysa kaldırma, ama iç görsellerdense kaldır"*) ve "ikonsuz kutular var, bunu gider ve tüm site için uygula" talepleri üzerine Claude (PDM asistanı).
