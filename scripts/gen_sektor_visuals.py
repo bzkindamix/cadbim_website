@@ -87,6 +87,35 @@ def node(x, y, r=3.0, cls="nd blink"):
     return '<circle class="%s" cx="%s" cy="%s" r="%s"/>' % (cls, f(x), f(y), f(r))
 
 
+# Sahne icerigini kadraja ortalayan sahne-bazli donusum (DK-2026-08-03-25).
+# Gorunur icerik kutlesi tarayicida piksel taramasiyla olculdu; p' = k*p + (tx,ty).
+# egitim ve havacilik bilincli olarak yok: kadraj disina tasan zemin/radar cizgileri
+# kompozisyon geregi kenardan kesiliyor, kaydirmak gorseli bozuyor.
+OFFSETS = {
+    "mimari":     (1.0,  -10, -24),
+    "icmimarlik": (0.83,  31,  -9),
+    "insaat":     (1.0,    0, -24),
+    "tesisat":    (0.85,  93, -38),
+    "otomotiv":   (1.0,    0, -32),
+    "medya":      (1.0,   -2, -39),
+}
+
+
+def apply_offset(key, svg):
+    off = OFFSETS.get(key)
+    if not off:
+        return svg
+    k, tx, ty = off
+    mark = '<rect width="%d" height="%d" fill="url(#glow)"/>\n' % (W, H)
+    i = svg.index(mark) + len(mark)
+    assert svg.endswith(TAIL)
+    tr = "translate(%s %s)" % (f(tx), f(ty))
+    if k != 1.0:
+        tr += " scale(%s)" % f(k)
+    return (svg[:i] + '<g transform="%s">\n' % tr
+            + svg[i:-len(TAIL)] + "</g>\n" + TAIL)
+
+
 # --------------------------------------------------------------------------
 def mimari():
     a = "#818cf8"
@@ -899,5 +928,5 @@ if __name__ == "__main__":
     for key, fn in BUILDERS.items():
         path = os.path.join(OUT, "%s.svg" % key)
         with open(path, "w", encoding="utf-8") as fh:
-            fh.write(fn())
+            fh.write(apply_offset(key, fn()))
         print("%-12s %6d bytes" % (key, os.path.getsize(path)))

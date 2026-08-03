@@ -40,6 +40,7 @@
 </style>
 <rect width="640" height="420" fill="url(#g)"/>
 <rect width="640" height="420" fill="url(#glow)"/>
+<g transform="translate(-10 -24)">
 <g class="float">
 <polygon class="fl" points="320,250 484.5,345 372,410 207.4,315"/><polygon class="ln" points="320,250 484.5,345 372,410 207.4,315"/>
 <polygon class="fl" points="320,212 484.5,307 372,372 207.4,277"/><polygon class="ln2" points="320,212 484.5,307 372,372 207.4,277"/>
@@ -68,4 +69,5 @@
 </g>
 <line class="dim" x1="173.4" y1="315" x2="173.4" y2="125"/><line class="dim" x1="163.4" y1="315" x2="183.4" y2="315"/>
 <g class="scan"><line x1="40" y1="90" x2="600" y2="90" stroke="#00c8f0" stroke-opacity=".5" stroke-width="1"/></g>
+</g>
 </svg>

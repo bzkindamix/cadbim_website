@@ -40,6 +40,7 @@
 </style>
 <rect width="640" height="420" fill="url(#g)"/>
 <rect width="640" height="420" fill="url(#glow)"/>
+<g transform="translate(93 -38) scale(0.8)">
 <g class="float">
 <polygon class="fl" points="150,162 233.1,210 176,243 92.8,195 92.8,273 150,240 233.1,288"/><polygon class="ln" points="150,162 233.1,210 176,243 92.8,195"/><line class="ln" x1="150" y1="240" x2="150" y2="162" stroke-opacity=".85"/><line class="ln" x1="233.1" y1="288" x2="233.1" y2="210" stroke-opacity=".4"/><line class="ln" x1="176" y1="321" x2="176" y2="243" stroke-opacity=".4"/><line class="ln" x1="92.8" y1="273" x2="92.8" y2="195" stroke-opacity=".85"/><polygon class="ln" points="150,240 233.1,288 176,321 92.8,273" stroke-opacity=".55"/>
 <ellipse class="ln" cx="134.4" cy="256.4" rx="21" ry="24"/><ellipse class="ln2" cx="134.4" cy="256.4" rx="13" ry="15"/><g class="spin" style="animation-duration:10s"><line x1="134.4" y1="256.4" x2="146.4" y2="256.4" stroke="#2dd4bf" stroke-opacity=".7" stroke-width="1.2" stroke-linecap="round"/><line x1="134.4" y1="256.4" x2="128.4" y2="268.6" stroke="#2dd4bf" stroke-opacity=".7" stroke-width="1.2" stroke-linecap="round"/><line x1="134.4" y1="256.4" x2="128.4" y2="244.3" stroke="#2dd4bf" stroke-opacity=".7" stroke-width="1.2" stroke-linecap="round"/></g>
@@ -54,4 +55,5 @@
 <line class="dim" x1="216" y1="203.1" x2="475.8" y2="353.1"/>
 <circle class="nd blink" cx="134.4" cy="256.4" r="2.8"/><circle class="nd blink" cx="296.5" cy="336.6" r="2.8"/><circle class="nd blink" cx="383.1" cy="386.6" r="2.8"/><circle class="nd blink" cx="330.4" cy="400.9" r="2.8"/>
 <g class="scan"><line x1="40" y1="60" x2="600" y2="60" stroke="#00c8f0" stroke-opacity=".5" stroke-width="1"/></g>
+</g>
 </svg>

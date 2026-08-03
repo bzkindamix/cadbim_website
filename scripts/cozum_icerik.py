@@ -276,6 +276,18 @@ COZUM["bim_icerik_uretimi"] = dict(
          u"Hayır — doğrusu da bu değildir. Aynı geometri mantığını paylaşan ürünler tek "
          u"ailede toplanıp tip kataloğuyla sunulur; mimar açılır listeden ölçüyü seçer. "
          u"Bu hem bakımı kolaylaştırır hem kütüphanenizi derli tutar."),
+        (u"Mimarlık ofisiyiz, üretici değiliz — bu çözüm bize ne sağlar?",
+         u"İki şey. Birincisi ofis kütüphanesinin standarda oturtulması: şablon, "
+         u"adlandırma, paylaşılan parametre ve onaylı aile setinin tek kaynaktan "
+         u"yönetilmesi, böylece her projede aile yeniden çizilmez. İkincisi üreticiden "
+         u"gelen içeriğin denetlenmesi — dışarıdan gelen aileler çoğu kez yanlış "
+         u"kategoride, aşırı detaylı ve parametresizdir; bunlar sadeleştirilip ofis "
+         u"standardınıza uyarlanır."),
+        (u"Dışarıdan indirdiğimiz aileler modelimizi şişiriyor, ne yapmalı?",
+         u"Yaygın bir sorun: üretici modelleri genelde üretim CAD'inden dönüştürülmüş, "
+         u"gereksiz detay taşıyan dosyalardır. Bunları atmak yerine sadeleştiriyoruz — "
+         u"geometri LOD hedefine indirilir, gereken parametreler korunur, kategori "
+         u"düzeltilir. Ofis kütüphanesine yalnızca denetimden geçmiş aile girer."),
         (u"Ekibime bu işi öğretebilir misiniz?",
          u"Evet. Cadbim Autodesk Yetkili Eğitim Merkezi'dir (ATC); aile oluşturma ve "
          u"kütüphane yönetimi eğitimlerini İzmir merkez ofisimizde ve kuruma özel "

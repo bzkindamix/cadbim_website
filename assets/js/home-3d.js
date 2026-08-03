@@ -542,8 +542,23 @@
       el.setAttribute('x2', (p2[0]+offX).toFixed(1)); el.setAttribute('y2', (p2[1]+offY).toFixed(1));
     }
     function renderObj(){
-      var i;
-      for (i = 0; i < lines.length; i++) place(lines[i].el, proj(lines[i].a), proj(lines[i].b));
+      var i, q1, q2, cache = [];
+      /* Model dönerken izdüşüm kutusu kayar; her karede yeniden merkezle ki
+         sahne yörünge boyunca kadrajın ortasında kalsın. */
+      var mnX=Infinity, mxX=-Infinity, mnY=Infinity, mxY=-Infinity;
+      for (i = 0; i < lines.length; i++){
+        q1 = proj(lines[i].a); q2 = proj(lines[i].b);
+        cache.push(q1, q2);
+        if(q1[0]<mnX)mnX=q1[0]; if(q1[0]>mxX)mxX=q1[0];
+        if(q2[0]<mnX)mnX=q2[0]; if(q2[0]>mxX)mxX=q2[0];
+        if(q1[1]<mnY)mnY=q1[1]; if(q1[1]>mxY)mxY=q1[1];
+        if(q2[1]<mnY)mnY=q2[1]; if(q2[1]>mxY)mxY=q2[1];
+      }
+      if (lines.length){
+        offX = 210 - (mnX+mxX)/2;
+        offY = 170 - (mnY+mxY)/2;
+      }
+      for (i = 0; i < lines.length; i++) place(lines[i].el, cache[i*2], cache[i*2+1]);
       for (i = 0; i < plane.length; i++) place(plane[i].el, proj(plane[i].a), proj(plane[i].b));
       for (i = 0; i < nodes.length; i++){
         var q = proj(nodes[i].p);

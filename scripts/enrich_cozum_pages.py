@@ -341,7 +341,7 @@ SECTION_SPLIT = re.compile(r'(?m)^(?:<!-- cz-\w+ -->\n)?<section')
 
 # Onur'un 2026-08-03 notu: Ilgili Urunler "Neler Yapabiliriz"den hemen sonra,
 # Cadbim Farki seridi SSS'ten sonra gelir.
-ORDER = ['hero', 'intro', 'yetenek', 'urun', 'endustri', 'other',
+ORDER = ['hero', 'intro', 'yetenek', 'kitle', 'urun', 'endustri', 'other',
          'marka', 'enrich', 'sss', 'fark', 'blog']
 
 
@@ -356,6 +356,8 @@ def classify(chunk):
         return 'sss'
     if '<!-- cz-fark -->' in chunk or 'data-enrich-brand' in chunk:
         return 'fark'
+    if '<!-- cz-kitle -->' in chunk:
+        return 'kitle'
     if 'id="blog-related-section"' in chunk:
         return 'blog'
     if u'Neler Yapabiliriz' in chunk:

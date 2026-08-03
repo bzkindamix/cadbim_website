@@ -471,3 +471,28 @@ a.card:focus-visible{outline:2px solid #00c8f0;outline-offset:3px;}
 .cz-hat-i p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0 0 9px;}
 .cz-hat-i em{display:block;font-style:normal;font-size:11px;line-height:1.55;
   color:var(--cz,#e25922);opacity:.85;}
+
+/* ==== "Iki kitle" bolumu — birincil/ikincil kitle karti (Onur 2026-08-03) ==== */
+.cz-kitle{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.cz-kitle-c{background:#0d1830;border:.5px solid rgba(255,255,255,.09);border-radius:16px;
+  padding:26px 24px;transition:border-color .2s;}
+.cz-kitle-c:hover{border-color:rgba(0,200,240,.28);}
+.cz-kitle-c.is-primary{
+  border-color:color-mix(in srgb,var(--cz,#00c8f0) 42%,transparent);
+  background:linear-gradient(150deg,color-mix(in srgb,var(--cz,#00c8f0) 8%,transparent),transparent 62%),#0d1830;
+}
+.cz-kitle-h{display:flex;align-items:flex-start;gap:13px;margin-bottom:14px;}
+.cz-kitle-h>span{width:40px;height:40px;border-radius:11px;flex-shrink:0;display:flex;
+  align-items:center;justify-content:center;
+  background:color-mix(in srgb,var(--cz,#00c8f0) 14%,transparent);color:var(--cz,#00c8f0);}
+.cz-kitle-h>span i{font-size:20px;}
+.cz-kitle-h h3{font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;color:#fff;margin:0 0 3px;}
+.cz-kitle-h em{display:block;font-style:normal;font-size:11px;letter-spacing:1.4px;
+  text-transform:uppercase;color:var(--cz,#00c8f0);opacity:.9;}
+.cz-kitle-c>p{font-size:14px;color:rgba(255,255,255,.58);line-height:1.75;margin:0 0 16px;}
+.cz-kitle-c ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;}
+.cz-kitle-c li{position:relative;padding-left:20px;font-size:13px;
+  color:rgba(255,255,255,.5);line-height:1.6;}
+.cz-kitle-c li::before{content:'';position:absolute;left:4px;top:7px;width:6px;height:6px;
+  border-radius:50%;background:var(--cz,#00c8f0);opacity:.75;}
+@media(max-width:900px){.cz-kitle{grid-template-columns:1fr;}}

@@ -40,6 +40,7 @@
 </style>
 <rect width="640" height="420" fill="url(#g)"/>
 <rect width="640" height="420" fill="url(#glow)"/>
+<g transform="translate(0 -32)">
 <defs><clipPath id="carclip"><path d="M62 300 C62 276 66 259 80 249 L118 237 C162 228 210 222 248 217 C268 207 288 191 306 179 L372 179 C424 181 464 199 492 220 L556 229 C572 232 578 243 578 261 L578 300 H520 A50 50 0 0 0 420 300 H220 A50 50 0 0 0 120 300 Z"/></clipPath></defs>
 <g class="float">
 <path class="fl" d="M62 300 C62 276 66 259 80 249 L118 237 C162 228 210 222 248 217 C268 207 288 191 306 179 L372 179 C424 181 464 199 492 220 L556 229 C572 232 578 243 578 261 L578 300 H520 A50 50 0 0 0 420 300 H220 A50 50 0 0 0 120 300 Z"/>
@@ -63,4 +64,5 @@
 <path class="dim" d="M170 362 H470 M170 354 V370 M470 354 V370"/><path class="dim" d="M62 390 H578 M62 382 V398 M578 382 V398"/><line class="dim" x1="62" y1="330" x2="578" y2="330"/>
 <circle class="nd blink" cx="306" cy="179" r="2.8"/><circle class="nd blink" cx="372" cy="179" r="2.8"/><circle class="nd blink" cx="248" cy="217" r="2.8"/><circle class="nd blink" cx="492" cy="220" r="2.8"/><circle class="nd blink" cx="62" cy="276" r="2.8"/><circle class="nd blink" cx="578" cy="261" r="2.8"/>
 <g class="scan"><line x1="40" y1="96" x2="600" y2="96" stroke="#00c8f0" stroke-opacity=".5" stroke-width="1"/></g>
+</g>
 </svg>

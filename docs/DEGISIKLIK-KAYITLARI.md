@@ -4,6 +4,32 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-26 — Şirket içi önizleme yayını (GitHub Pages), 4 sayfada bölüm eşitleme, BIM İçerik'e mimarlık kitlesi
+
+- **Yapan:** Onur Bozok'un üç maddeli talebi üzerine Claude (PDM asistanı): (1) "siteyi şimdi şirketteki kişilere göstereceğiz… link vermem lazım. bunu github'tan yapacaksak orayı canlıya al", (2) "eşitle", (3) "mimarlık içinde içeriği güncelle ancak ana hedef dediğin gibi imalatçılar olmalı".
+
+**1) Şirket içi önizleme yayını → https://bzkindamix.github.io/cadbim_website/**
+GitHub Pages zaten açıktı (public depo, `main` kökünden) ama önizleme olarak kullanılamayacak durumdaydı:
+  - Site **cadbim.com.tr'nin alan kökünde** yayınlanmak üzere yazıldığı için `/`, `/favicon.svg`, `/feed.xml`, `/site.webmanifest` ve apple-touch-icon gibi mutlak yollar üretimde **doğru**, ancak Pages proje sitesi bir **alt dizinde** (`/cadbim_website/`) servis edildiği için orada kırılıyordu. En görünür etkisi: logoya basınca ana sayfaya değil `bzkindamix.github.io` köküne gidiliyordu (584 geçiş).
+  - Önizleme kopyası arama motoruna açıktı; canlı siteyle mükerrer içerik riski taşıyordu.
+  - **Çözüm:** `main` dalı üretim için **doğru hâlde bırakıldı**; `scripts/build_pages.py` yalnızca önizleme kopyasında (`_site`) bu yolları önekliyor ve her sayfaya `noindex, nofollow` ekliyor. Proje sitelerinde `/robots.txt` alan köküne ait olduğu ve depo içindeki dosya okunmadığı için meta etiketi kullanıldı. Böylece canlıya geçerken hiçbir şeyin geri alınması gerekmiyor.
+  - Pages kaynağı **branch'ten workflow'a** çevrildi; `.github/workflows/pages.yml` ile `main`'e her push otomatik yayınlanıyor. `_site` gitignore'a alındı.
+  - `404.html`'deki `data-path` bağlantıları çalışma anında `window.__prefix` ile yeniden yazıldığı için dönüştürmeden muaf tutuldu (doğrulayıcıya bu istisna işlendi).
+  - **Doğrulama:** Önizlemede kalan kırık mutlak yol **0** (1326 HTML + 752 dosya). Canlı adres üzerinde 11 kaynak denetlendi, tümü 200. Gerçek tarayıcıda gezinme testi: ana sayfa yükleniyor (kırık görsel 0, logo `/cadbim_website/`, noindex mevcut); `/cadbim_website/plm` ve `/cadbim_website/ai-gorsellestirme` temiz adresleri 404.html üzerinden doğru sayfaya yönleniyor; olmayan adres düzgün 404 sayfası veriyor.
+
+**2) Bölüm eşitleme — 4 sayfada eksik olan iki bölüm eklendi**
+18 çözüm sayfasının 14'ünde "Yöntemimiz — Bu Çözümü Nasıl Hayata Geçiriyoruz?" (5 adım) ve "Sektör İyi Uygulamaları — Projelerde Uyguladığımız Standartlar" (6 madde) bölümleri vardı; **plm, fabrika-tasarimi** (eskiden yerlerine "Cadbim Farkı" bloğu konmuştu) ile bu oturumda eklenen **bim-icerik-uretimi** ve **ai-gorsellestirme** sayfalarında yoktu. `scripts/add_yontem_iyiuygulama.py` ile dördü de mevcut 14 sayfadaki **birebir aynı kalıpla** tamamlandı; içerik her sayfaya özel yazıldı (ör. PLM için süreç envanteri → fazlı devreye alma; AI için lisans envanteri → kullanım politikası). `dijital-donusum` bilinçli olarak kapsam dışı bırakıldı — kendi "Dijital Dönüşüm Yolculuğunuz" bölümü var. Artık 17 sayfada bu iki bölüm de mevcut.
+
+**3) BIM İçerik sayfasına mimarlık kitlesi — ana hedef imalatçı kaldı**
+Hero, giriş ve konumlandırma **değiştirilmedi**; birincil kitle yapı ürünü üreticileri olarak duruyor. Eklenenler:
+  - **"Kimler İçin? — İki kitle, iki farklı ihtiyaç"** bölümü: iki kartlı düzen, **imalatçı kartı birincil olarak işaretli** (aksan kenarlık + degrade zemin, "Birincil kitle" etiketi), mimarlık/iç mimarlık ofisi kartı ikincil kitle olarak anlatılıyor (ofis kütüphanesi standardı, dışarıdan gelen üretici ailelerinin denetimi, ATC eğitimi). Bölüm "Neler Yapabiliriz?"in hemen ardına yerleşiyor ki konumlandırma erken okunsun.
+  - **SSS'ye iki madde:** "Mimarlık ofisiyiz, üretici değiliz — bu çözüm bize ne sağlar?" ve "Dışarıdan indirdiğimiz aileler modelimizi şişiriyor, ne yapmalı?" (SSS 5 → 7 madde).
+  - `enrich_cozum_pages.py` bölüm sıralamasına `kitle` anahtarı eklendi (yetenek → kitle → ürün).
+
+- **Doğrulama:** 197 kök sayfada etiket dengesi ve JSON-LD **0 sorun**. Beş sayfa ölçüldü: İki Kitle bölümü 1280 px'te iki, 375 px'te tek sütun; birincil kart aksan kenarlığını alıyor; dört sayfada 11 yöntem/iyi uygulama başlığı (5 adım + 6 madde) sayıldı; yatay taşma 0, metin taşması 0, kırık görsel 0. Cache sürümü v=21.
+- **Not:** Şirket içi paylaşımda linkin **canlı site değil önizleme** olduğunun belirtilmesi gerekir; sayfalarda `noindex` var ama ziyaretçiye görünen bir uyarı bandı eklenmedi (inceleyecekleri tasarımı değiştirmemek için).
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-25 — Yeni çözüm sayfalarındaki üç eksik kapatıldı: OG görseli, blog eşleşmesi, video bölümü
 
 - **Yapan:** Onur Bozok'un "devam?" sorusu üzerine, yeni özellik eklemek yerine önceki turlarda kendi bıraktığım açık uçlar denetlenip kapatıldı (Claude, PDM asistanı).

@@ -88,6 +88,60 @@ INDUSTRIES = [
 ]
 
 
+# --------------------------------------------------------------------------
+# Iki kitle bolumu -- birincil: yapi urunu ureticileri, ikincil: mimarlik ofisleri
+# (Onur: "mimarlik icinde icerigi guncelle ancak ana hedef imalatcilar olmali")
+# --------------------------------------------------------------------------
+KITLE = [
+    (True, 'ti-building-factory-2', u'Yapı Ürünü Üreticileri',
+     u'Birincil kitle',
+     u'Ürününüz mimarın kütüphanesinde hazır durmuyorsa şartnameye girmesi zorlaşır. '
+     u'Üretim CAD modelinizi, projeye sorunsuz yerleşen ve veri taşıyan bir BIM '
+     u'objesine çeviriyoruz.',
+     [u'Ürün gamının tek ailede tip kataloğuyla sunulması',
+      u'Üretici kodu, performans değeri ve malzeme verisinin objeye işlenmesi',
+      u'MEP bağlantı noktalarının tanımlanması',
+      u'.rfa ve IFC olarak yayınlama']),
+    (False, 'ti-building-arch', u'Mimarlık & İç Mimarlık Ofisleri',
+     u'İkincil kitle',
+     u'Sorun içerik üretmek değil, içeriği yönetmek. Ofis kütüphanesini standarda '
+     u'oturtuyor, dışarıdan gelen üretici ailelerini denetleyip ofis standardınıza '
+     u'uyarlıyoruz.',
+     [u'Ofis şablonu, adlandırma ve paylaşılan parametre standardı',
+      u'Onaylı aile kütüphanesinin tek kaynaktan yönetimi',
+      u'Dışarıdan gelen ailelerin sadeleştirilmesi ve kategori düzeltmesi',
+      u'Ekibe aile oluşturma eğitimi (ATC)']),
+]
+
+
+def kitle_section():
+    cols = []
+    for primary, icon, title, tag, desc, items in KITLE:
+        lis = "".join(
+            u'          <li>%s</li>\n' % x for x in items)
+        cols.append(
+            u'    <div class="cz-kitle-c%s">\n'
+            u'      <div class="cz-kitle-h">\n'
+            u'        <span><i class="ti %s"></i></span>\n'
+            u'        <div><h3>%s</h3><em>%s</em></div>\n'
+            u'      </div>\n'
+            u'      <p>%s</p>\n'
+            u'      <ul>\n%s      </ul>\n'
+            u'    </div>\n'
+            % (' is-primary' if primary else '', icon, title, tag, desc, lis))
+    return (u'<!-- cz-kitle -->\n'
+            u'<section class="section cz-sec" style="--cz:%s;padding-top:0;">\n'
+            u'  <div class="sh" style="margin-bottom:26px;">\n'
+            u'    <div class="slabel" style="color:var(--cz);">Kimler İçin?</div>\n'
+            u'    <div class="stitle">İki kitle, iki farklı ihtiyaç</div>\n'
+            u'    <p class="ssub">Aynı teknik iş, iki taraf için farklı bir problemi çözer — '
+            u'hangisi olduğunuza göre farklı bir paketle geliyoruz.</p>\n'
+            u'  </div>\n'
+            u'  <div class="cz-kitle">\n%s  </div>\n'
+            u'</section>\n'
+            u'<!-- /cz-kitle -->\n' % (ACCENT, "".join(cols)))
+
+
 def card(icon, title, desc):
     return (u'''    <div class="card">
       <div class="card-icon"><i class="ti %s"></i></div>
@@ -224,6 +278,7 @@ def build_page():
   <div class="grid g3">
 %(cards)s  </div>
 </section>
+%(kitle)s
 <section class="section" style="padding-top:0;">
   <div class="sh">
     <div class="slabel">İlgili Ürünler</div>
@@ -242,6 +297,7 @@ def build_page():
 </section>
 %(videos)s''' % dict(accent=ACCENT,
                      cards="".join(card(*c) for c in CARDS),
+                     kitle=kitle_section(),
                      products="".join(product_card(*p) for p in PRODUCTS),
                      industries="".join(industry_card(*i) for i in INDUSTRIES),
                      videos=video_section())
