@@ -32,6 +32,7 @@
 - **Takip (Onur'un 2. tur notları, aynı gün — 5 satır):**
   - "Fiyat" sözcüğü metinlerden çıkarıldı ([[cadbim-fiyat-gosterilmez]] ilkesinin dil düzeyine genişletilmesi): "aynı gün fiyat dönüşü yapalım" → "teklifinizi aynı gün iletelim"; form notu + JS başarı mesajı "Talebinize aynı gün dönüş yapıyoruz…"; WhatsApp kartı "hızlı fiyat alın" → "aynı gün teklif alın"; kapanış notu "fiyat dönüşü aynı gün" → "teklifiniz aynı gün elinizde".
   - "Şehir dışı işler **itinayla paketlenir**" (pideci tabelası çağrışımı) → "Şehir dışı işler, sergilenmeye hazır halde **korumalı ambalajla yola çıkar**."
+- **Takip (3. tur, aynı gün — 3 satır):** Onur'un "teklif al yerine ne olabilir?" sorusu üzerine sunulan seçeneklerden "öneri + dönüş + yanıt" karışımı onaylandı ("önerin olsun"). "Teklif" sözcüğü bu sayfanın atölye tonuna yumuşatıldı: CTA girişi "teklifinizi aynı gün iletelim" → "**önerimizi** aynı gün iletelim"; WhatsApp kartı "aynı gün teklif alın" → "aynı gün **dönüş** alın"; kapanış notu "teklifiniz aynı gün elinizde" → "**yanıtımız** aynı gün elinizde". Ana sitedeki "Teklif İste" CTA'sı kurumsal bağlamda korunuyor.
 - **Kapsam dışı (bilinçli):** "Ham dosya girer. Eser çıkar.", "Kadrajdan koleksiyona.", "Baskı yarısı; sunum diğer yarısı." gibi sayfanın karakterini kuran kısa cümleler korundu. "KAYDIR" / "SÜRÜKLE / KAYDIR" mikro-etiketleri bu tür sayfalarda tür-standardı görsel ipucu olduğundan bırakıldı. `<head>` meta metinleri zaten kurumsal, dokunulmadı.
 - **Durum:** ✅ Tamamlandı.
 
