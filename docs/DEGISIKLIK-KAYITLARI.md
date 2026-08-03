@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-29 — İletişim sayfasındaki Google Haritası yanlış konumu gösteriyordu; koordinat düzeltildi
+
+- **Yapan:** Onur Bozok'un "iletişim alanında Google Maps'te tam lokasyonumuz gözükmüyor bunu düzelt" talebi üzerine Claude (PDM asistanı).
+- **Kök neden:** Sitede kayıtlı koordinat (38.4895, 27.0389) gerçek binadan **boylamda ~2,5 km batıya** kaymıştı. Ayrıca gömülü harita `iframe`'inin `pb=` parametresi elle uydurulmuş sahte bir Google Place ID (`0x14bbd8b2f9e25a9b:0x0`) ve sahte zaman damgası (`4v1234567890`) içeriyordu — Google'ın gerçek "Haritayı Yerleştir" akışından hiç geçmemiş bir string.
+- **Doğrulanan gerçek konum:** Yandex Haritalar'da "Cadde Anadolu Kaşarcı Plaza" adıyla, CADBİM'in bu binada yer aldığı teyit edilerek bulundu: **38.490245, 27.067452**. Bağımsız ikinci kaynak (OpenStreetMap/Nominatim) Anadolu Caddesi'nin Çiğli'deki segmentlerini aynı posta kodunda (35620) ve aynı boylam aralığında (27.04–27.07) doğruladı — eski değerin (27.0389) yanlış olduğunu destekledi.
+- **Düzeltilen dosyalar:** `cadbim_iletisim.html` (JSON-LD `GeoCoordinates` + harita `iframe` src) ve `index.html` (ana sayfadaki `LocalBusiness` şemasının `GeoCoordinates`'ı) — eski hatalı koordinat sitede yalnızca bu iki dosyada geçiyordu.
+- **Yeni harita embed'i:** Sahte `pb=` string'i yerine anahtarsız, güvenilir `https://maps.google.com/maps?q=LAT,LNG(Etiket)&z=16&output=embed` biçimi kullanıldı — pin, iş yeri adı Google'ın kendi dizininde eşleşmese bile her zaman verilen koordinata düşüyor.
+- **Doğrulama:** Embed URL'sine doğrudan gidildiğinde Google, verdiğimiz koordinatlardan kendi `pb=` parametresini otomatik türetip yönlendirdi (`!1s38.490245,27.067452!6i16`) — söz dizimini geçerli kabul ettiğini kanıtlıyor. **Not:** Bu oturumun tarayıcı paneli piksel render/screenshot üretemediği için haritanın son halini görsel olarak ekrana getirip gösteremedim; canlıya alındığında Onur'un bir kez göz atıp teyit etmesi iyi olur.
+- **Durum:** ✅ Koordinat ve embed URL'si düzeltildi; görsel son teyit Onur'da.
+
 ### DK-2026-08-03-28 — Ürün/çözüm/endüstri sayfalarındaki "İlgili İçerikler" widget'ına Blog'a giden filtreli "Tümünü gör" bağlantısı
 
 - **Yapan:** Onur Bozok'un "5 videodan fazlasını görmek isteyenleri blog sayfamıza ilgili filtre ile gönderen bir link olmalı hem ürünlerde hem endüstrilerde hem çözümlerde" talebi üzerine Claude (PDM asistanı).
