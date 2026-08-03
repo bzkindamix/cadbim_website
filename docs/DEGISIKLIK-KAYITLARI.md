@@ -4,6 +4,19 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-31 — Çözüm sayfalarındaki marka logoları çerçeveden çıkarıldı ve büyütüldü
+
+- **Yapan:** Onur Bozok'un "çözümler sayfalarında çalıştığımız markaların logoları aşırı küçük, bunları çerçevesiz yapalım ve logoları büyütelim; bu tüm sitede geçerli bir kural olsun" talebi üzerine Claude (PDM asistanı).
+- **Kök neden:** `.cz-brand-logo` **38×38px kare** kutuydu ve üstüne `padding:7px` + arka plan + kenarlık vardı → logoya kalan alan yalnızca **24×24px**. Marka logolarının çoğu yatay wordmark olduğu için kare alana sığdırılınca yükseklikleri çöküyordu. Ölçülen gerçek render: **Autodesk 22×2px** (doğal oran 300×31 = 9,7:1 — pratikte görünmez bir çizgi), Adobe 22×12px, HP 22×22px.
+- **Kural:** Marka logoları arka planlı/kenarlıklı kare kutulara hapsedilmez; kutu logonun en-boy oranına uyar. `.cz-brand-logo` artık **78×40px, çerçevesiz** (arka plan/kenarlık/padding kaldırıldı); `.cz-brands` ızgarası 210→238px'e genişletilerek metne yer bırakıldı.
+- **Sonuç (ölçülen):** Autodesk 22×2 → **78×8** (≈4×), Adobe 22×12 → **74×40** (≈3,4×), HP 22×22 → **40×40**. Kural `design-system.css`'te tek yerde tanımlı olduğu için **19 çözüm sayfasının tamamı** tek değişiklikle güncellendi.
+- **Bilinçli olarak kapsam dışı bırakılanlar (kod içinde de belgelendi):**
+  - `.pico` (ürün kataloğu, 17 sayfa): ölçüldü — zaten çerçevesiz (şeffaf zemin) ve logolar 42px. Kuralla hizalı, değişiklik gerekmedi.
+  - `.xp-logo` (çapraz satış şeritleri, 10 sayfa): önce genel kural uygulandı, sonra **geri alındı**. Sayfadan sayfaya farklı varyantları var: `cadbim_autodesk.html`'de kutu 48px ve arka plan her ürünün **marka rengine göre kodlanmış** (hover'da o renkte parlıyor) — orada arka plan bir "çerçeve" değil, bilgi taşıyan tasarım öğesi. Tek tip kural bu sayfada kutuyu 48→40px küçültüp tasarımı bozuyordu; regresyon fark edilip geri alındı ve gerekçe CSS yorumuna yazıldı.
+- **Doğrulama (localhost:8420):** `.cz-brand`/`.xp-logo` içeren 25 sayfa gizli iframe'lerle hem masaüstü (1400px) hem mobil (375px) genişlikte tarandı; her logo için kısa kenar <7px (ezilme), kutuda arka plan/kenarlık (çerçeve), kart ve metin taşması ölçüldü. **Sonuç: 0 ezilme, 0 çerçeve, 0 taşma.** `.xp-logo` geri alma sonrası autodesk 48×48 (marka renkli) ve hp/chaos 42×42 (gri) orijinal değerlerine döndüğü teyit edildi.
+- **Not:** Bu oturumun tarayıcı paneli screenshot üretemedi; doğrulama ölçüm tabanlı (`getBoundingClientRect`/`getComputedStyle`) yapıldı, görsel son teyit Onur'da.
+- **Durum:** ✅ 19 çözüm sayfası güncellendi, kapsam dışı bırakılanlar gerekçesiyle belgelendi.
+
 ### DK-2026-08-03-30 — Mobil düzenleme kuralları kural setine dönüştürüldü ve site geneline uygulandı (`mobile-guardrails.css`)
 
 - **Yapan:** Onur Bozok'un "mobil tarafında yaptığımız düzenlemeleri bir kural silsilesi olarak al ve tüm site için bunu çalıştır" talebi üzerine Claude (PDM asistanı).
