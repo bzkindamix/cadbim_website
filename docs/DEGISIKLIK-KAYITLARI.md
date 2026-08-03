@@ -4,6 +4,27 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-24 — Sürüm numaraları içerikten kaldırıldı; Sanatsal Baskı navigasyon bulgusu düzeltildi
+
+- **Yapan:** Onur Bozok'un "sürüm numaraları kullanmaktan kaçın", "sanatsal baskı bilinçli ama bu sence bir problem mi? orasının kitlesi bambaşka" ve "yerel sunucuyu yeniden başlat" talimatları üzerine Claude (PDM asistanı).
+
+**1) Sürüm numaraları kaldırıldı**
+Bir gün önce Chaos marka sayfasına eklenen bölüm "Güncel Sürümler" adıyla ve sürüm numaralarıyla (Corona 14, Anima 6 update 2, V-Ray 7 for 3ds Max update 4, V-Ray for Blender update 3, Blender 5.1) yazılmıştı. Bu yaklaşım her yeni sürümde sayfanın güncellenmesini zorunlu kılıyor ve güncellenmediğinde eskimiş bilgi yayımlanmış oluyordu.
+  - Bölüm **"Öne Çıkan Yetenekler — Chaos ekosisteminde neler var?"** olarak yeniden yazıldı; içerik sürüm değil **yetenek** düzeyinde anlatılıyor: AI Upscaler (Chaos Cloud), AI Material Generator (Chaos Cosmos), AI Mood Match, gerçek zamanlı görünüm penceresi (Vantage + 3ds Max), kalabalık ve trafik animasyonu (Anima), geniş platform desteği (V-Ray).
+  - Alt metindeki tarih notu ("Ağustos 2026") kaldırıldı; yerine "ekosistem sürekli geliştiği için burada yetenekleri anlatıyoruz; hangi ürün ve planda hangisinin bulunduğunu teklif aşamasında birlikte netleştiriyoruz" ifadesi kondu.
+  - AI Destekli Görselleştirme sayfasındaki Corona ürün kartından da sürüm numarası çıkarıldı.
+  - **Yan bulgu:** Site genelinde sürüm ifadesi taraması yapıldı; benim eklediğim bloklar dışında yalnızca bir yerde kalmıştı — `cadbim_ultimaker_malzeme.html` içinde *"Cura 5'in metal FFF özellikleriyle"*. *"UltiMaker Cura'nın metal FFF özellikleriyle"* olarak düzeltildi. Site genelinde başka sürüm numarası yok.
+  - `scripts/add_chaos_adobe_icerik.py` başına kalıcı not eklendi: **sürüm numarası kullanılmaz.**
+
+**2) Sanatsal Baskı navigasyon bulgusu — önceki tespit yanlıştı, düzeltildi**
+DK-2026-08-03-12'de "cadbim_sanatsal_baski.html sayfasında site navigasyonu hiç yok; ziyaretçi o sayfadan başka hiçbir yere gidemiyor" diye raporlanmıştı. Bu **hatalı bir tespitti**: kontrol yalnızca `<nav>` öğesi içinde yapılmış, footer'a bakılmamıştı. Sayfada footer var ve ana sayfaya (`/`), DesignJet sayfasına ve KVKK'ya bağlantı veriyor; ayrıca WhatsApp ve blog bağlantıları mevcut. Sayfanın üst menüsüz, dikkat dağıtmayan kurgusu ayrı bir kitleye yönelik bilinçli bir açılış sayfası tasarımıdır ve çıkış yolu zaten vardır — **değişiklik yapılmadı.**
+
+**3) Yerel sunucu yeniden başlatıldı**
+`dev_server.py` URL haritasını (`404.html` içindeki MAP) yalnızca açılışta okuduğu için yeni eklenen `/bim-icerik-uretimi` ve `/ai-gorsellestirme` adresleri eski süreçte çözümlenmiyordu. 8420'deki süreç kapatılıp yeniden başlatıldı; 10 adres tek tek denetlendi, tümü 200 döndü.
+
+- **Doğrulama:** Chaos bölümünün altı kartı düğüm bazında denetlendi — gerçek sürüm numarası **yok** (innerText birleşmesinden kaynaklanan bir yanlış pozitif tespit edilip elenmiştir: "V-Ray" alt etiketi ile "3ds Max…" açıklaması birleşince sürüm gibi görünüyordu; "3ds Max" ürün adıdır). Beş sayfa tarayıcıda yeniden ölçüldü: yatay taşma yok, kırık görsel yok, Experience Cloud ürün adı yok, sürüm ifadesi yok, doğru CSS sürümü (v=20) yükleniyor. Cache sürümü v=20.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-21 — Chaos ve Adobe kaynaklı içerik yerleştirildi; yeni çözüm: AI Destekli Görselleştirme
 
 - **Yapan:** Onur Bozok'un "chaos grubun çözümlerine bak, bize alabileceğimiz içerikleri al ve ilgili sayfalara yerleştir, buna ek olarak yeni bir çözüm eklemek gerekirse ekle" talebi; ardından "aynı araştırmayı adobe içinde genişletiyorum", "adobe marketing çözümlerini satamıyoruz" ve "adobe for business endüstri ve çözümlerini değil de creative ve acrobat tarafındaki çözüm ve endüstrilere bak" düzeltmeleri üzerine Claude (PDM asistanı).
