@@ -295,6 +295,17 @@ Acrobat Standard 40+, Acrobat Pro 70+ özellik çerçevesinde mühendislik/inşa
 - **Yan bulgu:** Tarayıcıda sayfa eski `design-system.css?v=15` ile önbelleğe alındığı için düzeltme ilk ölçümde görünmedi; cache sürümü `v=16`'ya çekildi (1321 dosya). Yayına alırken tarayıcı önbelleğinin yenilenmesi bu sürüm parametresine bağlıdır.
 - **Durum:** ✅ Tamamlandı, push edildi.
 
+### DK-2026-08-04-02 — Sosyal medya rayı: kenara gömülü "çekmece" davranışı (masaüstü + mobil)
+
+- **Yapan:** Onur'un "soldaki sabit sosyal medya ikonlarını biraz daha içeri gömelim, üzerine gelince büyüsün" + "bunu mobilde de yap" talebi üzerine Claude (PDM asistanı, Fable).
+- **Yapılan (`social-widget.js` v3):**
+  - **Masaüstü:** İkonlar varsayılanda sol kenara gömülü (`translateX(-16px)`, %85 opaklık — 38px'in ~22px'i görünür). Ray üzerine gelindiğinde grup hâlinde hafif dışarı çıkar (-8px, tam opak); tek ikonun üzerindeyken o ikon tamamen dışarı kayıp %18 büyür (`translateX(0) scale(1.18)`, hafif yaylanmalı cubic-bezier). Klavye odağı (`:focus-visible`) hover ile aynı davranışı alır.
+  - **Mobil/dokunmatik** (`hover: none`): İlk dokunuş rayı dışarı açar (linke gitmez — gömülü hâldeki daralmış hedefe yanlış dokunma engellenir), açıkken dokunuşlar normal gezinir, ray dışına dokununca geri gömülür. Açık durumda hedefler tam boy (WCAG 2.5.8 ile uyumlu; dış denetim #4 bulgusuna da hizmet eder). Mobil kutu boyutu 30→32px'e çıkarıldı.
+  - `prefers-reduced-motion` tercihi olanlarda geçiş animasyonu kapalı. Eski JS mouseenter/mouseleave stil kurcalaması kaldırıldı — davranış tamamen CSS'te, JS yalnızca dokunmatik aç/kapa mantığını yönetiyor.
+- **Cache bust:** `social-widget.js?v=1` → `?v=3` (196 sayfa).
+- **Doğrulama:** Yerel önizlemede v3 yüklendi, 4 ikon, varsayılan `translateX(-16px)`/opaklık 0.85 ölçüldü; `.open` sınıfıyla `translateX(0)`'a geçtiği doğrulandı; CSSOM'da hover/scale kuralları mevcut; konsol hatası 0. **Teşhis notu:** İlk doğrulama denemesinde `.open` "çalışmıyor" göründü — kök neden CSS değil, arka planda (görüntülenmeyen) önizleme panelinde animasyon karelerinin üretilmemesi nedeniyle geçişin başlangıç değerinde donmasıydı; geçiş kapatılınca değerlerin doğru hesaplandığı kanıtlandı.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-04-01 — Sürüm/tazelik denetimi: sitemap lastmod güncellendi, 6 sapkın canonical düzeltildi
 
 - **Yapan:** Onur'un "yarım kalan bir şey var mı, sitenin son durumunu kontrol et, versiyonunu güncelle" talebi üzerine Claude (PDM asistanı, Fable).
