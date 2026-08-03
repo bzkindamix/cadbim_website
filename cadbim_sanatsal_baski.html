@@ -322,19 +322,34 @@ main,header,footer{position:relative;z-index:3;}
 @media (prefers-reduced-motion: no-preference){
   .rcard:hover .rchip::after{transition:transform .8s ease;transform:translateX(420%) rotate(9deg);}
 }
-.c-mat{background:linear-gradient(160deg,#2a2536,#1e1a2a);}
-.c-yari{background:linear-gradient(160deg,#332d44 0%,#232032 55%,#2c2739 100%);}
-.c-parlak{background:linear-gradient(150deg,#3d3652 0%,#211d31 45%,#39324e 70%,#1d1a2b 100%);}
+/* mat: duz, parlamasiz yuzey — parlama animasyonu tamamen kapali (dokunun tanimi bu) */
+.c-mat{background:radial-gradient(130% 150% at 28% 18%,#332d43,#1b1724 72%);}
+.c-mat::after{display:none;}
+/* yari mat/yari parlak: yumusak, dagilmis bir parlaklik */
+.c-yari{background:radial-gradient(130% 150% at 28% 18%,#3c3552,#201c2e 72%);}
+.c-yari::after{opacity:.5;filter:blur(7px);}
+/* parlak: keskin ayna-vurgusu, dinlenirken bile hafif gorunur */
+.c-parlak{background:linear-gradient(155deg,#4d4570 0%,#242036 42%,#2a4a78 58%,#1c1929 76%,#413a5c 100%);}
+.c-parlak::after{width:46%;background:linear-gradient(100deg,transparent,rgba(233,236,247,.7),transparent);opacity:.85;}
+/* kanvas: gorunur dokuma izgarasi */
 .c-kanvas{background:
-  repeating-linear-gradient(0deg, rgba(233,236,247,.05) 0 1px, transparent 1px 4px),
-  repeating-linear-gradient(90deg, rgba(233,236,247,.05) 0 1px, transparent 1px 4px),
-  linear-gradient(160deg,#2b2638,#1f1b2c);}
+  repeating-linear-gradient(0deg, rgba(233,236,247,.16) 0 1px, transparent 1px 5px),
+  repeating-linear-gradient(90deg, rgba(233,236,247,.16) 0 1px, transparent 1px 5px),
+  linear-gradient(160deg,#372f4c,#1d1a29);}
+/* cotton rag: sicak tonlu kagit lifi (fine art arsiv kagidinin ayirt edici sicakligi) */
 .c-rag{background:
-  radial-gradient(circle at 30% 28%, rgba(233,236,247,.14), transparent 46%),
-  linear-gradient(160deg,#2e2940,#211d30);}
+  radial-gradient(2.5px 2.5px at 18% 28%, rgba(255,247,228,.22), transparent 60%),
+  radial-gradient(2px 2px at 62% 62%, rgba(255,247,228,.16), transparent 60%),
+  radial-gradient(3px 3px at 82% 22%, rgba(255,247,228,.14), transparent 60%),
+  radial-gradient(2px 2px at 38% 82%, rgba(255,247,228,.16), transparent 60%),
+  radial-gradient(2.5px 2.5px at 12% 70%, rgba(255,247,228,.14), transparent 60%),
+  radial-gradient(circle at 30% 24%, rgba(255,247,228,.18), transparent 52%),
+  linear-gradient(160deg,#403522,#251d15);}
+/* bayrak bezi & paravan: capraz kumas dokusu, belirgin */
 .c-bez{background:
-  repeating-linear-gradient(45deg, rgba(233,236,247,.06) 0 2px, transparent 2px 6px),
-  linear-gradient(160deg,#2b2637,#1e1a2b);}
+  repeating-linear-gradient(45deg, rgba(233,236,247,.15) 0 2px, transparent 2px 7px),
+  repeating-linear-gradient(-45deg, rgba(233,236,247,.09) 0 2px, transparent 2px 7px),
+  linear-gradient(160deg,#362b45,#1b1522);}
 .rcard h3{font-family:var(--fd);font-weight:500;font-size:17.5px;margin-bottom:6px;}
 .rcard p{font-size:12.5px;color:var(--mut);line-height:1.65;}
 .rtag{
@@ -432,7 +447,15 @@ main,header,footer{position:relative;z-index:3;}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .gcard{margin:0;background:var(--bg2);border:1px solid var(--ln);border-radius:18px;overflow:hidden;transition:transform .3s,border-color .3s;}
 .gcard:hover{transform:translateY(-6px);border-color:rgba(110,231,255,.4);}
+.gimg{position:relative;overflow:hidden;cursor:zoom-in;}
 .gcard img{display:block;width:100%;height:auto;aspect-ratio:1/1;}
+.glens{
+  position:absolute;width:132px;height:132px;border-radius:50%;pointer-events:none;
+  border:2px solid rgba(233,236,247,.75);box-shadow:0 10px 30px rgba(0,0,0,.5),inset 0 0 0 1px rgba(0,0,0,.25);
+  background-repeat:no-repeat;opacity:0;transition:opacity .15s ease;z-index:2;
+}
+.glens.show{opacity:1;}
+@media(max-width:780px),(hover:none){.gimg{cursor:default;}.glens{display:none;}}
 .gcard figcaption{display:flex;flex-direction:column;gap:3px;padding:14px 18px 16px;border-top:1px solid var(--ln2);}
 .gcard figcaption b{font-family:var(--fd);font-weight:500;font-size:14px;color:var(--tx);}
 .gcard figcaption span{font-size:12px;color:var(--mut);letter-spacing:.3px;}
@@ -567,13 +590,24 @@ html{overflow-x:clip;}
 }
 .bf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
 .bf-full{margin-bottom:16px;}
-.baski-form label{font-family:var(--fd);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--mut);margin-bottom:7px;display:block;}
+.baski-form label{
+  font-family:var(--fd);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:7px;display:block;
+  background:linear-gradient(92deg,var(--acc2),var(--vio),var(--mag));-webkit-background-clip:text;background-clip:text;color:transparent;
+}
 .baski-form input,.baski-form select,.baski-form textarea{
   width:100%;background:rgba(19,16,25,.55);border:1px solid var(--ln);border-radius:10px;
   padding:12px 14px;font-family:var(--fb);font-size:14px;color:var(--tx);outline:none;
   appearance:none;transition:border-color .2s,box-shadow .2s;
 }
-.baski-form select{cursor:pointer;}
+.baski-form select{
+  cursor:pointer;padding-right:38px;color-scheme:dark;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 16'%3E%3Cpath d='M5 2 8.5 6.5 1.5 6.5Z' fill='%23787c8f'/%3E%3Cpath d='M5 14 8.5 9.5 1.5 9.5Z' fill='%23787c8f'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;background-size:9px 15px;
+}
+.baski-form select:hover,.baski-form select:focus{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 16'%3E%3Cpath d='M5 2 8.5 6.5 1.5 6.5Z' fill='%236ee7ff'/%3E%3Cpath d='M5 14 8.5 9.5 1.5 9.5Z' fill='%236ee7ff'/%3E%3C/svg%3E");
+}
+.baski-form select option{background:#1a1626;color:var(--tx);}
 .baski-form textarea{min-height:100px;resize:vertical;}
 .baski-form input:focus,.baski-form select:focus,.baski-form textarea:focus{
   border-color:var(--acc2);box-shadow:0 0 0 3px rgba(110,231,255,.14);
@@ -852,12 +886,12 @@ html{overflow-x:clip;}
     <p class="bsub">Dekota, fotoblok, kasnak, çerçeve ve paravan — altı uygulama örneği. Ebat ve kombinasyon, işinize göre uyarlanır.</p>
   </div>
   <div class="gal">
-    <figure class="gcard" data-rv><img src="assets/img/sanatsal/mat-dekota-cerceve.jpg" alt="Mat fotoğraf kağıdına baskı — dekota ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Mat Fotoğraf Kağıdı</b><span>Dekota + Çerçeve</span></figcaption></figure>
-    <figure class="gcard" data-rv style="--d:.05s;"><img src="assets/img/sanatsal/parlak-fotoblok.jpg" alt="Parlak fotoğraf kağıdına baskı — fotoblok uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Parlak Fotoğraf Kağıdı</b><span>Fotoblok</span></figcaption></figure>
-    <figure class="gcard" data-rv style="--d:.1s;"><img src="assets/img/sanatsal/kanvas-kasnak.jpg" alt="Kanvas baskı — kasnaklı çıtalı germe uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Kanvas Baskı</b><span>Kasnaklı (Çıtalı) Germe</span></figcaption></figure>
-    <figure class="gcard" data-rv><img src="assets/img/sanatsal/kanvas-kasnak-cerceve.jpg" alt="Kanvas baskı — kasnak ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Kanvas Baskı</b><span>Kasnak + Çerçeve</span></figcaption></figure>
-    <figure class="gcard" data-rv style="--d:.05s;"><img src="assets/img/sanatsal/parcali-kanvas.jpg" alt="Parçalı kanvas baskı — beş panelli kasnaklı germe uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Parçalı Kanvas</b><span>Kasnaklı (Çıtalı) Germe</span></figcaption></figure>
-    <figure class="gcard" data-rv style="--d:.1s;"><img src="assets/img/sanatsal/kanvas-paravan.jpg" alt="Kanvas baskı paravan — kasnaklı ve bayrak bezi uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Kanvas Paravan</b><span>Kasnaklı + Bayrak Bezi</span></figcaption></figure>
+    <figure class="gcard" data-rv><div class="gimg"><img src="assets/img/sanatsal/mat-dekota-cerceve.jpg" alt="Mat fotoğraf kağıdına baskı — dekota ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"></div><figcaption><b>Mat Fotoğraf Kağıdı</b><span>Dekota + Çerçeve</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.05s;"><div class="gimg"><img src="assets/img/sanatsal/parlak-fotoblok.jpg" alt="Parlak fotoğraf kağıdına baskı — fotoblok uygulaması" width="900" height="900" loading="lazy" decoding="async"></div><figcaption><b>Parlak Fotoğraf Kağıdı</b><span>Fotoblok</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.1s;"><div class="gimg"><img src="assets/img/sanatsal/kanvas-kasnak.jpg" alt="Kanvas baskı — kasnaklı çıtalı germe uygulaması" width="900" height="900" loading="lazy" decoding="async"></div><figcaption><b>Kanvas Baskı</b><span>Kasnaklı (Çıtalı) Germe</span></figcaption></figure>
+    <figure class="gcard" data-rv><div class="gimg"><img src="assets/img/sanatsal/kanvas-kasnak-cerceve.jpg" alt="Kanvas baskı — kasnak ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"></div><figcaption><b>Kanvas Baskı</b><span>Kasnak + Çerçeve</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.05s;"><div class="gimg"><img src="assets/img/sanatsal/parcali-kanvas.jpg" alt="Parçalı kanvas baskı — beş panelli kasnaklı germe uygulaması" width="900" height="900" loading="lazy" decoding="async"></div><figcaption><b>Parçalı Kanvas</b><span>Kasnaklı (Çıtalı) Germe</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.1s;"><div class="gimg"><img src="assets/img/sanatsal/kanvas-paravan.jpg" alt="Kanvas baskı paravan — kasnaklı ve bayrak bezi uygulaması" width="900" height="900" loading="lazy" decoding="async"></div><figcaption><b>Kanvas Paravan</b><span>Kasnaklı + Bayrak Bezi</span></figcaption></figure>
   </div>
 </section>
 
@@ -886,14 +920,14 @@ html{overflow-x:clip;}
             <option>Sertifika &amp; Poster</option>
             <option>Proje Baskısı (CAD / Pafta)</option>
             <option>Tarama Hizmeti</option>
-            <option>Bilmiyorum — önerinizi isterim</option>
+            <option>Önerinizi isterim</option>
           </select>
         </div>
       </div>
       <div class="bf-row">
         <div><label>Yüzey / Kağıt</label>
           <select name="yuzey">
-            <option>Bilmiyorum — önerinizi isterim</option>
+            <option>Önerinizi isterim</option>
             <option>Mat Fotoğraf Kağıdı</option>
             <option>Yarı Mat / Yarı Parlak</option>
             <option>Parlak Fotoğraf Kağıdı</option>
@@ -904,7 +938,7 @@ html{overflow-x:clip;}
         </div>
         <div><label>Finisaj</label>
           <select name="finisaj">
-            <option>Bilmiyorum — önerinizi isterim</option>
+            <option>Önerinizi isterim</option>
             <option>Çerçeve</option>
             <option>Dekota Kaşe</option>
             <option>Fotoblok</option>
@@ -1076,6 +1110,34 @@ function formuGonder(e){
   }
   if(rprev)rprev.addEventListener("click",function(){raykay(-1);});
   if(rnext)rnext.addEventListener("click",function(){raykay(1);});
+
+  /* atölyeden galerisi: büyüteç (yalnız fare + ince işaretçi) */
+  if(ince){
+    var ZOOM=2.4;
+    [].slice.call(document.querySelectorAll(".gimg")).forEach(function(wrap){
+      var img=wrap.querySelector("img"),lens=null;
+      wrap.addEventListener("mouseenter",function(){
+        if(!lens){
+          lens=document.createElement("div");
+          lens.className="glens";
+          lens.style.backgroundImage="url('"+img.currentSrc+"')";
+          wrap.appendChild(lens);
+        }
+        lens.style.backgroundSize=(wrap.clientWidth*ZOOM)+"px "+(wrap.clientHeight*ZOOM)+"px";
+        lens.classList.add("show");
+      });
+      wrap.addEventListener("mousemove",function(e){
+        if(!lens)return;
+        var r=wrap.getBoundingClientRect();
+        var x=e.clientX-r.left,y=e.clientY-r.top;
+        var lw=lens.offsetWidth/2,lh=lens.offsetHeight/2;
+        var cx=Math.max(lw,Math.min(r.width-lw,x)),cy=Math.max(lh,Math.min(r.height-lh,y));
+        lens.style.left=(cx-lw)+"px";lens.style.top=(cy-lh)+"px";
+        lens.style.backgroundPosition=(-(x*ZOOM-lw))+"px "+(-(y*ZOOM-lh))+"px";
+      });
+      wrap.addEventListener("mouseleave",function(){if(lens)lens.classList.remove("show");});
+    });
+  }
 
   var rvler=[].slice.call(document.querySelectorAll("[data-rv]"));
   var sayanlar=[].slice.call(document.querySelectorAll("[data-n]"));
