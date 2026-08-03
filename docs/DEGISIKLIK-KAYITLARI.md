@@ -4,6 +4,26 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-39 — Dış denetim kapama paketi: güvenlik, landmark, WebP, başlık hiyerarşisi, dokunma hedefleri, K6, Y10, post footer (hedef: bağımsız denetimde ~%99)
+
+- **Yapan:** Onur'un "denetim raporundaki açık işleri kapa" + "bu raporla oturumdaki açık iş listesini birleştir" + "hedef bağımsız diğer denetimde %99" + "karar bekleyenler dışında hepsini sormadan hallet" talebi üzerine Claude (PDM asistanı, Fable). 8 ayrı commit'te uygulandı (928e6717…bu kayıt).
+- **Güvenlik (dış #2, en düşük skor 75'ti):** `docs/htaccess-taslak.txt`'e tam başlık seti (CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy; HSTS notlu/yorumda) + `mod_deflate` + `mod_expires` (IfModule korumalı; HTML no-cache, ?v='li varlıklar 1 yıl). Staging denetimlerinde de puanlansın diye **aynı CSP (frame-ancestors hariç) + referrer policy meta olarak 1.328 sayfaya** eklendi. CSP gerçek dış kaynak envanterinden yazıldı; tarayıcıda GA4 onay akışı, Google Fonts, Power Automate form fetch'i, Wistia/Maps iframe'leri, YouTube facade+nocookie test edildi — **ihlal 0**.
+- **Erişilebilirlik (dış #3+#4, skor 78'di):** 1.325 sayfaya `<header>` (nav sarıldı) + `<main id="icerik">` + klavye odağında görünen "İçeriğe geç" skip-link (design-system). Ana sayfada 24px altı dokunma hedefi **26 → 0** (nav/dropdown/footer/yasal linklere görsel değişiklik olmadan padding; footer'da margin→padding kaydırmasıyla dikey ritim korundu).
+- **Başlık hiyerarşisi (dış #7 + iç O8):** Site genelinde aşağı-yönlü başlık atlaması **186 sayfa → 0**: footer kolonları h4→h2 (196 sayfa), eğitimler/iletişim/başarı-öyküleri içerik h3→h2, postlarda a-cta/İlgili-Yazılar h3→h2, `.stitle` div'lerine `role="heading" aria-level="2"` (759 öğe), JS blog şablonu h4→h3 (80 sayfa), kalan dizilere jenerik aria-level düzeltmesi (görsel sıfır risk).
+- **Performans (dış #5 + iç O12):** Ana sayfadaki tüm görseller artık modern formatta (11/11): 7 PNG logo WebP'ye çevrildi, gösterim boyutuna göre küçültülerek (176KB→50KB) — nav logosu (1.326 sayfa) ve footer logosu (site geneli) dahil; width/height nitelikleri yeni boyutlara güncellendi.
+- **K6 (karar kalemiydi, onayla kapatıldı):** 102 Türkçe-karakterli mükerrer post ASCII ikizine birleştirildi: canonical→ikiz + noindex,follow; sitemap'ten 102 URL çıkarıldı (1209 kaldı); `blog-posts.json` 1129→1027; htaccess'e 102 adet 301; `feed.xml` temiz veriden yeniden üretildi.
+- **Y10 (karar netleşti):** `/construction-cloud` hedefi `/autodesk-forma` **doğru** — site Forma platformunu ACC'nin halefi olarak modelliyor (Forma Build/Design Collaboration/Data Management). Asıl sorun 2-atlamalı 301 zinciriydi; htaccess'te iki kural da doğrudan `/autodesk-forma`'ya 301'e çevrildi.
+- **Hızlı SEO (O2 kısmi + O3):** `Organization.logo` kare `assets/icon-512.png`'ye çevrildi; og:image'sız 229 metin postuna varsayılan og+twitter görseli eklendi (0 eksik kaldı).
+- **Post footer (K5'in post ayağı):** 1.129 postun minimal footer'ı tam `footer-grid` ile değiştirildi (İzmir+Ankara, ürün/hizmet/iletişim kolonları h2 başlıklı, KVKK+Çerez Ayarları, 4 sosyal, WebP logo, `../` hrefler). Div dengesi 1.129/1.129 sağlam, tarayıcı doğrulaması temiz.
+- **Kapanmayanlar (kayıt için):** K9 (2,46 GiB ham klasör taşıma — Onur kararı), D4 (Cadbim/CADBİM yazım kararı), yayın-günü kalemleri (#1 robots — ana depoda zaten doğru; #6 alan adı; #9 Search Console gönderimi), Y8-Faz2, O1 (664 post meta uzunluğu — içerik işi), O5 (ürün sayfası satır içi form), O7 (404 tasarımı), D5-D8.
+- **Durum:** ✅ Paket tamamlandı, push edildi.
+
+### DK-2026-08-04-38.1 — Kayan yazı şeritleri dikişsiz sonsuz döngü (ana sayfa + sanatsal baskı)
+
+- **Yapan:** Onur'un "kayan yazı sonsuz olsun, sonuncunun ardına 1.'yi ekle" talebi üzerine Claude (PDM asistanı, Fable).
+- **Kök neden:** Şerit içeriği 2 kopyaydı ve `translateX(-50%)` ile dönüyordu; tek kopyanın genişliği görünüm alanından darsa döngü sınırında boşluk görünüyordu. **Düzeltme:** index'te dizi 8 kopyaya çıkarıldı (yarım ~2.965px); sanatsal baskıda JS artık görünüm alanına göre yeterli (çift sayıda) kopya üretiyor. İki sayfada da `yarım ≥ viewport` doğrulandı — ek yeri artık görünmez.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-38 — Sanatsal Baskı: uygulama galerisi (eski siteden), sağ kenar sosyal ray, Proje Baskısı + Tarama hizmetleri
 
 - **Yapan:** Onur'un üç talebi üzerine Claude (PDM asistanı): (1) "cadbim.com.tr'deki şu görselleri al ve bizim sayfaya entegre et ama dokuyu bozmadan"; (2) "cadbim_print Instagram + Facebook + sanatsal baskı WhatsApp'ını site genelindeki tarzda ekranın sağına"; (3) "hizmetlere proje baskısı ve tarama (HD/SD DesignJet'lerle)".
