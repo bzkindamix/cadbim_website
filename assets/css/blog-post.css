@@ -46,3 +46,12 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
 .socials a:hover{border-color:var(--cyan);color:var(--cyan);}
 @media(max-width:900px){.nav-links{display:none;}}
 @media(max-width:600px){.article-wrap{padding:96px 1.25rem 48px;}}
+
+/* ==== Y12 (DK-2026-08-03-15): kok sayfalardaki dropdown/mega-menu nav'i postlara tasindi.
+   Mega-menu yerleşim kurallari design-system.css'te global; buradakiler taban dropdown davranisi. ==== */
+.nav-dropdown{position:relative;}
+.nav-dropdown>a{display:flex;align-items:center;gap:4px;cursor:pointer;}
+.nav-dropdown-menu{position:absolute;top:100%;left:0;margin-top:12px;background:var(--navy2,#0a1225);border:1px solid rgba(255,255,255,0.1);border-radius:10px;min-width:230px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .18s ease;box-shadow:0 12px 32px rgba(0,0,0,0.5);z-index:1100;}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
+.nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}

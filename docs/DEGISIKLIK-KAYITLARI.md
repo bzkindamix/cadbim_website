@@ -4,6 +4,17 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-15 — Post nav'ı kök mega-menü ile eşitlendi; 29 kök sayfadaki nav sürüklenmesi giderildi (Y12 tamamlandı)
+
+- **Yapan:** Claude (PDM asistanı, Fable) · Fable listesinin 2. kalemi.
+- **Sorun (Y12):** 1.129 blog yazısının nav'ı 9 düz linkten ibaretti — kök sayfalardaki 40+ linkli dropdown/mega-menü deneyiminden kopuktu; blog ziyaretçisi ürün/çözüm sayfalarına menüden inemiyordu. Ayrıca analizde **kök nav'ın kendisinde sürüklenme** bulundu: 29 ürün sayfası, diğer 163 sayfadan farklı bir deneme varyantı taşıyordu (Ürünler menüsünde fazladan "Tüm Ürünler" linki + KVKK menüden çıkarılmış).
+- **Yapılan:**
+  1. `index.html`'deki kanonik nav (163 sayfanın + tüm güncel sayfaların kullandığı yapı) post bağlamına uyarlandı: tüm iç linkler `../slug`, logo `../`, **Blog aktif** işaretli. 1.129 postun tamamına uygulandı — post nav'ları artık tek hash.
+  2. Dropdown taban CSS'i (6 kural: `.nav-dropdown*`) `blog-post.css`'e eklendi (`?v=1`→`?v=2` cache bust); mega-menü yerleşim kuralları zaten `design-system.css`'te global olduğu için ek iş gerekmedi.
+  3. Sapmış 29 kök sayfa kanonik nav'a çekildi (Ürünler aktif) — kök nav yapı dağılımı artık 192/192 tekdüze.
+- **Doğrulama:** Python — 1.129 postta tam 1 nav, tek hash, `</html>` bütünlüğü sağlam; kök 192 sayfada tek yapı (KVKK menüde, "Tüm Ürünler" yok). Tarayıcı — post sayfasında 3 dropdown, menü varsayılan gizli/doğru zeminli, `:hover` kuralı `blog-post.css?v=2`'den, mega-hover `design-system.css`'ten CSSOM'a yüklü, hatalı href 0; kanonikleştirilmiş `cadbim_advance_steel.html`'de Ürünler aktif + KVKK menüde. Konsol hatası 0.
+- **Durum:** ✅ Y12 tamamlandı, push edilecek.
+
 ### DK-2026-08-03-14 — Satır içi CSS konsolidasyonu Faz 1: 1.276 sayfanın CSS'i 21 ortak dosyaya çıkarıldı (Y8 kısmen)
 
 - **Yapan:** Onur'un "fable ile yapılacaklara geç ve sıradan başla ve bitir" talebi üzerine Claude (PDM asistanı, Fable) · Denetimdeki Y8 bulgusunun (satır içi CSS'in %95,6'sı sayfalar arası tekrar, ~6 MB) düşük-riskli ilk fazı.
