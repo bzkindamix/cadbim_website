@@ -4,6 +4,20 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-35 — Sanatsal Baskı sayfası dil cilası: zorlama/"keko" ifadeler inceltildi, havalı-sakin ton korundu
+
+- **Yapan:** Onur Bozok'un "sanatsal baskıda dil biraz keko; havalı olmalı ama 'şey' gibi ifadelerden kaçınmalıyız" talebi üzerine Claude (PDM asistanı).
+- **Kriter:** Sayfanın sanat yönetimi (kısa, ritmik, iddialı cümleler) korunur; ancak dolgu sözcükler ("şey"), kendini öven sıfatlar ("prestijli"), tele-alışveriş kalıpları ("HAZIR MISINIZ?") ve sen-kipi kaymaları giderilir.
+- **Değişiklikler (`cadbim_sanatsal_baski.html`, 6 satır):**
+  - Hero: "Duvara astığınız **şey** artık bir çıktı değil — bir eser." → "**Duvarınıza asılan** artık bir çıktı değil — bir eser."
+  - Hero ikincil CTA: "Atölyeyi gör" (sen-kipi) → "Atölyeyi inceleyin".
+  - İstatistik: "kıl payı detay" → "kıl inceliğinde detay".
+  - Süreç/3: "Renk doğruluğu pazarlık konusu değil." → "Renk doğruluğundan ödün verilmez."
+  - Alıntı: "birçok **prestijli** serginin" → "pek çok serginin" (iddia sergi sayısı ve zamanında teslimle zaten kurulu).
+  - CTA başlığı: "BASKIYA / HAZIR MISINIZ?" → "BASKIYA / BAŞLAYALIM."
+- **Kapsam dışı (bilinçli):** "Ham dosya girer. Eser çıkar.", "Kadrajdan koleksiyona.", "Baskı yarısı; sunum diğer yarısı." gibi sayfanın karakterini kuran kısa cümleler korundu. "KAYDIR" / "SÜRÜKLE / KAYDIR" mikro-etiketleri bu tür sayfalarda tür-standardı görsel ipucu olduğundan bırakıldı. `<head>` meta metinleri zaten kurumsal, dokunulmadı.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-34 — Kurumsal ton denetimi: arayüz-talimatı ifadeleri ("üzerine gelin / tıklayın / seçin") açıklayıcı metinlerle değiştirildi
 
 - **Yapan:** Onur Bozok'un "'Alanınızın üzerine gelin…' ve 'endüstrinizi seçin…' gibi profesyonel gözükmeyen ifadeler istemiyorum; siteyi sadece text olarak incele" talebi üzerine Claude (PDM asistanı, marketing:brand-review skill'i ile).
