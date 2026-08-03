@@ -793,7 +793,7 @@ html{overflow-x:clip;}
   </h2>
   <p class="cta-lead" data-rv style="--d:.05s;">Ebat, yüzey ve adedi belirtin — aynı gün fiyat dönüşü yapalım.</p>
 
-  <div class="cta-form-wrap" data-rv style="--d:.1s;">
+  <div class="cta-form-wrap" id="form" data-rv style="--d:.1s;">
     <form id="baski-form" class="baski-form" onsubmit="formuGonder(event)">
       <input type="hidden" name="form_type" value="sanatsal_baski">
       <div class="bf-row">
@@ -801,7 +801,7 @@ html{overflow-x:clip;}
         <div><label>E-posta *</label><input type="email" name="email" required></div>
       </div>
       <div class="bf-row">
-        <div><label>Telefon</label><input type="tel" name="telefon"></div>
+        <div><label>Telefon *</label><input type="tel" name="telefon" required></div>
         <div><label>Baskı Türü</label>
           <select name="baski_turu">
             <option>Fotoğraf Baskısı</option>

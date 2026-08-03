@@ -165,8 +165,8 @@ body{background:var(--navy);color:var(--white);font-family:var(--font-b);font-si
 /* Adobe ve Chaos rozetleri kendi renkli/opak kartlarıyla gelir (arka planları
    şeffaf değil) — mono filtre uygulanırsa tek renk bloğa döner, bu yüzden
    doğal halleriyle bırakılır (DK-2026-08-03-26). */
-.cred-row1 img[src*="adobe"],
-.cred-row1 img[src*="chaos"]{filter:none;opacity:1;max-height:52px;border-radius:8px;}
+.cred-row1 img[src*="adobe"]{filter:none;opacity:1;max-height:72px;max-width:90%;border-radius:8px;}
+.cred-row1 img[src*="chaos"]{filter:none;opacity:1;max-height:72px;border-radius:8px;}
 
 /* ÇÖZÜMLER — ENDÜSTRİ SEKMELERİ */
 .soltabs{max-width:1180px;margin:0 auto;}
@@ -278,6 +278,7 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
   .cred-row1 a{height:104px;padding:16px 14px;}
 .cred-row1 img[src*="ultimaker"],.cred-row1 img[src*="lumion"],.cred-row1 img[src*="autodesk"]{max-width:98%;}
   .cred-row1 img{max-height:54px;}
+  .cred-row1 img[src*="adobe"],.cred-row1 img[src*="chaos"]{max-height:64px;}
 }
 @media(max-width:600px){
   .section{padding:56px 1.5rem;}
@@ -524,10 +525,10 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
     </li>
     <li><a href="egitimler">Eğitimler</a></li>
     <li><a href="hakkimizda">Hakkımızda</a></li>
-    <li><a href="iletisim">İletişim</a></li>
+    <li><a href="iletisim#form">İletişim</a></li>
     <li><a href="kvkk">KVKK</a></li>
     <li><a href="blog">Blog</a></li>
-    <li><a href="teklif-iste" class="nav-cta">Teklif Al</a></li>
+    <li><a href="teklif-iste#form" class="nav-cta">Teklif Al</a></li>
   </ul>
 </nav>
 
@@ -796,15 +797,15 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
       <h4>Hizmetler</h4>
       <a href="egitimler">Eğitimler & Sertifikasyon</a>
       <a href="bim">BIM Danışmanlığı</a>
-      <a href="iletisim">Teknik Destek</a>
-      <a href="hp">HP Yetkili Servis</a>
+      <a href="iletisim#form">Teknik Destek</a>
+      <a href="designjet-teknik-servis">HP Yetkili Servis</a>
       <a href="yazilim-gelistirme">Yazılım Geliştirme</a>
     </div>
     <div class="footer-col">
       <h4>İletişim</h4>
       <a href="mailto:cadbim@cadbim.com.tr">cadbim@cadbim.com.tr</a>
       <a href="tel:+902324643490">0232 464 34 90</a>
-      <a href="teklif-iste">Teklif İste</a>
+      <a href="teklif-iste#form">Teklif İste</a>
       <a href="egitimler">Eğitim Kayıt</a>
     </div>
   </div>
