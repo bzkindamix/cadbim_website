@@ -432,17 +432,17 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
       <!-- Sosyal medya -->
       <div style="background:var(--navy3);border-radius:var(--rl);border:.5px solid rgba(255,255,255,0.07);padding:20px;">
         <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;">Bizi takip edin</div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://www.linkedin.com/company/cadbim/" target="_blank" style="display:flex;align-items:center;gap:8px;padding:9px 14px;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);border-radius:8px;text-decoration:none;font-size:13px;color:rgba(255,255,255,0.6);transition:all .2s;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <a href="https://www.linkedin.com/company/cadbim/" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);border-radius:8px;text-decoration:none;font-size:13px;color:rgba(255,255,255,0.6);transition:all .2s;">
             <i class="ti ti-brand-linkedin" style="font-size:16px;color:#0a66c2;"></i>LinkedIn
           </a>
-          <a href="https://www.youtube.com/c/CadbimTeknikDestek" target="_blank" style="display:flex;align-items:center;gap:8px;padding:9px 14px;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);border-radius:8px;text-decoration:none;font-size:13px;color:rgba(255,255,255,0.6);transition:all .2s;">
+          <a href="https://www.youtube.com/c/CadbimTeknikDestek" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);border-radius:8px;text-decoration:none;font-size:13px;color:rgba(255,255,255,0.6);transition:all .2s;">
             <i class="ti ti-brand-youtube" style="font-size:16px;color:#ff0000;"></i>YouTube
           </a>
-          <a href="https://www.instagram.com/cadbim_izmir/" target="_blank" style="display:flex;align-items:center;gap:8px;padding:9px 14px;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);border-radius:8px;text-decoration:none;font-size:13px;color:rgba(255,255,255,0.6);transition:all .2s;">
+          <a href="https://www.instagram.com/cadbim_izmir/" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);border-radius:8px;text-decoration:none;font-size:13px;color:rgba(255,255,255,0.6);transition:all .2s;">
             <i class="ti ti-brand-instagram" style="font-size:16px;color:#e1306c;"></i>Instagram
           </a>
-          <a href="https://www.facebook.com/cadbimizmir" target="_blank" style="display:flex;align-items:center;gap:8px;padding:9px 14px;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);border-radius:8px;text-decoration:none;font-size:13px;color:rgba(255,255,255,0.6);transition:all .2s;">
+          <a href="https://www.facebook.com/cadbimizmir" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;background:rgba(255,255,255,0.04);border:.5px solid rgba(255,255,255,0.1);border-radius:8px;text-decoration:none;font-size:13px;color:rgba(255,255,255,0.6);transition:all .2s;">
             <i class="ti ti-brand-facebook" style="font-size:16px;color:#1877f2;"></i>Facebook
           </a>
         </div>
@@ -458,25 +458,25 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
           <div>
             <label style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Ad Soyad *</label>
-            <input type="text" name="ad_soyad" placeholder="Adınız Soyadınız" required
+            <input type="text" name="ad_soyad" required
               style="width:100%;background:#0d1830;border:.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;font-size:14px;color:rgba(255,255,255,0.8);font-family:'Manrope',sans-serif;outline:none;transition:border-color .2s;"
               onfocus="this.style.borderColor='rgba(0,200,240,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
           </div>
           <div>
             <label style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Şirket</label>
-            <input type="text" name="sirket" placeholder="Şirket adı"
+            <input type="text" name="sirket"
               style="width:100%;background:#0d1830;border:.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;font-size:14px;color:rgba(255,255,255,0.8);font-family:'Manrope',sans-serif;outline:none;transition:border-color .2s;"
               onfocus="this.style.borderColor='rgba(0,200,240,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
           </div>
           <div>
             <label style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">E-posta *</label>
-            <input type="email" name="email" placeholder="ornek@sirket.com" required
+            <input type="email" name="email" required
               style="width:100%;background:#0d1830;border:.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;font-size:14px;color:rgba(255,255,255,0.8);font-family:'Manrope',sans-serif;outline:none;transition:border-color .2s;"
               onfocus="this.style.borderColor='rgba(0,200,240,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
           </div>
           <div>
             <label style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Telefon</label>
-            <input type="tel" name="telefon" placeholder="0532 000 00 00"
+            <input type="tel" name="telefon"
               style="width:100%;background:#0d1830;border:.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;font-size:14px;color:rgba(255,255,255,0.8);font-family:'Manrope',sans-serif;outline:none;transition:border-color .2s;"
               onfocus="this.style.borderColor='rgba(0,200,240,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
           </div>
@@ -497,7 +497,7 @@ label{font-size:12px;color:var(--w50);margin-bottom:6px;display:block;}
           </div>
           <div style="grid-column:1/-1;">
             <label style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;display:block;">Mesajınız</label>
-            <textarea name="mesaj" placeholder="İhtiyacınızı, soru veya talebinizi kısaca açıklayın..." rows="5"
+            <textarea name="mesaj" rows="5"
               style="width:100%;background:#0d1830;border:.5px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;font-size:14px;color:rgba(255,255,255,0.8);font-family:'Manrope',sans-serif;outline:none;resize:vertical;min-height:110px;transition:border-color .2s;"
               onfocus="this.style.borderColor='rgba(0,200,240,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
           </div>

@@ -797,11 +797,11 @@ html{overflow-x:clip;}
     <form id="baski-form" class="baski-form" onsubmit="formuGonder(event)">
       <input type="hidden" name="form_type" value="sanatsal_baski">
       <div class="bf-row">
-        <div><label>Ad Soyad *</label><input type="text" name="ad_soyad" placeholder="Adınız Soyadınız" required></div>
-        <div><label>E-posta *</label><input type="email" name="email" placeholder="ornek@eposta.com" required></div>
+        <div><label>Ad Soyad *</label><input type="text" name="ad_soyad" required></div>
+        <div><label>E-posta *</label><input type="email" name="email" required></div>
       </div>
       <div class="bf-row">
-        <div><label>Telefon</label><input type="tel" name="telefon" placeholder="0532 000 00 00"></div>
+        <div><label>Telefon</label><input type="tel" name="telefon"></div>
         <div><label>Baskı Türü</label>
           <select name="baski_turu">
             <option>Fotoğraf Baskısı</option>
@@ -839,10 +839,10 @@ html{overflow-x:clip;}
         </div>
       </div>
       <div class="bf-row">
-        <div><label>Ebat / Ölçü</label><input type="text" name="ebat" placeholder="örn. 50x70 cm veya bilmiyorum"></div>
-        <div><label>Adet</label><input type="number" name="adet" min="1" placeholder="1"></div>
+        <div><label>Ebat / Ölçü</label><input type="text" name="ebat"></div>
+        <div><label>Adet</label><input type="number" name="adet" min="1"></div>
       </div>
-      <div class="bf-full"><label>Mesajınız</label><textarea name="mesaj" placeholder="Dosya durumu, sergi tarihi ya da eklemek istediğiniz detay..."></textarea></div>
+      <div class="bf-full"><label>Mesajınız</label><textarea name="mesaj"></textarea></div>
       <div class="bf-full">
         <label class="bf-kvkk">
           <input type="checkbox" name="kvkk" required>
