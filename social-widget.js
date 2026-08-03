@@ -24,9 +24,9 @@
       "transition:transform .25s cubic-bezier(.2,.7,.3,1.25),opacity .2s ease;}" +
     "#social-rail:hover a,#social-rail.open a{transform:translateX(-8px);opacity:1;}" +
     "#social-rail a:hover,#social-rail a:focus-visible,#social-rail.open a{transform:translateX(0);}" +
-    "#social-rail a:hover,#social-rail a:focus-visible{transform:translateX(0) scale(1.18);}" +
-    "#social-rail a svg{width:22px;height:22px;}" +
-    "@media (prefers-reduced-motion:reduce){#social-rail a{transition:none;}}" +
+    "#social-rail a svg{width:22px;height:22px;transition:transform .25s cubic-bezier(.2,.7,.3,1.25);}" +
+    "#social-rail a:hover svg,#social-rail a:focus-visible svg{transform:scale(1.3);}" +
+    "@media (prefers-reduced-motion:reduce){#social-rail a,#social-rail a svg{transition:none;}}" +
     "@media (max-width:600px){#social-rail a{width:32px;height:32px;}#social-rail a svg{width:18px;height:18px;}}";
   document.head.appendChild(style);
 

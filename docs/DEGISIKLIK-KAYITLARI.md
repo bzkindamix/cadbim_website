@@ -4,6 +4,13 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-37 — Ray hover'ında kutu değil içindeki logo büyüyor
+
+- **Yapan:** Onur'un "kutular büyüsün istemedim, içindeki 'in' mesela büyüsün" düzeltmesi üzerine Claude (PDM asistanı, Fable).
+- **Yapılan (`social-widget.js` v5):** Hover/odaktaki `scale(1.18)` kutudan (`<a>`) kaldırıldı — kutu artık yalnızca dışarı kayıyor, boyutu sabit. Büyüme ikonun kendisine taşındı: `svg`'ye aynı yaylanmalı geçişle `scale(1.3)` (22px → ~29px, 36px kutu içinde taşmadan). `prefers-reduced-motion`'da svg geçişi de kapalı. Cache bust: `?v=4` → `?v=5` (196 sayfa).
+- **Doğrulama:** CSSOM'da kutu üzerinde scale kuralı kalmadığı, `a:hover svg { scale(1.3) }` ve svg geçiş kuralının yüklendiği doğrulandı; v5 aktif, konsol hatası 0.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-04-36 — Sosyal medya rayındaki logolar büyütüldü (22px masaüstü / 18px mobil)
 
 - **Yapan:** Onur'un "kutuların içindeki logoları biraz büyüt de daha görünür olsun" talebi üzerine Claude (PDM asistanı, Fable).
