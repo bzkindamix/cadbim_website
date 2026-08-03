@@ -55,6 +55,33 @@ img,svg,video,iframe,canvas{max-width:100%;}
   }
 }
 
+/* R8 — FİLTRE / SEKME ÇİP GRUPLARI (DK-2026-08-03-32)
+   flex-wrap ile içeriğe göre genişleyen çipler mobilde her satıra farklı
+   sayıda ve farklı genişlikte diziliyordu (ör. cozumler'de 10 çip = 7 satır,
+   satır içi genişlik farkı 60px) → "dağınık" görünüm. Eşit genişlikli
+   2 sütunlu ızgara: hem hizalı hem daha az satır.
+   NOT: .filterbar (urunler) kasıtlı tek satır + yatay kaydırmadır, kapsam dışı. */
+@media(max-width:600px){
+  .cz-fbtns,.ind-tabs,.catalog-tabs,.soltabs-nav,.pfilter{
+    display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:stretch;
+  }
+  .cz-fbtns>*,.ind-tabs>*,.catalog-tabs>*,.soltabs-nav>*,.pfilter>*{
+    width:100%;min-width:0;justify-content:flex-start;text-align:left;
+  }
+  /* sayaç rozetleri sağa yaslanınca sütunlar hizalı okunur */
+  .cz-fbtn>span{margin-left:auto;}
+  /* arama kutusu tam satır (çip değil) */
+  .pfilter .psearch{grid-column:1/-1;}
+}
+
+/* R9 — CTA / BUTON GRUPLARI (DK-2026-08-03-32)
+   Alt alta düşen butonlar içeriğe göre farklı genişlikteydi (164px/174px gibi)
+   ve sola yaslı duruyordu; mobilde tam genişlik + ortalı daha derli toplu. */
+@media(max-width:600px){
+  .cta-btns,.btns,.h-ctas{flex-direction:column;align-items:stretch;}
+  .cta-btns>*,.btns>*,.h-ctas>*{width:100%;justify-content:center;}
+}
+
 /* R5b — Yalnızca çok dar cihazlarda (≤340px: Galaxy Fold kapalı, eski SE)
    2 sütun okunmaz hale geldiğinden tek sütuna inilir. 360-430px arası
    yaygın telefonlarda 2 sütun korunur. */

@@ -4,6 +4,20 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-32 — Filtre çipleri ve buton gruplarındaki dağınık mobil dizilim düzeltildi (site geneli kural)
+
+- **Yapan:** Onur Bozok'un "filtredeki dağınık görünüm kötü gözüküyor, boyutlar farklı, buna bir çözüm bul ve benzer problemi tüm sitede gider" + "flex-wrap'li tüm yapıları bul ve düzeltmeleri uygula" talebi üzerine Claude (PDM asistanı).
+- **Kök neden:** Filtre/sekme çip grupları `display:flex; flex-wrap:wrap` kullanıyordu; çipler içeriğe göre genişlediği için her satıra farklı sayıda ve farklı genişlikte diziliyor, sağda düzensiz boşluklar bırakıyordu. Ölçülen (375px): `cozumler` → 10 çip **7 satıra** dağılmış, satır içi genişlik farkı **60px**; `endustriler` 70px; `autodesk` 63px; `egitimler` 49px; anasayfa 44px.
+- **Tarama:** Sitedeki **45 farklı** `flex-wrap:wrap` selektörü çıkarıldı ve kategorize edildi — (a) filtre/sekme çipleri: eşitlenmeli, (b) CTA/buton grupları: tam genişlik olmalı, (c) küçük etiket/rozet grupları (`.tags`, `.cpills`, `.sol-meta`, `.prod-tags` vb.): sarma doğal, **dokunulmadı**, (d) footer/breadcrumb düzenleri: dokunulmadı.
+- **Kural (mobile-guardrails.css, ≤600px):**
+  - **R8** — `.cz-fbtns`, `.ind-tabs`, `.catalog-tabs`, `.soltabs-nav`, `.pfilter` → eşit genişlikli **2 sütunlu ızgara**; çipler sola hizalı, sayaç rozetleri `margin-left:auto` ile sağa yaslı (sütunlar hizalı okunuyor); `.pfilter` içindeki arama kutusu `grid-column:1/-1` ile tam satır.
+  - **R9** — `.cta-btns`, `.btns`, `.h-ctas` → dikey yığın + tam genişlik + ortalı içerik.
+- **Kapsam dışı:** `.filterbar` (cadbim_urunler.html) kasıtlı olarak tek satır + yatay kaydırmadır (`overflow-x:auto`); doğrulamada taşan 5 çipin bu kaydırma kabında olduğu teyit edilip kural dışında bırakıldı.
+- **Sonuç (ölçülen):** Tüm çip gruplarında satır içi genişlik farkı **60-70px → 0**; `cozumler` 7 satır → **5 satır**. `.cta-btns` 164/174px → **237/237px**.
+- **Doğrulama (localhost:8420, 375px):** 6 filtre kalıbı + `.pfilter` içeren **18 sayfanın tamamı** (15'i arama kutulu, 3'ü — basari-oykuleri/blog/webinar — arama kutusuz varyant, ayrıca doğrulandı) ölçüldü: genişlik farkı 0, çip taşması 0, metin taşması 0, sayfa taşması 0. Masaüstünde (1400px) `.cz-fbtns`/`.ind-tabs`/`.pfilter`/`.cta-btns` hâlâ `display:flex` — kurallar yalnızca mobilde devrede, regresyon yok.
+- **Not:** Bu oturumun tarayıcı paneli screenshot üretemedi; doğrulama ölçüm tabanlı yapıldı, görsel son teyit Onur'da.
+- **Durum:** ✅ Kural yazıldı, site geneline uygulandı, ölçümle doğrulandı.
+
 ### DK-2026-08-03-31 — Çözüm sayfalarındaki marka logoları çerçeveden çıkarıldı ve büyütüldü
 
 - **Yapan:** Onur Bozok'un "çözümler sayfalarında çalıştığımız markaların logoları aşırı küçük, bunları çerçevesiz yapalım ve logoları büyütelim; bu tüm sitede geçerli bir kural olsun" talebi üzerine Claude (PDM asistanı).
