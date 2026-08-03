@@ -265,6 +265,14 @@ Acrobat Standard 40+, Acrobat Pro 70+ özellik çerçevesinde mühendislik/inşa
 - **Yan bulgu:** Tarayıcıda sayfa eski `design-system.css?v=15` ile önbelleğe alındığı için düzeltme ilk ölçümde görünmedi; cache sürümü `v=16`'ya çekildi (1321 dosya). Yayına alırken tarayıcı önbelleğinin yenilenmesi bu sürüm parametresine bağlıdır.
 - **Durum:** ✅ Tamamlandı, push edildi.
 
+### DK-2026-08-04-01 — Sürüm/tazelik denetimi: sitemap lastmod güncellendi, 6 sapkın canonical düzeltildi
+
+- **Yapan:** Onur'un "yarım kalan bir şey var mı, sitenin son durumunu kontrol et, versiyonunu güncelle" talebi üzerine Claude (PDM asistanı, Fable).
+- **Denetim sonuçları (temiz):** Çalışma ağacı temiz, push edilmemiş commit yok; bu oturumun 6 commit'i sonraki oturumların 6 commit'inin altında tarihte duruyor, tüm işler (tpl/blog-post CSS, yt-facade, home-3d, feed.xml, nav, İlgili Yazılar, eğitim düzeltmeleri) yerinde. **31 sürümlü varlığın (`?v=`) tamamı site genelinde tek sürümde ve git geçmişine göre taze** — içeriği değişip sürümü unutulmuş dosya yok (5 son-değişen varlık + mobilenav/spec-cards hedefli doğrulandı; tpl-*/blog-post/yt-facade zaten bu oturumda sürümüyle birlikte oluşturuldu). Sürümsüz (`?v=`siz) js/css referansı 0. Smoke test: 9 temsili URL (ana sayfa, ürün, post, eğitimler, feed, sitemap...) HTTP 200, konsol hatası 0.
+- **Güncellenen: sitemap lastmod (176 kök URL).** Kök sayfaların çoğu `2026-07-17`'de kalmıştı; oysa bugün/dün footer iletişim bilgileri, nav, eğitim metinleri gibi gerçek içerik değişiklikleri yaşadılar. Her kök URL'nin `lastmod`'u, eşlenen dosyanın **gerçek son git commit tarihine** çekildi. 1.126 post URL'sinin lastmod'u (içerik yayın tarihi) bilinçli korundu — şablon değişikliği Google için "önemli içerik değişikliği" sayılmaz, toplu tarih güncellemek lastmod güvenilirliğini bozar.
+- **Bulunan ve düzeltilen hata: 6 sapkın canonical.** `designjet-z6pro/z6ps/z9pro/z9ps`, `factor4`, `substance3d` sayfalarının canonical/og/JSON-LD URL'leri tireli biçimdeydi (`designjet-z6-pro`, `factor-4`, `substance-3d`) — oysa iç linkler (25), 404 yönlendirme haritası ve htaccess taslağı tiresiz standardı kullanıyor; yani **bu 6 sayfanın canonical URL'si hiçbir yönlendirmede çözülmüyordu** (Google'a var olmayan URL beyan ediliyordu). Sayfa başına 7 referans + 6 sitemap `<loc>` tiresiz standarda çekildi. Denetim: 192 kök sayfanın tamamında canonical ↔ MAP hizalı, sitemap'te MAP dışı kök URL 0.
+- **Durum:** ✅ Site sağlıklı; sürümler güncel; push edilecek.
+
 ### DK-2026-08-03-19 — Autodesk-dışı ürünler için eğitim iddiaları site genelinde kaldırıldı
 
 - **Yapan:** Onur'un "biz sadece autodesk ürünleri için eğitim veriyoruz; sitede bu duruma zıtlık oluşturan ifadeleri bul ve düzelt" talebi üzerine Claude (PDM asistanı, Fable). Kural hafızaya da kaydedildi (cadbim-egitim-sadece-autodesk).
