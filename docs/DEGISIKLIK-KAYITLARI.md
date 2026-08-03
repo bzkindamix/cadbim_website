@@ -30,6 +30,15 @@ Acrobat Standard 40+, Acrobat Pro 70+ özellik çerçevesinde mühendislik/inşa
 - **Not:** Yerel sunucu `404.html` URL haritasını açılışta okuduğu için yeni çözüm URL'leri eklendikten sonra sunucunun yeniden başlatılması gerekir.
 - **Durum:** ✅ Tamamlandı, push edildi.
 
+### DK-2026-08-03-22 — Ana sayfa title/description final (Onur onayı) + müşteri sayısı 11.000+ → 9.000+
+
+- **Yapan:** Onur Bozok + Claude (PDM asistanı). Onur DK-20'deki metinler için "sıfırdan yazsan nasıl yazardın" ve "sadece Autodesk satıyormuş gibi görünüyor" geri bildirimlerini verdi; revize ikiliyi onayladı. Ayrıca "müşteri sayımızı 9.000+ yapalım, tüm sitede ve açıklamalarda" dedi.
+- **Eşzamanlı oturum notu:** Aynı anda çalışan ikinci Claude oturumu da kaydına DK-2026-08-03-21 numarasını vermişti; çakışmayı önlemek için bu kayıt DK-22'ye alındı. Ayrıca o oturumun commit'i (7162c306, `git add -A`) bu işin hakkımızda/dijital-dönüşüm 9.000+ düzeltmelerini ve ana sayfa yeni description'ını kendi commit'ine kattı — içerik kaybı yok, yalnızca commit mesajı/kapsam eşleşmesi bulanık; izlenebilirlik bu kayıtla sağlanıyor.
+- **Final title (60 kr):** `Cadbim | Autodesk Gold Partner — Lisans, Eğitim, Danışmanlık` — "Yazılım" → "Lisans" (satın alma niyetli aramalar).
+- **Final description (153 kr):** `1993'ten beri 9.000'i aşkın kuruluşun teknoloji ortağı. Autodesk, Adobe ve Chaos yazılımları, HP iş istasyonları, eğitim ve danışmanlık — teklif isteyin.` — sayı+kanıt+CTA kurgusu; çok markalı liste "sadece Autodesk" algısını kırıyor; "yetkili eğitim" bilinçli olarak sade "eğitim" (eğitim yetkisi yalnız Autodesk).
+- **Müşteri sayısı (8 yer):** index.html (og/twitter desc, hero-sub, sayaç `data-n="11000"`→`9000`), cadbim_hakkimizda.html (og/twitter desc + istatistik kutusu), cadbim_dijital_donusum.html (2 istatistik şeridi). Site genelinde `11.000|11000|11 bin` taraması: 0 kalan.
+- **Durum:** ✅ Onaylı metinler işlendi; SERP önizlemesi güncellendi.
+
 ### DK-2026-08-03-20 — Ana sayfa title + meta description SEO revizyonu
 
 - **Yapan:** Onur Bozok'un "site açıklamamız 'Autodesk Gold Partner & Tasarım Teknolojileri' bizi tam yansıtmıyor; title ve meta tanımını iyi yazalım, Google'da nasıl görüneceğini görelim" talebi üzerine Claude (PDM asistanı).
