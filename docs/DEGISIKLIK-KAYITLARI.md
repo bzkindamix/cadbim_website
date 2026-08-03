@@ -4,6 +4,28 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-33 — Beyaz zeminli iç görseller kaldırıldı; eksik ikonlar subset fontuna eklendi
+
+- **Yapan:** Onur Bozok'un "beyaz backgroundlu görsel istemiyorum sitede, ya png yapalım ya da kaldıralım" (karar: *"Adobe gibi marka logosuysa kaldırma, ama iç görsellerdense kaldır"*) ve "ikonsuz kutular var, bunu gider ve tüm site için uygula" talepleri üzerine Claude (PDM asistanı).
+
+**A) Beyaz zeminli görseller**
+- **Tarama:** 365 görsel dosyası, her birinin 8 kenar/köşe noktası örneklenerek opak-beyaz zemin tespiti yapıldı. 99 dosya beyaz çıktı; bunların yalnızca **17'si HTML'de fiilen referanslıydı** (kalanı kullanılmayan HP basın-kiti kaynak dosyaları).
+- **Karar ayrımı (Onur):** marka logoları kalacak, içerik görselleri kaldırılacak.
+  - **Kalan (3):** `meshmixer.png`, `tinkercad-icon.png`, `veras.png` — ürün/marka logoları, dokunulmadı.
+  - **Kaldırılan (11 `<img>`):** `gallery-hdpro-2`, `gallery-sdpro-1`, `gallery-t1700-1` (2 sayfada), `gallery-t600-1`, `gallery-t830-1`, `gallery-z6pro-1`, `gallery-z6ps-2`, `gallery-z9pro-1`, `gallery-z9ps-1`, `gallery-z9ps-2`.
+  - **Düzen onarımı:** görselin gitmesiyle boşta kalan 2 sütunlu kalıplar tek sütuna alındı — `.sh sh-img2` → `.sh` dönüşümü, ve `cadbim_designjet.html`'de görselden boşalan kenarlıklı kutu ile onu saran `grid-template-columns:1.1fr 1fr` sarmalayıcısı kaldırıldı (aksi halde sayfada boş çerçeveli bir kutu kalıyordu).
+  - **Değiştirilen (1):** `graphics-z6pro.jpg` bir kategori banner'ının arka planıydı; kaldırılsa 5'li banner setinde (01-05) tek görselsiz banner kalacaktı. Aynı ürünün koyu zeminli görseli `gallery-z6pro-2.jpg` ile değiştirildi — set tutarlı kaldı.
+  - **Video posterleri (3):** `graphics-z6pro-poster`, `office-t1600-poster`, `photo-z9pro-poster` — `<video poster="...">` attribute'ları kaldırıldı; videolar `controls` ile duruyor, önizleme artık beyaz yerine koyu.
+- **Doğrulama:** Kullanımdaki beyaz görsel sayısı **17 → 3** (yalnızca kasıtlı bırakılan logolar). Etkilenen 10 DesignJet sayfası masaüstünde (1400px) tarandı: kırık görsel 0, boş kenarlıklı kutu 0, yatay taşma 0. Mobilde (375px) `designjet`, `designjet-t1700`, `designjet-z9ps` kontrol edildi — taşma 0.
+
+**B) İkonsuz kutular**
+- **Kök neden:** Site tam Tabler setini değil, `scripts/build_icon_subset.py` ile üretilen bir **subset font** kullanıyor. Sayfalara sonradan eklenen ikon sınıfları subset'e işlenmediği için o kutular boş görünüyordu.
+- **Tarama:** 298 farklı `ti-*` sınıfı kullanılıyordu, subset'te 295 vardı → **9 sınıf eksik** (14 kullanım): `ti-rocket`, `ti-signature`, `ti-forms`, `ti-eye-off`, `ti-sun-moon`, `ti-transform`, `ti-table-options`, `ti-tree`, `ti-history-toggle`. Onur'un bildirdiği `bim-icerik-uretimi` sayfasındaki iki boş kart `ti-transform` ve `ti-table-options` idi.
+- **Çözüm:** Subset betiği yeniden çalıştırıldı (295 → **303 ikon**, font 56,9 → 57,7 KB); betik "karşılığı olmayan sınıf" uyarısı vermedi, yani 9 ismin tamamı Tabler 3.31.0'da mevcuttu. Font+CSS içeriği değiştiği için sürüm `v=3 → v=4` (CSS'teki @font-face URL'i, 1325 HTML'deki link ve betikteki sabit birlikte).
+- **Doğrulama:** kullanılan−tanımlı farkı **0**. Font dosyası fontTools ile açılıp her yeni ikonun codepoint'inin cmap'te bulunduğu teyit edildi ("CSS'te tanımlı ama fontta olmayan: 0"); tarayıcıda `ti-transform` ve `ti-table-options` 22×22 görünür.
+- **Not:** Yeni bir ikon sınıfı kullanıldığında `python scripts/build_icon_subset.py` çalıştırılmalı — aksi halde ikon boş görünür.
+- **Durum:** ✅ Her iki iş de tamamlandı ve ölçümle doğrulandı.
+
 ### DK-2026-08-03-32 — Filtre çipleri ve buton gruplarındaki dağınık mobil dizilim düzeltildi (site geneli kural)
 
 - **Yapan:** Onur Bozok'un "filtredeki dağınık görünüm kötü gözüküyor, boyutlar farklı, buna bir çözüm bul ve benzer problemi tüm sitede gider" + "flex-wrap'li tüm yapıları bul ve düzeltmeleri uygula" talebi üzerine Claude (PDM asistanı).
