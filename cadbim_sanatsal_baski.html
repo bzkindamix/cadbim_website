@@ -429,21 +429,7 @@ main,header,footer{position:relative;z-index:3;}
 .quote p em{font-style:normal;background:linear-gradient(92deg,var(--acc2),var(--vio),var(--mag));-webkit-background-clip:text;background-clip:text;color:transparent;}
 .quote footer{margin-top:30px;font-family:var(--fd);font-size:11px;letter-spacing:3px;color:var(--mut);}
 
-/* ---------- finisaj ---------- */
-.fin{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;}
-.fcard{
-  background:var(--bg2);border:1px solid var(--ln);border-radius:18px;padding:26px 24px;
-  transition:transform .3s,border-color .3s;
-}
-.fcard:hover{transform:translateY(-6px);border-color:rgba(139,124,247,.5);}
-.fic{width:46px;height:46px;border:1.5px solid var(--ln);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:border-color .3s;}
-.fic svg{width:23px;height:23px;stroke:var(--tx2);fill:none;stroke-width:1.5;transition:stroke .3s;}
-.fcard:hover .fic{border-color:var(--acc2);}
-.fcard:hover .fic svg{stroke:var(--acc2);}
-.fcard h3{font-family:var(--fd);font-weight:500;font-size:16.5px;margin-bottom:6px;}
-.fcard p{font-size:12.5px;color:var(--mut);line-height:1.65;}
-
-/* ---------- atölyeden: uygulama galerisi ---------- */
+/* ---------- finisaj: uygulama galerisi ---------- */
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .gcard{margin:0;background:var(--bg2);border:1px solid var(--ln);border-radius:18px;overflow:hidden;transition:transform .3s,border-color .3s;}
 .gcard:hover{transform:translateY(-6px);border-color:rgba(110,231,255,.4);}
@@ -523,11 +509,6 @@ html{overflow-x:clip;}
 .h-meta{margin-top:clamp(14px,3.4vh,42px);padding-top:clamp(12px,2.4vh,24px);}
 .h-sub{font-size:clamp(14px,min(1.2vw,2.1vh),17px);}
 .btn-w,.btn-o{padding:clamp(12px,1.8vh,16px) 28px;}
-
-/* 3) finisaj: masaüstünde 3+3 */
-.fin{grid-template-columns:repeat(3,1fr);}
-@media(max-width:900px){.fin{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:540px){.fin{grid-template-columns:1fr;}}
 
 /* 2) yüzey rayı ok düğmeleri */
 .rnav{display:flex;gap:10px;}
@@ -848,42 +829,7 @@ html{overflow-x:clip;}
   <div class="bhead" data-rv>
     <span class="bno">06 — FİNİSAJ</span>
     <h2 class="btitle">Sergilenmeye hazır teslim</h2>
-    <p class="bsub">Baskı yarısı; sunum diğer yarısı.</p>
-  </div>
-  <div class="fin">
-    <div class="fcard" data-rv>
-      <div class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><rect x="8" y="8" width="8" height="8"/></svg></div>
-      <h3>Çerçeve</h3><p>Paspartulu ya da düz — renk ve profil seçenekleriyle.</p>
-    </div>
-    <div class="fcard" data-rv style="--d:.05s;">
-      <div class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12"/><path d="M8 18v2M16 18v2" stroke-linecap="round"/></svg></div>
-      <h3>Dekota Kaşe</h3><p>Rijit PVC zemin. Çerçevesiz, modern, hafif.</p>
-    </div>
-    <div class="fcard" data-rv style="--d:.1s;">
-      <div class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="5" width="14" height="14"/><path d="M19 8l2 1v8l-2-1M8 19l1 2h8l-1-2"/></svg></div>
-      <h3>Fotoblok</h3><p>Köpük panel kaşe. Sergilerin hafif ve ekonomik standardı.</p>
-    </div>
-    <div class="fcard" data-rv>
-      <div class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><path d="M4 4l4 4M20 4l-4 4M4 20l4-4M20 20l-4-4"/></svg></div>
-      <h3>Kasnaklı Germe</h3><p>Çıtalı kasnağa gerilmiş kanvas. Tuval görünümü, asılmaya hazır.</p>
-    </div>
-    <div class="fcard" data-rv style="--d:.05s;">
-      <div class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="5" height="12"/><rect x="10" y="4" width="5" height="16"/><rect x="17" y="7" width="5" height="10"/></svg></div>
-      <h3>Parçalı Kanvas</h3><p>Tek kare, çok panel. Geniş duvarlara ritim.</p>
-    </div>
-    <div class="fcard" data-rv style="--d:.1s;">
-      <div class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V6l5 2 5-3 6 3v12"/><path d="M9 8v12M14 5v12"/></svg></div>
-      <h3>Paravan &amp; Bez</h3><p>Kanvas paravan, kasnaklı bez. Mekan ölçeğinde işler.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ATÖLYEDEN ============ -->
-<section class="blk" style="padding-top:0;">
-  <div class="bhead" data-rv>
-    <span class="bno">07 — ATÖLYEDEN</span>
-    <h2 class="btitle">Finisaj, iş üstünde.</h2>
-    <p class="bsub">Dekota, fotoblok, kasnak, çerçeve ve paravan — altı uygulama örneği. Ebat ve kombinasyon, işinize göre uyarlanır.</p>
+    <p class="bsub">Baskı yarısı; sunum diğer yarısı. Altı uygulamadan örnekler — ebat ve kombinasyon işinize göre uyarlanır.</p>
   </div>
   <div class="gal">
     <figure class="gcard" data-rv><div class="gimg"><img src="assets/img/sanatsal/mat-dekota-cerceve.jpg" alt="Mat fotoğraf kağıdına baskı — dekota ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"></div><figcaption><b>Mat Fotoğraf Kağıdı</b><span>Dekota + Çerçeve</span></figcaption></figure>
@@ -1120,9 +1066,10 @@ function formuGonder(e){
         if(!lens){
           lens=document.createElement("div");
           lens.className="glens";
-          lens.style.backgroundImage="url('"+img.currentSrc+"')";
           wrap.appendChild(lens);
         }
+        var src=img.currentSrc||img.src;
+        if(src)lens.style.backgroundImage="url('"+src+"')";
         lens.style.backgroundSize=(wrap.clientWidth*ZOOM)+"px "+(wrap.clientHeight*ZOOM)+"px";
         lens.classList.add("show");
       });
