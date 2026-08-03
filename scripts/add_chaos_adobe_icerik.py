@@ -18,8 +18,10 @@ CADBIM'in Gold Reseller (Commercial / Education / Government) kapsaminda degildi
 Adobe'nin yayinladigi fiyatlar da bilincli olarak alinmamistir (CADBIM kurali:
 sitede fiyat gosterilmez).
 
-Surum numaralari (Corona 14, Anima 6, V-Ray 7 vb.) her yeni surumde
-guncellenmelidir.
+SURUM NUMARASI KULLANILMAZ (Onur 3 Agustos 2026: "surum numaralari
+kullanmaktan kacin"). Icerik yetenek duzeyinde yazilir; boylece her yeni
+Chaos/Adobe surumunde sayfanin guncellenmesi gerekmez ve eskimis bilgi
+yayinlanmis olmaz.
 """
 import io
 import os
@@ -166,24 +168,24 @@ def yaratici_icerik():
 # 3) Chaos marka sayfasi: guncel surum yenilikleri
 # --------------------------------------------------------------------------
 YENILIK = [
-    (u'Chaos AI Upscaler', u'Chaos Cloud Collaboration',
-     u'Düşük çözünürlüklü render tek tıkla 2x/4x büyütülüyor, 16K\'ya kadar; doku ve '
-     u'detay da keskinleşiyor. Enscape, V-Ray ve Corona kullanıcılarına açık.'),
-    (u'Corona 14', u'3ds Max & Cinema 4D',
-     u'Gaussian splat desteği, Night Sky, Fabric Material ve AI Material Generator ile '
-     u'daha detaylı malzeme, ortam ve atmosfer efektleri.'),
-    (u'Anima 6, update 2', u'Kalabalık & trafik',
-     u'Tam mürettebatlı araçlarda fren ve sinyal ışıkları; bağlam duyarlı kalabalıkların '
-     u'4B yollar boyunca veya etikete göre doğal hareketi.'),
-    (u'V-Ray 7 for 3ds Max, update 4', u'Gerçek zamanlı',
-     u'Vantage doğrudan 3ds Max görünüm penceresinde: fiziksel doğru kamera, ışık ve '
-     u'malzemeyle anlık yol izlemeli geri bildirim, dönüştürme gerekmiyor.'),
-    (u'V-Ray for Blender, update 3', u'Yeni platformlar',
-     u'Linux sürümü, Blender 5.1 ve AMD GPU render desteği; V-Ray Wrangler ile düğüm '
-     u'tabanlı gölgelendirme, Parallax Interiors ile ağır geometri olmadan derinlik.'),
+    (u'AI Upscaler', u'Chaos Cloud',
+     u'Düşük çözünürlüklü render tek tıkla 2x/4x büyütülür, 16K’ya kadar; doku ve '
+     u'detay da keskinleşir. Enscape, V-Ray ve Corona kullanıcılarına açık.'),
+    (u'AI Material Generator', u'Chaos Cosmos',
+     u'Herhangi bir fotoğraf dikişsiz, render’a hazır PBR malzemeye dönüşür; '
+     u'malzeme hazırlamanın elle yapılan kısmı ortadan kalkar.'),
     (u'AI Mood Match', u'V-Ray for SketchUp & Rhino',
      u'Referans fotoğrafın ışık koşulları çözümlenip Sun & Sky veya görsel tabanlı '
-     u'aydınlatma buna göre kuruluyor.'),
+     u'aydınlatma buna göre kurulur.'),
+    (u'Gerçek zamanlı görünüm penceresi', u'Vantage + 3ds Max',
+     u'Vantage doğrudan 3ds Max görünüm penceresinde çalışır: fiziksel doğru kamera, '
+     u'ışık ve malzemeyle anlık yol izlemeli geri bildirim, dönüştürme gerekmez.'),
+    (u'Kalabalık ve trafik animasyonu', u'Anima',
+     u'Tam mürettebatlı araçlarda fren ve sinyal ışıkları; bağlam duyarlı kalabalıkların '
+     u'yollar boyunca veya etikete göre doğal hareketi.'),
+    (u'Geniş platform desteği', u'V-Ray',
+     u'3ds Max, Maya, SketchUp, Revit, Rhino, Cinema 4D, Blender ve Unreal; Windows, '
+     u'Linux, CPU ve GPU render seçenekleri.'),
 ]
 
 
@@ -196,10 +198,10 @@ def chaos():
     block = u'''<!-- cz-yenilik -->
 <section class="section cz-sec" style="--cz:#f26d5b;">
   <div class="sh" style="margin-bottom:26px;">
-    <div class="slabel" style="color:var(--cz);">Güncel Sürümler</div>
-    <div class="stitle">Chaos ekosisteminde son gelişmeler</div>
-    <p class="ssub">Chaos'un yayımladığı güncel sürüm notlarından derlenmiştir
-      (Ağustos 2026). Sürüm ve kapsam bilgisi için teklif aşamasında teyit alınır.</p>
+    <div class="slabel" style="color:var(--cz);">Öne Çıkan Yetenekler</div>
+    <div class="stitle">Chaos ekosisteminde neler var?</div>
+    <p class="ssub">Ekosistem sürekli geliştiği için burada yetenekleri anlatıyoruz;
+      hangi ürün ve planda hangisinin bulunduğunu teklif aşamasında birlikte netleştiriyoruz.</p>
   </div>
   <div class="cz-fark">
 %s  </div>

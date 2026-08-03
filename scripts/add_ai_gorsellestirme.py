@@ -57,7 +57,7 @@ PRODUCTS = [
     ('chaos', None, u'Chaos V-Ray & Enscape',
      u'AI araçlarının bağlandığı fiziksel tabanlı render ve gerçek zamanlı görselleştirme.'),
     ('corona', 'corona.svg', u'Chaos Corona',
-     u'Corona 14 ile AI Material Generator, Gaussian splat desteği ve Night Sky.'),
+     u'AI Material Generator ve gelişmiş malzeme/atmosfer araçlarıyla mimari görselleştirme.'),
     ('lumion-cloud', 'lumion-cloud.png', u'Lumion Cloud',
      u'AI Material Generator ve görsel iş birliği ortamı; tüm Lumion planlarına dahil.'),
     ('firefly', 'firefly.svg', u'Adobe Firefly',

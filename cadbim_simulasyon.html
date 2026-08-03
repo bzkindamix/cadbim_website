@@ -404,6 +404,43 @@
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Simülasyon için ayrı bir uzman istihdam etmek gerekir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tüm senaryolar için gerekmez. Inventor Nastran ve Fusion Simulation, tasarımcının kendi ortamında çalıştırabileceği doğrulama analizleri için tasarlanmıştır. Sertifikasyona esas, doğrusal olmayan veya çok fizikli analizlerde uzman desteği önerilir; bu noktada Cadbim danışmanlık verir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Analiz sonucuna ne kadar güvenebilirim?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sonuç, girdilerin kalitesi kadar iyidir: malzeme kartı, sınır koşulları ve ağ yoğunluğu doğru kurulmadıysa çıktı yanıltıcı olur. Bu nedenle ilk kurulumda bilinen bir vaka üzerinde doğrulama (korelasyon) çalışması yapılmasını öneriyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Analiz için nasıl bir donanım gerekir?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Çözüm süresi büyük ölçüde çekirdek sayısı ve bellek kapasitesine bağlıdır. CFD ve büyük montaj analizlerinde HP Z serisi iş istasyonları belirgin fark yaratır; ihtiyaç profilinize göre donanım yapılandırmasını da biz çıkarıyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Simülasyon fiziksel prototipi tamamen ortadan kaldırır mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır, sayısını azaltır. Amaç, prototibe giden tasarımın çoktan elenmiş alternatiflerden değil, en güçlü adaydan seçilmesidir."
+        }
+      }
+    ]
   }
  ]
 }
@@ -411,7 +448,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=19">
+<link rel="stylesheet" href="assets/css/design-system.css?v=20">
 </head>
 <body>
 <nav class="nav">
@@ -514,7 +551,7 @@
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#f87171;"><div class="cz-stat"><b>FEA · CFD</b><span>yapısal, termal ve akış analizi</span></div><div class="cz-stat"><b>CAD içinde</b><span>Inventor ve Fusion'a gömülü çalışır</span></div><div class="cz-stat"><b>PD&amp;M</b><span>Collection kapsamında</span></div></div>
       <!-- /cz-stats -->
-                                              </div>
+                                                    </div>
       <div class="cz-art cz-art-hero"><img src="assets/img/cozum/simulasyon.svg" width="640" height="420" alt="Simülasyon hangi soruyu cevaplar? — Cadbim teknik şeması" decoding="async"></div>
     </div>
   </div>
