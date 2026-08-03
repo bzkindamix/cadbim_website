@@ -4,6 +4,28 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-30 — Mobil düzenleme kuralları kural setine dönüştürüldü ve site geneline uygulandı (`mobile-guardrails.css`)
+
+- **Yapan:** Onur Bozok'un "mobil tarafında yaptığımız düzenlemeleri bir kural silsilesi olarak al ve tüm site için bunu çalıştır" talebi üzerine Claude (PDM asistanı).
+- **Bağlam:** Bu turdan önce mobil düzeltmeler sayfa sayfa yapılıyordu (iletişim formu, eğitimler hero'su, hakkımızda grid'leri). Aynı hata sınıfları başka sayfalarda da vardı; tek tek avlamak yerine kalıcı bir kural katmanı oluşturuldu.
+- **Yeni dosya:** `assets/css/mobile-guardrails.css` — **1328 HTML dosyasının tamamına** `</head>` hemen öncesine eklendi. Bu konum kritik: sayfa içi `<style>` bloklarından ve `tpl-*.css`'ten sonra yüklendiği için aynı özgüllükteki kuralları ezer.
+- **Kural seti:**
+  - **R1** — Breadcrumb'lar (`.crumb/.hero-crumb`) mobilde sarar; uzun ürün adları viewport dışına taşıyordu (ör. `hp-zbook`).
+  - **R1b** — Satır içi (`style="..."`) çok sütunlu grid'ler mobilde tek sütuna iner. Sınıf tabanlı kuralla ezilemedikleri için `!important` gerekti. 6 örnek vardı; en ağırı `surdurulebilirlik` sayfasında iç içe geçmiş grid yüzünden kartları **45px genişliğe** sıkıştırıyordu.
+  - **R2** — Uzun kelimeler (`overflow-wrap:anywhere`) taşma yerine kırılır.
+  - **R3** — `img/svg/video/iframe/canvas{max-width:100%}` (global, tek genel kural).
+  - **R4** — `.form-row/.form-grid` mobilde tek sütun.
+  - **R5** — `.g3/.g4` mobilde **2 sütun** (tek sütun değil) — Onur'un "alt alta kaydır kaydır bitmeyen yapıları istemiyorum, mümkün olduğunca ekrana sıkışsınlar ama okunacak şekilde" talimatı doğrultusunda.
+  - **R5b** — Yalnızca ≤340px cihazlarda (Galaxy Fold kapalı) tek sütuna iner; 360-430px arası yaygın telefonlarda 2 sütun korunur.
+  - **R6** — Geniş tablolar kabı taşırmak yerine yatay kaydırılır.
+  - **R7** — Grid/flex çocuklarına `min-width:0` (içerik kaynaklı taşmayı keser).
+  - **Hero istatistik şeritleri** (`.hero-stats/.hstats`) 2'şerli sarar; `dijital-donusum`'da 4 kutu yan yana eziliyordu.
+- **Yükleme sırası düzeltmesi:** 9 `sektor_*.html` sayfasında `design-system.css` sayfa içi `<style>`'dan **önce** geliyordu (kaskadda kaybediyordu); `</head>` öncesine taşındı.
+- **Doğrulama (localhost:8420):** 197 sayfanın **tamamı** gizli iframe'lerle 375px'te otomatik tarandı — yatay taşma, viewport dışına çıkan öğe ve <115px'e sıkışmış grid sütunu ölçüldü. Denetim, kasıtlı yatay kaydırma şeritlerini (`overflow-x:auto` kabı olan sektör/filtre/model şeritleri) gerçek hatalardan ayırt ediyor. **Sonuç: 0 gerçek hata.** Kalan 2 uyarı kasıtlı tasarım (hakkımızda 3'lü rozet grid'i; sanatsal-baskı dekoratif `orb`/marquee öğeleri). Tablet (768px) ve masaüstü (1400px) regresyon kontrolü yapıldı — taşma yok, görseller normal.
+- **Yan kazanç:** Sayfa yükseklikleri kısaldı (2 sütun sayesinde): `bim` 14862→13757px, `designjet` 17097→15943px, `surdurulebilirlik` 5874→5264px.
+- **Not:** Bu oturumun tarayıcı paneli screenshot üretemedi; doğrulama ölçüm tabanlı (getBoundingClientRect / getComputedStyle) yapıldı, görsel son teyit Onur'da.
+- **Durum:** ✅ Kural seti yazıldı, 1328 dosyaya uygulandı, 197 sayfa taranarak doğrulandı.
+
 ### DK-2026-08-03-29 — İletişim sayfasındaki Google Haritası yanlış konumu gösteriyordu; koordinat düzeltildi
 
 - **Yapan:** Onur Bozok'un "iletişim alanında Google Maps'te tam lokasyonumuz gözükmüyor bunu düzelt" talebi üzerine Claude (PDM asistanı).

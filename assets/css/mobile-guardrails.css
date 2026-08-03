@@ -1,0 +1,63 @@
+/* ==========================================================================
+   MOBİL GÜVENLİK KATMANI (DK-2026-08-03) — site geneli kural seti
+   Bu dosya HER sayfada </head> hemen öncesinde, yani sayfa içi <style> ve
+   tpl-*.css'ten SONRA yüklenir; böylece aynı özgüllükteki kuralları ezer.
+   Amaç: (a) yatay taşma olmasın, (b) içerik iğne gibi sütunlara sıkışmasın,
+   (c) kısa içerikli kutular mobilde gereksizce tek sütuna inip sayfayı
+   "kaydır kaydır bitmeyen" hale getirmesin.
+   ========================================================================== */
+
+/* R3 — Hiçbir gömülü öğe kabını taşırmaz */
+img,svg,video,iframe,canvas{max-width:100%;}
+
+@media(max-width:600px){
+  /* R2 — Uzun ürün/model adları kelime ortasından kırılabilsin (taşma yerine) */
+  h1,h2,h3,h4,p,li,td,th,figcaption,label,.stitle,.hero-sub,.ssub{overflow-wrap:anywhere;}
+
+  /* R1 — Breadcrumb'lar tek satırda zorlanmayıp alt satıra sarsın
+     (uzun sayfa adlarında viewport dışına taşıyordu) */
+  .crumb,.hero-crumb,.breadcrumb{flex-wrap:wrap;row-gap:4px;}
+
+  /* R1 — Hero istatistik şeritleri: yan yana 3-4 kutu mobilde eziliyordu.
+     2'şerli sarma + son satırdaki ayraç çizgisi temizliği. */
+  .hero-stats,.hstats{flex-wrap:wrap;}
+  .hero-stats>*,.hstats>*,.hstat{min-width:0;}
+  .hero-stats:not([style*="grid"])>.hstat,
+  .hstats:not([style*="grid"])>.hstat{flex:1 1 42%;}
+
+  /* R5 — Sabit 3+ sütunlu grid'ler mobilde 2 sütuna iner (tek sütuna değil):
+     içerik okunur kalır, sayfa gereksiz uzamaz. */
+  .g4,.g3{grid-template-columns:repeat(2,minmax(0,1fr));}
+
+  /* R4 — Form satırları her zaman tek sütun (etiket+alan okunabilirliği) */
+  .form-row,.form-grid{grid-template-columns:1fr;}
+
+  /* R7 — Grid/flex çocukları asla kendi içeriklerinden dolayı kabı taşırmaz */
+  .grid>*,.cards>*,.feats>*,.features-grid>*,.prod-grid>*,.catalog-grid>*{min-width:0;}
+
+  /* R6 — Geniş tablolar kabı taşırmak yerine yatay kaydırılır */
+  table{display:block;overflow-x:auto;max-width:100%;}
+}
+
+/* R1b — SATIR İÇİ (inline style) çok sütunlu grid'ler.
+   Sınıf tabanlı kurallarla ezilemedikleri için burada !important gerekir.
+   Bunlar "görsel + metin" ya da "iki kolon içerik" düzenleri; mobilde
+   yan yana kaldıklarında içteki kartlar 45-100px'e sıkışıyordu. */
+@media(max-width:600px){
+  [style*="grid-template-columns:auto 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns:1.1fr 1fr"],
+  [style*="grid-template-columns:1fr 1.05fr"],
+  [style*="grid-template-columns:1.15fr 0.85fr"],
+  [style*="grid-template-columns:1.05fr .95fr"]{
+    grid-template-columns:1fr!important;
+    gap:1.75rem!important;
+  }
+}
+
+/* R5b — Yalnızca çok dar cihazlarda (≤340px: Galaxy Fold kapalı, eski SE)
+   2 sütun okunmaz hale geldiğinden tek sütuna inilir. 360-430px arası
+   yaygın telefonlarda 2 sütun korunur. */
+@media(max-width:340px){
+  .g4,.g3{grid-template-columns:1fr;}
+}
