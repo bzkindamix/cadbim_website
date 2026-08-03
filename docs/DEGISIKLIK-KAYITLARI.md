@@ -4,6 +4,14 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-18 — index.html'in 45KB'lık 3D sahne betiği harici dosyaya çıkarıldı (O11 tamamlandı)
+
+- **Yapan:** Claude (PDM asistanı, Fable) · Fable listesinin 5. ve son kalemi.
+- **Sorun (O11):** Ana sayfanın satır içi 3D sahne betiği (hero izometrik çizim + sektör görselleri + istatistik animasyonları) denetimden bu yana 36KB'dan **45KB'a** büyümüştü ve her ziyarette HTML'in içinde yeniden iniyordu (önbelleklenemiyor).
+- **Yapılan:** Betik `assets/js/home-3d.js`'e (47KB, `?v=1`) çıkarıldı; `index.html`'de aynı konuma (body sonu) **senkron** `<script src>` kondu — defer değil, çünkü aynı konumda senkron yükleme çalıştırma sırasını birebir korur (body sonunda engelleme maliyeti sıfır). `index.html` 99KB → **53KB**.
+- **Doğrulama:** Betiğin konum-bağımlı API kullanmadığı doğrulandı (`currentScript`/`document.write` yok). Tarayıcıda kesin kanıt: statik HTML'de **boş** olan `#isoSvg` öğesi, DOM'da betiğin ürettiği 14.378 baytlık polygon çizimini içeriyor; `heroCoord` "ORBIT 000°..." metni yazılmış, sectorView köşe işaretleri yerinde. `home-3d.js` HTTP 200, konsol hatası 0. (İstatistik sayaçlarının "0" görünmesi 0x0 gizli önizleme viewport'unda IntersectionObserver'ın tetiklenmemesinden — D8'de kayıtlı, bu değişiklikle ilgisiz.)
+- **Durum:** ✅ O11 tamamlandı, push edilecek. Fable listesi (Y8-Faz1, Y12, Y9, O9, O11) bitti.
+
 ### DK-2026-08-03-17 — 998 YouTube iframe'i tıkla-oynat facade'ına çevrildi (O9 tamamlandı)
 
 - **Yapan:** Claude (PDM asistanı, Fable) · Fable listesinin 4. kalemi.
