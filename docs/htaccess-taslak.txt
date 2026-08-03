@@ -794,3 +794,8 @@ RewriteRule ^cadbim_vred\.html$ /vred [R=301,L]
 RewriteRule ^cadbim_webinar\.html$ /webinar [R=301,L]
 RewriteRule ^cadbim_yaratici_icerik\.html$ /yaratici-icerik [R=301,L]
 RewriteRule ^cadbim_yazilim_gelistirme\.html$ /yazilim-gelistirme [R=301,L]
+
+# --- 5) Ozel 404 sayfasi (2026-08-03 eklendi) ---
+# Bulunamayan adreslerde markali 404 sayfasi HTTP 404 koduyla sunulur.
+# Yayin sonrasi test: cadbim.com.tr/olmayan-bir-adres -> tasarimli sayfa + 404 status.
+ErrorDocument 404 /404.html

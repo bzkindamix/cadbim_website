@@ -51,6 +51,15 @@ Acrobat Standard 40+, Acrobat Pro 70+ özellik çerçevesinde mühendislik/inşa
 - **Not:** Yerel sunucu `404.html` URL haritasını açılışta okuduğu için yeni çözüm URL'leri eklendikten sonra sunucunun yeniden başlatılması gerekir.
 - **Durum:** ✅ Tamamlandı, push edildi.
 
+### DK-2026-08-03-24 — Tasarımlı 404 sayfası + favicon gerçek Cadbim amblemiyle değiştirildi
+
+- **Yapan:** Onur Bozok'un "404'ü yap; sekmedeki C'yi Cadbim logosu yapalım mı?" talebi üzerine Claude (PDM asistanı). Onur logonun yalnızca baştaki amblem (elips-A) olmasını istedi, CADBİM yazısı olmadan.
+- **Favicon seti:** `assets/logos/cadbim-logo.png`'den (beyaz dikey logo) amblem satır-analiziyle kırpıldı (0-320 arası; yazı 350+). Üç dosya aynı adlarla yeniden üretildi → hiçbir HTML değişikliği gerekmedi: `favicon.svg` (lacivert yuvarlatılmış kare + base64 gömülü amblem), `assets/apple-touch-icon-180.png`, `assets/icon-512.png`. Üretici: scratchpad/gen_favicons.py (PIL).
+- **404.html yeniden kuruldu:** 195 kayıtlık MAP yönlendirme mantığı bayt-bayt korundu (dev_server.py bu MAP'i tek doğru kaynak olarak okuyor). **Kritik hata düzeltildi:** eski kodda fallback DOM erişimi `<head>` içinde çalıştığından bulunamayan adreste ziyaretçi bomboş sayfa görüyordu. Yeni tasarım: amblem + 404 + "Aradığınız sayfa bulunamadı" + Anasayfa butonu + 6 bölüm bağlantısı (Ürünler/Çözümler/Eğitimler/Blog/İletişim/Teklif İste); github.io prefix desteği ve noscript korundu; site görsel dili (navy/cyan, Manrope/Space Grotesk, grid zemin).
+- **htaccess taslağına eklendi:** `ErrorDocument 404 /404.html` (docs/htaccess-taslak.txt, bölüm 5) — canlıda test notu düşüldü.
+- **Doğrulama (localhost:8420):** /404.html → başlık doğru, içerik görünür (`#nf.on`, opacity 1), 6 bağlantı doğru href'lerle, gömülü logo yüklü, konsol hatasız. Favicon 128px önizlemede amblem net.
+- **Durum:** ✅ Tamam. Teşekkür sayfası bilinçli olarak yapılmadı (paralel oturumun worktree'sinde hazırlanıyor).
+
 ### DK-2026-08-03-23 — Ana sayfa description marka önem sırasına göre yeniden kuruldu
 
 - **Yapan:** Onur Bozok'un "önem sıralaması: Autodesk, Adobe, HP plotter, HP workstation, diğer markalar — başlık ve açıklamaları buna göre tekrar değerlendir" talebi üzerine Claude (PDM asistanı).
