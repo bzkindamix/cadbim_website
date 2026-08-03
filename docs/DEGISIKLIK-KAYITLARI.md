@@ -30,6 +30,14 @@ Acrobat Standard 40+, Acrobat Pro 70+ özellik çerçevesinde mühendislik/inşa
 - **Not:** Yerel sunucu `404.html` URL haritasını açılışta okuduğu için yeni çözüm URL'leri eklendikten sonra sunucunun yeniden başlatılması gerekir.
 - **Durum:** ✅ Tamamlandı, push edildi.
 
+### DK-2026-08-03-23 — Ana sayfa description marka önem sırasına göre yeniden kuruldu
+
+- **Yapan:** Onur Bozok'un "önem sıralaması: Autodesk, Adobe, HP plotter, HP workstation, diğer markalar — başlık ve açıklamaları buna göre tekrar değerlendir" talebi üzerine Claude (PDM asistanı).
+- **Başlık:** Değişmedi — içindeki tek marka Autodesk (#1), sıralamayla çelişki yok.
+- **Yeni description (153 kr):** `1993'ten beri 9.000'i aşkın kuruluşun çözüm ortağı. Autodesk ve Adobe yazılımları, HP plotter ve iş istasyonları, eğitim ve danışmanlık — teklif isteyin.` — DK-22'deki metinde Chaos HP'nin önündeydi ve plotter yoktu; yeni sıra birebir önem sırası. Chaos "diğer markalar" kapsamında kendi sayfasına bırakıldı. "Plotter" kelimesi arama hacmi için tercih edildi (resmi ürün adı HP DesignJet, nav'da öyle).
+- **Not:** og/twitter uzun açıklamalarındaki marka sırası (Autodesk, Adobe, HP, Microsoft, Chaos, UltiMaker) zaten uyumlu, dokunulmadı.
+- **Durum:** ✅ index.html güncellendi.
+
 ### DK-2026-08-03-22 — Ana sayfa title/description final (Onur onayı) + müşteri sayısı 11.000+ → 9.000+
 
 - **Yapan:** Onur Bozok + Claude (PDM asistanı). Onur DK-20'deki metinler için "sıfırdan yazsan nasıl yazardın" ve "sadece Autodesk satıyormuş gibi görünüyor" geri bildirimlerini verdi; revize ikiliyi onayladı. Ayrıca "müşteri sayımızı 9.000+ yapalım, tüm sitede ve açıklamalarda" dedi.
