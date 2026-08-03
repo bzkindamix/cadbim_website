@@ -4,6 +4,19 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-17 — 998 YouTube iframe'i tıkla-oynat facade'ına çevrildi (O9 tamamlandı)
+
+- **Yapan:** Claude (PDM asistanı, Fable) · Fable listesinin 4. kalemi.
+- **Sorun (O9):** 1.014 YouTube iframe'i sayfa açılışında eager yükleniyordu — her video ~800KB+ YouTube JS'i indiriyor ve **onay alınmadan `youtube.com` çerezleri** yerleştiriyordu (KVKK riski). Blog yazılarında video, sayfanın en ağır öğesiydi (LCP).
+- **Yapılan:**
+  1. **`yt-facade.js`** (yeni, kök): kendi CSS'ini enjekte eden, event-delegation'lı hafif facade. Tıklamada `youtube-nocookie.com/embed/ID?autoplay=1` iframe'ine dönüşüyor. JS kapalıysa facade `<a href="youtube.com/watch?v=ID">` olarak çalışır (progressive enhancement — sahte buton değil, gerçek link).
+  2. **921 statik iframe** (901 post + 20 kök) küçük resim (`i.ytimg.com/vi/ID/hqdefault.jpg`, çerezsiz CDN, width/height'lı) + oynat düğmesi facade'ına çevrildi.
+  3. **77 kök sayfadaki JS şablonu** ("İlgili blog videoları" bölümünü çalışma anında üreten kod) da facade üretecek şekilde güncellendi — delegation sayesinde dinamik eklenen facade'lar da tıklanabilir.
+  4. Toplam **980 dosyaya** `yt-facade.js?v=1` script etiketi eklendi. **16 `youtube-nocookie` iframe'i** (başarı öyküleri/sanatsal baskı gibi özel yerleşimli, zaten çerezsiz) kasıtlı olarak dokunulmadan bırakıldı.
+- **Kazanç:** Sayfa açılışında YouTube'a giden istek 0'a indi (küçük resim hariç — o da çerezsiz statik CDN); onay öncesi `youtube.com` çerezi tamamen kalktı; video'lu post sayfalarının ilk yükü video başına ~800KB hafifledi.
+- **Doğrulama:** Dönüşüm sonrası eager `youtube.com/embed` iframe'i site genelinde 0. Tarayıcıda: post sayfası 0 iframe ile açıldı, facade tıklamasında `youtube-nocookie.com/...?autoplay=1&rel=0` iframe'i yerine geçti; `cadbim_autocad.html`'de dinamik bölüm 8 facade üretti, tıklama orada da çalıştı; küçük resim eager testte 480x360 yüklendi (lazy testte yüklenmemesi 0x0 gizli önizleme viewport'u kaynaklı, gerçek tarayıcıda geçerli değil). Konsol hatası 0.
+- **Durum:** ✅ O9 tamamlandı, push edilecek.
+
 ### DK-2026-08-03-16 — RSS feed + 1.129 posta statik "İlgili Yazılar" bloğu (Y9 tamamlandı)
 
 - **Yapan:** Claude (PDM asistanı, Fable) · Fable listesinin 3. kalemi.

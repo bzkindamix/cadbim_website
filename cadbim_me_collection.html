@@ -286,11 +286,11 @@
   <div class="sh"><div class="slabel">Videolar</div><div class="stitle">M&E Collection Ürünlerini İzleyin</div><p class="ssub">Maya ve Bifrost üzerinde Cadbim Teknik Destek videoları.</p></div>
   <div class="grid g2">
     <div style="background:var(--navy3);border-radius:16px;border:.5px solid var(--w10);overflow:hidden;">
-      <div style="aspect-ratio:16/9;background:#000;"><iframe style="width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/tE4L382hffE" title="M&E Collection - Bifrost for Maya ile gerçekçi efektler oluşturun" loading="lazy" allowfullscreen></iframe></div>
+      <div style="aspect-ratio:16/9;background:#000;"><a class="yt-lite" href="https://www.youtube.com/watch?v=tE4L382hffE" target="_blank" rel="noopener" data-yt="tE4L382hffE" data-title="M&amp;E Collection - Bifrost for Maya ile gerçekçi efektler oluşturun" aria-label="Videoyu oynat: M&amp;E Collection - Bifrost for Maya ile gerçekçi efektler oluşturun"><img src="https://i.ytimg.com/vi/tE4L382hffE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="yt-lite-btn" aria-hidden="true"></span></a></div>
       <div style="padding:16px;"><h4 style="font-family:var(--fd);font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">M&E Collection – Bifrost for Maya ile Gerçekçi Efektler Oluşturun</h4></div>
     </div>
     <div style="background:var(--navy3);border-radius:16px;border:.5px solid var(--w10);overflow:hidden;">
-      <div style="aspect-ratio:16/9;background:#000;"><iframe style="width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/2EsTG2c4UC4" title="Autodesk Maya - Genel Bakış" loading="lazy" allowfullscreen></iframe></div>
+      <div style="aspect-ratio:16/9;background:#000;"><a class="yt-lite" href="https://www.youtube.com/watch?v=2EsTG2c4UC4" target="_blank" rel="noopener" data-yt="2EsTG2c4UC4" data-title="Autodesk Maya - Genel Bakış" aria-label="Videoyu oynat: Autodesk Maya - Genel Bakış"><img src="https://i.ytimg.com/vi/2EsTG2c4UC4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="yt-lite-btn" aria-hidden="true"></span></a></div>
       <div style="padding:16px;"><h4 style="font-family:var(--fd);font-size:13px;font-weight:600;color:#fff;margin-bottom:4px;">Autodesk Maya – Genel Bakış</h4></div>
     </div>
   </div>
@@ -418,7 +418,7 @@
     container.innerHTML=matched.map(function(p){
       if(p.type==='video' && p.videoId){
         return '<div style="background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);overflow:hidden;">'
-          + '<div style="aspect-ratio:16/9;background:#000;"><iframe style="width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/'+p.videoId+'" title="'+esc(p.title)+'" loading="lazy" allowfullscreen></iframe></div>'
+          + '<div style="aspect-ratio:16/9;background:#000;"><a class="yt-lite" href="https://www.youtube.com/watch?v='+p.videoId+'" target="_blank" rel="noopener" data-yt="'+p.videoId+'" data-title="'+esc(p.title)+'" aria-label="Videoyu oynat"><img src="https://i.ytimg.com/vi/'+p.videoId+'/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="yt-lite-btn" aria-hidden="true"></span></a></div>'
           + '<div style="padding:16px;"><h4 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'.html" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h4><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
       }
       return '<a href="post/'+p.slug+'.html" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);padding:20px;text-decoration:none;">'
@@ -487,4 +487,5 @@
 <script src="whatsapp-widget.js?v=1" defer></script>
 <script src="social-widget.js?v=1" defer></script>
 <script src="cookie-consent.js?v=2" defer></script>
+<script src="yt-facade.js?v=1" defer></script>
 </body></html>
