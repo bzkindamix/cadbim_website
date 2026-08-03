@@ -556,7 +556,7 @@
       }
       if (lines.length){
         offX = 210 - (mnX+mxX)/2;
-        offY = 170 - (mnY+mxY)/2;
+        offY = 148 - (mnY+mxY)/2;
       }
       for (i = 0; i < lines.length; i++) place(lines[i].el, cache[i*2], cache[i*2+1]);
       for (i = 0; i < plane.length; i++) place(plane[i].el, proj(plane[i].a), proj(plane[i].b));
@@ -607,7 +607,7 @@
         });
       });
       offX = 210 - (minX+maxX)/2;
-      offY = 170 - (minY+maxY)/2;
+      offY = 148 - (minY+maxY)/2;
 
       /* zemin düzlemi — modelin ayak izini biraz taşan izometrik ızgara */
       var pad = 0.6, step = 0.7;
