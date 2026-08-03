@@ -78,6 +78,59 @@ INDUSTRIES = [
 ]
 
 
+# Konuyla ilgili gercek Cadbim YouTube videolari -- Autodesk once (marka sirasi kurali)
+VIDEOS = [
+    ('3tX5-SbxAoc', u'Autodesk Forma Board — Generate AI Image ile konsept görseller',
+     u'Erken aşamada kütle modelinden yapay zekâ destekli konsept görsel üretimi.'),
+    ('-3AgMlsmg1Y', u'Yapay zekâ destekli tasarım ve imalat iş ortağınız: Autodesk AI',
+     u'Autodesk portföyünde yapay zekânın tasarım ve üretim akışına nereden girdiği.'),
+    ('6Ru4ppNiQR4', u'Adobe Firefly — Yapı Referansı',
+     u'Referans görselin yapısını koruyarak üretken görsel türetme.'),
+    ('glOclQpjS-k', u'Creative Cloud + AI: yaratıcı süreçlerin yeni standardı',
+     u'Üretken yapay zekânın Creative Cloud iş akışına gömülü hâli.'),
+    ('8jJVF0tt5P8', u'Adobe — üretken yapay zekâ ile hızlı ve yenilikçi iş akışları',
+     u'Varyant üretimi ve tekrar eden işlerin kısaltılması.'),
+]
+
+
+def video_section():
+    items = []
+    for vid, title, desc in VIDEOS:
+        t = title.replace('"', '&quot;')
+        items.append(u'''    <div class="cz-vid">
+      <div class="cz-vid-thumb">
+        <a class="yt-lite" href="https://www.youtube.com/watch?v=%s" target="_blank"
+           rel="noopener" data-yt="%s" data-title="%s"
+           aria-label="Videoyu oynat: %s"><img src="https://i.ytimg.com/vi/%s/hqdefault.jpg"
+           alt="" width="480" height="360" loading="lazy" decoding="async"><span
+           class="yt-lite-btn" aria-hidden="true"></span></a>
+      </div>
+      <div class="cz-vid-body">
+        <h3>%s</h3>
+        <p>%s</p>
+      </div>
+    </div>
+''' % (vid, vid, t, t, vid, title, desc))
+    return (u'''<!-- cz-video -->
+<section class="section cz-sec" style="--cz:%s;">
+  <div class="sh" style="margin-bottom:26px;">
+    <div class="slabel" style="color:var(--cz);">Video Eğitimler</div>
+    <div class="stitle">Kendi kanalımızdan konu anlatımları</div>
+    <p class="ssub">Cadbim Teknik Destek kanalında yayınladığımız, tasarım ve
+      görselleştirmede yapay zekâ kullanımına dair oturumlar.</p>
+  </div>
+  <div class="cz-vids">
+%s  </div>
+  <div class="cz-faq-cta" style="margin-top:22px;">
+    <span>Tüm teknik destek videolarımız YouTube kanalımızda.</span>
+    <a href="https://www.youtube.com/c/CadbimTeknikDestek" target="_blank" rel="noopener"
+       class="btn-g">YouTube Kanalımız <i class="ti ti-brand-youtube"></i></a>
+  </div>
+</section>
+<!-- /cz-video -->
+''' % (ACCENT, "".join(items)))
+
+
 def card(icon, title, desc):
     return (u'''    <div class="card">
       <div class="card-icon"><i class="ti %s"></i></div>
@@ -120,7 +173,7 @@ def build_page():
     blog_start = src.index('<section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">')
     head = src[:head_end]
     nav = src[head_end:nav_end]
-    tail = re.sub(r'data-topic="[^"]*"', 'data-topic="Chaos"', src[blog_start:], count=1)
+    tail = re.sub(r'data-topic="[^"]*"', u'data-topic="Görselleştirme"', src[blog_start:], count=1)
 
     desc = (u'AI destekli görselleştirme: Chaos Veras ile metin isteminden render, '
             u'fotoğraftan PBR malzeme, 16K çözünürlük yükseltme, AI Mood Match ve '
@@ -186,10 +239,11 @@ def build_page():
   <div class="grid g3" style="margin-top:0;">
 %(industries)s  </div>
 </section>
-''' % dict(accent=ACCENT,
+%(videos)s''' % dict(accent=ACCENT,
            cards="".join(card(*c) for c in CARDS),
            products="".join(product_card(*p) for p in PRODUCTS),
-           industries="".join(industry_card(*i) for i in INDUSTRIES))
+           industries="".join(industry_card(*i) for i in INDUSTRIES),
+           videos=video_section())
 
     out = head + nav + body + tail
     io.open(os.path.join(ROOT, FILE), 'w', encoding='utf-8', newline='').write(out)

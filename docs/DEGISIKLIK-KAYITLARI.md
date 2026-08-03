@@ -4,6 +4,25 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-25 — Yeni çözüm sayfalarındaki üç eksik kapatıldı: OG görseli, blog eşleşmesi, video bölümü
+
+- **Yapan:** Onur Bozok'un "devam?" sorusu üzerine, yeni özellik eklemek yerine önceki turlarda kendi bıraktığım açık uçlar denetlenip kapatıldı (Claude, PDM asistanı).
+
+**1) Eksik OG görselleri (sosyal paylaşımda kırık görsel)**
+`cadbim_bim_icerik_uretimi.html` ve `cadbim_ai_gorsellestirme.html` sayfaları, şablon olarak kullandıkları sayfanın OG yolunu devraldığı için var olmayan `assets/og/cadbim_bim_icerik_uretimi.png` ve `assets/og/cadbim_ai_gorsellestirme.png` dosyalarına işaret ediyordu. LinkedIn/WhatsApp paylaşımında görsel çıkmayacaktı.
+  - `scripts/gen_og_cozum.py` yazıldı; mevcut `gen_og_sektor.py` şablonunu (1200×630, koyu navy, soluk ızgara, aksan etiketi, beyaz başlık, gri açıklama, sağ üstte beyaz logo, sol altta çerçeveli alan adı) **yeniden kullanarak** iki görsel üretti. 155 mevcut OG görseliyle aynı dil korundu.
+  - Site genelinde OG denetimi yapıldı: **eksik görsel 0**.
+
+**2) Blog bölümü boş kalıyordu (AI sayfası)**
+AI Destekli Görselleştirme sayfasının blog bileşenine `data-topic="Chaos"` verilmişti; blog verisinde böyle bir etiket bulunmadığı için **0 yazı eşleşiyor** ve bölüm kendini gizliyordu. Konu, 59 yazının bulunduğu **"Görselleştirme"** kategorisine çevrildi; bölüm artık 5 kartla doluyor. Aynı düzeltme üretici betiğe de işlendi.
+
+**3) AI sayfasına küratoryal video bölümü eklendi**
+Blog verisinde konuyla gerçekten ilgili 40 video bulundu; bunlardan beşi seçilip BIM İçerik sayfasındakiyle aynı `yt-lite` facade kalıbıyla yerleştirildi. **Marka sırası kuralına uygun olarak Autodesk videoları başta:** Autodesk Forma Board — Generate AI Image ile konsept görseller · Yapay zekâ destekli tasarım ve imalat iş ortağınız: Autodesk AI · Adobe Firefly — Yapı Referansı · Creative Cloud + AI · Adobe — üretken yapay zekâ ile hızlı iş akışları. Beş küçük resmin tamamı 200 döndü (16–44 KB).
+
+- **Doğrulama:** 197 kök sayfada etiket dengesi ve JSON-LD **0 sorun**; site genelinde eksik OG görseli **0**. AI sayfası tarayıcıda ölçüldü: 5 video kartı, 5 blog kartı, yatay taşma yok, kırık görsel yok, iç içe bağlantı yok, bölüm sırası Hero → Nedir → Neler Yapabiliriz → Ürünler → Video → Markalar → SSS → Cadbim Farkı → Blog. Küçük resim URL'leri doğrudan `curl` ile de teyit edildi.
+- **Not:** Tarayıcı ölçümünde küçük resimler `0x0` görünüyor; bu `loading="lazy"` görsellerin ekran dışı iframe'de yüklenmemesinden kaynaklanan bir ölçüm artefaktıdır, sayfa hatası değildir (aynı kalıp üst düzey sayfada 480×360 yüklenerek doğrulanmıştı).
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-24 — Sürüm numaraları içerikten kaldırıldı; Sanatsal Baskı navigasyon bulgusu düzeltildi
 
 - **Yapan:** Onur Bozok'un "sürüm numaraları kullanmaktan kaçın", "sanatsal baskı bilinçli ama bu sence bir problem mi? orasının kitlesi bambaşka" ve "yerel sunucuyu yeniden başlat" talimatları üzerine Claude (PDM asistanı).

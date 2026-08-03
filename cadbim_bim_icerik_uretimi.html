@@ -465,6 +465,51 @@
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Elimde sadece üretim CAD modeli var, yeterli mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Başlangıç için yeterli. STEP, IPT, IAM veya SLDPRT verisinden yola çıkılabilir. Yalnızca teknik resim (PDF/DWG) varsa geometri yeniden kurulur; bu durumda süre uzar. En sağlıklı sonuç, ürün gamının parametre listesiyle birlikte paylaşılmasıyla alınır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hangi LOD seviyesinde üretilmeli?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kullanım amacına göre. Tasarım aşamasında yerleşim ve çakışma için LOD 200–300 yeterlidir; imalat ve montaj detayı gerekiyorsa LOD 400'e çıkılır. Her seviyeyi en yükseğe çekmek dosyayı gereksiz ağırlaştırır — hedefi baştan tanımlıyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "IFC de veriyor musunuz, sadece Revit mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Revit ailesi (.rfa) ana çıktıdır; bunun yanında IFC olarak da yayınlanır. Böylece Revit kullanmayan paydaşlar (Archicad, Tekla, Solibri) da ürününüzü kendi ortamlarında kullanabilir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ürün gamım geniş, her ürün için ayrı dosya mı gerekiyor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hayır — doğrusu da bu değildir. Aynı geometri mantığını paylaşan ürünler tek ailede toplanıp tip kataloğuyla sunulur; mimar açılır listeden ölçüyü seçer. Bu hem bakımı kolaylaştırır hem kütüphanenizi derli tutar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ekibime bu işi öğretebilir misiniz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet. Cadbim Autodesk Yetkili Eğitim Merkezi'dir (ATC); aile oluşturma ve kütüphane yönetimi eğitimlerini İzmir merkez ofisimizde ve kuruma özel programlarla veriyoruz. İsterseniz içeriği biz üretiriz, isterseniz ekibiniz üretir biz standardı ve denetimi kurarız."
+        }
+      }
+    ]
   }
  ]
 }
@@ -574,7 +619,7 @@
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#818cf8;"><div class="cz-stat"><b>.rfa · IFC</b><span>Revit ailesi ve açık format çıktısı</span></div><div class="cz-stat"><b>LOD 200–400</b><span>faz bazlı detay seviyesi</span></div><div class="cz-stat"><b>Tip kataloğu</b><span>tek aileden tüm ürün gamı</span></div></div>
       <!-- /cz-stats -->
-                </div>
+                      </div>
       <div class="cz-art cz-art-hero"><img src="assets/img/cozum/bim-icerik-uretimi.svg" width="640" height="420" alt="BIM objesi, ürünün küçültülmüş CAD modeli değildir — Cadbim teknik şeması" decoding="async"></div>
     </div>
   </div>
