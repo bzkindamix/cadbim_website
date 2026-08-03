@@ -1149,7 +1149,111 @@ def bim_icerik_uretimi():
 
 
 # --------------------------------------------------------------------------
+def ai_gorsellestirme():
+    """Model/eskiz + metin istemi -> sinir agi -> fotogercekci cikti + upscale."""
+    a = "#c084fc"
+    o = head(a)
+
+    # --- sol: 3B model / eskiz
+    o += box(34, 92, 176, 140, "ln2", 'fill="rgba(255,255,255,.02)"')
+    o += accent_text(48, 112, "3B MODEL / ESKIZ", a, 9)
+    ox, oy, s = 122, 152, .62
+    px, py = 100, 70
+    corners = [(0, 0), (px, 0), (px, py), (0, py)]
+    for z in (0, 34, 68):
+        p = [iso(x, y, z, ox, oy, s) for x, y in corners]
+        o += '<polygon class="fl" points="%s"/><polygon class="%s" points="%s"/>' % (
+            pts(p), "ln" if z in (0, 68) else "ln2", pts(p))
+    for x, y in corners:
+        b, t = iso(x, y, 0, ox, oy, s), iso(x, y, 68, ox, oy, s)
+        o += '<line class="ln2" x1="%s" y1="%s" x2="%s" y2="%s"/>' % (
+            f(b[0]), f(b[1]), f(t[0]), f(t[1]))
+    o += "\n"
+    # metin istemi
+    o += box(34, 244, 176, 46, "ln2", 'fill="%s" fill-opacity=".05"' % a)
+    o += ('<text x="46" y="264" font-family="monospace" font-size="9" fill="%s" '
+          'fill-opacity=".8">&gt; aksam isigi, tugla</text>' % a)
+    o += ('<text x="46" y="278" font-family="monospace" font-size="9" fill="%s" '
+          'fill-opacity=".8">&gt; doku, yagmur sonrasi<tspan class="blink">_</tspan></text>\n' % a)
+    o += label(34, 306, "metin istemi (prompt)", 8, "start", ".38")
+
+    # --- orta: sinir agi
+    layers = [(258, 5), (300, 7), (342, 5)]
+    nodes = []
+    for lx, n in layers:
+        col = []
+        for k in range(n):
+            y = 190 - (n - 1) * 15 / 2.0 + k * 15
+            col.append((lx, y))
+        nodes.append(col)
+    for i in range(len(nodes) - 1):
+        for x1, y1 in nodes[i]:
+            for x2, y2 in nodes[i + 1]:
+                o += ('<line class="cy" x1="%s" y1="%s" x2="%s" y2="%s" '
+                      'stroke-opacity=".1" stroke-width=".6"/>' % (f(x1), f(y1), f(x2), f(y2)))
+    o += "\n"
+    for col in nodes:
+        for x, y in col:
+            o += node(x, y, 2.6)
+    o += "\n" + accent_text(300, 258, "AI", a, 13, "middle")
+    o += label(300, 276, "uretken model", 8, "middle", ".38")
+    o += arrow(216, 190, 246, 190, a)
+    o += arrow(354, 190, 384, 190, a)
+
+    # --- sag: fotogercekci cikti
+    o += box(392, 92, 212, 198, "ln2", 'fill="rgba(255,255,255,.02)"')
+    o += accent_text(406, 112, "SONUC", a, 9)
+    # render benzeri kademeli bloklar
+    rx, ry, rw, rh = 406, 126, 184, 104
+    o += ('<defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1">'
+          '<stop offset="0%%" stop-color="%s" stop-opacity=".28"/>'
+          '<stop offset="55%%" stop-color="%s" stop-opacity=".1"/>'
+          '<stop offset="100%%" stop-color="%s" stop-opacity=".04"/>'
+          '</linearGradient></defs>' % (a, a, CYAN))
+    o += ('<rect x="%d" y="%d" width="%d" height="%d" rx="4" fill="url(#rg)" '
+          'stroke="%s" stroke-opacity=".5"/>' % (rx, ry, rw, rh, a))
+    # ufuk + kutle silueti
+    o += ('<line class="ln2" x1="%d" y1="%d" x2="%d" y2="%d" stroke-opacity=".35"/>'
+          % (rx, ry + 68, rx + rw, ry + 68))
+    o += ('<polyline class="ln" points="%s" stroke-opacity=".65"/>'
+          % pts([(rx + 16, ry + 68), (rx + 16, ry + 30), (rx + 62, ry + 30),
+                 (rx + 62, ry + 46), (rx + 108, ry + 46), (rx + 108, ry + 22),
+                 (rx + 150, ry + 22), (rx + 150, ry + 68)]))
+    # yansima
+    for k in range(4):
+        o += ('<line class="cy" x1="%d" y1="%d" x2="%d" y2="%d" stroke-opacity=".14"/>'
+              % (rx + 24 + k * 34, ry + 70, rx + 24 + k * 34, ry + 96))
+    o += "\n"
+    # upscale rozeti
+    o += ('<rect x="%d" y="%d" width="52" height="18" rx="9" fill="%s" fill-opacity=".16" '
+          'stroke="%s" stroke-opacity=".5"/>' % (rx + rw - 58, ry + 6, a, a))
+    o += accent_text(rx + rw - 32, ry + 19, "16K", a, 10, "middle")
+    # malzeme cipleri
+    o += label(406, 254, "AI malzeme (foto → PBR)", 8, "start", ".4")
+    for i in range(5):
+        o += ('<rect x="%d" y="260" width="22" height="22" rx="5" fill="%s" '
+              'fill-opacity=".%d" stroke="rgba(255,255,255,.18)" stroke-width=".6"/>'
+              % (406 + i * 27, a, 5 - (i % 3)))
+    o += "\n"
+
+    # --- alt: hat
+    steps = [u"Eskiz", u"Istem", u"Varyant", u"Malzeme", u"Upscale"]
+    y0 = 348
+    o += '<line class="ln2" x1="60" y1="%d" x2="580" y2="%d" stroke-opacity=".25"/>\n' % (y0, y0)
+    for i, t in enumerate(steps):
+        x = 60 + i * 130
+        o += ('<circle cx="%d" cy="%d" r="11" fill="%s" fill-opacity=".1" stroke="%s" '
+              'stroke-opacity=".55"/>' % (x, y0, a, a))
+        o += accent_text(x, y0 + 4, "%d" % (i + 1), a, 9, "middle")
+        o += label(x, y0 + 30, t, 9, "middle", ".45")
+    o += "\n" + accent_text(320, 402, "TASARIMCI KARARDA, AI ISCILIKTE", a, 9, "middle")
+    o += scanline(a, 60)
+    return o + TAIL
+
+
+# --------------------------------------------------------------------------
 BUILDERS = {
+    "ai-gorsellestirme": ai_gorsellestirme,
     "bim-icerik-uretimi": bim_icerik_uretimi,
     "dijital-donusum": dijital_donusum,
     "bim": bim,

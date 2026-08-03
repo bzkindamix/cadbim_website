@@ -367,6 +367,43 @@
         }
       }
     ]
+  },
+  {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Otomasyon için yazılım geliştirici olmak gerekir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Temel iLogic kuralları için gerekmez; parametre ve basit koşul mantığını bilen bir mühendis kısa sürede üretken hâle gelir. Konfigüratör, ERP entegrasyonu veya web arayüzü gibi ileri senaryolarda Cadbim yazılım geliştirme ekibi devreye girer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hangi ürünler otomasyona uygundur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aynı mantığın farklı ölçülerde tekrar ettiği her ürün: çelik konstrüksiyon, konveyör, asansör, kalıp, pano, tank, makine kabini. Tekrar oranı ne kadar yüksekse geri dönüş o kadar hızlıdır."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mevcut modellerim kullanılabilir mi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Genellikle evet, ancak önce sadeleştirme gerekir. Elle biriktirilmiş modellerde çoğu kez gereksiz özellik ve kırılgan bağımlılık bulunur; otomasyona hazır bir ana model (master) kurmak daha sağlıklı sonuç verir."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Geri dönüşü nasıl ölçeriz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Otomasyon öncesi ve sonrası, aynı işin çevrim süresi ölçülerek. Projeye başlarken bu ölçümü birlikte tanımlıyoruz ki kazanç tahmin değil, veri olsun."
+        }
+      }
+    ]
   }
  ]
 }
@@ -374,7 +411,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=18">
+<link rel="stylesheet" href="assets/css/design-system.css?v=19">
 </head>
 <body>
 <nav class="nav">
@@ -429,6 +466,7 @@
           <div class="nav-mega-col">
             <div class="nav-dd-label">Görselleştirme & İçerik</div>
             <a href="gorsellestirme">Görselleştirme & Render</a>
+            <a href="ai-gorsellestirme">AI Destekli Görselleştirme</a>
             <a href="yaratici-icerik">Yaratıcı İçerik & Tasarım</a>
           </div>
         </div>
@@ -476,7 +514,7 @@
       <!-- cz-stats -->
       <div class="cz-stats" style="--cz:#fbbf24;"><div class="cz-stat"><b>iLogic</b><span>kod yazmadan kural tabanlı tasarım</span></div><div class="cz-stat"><b>Konfigüratör</b><span>müşteri özelinde otomatik varyant</span></div><div class="cz-stat"><b>Çizim + CAM</b><span>otomasyon imalata kadar uzanır</span></div></div>
       <!-- /cz-stats -->
-                                        </div>
+                                              </div>
       <div class="cz-art cz-art-hero"><img src="assets/img/cozum/tasarim-otomasyonu.svg" width="640" height="420" alt="Neyi otomatikleştiriyoruz? — Cadbim teknik şeması" decoding="async"></div>
     </div>
   </div>

@@ -148,6 +148,77 @@ COZUM["bim"] = dict(
     ],
 )
 
+COZUM["ai_gorsellestirme"] = dict(
+    slug="ai-gorsellestirme", visual="ai-gorsellestirme", accent="#c084fc",
+    lead=u"Görselleştirmede zamanın büyük kısmı yaratıcı karara değil işçiliğe "
+         u"gidiyor: doku hazırlamak, bitki ve insan eklemek, render'ı büyütmek, "
+         u"varyant çıkarmak. Üretken yapay zekâ bu işçiliği devralıyor — karar "
+         u"tasarımcıda kalıyor.",
+    stats=[(u"16K", u"tek tıkla 2x/4x çözünürlük yükseltme"),
+           (u"Foto → PBR", u"fotoğraftan render'a hazır malzeme"),
+           (u"Ticari kullanım", u"lisans koşullarına uygun üretim")],
+    intro_title=u"Yapay zekâ görselleştirmede tam olarak nereye giriyor?",
+    intro=[
+        u"Chaos'un kendi ifadesiyle amaç, yaratıcılığı devralmak değil "
+        u"<strong>saatler süren tekrar işini kısaltmak</strong>: araçlar tekrarlayan "
+        u"görevleri otomatikleştiriyor, yeni keşif yolları açıyor ve son bir cila "
+        u"katmanı sağlıyor. Karar verme yetkisi tasarımcıda kalıyor.",
+        u"Pratikte bu şu araçlar demek: <strong>Veras</strong> ile 2B görsel, eskiz veya "
+        u"3B modelden metin istemiyle gerçekçi görselleştirme (Enscape, V-Ray ve Corona "
+        u"ile bütünleşir; SketchUp, Rhino ve Revit içinde çalışır). "
+        u"<strong>AI Material Generator</strong> ile herhangi bir fotoğraftan dikişsiz, "
+        u"render'a hazır PBR malzeme. <strong>AI Image Enhancer</strong> ile bitki ve "
+        u"insan gibi tamamlayıcı öğelere yeniden render almadan detay. "
+        u"<strong>AI Upscaler</strong> ile düşük çözünürlüklü çıktının tek tıkla 2x/4x "
+        u"büyütülmesi. <strong>AI Mood Match</strong> ile referans fotoğrafın ışık "
+        u"atmosferinin sahneye taşınması.",
+        u"Bunun yanına Autodesk tarafında Forma'nın erken aşama analizleri ve Fusion'ın "
+        u"jeneratif tasarımı, Lumion Cloud'un AI malzeme üreticisi ve Adobe Firefly'ın "
+        u"ticari kullanıma uygun üretken görsel araçları geliyor. Cadbim bu araçları tek "
+        u"tek satmak yerine mevcut render hattınıza oturtur; hangi adımın otomasyona "
+        u"değdiğini birlikte belirleriz.",
+    ],
+    bullets=[
+        (u"Konsept ve keşif", u"Eskiz veya kütle modelinden metin istemiyle hızlı "
+                             u"alternatif üretimi; müşteriye erken aşamada seçenek sunma."),
+        (u"Malzeme üretimi", u"Fotoğraftan PBR malzeme; şantiye veya numune fotoğrafı "
+                             u"doğrudan sahne malzemesine dönüşür."),
+        (u"Son işlem ve cila", u"Bitki, insan ve büyük yüzeylerde detay artırma; "
+                               u"çözünürlük yükseltme ile render süresinden tasarruf."),
+        (u"Kurumsal çerçeve", u"Hangi işte hangi aracın kullanılacağı, çıktı sahipliği "
+                              u"ve lisans koşulları yazılı bir kullanım politikasına bağlanır."),
+    ],
+    brands=["autodesk", "chaos", "lumion", "adobe", "hp"],
+    faq=[
+        (u"Yapay zekâ ile üretilen görselleri ticari olarak kullanabilir miyim?",
+         u"Kullandığınız araca ve plana bağlıdır. Chaos, çıktıların lisans koşulları "
+         u"çerçevesinde size ait olduğunu; Adobe ise Firefly'ın ticari kullanıma uygun "
+         u"olacak şekilde eğitildiğini belirtir. Buna karşılık koşullar sürüm ve plan "
+         u"bazında değişebildiği için, müşteriye teslim edilecek işlerde güncel şartları "
+         u"birlikte teyit etmenizi öneriyoruz."),
+        (u"Bu araçlar render motorunun yerine mi geçiyor?",
+         u"Hayır. Veras ve benzeri araçlar konsept ve keşif aşamasını hızlandırır; "
+         u"ölçülü, doğru ışıklı ve müşteriye teslim edilebilir final görsel için hâlâ "
+         u"V-Ray, Corona veya Lumion gibi fiziksel tabanlı bir motor gerekir. Doğru "
+         u"kurulum ikisini aynı hatta bağlamaktır."),
+        (u"Ekibim yapay zekâya direnç gösteriyor, ne öneriyorsunuz?",
+         u"En hızlı kabul, yaratıcı karara dokunmayan adımlardan gelir: çözünürlük "
+         u"yükseltme, malzeme üretimi, bitki ve insan detaylandırma. Bu adımlar zaman "
+         u"kazandırırken kimsenin işini elinden almadığı için direnç düşük olur; "
+         u"konsept üretimi sonraki adım olarak ele alınır."),
+        (u"Veri gizliliği açısından ne olur?",
+         u"Chaos, veri paylaşımının tamamen kullanıcı tercihine bağlı olduğunu ve "
+         u"sorumlu kaynaklı veri kümeleri kullandığını belirtir. Kurumsal projelerde "
+         u"bulut tabanlı işleme ile şirket içi işleme ayrımını ve müşteri gizlilik "
+         u"yükümlülüklerinizi kullanım politikasında netleştiriyoruz."),
+        (u"Hangi araçla başlamalıyım?",
+         u"Mevcut hattınıza bağlı. Enscape, V-Ray veya Corona kullanıyorsanız AI "
+         u"Upscaler ve AI Material Generator zaten kapsamınızda olabilir — yeni lisans "
+         u"almadan başlanabilir. Konsept üretimi hedefiniz ise Veras devreye girer. "
+         u"Mevcut lisanslarınızı gözden geçirip başlangıç noktasını çıkarıyoruz."),
+    ],
+)
+
 COZUM["bim_icerik_uretimi"] = dict(
     slug="bim-icerik-uretimi", visual="bim-icerik-uretimi", accent="#818cf8",
     lead=u"Bir yapı ürünü, mimarın modeline giremiyorsa o projede yok sayılır. "

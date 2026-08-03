@@ -4,6 +4,32 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-21 — Chaos ve Adobe kaynaklı içerik yerleştirildi; yeni çözüm: AI Destekli Görselleştirme
+
+- **Yapan:** Onur Bozok'un "chaos grubun çözümlerine bak, bize alabileceğimiz içerikleri al ve ilgili sayfalara yerleştir, buna ek olarak yeni bir çözüm eklemek gerekirse ekle" talebi; ardından "aynı araştırmayı adobe içinde genişletiyorum", "adobe marketing çözümlerini satamıyoruz" ve "adobe for business endüstri ve çözümlerini değil de creative ve acrobat tarafındaki çözüm ve endüstrilere bak" düzeltmeleri üzerine Claude (PDM asistanı).
+
+**1) Yeni çözüm: AI Destekli Görselleştirme → `/ai-gorsellestirme`**
+`chaos.com/ai-visualization` incelendi ve tek başına bir çözüm oluşturmaya yeteceği görüldü. Kapsam: **Veras** (2B görsel, eskiz veya 3B modelden metin istemiyle görselleştirme; Enscape/V-Ray/Corona ile bütünleşir, SketchUp/Rhino/Revit içinde çalışır), **AI Material Generator** (fotoğraftan dikişsiz PBR malzeme, Chaos Cosmos kapsamında), **AI Image Enhancer** (bitki, insan ve büyük yüzeylerde detay), **AI Upscaler** (tek tıkla 2x/4x, 16K'ya kadar), **AI Mood Match** (referans fotoğrafın ışığını Sun & Sky'a taşıma). Yanına Autodesk Forma/Fusion jeneratif tasarım, Lumion Cloud AI malzeme üreticisi ve Adobe Firefly kondu. Ürün sırası kurala uygun: **M&E Collection ilk**, ardından Autodesk, sonra Chaos/Lumion/Adobe/HP. Yeni illüstrasyon: model + metin istemi → sinir ağı → fotogerçekçi çıktı + 16K rozeti + AI malzeme çipleri + beş adımlı hat. Site geneline bağlandı (mega menü 1322 sayfa, çözümler kartı, endüstri filtresi mimari/iç mimarlık/medya/otomotiv, endüstri haritası, 404 URL haritası, sitemap). SSS'de yapay zekâ çıktılarının **ticari kullanımı ve veri gizliliği** ayrıca ele alındı; Chaos'un "çıktı lisans koşulları çerçevesinde size aittir" ve "veri paylaşımı kullanıcı tercihine bağlıdır" ifadeleri esas alınıp güncel şartların teyit edilmesi önerildi.
+
+**2) Görselleştirme sayfası — Kullanım Alanları (Chaos "Industry solutions")**
+Chaos'un endüstri menüsündeki disiplinler CADBİM'in sektörleriyle eşleştirilip sekiz kartlık bölüm eklendi: Mimari Görselleştirme, İç Mimarlık, Peyzaj, Kentsel Planlama, Film & TV VFX, Sanal Prodüksiyon, Otomotiv, Ürün Tasarımı.
+
+**3) Chaos marka sayfası — Güncel Sürümler**
+Altı başlık: Chaos AI Upscaler (Cloud Collaboration, 16K), Corona 14 (Gaussian splat, Night Sky, Fabric Material, AI Material Generator), Anima 6 update 2 (fren/sinyal ışıklı araçlar, bağlam duyarlı kalabalıklar, 4B yollar), V-Ray 7 for 3ds Max update 4 (Vantage doğrudan görünüm penceresinde), V-Ray for Blender update 3 (Linux, Blender 5.1, AMD GPU, V-Ray Wrangler, Parallax Interiors), AI Mood Match. Bölüm alt metnine tarih notu (Ağustos 2026) ve "teklif aşamasında teyit" ibaresi kondu — **sürüm numaraları her yeni sürümde güncellenmelidir.**
+
+**4) Yaratıcı İçerik sayfası — İçerik Üretim Hattı (yalnızca Creative Cloud + Acrobat)**
+Dört adım: Planla ve Standardı Kur (Creative Cloud Libraries, Adobe Fonts 30.000+ font, paylaşılan Adobe Stock lisansı) → Üret (20+ uygulama, gömülü üretken yapay zekâ, tasarımcı olmayan ekipler için Express şablonları) → Gözden Geçir ve Onayla (Frame.io, Acrobat Pro; karşı tarafın oturum açması gerekmez, yasal bağlayıcı e-imza) → Sürümü Koru ve Yeniden Kullan (180 güne kadar sürüm geçmişi, kullanıcı başına 1 TB, Admin Console).
+
+**5) Adobe marka sayfası — Belge & Onay Akışı (Acrobat)**
+Acrobat Standard 40+, Acrobat Pro 70+ özellik çerçevesinde mühendislik/inşaat ekiplerinde karşılığı olan altı başlık: sürüm karşılaştırma, yasal bağlayıcı e-imza, redaksiyon (hassas bilginin kalıcı kaldırılması), tarama → aranabilir PDF, PDF koruma, Microsoft 365 / Dropbox / Creative Cloud entegrasyonu.
+
+**KAPSAM SINIRI (Onur'un iki düzeltmesi doğrultusunda):** İlk turda Adobe içeriği `business.adobe.com/industries` ve `business.adobe.com/solutions/content-supply-chain` üzerinden derlenmişti; bu sayfalar **Adobe Experience Cloud** portföyüne (GenStudio, Experience Manager, Real-Time CDP, Journey Optimizer, Analytics, Workfront) dayanır ve CADBİM'in Gold Reseller kapsamında **değildir**. Kaynak `adobe.com/tr/creativecloud/business/*` ve `.../acrobat-pro.html` sayfalarına çevrildi, metinler yeniden yazıldı. Site genelinde bu ürün adlarının hiçbirinin geçmediği programlı olarak doğrulandı (0 bulgu). Adobe'nin yayımladığı fiyatlar da alınmadı (CADBİM kuralı) — 0 fiyat bulgusu.
+  - **Yan düzeltme:** `cadbim_adobe.html` H1'i *"Adobe — Yaratıcılık, **Pazarlama** ve Belge Yönetimi"* diyordu; satılamayan pazarlama portföyünü ima ettiği için *"Yaratıcılık, **İçerik** ve Belge Yönetimi"* yapıldı. Eski ürün adı **"Adobe Sign" → "Acrobat Sign"** olarak güncellendi.
+- **Yeniden üretilebilirlik:** `scripts/add_ai_gorsellestirme.py`, `scripts/add_chaos_adobe_icerik.py` (kaynak ve kapsam notları betiğin başında), `scripts/cozum_icerik.py`, `scripts/gen_cozum_visuals.py`.
+- **Doğrulama:** 197 kök sayfada etiket dengesi ve JSON-LD geçerliliği **0 sorun**. Beş sayfa tarayıcıda ölçüldü: yatay taşma yok, kırık görsel yok, iç içe bağlantı yok, bölüm sırası doğru, nav'da ilgili öğe aktif. Çözüm sayısı 17 → 18; endüstri filtresi rozetleri yeniden üretildi (Mimarlık 10, İç Mimarlık 5, Medya 4, Otomotiv 11). Kapsam ve fiyat denetimi: **0 uyarı**. Cache sürümü v=19.
+- **Not:** Yerel sunucu `404.html` URL haritasını açılışta okuduğu için yeni çözüm URL'leri eklendikten sonra sunucunun yeniden başlatılması gerekir.
+- **Durum:** ✅ Tamamlandı, push edildi.
+
 ### DK-2026-08-03-20 — Ana sayfa title + meta description SEO revizyonu
 
 - **Yapan:** Onur Bozok'un "site açıklamamız 'Autodesk Gold Partner & Tasarım Teknolojileri' bizi tam yansıtmıyor; title ve meta tanımını iyi yazalım, Google'da nasıl görüneceğini görelim" talebi üzerine Claude (PDM asistanı).
