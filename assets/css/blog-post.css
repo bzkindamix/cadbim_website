@@ -55,3 +55,14 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
 .nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
+
+/* ==== Y9 (DK-2026-08-03-16): Ilgili Yazilar blogu ==== */
+.a-related{margin-top:36px;}
+.a-related h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);margin-bottom:14px;}
+.a-related-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.a-related-card{display:flex;flex-direction:column;gap:6px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rl);padding:16px 18px;text-decoration:none;transition:border-color .2s ease,transform .2s ease;}
+.a-related-card:hover{border-color:var(--cbor);transform:translateY(-2px);}
+.a-related-cat{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);}
+.a-related-title{font-size:13.5px;font-weight:600;color:var(--w80);line-height:1.45;}
+.a-related-date{font-size:12px;color:var(--w30);}
+@media(max-width:640px){.a-related-grid{grid-template-columns:1fr;}}

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <title>Cadbim Blog</title>
+  <link>https://www.cadbim.com.tr/blog</link>
+  <description>Cadbim teknik destek videoları, ürün haberleri ve CAD/BIM içerikleri</description>
+  <language>tr</language>
+  <atom:link href="https://www.cadbim.com.tr/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+   <title>Autodesk Inventor 2027  - AI AssistantYapay Zeka Asistanı</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-inventor-2027-ai-assistantyapay-zeka-asistani</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-inventor-2027-ai-assistantyapay-zeka-asistani</guid>
+   <pubDate>Sat, 01 Aug 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videomuzda sizlere, Autodesk Inventor Professional yazılımının 2027 versiyonunda gelmiş olan Autodesk Assistant(Yapay ...</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion - Çizim Ortamı Kişiselleştirme</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-cizim-ortami-kisisellestirme</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-cizim-ortami-kisisellestirme</guid>
+   <pubDate>Sat, 01 Aug 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Fusion programında; Çizim ortamında arka plan fon rengini ve viewcube boyutunu isteğimize göre ayarlayabiliriz.</description>
+  </item>
+  <item>
+   <title>Autodesk Forma Board - Generate AI Image ile Konsept Görseller</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-forma-board-generate-ai-image-ile-konsept-gorseller</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-forma-board-generate-ai-image-ile-konsept-gorseller</guid>
+   <pubDate>Sat, 01 Aug 2026 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Merhaba! Bu videoda Autodesk Forma Board üzerinde yer alan Generate AI Image özelliği ile konsept görseller oluşturmayı ...</description>
+  </item>
+  <item>
+   <title>Autodesk Dijital Fabrika Çözümlerindeki Yenilikler - Geleceğin Üretim Hattı</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-dijital-fabrika-cozumlerindeki-yenilikler-gelecegin-uretim-hatti</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-dijital-fabrika-cozumlerindeki-yenilikler-gelecegin-uretim-hatti</guid>
+   <pubDate>Fri, 24 Jul 2026 09:00:00 +0300</pubDate>
+   <category>Genel</category>
+   <description>Bu videoda Autodesk&#x27;in dijital fabrika çözümlerindeki güncel yeniliklere ve geleceğin üretim hattı vizyonuna genel bir bakış sunuluyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion Yeni Özellikler – Bulutun Gücüyle Sürekli Gelişim</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-yeni-ozellikler-bulutun-gucuyle-surekli-gelisim</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-yeni-ozellikler-bulutun-gucuyle-surekli-gelisim</guid>
+   <pubDate>Thu, 02 Jul 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Fusion ile bulutun gücüyle gelen sürekli gelişim ve yeni özellikler ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion - 3B Karışım Komutu</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-3b-karisim-komutu</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-3b-karisim-komutu</guid>
+   <pubDate>Wed, 01 Jul 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Fusion ile 3B Karışım komutu adım adım uygulamalı olarak gösteriliyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Inventor 2026 - Frame Analysis Ortamında Yüklerin ve Kısıtlamaların Görünümünü Açma</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-inventor-2026-frame-analysis-ortaminda-yuklerin-ve-kisitlamalarin-gorunumunu-acma</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-inventor-2026-frame-analysis-ortaminda-yuklerin-ve-kisitlamalarin-gorunumunu-acma</guid>
+   <pubDate>Wed, 01 Jul 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Inventor ile Frame Analysis ortamında yüklerin ve kısıtlamaların görünümünü açma konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Revit 2027 - Exploded Diagram (Aksonometrik Kesit) Oluşturma</title>
+   <link>https://www.cadbim.com.tr/post/revit-2027-exploded-diagram-aksonometrik-kesit-olusturma</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/revit-2027-exploded-diagram-aksonometrik-kesit-olusturma</guid>
+   <pubDate>Wed, 01 Jul 2026 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Bu videoda Revit ile Exploded Diagram (aksonometrik kesit) oluşturma konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Navisworks Manage – Tasarımdan Sahaya Koordineli Proje Yönetimi</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-navisworks-manage-tasarimdan-sahaya-koordineli-proje-yonetimi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-navisworks-manage-tasarimdan-sahaya-koordineli-proje-yonetimi</guid>
+   <pubDate>Thu, 18 Jun 2026 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Bu videoda Navisworks Manage ile tasarımdan sahaya koordineli proje yönetimi konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>AutoCAD 2027 - Geometry Cleanup Özelliği</title>
+   <link>https://www.cadbim.com.tr/post/autocad-2027-geometry-cleanup-ozelligi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autocad-2027-geometry-cleanup-ozelligi</guid>
+   <pubDate>Thu, 11 Jun 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Geometry Cleanup Özelliği konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion - 2B Yuva Komutu</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-2b-yuva-komutu</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-2b-yuva-komutu</guid>
+   <pubDate>Thu, 11 Jun 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Fusion programında; 2B yuva komutuyla kama kanalı veya slot işlemek istiyorsak pratik bir biçimde yapabiliriz.</description>
+  </item>
+  <item>
+   <title>Autodesk Inventor 2027 - Parça Ortamında Unsur Klasörleme</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-inventor-2027-parca-ortaminda-unsur-klasorleme</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-inventor-2027-parca-ortaminda-unsur-klasorleme</guid>
+   <pubDate>Thu, 11 Jun 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Inventor 2027 ile artık montaj ortamında olduğu gibi parça ortamında da unsurlarınızı klasörleyerek çalışmanızı Windows Gezgini kadar düzenli hale getirebilirsiniz.</description>
+  </item>
+  <item>
+   <title>Autodesk Vault Professional 2027 Yenilikleri</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-vault-professional-2027-yenilikleri</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-vault-professional-2027-yenilikleri</guid>
+   <pubDate>Mon, 08 Jun 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Vault 2027 ile gelen yapay zeka asistanı, dosya aramadan PLM senkronizasyonuna kadar birçok işlemi Türkçe tek bir cümleyle yaptırmanızı sağlıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Inventor 2027 Yenilikleri</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-inventor-2027-yenilikleri</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-inventor-2027-yenilikleri</guid>
+   <pubDate>Wed, 13 May 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Inventor&#x27;ın güncel sürümüyle gelen yenilikler ve geliştirilmiş özellikler ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Revit 2027 - Autodesk AI Assistant Kullanımı</title>
+   <link>https://www.cadbim.com.tr/post/revit-2027-autodesk-ai-assistant-kullanimi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/revit-2027-autodesk-ai-assistant-kullanimi</guid>
+   <pubDate>Fri, 08 May 2026 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Bu videoda Autodesk AI Assistant Kullanımı konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Inventor 2027 - Publish Assembly (Kütüphaneye Montaj Ekleme)</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-inventor-2027-publish-assembly-kutuphaneye-montaj-ekleme</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-inventor-2027-publish-assembly-kutuphaneye-montaj-ekleme</guid>
+   <pubDate>Fri, 08 May 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Publish Assembly (Kütüphaneye Montaj Ekleme) konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion - 2B Delik Komutu</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-2b-delik-komutu</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-2b-delik-komutu</guid>
+   <pubDate>Fri, 08 May 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Fusion programında; 2B delik komutuyla delik çapı genişletme ve silindirik ada etrafını hiç kalkış yapmadan helisel bir ...</description>
+  </item>
+  <item>
+   <title>AutoCAD 2027 Yenilikleri – Daha Hızlı, Daha Akıllı Tasarım Süreçleri</title>
+   <link>https://www.cadbim.com.tr/post/autocad-2027-yenilikleri-daha-hizli-daha-akilli-tasarim-surecleri</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autocad-2027-yenilikleri-daha-hizli-daha-akilli-tasarim-surecleri</guid>
+   <pubDate>Thu, 07 May 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Daha Hızlı, Daha Akıllı Tasarım Süreçleri konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Adobe – Üretken Yapay Zeka ile Hızlı ve Yenilikçi İş Akışları</title>
+   <link>https://www.cadbim.com.tr/post/adobe-retken-yapay-zeka-ile-hizli-ve-yenilikci-is-akislari</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/adobe-retken-yapay-zeka-ile-hizli-ve-yenilikci-is-akislari</guid>
+   <pubDate>Sun, 12 Apr 2026 09:00:00 +0300</pubDate>
+   <category>Genel</category>
+   <description>Adobe&#x27;nin üretken yapay zeka teknolojileri, içerik üretim süreçlerini her zamankinden daha hızlı ve verimli hale getiriyor. Cadbim ...</description>
+  </item>
+  <item>
+   <title>Autodesk Forma ile Konsept Tasarım 3: Dijital Pano Deneyimi</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-forma-ile-konsept-tasarim-3-dijital-pano-deneyimi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-forma-ile-konsept-tasarim-3-dijital-pano-deneyimi</guid>
+   <pubDate>Thu, 09 Apr 2026 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Bu videoda Dijital Pano Deneyimi konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>AutoCAD - 2027 AI Assistant Yenilikleri ve 2026 Karşılaştırması</title>
+   <link>https://www.cadbim.com.tr/post/autocad-2027-ai-assistant-yenilikleri-ve-2026-karsilastirmasi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autocad-2027-ai-assistant-yenilikleri-ve-2026-karsilastirmasi</guid>
+   <pubDate>Wed, 01 Apr 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda 2027 AI Assistant Yenilikleri ve 2026 Karşılaştırması konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Inventor 2027 -  Slot (Yuva) Komutu</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-inventor-2027-slot-yuva-komutu</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-inventor-2027-slot-yuva-komutu</guid>
+   <pubDate>Wed, 01 Apr 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Slot (Yuva) Komutu konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion - Yapay Zeka Asistanı ile CAM</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-yapay-zeka-asistani-ile-cam</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-yapay-zeka-asistani-ile-cam</guid>
+   <pubDate>Wed, 01 Apr 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videoda Yapay Zeka Asistanı ile CAM konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Gerçeği Modele Dönüştürün: Autodesk ReCap ve Point Cloud Süreçleri</title>
+   <link>https://www.cadbim.com.tr/post/gercegi-modele-donusturun-autodesk-recap-ve-point-cloud-surecleri</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/gercegi-modele-donusturun-autodesk-recap-ve-point-cloud-surecleri</guid>
+   <pubDate>Sun, 29 Mar 2026 09:00:00 +0300</pubDate>
+   <category>Genel</category>
+   <description>Elinizdeki nokta bulutu verisini nasıl temiz, hizalı ve modellemeye hazır bir hale getireceğinizi merak ediyorsanız bu webinar tam size göre: Autodesk ReCap ve ReCap Pro&#x27;nun nokta bulutu (point cloud) işleme sürecini uçtan uca anlatıyoruz.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion Manage PLM - Kalite Süreçlerinde Kurumsal Hafıza Oluşturmak</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-manage-plm-kalite-sureclerinde-kurumsal-hafiza-olusturmak</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-manage-plm-kalite-sureclerinde-kurumsal-hafiza-olusturmak</guid>
+   <pubDate>Wed, 25 Mar 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Geçmiş DÖF ve FMEA çalışmalarının Fusion Manage PLM üzerinde; kalite planları, ölçüm sonuçları, uygunsuzluk kayıtları ve ...</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion ile Tasarımdan Üretime, Tek Platformda Uçtan Uca Üretim</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-ile-tasarimdan-uretime-tek-platformda-uctan-uca-uretim</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-ile-tasarimdan-uretime-tek-platformda-uctan-uca-uretim</guid>
+   <pubDate>Tue, 10 Mar 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu Cadbim Teknik Destek videosunda Autodesk Fusion ile Tasarımdan Üretime, Tek Platformda Uçtan Uca Üretim konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Inventor Professional 2026 - Section Komutundaki Ekstra Bilgilerin Kaldırılması</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-inventor-professional-2026-section-komutundaki-ekstra-bilgilerin-kaldirilmasi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-inventor-professional-2026-section-komutundaki-ekstra-bilgilerin-kaldirilmasi</guid>
+   <pubDate>Sat, 28 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Inventor Professional yazılımının 2026 versiyonunda teknik resim ortamında “Section” komutuna gelen değişiklik ile gösterimde bazı değişiklikler oldu. Bu videomuzda, bu değişiklikleri nasıl eski haline getirebileceğinizi, bunu yaparken nelere dikkat etmeniz gerektiğini anlattık.</description>
+  </item>
+  <item>
+   <title>Autodesk Build - Issue Oluşturma Adımları</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-build-issue-olusturma-adimlari</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-build-issue-olusturma-adimlari</guid>
+   <pubDate>Sat, 28 Feb 2026 09:00:00 +0300</pubDate>
+   <category>Genel</category>
+   <description>Merhaba!</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion - Yüz Temizleme</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-yuz-temizleme</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-yuz-temizleme</guid>
+   <pubDate>Sat, 28 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Fusion programında; Yüz temizleme operasyonu yapmak istiyorsak pratik biçimde yapabiliriz. 2B yüz temizleme komutu ile temizlemek istediğimiz yüzeyleri işleyebiliriz.</description>
+  </item>
+  <item>
+   <title>Autodesk Docs ile Issue Yönetimi</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-docs-ile-issue-yonetimi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-docs-ile-issue-yonetimi</guid>
+   <pubDate>Thu, 26 Feb 2026 09:00:00 +0300</pubDate>
+   <category>Genel</category>
+   <description>Bu webinarda, Autodesk Docs üzerinden Issue’ların nasıl oluşturulduğunu, yönetildiğini ve takip edildiğini ele alacağız.</description>
+  </item>
+  <item>
+   <title>Creative Cloud + AI  Yaratıcı Süreçlerin Yeni Standardı</title>
+   <link>https://www.cadbim.com.tr/post/creative-cloud-ai-yaratici-sureclerin-yeni-standardi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/creative-cloud-ai-yaratici-sureclerin-yeni-standardi</guid>
+   <pubDate>Wed, 25 Feb 2026 09:00:00 +0300</pubDate>
+   <category>Genel</category>
+   <description>Yaratıcılığın sınırları yeniden çiziliyor!</description>
+  </item>
+  <item>
+   <title>Autodesk PDM-PLM Çözümleri ile Kişiye Bağlı Takipten Kurumsal Süreç Yönetimine Geçiş</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-pdm-plm-cozumleri-ile-kisiye-bagli-takipten-kurumsal-surec-yonetimine-gecis</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-pdm-plm-cozumleri-ile-kisiye-bagli-takipten-kurumsal-surec-yonetimine-gecis</guid>
+   <pubDate>Tue, 17 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Inventor tasarımının Autodesk Vault (PDM) yazılımının “Copy Design” özelliği ile güvenli şekilde çoğaltılması, Item yapısına bağlanması ve Fusion Manage (PLM) sistemine aktarılmasıyla; tasarım verisinin proje, görev ve onay süreçleriyle ilişkilendirildiği tanımlı bir proje yönetimi yapısını</description>
+  </item>
+  <item>
+   <title>HP AI Vektörizasyon – Kullanım Alanları ve Gerçek Senaryolar</title>
+   <link>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-kullanim-alanlari-ve-gercek-senaryolar</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-kullanim-alanlari-ve-gercek-senaryolar</guid>
+   <pubDate>Fri, 06 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>HP AI Vektörizasyon teknolojisinin farklı sektörlerdeki gerçek kullanım senaryoları ve pratik uygulama alanları inceleniyor.</description>
+  </item>
+  <item>
+   <title>HP AI Vektörizasyon – AI Vektörizasyon Nedir? Raster&#x27;dan Vektöre Dönüşümün Önemi</title>
+   <link>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-nedir-rasterdan-vektore-donusumun-onemi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-nedir-rasterdan-vektore-donusumun-onemi</guid>
+   <pubDate>Fri, 06 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Raster görüntülerin vektör formata dönüştürülmesinin ne anlama geldiği ve tasarım süreçleri için neden önemli olduğu açıklanıyor.</description>
+  </item>
+  <item>
+   <title>HP AI Vektörizasyon – Nasıl Çalışır? Adım Adım Süreç</title>
+   <link>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-nasil-calisir-adim-adim-surec</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-nasil-calisir-adim-adim-surec</guid>
+   <pubDate>Fri, 06 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>HP AI Vektörizasyon teknolojisinin arka planda nasıl çalıştığı adım adım, uygulamalı olarak gösteriliyor.</description>
+  </item>
+  <item>
+   <title>HP AI Vektörizasyon – Girdi Türleri ve Dönüşüm Senaryoları</title>
+   <link>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-girdi-turleri-ve-donusum-senaryolari</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-girdi-turleri-ve-donusum-senaryolari</guid>
+   <pubDate>Fri, 06 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>HP AI Vektörizasyon&#x27;un desteklediği farklı girdi türleri ve bu girdilere göre değişen dönüşüm senaryoları ele alınıyor.</description>
+  </item>
+  <item>
+   <title>HP AI Vektörizasyon – Özellikleri ve Son Güncellemeler</title>
+   <link>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-ozellikleri-ve-son-guncellemeler</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-ozellikleri-ve-son-guncellemeler</guid>
+   <pubDate>Fri, 06 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>HP AI Vektörizasyon&#x27;un sunduğu özellikler ve platforma eklenen son güncellemeler tanıtılıyor.</description>
+  </item>
+  <item>
+   <title>HP AI Vektörizasyon – HP Build Workspace&#x27;e Genel Bakış</title>
+   <link>https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-hp-build-workspacee-genel-bakis</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/hp-ai-vektorizasyon-hp-build-workspacee-genel-bakis</guid>
+   <pubDate>Fri, 06 Feb 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>HP Build Workspace platformuna ve içindeki AI Vektörizasyon yeteneğine genel bir bakış sunuluyor.</description>
+  </item>
+  <item>
+   <title>Revit 2026 - Copy/Monitor Komutu</title>
+   <link>https://www.cadbim.com.tr/post/revit-2026-copy-monitor-komutu</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/revit-2026-copy-monitor-komutu</guid>
+   <pubDate>Sat, 31 Jan 2026 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Bu videoda Copy/Monitor Komutu konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Vault Professional - Item Master ile BoM Oluşturma</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-vault-professional-item-master-ile-bom-olusturma</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-vault-professional-item-master-ile-bom-olusturma</guid>
+   <pubDate>Sat, 31 Jan 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videomuzda sizlere, Autodesk Vault Professional isimli PDM(Ürün Veri Yönetimi) çözümündeki “Item Master” arayüzünü anlattık. Bu fonksiyon ile beraber CAD yazılımlarında oluşturduğunuz Malzeme Listelerini(cBoM) bir adım ileriye taşıyıp, mBoM ve eBoM seviyesine getirebileceksiniz.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion - 3B Kalem (Pencil)</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-3b-kalem-pencil</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-3b-kalem-pencil</guid>
+   <pubDate>Sat, 31 Jan 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Fusion programında; kaba ve finish operasyonları bittikten sonra, parçaların diplerinde küçük radüsler kalıyor. Bu radüsleri son operasyonla işleyip parçayı eksiksiz biçimde tamamlamamız gerekiyor.</description>
+  </item>
+  <item>
+   <title>Eski Çizimleri AutoCAD&#x27;e Aktarmanın Akıllı Yolu: HP Build Workspace ile Vektörizasyon</title>
+   <link>https://www.cadbim.com.tr/post/eski-cizimleri-autocade-aktarmanin-akilli-yolu-hp-build-workspace-ile-vektorizasyon</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/eski-cizimleri-autocade-aktarmanin-akilli-yolu-hp-build-workspace-ile-vektorizasyon</guid>
+   <pubDate>Wed, 28 Jan 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Eski ve taranmış çizimlerin HP Build Workspace ile yapay zeka destekli vektörizasyon işleminden geçirilerek AutoCAD ortamına nasıl aktarılabileceği uygulamalı olarak gösteriliyor.</description>
+  </item>
+  <item>
+   <title>Autodesk PLM Çözümleri ile Yalın Üretim ve 5S Süreçlerinin Kontrolü</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-plm-cozumleri-ile-yalin-uretim-ve-5s-sureclerinin-kontrolu</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-plm-cozumleri-ile-yalin-uretim-ve-5s-sureclerinin-kontrolu</guid>
+   <pubDate>Wed, 28 Jan 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu webinarda, Autodesk Fusion Manage PLM çözümünü kullanarak, firmamızın yalın üretim süreçlerinin kontrollerini nasıl yönetebileceğimizi göstereceğiz</description>
+  </item>
+  <item>
+   <title>Revit Worksharing - Ekip Tabanlı Modelleme ve Proje Koordinasyonu</title>
+   <link>https://www.cadbim.com.tr/post/revit-worksharing-ekip-tabanli-modelleme-ve-proje-koordinasyonu</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/revit-worksharing-ekip-tabanli-modelleme-ve-proje-koordinasyonu</guid>
+   <pubDate>Thu, 15 Jan 2026 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Bu videoda Ekip Tabanlı Modelleme ve Proje Koordinasyonu konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Navisworks Manage - Override Color &amp; Transparency Kullanımı</title>
+   <link>https://www.cadbim.com.tr/post/navisworks-manage-override-color-transparency-kullanimi</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/navisworks-manage-override-color-transparency-kullanimi</guid>
+   <pubDate>Tue, 06 Jan 2026 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Merhaba! </description>
+  </item>
+  <item>
+   <title>Autodesk Fusion 3+2 Index</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-3-2-index</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-3-2-index</guid>
+   <pubDate>Tue, 06 Jan 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Fusion programında; biden fazla yüzeylerde delik,tarama,slot, formlu yüzeyler var ise; programın içerisinde ‘işleme türü’menüsünün altında istediğimiz yüzeylere çalışma düzlemini tanıtarak proglamlarımız yapabiliyoruz.</description>
+  </item>
+  <item>
+   <title>Autodesk Inventor 2026.2 - Place and Insert komutu</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-inventor-2026-2-place-and-insert-komutu</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-inventor-2026-2-place-and-insert-komutu</guid>
+   <pubDate>Tue, 06 Jan 2026 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu videomuzda, Autodesk Inventor yazılımının 2026.2 sürümünde eklenen “Place and Insert” komutunu ele aldık. Bu komut sayesinde montaj ortamına yeni bir parça eklerken, parçayı doğrudan gerekli konuma yerleştirebilirsiniz.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion CAM ile CY Eksen Tornalama Stratejileri</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-cam-ile-cy-eksen-tornalama-stratejileri</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-cam-ile-cy-eksen-tornalama-stratejileri</guid>
+   <pubDate>Tue, 23 Dec 2025 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Bu webinarda Fusion&#x27;da karmaşık torna parçalarında canlı takım kullanarak işleme yapmayı göreceğiz. CY eksen tornalama stratejilerini basit ve hızlı bir şekilde gerçekleştireceğiz.</description>
+  </item>
+  <item>
+   <title>Autodesk Forma ile Konsept Tasarım 2: Analizlerden Tasarım Kararlarına</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-forma-ile-konsept-tasarim-2-analizlerden-tasarim-kararlarina</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-forma-ile-konsept-tasarim-2-analizlerden-tasarim-kararlarina</guid>
+   <pubDate>Thu, 11 Dec 2025 09:00:00 +0300</pubDate>
+   <category>BIM</category>
+   <description>Bu videoda Analizlerden Tasarım Kararlarına konusu ele alınıyor.</description>
+  </item>
+  <item>
+   <title>Autodesk Fusion - Talaş/Swarf</title>
+   <link>https://www.cadbim.com.tr/post/autodesk-fusion-talas-swarf</link>
+   <guid isPermaLink="true">https://www.cadbim.com.tr/post/autodesk-fusion-talas-swarf</guid>
+   <pubDate>Thu, 11 Dec 2025 09:00:00 +0300</pubDate>
+   <category>CAD</category>
+   <description>Autodesk Fusion programında; Talaş(Swarf) komutu ile açılı duvarları multiaxis hareketlerle işleyebiliyouruz. Düz ya da ters açıları parmak freze ya da küre takımlarla yüzeyleri programlamak mümkün.</description>
+  </item>
+ </channel>
+</rss>

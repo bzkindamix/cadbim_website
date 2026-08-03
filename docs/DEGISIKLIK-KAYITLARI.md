@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-16 — RSS feed + 1.129 posta statik "İlgili Yazılar" bloğu (Y9 tamamlandı)
+
+- **Yapan:** Claude (PDM asistanı, Fable) · Fable listesinin 3. kalemi.
+- **Sorun (Y9):** Blog tamamen JS ile listeleniyordu; RSS yoktu, post→post iç linkleme %4,5'ti (SEO'da 1.126 sayfa birbirinden kopuk "yetim" içerik).
+- **Yapılan:**
+  1. **`feed.xml`** (yeni, kök): `assets/data/blog-posts.json`'dan son 50 yazıyla RSS 2.0 üretildi (title/link/guid/pubDate/category/description, atom:self). Keşif linki (`rel="alternate"`) tüm postlara + `cadbim_blog.html` + `index.html`'e eklendi.
+  2. **İlgili Yazılar:** Her postun sonuna (CTA kutusundan sonra) 4 kartlık statik blok eklendi. Eşleştirme deterministik: ortak ürün sayısı > aynı kategori > tarih yakınlığı > slug (alfabetik kırılım) — JSON'daki `products[]`/`cat`/`date` alanlarından, çalışma anında JS gerektirmeden. Kart linkleri çıplak `slug` (aynı `/post/` dizininde göreli, temiz URL uyumlu).
+  3. Kart stilleri (`.a-related*`, 9 kural) `blog-post.css`'e eklendi (`?v=2`→`?v=3`).
+- **Doğrulama:** 1.129/1.129 post işlendi (JSON'da eşleşmeyen 0, anchor bulunamayan 0); tarayıcıda örnek postta 4 kart doğru stille render oldu, ilk kart hedefi HTTP 200, `feed.xml` HTTP 200 + DOMParser ile geçerli XML (50 item), keşif linki head'de. BIM konulu posta BIM içerikli kartlar eşleşti (anlamsal isabet göz kontrolü).
+- **Not:** `feed.xml` statik üretim — yeni post eklendiğinde yeniden üretilmeli (script: scratchpad'de; kalıcılaştırılacaksa `scripts/` altına taşınabilir).
+- **Durum:** ✅ Y9 tamamlandı, push edilecek.
+
 ### DK-2026-08-03-15 — Post nav'ı kök mega-menü ile eşitlendi; 29 kök sayfadaki nav sürüklenmesi giderildi (Y12 tamamlandı)
 
 - **Yapan:** Claude (PDM asistanı, Fable) · Fable listesinin 2. kalemi.
