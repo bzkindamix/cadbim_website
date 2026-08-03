@@ -428,6 +428,17 @@ main,header,footer{position:relative;z-index:3;}
 .fcard h3{font-family:var(--fd);font-weight:500;font-size:16.5px;margin-bottom:6px;}
 .fcard p{font-size:12.5px;color:var(--mut);line-height:1.65;}
 
+/* ---------- atölyeden: uygulama galerisi ---------- */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.gcard{margin:0;background:var(--bg2);border:1px solid var(--ln);border-radius:18px;overflow:hidden;transition:transform .3s,border-color .3s;}
+.gcard:hover{transform:translateY(-6px);border-color:rgba(110,231,255,.4);}
+.gcard img{display:block;width:100%;height:auto;aspect-ratio:1/1;}
+.gcard figcaption{display:flex;flex-direction:column;gap:3px;padding:14px 18px 16px;border-top:1px solid var(--ln2);}
+.gcard figcaption b{font-family:var(--fd);font-weight:500;font-size:14px;color:var(--tx);}
+.gcard figcaption span{font-size:12px;color:var(--mut);letter-spacing:.3px;}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:540px){.gal{gap:10px;}.gcard figcaption{padding:10px 12px 12px;}.gcard figcaption b{font-size:12.5px;}}
+
 /* ---------- CTA ---------- */
 .cta{text-align:center;padding:clamp(90px,14vh,160px) clamp(18px,4vw,48px);}
 .cta .big{
@@ -786,6 +797,26 @@ html{overflow-x:clip;}
       <div class="fic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V6l5 2 5-3 6 3v12"/><path d="M9 8v12M14 5v12"/></svg></div>
       <h3>Paravan &amp; Bez</h3><p>Kanvas paravan, kasnaklı bez. Mekan ölçeğinde işler.</p>
     </div>
+  </div>
+</section>
+
+<!-- ============ ATÖLYEDEN ============ -->
+<section class="blk" style="padding-top:0;">
+  <div class="bhead" data-rv>
+    <span class="bno">07 — ATÖLYEDEN</span>
+    <h2 class="btitle">Yüzey ve finisaj, iş üstünde.</h2>
+    <p class="bsub">Fotoğraf kağıdından parçalı kanvasa dokuz uygulama örneği. Ebat ve kombinasyon, işinize göre uyarlanır.</p>
+  </div>
+  <div class="gal">
+    <figure class="gcard" data-rv><img src="assets/img/sanatsal/mat-dekota-cerceve.jpg" alt="Mat fotoğraf kağıdına baskı — dekota ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Mat Fotoğraf Kağıdı</b><span>Dekota + Çerçeve</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.05s;"><img src="assets/img/sanatsal/yarimat-dekota-cerceve.jpg" alt="Yarı mat yarı parlak fotoğraf kağıdına baskı — dekota ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Yarı Mat / Yarı Parlak</b><span>Dekota + Çerçeve</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.1s;"><img src="assets/img/sanatsal/yarimat-fotoblok.jpg" alt="Yarı mat yarı parlak fotoğraf kağıdına baskı — fotoblok uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Yarı Mat / Yarı Parlak</b><span>Fotoblok</span></figcaption></figure>
+    <figure class="gcard" data-rv><img src="assets/img/sanatsal/yarimat-fotoblok-cerceve.jpg" alt="Yarı mat yarı parlak fotoğraf kağıdına baskı — fotoblok ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Yarı Mat / Yarı Parlak</b><span>Fotoblok + Çerçeve</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.05s;"><img src="assets/img/sanatsal/parlak-fotoblok.jpg" alt="Parlak fotoğraf kağıdına baskı — fotoblok uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Parlak Fotoğraf Kağıdı</b><span>Fotoblok</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.1s;"><img src="assets/img/sanatsal/kanvas-kasnak.jpg" alt="Kanvas baskı — kasnaklı çıtalı germe uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Kanvas Baskı</b><span>Kasnaklı (Çıtalı) Germe</span></figcaption></figure>
+    <figure class="gcard" data-rv><img src="assets/img/sanatsal/kanvas-kasnak-cerceve.jpg" alt="Kanvas baskı — kasnak ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Kanvas Baskı</b><span>Kasnak + Çerçeve</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.05s;"><img src="assets/img/sanatsal/parcali-kanvas.jpg" alt="Parçalı kanvas baskı — beş panelli kasnaklı germe uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Parçalı Kanvas</b><span>Kasnaklı (Çıtalı) Germe</span></figcaption></figure>
+    <figure class="gcard" data-rv style="--d:.1s;"><img src="assets/img/sanatsal/kanvas-paravan.jpg" alt="Kanvas baskı paravan — kasnaklı ve bayrak bezi uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Kanvas Paravan</b><span>Kasnaklı + Bayrak Bezi</span></figcaption></figure>
   </div>
 </section>
 
