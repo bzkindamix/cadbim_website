@@ -108,7 +108,7 @@ def main():
         "   Yeni ikon eklenirse yeniden uret: python scripts/build_icon_subset.py */"
         % (len(names), VERSION),
         '@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;'
-        'src:url("../fonts/tabler-icons-subset.woff2?v=3") format("woff2")}',
+        'src:url("../fonts/tabler-icons-subset.woff2?v=4") format("woff2")}',
         '.ti{font-family:"tabler-icons" !important;speak:none;font-style:normal;'
         'font-weight:normal;font-variant:normal;text-transform:none;line-height:1;'
         '-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;'
