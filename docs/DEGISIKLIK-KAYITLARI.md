@@ -4,6 +4,24 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-03-19 — Autodesk-dışı ürünler için eğitim iddiaları site genelinde kaldırıldı
+
+- **Yapan:** Onur'un "biz sadece autodesk ürünleri için eğitim veriyoruz; sitede bu duruma zıtlık oluşturan ifadeleri bul ve düzelt" talebi üzerine Claude (PDM asistanı, Fable). Kural hafızaya da kaydedildi (cadbim-egitim-sadece-autodesk).
+- **İlke:** Eğitim SADECE Autodesk ürünleri için verilir (ATC). 3ds Max/Maya Autodesk olduğu için eğitim referansları meşru; V-Ray, Corona, Enscape, Lumion, SketchUp, Adobe, UltiMaker vb. için "eğitim" denmez — "lisanslama, kurulum, teknik destek" denir. "Eğitim lisansı/eğitim kurumları" (lisans türü), webinarlar ve footer'daki jenerik hizmet linkleri ihlal değildir, korundu.
+- **Düzeltilen kalıplar (89 dosya):**
+  1. **Adobe sayfaları (11):** "Uygulama Eğitimleri — Photoshop'tan Premiere'e... Türkçe eğitimler" kartı → "Türkçe Teknik Destek" kartı.
+  2. **Chaos sayfaları (8):** "Render Eğitimleri — V-Ray ve Corona'da..." kartı (3 metin varyantı) → "Türkçe Teknik Destek".
+  3. **SketchUp sayfaları (7):** "Modelleme Eğitimleri — ...uygulamalı SketchUp eğitimleri" kartı → "Başlangıç Desteği".
+  4. **CTA şeridi (Autodesk-dışı):** "lisans/konfigürasyon **ve eğitim** planını birlikte belirleyelim" → eğitim çıkarıldı (39 sayfa); "Eğitim Programları" butonu kaldırıldı (58 sayfa); chaos/lumion/sketchup'taki "V-Ray/Lumion/SketchUp Eğitimi Al" hero butonları kaldırıldı (3).
+  5. **Satın alma adımı (Autodesk-dışı 79):** "Kurulum & Eğitim — rol bazlı kullanıcı eğitimi" → "Kurulum & Devreye Alma — başlangıç yönlendirmesi"; "kurulumdan eğitime..." → "kurulumdan desteğe..." yaşam döngüsü cümlesi.
+  6. **`cadbim_substance3d.html`:** Autodesk'e özel olması gereken ATC eğitim banner'ı bu Adobe sayfasından kaldırıldı.
+  7. **`/gorsellestirme` SSS (HTML+JSON-LD):** "3ds Max, V-Ray, Corona ve Lumion eğitimleri programda yer alır" → "Eğitim hizmetimiz Autodesk yazılımlarına özeldir... V-Ray, Corona ve Lumion için eğitim vermiyoruz; lisanslama, kurulum ve teknik destek sağlıyoruz." Ayrıca "bu hazırlığı eğitim kapsamında" → "Revit eğitimlerimiz kapsamında".
+  8. **`/yaratici-icerik` SSS + kart:** "Adobe uygulamalarına yönelik eğitimler" → Autodesk-özel açıklama; "Eğitim" çözüm kartı → "Dağıtım & destek".
+  9. **`/egitimler`:** 5 meta/JSON-LD'de "Autodesk ve Chaos eğitimleri" → "Autodesk eğitimleri"; katalogdan V-Ray + Enscape kurs kartları ve formdaki "Chaos" optgroup'u (V-Ray/Enscape) kaldırıldı — katalog artık %100 Autodesk.
+  10. **`/cozumler`** "lisans ve eğitimle" → "lisanslamayla"; **`/dijital-donusum`** "rol bazlı eğitim" → "Autodesk yazılımlarında rol bazlı eğitim"; **`/hakkimizda`** "Autodesk ve Adobe'de Gold Partner, Yetkili Eğitim Merkezi..." → ATC'nin yalnız Autodesk olduğu netleştirildi.
+- **Doğrulama:** Yeniden tarama — kalan tüm "eğitim+marka" eşleşmeleri meşru bağlamlar (lisans türleri, ATC, düzeltilmiş metinler, footer navigasyonu). 89 değişen dosyada div/select/optgroup/a etiket dengesi sağlam. Tarayıcıda: /gorsellestirme SSS'i (DOM+JSON-LD) yeni metinde; /egitimler kataloğunda V-Ray/Enscape yok, form optgroup'ları 5'e indi (tümü Autodesk+Sertifikasyon), 3ds Max kartı duruyor; /vray'de eski kart/CTA/buton yok, konsol hatası 0. Postlarda (1.129) eğitim-verme iddiası bulunamadı; mobilenav/veri dosyaları temiz.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-03-18 — index.html'in 45KB'lık 3D sahne betiği harici dosyaya çıkarıldı (O11 tamamlandı)
 
 - **Yapan:** Claude (PDM asistanı, Fable) · Fable listesinin 5. ve son kalemi.
