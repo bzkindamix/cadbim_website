@@ -102,13 +102,13 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=27">
+<link rel="stylesheet" href="assets/css/design-system.css?v=28">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
 </head>
 <body>
 <a class="skip-link" href="#icerik">İçeriğe geç</a>
 <header><nav class="nav">
-  <a href="/" class="nav-logo"><img width="640" height="153" src="assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
+  <a href="/" class="nav-logo"><img width="260" height="62" src="assets/logos/cadbim-yatay.webp" alt="Cadbim"></a>
       <ul class="nav-links">
     <li class="nav-dropdown">
       <a href="urunler" class="active">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
@@ -217,11 +217,11 @@
 </section>
 
 <section class="section section-alt">
-  <div class="sh"><div class="slabel">Öne Çıkan Özellikler</div><div class="stitle">Chaos Phoenix ile Neler Yapabilirsiniz?</div></div>
+  <div class="sh"><div class="slabel">Öne Çıkan Özellikler</div><div class="stitle" role="heading" aria-level="2">Chaos Phoenix ile Neler Yapabilirsiniz?</div></div>
   <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-flame"></i></div><h3>Ateş & Duman</h3><p>Alev, patlama ve duman efektleri; sıcaklık tabanlı gerçekçi renklendirme.</p></div><div class="card"><div class="card-icon"><i class="ti ti-droplet"></i></div><h3>Sıvı Simülasyonu</h3><p>Su, köpük, sprey ve viskoz akışkanlar; gemi izi ve okyanus araçları.</p></div><div class="card"><div class="card-icon"><i class="ti ti-wind"></i></div><h3>Adaptif Izgara</h3><p>Simülasyon ızgarası efekti takip eder; bellek ve süre tasarrufu sağlar.</p></div><div class="card"><div class="card-icon"><i class="ti ti-player-play"></i></div><h3>Anlık Ön İzleme</h3><p>GPU hızlandırmalı önizleme ile davranışı beklemeden ayarlayın.</p></div><div class="card"><div class="card-icon"><i class="ti ti-sun-high"></i></div><h3>V-Ray & Corona Entegrasyonu</h3><p>Simülasyonlar render motorunuzda doğrudan, kaplama gerektirmeden render alınır.</p></div><div class="card"><div class="card-icon"><i class="ti ti-repeat"></i></div><h3>Yeniden Zamanlama</h3><p>Simülasyonu yavaşlatın/hızlandırın; keyframe olmadan dramatik zamanlama.</p></div></div>
 </section>
 <section class="section">
-  <div class="sh"><div class="slabel">Kullanım Senaryoları</div><div class="stitle">Kimler İçin?</div></div>
+  <div class="sh"><div class="slabel">Kullanım Senaryoları</div><div class="stitle" role="heading" aria-level="2">Kimler İçin?</div></div>
   <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-movie"></i></div><h3>VFX & Film</h3><p>Patlama, yangın ve doğa olayları içeren prodüksiyon çekimleri.</p></div><div class="card"><div class="card-icon"><i class="ti ti-building"></i></div><h3>Mimari Animasyon</h3><p>Şömine, havuz, çeşme ve su ögeleriyle yaşayan sahneler.</p></div><div class="card"><div class="card-icon"><i class="ti ti-ad-2"></i></div><h3>Reklam & Ürün</h3><p>Sıvı dökülme, duman ve enerji efektli ürün tanıtımları.</p></div></div>
 </section>
 
@@ -280,7 +280,7 @@
 </section>
 <!-- İLGİLİ: çözümler + endüstriler + ürünler + eğitim -->
 <section class="section" style="padding-top:0;">
-  <div class="sh" style="margin-bottom:26px;"><div class="slabel">Keşfet</div><div class="stitle">Bu Ürünle İlgili</div></div>
+  <div class="sh" style="margin-bottom:26px;"><div class="slabel">Keşfet</div><div class="stitle" role="heading" aria-level="2">Bu Ürünle İlgili</div></div>
   <div style="display:grid;gap:24px;">
     <div><div style="font-size:12px;font-weight:700;color:var(--w80);letter-spacing:.4px;text-transform:uppercase;margin-bottom:11px;display:flex;align-items:center;gap:8px;"><i class="ti ti-sparkles" style="color:var(--cyan);font-size:15px;"></i>Kullanıldığı Çözümler</div><div class="grid g3" style="margin-top:0;">
       <a href="gorsellestirme" class="card">
@@ -344,11 +344,11 @@
       if(p.type==='video' && p.videoId){
         return '<div style="background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);overflow:hidden;">'
           + '<div style="aspect-ratio:16/9;background:#000;"><a class="yt-lite" href="https://www.youtube.com/watch?v='+p.videoId+'" target="_blank" rel="noopener" data-yt="'+p.videoId+'" data-title="'+esc(p.title)+'" aria-label="Videoyu oynat"><img src="https://i.ytimg.com/vi/'+p.videoId+'/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="yt-lite-btn" aria-hidden="true"></span></a></div>'
-          + '<div style="padding:16px;"><h4 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'.html" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h4><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
+          + '<div style="padding:16px;"><h3 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'.html" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h3><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
       }
       return '<a href="post/'+p.slug+'.html" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);padding:20px;text-decoration:none;">'
         + '<div style="font-size:10px;color:#00c8f0;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">'+esc(p.cat)+'</div>'
-        + '<h4 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h4>'
+        + '<h3 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h3>'
         + '<p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></a>';
     }).join('');
     if(allMatched.length>5){
@@ -368,7 +368,7 @@
 <footer id="iletisim">
   <div class="footer-grid">
     <div class="f-brand">
-      <a href="/"><img width="500" height="461" src="assets/logos/cadbim-logo.png" alt="Cadbim" loading="lazy" decoding="async"></a>
+      <a href="/"><img width="220" height="203" src="assets/logos/cadbim-logo.webp" alt="Cadbim" loading="lazy" decoding="async"></a>
       <p>Tasarım, Mühendislik ve Simülasyon için yazılım & donanım çözümleri. Autodesk Gold Partner, Adobe Gold Reseller Partner ve HP Amplify Synergy Partner; Microsoft, Chaos ve UltiMaker yetkili iş ortağı.</p>
       <div class="f-offices">
         <span><i class="ti ti-map-pin" style="font-size:12px;margin-right:4px;"></i>İzmir Merkez Ofis</span>
@@ -376,7 +376,7 @@
       </div>
     </div>
     <div class="footer-col">
-      <h4>Ürünler</h4>
+      <h2>Ürünler</h2>
       <a href="autodesk">Autodesk</a>
       <a href="adobe">Adobe</a>
       <a href="designjet">HP DesignJet</a>
@@ -385,7 +385,7 @@
       <a href="ultimaker">UltiMaker 3D</a>
     </div>
     <div class="footer-col">
-      <h4>Hizmetler</h4>
+      <h2>Hizmetler</h2>
       <a href="egitimler">Eğitimler & Sertifikasyon</a>
       <a href="bim">BIM Danışmanlığı</a>
       <a href="iletisim#form">Teknik Destek</a>
@@ -393,7 +393,7 @@
       <a href="yazilim-gelistirme">Yazılım Geliştirme</a>
     </div>
     <div class="footer-col">
-      <h4>İletişim</h4>
+      <h2>İletişim</h2>
       <a href="mailto:cadbim@cadbim.com.tr">cadbim@cadbim.com.tr</a>
       <a href="tel:+902324643490">0232 464 34 90</a>
       <a href="teklif-iste#form">Teklif İste</a>

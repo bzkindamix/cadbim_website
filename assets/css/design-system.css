@@ -190,7 +190,7 @@ select:focus-visible {
 .f-brand img{height:36px;width:auto;filter:brightness(0) invert(1);margin-bottom:14px;display:block;}
 .f-brand p{font-size:13.5px;color:rgba(255,255,255,0.5);line-height:1.6;margin-bottom:12px;}
 .f-offices{font-size:12.5px;color:rgba(255,255,255,0.5);display:flex;flex-direction:column;gap:5px;}
-.footer-col h4{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--w30, rgba(255,255,255,0.58));margin-bottom:16px;font-family:var(--font-d);font-weight:500;}
+.footer-col h2{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--w30, rgba(255,255,255,0.58));margin-bottom:16px;font-family:var(--font-d);font-weight:500;}
 .footer-col a{display:block;font-size:13.5px;text-decoration:none;margin-bottom:9px;transition:color .15s;}
 .footer-col a:hover{color:#00c8f0;}
 .footer-bot{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:.5px solid rgba(255,255,255,0.06);flex-wrap:wrap;gap:12px;max-width:1240px;margin:0 auto;}

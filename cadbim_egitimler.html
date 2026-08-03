@@ -74,7 +74,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .steps::before{content:'';position:absolute;top:28px;left:0;right:0;height:.5px;background:linear-gradient(90deg,transparent,var(--cbor),transparent);pointer-events:none;}
 .step{padding:0 24px;text-align:center;position:relative;}
 .step-num{width:56px;height:56px;border-radius:50%;background:var(--cdim);border:.5px solid var(--cbor);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:var(--fd);font-size:18px;font-weight:700;color:var(--cyan);position:relative;z-index:1;}
-.step h3{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--w);margin-bottom:8px;}
+.step h2{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .step p{font-size:13px;color:var(--w50);line-height:1.6;}
 
 /* FORMAT KARTLAR */
@@ -83,7 +83,7 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .format-card:hover{border-color:var(--cbor);}
 .format-card.highlight{border-color:var(--cbor);background:rgba(0,200,240,0.04);}
 .format-icon{width:44px;height:44px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:22px;}
-.format-card h3{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
+.format-card h2{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--w);margin-bottom:8px;}
 .format-card p{font-size:13px;color:var(--w50);line-height:1.6;margin-bottom:16px;}
 .format-pts{display:flex;flex-direction:column;gap:5px;}
 .format-pt{display:flex;align-items:flex-start;gap:7px;font-size:12px;color:var(--w50);}
@@ -250,14 +250,14 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=27">
+<link rel="stylesheet" href="assets/css/design-system.css?v=28">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
 </head>
 <body>
 <a class="skip-link" href="#icerik">İçeriğe geç</a>
 
 <header><nav class="nav">
-  <a href="/" class="nav-logo"><img width="640" height="153" src="assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
+  <a href="/" class="nav-logo"><img width="260" height="62" src="assets/logos/cadbim-yatay.webp" alt="Cadbim"></a>
       <ul class="nav-links">
     <li class="nav-dropdown">
       <a href="urunler">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
@@ -379,27 +379,27 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
 <!-- NASIL ÇALIŞIR -->
 <section class="section section-alt">
   <div class="slabel">Süreç</div>
-  <div class="stitle">Nasıl Çalışıyoruz?</div>
+  <div class="stitle" role="heading" aria-level="2">Nasıl Çalışıyoruz?</div>
   <p class="ssub">Takvim yok, standart kurs yok. Her program sıfırdan sizin için tasarlanır.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
-      <h3>Talep & İhtiyaç Analizi</h3>
+      <h2>Talep & İhtiyaç Analizi</h2>
       <p>Formu doldurun veya bizi arayın. Hangi yazılım, hangi seviye, kaç kişi, ne zaman — birlikte belirleriz.</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <h3>Program Tasarımı</h3>
+      <h2>Program Tasarımı</h2>
       <p>Sektörünüze ve iş süreçlerinize göre özelleştirilmiş müfredat hazırlanır. Gereksiz modül yok.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <h3>Eğitim</h3>
+      <h2>Eğitim</h2>
       <p>Cadbim'de, online veya sizin lokasyonunuzda. Autodesk Certified Instructor eşliğinde.</p>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <h3>Sertifikasyon (Opsiyonel)</h3>
+      <h2>Sertifikasyon (Opsiyonel)</h2>
       <p>Resmi ATC statümüz sayesinde eğitim sonrası Autodesk sertifikasyon sınavına hazırlanabilirsiniz.</p>
     </div>
   </div>
@@ -408,12 +408,12 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
 <!-- FORMAT -->
 <section class="section">
   <div class="slabel">Format</div>
-  <div class="stitle">Nerede, Nasıl İsterseniz</div>
+  <div class="stitle" role="heading" aria-level="2">Nerede, Nasıl İsterseniz</div>
   <p class="ssub">Tek bir format yok — sizin çalışma biçiminize uyum sağlarız.</p>
   <div class="format-grid">
     <div class="format-card highlight">
       <div class="format-icon" style="background:rgba(0,200,240,0.12);"><i class="ti ti-building" style="color:var(--cyan);"></i></div>
-      <h3>Cadbim Ofisinde</h3>
+      <h2>Cadbim Ofisinde</h2>
       <p>İzmir merkez ofisimizde, donanımlı eğitim ortamında.</p>
       <div class="format-pts">
         <div class="format-pt"><i class="ti ti-check"></i>Lisanslı yazılım ve donanım</div>
@@ -423,7 +423,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
     </div>
     <div class="format-card highlight">
       <div class="format-icon" style="background:rgba(0,200,240,0.12);"><i class="ti ti-map-pin" style="color:var(--cyan);"></i></div>
-      <h3>Sizin Lokasyonunuzda</h3>
+      <h2>Sizin Lokasyonunuzda</h2>
       <p>Eğitmenimiz ekibinize gelir. Kendi yazılım ortamınızda, kendi projelerinizle.</p>
       <div class="format-pts">
         <div class="format-pt"><i class="ti ti-check"></i>Gerçek iş akışları üzerinden eğitim</div>
@@ -433,7 +433,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
     </div>
     <div class="format-card highlight">
       <div class="format-icon" style="background:rgba(0,200,240,0.12);"><i class="ti ti-video" style="color:var(--cyan);"></i></div>
-      <h3>Online / Uzaktan</h3>
+      <h2>Online / Uzaktan</h2>
       <p>Canlı, birebir uzaktan eğitim. Kayıt edin, tekrar izleyin.</p>
       <div class="format-pts">
         <div class="format-pt"><i class="ti ti-check"></i>Canlı & etkileşimli seans</div>
@@ -447,7 +447,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
 <!-- EĞİTİM KATALOĞU -->
 <section class="section section-alt" id="katalog">
   <div class="slabel">Katalog</div>
-  <div class="stitle">Eğitim Programları</div>
+  <div class="stitle" role="heading" aria-level="2">Eğitim Programları</div>
   <p class="ssub">Tüm eğitimler bireysel veya kurumsal olarak, seviyenize göre özelleştirilebilir.</p>
 
   <div class="catalog-tabs" style="margin-top:36px;">
@@ -795,7 +795,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
 <!-- SERTİFİKASYON -->
 <section class="section">
   <div class="slabel">ATC Ayrıcalığı</div>
-  <div class="stitle">Resmi Autodesk Sertifikasyonu</div>
+  <div class="stitle" role="heading" aria-level="2">Resmi Autodesk Sertifikasyonu</div>
   <p class="ssub">Cadbim, Autodesk'in dünyada 75+ ülkede 1.400'den az yetkili eğitim merkezinden biri. Bu statü ne anlama gelir?</p>
   <div class="cert-grid">
     <div class="cert-card gold">
@@ -848,7 +848,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
 <section class="section section-alt" id="form">
   <div style="text-align:center;margin-bottom:48px;">
     <div class="slabel">Eğitim Talebi</div>
-    <div class="stitle">Programınızı Birlikte Tasarlayalım</div>
+    <div class="stitle" role="heading" aria-level="2">Programınızı Birlikte Tasarlayalım</div>
     <p class="ssub">Formu doldurun, size en uygun programı önererek dönelim. Hiçbir şey için ön ödeme veya taahhüt yok.</p>
   </div>
   <div class="form-wrap" style="max-width:780px;">
@@ -963,7 +963,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
 <footer id="iletisim">
   <div class="footer-grid">
     <div class="f-brand">
-      <a href="/"><img width="500" height="461" src="assets/logos/cadbim-logo.png" alt="Cadbim" loading="lazy" decoding="async"></a>
+      <a href="/"><img width="220" height="203" src="assets/logos/cadbim-logo.webp" alt="Cadbim" loading="lazy" decoding="async"></a>
       <p>Tasarım, Mühendislik ve Simülasyon için yazılım & donanım çözümleri. Autodesk Gold Partner, Adobe Gold Reseller Partner ve HP Amplify Synergy Partner; Microsoft, Chaos ve UltiMaker yetkili iş ortağı.</p>
       <div class="f-offices">
         <span><i class="ti ti-map-pin" style="font-size:12px;margin-right:4px;"></i>İzmir Merkez Ofis</span>
@@ -971,7 +971,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
       </div>
     </div>
     <div class="footer-col">
-      <h4>Ürünler</h4>
+      <h2>Ürünler</h2>
       <a href="autodesk">Autodesk</a>
       <a href="adobe">Adobe</a>
       <a href="designjet">HP DesignJet</a>
@@ -980,7 +980,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
       <a href="ultimaker">UltiMaker 3D</a>
     </div>
     <div class="footer-col">
-      <h4>Hizmetler</h4>
+      <h2>Hizmetler</h2>
       <a href="egitimler">Eğitimler & Sertifikasyon</a>
       <a href="bim">BIM Danışmanlığı</a>
       <a href="iletisim#form">Teknik Destek</a>
@@ -988,7 +988,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
       <a href="yazilim-gelistirme">Yazılım Geliştirme</a>
     </div>
     <div class="footer-col">
-      <h4>İletişim</h4>
+      <h2>İletişim</h2>
       <a href="mailto:cadbim@cadbim.com.tr">cadbim@cadbim.com.tr</a>
       <a href="tel:+902324643490">0232 464 34 90</a>
       <a href="teklif-iste#form">Teklif İste</a>

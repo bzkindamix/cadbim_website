@@ -439,6 +439,19 @@ main,header,footer{position:relative;z-index:3;}
 @media(max-width:900px){.gal{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:540px){.gal{gap:10px;}.gcard figcaption{padding:10px 12px 12px;}.gcard figcaption b{font-size:12.5px;}}
 
+/* ---------- sağ kenar sosyal ray (atölye hesapları) — site geneli çekmece deseninin sağa aynalanmış hali ---------- */
+#print-rail{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:9990;display:flex;flex-direction:column;gap:6px;}
+#print-rail a{width:38px;height:36px;display:flex;align-items:center;justify-content:center;
+  border-radius:8px 0 0 8px;box-shadow:-2px 2px 10px rgba(0,0,0,.3);overflow:hidden;
+  transform:translateX(16px);opacity:.85;transform-origin:right center;
+  transition:transform .25s cubic-bezier(.2,.7,.3,1.25),opacity .2s ease;}
+#print-rail:hover a,#print-rail.open a{transform:translateX(8px);opacity:1;}
+#print-rail a:hover,#print-rail a:focus-visible{transform:translateX(0);}
+#print-rail a svg{width:22px;height:22px;transition:transform .25s cubic-bezier(.2,.7,.3,1.25);}
+#print-rail a:hover svg,#print-rail a:focus-visible svg{transform:scale(1.3);}
+@media (prefers-reduced-motion:reduce){#print-rail a,#print-rail a svg{transition:none;}}
+@media (max-width:600px){#print-rail a{width:32px;height:32px;}#print-rail a svg{width:18px;height:18px;}}
+
 /* ---------- CTA ---------- */
 .cta{text-align:center;padding:clamp(90px,14vh,160px) clamp(18px,4vw,48px);}
 .cta .big{
@@ -587,7 +600,7 @@ html{overflow-x:clip;}
 <div class="cur2" aria-hidden="true"></div>
 
 <header class="bar">
-  <a href="/" class="bar-logo" aria-label="Cadbim ana sayfa"><img width="640" height="153" src="assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
+  <a href="/" class="bar-logo" aria-label="Cadbim ana sayfa"><img width="260" height="62" src="assets/logos/cadbim-yatay.webp" alt="Cadbim"></a>
   <span class="bar-tag">SANATSAL BASKI ATÖLYESİ</span>
   <nav class="bar-nav" aria-label="Sayfa içi">
     <a href="#isler" data-hover>İşler</a>
@@ -598,6 +611,25 @@ html{overflow-x:clip;}
   <a href="tel:+902324643490" class="bar-tel" data-hover>0232 464 34 90</a>
   <a href="#iletisim" class="bar-cta" data-hover data-mag>Baskı Talebi</a>
 </header>
+
+<nav id="print-rail" aria-label="Sanatsal Baskı Atölyesi sosyal hesapları">
+  <a href="https://www.instagram.com/cadbim_print/" target="_blank" rel="noopener" aria-label="Instagram — cadbim_print" data-hover style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9" fill="#fff" stroke="none"/></svg></a>
+  <a href="https://www.facebook.com/cadbimizmir" target="_blank" rel="noopener" aria-label="Facebook — Cadbim" data-hover style="background:#1877F2;"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.93 8.44-9.94z"/></svg></a>
+  <a href="https://wa.me/905547403757?text=Merhaba%2C%20sanatsal%20bask%C4%B1%20talebim%20var." target="_blank" rel="noopener" aria-label="WhatsApp — Sanatsal Baskı hattı" data-hover style="background:#25D366;"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.87 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 7c0 5.45-4.44 9.88-9.89 9.88zm8.42-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.47-8.41z"/></svg></a>
+</nav>
+<script>
+(function(){
+  var rail=document.getElementById('print-rail');
+  if(rail && window.matchMedia && window.matchMedia('(hover: none)').matches){
+    rail.addEventListener('click',function(e){
+      if(!rail.classList.contains('open')){e.preventDefault();rail.classList.add('open');}
+    });
+    document.addEventListener('click',function(e){
+      if(rail.classList.contains('open') && !rail.contains(e.target)){rail.classList.remove('open');}
+    });
+  }
+})();
+</script>
 
 <main>
 
@@ -635,7 +667,7 @@ html{overflow-x:clip;}
 <!-- ============ MARQUEE ============ -->
 <div class="mq" aria-hidden="true">
   <div class="mq-in" id="mq">
-    <span>GICLÉE FINE ART</span><span>FOTOĞRAF BASKISI</span><span>KANVAS</span><span>FOTOBLOK</span><span>DEKOTA</span><span>ÇERÇEVE</span><span>SERGİ ÜRETİMİ</span><span>REPRODÜKSİYON</span><span>PANORAMİK</span>
+    <span>GICLÉE FINE ART</span><span>FOTOĞRAF BASKISI</span><span>KANVAS</span><span>FOTOBLOK</span><span>DEKOTA</span><span>ÇERÇEVE</span><span>SERGİ ÜRETİMİ</span><span>REPRODÜKSİYON</span><span>PANORAMİK</span><span>PROJE BASKISI</span><span>TARAMA</span>
   </div>
 </div>
 
@@ -644,7 +676,7 @@ html{overflow-x:clip;}
   <div class="bhead" data-rv>
     <span class="bno">01 — HİZMETLER</span>
     <h2 class="btitle">Kadrajdan koleksiyona.</h2>
-    <p class="bsub">Beş disiplin, tek ölçüt: sergilenmeye değer sonuç.</p>
+    <p class="bsub">Yedi hizmet, tek titizlik: sergilenmeye değer sonuç.</p>
   </div>
   <div class="works">
     <a class="wrow" href="#iletisim" data-rv data-hover>
@@ -677,10 +709,22 @@ html{overflow-x:clip;}
       <span class="wdesc">Kurumsal sertifika, ödül belgesi, büyük format poster. Kalıcı baskı, asılmaya hazır format.</span>
       <span class="warr">→</span>
     </a>
+    <a class="wrow" href="#iletisim" data-rv data-hover style="--d:.25s;">
+      <span class="wno">06</span>
+      <span class="wname">Proje Baskısı</span>
+      <span class="wdesc">Mimarlık ve mühendislik projeleri: CAD çıktısı, pafta, sunum posteri, mat film. Ölçüsü doğru, teslimi zamanında.</span>
+      <span class="warr">→</span>
+    </a>
+    <a class="wrow" href="#iletisim" data-rv data-hover style="--d:.3s;">
+      <span class="wno">07</span>
+      <span class="wname">Tarama Hizmetleri</span>
+      <span class="wdesc">Pafta, çizim, harita ve eser taraması — HP DesignJet HD Pro ve SD Pro tarayıcılarla geniş formatta, arşiv kalitesinde.</span>
+      <span class="warr">→</span>
+    </a>
   </div>
   <div class="tech" data-rv>
-    <b>Teknik çizim mi gerekiyor?</b>
-    <p>CAD çıktıları, sunum posterleri ve mat film için ayrı hat — aynı titizlik.</p>
+    <b>Kendi makinenizle basmak isterseniz:</b>
+    <p>HP DesignJet satışı, kurulumu ve yetkili teknik servisi de aynı çatı altında.</p>
     <a href="designjet" data-hover>HP DesignJet çözümleri →</a>
   </div>
 </section>
@@ -804,14 +848,11 @@ html{overflow-x:clip;}
 <section class="blk" style="padding-top:0;">
   <div class="bhead" data-rv>
     <span class="bno">07 — ATÖLYEDEN</span>
-    <h2 class="btitle">Yüzey ve finisaj, iş üstünde.</h2>
-    <p class="bsub">Fotoğraf kağıdından parçalı kanvasa dokuz uygulama örneği. Ebat ve kombinasyon, işinize göre uyarlanır.</p>
+    <h2 class="btitle">Finisaj, iş üstünde.</h2>
+    <p class="bsub">Dekota, fotoblok, kasnak, çerçeve ve paravan — altı uygulama örneği. Ebat ve kombinasyon, işinize göre uyarlanır.</p>
   </div>
   <div class="gal">
     <figure class="gcard" data-rv><img src="assets/img/sanatsal/mat-dekota-cerceve.jpg" alt="Mat fotoğraf kağıdına baskı — dekota ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Mat Fotoğraf Kağıdı</b><span>Dekota + Çerçeve</span></figcaption></figure>
-    <figure class="gcard" data-rv style="--d:.05s;"><img src="assets/img/sanatsal/yarimat-dekota-cerceve.jpg" alt="Yarı mat yarı parlak fotoğraf kağıdına baskı — dekota ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Yarı Mat / Yarı Parlak</b><span>Dekota + Çerçeve</span></figcaption></figure>
-    <figure class="gcard" data-rv style="--d:.1s;"><img src="assets/img/sanatsal/yarimat-fotoblok.jpg" alt="Yarı mat yarı parlak fotoğraf kağıdına baskı — fotoblok uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Yarı Mat / Yarı Parlak</b><span>Fotoblok</span></figcaption></figure>
-    <figure class="gcard" data-rv><img src="assets/img/sanatsal/yarimat-fotoblok-cerceve.jpg" alt="Yarı mat yarı parlak fotoğraf kağıdına baskı — fotoblok ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Yarı Mat / Yarı Parlak</b><span>Fotoblok + Çerçeve</span></figcaption></figure>
     <figure class="gcard" data-rv style="--d:.05s;"><img src="assets/img/sanatsal/parlak-fotoblok.jpg" alt="Parlak fotoğraf kağıdına baskı — fotoblok uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Parlak Fotoğraf Kağıdı</b><span>Fotoblok</span></figcaption></figure>
     <figure class="gcard" data-rv style="--d:.1s;"><img src="assets/img/sanatsal/kanvas-kasnak.jpg" alt="Kanvas baskı — kasnaklı çıtalı germe uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Kanvas Baskı</b><span>Kasnaklı (Çıtalı) Germe</span></figcaption></figure>
     <figure class="gcard" data-rv><img src="assets/img/sanatsal/kanvas-kasnak-cerceve.jpg" alt="Kanvas baskı — kasnak ve çerçeve uygulaması" width="900" height="900" loading="lazy" decoding="async"><figcaption><b>Kanvas Baskı</b><span>Kasnak + Çerçeve</span></figcaption></figure>
@@ -843,6 +884,8 @@ html{overflow-x:clip;}
             <option>Sanatsal Kanvas</option>
             <option>Sergi Üretimi</option>
             <option>Sertifika &amp; Poster</option>
+            <option>Proje Baskısı (CAD / Pafta)</option>
+            <option>Tarama Hizmeti</option>
             <option>Bilmiyorum — önerinizi isterim</option>
           </select>
         </div>
@@ -971,11 +1014,11 @@ function formuGonder(e){
       if(p.type==='video' && p.videoId){
         return '<div style="background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);overflow:hidden;">'
           + '<div style="aspect-ratio:16/9;background:#000;"><a class="yt-lite" href="https://www.youtube.com/watch?v='+p.videoId+'" target="_blank" rel="noopener" data-yt="'+p.videoId+'" data-title="'+esc(p.title)+'" aria-label="Videoyu oynat"><img src="https://i.ytimg.com/vi/'+p.videoId+'/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="yt-lite-btn" aria-hidden="true"></span></a></div>'
-          + '<div style="padding:16px;"><h4 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'.html" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h4><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
+          + '<div style="padding:16px;"><h3 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'.html" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h3><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
       }
       return '<a href="post/'+p.slug+'.html" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);padding:20px;text-decoration:none;">'
         + '<div style="font-size:10px;color:#00c8f0;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">'+esc(p.cat)+'</div>'
-        + '<h4 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h4>'
+        + '<h3 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h3>'
         + '<p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></a>';
     }).join('');
     if(allMatched.length>5){

@@ -32,7 +32,7 @@ h1.a-title{font-family:var(--fd);font-size:clamp(1.5rem,3.2vw,2.2rem);font-weigh
 .a-body{font-size:15px;color:var(--w80);line-height:1.85;}
 .a-body p{margin-bottom:20px;}
 .a-cta{margin-top:36px;background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rl);padding:26px;}
-.a-cta h3{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--w);margin-bottom:8px;}
+.a-cta h2{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--w);margin-bottom:8px;}
 .a-cta p{font-size:13px;color:var(--w50);margin-bottom:16px;}
 .btn-p{background:var(--cyan);color:var(--navy);padding:11px 22px;border-radius:var(--r);font-weight:700;font-size:13px;text-decoration:none;font-family:var(--fd);display:inline-flex;align-items:center;gap:8px;transition:opacity .2s;}
 .btn-p:hover{opacity:.88;}
@@ -58,7 +58,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
 
 /* ==== Y9 (DK-2026-08-03-16): Ilgili Yazilar blogu ==== */
 .a-related{margin-top:36px;}
-.a-related h3{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);margin-bottom:14px;}
+.a-related h2{font-family:var(--fd);font-size:16px;font-weight:700;color:var(--w);margin-bottom:14px;}
 .a-related-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .a-related-card{display:flex;flex-direction:column;gap:6px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rl);padding:16px 18px;text-decoration:none;transition:border-color .2s ease,transform .2s ease;}
 .a-related-card:hover{border-color:var(--cbor);transform:translateY(-2px);}
