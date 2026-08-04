@@ -895,7 +895,7 @@ COZUM["gorsellestirme"] = dict(
     stats=[(u"Gerçek zamanlı → final", u"aynı sahne, iki farklı hız"),
            (u"CAD ve BIM uyumlu", u"Revit, 3ds Max, SketchUp, Rhino"),
            (u"HP Z", u"render için doğru donanım yapılandırması")],
-    intro_title=u"Hangi render aracı, hangi işe?",
+    intro_title=u"Hangi render aracı, hangi işe yarar?",
     intro=[
         u"Görselleştirmede tek bir doğru araç yoktur; belirleyici olan projenin hangi "
         u"aşamasında olduğunuzdur. Tasarım devam ederken hızlı geri bildirim gerekir; "

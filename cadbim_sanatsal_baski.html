@@ -406,7 +406,9 @@ main,header,footer{position:relative;z-index:3;}
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .stat b small{font-size:.34em;letter-spacing:2px;-webkit-text-fill-color:var(--acc2);margin-left:6px;font-weight:600;}
-.stat span{display:block;margin-top:12px;font-size:12.5px;color:var(--mut);line-height:1.65;letter-spacing:.4px;}
+/* Yalnizca aciklama satiri: dogrudan cocuk secici olmadan kural <b> icindeki
+   sayi span'ini de yakaliyor ve 71px'lik sayiyi 12.5px'e dusuruyordu. */
+.stat > span{display:block;margin-top:12px;font-size:12.5px;color:var(--mut);line-height:1.65;letter-spacing:.4px;}
 
 /* ---------- süreç ---------- */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-left:1px solid var(--ln);}
