@@ -239,6 +239,8 @@ footer{{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
 <link rel="stylesheet" href="../assets/css/design-system.css?v=10">
+<link rel="stylesheet" href="../assets/css/mobile-guardrails.css?v=3">
+<link rel="stylesheet" href="../assets/css/wide-screen.css?v=1">
 </head>
 <body><nav class="nav">
   <a href="../index.html" class="nav-logo"><img src="../assets/logos/cadbim-yatay.png" alt="Cadbim"></a>

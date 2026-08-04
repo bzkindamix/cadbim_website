@@ -71,12 +71,13 @@
     padding-inline: var(--gutter);
   }
 
-  /* Satır içi style ile padding verilen bölümler (zenginleştirme şeritleri,
-     ilgili blog kuşağı) — inline bildirimi ancak !important ezer. */
-  section[data-enrich-brand],
-  section[data-enrich],
-  section[data-newsol],
-  #blog-related-section {
+  /* Satır içi style ile yatay padding verilen bölümler: zenginleştirme
+     şeritleri ([data-enrich-brand], [data-enrich], [data-newsol]), ilgili
+     blog kuşağı (#blog-related-section) ve sınıfsız bölümler (hakkimizda,
+     iletisim ×2, sektor_medya). Hepsi "padding:<Y> 3rem[ <Z>]" kalıbını
+     kullandığı için tek seçici yeter; inline bildirimi ancak !important ezer.
+     Yatay değerler istisnasız simetrik, bu yüzden ezmek güvenli. */
+  section[style*="3rem"] {
     padding-inline: var(--gutter) !important;
   }
 
@@ -106,7 +107,8 @@
     margin-inline: auto;
   }
 
-  /* Zenginleştirme şeritlerinin satır içi max-width:1200px kutuları */
+  /* Zenginleştirme şeritlerinin satır içi max-width:1200px kutuları — bölüm
+     raya oturduktan sonra bu kutular 1200px'te kalırsa hizadan kaçıyordu. */
   section[data-enrich-brand] > div,
   section[data-enrich] > div {
     max-width: var(--shell) !important;
