@@ -74,12 +74,20 @@ img,svg,video,iframe,canvas{max-width:100%;}
   .pfilter .psearch{grid-column:1/-1;}
 }
 
-/* R9 — CTA / BUTON GRUPLARI (DK-2026-08-03-32)
-   Alt alta düşen butonlar içeriğe göre farklı genişlikteydi (164px/174px gibi)
-   ve sola yaslı duruyordu; mobilde tam genişlik + ortalı daha derli toplu. */
+/* R9 — CTA / BUTON GRUPLARI (DK-2026-08-03-32; DK-2026-08-05-81'de güncellendi)
+   Önce: butonlar alt alta tam genişlik diziliyordu — iki butonlu gruplar
+   gereksiz yer kaplıyordu. Şimdi: 2 sütun tek satır.
+   Grup içindeki buton sayısı sabit değil (sitede 1, 2 ve 3 butonlu gruplar
+   var), bu yüzden tek kalan buton satırın tamamını kaplar; yani 1 buton tam
+   genişlik, 2 buton yan yana, 3 buton 2+1 dizilir. */
 @media(max-width:600px){
-  .cta-btns,.btns,.h-ctas{flex-direction:column;align-items:stretch;}
-  .cta-btns>*,.btns>*,.h-ctas>*{width:100%;justify-content:center;}
+  .cta-btns,.btns,.h-ctas{display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    align-items:stretch;}
+  .cta-btns>*,.btns>*,.h-ctas>*{width:auto;min-width:0;justify-content:center;
+    text-align:center;}
+  .cta-btns>*:last-child:nth-child(odd),
+  .btns>*:last-child:nth-child(odd),
+  .h-ctas>*:last-child:nth-child(odd){grid-column:1/-1;}
 }
 
 /* R5b — Yalnızca çok dar cihazlarda (≤340px: Galaxy Fold kapalı, eski SE)

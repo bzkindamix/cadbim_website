@@ -466,6 +466,29 @@
   .cbk-empty{text-align:center;color:rgba(255,255,255,.4);font-size:14px;padding:36px 20px;}
   .cbk-foot{display:flex;align-items:center;gap:16px;padding:10px 18px;border-top:.5px solid rgba(255,255,255,.08);font-size:11.5px;color:rgba(255,255,255,.35);}
   .cbk-foot b{font-weight:600;color:rgba(255,255,255,.5);}
+
+  /* ===== Mobilde filtre çipleri tek bir açılır listeye iner =====
+     Altı-on çip ekranın yarısını kaplayıp hepsi birden seçilebilir duruyordu.
+     Mobilde çipler gizlenir, yerine "Seçiniz" yazan tek bir liste gelir.
+     Çipler DOM'da kalır: liste yalnızca ilgili çipe tıklama üretir, yani her
+     sayfanın kendi filtre mantığı olduğu gibi çalışır.
+     .mf-ready yalnızca liste gerçekten kurulduğunda eklenir — JS çalışmazsa
+     çipler görünür kalır, filtre erişilemez hâle gelmez. */
+  .mfsel{display:none;}
+  @media(max-width:600px){
+    .mf-ready{display:block!important;}
+    .mf-ready .fchip,.mf-ready .cz-fbtn,.mf-ready .ctab,.mf-ready .ind-tab-btn{display:none!important;}
+    .mfsel{display:block;width:100%;box-sizing:border-box;margin:0 0 8px;
+      padding:11px 34px 11px 13px;border-radius:11px;
+      border:.5px solid rgba(255,255,255,.14);background-color:rgba(255,255,255,.05);
+      color:#fff;font-family:inherit;font-size:13px;font-weight:600;line-height:1.2;
+      -webkit-appearance:none;appearance:none;
+      background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300c8f0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 11px center;background-size:15px;}
+    .mfsel:focus{outline:none;border-color:rgba(0,200,240,.6);}
+    .mfsel.mf-secili{border-color:rgba(0,200,240,.5);background-color:rgba(0,200,240,.12);color:#00c8f0;}
+    .mfsel option{background:#0d1830;color:#fff;font-weight:500;}
+  }
   `;
 
   function inject() {
@@ -807,4 +830,89 @@
   window.addEventListener("load",dengele);
   var zt=null;
   window.addEventListener("resize",function(){clearTimeout(zt);zt=setTimeout(dengele,120);},{passive:true});
+})();
+
+/* ===== Mobilde filtre çipleri tek bir "Seçiniz" listesine iner =====
+   Sorun: 6-10 filtre çipi mobilde ekranın yarısını kaplıyor ve hepsi birden
+   seçilebilir duruyordu. Çözüm: çipleri gizleyip yerine tek bir açılır liste
+   koymak. Liste yalnızca ilgili çipe tıklama üretir; her sayfanın kendi
+   filtre mantığı (aktif çipe yeniden basınca temizlenmesi dahil) korunur. */
+(function () {
+  var GRUPLAR = [
+    /* kap: kapsayıcı, cip: çip seçicisi, etiket: erişilebilirlik adı,
+       tumu: varsa "hepsi" çipi (o zaman temizleme ona tıklar),
+       zorunlu: her zaman bir seçim olmalı (sekme grubu) */
+    { kap: ".pfilter",      cip: ".fchip",       etiket: "Ürün filtresi" },
+    { kap: ".cz-fbtns",     cip: ".cz-fbtn",     etiket: "Endüstri filtresi" },
+    { kap: ".catalog-tabs", cip: ".ctab",        etiket: "Eğitim filtresi" },
+    { kap: ".ind-tabs",     cip: ".ind-tab-btn", etiket: "Endüstri", zorunlu: true }
+  ];
+
+  function aktifMi(el) { return /(^|\s)(active|is-on)(\s|$)/.test(el.className); }
+
+  /* Çipin görünen adı: ikon ve sayaç rozeti çıkarılır. */
+  function etiketAl(cip) {
+    var k = cip.cloneNode(true);
+    Array.prototype.forEach.call(k.querySelectorAll("i,span"), function (x) { x.remove(); });
+    return (k.textContent || "").replace(/\s+/g, " ").trim();
+  }
+
+  function kur(g) {
+    Array.prototype.forEach.call(document.querySelectorAll(g.kap), function (kap) {
+      if (kap.querySelector(".mfsel")) return;              /* zaten kurulu */
+      var cipler = Array.prototype.slice.call(kap.querySelectorAll(g.cip));
+      if (cipler.length < 3) return;                        /* 2 çip zaten sığıyor */
+
+      var sel = document.createElement("select");
+      sel.className = "mfsel";
+      sel.setAttribute("aria-label", g.etiket);
+
+      if (!g.zorunlu) {
+        var bos = document.createElement("option");
+        bos.value = "";
+        bos.textContent = "Seçiniz";
+        sel.appendChild(bos);
+      }
+
+      cipler.forEach(function (c, i) {
+        if (g.tumu && c.matches(g.tumu)) return;   /* "hepsi" çipi = boş seçenek */
+        var o = document.createElement("option");
+        o.value = String(i);
+        o.textContent = etiketAl(c);
+        if (aktifMi(c)) o.selected = true;
+        sel.appendChild(o);
+      });
+
+      function isaretle() { sel.classList.toggle("mf-secili", sel.value !== ""); }
+
+      sel.addEventListener("change", function () {
+        if (sel.value === "") {
+          if (g.tumu) {
+            var t = kap.querySelector(g.tumu);
+            if (t) t.click();
+          } else {
+            /* Bu sayfalarda aktif çipe yeniden basmak filtreyi temizler. */
+            var a = cipler.filter(aktifMi)[0];
+            if (a) a.click();
+          }
+        } else {
+          var hedef = cipler[+sel.value];
+          if (hedef && !aktifMi(hedef)) hedef.click();
+        }
+        isaretle();
+      });
+
+      isaretle();
+      kap.insertBefore(sel, kap.firstChild);
+      kap.classList.add("mf-ready");
+    });
+  }
+
+  function calistir() { GRUPLAR.forEach(kur); }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", calistir);
+  } else {
+    calistir();
+  }
 })();

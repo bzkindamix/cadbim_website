@@ -4,6 +4,24 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-81 — Mobilde filtre çipleri tek "Seçiniz" listesine indi; CTA butonları 2 sütun tek satır
+
+- **Yapan:** Onur'un iki talebi: *"mobilde filtrelerin hepsini ekranda seçilebilir göstermemeliyiz. tek buton seçiniz yazacak içinde o seçmediği zaman filtre yok seçince var"* ve *"şunu da 2 sütun tek satır yapalım bütün sayfalar için mobilde"* (CTA buton çifti ekran görüntüsü) — Claude (PDM asistanı).
+
+**1) Filtre çipleri → tek açılır liste (`mobilenav.js`, site geneli)**
+- **Sorun:** 6-10 filtre çipi mobilde ekranın yarısını kaplıyor, hepsi birden seçilebilir duruyordu.
+- **Yaklaşım:** Çipler DOM'da kalır, mobilde gizlenir; yerlerine "Seçiniz" yazan tek bir `<select>` konur. Liste yalnızca ilgili çipe **tıklama üretir** — böylece her sayfanın kendi filtre mantığı (aktif çipe yeniden basınca temizlenmesi dahil) olduğu gibi çalışır, hiçbir sayfanın JS'i değiştirilmedi.
+- **Kapsam:** `.pfilter`/`.fchip` (18 sayfa), `.cz-fbtns`/`.cz-fbtn` (çözümler), `.catalog-tabs`/`.ctab` (eğitimler), `.ind-tabs`/`.ind-tab-btn` (endüstriler).
+- **`.ind-tabs` ayrı ele alındı:** O bir **sekme grubu**, her zaman bir seçim olmalı (varsayılan Mimarlık). Oraya "Seçiniz" boş seçeneği konmadı — konsaydı hiçbir endüstri gösterilmeyen bir durum oluşurdu.
+- **Güvenlik ağı:** `.mf-ready` sınıfı yalnızca liste gerçekten kurulduğunda ekleniyor; çipleri gizleyen CSS ona bağlı. JS çalışmazsa çipler görünür kalır, filtre erişilemez hâle gelmez. 3'ten az çipi olan gruplar zaten sığdığı için dokunulmuyor. `.pfilter` içindeki arama kutusu korunuyor.
+- **Yakalanan hata:** `.cz-fbtns` için "hepsi" çipi (`[data-f="all"]`) varsayıldı ve temizleme ona tıklayacak şekilde yazıldı; **o markup eski `_site/` derleme kopyasından okunmuştu**, canlı sayfada böyle bir çip yok. Ölçümle görüldü (temizleme çalışmıyordu) ve grup diğerleriyle aynı "aktife yeniden bas" yoluna alındı.
+
+**2) CTA buton grupları → 2 sütun tek satır (`mobile-guardrails.css` R9)**
+- Önceki kural butonları alt alta tam genişlik diziyordu. Sitede grupların buton sayısı sabit değil (**1 buton: 73 yer, 2 buton: 85 yer, 3 buton: 31 yer**), bu yüzden düz "2 sütun" tek butonu yarım bırakırdı. Kural sayıya duyarlı yazıldı: tek kalan buton satırın tamamını kaplar → **1 buton tam genişlik, 2 buton yan yana, 3 buton 2+1**.
+
+- **Doğrulama (390×844):** Ürün filtresi 15 kart → "CAM & İmalat" 3 kart → "Seçiniz" 15 kart; çözümler 18 → 12 → 18; eğitimler 31 → 4 → 31; endüstriler sekmesi seçimle panel değiştiriyor. Dört grupta da görünür çip sayısı 0. CTA: 2 buton 170+170 tek satır, 3 buton 121+121+253 (2+1), 1 buton 253 tam genişlik; metin ve yatay taşma yok. **Masaüstü değişmedi:** select gizli, 6 çip tek satırda görünür, CTA butonları flex tek satır. Konsol hatası 0.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-80 — Anasayfada Çözümler bölümü kaldırıldı, yerine Hizmetler bölümü geldi
 
 - **Yapan:** Onur'un kararı: *"bence çözümleri kaldıralım hizmetler ile ilgili bir bölüm ekleyelim sonra sanatsal baskı var zaten"* — Claude (PDM asistanı).
