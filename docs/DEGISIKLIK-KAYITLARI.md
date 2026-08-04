@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-86 — Blog filtresi 46 butondan iki açılır listeye indi
+
+- **Yapan:** Onur'un talebi: *"bloglar sayfasındaki gibi çok butonlu filtre istemiyorum. 2 roller buton kategori ve ürün"* + *"arama alanının yanına yerleştir hemen"* — Claude (PDM asistanı).
+- **Önce:** 8 kategori çipi + 33 ürün çipi = **41 buton**, iki ayrı "filter-block" hâlinde sayfanın üstünü kaplıyordu; arama kutusu bunların altında ayrı bir satırdaydı.
+- **Sonra:** Arama kutusunun **yanında** iki açılır liste — "Kategori" ve "Ürün". Varsayılan metinler seçim yokken filtrenin kapalı olduğunu gösteriyor; seçim yapılınca liste cyan çerçeveyle işaretleniyor.
+- **Seçenekler veriden yeniden türetilmedi:** Çip listesi editoryal olarak seçilmişti (blog-posts.json'da 48 ürün var, çiplerde 33); mevcut liste ve sırası korundu, seçenekler doğrudan çiplerden üretildi.
+- **`?topic=` derin bağlantısı korundu:** Ürün sayfalarındaki "Tüm N içeriği gör" bağlantısı bu parametreyle geliyor. Yeni mantık parametreyi önce kategori sonra ürün listesinde arıyor, hangisinde varsa onu seçiyor.
+- **Ölü CSS temizlendi:** `.filter-block`, `.filter-label`, `.pfilter`, `.fchip.active`, `.fchip.active::after`, `.fchip.prod-chip.active` kaldırıldı. `.fchip` ve `.fchip:hover` **korundu** — "Daha Fazla Göster" düğmesi hâlâ o sınıfı kullanıyor.
+- **Doğrulama:** Kategori "BIM" → 275 sonuç, Ürün "Revit" → 202 sonuç, ikisi de temizlenince 1028'e dönüyor; `?topic=Fusion` ile açılışta Ürün listesi Fusion seçili ve 212 sonuç. Masaüstünde arama + iki liste + sayaç aynı satırda ve **dikey merkezleri birebir hizalı**; 390px'te üçü de tam genişlikte alt alta, yatay taşma yok. Konsol hatası 0.
+- **Not:** Bu sayfada artık çip olmadığı için mobildeki genel "çip → Seçiniz listesi" dönüştürücüsü (DK-81) burada devreye girmiyor; gerek de yok, listeler zaten her ekranda açılır liste.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-85 — Çözüm sayfası başlıkları çözümün adıyla yazıldı
 
 - **Yapan:** Onur'un talebi: *"çözüm sayfasındaki başlıklarda sürekli bu çözümü ifadesi başlama eğilimi var ne o çözüm? İsmini kullanarak etkileyici bir metin yazmalısın BIM ile kontrolü sağla vs. gibi"* — Claude (PDM asistanı).

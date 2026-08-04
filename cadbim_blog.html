@@ -49,15 +49,8 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .hero h1 em{font-style:normal;color:var(--cyan);}
 .hero-sub{font-size:15px;color:var(--w50);line-height:1.75;margin-bottom:0;max-width:640px;position:relative;z-index:1;}
 .section{padding:32px 3rem 64px;}
-.filter-block{margin-bottom:8px;}
-.filter-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--w30);margin-bottom:10px;}
-.pfilter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}
 .fchip{padding:8px 16px;border-radius:20px;font-size:12px;cursor:pointer;border:.5px solid var(--w10);background:transparent;color:var(--w50);transition:all .2s;font-family:var(--fb);}
 .fchip:hover{border-color:var(--w30);color:var(--w80);}
-.fchip.active{background:var(--cdim);border-color:var(--cbor);color:var(--cyan);}
-/* Aktif filtredeki × işareti, aynı öğeye basmakla filtrenin kalkacağını gösterir. */
-.fchip.active::after{content:'\00d7';margin-left:8px;font-size:15px;line-height:1;font-weight:700;opacity:.6;}
-.fchip.prod-chip.active{background:rgba(255,255,255,0.08);border-color:var(--w30);color:var(--w);}
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:8px;}
 .blog-card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:22px;transition:border-color .2s;text-decoration:none;display:flex;flex-direction:column;overflow:hidden;}
 .bc-thumb{position:relative;width:calc(100% + 44px);margin:-22px -22px 16px;aspect-ratio:16/9;background:#000;overflow:hidden;}
@@ -96,7 +89,19 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:9px 12px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.7);text-decoration:none;white-space:nowrap;}
 .nav-dropdown-menu a:hover{background:rgba(0,200,240,0.08);color:#00c8f0;}
-</style>
+
+    /* Blog filtresi: 46 çip yerine iki açılır liste (DK-2026-08-05-86) */
+    .bsel{appearance:none;-webkit-appearance:none;flex:0 1 auto;min-width:150px;
+      padding:10px 32px 10px 13px;border-radius:var(--r);background-color:var(--navy3);
+      border:.5px solid var(--w10);color:var(--w);font-size:13px;font-family:var(--fb);
+      cursor:pointer;line-height:1.2;
+      background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300c8f0' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;background-position:right 10px center;background-size:15px;}
+    .bsel:focus{outline:none;border-color:rgba(0,200,240,.55);}
+    .bsel.on{border-color:rgba(0,200,240,.5);background-color:rgba(0,200,240,.12);color:var(--cyan);}
+    .bsel option{background:#0d1830;color:#fff;}
+    @media(max-width:600px){.bsel{flex:1 1 100%;min-width:0;}}
+  </style>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -250,63 +255,14 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <p class="hero-sub">Autodesk ürünleri üzerine teknik yazılar, ipuçları ve videolar. Kategoriye veya ürüne göre filtreleyin.</p>
 </section>
 <section class="section">
-  <div class="filter-block">
-    <div class="filter-label">Kategori</div>
-    <div class="pfilter" id="catfilter">
-      <button class="fchip" data-f="BIM">BIM</button>
-      <button class="fchip" data-f="CAD">CAD</button>
-      <button class="fchip" data-f="Simülasyon">Simülasyon</button>
-      <button class="fchip" data-f="Görselleştirme">Görselleştirme</button>
-      <button class="fchip" data-f="3D Baskı">3D Baskı</button>
-      <button class="fchip" data-f="Otomotiv">Otomotiv</button>
-      <button class="fchip" data-f="İnşaat">İnşaat</button>
-      <button class="fchip" data-f="Medya">Medya</button>
-    </div>
-  </div>
-  <div class="filter-block">
-    <div class="filter-label">Ürün</div>
-    <div class="pfilter" id="prodfilter">
-      <button class="fchip prod-chip" data-p="Revit">Revit</button>
-      <button class="fchip prod-chip" data-p="Inventor">Inventor</button>
-      <button class="fchip prod-chip" data-p="Fusion">Fusion</button>
-      <button class="fchip prod-chip" data-p="CAM">CAM</button>
-      <button class="fchip prod-chip" data-p="AutoCAD">AutoCAD</button>
-      <button class="fchip prod-chip" data-p="AutoCAD LT">AutoCAD LT</button>
-      <button class="fchip prod-chip" data-p="Nastran">Nastran</button>
-      <button class="fchip prod-chip" data-p="Forma">Forma</button>
-      <button class="fchip prod-chip" data-p="PLM">PLM</button>
-      <button class="fchip prod-chip" data-p="PDM">PDM</button>
-      <button class="fchip prod-chip" data-p="Vault">Vault</button>
-      <button class="fchip prod-chip" data-p="Navisworks">Navisworks</button>
-      <button class="fchip prod-chip" data-p="InfraWorks">InfraWorks</button>
-      <button class="fchip prod-chip" data-p="Civil 3D">Civil 3D</button>
-      <button class="fchip prod-chip" data-p="Advance Steel">Advance Steel</button>
-      <button class="fchip prod-chip" data-p="Robot Structural">Robot Structural</button>
-      <button class="fchip prod-chip" data-p="BIM 360">BIM 360</button>
-      <button class="fchip prod-chip" data-p="CFD">CFD</button>
-      <button class="fchip prod-chip" data-p="Simulasyon">Simülasyon</button>
-      <button class="fchip prod-chip" data-p="Generative Design">Generative Design</button>
-      <button class="fchip prod-chip" data-p="Factory Design">Factory Design</button>
-      <button class="fchip prod-chip" data-p="Fabrication">Fabrication</button>
-      <button class="fchip prod-chip" data-p="Dynamo">Dynamo</button>
-      <button class="fchip prod-chip" data-p="Alias">Alias</button>
-      <button class="fchip prod-chip" data-p="Maya">Maya</button>
-      <button class="fchip prod-chip" data-p="3ds Max">3ds Max</button>
-      <button class="fchip prod-chip" data-p="Recap Pro">Recap Pro</button>
-      <button class="fchip prod-chip" data-p="Illustrator">Illustrator</button>
-      <button class="fchip prod-chip" data-p="Photoshop">Photoshop</button>
-      <button class="fchip prod-chip" data-p="Acrobat">Acrobat</button>
-      <button class="fchip prod-chip" data-p="Firefly">Firefly</button>
-      <button class="fchip prod-chip" data-p="Adobe Express">Adobe Express</button>
-      <button class="fchip prod-chip" data-p="HP Build Workspace">HP Build Workspace</button>
-    </div>
-  </div>
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:8px;">
+  <div style="display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:18px;">
     <div style="position:relative;flex:1;min-width:220px;max-width:360px;">
       <i class="ti ti-search" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--w30);"></i>
       <input id="bsearch" type="text" placeholder="Yazı veya video ara..." style="width:100%;padding:10px 14px 10px 36px;border-radius:var(--r);background:var(--navy3);border:.5px solid var(--w10);color:var(--w);font-size:13px;font-family:var(--fb);">
     </div>
-    <div id="bcount" style="font-size:12px;color:var(--w30);"></div>
+    <select id="bcat" class="bsel" aria-label="Kategoriye göre süz"><option value="all">Kategori</option><option value="BIM">BIM</option><option value="CAD">CAD</option><option value="Simülasyon">Simülasyon</option><option value="Görselleştirme">Görselleştirme</option><option value="3D Baskı">3D Baskı</option><option value="Otomotiv">Otomotiv</option><option value="İnşaat">İnşaat</option><option value="Medya">Medya</option></select>
+    <select id="bprod" class="bsel" aria-label="Ürüne göre süz"><option value="all">Ürün</option><option value="Revit">Revit</option><option value="Inventor">Inventor</option><option value="Fusion">Fusion</option><option value="CAM">CAM</option><option value="AutoCAD">AutoCAD</option><option value="AutoCAD LT">AutoCAD LT</option><option value="Nastran">Nastran</option><option value="Forma">Forma</option><option value="PLM">PLM</option><option value="PDM">PDM</option><option value="Vault">Vault</option><option value="Navisworks">Navisworks</option><option value="InfraWorks">InfraWorks</option><option value="Civil 3D">Civil 3D</option><option value="Advance Steel">Advance Steel</option><option value="Robot Structural">Robot Structural</option><option value="BIM 360">BIM 360</option><option value="CFD">CFD</option><option value="Simulasyon">Simülasyon</option><option value="Generative Design">Generative Design</option><option value="Factory Design">Factory Design</option><option value="Fabrication">Fabrication</option><option value="Dynamo">Dynamo</option><option value="Alias">Alias</option><option value="Maya">Maya</option><option value="3ds Max">3ds Max</option><option value="Recap Pro">Recap Pro</option><option value="Illustrator">Illustrator</option><option value="Photoshop">Photoshop</option><option value="Acrobat">Acrobat</option><option value="Firefly">Firefly</option><option value="Adobe Express">Adobe Express</option><option value="HP Build Workspace">HP Build Workspace</option></select>
+    <div id="bcount" style="font-size:12px;color:var(--w30);margin-left:auto;"></div>
   </div>
   <div class="blog-grid" id="bgrid"></div>
   <p id="bempty">Bu filtreyle eşleşen yazı bulunamadı.</p>
@@ -471,38 +427,20 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
     }, 200);
   });
 
-  [].slice.call(document.querySelectorAll('#catfilter .fchip')).forEach(function(chip){
-    chip.addEventListener('click',function(){
-      var temizle=chip.classList.contains('active');
-      document.querySelectorAll('#catfilter .fchip').forEach(function(c){c.classList.remove('active');});
-      if(!temizle) chip.classList.add('active');
-      activeCat=temizle?'all':chip.getAttribute('data-f');
-      render(true);
-    });
-  });
-  [].slice.call(document.querySelectorAll('#prodfilter .fchip')).forEach(function(chip){
-    chip.addEventListener('click',function(){
-      var temizle=chip.classList.contains('active');
-      document.querySelectorAll('#prodfilter .fchip').forEach(function(c){c.classList.remove('active');});
-      if(!temizle) chip.classList.add('active');
-      activeProd=temizle?'all':chip.getAttribute('data-p');
-      render(true);
-    });
-  });
+  var catSel=document.getElementById('bcat'), prodSel=document.getElementById('bprod');
+  function isaretle(sel){ sel.classList.toggle('on', sel.value!=='all'); }
+  catSel.addEventListener('change',function(){ activeCat=catSel.value; isaretle(catSel); render(true); });
+  prodSel.addEventListener('change',function(){ activeProd=prodSel.value; isaretle(prodSel); render(true); });
 
   fetch('assets/data/blog-posts.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
     allPosts=data;
     var topicParam=new URLSearchParams(location.search).get('topic');
     if(topicParam){
+      /* ?topic= hem kategori hem urun listesinde aranir; hangisinde varsa o secilir */
       activeProd=topicParam;
-      var topicChip=null;
-      [].slice.call(document.querySelectorAll('#catfilter .fchip, #prodfilter .fchip')).forEach(function(c){
-        if(!topicChip && (c.getAttribute('data-f')===topicParam || c.getAttribute('data-p')===topicParam)) topicChip=c;
-      });
-      if(topicChip){
-        document.querySelectorAll('#catfilter .fchip, #prodfilter .fchip').forEach(function(c){c.classList.remove('active');});
-        topicChip.classList.add('active');
-      }
+      var vars=function(sel,v){return [].slice.call(sel.options).some(function(o){return o.value===v;});};
+      if(vars(catSel,topicParam)){ catSel.value=topicParam; activeCat=topicParam; activeProd='all'; isaretle(catSel); }
+      else if(vars(prodSel,topicParam)){ prodSel.value=topicParam; isaretle(prodSel); }
     }
     render(true);
   }).catch(function(){
