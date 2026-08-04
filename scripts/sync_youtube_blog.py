@@ -5,6 +5,7 @@ Cadbim Teknik Destek YouTube kanalındaki yeni videoları tarar ve blog'a ekler.
 - Video açıklaması -> blog açıklaması (aynen, ilk paragraf)
 - Kategori/ürün etiketi başlıktaki anahtar kelimelerden basit eşleştirmeyle atanır (AI kullanılmaz)
 """
+import datetime
 import json
 import os
 import re
@@ -20,43 +21,43 @@ API_KEY = os.environ.get("YOUTUBE_API_KEY")
 CHANNEL_ID = os.environ.get("YOUTUBE_CHANNEL_ID", "UCGLIaycdAkSFM3Q54d3zVQg")
 MAX_RESULTS = int(os.environ.get("YOUTUBE_MAX_RESULTS", "15"))
 
-# ürün adı -> (kategori, ürün sayfası dosya adı)
+# ürün adı -> (kategori, ürün sayfası temiz URL slug'ı)
 PRODUCT_MAP = [
-    ("HP Build Workspace", "CAD", "cadbim_hp_build_workspace.html"),
-    ("Revit LT", "BIM", "cadbim_revit_lt.html"),
-    ("Revit", "BIM", "cadbim_revit.html"),
-    ("Navisworks", "BIM", "cadbim_navisworks.html"),
-    ("BIM Collaborate Pro", "BIM", "cadbim_bim_collaborate_pro.html"),
-    ("BIM 360", "BIM", "cadbim_bim.html"),
-    ("Dynamo", "BIM", "cadbim_bim.html"),
-    ("Civil 3D", "İnşaat", "cadbim_civil3d.html"),
-    ("InfraWorks", "İnşaat", "cadbim_infraworks.html"),
-    ("Advance Steel", "İnşaat", "cadbim_advance_steel.html"),
-    ("Robot Structural", "İnşaat", "cadbim_robot_structural.html"),
-    ("Forma", "BIM", "cadbim_forma.html"),
-    ("Inventor", "CAD", "cadbim_inventor.html"),
-    ("Fusion", "CAD", "cadbim_fusion.html"),
-    ("AutoCAD LT", "CAD", "cadbim_autocad_lt.html"),
-    ("AutoCAD", "CAD", "cadbim_autocad.html"),
-    ("Vault", "CAD", "cadbim_vault_pdm.html"),
-    ("PDM", "CAD", "cadbim_pdm.html"),
-    ("PLM", "CAD", "cadbim_plm.html"),
-    ("Nastran", "Simülasyon", "cadbim_simulasyon.html"),
-    ("CFD", "Simülasyon", "cadbim_cfd.html"),
-    ("Simulasyon", "Simülasyon", "cadbim_simulasyon.html"),
-    ("Simülasyon", "Simülasyon", "cadbim_simulasyon.html"),
-    ("Factory Design", "CAD", "cadbim_factory_design.html"),
-    ("Fabrication", "CAD", "cadbim_fabrication_cadmep.html"),
-    ("Generative Design", "CAD", "cadbim_tasarim_otomasyonu.html"),
-    ("Alias", "Görselleştirme", "cadbim_alias.html"),
-    ("Maya", "Görselleştirme", "cadbim_maya.html"),
-    ("3ds Max", "Görselleştirme", "cadbim_3dsmax.html"),
-    ("Recap Pro", "Görselleştirme", "cadbim_recap_pro.html"),
-    ("Illustrator", "Görselleştirme", "cadbim_illustrator.html"),
-    ("Photoshop", "Görselleştirme", "cadbim_photoshop.html"),
-    ("Acrobat", "Genel", "cadbim_adobe.html"),
-    ("Firefly", "Görselleştirme", "cadbim_firefly.html"),
-    ("Adobe Express", "Görselleştirme", "cadbim_adobe_express.html"),
+    ("HP Build Workspace", "CAD", "hp-build-workspace"),
+    ("Revit LT", "BIM", "revit-lt"),
+    ("Revit", "BIM", "revit"),
+    ("Navisworks", "BIM", "navisworks"),
+    ("BIM Collaborate Pro", "BIM", "bim-collaborate-pro"),
+    ("BIM 360", "BIM", "bim"),
+    ("Dynamo", "BIM", "bim"),
+    ("Civil 3D", "İnşaat", "civil3d"),
+    ("InfraWorks", "İnşaat", "infraworks"),
+    ("Advance Steel", "İnşaat", "advance-steel"),
+    ("Robot Structural", "İnşaat", "robot-structural"),
+    ("Forma", "BIM", "forma"),
+    ("Inventor", "CAD", "inventor"),
+    ("Fusion", "CAD", "fusion"),
+    ("AutoCAD LT", "CAD", "autocad-lt"),
+    ("AutoCAD", "CAD", "autocad"),
+    ("Vault", "CAD", "vault-pdm"),
+    ("PDM", "CAD", "pdm"),
+    ("PLM", "CAD", "plm"),
+    ("Nastran", "Simülasyon", "simulasyon"),
+    ("CFD", "Simülasyon", "cfd"),
+    ("Simulasyon", "Simülasyon", "simulasyon"),
+    ("Simülasyon", "Simülasyon", "simulasyon"),
+    ("Factory Design", "CAD", "factory-design"),
+    ("Fabrication", "CAD", "fabrication-cadmep"),
+    ("Generative Design", "CAD", "tasarim-otomasyonu"),
+    ("Alias", "Görselleştirme", "alias"),
+    ("Maya", "Görselleştirme", "maya"),
+    ("3ds Max", "Görselleştirme", "3dsmax"),
+    ("Recap Pro", "Görselleştirme", "recap-pro"),
+    ("Illustrator", "Görselleştirme", "illustrator"),
+    ("Photoshop", "Görselleştirme", "photoshop"),
+    ("Acrobat", "Genel", "adobe"),
+    ("Firefly", "Görselleştirme", "firefly"),
+    ("Adobe Express", "Görselleştirme", "adobe-express"),
 ]
 
 def tr_lower(s):
@@ -90,7 +91,7 @@ def cta_page_for(products):
     for name, cat, page in PRODUCT_MAP:
         if name in products:
             return page
-    return "cadbim_urunler.html"
+    return "urunler"
 
 def api_get(url, params):
     qs = urllib.parse.urlencode(params)
@@ -124,10 +125,15 @@ def tr_date(iso_date):
     y, m, d = iso_date.split("-")
     return f"{int(d)} {TR_MONTHS[int(m)-1]} {y}"
 
+# Sablon post/ dizinindeki guncel blog sayfalariyla birebir ayni tutulur.
+# Referans sayfa: post/3d-gorunum.html -- head/nav/footer degisirse buradaki
+# sablon da ayni anda guncellenmeli (yoksa yeni post sayfalari geride kalir).
 POST_TEMPLATE = """<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com https://img.youtube.com https://images.autodesk.com https://damassets.autodesk.net https://www.googletagmanager.com https://*.google-analytics.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com https://fast.wistia.net; connect-src 'self' https://*.powerplatform.com https://*.google-analytics.com https://analytics.google.com https://www.googletagmanager.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://*.powerplatform.com">
+  <meta name="referrer" content="strict-origin-when-cross-origin"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="{desc}">
 <title>{title} | Cadbim Blog</title>
   <meta property="og:title" content="{title} | Cadbim Blog">
@@ -143,56 +149,8 @@ POST_TEMPLATE = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css">
-<style>
-:root{{
-  --navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;
-  --cyan:#00c8f0;--cyan2:#0ea5e9;
-  --cdim:rgba(0,200,240,0.12);--cbor:rgba(0,200,240,0.2);
-  --w:#fff;--w80:rgba(255,255,255,0.8);--w50:rgba(255,255,255,0.5);
-  --w30:rgba(255,255,255,0.3);--w10:rgba(255,255,255,0.1);--w06:rgba(255,255,255,0.06);
-  --fd:'Manrope',sans-serif;--fb:'Manrope',sans-serif;
-  --r:8px;--rm:12px;--rl:16px;--rxl:24px;
-}}
-*,*::before,*::after{{margin:0;padding:0;box-sizing:border-box;}}
-html{{scroll-behavior:smooth;}}
-body{{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;line-height:1.6;overflow-x:hidden;}}
-.nav{{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:68px;background:rgba(6,12,26,0.92);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}}
-.nav-logo{{display:flex;align-items:center;gap:11px;text-decoration:none;}}
-.nav-logo img{{height:26px;width:auto;filter:brightness(0) invert(1);opacity:.92;}}
-.nav-links{{display:flex;align-items:center;gap:1.75rem;list-style:none;}}
-.nav-links a{{color:var(--w50);font-size:13px;text-decoration:none;transition:color .2s;}}
-.nav-links a:hover,.nav-links a.active{{color:var(--cyan);}}
-.nav-cta{{background:var(--cyan)!important;color:var(--navy)!important;padding:9px 20px;border-radius:var(--r);font-weight:700;font-size:13px;}}
-.article-wrap{{max-width:760px;margin:0 auto;padding:120px 1.5rem 64px;}}
-.crumb{{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--w30);margin-bottom:24px;flex-wrap:wrap;}}
-.crumb a{{color:var(--w30);text-decoration:none;}}.crumb a:hover{{color:var(--cyan);}}
-.article-tags{{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}}
-.atag{{font-size:11px;font-weight:600;letter-spacing:.5px;padding:5px 12px;border-radius:20px;text-transform:uppercase;}}
-.atag.cat{{background:var(--cdim);border:.5px solid var(--cbor);color:var(--cyan);}}
-.atag.prod{{background:rgba(255,255,255,0.04);border:.5px solid var(--w10);color:var(--w50);}}
-h1.a-title{{font-family:var(--fd);font-size:clamp(1.5rem,3.2vw,2.2rem);font-weight:800;line-height:1.25;color:var(--w);margin-bottom:16px;}}
-.a-meta{{font-size:13px;color:var(--w30);margin-bottom:28px;display:flex;align-items:center;gap:10px;}}
-.a-video{{aspect-ratio:16/9;border-radius:var(--rl);overflow:hidden;margin-bottom:24px;background:#000;border:.5px solid var(--w10);}}
-.a-video iframe{{width:100%;height:100%;border:0;}}
-.a-body{{font-size:15px;color:var(--w80);line-height:1.85;}}
-.a-body p{{margin-bottom:20px;}}
-.a-cta{{margin-top:36px;background:var(--navy3);border:.5px solid var(--cbor);border-radius:var(--rl);padding:26px;}}
-.a-cta h3{{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--w);margin-bottom:8px;}}
-.a-cta p{{font-size:13px;color:var(--w50);margin-bottom:16px;}}
-.btn-p{{background:var(--cyan);color:var(--navy);padding:11px 22px;border-radius:var(--r);font-weight:700;font-size:13px;text-decoration:none;font-family:var(--fd);display:inline-flex;align-items:center;gap:8px;transition:opacity .2s;}}
-.btn-p:hover{{opacity:.88;}}
-.btn-g{{background:transparent;color:var(--w80);border:.5px solid var(--w30);padding:11px 22px;border-radius:var(--r);font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-left:8px;transition:all .2s;}}
-.btn-g:hover{{border-color:var(--cyan);color:var(--cyan);}}
-footer{{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24px;}}
-.fbot{{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;max-width:1200px;margin:0 auto;}}
-.fbot p{{font-size:12px;color:rgba(255,255,255,0.2);}}
-.socials{{display:flex;gap:10px;}}
-.socials a{{width:32px;height:32px;border-radius:var(--r);border:.5px solid var(--w10);display:flex;align-items:center;justify-content:center;color:var(--w30);text-decoration:none;font-size:15px;transition:all .2s;}}
-.socials a:hover{{border-color:var(--cyan);color:var(--cyan);}}
-@media(max-width:900px){{.nav-links{{display:none;}}}}
-@media(max-width:600px){{.article-wrap{{padding:96px 1.25rem 48px;}}}}
-</style>
+<link rel="stylesheet" href="../assets/css/tabler-icons-subset.css?v=4">
+<link rel="stylesheet" href="../assets/css/blog-post.css?v=4">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#060c1a">
 <meta property="og:locale" content="tr_TR">
@@ -236,58 +194,167 @@ footer{{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24
  ]
 }}
 </script>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="apple-touch-icon" href="/favicon.svg">
-<link rel="stylesheet" href="../assets/css/design-system.css?v=10">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon-180.png">
+  <link rel="manifest" href="../site.webmanifest">
+<link rel="stylesheet" href="../assets/css/design-system.css?v=29">
+  <link rel="alternate" type="application/rss+xml" title="Cadbim Blog" href="/feed.xml">
 <link rel="stylesheet" href="../assets/css/mobile-guardrails.css?v=3">
 <link rel="stylesheet" href="../assets/css/wide-screen.css?v=1">
 </head>
-<body><nav class="nav">
-  <a href="../index.html" class="nav-logo"><img src="../assets/logos/cadbim-yatay.png" alt="Cadbim"></a>
-      <ul class="nav-links">
-    <li><a href="../cadbim_urunler.html">Ürünler</a></li>
-    <li><a href="../cadbim_cozumler.html">Çözümler</a></li>
-    <li><a href="../cadbim_endustriler.html">Endüstriler</a></li>
-    <li><a href="../cadbim_egitimler.html">Eğitimler</a></li>
-    <li><a href="../cadbim_hakkimizda.html">Hakkımızda</a></li>
-    <li><a href="../cadbim_iletisim.html">İletişim</a></li>
-    <li><a href="../cadbim_kvkk.html">KVKK</a></li>
-    <li><a href="../cadbim_blog.html" class="active">Blog</a></li>
-    <li><a href="../cadbim_iletisim.html" class="nav-cta">Teklif Al</a></li>
+<body>
+<a class="skip-link" href="#icerik">İçeriğe geç</a><header><nav class="nav">
+  <a href="../" class="nav-logo"><img width="260" height="62" src="../assets/logos/cadbim-yatay.webp" alt="Cadbim"></a>
+    <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="../urunler">Ürünler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="../autodesk">Autodesk</a>
+        <a href="../adobe">Adobe</a>
+        <a href="../designjet">HP DesignJet</a>
+        <a href="../hp-z-workstation">HP Workstations</a>
+        <a href="../hp-build-workspace">HP Build Workspace</a>
+        <a href="../chaos">Chaos</a>
+        <a href="../ultimaker">UltiMaker</a>
+        <a href="../sketchup">SketchUp</a>
+        <a href="../lumion">Lumion</a>
+        <a href="../microsoft">Microsoft</a>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="../cozumler">Çözümler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu nav-mega">
+        <a href="../dijital-donusum" class="nav-dd-feat"><i class="ti ti-sparkles" style="font-size:12px;"></i>Dijital Dönüşüm</a>
+        <div class="nav-mega-cols">
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Yapı & Altyapı</div>
+            <a href="../bim">BIM</a>
+            <a href="../bim-icerik-uretimi">BIM İçerik & Obje Üretimi</a>
+            <a href="../insaat-yonetimi">İnşaat Proje Yönetimi</a>
+            <a href="../gerceklik-yakalama">Gerçeklik Yakalama</a>
+            <a href="../dijital-ikiz">Dijital İkiz</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Ürün Tasarımı & Mühendislik</div>
+            <a href="../simulasyon">Simülasyon & Analiz</a>
+            <a href="../tolerans-analizi">Tolerans Analizi</a>
+            <a href="../tasarim-otomasyonu">Tasarım Otomasyonu</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Üretim & İmalat</div>
+            <a href="../cam">CAM & İmalat</a>
+            <a href="../eklemeli-imalat">Eklemeli İmalat & 3D Baskı</a>
+            <a href="../nesting">Nesting</a>
+            <a href="../fabrika-tasarimi">Fabrika Tasarımı</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Veri & Süreç Yönetimi</div>
+            <a href="../plm">PLM</a>
+            <a href="../pdm">PDM</a>
+          </div>
+          <div class="nav-mega-col">
+            <div class="nav-dd-label">Görselleştirme & İçerik</div>
+            <a href="../gorsellestirme">Görselleştirme & Render</a>
+            <a href="../ai-gorsellestirme">AI Destekli Görselleştirme</a>
+            <a href="../yaratici-icerik">Yaratıcı İçerik & Tasarım</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-dropdown">
+      <a href="../endustriler">Endüstriler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a>
+      <div class="nav-dropdown-menu">
+        <a href="../sektor-mimari">Mimarlık</a>
+        <a href="../sektor-icmimarlik">İç Mimarlık</a>
+        <a href="../sektor-insaat">İnşaat & Altyapı</a>
+        <a href="../sektor-tesisat">Mekanik Tesisat</a>
+        <a href="../sektor-makine">Makine & Üretim</a>
+        <a href="../sektor-otomotiv">Otomotiv</a>
+        <a href="../sektor-medya">Medya & Eğlence</a>
+        <a href="../sektor-egitim">Eğitim</a>
+        <a href="../sektor-havacilik">Savunma ve Havacılık</a>
+      </div>
+    </li>
+    <li class="nav-dropdown"><a href="../danismanlik">Hizmetler <i class="ti ti-chevron-down" style="font-size:11px;"></i></a><div class="nav-dropdown-menu"><a href="../sanatsal-baski"><span class="sanatsal-gradient">Sanatsal Baskı Atölyesi</span></a><a href="../danismanlik">Danışmanlık</a><a href="../designjet-teknik-servis">HP Plotter Teknik Servis</a><a href="../yazilim-gelistirme">Yazılım Geliştirme</a></div></li><li><a href="../egitimler">Eğitimler</a></li>
+    <li><a href="../hakkimizda">Hakkımızda</a></li>
+    <li><a href="../iletisim">İletişim</a></li>
+    <li><a href="../kvkk">KVKK</a></li>
+    <li><a href="../blog" class="active">Blog</a></li>
+    <li><a href="../teklif-iste" class="nav-cta">Teklif Al</a></li>
   </ul>
-</nav>
+</nav></header>
+<main id="icerik">
 <div class="article-wrap">
-  <div class="crumb"><a href="../index.html">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="../cadbim_blog.html">Blog</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">{title}</span></div>
+  <div class="crumb"><a href="../">Anasayfa</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><a href="../blog">Blog</a><i class="ti ti-chevron-right" style="font-size:11px;"></i><span style="color:var(--w50);">{title}</span></div>
   <div class="article-tags">
     <span class="atag cat">{category}</span>
     {prod_spans}
   </div>
   <h1 class="a-title">{title}</h1>
   <div class="a-meta"><i class="ti ti-calendar" style="font-size:14px;"></i>{tr_date} &middot; <i class="ti ti-brand-youtube" style="font-size:14px;"></i>Video</div>
-  <div class="a-video"><iframe src="https://www.youtube.com/embed/{video_id}" title="{title}" loading="lazy" allowfullscreen></iframe></div>
+  <div class="a-video"><a class="yt-lite" href="https://www.youtube.com/watch?v={video_id}" target="_blank" rel="noopener" data-yt="{video_id}" data-title="{title}" aria-label="Videoyu oynat: {title}"><img src="https://i.ytimg.com/vi/{video_id}/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="yt-lite-btn" aria-hidden="true"></span></a></div>
   <div class="a-body">
     <p>{desc}</p>
   </div>
   <div class="a-cta">
-    <h3>Bu konu hakkında daha fazla bilgi alın</h3>
+    <h2>Bu konu hakkında daha fazla bilgi alın</h2>
     <p>Videoda bahsedilen ürün ve çözümler hakkında Cadbim ile iletişime geçin.</p>
     <a href="../{cta_page}" class="btn-p">Ürün Sayfasına Git <i class="ti ti-arrow-right"></i></a>
-    <a href="../cadbim_iletisim.html" class="btn-g">Teklif İste</a>
+    <a href="../iletisim" class="btn-g">Teklif İste</a>
   </div>
+{related}
 </div>
+</main>
 <footer>
-  <div class="fbot">
-    <p>&copy; 2026 Cadbim &mdash; <a href="../index.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">Anasayfaya Dön</a> &middot; <a href="../cadbim_kvkk.html" style="color:rgba(255,255,255,0.3);text-decoration:none;">KVKK</a></p>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <a href="../"><img width="220" height="203" src="../assets/logos/cadbim-logo.webp" alt="Cadbim" loading="lazy" decoding="async"></a>
+      <p>Tasarım, Mühendislik ve Simülasyon için yazılım & donanım çözümleri. Autodesk Gold Partner ve Adobe Gold Reseller Partner; HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağı.</p>
+      <div class="f-offices">
+        <span><i class="ti ti-map-pin" style="font-size:12px;margin-right:4px;"></i>İzmir Merkez Ofis</span>
+        <span><i class="ti ti-map-pin" style="font-size:12px;margin-right:4px;"></i>Ankara Temsilcilik</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h2>Ürünler</h2>
+      <a href="../autodesk">Autodesk</a>
+      <a href="../adobe">Adobe</a>
+      <a href="../designjet">HP DesignJet</a>
+      <a href="../hp-z-workstation">HP Workstations</a>
+      <a href="../chaos">Chaos / V-Ray</a>
+      <a href="../ultimaker">UltiMaker 3D</a>
+    </div>
+    <div class="footer-col">
+      <h2>Hizmetler</h2>
+      <a href="../egitimler">Eğitimler & Sertifikasyon</a>
+      <a href="../bim">BIM Danışmanlığı</a>
+      <a href="../iletisim">Teknik Destek</a>
+      <a href="../hp">HP Yetkili Servis</a>
+      <a href="../yazilim-gelistirme">Yazılım Geliştirme</a>
+    </div>
+    <div class="footer-col">
+      <h2>İletişim</h2>
+      <a href="mailto:cadbim@cadbim.com.tr">cadbim@cadbim.com.tr</a>
+      <a href="tel:+902324643490">0232 464 34 90</a>
+      <a href="https://wa.me/905532426737" target="_blank" rel="noopener">WhatsApp: 0553 242 67 37</a>
+      <a href="../teklif-iste">Teklif İste</a>
+      <a href="../egitimler">Eğitim Kayıt</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <p>© 2026 Cadbim. Tüm hakları saklıdır. · <a href="../kvkk">KVKK</a> · <a href="javascript:void(0)" onclick="window.openCookiePrefs&amp;&amp;window.openCookiePrefs()">Çerez Ayarları</a></p>
     <div class="socials">
       <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
       <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
       <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
     </div>
   </div>
 </footer>
-<script src="../mobilenav.js?v=9" defer></script>
+<script src="../mobilenav.js?v=19" defer></script>
 <script src="../whatsapp-widget.js?v=1" defer></script>
-<script src="../cookie-consent.js?v=1" defer></script>
+<script src="../cookie-consent.js?v=2" defer></script>
+<script src="../yt-facade.js?v=1" defer></script>
 </body>
 </html>
 """
@@ -295,12 +362,53 @@ footer{{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24
 def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
-def build_post_html(slug, title, desc, video_id, iso_date, category, products):
+RELATED_COUNT = 4
+
+def _days(iso_date):
+    y, m, d = (int(x) for x in iso_date.split("-"))
+    return datetime.date(y, m, d).toordinal()
+
+def related_html(existing, category, iso_date):
+    """post/ sayfalarındaki "İlgili Yazılar" bloğunu üretir.
+
+    Seçim: aynı kategoriden, tarihi en yakın RELATED_COUNT yazı; kategori
+    yetmezse en yeni yazılarla tamamlanır. Blok işaretlemesi mevcut post
+    sayfalarıyla aynıdır, yalnızca seçim ölçütü bu betiğe özgüdür.
+    """
+    same_cat = sorted(
+        (p for p in existing if p.get("cat") == category),
+        key=lambda p: (abs((_days(p["date"]) - _days(iso_date))), p["date"]),
+    )
+    picked = same_cat[:RELATED_COUNT]
+    if len(picked) < RELATED_COUNT:
+        chosen = {p["slug"] for p in picked}
+        filler = sorted(existing, key=lambda p: p["date"], reverse=True)
+        picked += [p for p in filler if p["slug"] not in chosen][:RELATED_COUNT - len(picked)]
+    if not picked:
+        return ""
+    cards = "\n    ".join(
+        f'<a href="{p["slug"]}" class="a-related-card">'
+        f'<span class="a-related-cat">{esc(p.get("cat") or "Genel")}</span>'
+        f'<span class="a-related-title">{esc(p["title"])}</span>'
+        f'<span class="a-related-date">{esc(p.get("trdate") or tr_date(p["date"]))}</span></a>'
+        for p in picked
+    )
+    return (
+        '  <div class="a-related">\n'
+        "    <h2>İlgili Yazılar</h2>\n"
+        '    <div class="a-related-grid">\n'
+        f"    {cards}\n"
+        "    </div>\n"
+        "  </div>"
+    )
+
+def build_post_html(slug, title, desc, video_id, iso_date, category, products, existing=()):
     prod_spans = "\n    ".join(f'<span class="atag prod">{esc(p)}</span>' for p in products)
     return POST_TEMPLATE.format(
         title=esc(title), desc=esc(desc), slug=slug, video_id=video_id,
         iso_date=iso_date, tr_date=tr_date(iso_date), category=esc(category),
         prod_spans=prod_spans, cta_page=cta_page_for(products),
+        related=related_html(existing, category, iso_date),
     )
 
 def main():
@@ -335,7 +443,7 @@ def main():
             i += 1
         existing_slugs.add(slug)
 
-        html = build_post_html(slug, title, desc, v["videoId"], v["publishedAt"], category, products)
+        html = build_post_html(slug, title, desc, v["videoId"], v["publishedAt"], category, products, data)
         with open(os.path.join(POST_DIR, slug + ".html"), "w", encoding="utf-8") as f:
             f.write(html)
 
