@@ -3,14 +3,14 @@
 <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
 <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
 </pattern>
-<radialGradient id="glow" cx="50%" cy="45%" r="60%">
+<radialGradient id="glow" cx="50%" cy="48%" r="60%">
 <stop offset="0%" stop-color="#ef4444" stop-opacity=".18"/>
 <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
 </radialGradient>
-<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0%" stop-color="#ef4444" stop-opacity=".55"/>
-<stop offset="100%" stop-color="#ef4444" stop-opacity=".08"/>
-</linearGradient>
+<radialGradient id="grillglow" cx="50%" cy="50%" r="55%">
+<stop offset="0%" stop-color="#00c8f0" stop-opacity=".85"/>
+<stop offset="100%" stop-color="#00c8f0" stop-opacity="0"/>
+</radialGradient>
 </defs>
 <style>
 .ln{fill:none;stroke:#ef4444;stroke-opacity:.75;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
@@ -22,47 +22,64 @@
 .blink{animation:bk 3.2s ease-in-out infinite}
 .blink:nth-of-type(2n){animation-delay:.5s}
 .blink:nth-of-type(3n){animation-delay:1.1s}
-.blink:nth-of-type(5n){animation-delay:1.7s}
 @keyframes bk{0%,100%{opacity:.2}50%{opacity:1}}
-.draw{stroke-dasharray:6 8;animation:dr 5s linear infinite}
-@keyframes dr{to{stroke-dashoffset:-56}}
 .scan{animation:sc 7s cubic-bezier(.6,0,.4,1) infinite}
 @keyframes sc{0%{opacity:0;transform:translateY(-40px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translateY(400px)}}
-.spin{transform-box:fill-box;transform-origin:center;animation:sp 24s linear infinite}
-.spinr{transform-box:fill-box;transform-origin:center;animation:sp 24s linear infinite reverse}
-@keyframes sp{to{transform:rotate(360deg)}}
 .float{animation:fo 9s ease-in-out infinite}
 @keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.slide{animation:sl 8s cubic-bezier(.55,0,.45,1) infinite}
-@keyframes sl{0%,6%{transform:translateX(0)}94%,100%{transform:translateX(var(--d,480px))}}
-.comb{animation:cb 6s ease-in-out infinite}
-@keyframes cb{0%,100%{opacity:.45}50%{opacity:.95}}
+.glow-pulse{animation:gp 3.4s ease-in-out infinite}
+@keyframes gp{0%,100%{opacity:.45}50%{opacity:1}}
+.glow-pulse2{animation:gp 3.4s ease-in-out infinite .6s}
 </style>
 <rect width="640" height="420" fill="url(#g)"/>
 <rect width="640" height="420" fill="url(#glow)"/>
-<g transform="translate(0 -32)">
-<defs><clipPath id="carclip"><path d="M62 300 C62 276 66 259 80 249 L118 237 C162 228 210 222 248 217 C268 207 288 191 306 179 L372 179 C424 181 464 199 492 220 L556 229 C572 232 578 243 578 261 L578 300 H520 A50 50 0 0 0 420 300 H220 A50 50 0 0 0 120 300 Z"/></clipPath></defs>
 <g class="float">
-<path class="fl" d="M62 300 C62 276 66 259 80 249 L118 237 C162 228 210 222 248 217 C268 207 288 191 306 179 L372 179 C424 181 464 199 492 220 L556 229 C572 232 578 243 578 261 L578 300 H520 A50 50 0 0 0 420 300 H220 A50 50 0 0 0 120 300 Z"/>
-<g clip-path="url(#carclip)"><path class="ln2" d="M66 160 C72 224 60 268 66 312" stroke-opacity=".2"/><path class="ln2" d="M82 160 C88 224 76 268 82 312" stroke-opacity=".2"/><path class="ln2" d="M98 160 C104 224 92 268 98 312" stroke-opacity=".2"/><path class="ln2" d="M114 160 C120 224 108 268 114 312" stroke-opacity=".2"/><path class="ln2" d="M130 160 C136 224 124 268 130 312" stroke-opacity=".2"/><path class="ln2" d="M146 160 C152 224 140 268 146 312" stroke-opacity=".2"/><path class="ln2" d="M162 160 C168 224 156 268 162 312" stroke-opacity=".2"/><path class="ln2" d="M178 160 C184 224 172 268 178 312" stroke-opacity=".2"/><path class="ln2" d="M194 160 C200 224 188 268 194 312" stroke-opacity=".2"/><path class="ln2" d="M210 160 C216 224 204 268 210 312" stroke-opacity=".2"/><path class="ln2" d="M226 160 C232 224 220 268 226 312" stroke-opacity=".2"/><path class="ln2" d="M242 160 C248 224 236 268 242 312" stroke-opacity=".2"/><path class="ln2" d="M258 160 C264 224 252 268 258 312" stroke-opacity=".2"/><path class="ln2" d="M274 160 C280 224 268 268 274 312" stroke-opacity=".2"/><path class="ln2" d="M290 160 C296 224 284 268 290 312" stroke-opacity=".2"/><path class="ln2" d="M306 160 C312 224 300 268 306 312" stroke-opacity=".2"/><path class="ln2" d="M322 160 C328 224 316 268 322 312" stroke-opacity=".2"/><path class="ln2" d="M338 160 C344 224 332 268 338 312" stroke-opacity=".2"/><path class="ln2" d="M354 160 C360 224 348 268 354 312" stroke-opacity=".2"/><path class="ln2" d="M370 160 C376 224 364 268 370 312" stroke-opacity=".2"/><path class="ln2" d="M386 160 C392 224 380 268 386 312" stroke-opacity=".2"/><path class="ln2" d="M402 160 C408 224 396 268 402 312" stroke-opacity=".2"/><path class="ln2" d="M418 160 C424 224 412 268 418 312" stroke-opacity=".2"/><path class="ln2" d="M434 160 C440 224 428 268 434 312" stroke-opacity=".2"/><path class="ln2" d="M450 160 C456 224 444 268 450 312" stroke-opacity=".2"/><path class="ln2" d="M466 160 C472 224 460 268 466 312" stroke-opacity=".2"/><path class="ln2" d="M482 160 C488 224 476 268 482 312" stroke-opacity=".2"/><path class="ln2" d="M498 160 C504 224 492 268 498 312" stroke-opacity=".2"/><path class="ln2" d="M514 160 C520 224 508 268 514 312" stroke-opacity=".2"/><path class="ln2" d="M530 160 C536 224 524 268 530 312" stroke-opacity=".2"/><path class="ln2" d="M546 160 C552 224 540 268 546 312" stroke-opacity=".2"/><path class="ln2" d="M562 160 C568 224 556 268 562 312" stroke-opacity=".2"/><path class="ln2" d="M578 160 C584 224 572 268 578 312" stroke-opacity=".2"/><path class="ln2" d="M56 186 C200 175 430 179 590 186" stroke-opacity=".15"/><path class="ln2" d="M56 199 C200 188 430 192 590 199" stroke-opacity=".15"/><path class="ln2" d="M56 212 C200 201 430 205 590 212" stroke-opacity=".15"/><path class="ln2" d="M56 225 C200 214 430 218 590 225" stroke-opacity=".15"/><path class="ln2" d="M56 238 C200 227 430 231 590 238" stroke-opacity=".15"/><path class="ln2" d="M56 251 C200 240 430 244 590 251" stroke-opacity=".15"/><path class="ln2" d="M56 264 C200 253 430 257 590 264" stroke-opacity=".15"/><path class="ln2" d="M56 277 C200 266 430 270 590 277" stroke-opacity=".15"/><path class="ln2" d="M56 290 C200 279 430 283 590 290" stroke-opacity=".15"/></g>
-<path class="ln" d="M62 300 C62 276 66 259 80 249 L118 237 C162 228 210 222 248 217 C268 207 288 191 306 179 L372 179 C424 181 464 199 492 220 L556 229 C572 232 578 243 578 261 L578 300 H520 A50 50 0 0 0 420 300 H220 A50 50 0 0 0 120 300 Z"/>
-<path d="M258 214 C276 202 292 188 308 178 L366 178 C374 196 376 208 376 216 Z" fill="#0a1225" fill-opacity=".72"/><path class="ln" d="M258 214 C276 202 292 188 308 178 L366 178 C374 196 376 208 376 216 Z" stroke-opacity=".8"/><path d="M386 178 C424 181 456 197 480 216 L386 216 Z" fill="#0a1225" fill-opacity=".72"/><path class="ln" d="M386 178 C424 181 456 197 480 216 L386 216 Z" stroke-opacity=".8"/>
-<path class="cy" d="M272 206 L318 182 M292 210 L340 182" stroke-opacity=".28" stroke-width="1"/><path class="cy" d="M404 192 L436 210" stroke-opacity=".28" stroke-width="1"/>
-<path class="cy" d="M104 252 C210 246 380 250 528 262" stroke-opacity=".65"/><path class="ln2" d="M92 268 C220 276 400 278 556 272" stroke-opacity=".4"/><path class="ln2" d="M220 300 H420" stroke-opacity=".5"/>
-<path class="ln2" d="M381 176 V300" stroke-opacity=".45"/><path class="ln2" d="M256 218 C254 250 254 274 255 298" stroke-opacity=".45"/><path class="ln2" d="M484 222 C486 246 487 266 488 288" stroke-opacity=".45"/><rect class="ln2" x="344" y="234" width="26" height="7" rx="3.5" fill="none"/><path class="ln2" d="M262 210 l-16 -7 l-6 8 l16 6 Z" stroke-opacity=".6"/>
-<path class="cy" d="M74 244 L112 238 L110 250 L76 254 Z" stroke-opacity=".7"/><path class="cy" d="M566 240 L578 241 L578 254 L564 252 Z" stroke-opacity=".7"/><path class="ln2" d="M66 276 L104 272 M68 284 L100 281" stroke-opacity=".45"/>
-<circle class="ln" cx="170" cy="290" r="40"/><circle class="ln2" cx="170" cy="290" r="31"/><circle class="ln2" cx="170" cy="290" r="9"/>
-<polygon class="ln2" points="173.4,280 171.4,261 168.6,261 166.6,280" stroke-opacity=".4" fill="none"/><polygon class="ln2" points="180.6,290.1 198,282.3 197.2,279.7 178.5,283.7" stroke-opacity=".4" fill="none"/><polygon class="ln2" points="173.1,300.1 185.9,314.3 188.1,312.7 178.6,296.1" stroke-opacity=".4" fill="none"/><polygon class="ln2" points="161.4,296.1 151.9,312.7 154.1,314.3 166.9,300.1" stroke-opacity=".4" fill="none"/><polygon class="ln2" points="161.5,283.7 142.8,279.7 142,282.3 159.4,290.1" stroke-opacity=".4" fill="none"/>
-<path class="cy" d="M149 290 A21 21 0 0 1 170 269" stroke-opacity=".55"/><path class="cy" d="M150 286 l7 -4 v-9 l-7 -4" stroke-opacity=".55" fill="none"/>
-<circle class="ln" cx="470" cy="290" r="40"/><circle class="ln2" cx="470" cy="290" r="31"/><circle class="ln2" cx="470" cy="290" r="9"/>
-<polygon class="ln2" points="473.4,280 471.4,261 468.6,261 466.6,280" stroke-opacity=".4" fill="none"/><polygon class="ln2" points="480.6,290.1 498,282.3 497.2,279.7 478.5,283.7" stroke-opacity=".4" fill="none"/><polygon class="ln2" points="473.1,300.1 485.9,314.3 488.1,312.7 478.6,296.1" stroke-opacity=".4" fill="none"/><polygon class="ln2" points="461.4,296.1 451.9,312.7 454.1,314.3 466.9,300.1" stroke-opacity=".4" fill="none"/><polygon class="ln2" points="461.5,283.7 442.8,279.7 442,282.3 459.4,290.1" stroke-opacity=".4" fill="none"/>
-<path class="cy" d="M449 290 A21 21 0 0 1 470 269" stroke-opacity=".55"/><path class="cy" d="M450 286 l7 -4 v-9 l-7 -4" stroke-opacity=".55" fill="none"/>
+<!-- govde ana hatlar: SUV/crossover onden gorunus, dik/kutulu duruş -->
+<path class="fl" d="M128 322 C122 268 128 218 142 188 C150 170 164 158 182 152 L200 132 C216 116 244 106 320 106 C396 106 424 116 440 132 L458 152 C476 158 490 170 498 188 C512 218 518 268 512 322 L512 336 C512 344 505 350 497 350 L455 350 C447 350 440 344 440 336 L440 330 L200 330 L200 336 C200 344 193 350 185 350 L143 350 C135 350 128 344 128 336 Z"/>
+<path class="ln" d="M128 322 C122 268 128 218 142 188 C150 170 164 158 182 152 L200 132 C216 116 244 106 320 106 C396 106 424 116 440 132 L458 152 C476 158 490 170 498 188 C512 218 518 268 512 322 L512 336 C512 344 505 350 497 350 L455 350 C447 350 440 344 440 336 L440 330 L200 330 L200 336 C200 344 193 350 185 350 L143 350 C135 350 128 344 128 336 Z"/>
+<!-- ust gövde / alt tampon ayrim cizgisi (iki renk hatti) -->
+<path class="ln2" d="M136 268 C210 258 430 258 504 268" stroke-opacity=".55"/>
+<!-- tavan / cam hatti ipucu -->
+<path class="ln2" d="M200 132 C216 116 244 106 320 106 C396 106 424 116 440 132" stroke-opacity=".5"/>
+<path class="ln2" d="M214 126 C240 114 284 108 320 108 C356 108 400 114 426 126" stroke-opacity=".28"/>
+<!-- kaput yuzey cizgileri -->
+<path class="ln2" d="M182 152 C168 190 160 230 164 266" stroke-opacity=".3"/>
+<path class="ln2" d="M458 152 C472 190 480 230 476 266" stroke-opacity=".3"/>
+<path class="ln2" d="M320 118 V240" stroke-opacity=".22"/>
+<!-- ince acili LED far sinyali (sol) -->
+<g>
+<path class="ln" d="M150 190 L206 172 L214 184 L164 206 Z"/>
+<path class="cy blink" d="M156 194 L206 178" stroke-width="2.2"/>
 </g>
-<g class="cy comb" stroke-opacity=".5" stroke-width=".9"><line x1="248" y1="217" x2="227.2" y2="194"/><line x1="253.4" y1="212.5" x2="235.9" y2="189.7"/><line x1="259.3" y1="208.3" x2="244.8" y2="186.1"/><line x1="265.6" y1="204.5" x2="253.6" y2="183.1"/><line x1="272.3" y1="201" x2="262.5" y2="180.5"/><line x1="279.4" y1="197.8" x2="271.4" y2="178.4"/><line x1="286.8" y1="195" x2="280.4" y2="176.5"/><line x1="294.5" y1="192.6" x2="289.4" y2="174.9"/><line x1="302.5" y1="190.4" x2="298.4" y2="173.6"/><line x1="310.8" y1="188.6" x2="307.6" y2="172.5"/><line x1="319.3" y1="187.1" x2="316.9" y2="171.6"/><line x1="327.9" y1="185.9" x2="326.2" y2="171"/><line x1="336.8" y1="185.1" x2="335.6" y2="170.6"/><line x1="345.7" y1="184.5" x2="345.1" y2="170.5"/><line x1="354.8" y1="184.3" x2="354.7" y2="170.6"/><line x1="364" y1="184.4" x2="364.3" y2="170.9"/><line x1="373.2" y1="184.8" x2="374" y2="171.5"/><line x1="382.5" y1="185.4" x2="383.6" y2="172.3"/><line x1="391.7" y1="186.4" x2="393.3" y2="173.3"/><line x1="400.9" y1="187.7" x2="402.9" y2="174.6"/><line x1="410.1" y1="189.2" x2="412.5" y2="176.2"/><line x1="419.1" y1="191.1" x2="422" y2="177.9"/><line x1="428.1" y1="193.2" x2="431.5" y2="179.9"/><line x1="436.9" y1="195.6" x2="440.8" y2="182.2"/><line x1="445.5" y1="198.3" x2="450" y2="184.6"/><line x1="453.9" y1="201.2" x2="459.1" y2="187.3"/><line x1="462.1" y1="204.5" x2="468.1" y2="190.1"/><line x1="470" y1="208" x2="476.9" y2="193.2"/><line x1="477.7" y1="211.7" x2="485.6" y2="196.5"/><line x1="485" y1="215.7" x2="494.1" y2="200"/><line x1="492" y1="220" x2="502.5" y2="203.8"/></g><polyline class="cy" points="227.2,194 235.9,189.7 244.8,186.1 253.6,183.1 262.5,180.5 271.4,178.4 280.4,176.5 289.4,174.9 298.4,173.6 307.6,172.5 316.9,171.6 326.2,171 335.6,170.6 345.1,170.5 354.7,170.6 364.3,170.9 374,171.5 383.6,172.3 393.3,173.3 402.9,174.6 412.5,176.2 422,177.9 431.5,179.9 440.8,182.2 450,184.6 459.1,187.3 468.1,190.1 476.9,193.2 485.6,196.5 494.1,200 502.5,203.8" stroke-opacity=".8"/>
-<polyline class="dim" points="248,217 300,170 424,176 492,220"/><rect x="244.5" y="213.5" width="7" height="7" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/><rect x="296.5" y="166.5" width="7" height="7" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/><rect x="420.5" y="172.5" width="7" height="7" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/><rect x="488.5" y="216.5" width="7" height="7" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/>
-<g><ellipse class="cy" cx="330" cy="242" rx="17" ry="62" stroke-opacity=".4" stroke-dasharray="5 5"/><line class="dim" x1="330" y1="150" x2="330" y2="344"/><text x="338" y="160" fill="rgba(255,255,255,.45)" font-size="10" font-family="monospace" letter-spacing="1">SEC A-A</text></g>
-<path class="dim" d="M170 362 H470 M170 354 V370 M470 354 V370"/><path class="dim" d="M62 390 H578 M62 382 V398 M578 382 V398"/><line class="dim" x1="62" y1="330" x2="578" y2="330"/>
-<circle class="nd blink" cx="306" cy="179" r="2.8"/><circle class="nd blink" cx="372" cy="179" r="2.8"/><circle class="nd blink" cx="248" cy="217" r="2.8"/><circle class="nd blink" cx="492" cy="220" r="2.8"/><circle class="nd blink" cx="62" cy="276" r="2.8"/><circle class="nd blink" cx="578" cy="261" r="2.8"/>
-<g class="scan"><line x1="40" y1="96" x2="600" y2="96" stroke="#00c8f0" stroke-opacity=".5" stroke-width="1"/></g>
+<!-- ince acili LED far sinyali (sag) -->
+<g>
+<path class="ln" d="M490 190 L434 172 L426 184 L476 206 Z"/>
+<path class="cy blink" d="M484 194 L434 178" stroke-width="2.2"/>
 </g>
+<!-- genis altigen kapali EV izgara paneli (parlayan) -->
+<g>
+<path class="ln" d="M226 214 L414 214 L430 240 L414 278 L226 278 L210 240 Z"/>
+<path d="M226 214 L414 214 L430 240 L414 278 L226 278 L210 240 Z" fill="url(#grillglow)" opacity=".14"/>
+<line class="cy glow-pulse" x1="234" y1="232" x2="406" y2="232" stroke-width="2.2"/>
+<line class="cy glow-pulse2" x1="228" y1="246" x2="412" y2="246" stroke-width="1.6"/>
+<line class="cy glow-pulse" x1="234" y1="260" x2="406" y2="260" stroke-width="1.6"/>
+<circle class="nd blink" cx="320" cy="246" r="3.4"/>
+</g>
+<!-- alt tampon hava girisleri -->
+<path class="ln2" d="M172 296 L218 296 L210 318 L164 318 Z" stroke-opacity=".5"/>
+<path class="ln2" d="M468 296 L422 296 L430 318 L476 318 Z" stroke-opacity=".5"/>
+<path class="cy" d="M180 304 L208 304 M468 304 L440 304" stroke-opacity=".45"/>
+<!-- alt koruma / skid plate -->
+<path class="ln2" d="M226 320 H414" stroke-opacity=".4"/>
+<!-- tekerlek ipucu -->
+<circle class="ln" cx="164" cy="340" r="34"/><circle class="ln2" cx="164" cy="340" r="24"/><circle class="ln2" cx="164" cy="340" r="6"/>
+<circle class="ln" cx="476" cy="340" r="34"/><circle class="ln2" cx="476" cy="340" r="24"/><circle class="ln2" cx="476" cy="340" r="6"/>
+</g>
+<!-- boyut cizgileri -->
+<line class="dim" x1="128" y1="92" x2="512" y2="92"/><rect x="124.5" y="320" width="7" height="7" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/><rect x="508.5" y="320" width="7" height="7" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/>
+<path class="dim" d="M226 400 H414 M226 392 V408 M414 392 V408"/>
+<path class="dim" d="M128 372 H512 M128 364 V380 M512 364 V380"/>
+<g><ellipse class="cy" cx="320" cy="246" rx="194" ry="14" stroke-opacity=".2" stroke-dasharray="5 5"/><line class="dim" x1="126" y1="246" x2="514" y2="246"/><text x="454" y="242" fill="rgba(255,255,255,.45)" font-size="10" font-family="monospace" letter-spacing="1">EV-01</text></g>
+<circle class="nd blink" cx="320" cy="106" r="2.8"/><circle class="nd blink" cx="128" cy="322" r="2.8"/><circle class="nd blink" cx="512" cy="322" r="2.8"/><circle class="nd blink" cx="320" cy="350" r="2.8"/>
+<g class="scan"><line x1="70" y1="80" x2="570" y2="80" stroke="#00c8f0" stroke-opacity=".5" stroke-width="1"/></g>
 </svg>
