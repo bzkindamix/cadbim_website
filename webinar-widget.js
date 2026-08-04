@@ -36,17 +36,21 @@
      Sirayla denenip icinde gercekten webinar karti olan yanit kullanilir. */
   var KAYNAKLAR = [LISTE, new URL("cadbim_webinar.html", self).href];
 
-  /* Gun+ay veriliyor, yil verilmiyor: tarihi bugune en yakin makul yila oturt. */
+  /* Gun+ay veriliyor, yil verilmiyor: tarihi bugune EN YAKIN yila oturt.
+     Sonuc gecmiste de olabilir; eleme sonraki adimda yapilir.
+     Onceki surum tarihi "ileriye donuk bir pencereye" oturtmaya calisiyordu;
+     bu yuzden sayfada 30 gunden uzun sure duran gecmis bir kart, gelecek
+     yilin tarihiymis gibi yeniden "yaklasan" listesine giriyordu. */
   function tariheCevir(gun, ayKisa) {
     var ay = AY[String(ayKisa).toLowerCase().trim()];
     if (ay === undefined) return null;
     var bugun = new Date(); bugun.setHours(0, 0, 0, 0);
+    var en = null;
     for (var y = bugun.getFullYear() - 1; y <= bugun.getFullYear() + 1; y++) {
       var d = new Date(y, ay, gun);
-      if (d >= new Date(bugun.getTime() - 30 * 864e5) &&
-          d <  new Date(bugun.getTime() + 335 * 864e5)) return d;
+      if (!en || Math.abs(d - bugun) < Math.abs(en - bugun)) en = d;
     }
-    return new Date(bugun.getFullYear(), ay, gun);
+    return en;
   }
 
   function metin(kok, sec) { var e = kok.querySelector(sec); return e ? e.textContent.trim() : ""; }
