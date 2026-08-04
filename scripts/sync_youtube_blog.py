@@ -170,7 +170,8 @@ POST_TEMPLATE = """<!DOCTYPE html>
    "sameAs": [
     "https://www.linkedin.com/company/cadbim/",
     "https://www.youtube.com/c/CadbimTeknikDestek",
-    "https://www.instagram.com/cadbim_izmir/"
+    "https://www.instagram.com/cadbim_izmir/",
+    "https://www.facebook.com/cadbimizmir"
    ]
   }},
   {{
