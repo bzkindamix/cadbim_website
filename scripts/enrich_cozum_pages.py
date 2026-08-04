@@ -134,11 +134,10 @@ def build_fark(cfg):
 <section class="section cz-sec" style="--cz:%(accent)s;">
   <div class="sh" style="margin-bottom:26px;">
     <div class="slabel" style="color:var(--cz);">Cadbim Farkı</div>
-    <div class="stitle">Yazılımı satıp bırakmıyoruz</div>
-    <p class="ssub">Lisans satışı işin başlangıcı — kurulumdan eğitime, destekten
-      yenilemeye kadar tüm yaşam döngüsü tek muhatapta kalır.</p>
+    <div class="stitle">Tedarikten Yenilemeye Uçtan Uca Sorumluluk</div>
+    <p class="ssub">Tedarik sürecin başlangıcıdır; kurulum, lisanslama, kullanıcı eğitimi, teknik destek ve yenileme yönetimi tek muhatap üzerinden yürütülür.</p>
   </div>
-  <div class="cz-fark">%(cards)s</div>
+  <div class="cz-fark">%(cards)s<div class="cz-fark-c"><span><i class="ti ti-certificate"></i></span><h3>Kurulum, Lisanslama ve Aktivasyon Desteği</h3><p>Yazılımların kurulum, lisanslama ve aktivasyon süreçlerinin tamamında teknik destek sağlıyoruz.</p></div><div class="cz-fark-c"><span><i class="ti ti-device-desktop"></i></span><h3>Sürücü ve Uyumluluk Çözümleri</h3><p>İşletim sistemlerinde sürücü kurulumları ve yazılım uyumluluğu konularında teknik çözüm üretiyoruz.</p></div></div>
   <div class="cz-steps">%(steps)s</div>
 </section>
 <!-- /cz-fark -->
