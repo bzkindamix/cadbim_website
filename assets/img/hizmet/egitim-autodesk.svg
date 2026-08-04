@@ -26,45 +26,68 @@
 <rect width="640" height="360" fill="url(#g)"/>
 <rect width="640" height="360" fill="url(#gl)"/>
 <g class="float">
-  <!-- perde / ekran -->
+  <!-- ================= EGITIM SALONU - USTTEN PLAN ================= -->
   <g>
-    <path class="fl" d="M176 52 H464 V196 H176 Z"/><path class="ln" d="M176 52 H464 V196 H176 Z"/>
-    <path class="ln2" d="M176 68 H464"/>
-    <!-- ekranda izometrik bina modeli -->
+    <!-- duvarlar (cift cizgi) -->
+    <path class="fl" d="M44 66 H396 V300 H44 Z"/>
+    <path class="ln" d="M44 66 H396 V300 H44 Z"/>
+    <path class="ln2" d="M52 74 H388 V292 H52 Z"/>
+    <!-- kapi ve acilim yayi -->
+    <path class="ln" d="M44 246 V202"/>
+    <path class="ln2" d="M44 202 A44 44 0 0 1 88 246"/>
+    <path class="ln" d="M44 202 L46 202"/>
+    <!-- projeksiyon perdesi (ust duvar) -->
+    <path class="ln" d="M150 66 H290" stroke-width="3"/>
+    <path class="ln2" d="M150 74 H290 M164 84 h112"/>
+    <!-- egitmen masasi -->
+    <path class="ln2" d="M186 96 h68 v20 h-68 Z"/>
+    <!-- katilimci siralari: 3 sira x 4 masa (masa + monitor + sandalye) -->
     <g class="ln2">
-      <path d="M290 168 L320 152 L350 168 L320 184 Z"/>
-      <path d="M290 168 V132 L320 116 L350 132 V168"/>
-      <path d="M320 116 V152 M290 132 L320 148 L350 132"/>
-      <path d="M300 140 h12 M328 140 h12 M300 158 h12 M328 158 h12"/>
+      <path d="M74 150 h56 v26 H74 Z M148 150 h56 v26 h-56 Z M236 150 h56 v26 h-56 Z M310 150 h56 v26 h-56 Z"/>
+      <path d="M74 206 h56 v26 H74 Z M148 206 h56 v26 h-56 Z M236 206 h56 v26 h-56 Z M310 206 h56 v26 h-56 Z"/>
+      <path d="M74 262 h56 v26 H74 Z M148 262 h56 v26 h-56 Z M236 262 h56 v26 h-56 Z M310 262 h56 v26 h-56 Z"/>
     </g>
-    <path class="ln" d="M320 40 V52"/>
-  </g>
-  <!-- egitmen -->
-  <g class="w">
-    <circle cx="128" cy="120" r="11"/>
-    <path d="M128 131 v30 M112 142 h32 M120 161 l-6 22 M136 161 l6 22"/>
-    <path d="M144 138 L172 128"/>
-  </g>
-  <!-- siralar ve dizustu bilgisayarlar -->
-  <g>
-    <g class="w2"><path d="M196 250 H444 M186 268 H454"/></g>
-    <g class="ln2">
-      <path d="M214 236 h40 l6 14 h-52 Z"/><path d="M220 236 v-16 h28 v16"/>
-      <path d="M292 236 h40 l6 14 h-52 Z"/><path d="M298 236 v-16 h28 v16"/>
-      <path d="M370 236 h40 l6 14 h-52 Z"/><path d="M376 236 v-16 h28 v16"/>
+    <!-- monitorler (masa ustu, ince dikdortgen) -->
+    <g class="ln">
+      <path d="M88 156 h28 v8 H88 Z M162 156 h28 v8 h-28 Z M250 156 h28 v8 h-28 Z M324 156 h28 v8 h-28 Z"/>
+      <path d="M88 212 h28 v8 H88 Z M162 212 h28 v8 h-28 Z M250 212 h28 v8 h-28 Z M324 212 h28 v8 h-28 Z"/>
+      <path d="M88 268 h28 v8 H88 Z M162 268 h28 v8 h-28 Z M250 268 h28 v8 h-28 Z M324 268 h28 v8 h-28 Z"/>
     </g>
+    <!-- sandalyeler (plan: yay) -->
     <g class="w2">
-      <circle cx="222" cy="292" r="12"/><circle cx="300" cy="292" r="12"/><circle cx="378" cy="292" r="12"/>
-      <path d="M222 304 v14 M300 304 v14 M378 304 v14"/>
+      <path d="M88 186 a14 10 0 0 0 28 0 M162 186 a14 10 0 0 0 28 0 M250 186 a14 10 0 0 0 28 0 M324 186 a14 10 0 0 0 28 0"/>
+      <path d="M88 242 a14 10 0 0 0 28 0 M162 242 a14 10 0 0 0 28 0 M250 242 a14 10 0 0 0 28 0 M324 242 a14 10 0 0 0 28 0"/>
+      <path d="M88 298 a14 10 0 0 0 28 0 M162 298 a14 10 0 0 0 28 0 M250 298 a14 10 0 0 0 28 0 M324 298 a14 10 0 0 0 28 0"/>
     </g>
+    <!-- kot / eksen isareti -->
+    <path class="dim" d="M220 96 V300"/>
   </g>
-  <!-- egitim rozeti (mezuniyet kepi soyutlamasi) -->
+
+  <!-- ================= EKRANDA IZOMETRIK MODEL ================= -->
   <g>
-    <path class="ln" d="M496 116 l34-14 l34 14 l-34 14 Z"/>
-    <path class="ln2" d="M508 122 v20 c0 10 44 10 44 0 v-20"/>
-    <path class="ln2" d="M564 130 v22"/><circle class="nd blink" cx="564" cy="156" r="3"/>
+    <path class="ln" d="M446 78 H600 V186 H446 Z"/>
+    <path class="ln2" d="M446 92 H600"/>
+    <path class="ln2" d="M508 196 h30 M523 186 v10"/>
+    <g class="ln2">
+      <path d="M492 162 L523 146 L554 162 L523 178 Z"/>
+      <path d="M492 162 V128 L523 112 L554 128 V162"/>
+      <path d="M523 112 V146 M492 128 L523 144 L554 128"/>
+      <path d="M502 136 h10 M534 136 h10 M502 154 h10 M534 154 h10"/>
+    </g>
+    <path class="ln flow" d="M446 134 H392" stroke-opacity=".5"/>
+  </g>
+
+  <!-- ================= ATC ROZETI (metinsiz) ================= -->
+  <g>
+    <path class="ln" d="M523 226 l30 16 v34 l-30 18 l-30-18 v-34 Z"/>
+    <path class="ln2" d="M523 240 l16 9 v18 l-16 10 l-16-10 v-18 Z"/>
+    <path class="ln" d="M513 268 l7 8 l16-18"/>
+    <path class="ln2" d="M523 294 v14 M508 308 h30"/>
   </g>
 </g>
-<path class="dim" d="M176 214 H464"/><path class="dim" d="M496 168 H564"/>
-<circle class="nd blink" cx="320" cy="40" r="3"/><circle class="nd blink" cx="128" cy="120" r="2.6"/>
+
+<!-- olcu cizgileri -->
+<path class="dim" d="M44 320 H396"/><path class="w2" d="M44 314 V326 M396 314 V326"/>
+<path class="dim" d="M420 78 V186"/><path class="w2" d="M414 78 H426 M414 186 H426"/>
+<circle class="nd blink" cx="220" cy="66" r="3"/><circle class="nd blink" cx="523" cy="112" r="2.8"/><circle class="nd blink" cx="523" cy="268" r="2.6"/>
 </svg>
