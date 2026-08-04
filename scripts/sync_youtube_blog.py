@@ -75,6 +75,9 @@ def slugify(title):
     s = re.sub(r"-+", "-", s).strip("-")
     return s
 
+CAM_ANAHTARLARI = ['\\bcam\\b', '\\bcnc\\b', 'powermill', 'featurecam', 'hsm ?works', '\\btorna', '\\bfreze', 'talaş', 'takım yolu', 'toolpath', '\\b5 eksen', '\\b3\\+2\\b', 'işleme merkezi']
+CAM_DESENI = re.compile("|".join(CAM_ANAHTARLARI), re.I)
+
 def detect_products_and_category(title):
     tl = tr_lower(title)
     products = []
@@ -85,6 +88,11 @@ def detect_products_and_category(title):
                 products.append(name)
             if category is None:
                 category = cat
+    # CAM icerikleri urun adiyla degil is anahtar kelimeleriyle taninir
+    # (CNC torna/freze, 5 eksen, HSM Works, takim yolu...). Cozum sayfasi
+    # cadbim_cam.html bu etikete bagli oldugu icin uretecte de tanimli.
+    if CAM_DESENI.search(tl) and "CAM" not in products:
+        products.append("CAM")
     return products, category
 
 def cta_page_for(products):
