@@ -4,6 +4,23 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-83 — Çözüm sayfalarındaki marka şeridi kaldırıldı; başarı öyküsü müşteri logoları okunur yapıldı
+
+- **Yapan:** Onur'un iki talebi: *"çözümlerin sonunda bir daha çözümlerde kullandığımız markalara gerek yok kaldır gitsin tüm çözümlerden"* ve *"burda kötü bir görüntü var"* (SSS şeridi ekran görüntüsü, bkz. DK-82) ardından müşteri logolarının küçüklüğüne dair gözlem — Claude (PDM asistanı).
+
+**1) Marka şeridi kaldırıldı (18 çözüm sayfası)**
+- `<!-- cz-brands -->...<!-- /cz-brands -->` bloğu (etiket "Markalar", başlık "Bu Çözümde Çalıştığımız Markalar") her çözüm sayfasının sonunda hemen üstteki "Bu Çözümü Ayakta Tutan Ürünler" bölümüyle aynı bilgiyi (Autodesk/Adobe/HP ortaklığı) tekrar ediyordu.
+- CSS'e dokunulmadı: `.cz-brands`/`.cz-brand*` `design-system.css` içinde merkezi tanımlı ve sayfa içi tekrarı yoktu, HTML bloğu kalkınca ölü CSS kalmadı.
+
+**2) Başarı öyküsü kartlarındaki müşteri logoları (36 logo, 12 sayfa)**
+- **Kök neden:** `.card-icon` sınıfı site genelinde ~10 şablonda **ikon glifi** kutusu olarak tanımlı (46x46 kare, `color:var(--cyan)`, glif fontu için). Burada firma logosu **resmi** taşımak için yeniden kullanılmıştı; içindeki `<img>`'e satır-içi `26x26px` kare sınır konmuştu. Firma logoları geniş yatay wordmark'lar (Edvan 267x90, Kutlusan 596x90) — kare kutuda `object-fit:contain` ile 26x8-26x4px'e düşüp okunmaz hâle geliyordu.
+- **Referans doğru desen:** Ana sayfadaki (`cadbim_basari_oykuleri.html`) `.story-logo` kuralı zaten doğruydu — sabit yükseklik + `width:auto` + **beyaz zemin** (saydam logo koyu zeminde kaybolmasın diye). Aynı desen `.card-icon` içindeki bu 36 örneğe uygulandı; paylaşılan `.card-icon` sınıfı global değiştirilmedi, yalnızca bu örneklerin satır-içi stilleri değişti.
+- **İkinci markup varyantı:** `sektor_medya.html`'de 2 logo, kart değil "chip" linki içinde 18x18px kare idi; aynı mantıkla kare sınır kaldırılıp doğal en-boy oranıyla büyütüldü (yanında firma adı zaten metin olarak okunduğu için beyaz yama gerekmedi).
+- **İlk uygulamada bulunan hata:** `.card-icon`'a `width:auto` verilince (flex ama block-level olduğu için) kutu kartın **tam genişliğini** kaplamıştı; `display:inline-flex` ile kompakt rozete döndürüldü (613px → 89-142px).
+- **İkinci bulunan hata:** 2 logo (`norm-additive.svg`, `sistem-teknik-electron.svg`) **beyaz/açık renkli** çizilmiş — beyaz zeminde kayboluyorlardı. Bu ikisi için zemin koyu (kartla uyumlu lacivert + ince kenarlık) bırakıldı; kalan 34 logo (koyu/renkli PNG) beyaz zeminde kaldı.
+- **Doğrulama:** `cadbim_pdm.html`'de Edvan 89x34, Kutlusan 142x34 (65x22 / 118x22 logo); `sektor_makine.html`'de 11 logonun tamamı ekran görüntüsüyle doğrulandı — 9 koyu/renkli logo beyaz rozette, Norm Additive ve Sistem Teknik koyu rozette okunur. 12 sayfada HTML etiket dengesi bozulmadı, konsol hatası 0.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-82 — Bölüm başlıklarındaki tekrarlar giderildi, ton sloganlaştırıldı; 3 metin/görüntü düzeltmesi
 
 - **Yapan:** Onur'un talebi: *"kırmızı içine aldığım alana bak 3 cümle de birbiriyle aynı hiç bir anlamı yok bu tekrarları tüm site için analiz et ve kaldır [...] biraz daha slogan gibi konuş"* — `brand` skill'i ile Claude (PDM asistanı).
