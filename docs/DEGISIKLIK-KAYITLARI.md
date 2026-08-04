@@ -4,6 +4,15 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-77 — Widget her açılışta sıradaki webinarla başlıyor
+
+- **Yapan:** Onur'un talebi: *"webinar tarihi belli zaten onu sistem tarihiyle check edip tarihi geçince o webinarı göstermesin bir sonrakini göstersin widget. her zaman bir sonraki webinarı ilk sırada göstersin"* — Claude (PDM asistanı).
+- **Zaten çalışan kısım:** Sistem tarihiyle karşılaştırma, geçmişi eleme ve tarihe göre sıralama DK-73/DK-76'da yapılmıştı; panel de en yakın webinarla açılıyordu.
+- **Bulunan açık:** `ix` (sıra numarası) panel kapanınca sıfırlanmıyordu. Ölçüldü: 4. webinara gidip kapatınca, yeniden açılışta panel **4/9**'da kalıyordu — "her zaman sıradakini ilk sırada göster" isteğini karşılamıyordu.
+- **Düzeltme:** Panel her açılışta sıra başa alınıp yeniden çiziliyor. **Sektör seçimi korunuyor** — kullanıcının bilinçli tercihi olduğu için silinmiyor; yalnızca sıra başa dönüyor (süzgeç etkinken de o sektörün en yakın webinarı gelir).
+- **Doğrulama (tarayıcı):** Açılış 1/9 (06 Ağu) → üç ileri 4/9 (10 Eyl) → kapat/yeniden aç **1/9 (06 Ağu)** → `Esc` ile kapatıp yeniden aç yine **1/9**. Sekmedeki tarih de 06 Ağu.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-76 — Widget'ta yıl çıkarımı hatası: geçmiş webinar bir süre sonra "gelecek yıl" diye geri geliyordu
 
 - **Yapan:** Onur'un sorusu: *"peki webinar tarihi geçince göstermeye devam edecek mi yoksa kaldıracak mı listeden?"* — soruyu doğrulamak için mantık farklı tarihlerde simüle edilince hata ortaya çıktı. Claude (PDM asistanı).

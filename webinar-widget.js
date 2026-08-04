@@ -282,6 +282,10 @@
     }
 
     function ac(durum) {
+      /* Panel her acilista daima siradaki (en yakin) webinarla baslar;
+         onceki gezinme yerinde kalmaz. Sektor secimi kullanicinin bilincli
+         tercihi oldugu icin korunur, yalnizca sira basa alinir. */
+      if (durum) { ix = 0; ciz(); }
       rail.classList.toggle("wb-acik", durum);
       tab.setAttribute("aria-expanded", String(durum));
       if (durum) q("#wb-kapat").focus();
