@@ -4,6 +4,24 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-66 — Onur'un iki hizmet slaytı siteye taşındı: 10 panel görseli kesilip ilgili sayfalara yerleştirildi
+
+- **Yapan:** Onur'un iki slaytı (Hizmetlerimiz 6 panel; Autodesk Forma (ACC) Danışmanlığı 4 kart) paylaşıp *"bu görselleri ilgili sayfalarda kullan"* demesi üzerine Claude (PDM asistanı).
+- **Yöntem — metin HTML, görsel slayttan:** Slaytlardaki başlıklar görüntüye gömülü Türkçe metindi; olduğu gibi kullanmak SEO/erişilebilirlik ve mobil okunabilirlik açısından yanlış olurdu. Bu yüzden `1.png` ve `2.png` panel sınırları ölçülerek (satır/kolon parlaklık profili) kesildi, **başlık bandı kırpıldı**, yalnızca illüstrasyon alanı alındı; başlık ve açıklamalar sayfada HTML metni olarak duruyor. 10 görsel WebP'ye çevrildi (`assets/img/hizmetler/`, 8–25 KB arası; slaytların kendisi 1,6 MB PNG'ydi).
+- **Yerleşim:** `cadbim_danismanlik.html` → Forma bölümündeki 4 kartın jenerik ikonu yerine 4 modül illüstrasyonu (Data Management, Site Design, Build, Design Collaboration) + "BIM Standartları & Şablon" kartına şablon görseli. `cadbim_egitimler.html` → "Nerede, Nasıl İsterseniz" bölümüne iki görselli şerit (sınıf eğitimi + BIM eğitimi) ve HTML alt yazılar. `cadbim_bim_icerik_uretimi.html` → "Neler Yapabiliriz?" altına Revit family görseli. `cadbim_bim.html` → BIM implementasyonu döngüsü. `cadbim_dijital_donusum.html` → "5 Sütun" bölümüne dijital dönüşüm görseli.
+- **Düzeltilen kusur (ölçümle yakalandı):** İlk denemede `width/height` attribute'ları CSS `aspect-ratio` kuralını eziyordu — kart görseli 240×428 (dikey) render ediliyordu. Attribute'lar gerçek dosya ölçülerine çekildi ve stile `height:auto` eklendi; şimdi kart görseli 240×135 (16:9), Forma kartları 358×224 (16:10) ve **dört kart da eşit yükseklikte (382px)**.
+- **Doğrulama:** Tarayıcıda 5 + 2 görselin tamamı yüklendi (`naturalWidth>0`), oranlar hedeflendiği gibi (1,78 / 1,60), yatay taşma 0.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-08-04-65 — Otomotiv ve Savunma-Havacılık sektör illüstrasyonları yeniden çizildi
+
+- **Yapan:** Onur'un *"otomotiv görseli berbat"* ve *"savunma ve havacılıkta kötü"* bulguları üzerine Claude (PDM asistanı).
+- **Otomotiv (önce):** Önden görünüş bir SUV denemesiydi; gövde şişkin bir kütle gibi okunuyor, ortadaki altıgen "ızgara" paneli slab gibi duruyor, tekerlekler önden görünüşte olmaması gereken tam daireler halinde köşelerde asılı kalıyordu. **Sonra:** Okunabilirliği çok daha yüksek olan **yan profil blueprint**: kaput–ön cam–tavan–arka cam–bagaj silueti, çift çemberli jantlar (dönen jant çizgileri), cam bandı ve B direği, kapı ayrım çizgileri, **cyan batarya paketi** (modül bölmeleriyle, EV vurgusu), arka çamurlukta şarj portu, ağırlık merkezi işareti; ölçü çizgileri (aks aralığı, toplam uzunluk, yükseklik) ve tavanın **üstünden** akan aerodinamik akış çizgileri (önceki denemede gövdenin içinden geçiyordu, düzeltildi).
+- **Savunma ve Havacılık (önce):** Dört pervaneli bir drone; indigo çizgiler koyu zeminde neredeyse görünmüyordu (ana hat 1px/0,32 opaklık), pervaneler koyu leke gibi duruyor, "UAV-04" yazısı gövdenin üstüne biniyordu. Sayfanın kendi alt metni de "uçak" diyordu. **Sonra:** Üstten görünüş **ok açılı jet planı**: gövde, ok açılı ana kanatlar, yatay dümenler, dikey dümen izi, kokpit, hava girişleri, kaburga (station) hatları, iki motor çıkışı ve itki izi; kanat içine **sonlu eleman ağı** (sayfanın alt metnindeki "sonlu eleman ağı şeması" ifadesiyle uyumlu), kanat açıklığı/uzunluk ölçü çizgileri ve ok açısı yayı. Çizgi ağırlığı 1,2→1,4px ve opaklık 0,75→0,85'e çıkarıldı; sönük görünüm giderildi.
+- **Ortak:** İki dosya da diğer sektör görsellerinin (`makine.svg` vb.) görsel dilini birebir kullanıyor — 640×420 viewBox, ızgara deseni, radyal ışıma, `.ln/.ln2/.cy/.dim` sınıfları, yanıp sönen düğümler, tarama çizgisi, süzülme animasyonu. Sektör vurgu renkleri korundu (otomotiv #ef4444, havacılık #a5b4fc).
+- **Doğrulama:** Otomotiv görseli tarayıcıda 640×420'de görüntülenip düzeltmeler (akış çizgilerinin gövdeyi kesmesi, sönük cam bandı, tavandaki gereksiz ölçü braketi, ön tamponda far gibi duran şarj portu) tek tek giderildi.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-64 — Eğitim talebi formunda kayan açıklama metni hizalandı; ön ödeme/taahhüt cümlesi kaldırıldı
 
 - **Yapan:** Onur'un *"eğitim formunda text'te kayma var"* ve *"'Hiçbir şey için ön ödeme veya taahhüt yok.' sözünü kaldır"* talimatları üzerine Claude (PDM asistanı).

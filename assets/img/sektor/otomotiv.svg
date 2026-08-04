@@ -3,14 +3,15 @@
 <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
 <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
 </pattern>
-<radialGradient id="glow" cx="50%" cy="48%" r="60%">
+<radialGradient id="glow" cx="50%" cy="52%" r="60%">
 <stop offset="0%" stop-color="#ef4444" stop-opacity=".18"/>
 <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
 </radialGradient>
-<radialGradient id="grillglow" cx="50%" cy="50%" r="55%">
-<stop offset="0%" stop-color="#00c8f0" stop-opacity=".85"/>
-<stop offset="100%" stop-color="#00c8f0" stop-opacity="0"/>
-</radialGradient>
+<linearGradient id="pack" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#00c8f0" stop-opacity=".10"/>
+<stop offset="50%" stop-color="#00c8f0" stop-opacity=".26"/>
+<stop offset="100%" stop-color="#00c8f0" stop-opacity=".10"/>
+</linearGradient>
 </defs>
 <style>
 .ln{fill:none;stroke:#ef4444;stroke-opacity:.75;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
@@ -19,6 +20,7 @@
 .fl{fill:#ef4444;fill-opacity:.06}
 .nd{fill:#ef4444}
 .dim{fill:none;stroke:rgba(255,255,255,.28);stroke-width:.8;stroke-dasharray:3 4}
+.tick{fill:none;stroke:rgba(255,255,255,.4);stroke-width:.9}
 .blink{animation:bk 3.2s ease-in-out infinite}
 .blink:nth-of-type(2n){animation-delay:.5s}
 .blink:nth-of-type(3n){animation-delay:1.1s}
@@ -26,60 +28,76 @@
 .scan{animation:sc 7s cubic-bezier(.6,0,.4,1) infinite}
 @keyframes sc{0%{opacity:0;transform:translateY(-40px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translateY(400px)}}
 .float{animation:fo 9s ease-in-out infinite}
-@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
-.glow-pulse{animation:gp 3.4s ease-in-out infinite}
-@keyframes gp{0%,100%{opacity:.45}50%{opacity:1}}
-.glow-pulse2{animation:gp 3.4s ease-in-out infinite .6s}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.flow{stroke-dasharray:10 12;animation:fw 4.5s linear infinite}
+@keyframes fw{to{stroke-dashoffset:-88}}
+.pulse{animation:pl 3.4s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.4}50%{opacity:.95}}
+.roll{transform-box:fill-box;transform-origin:center;animation:rl 6s linear infinite}
+@keyframes rl{to{transform:rotate(360deg)}}
 </style>
 <rect width="640" height="420" fill="url(#g)"/>
 <rect width="640" height="420" fill="url(#glow)"/>
+
+<!-- ========== aerodinamik akis (govdenin arkasinda) ========== -->
+<path class="cy flow" d="M52 214 C130 206 196 186 262 172 C324 158 398 160 462 178 C518 194 566 212 596 226" stroke-opacity=".38"/>
+<path class="cy flow" d="M52 240 C132 232 198 210 264 196 C326 182 400 184 464 200 C520 214 566 230 596 242" stroke-opacity=".2"/>
+
 <g class="float">
-<!-- govde ana hatlar: SUV/crossover onden gorunus, dik/kutulu duruş -->
-<path class="fl" d="M128 322 C122 268 128 218 142 188 C150 170 164 158 182 152 L200 132 C216 116 244 106 320 106 C396 106 424 116 440 132 L458 152 C476 158 490 170 498 188 C512 218 518 268 512 322 L512 336 C512 344 505 350 497 350 L455 350 C447 350 440 344 440 336 L440 330 L200 330 L200 336 C200 344 193 350 185 350 L143 350 C135 350 128 344 128 336 Z"/>
-<path class="ln" d="M128 322 C122 268 128 218 142 188 C150 170 164 158 182 152 L200 132 C216 116 244 106 320 106 C396 106 424 116 440 132 L458 152 C476 158 490 170 498 188 C512 218 518 268 512 322 L512 336 C512 344 505 350 497 350 L455 350 C447 350 440 344 440 336 L440 330 L200 330 L200 336 C200 344 193 350 185 350 L143 350 C135 350 128 344 128 336 Z"/>
-<!-- ust gövde / alt tampon ayrim cizgisi (iki renk hatti) -->
-<path class="ln2" d="M136 268 C210 258 430 258 504 268" stroke-opacity=".55"/>
-<!-- tavan / cam hatti ipucu -->
-<path class="ln2" d="M200 132 C216 116 244 106 320 106 C396 106 424 116 440 132" stroke-opacity=".5"/>
-<path class="ln2" d="M214 126 C240 114 284 108 320 108 C356 108 400 114 426 126" stroke-opacity=".28"/>
-<!-- kaput yuzey cizgileri -->
-<path class="ln2" d="M182 152 C168 190 160 230 164 266" stroke-opacity=".3"/>
-<path class="ln2" d="M458 152 C472 190 480 230 476 266" stroke-opacity=".3"/>
-<path class="ln2" d="M320 118 V240" stroke-opacity=".22"/>
-<!-- ince acili LED far sinyali (sol) -->
+<!-- ========== govde yan profili ========== -->
+<path class="fl" d="M94 282 C94 268 100 254 116 250 L196 236 C214 216 236 202 258 198 C286 190 320 188 352 188 L386 188 C412 188 430 194 442 204 L470 226 L520 236 C534 238 543 246 544 258 L546 288 C546 296 542 300 534 300 L516 300 C516 262 494 250 470 250 C446 250 424 262 424 300 L226 300 C226 262 204 250 180 250 C156 250 134 262 134 300 L108 300 C99 300 94 293 94 284 Z"/>
+<path class="ln" d="M94 282 C94 268 100 254 116 250 L196 236 C214 216 236 202 258 198 C286 190 320 188 352 188 L386 188 C412 188 430 194 442 204 L470 226 L520 236 C534 238 543 246 544 258 L546 288 C546 296 542 300 534 300 L516 300 C516 262 494 250 470 250 C446 250 424 262 424 300 L226 300 C226 262 204 250 180 250 C156 250 134 262 134 300 L108 300 C99 300 94 293 94 284 Z"/>
+
+<!-- kusak (bel) hatti + cam bandi -->
+<path class="ln2" d="M198 234 C300 228 430 226 522 234" stroke-opacity=".7"/>
+<path class="ln2" d="M262 202 C292 194 320 192 352 192 L384 192 C408 192 426 198 438 208 L460 228 L206 230 Z" stroke-opacity=".55"/>
+<path class="ln2" d="M330 230 V192" stroke-opacity=".6"/>
+<path class="ln2" d="M258 198 L206 232" stroke-opacity=".45"/>
+
+<!-- kapi ayrim cizgileri ve kapi kolu -->
+<path class="ln2" d="M248 298 C252 262 256 246 262 226" stroke-opacity=".38"/>
+<path class="ln2" d="M394 298 C394 268 394 250 394 230" stroke-opacity=".38"/>
+<path class="ln2" d="M300 246 h20 M368 244 h20" stroke-opacity=".45"/>
+
+<!-- kaput ve on tampon detayi -->
+<path class="ln2" d="M116 250 C140 246 168 242 196 236" stroke-opacity=".3"/>
+<path class="ln2" d="M96 272 L128 268" stroke-opacity=".35"/>
+<path class="ln2" d="M100 288 L126 288" stroke-opacity=".3"/>
+<!-- arka tampon / difuzor -->
+<path class="ln2" d="M520 288 L542 288" stroke-opacity=".3"/>
+<path class="ln2" d="M508 234 C524 236 536 242 542 252" stroke-opacity=".4"/>
+
+<!-- ========== batarya paketi (EV) ========== -->
 <g>
-<path class="ln" d="M150 190 L206 172 L214 184 L164 206 Z"/>
-<path class="cy blink" d="M156 194 L206 178" stroke-width="2.2"/>
+<rect x="216" y="276" width="218" height="20" rx="4" fill="url(#pack)" stroke="#00c8f0" stroke-opacity=".55" stroke-width="1.1"/>
+<path class="cy" d="M244 276 V296 M272 276 V296 M300 276 V296 M328 276 V296 M356 276 V296 M384 276 V296 M412 276 V296" stroke-opacity=".3"/>
+<line class="cy pulse" x1="222" y1="286" x2="428" y2="286" stroke-width="1.6"/>
 </g>
-<!-- ince acili LED far sinyali (sag) -->
+<!-- sarj portu -->
+<g><circle class="cy" cx="506" cy="262" r="7"/><circle class="nd blink" cx="506" cy="262" r="2.6"/><path class="cy" d="M506 255 v-9 M513 262 h9" stroke-opacity=".45"/></g>
+
+<!-- ========== tekerlekler ========== -->
 <g>
-<path class="ln" d="M490 190 L434 172 L426 184 L476 206 Z"/>
-<path class="cy blink" d="M484 194 L434 178" stroke-width="2.2"/>
+<circle class="ln" cx="180" cy="296" r="40"/><circle class="ln2" cx="180" cy="296" r="27"/>
+<g class="roll"><path class="ln2" d="M180 269 V323 M153 296 H207 M161 277 L199 315 M199 277 L161 315" stroke-opacity=".22"/></g>
+<circle class="ln2" cx="180" cy="296" r="8"/>
 </g>
-<!-- genis altigen kapali EV izgara paneli (parlayan) -->
 <g>
-<path class="ln" d="M226 214 L414 214 L430 240 L414 278 L226 278 L210 240 Z"/>
-<path d="M226 214 L414 214 L430 240 L414 278 L226 278 L210 240 Z" fill="url(#grillglow)" opacity=".14"/>
-<line class="cy glow-pulse" x1="234" y1="232" x2="406" y2="232" stroke-width="2.2"/>
-<line class="cy glow-pulse2" x1="228" y1="246" x2="412" y2="246" stroke-width="1.6"/>
-<line class="cy glow-pulse" x1="234" y1="260" x2="406" y2="260" stroke-width="1.6"/>
-<circle class="nd blink" cx="320" cy="246" r="3.4"/>
+<circle class="ln" cx="470" cy="296" r="40"/><circle class="ln2" cx="470" cy="296" r="27"/>
+<g class="roll"><path class="ln2" d="M470 269 V323 M443 296 H497 M451 277 L489 315 M489 277 L451 315" stroke-opacity=".22"/></g>
+<circle class="ln2" cx="470" cy="296" r="8"/>
 </g>
-<!-- alt tampon hava girisleri -->
-<path class="ln2" d="M172 296 L218 296 L210 318 L164 318 Z" stroke-opacity=".5"/>
-<path class="ln2" d="M468 296 L422 296 L430 318 L476 318 Z" stroke-opacity=".5"/>
-<path class="cy" d="M180 304 L208 304 M468 304 L440 304" stroke-opacity=".45"/>
-<!-- alt koruma / skid plate -->
-<path class="ln2" d="M226 320 H414" stroke-opacity=".4"/>
-<!-- tekerlek ipucu -->
-<circle class="ln" cx="164" cy="340" r="34"/><circle class="ln2" cx="164" cy="340" r="24"/><circle class="ln2" cx="164" cy="340" r="6"/>
-<circle class="ln" cx="476" cy="340" r="34"/><circle class="ln2" cx="476" cy="340" r="24"/><circle class="ln2" cx="476" cy="340" r="6"/>
 </g>
-<!-- boyut cizgileri -->
-<line class="dim" x1="128" y1="92" x2="512" y2="92"/><rect x="124.5" y="320" width="7" height="7" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/><rect x="508.5" y="320" width="7" height="7" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/>
-<path class="dim" d="M226 400 H414 M226 392 V408 M414 392 V408"/>
-<path class="dim" d="M128 372 H512 M128 364 V380 M512 364 V380"/>
-<g><ellipse class="cy" cx="320" cy="246" rx="194" ry="14" stroke-opacity=".2" stroke-dasharray="5 5"/><line class="dim" x1="126" y1="246" x2="514" y2="246"/><text x="454" y="242" fill="rgba(255,255,255,.45)" font-size="10" font-family="monospace" letter-spacing="1">EV-01</text></g>
-<circle class="nd blink" cx="320" cy="106" r="2.8"/><circle class="nd blink" cx="128" cy="322" r="2.8"/><circle class="nd blink" cx="512" cy="322" r="2.8"/><circle class="nd blink" cx="320" cy="350" r="2.8"/>
+
+<!-- ========== zemin ve olcu cizgileri ========== -->
+<path class="ln2" d="M60 337 H580" stroke-opacity=".3"/>
+<path class="dim" d="M180 366 H470"/><path class="tick" d="M180 358 V374 M470 358 V374"/>
+<path class="dim" d="M94 390 H546"/><path class="tick" d="M94 382 V398 M546 382 V398"/>
+<path class="dim" d="M70 188 V337"/><path class="tick" d="M62 188 H78 M62 337 H78"/>
+
+<!-- agirlik merkezi -->
+<g><circle class="ln2" cx="300" cy="258" r="10" stroke-opacity=".55"/><path class="ln2" d="M300 248 v20 M290 258 h20" stroke-opacity=".55"/></g>
+
+<circle class="nd blink" cx="196" cy="236" r="2.8"/><circle class="nd blink" cx="352" cy="188" r="2.8"/><circle class="nd blink" cx="470" cy="226" r="2.8"/><circle class="nd blink" cx="180" cy="296" r="2.8"/><circle class="nd blink" cx="470" cy="296" r="2.8"/>
 <g class="scan"><line x1="70" y1="80" x2="570" y2="80" stroke="#00c8f0" stroke-opacity=".5" stroke-width="1"/></g>
 </svg>
