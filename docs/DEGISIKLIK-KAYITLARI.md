@@ -4,6 +4,20 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-82 — Bölüm başlıklarındaki tekrarlar giderildi, ton sloganlaştırıldı; 3 metin/görüntü düzeltmesi
+
+- **Yapan:** Onur'un talebi: *"kırmızı içine aldığım alana bak 3 cümle de birbiriyle aynı hiç bir anlamı yok bu tekrarları tüm site için analiz et ve kaldır [...] biraz daha slogan gibi konuş"* — `brand` skill'i ile Claude (PDM asistanı).
+- **Ölçüm:** Bölüm başlıkları üç katmanlı (etiket/.slabel, başlık/.stitle, altyazı/.ssub). En yoğun tekrar 61 sayfada etiket="İlgili Ürünler", başlık="İlgili ürünler ve çözümler" (büyük/küçük harf farkıyla site genelinde iki yazımı vardı). Toplamda **164 sayfada 225 başlık** revize edildi.
+- **İlke:** üç katman üç ayrı iş yapar — etiket bağlam verir (kısa), başlık değeri/sloganı taşır, altyazı somut karşılığı söyler. Örnek: "İlgili Ürünler / İlgili Ürünler ve Çözümler / Birlikte değerlendirin" → **"Portföy / Cadbim'in Ürün Portföyü Yanınızda / Bu ürünle birlikte kurguladığımız yazılım, donanım ve çözümler."**
+- **Yanlış etiketlenmiş bölüm de düzeldi:** 11 sayfada ENDÜSTRİ bölümü "İlgili Ürünler" diye etiketlenmişti; artık "Endüstriler".
+- **Ton kuralına aykırı 26 altyazı düzeltildi:** "inceleyin/bulabilirsiniz" gibi arayüz talimatı içeren ifadeler ("Sizin talimatınız yasak" kararına aykırıydı) değer anlatan cümlelere çevrildi.
+- **Başarı Öyküleri ayrıca ele alındı** (Onur: *"ilgili öyküler neden yazıyor başarı öykülerinde saçma"*, *"belki süreçlerinde iyileşme gösteren referanslarımız"*): etiketi bazı sayfalarda "İlgili Ürünler", bazılarında başlıkla birebir aynıydı ("Başarı Öyküleri / Başarı Öyküleri") → tümü **"Referanslar"** etiketine sabitlendi; altyazıdaki "sonuç alan" ifadesi **"süreçlerinde iyileşme sağlayan / süreçlerini iyileştiren"** olarak somutlaştırıldı (8 sayfa).
+- **"Sektör İyi Uygulamaları" kaldırıldı (17 sayfa):** Onur: *"diye bir ifade yok türkçede"* — "industry best practices"in birebir çevirisiydi. **"Saha Deneyimi"** ile değiştirildi (başlık zaten "Projelerde Uyguladığımız Standartlar" dediği için etiket tekrar etmiyor).
+- **"ince istemci" → "Thin client" (15 geçiş, `cadbim_pdm.html`):** Onur: *"ince istemci ifadesi doğru değil türkçede nasıl kullanılıyor bilmiyorum ingilizcesi thin client"* — Türkçede yerleşik bir karşılığı olmayan teknik terim; marka/teknik terimlerin İngilizce kaldığı kural gereği olduğu gibi bırakıldı.
+- **SSS CTA şeridi genişlik hatası bulundu ve düzeltildi (Onur'un ekran görüntüsüyle):** `wide-screen.css`'teki `.section > *` kuralı (≥1300px, `max-width:var(--shell)`) `.cz-faq-cta`'nın kendi `max-width:900px` sınırını eziyordu; şerit 1333px'e uzayıp "Sorunuz listede yok mu?" ile "Uzmanımıza Sorun" düğmesi arasında **925px boşluk** kalıyordu (20 sayfa). `.section > .cz-faq-cta` ile özgüllük yükseltildi, içerik ortalandı; 1440px ekranda boşluk 925 → 22px'e indi.
+- **Doğrulama:** cadbim_pdm.html'de 8 bölümün etiket/başlık/altyazısı tarayıcıda okundu, hiçbirinde tekrar veya arayüz talimatı yok. HTML etiket dengesi (div/section) 3 örnek sayfada bozulmamış.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-81 — Mobilde filtre çipleri tek "Seçiniz" listesine indi; CTA butonları 2 sütun tek satır
 
 - **Yapan:** Onur'un iki talebi: *"mobilde filtrelerin hepsini ekranda seçilebilir göstermemeliyiz. tek buton seçiniz yazacak içinde o seçmediği zaman filtre yok seçince var"* ve *"şunu da 2 sütun tek satır yapalım bütün sayfalar için mobilde"* (CTA buton çifti ekran görüntüsü) — Claude (PDM asistanı).
