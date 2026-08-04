@@ -386,7 +386,7 @@ POST_TEMPLATE = """<!DOCTYPE html>
     </div>
   </div>
 </footer>
-<script src="../mobilenav.js?v=20" defer></script>
+<script src="../mobilenav.js?v=21" defer></script>
 <script src="../whatsapp-widget.js?v=1" defer></script>
 <script src="../cookie-consent.js?v=2" defer></script>
 <script src="../yt-facade.js?v=1" defer></script>

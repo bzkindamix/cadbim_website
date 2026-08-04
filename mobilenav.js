@@ -748,6 +748,17 @@
   if("MutationObserver" in window){
     var mo=new MutationObserver(function(){planla();});
     els.forEach(function(e){mo.observe(e,{attributes:true,attributeFilter:["style","class"]});});
+    /* Bazi sayfalarda (or. cadbim_urunler.html marka filtresi) display:none
+       kartin kendisinde degil UST blogunda degisiyor; kartin style'i hic
+       degismedigi icin yukaridaki gozlemci tetiklenmiyor ve kartlar
+       opacity:0'da kaliyordu. Bu yuzden kartlarin tekil ust bolumleri de
+       gozlenir. */
+    var ustler=[];
+    els.forEach(function(e){
+      var u=e.closest(".brand-block,[data-brand],section");
+      if(u&&ustler.indexOf(u)<0)ustler.push(u);
+    });
+    ustler.forEach(function(u){mo.observe(u,{attributes:true,attributeFilter:["style","class"]});});
   }
   window.__rv={tara:tara,bekleyen:bekleyen};
   tara();

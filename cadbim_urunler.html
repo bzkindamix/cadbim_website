@@ -645,6 +645,17 @@ function filterBrand(f, btn){
     if(show && !first) first=bl;
   });
   playBrandReveal(temizle ? null : first);
+  /* Kart animasyonu (mobilenav.js scroll-reveal motoru): filtre display'i
+     kartin kendisinde degil marka blogunda degistirdigi icin kartlar
+     kaydirmaya kadar opacity:0'da kaliyordu; gorunur hale gelenleri hemen
+     tara. */
+  if(window.__rv&&window.__rv.tara){
+    window.__rv.tara();
+    /* Yumusak kaydirma bittikten sonra gorunur alana giren kartlar icin ikinci
+       tarama (kaydirma olaylari motoru zaten tetikler; bu, kaydirmanin anlik
+       oldugu veya hareketin azaltildigi durumlar icin guvence). */
+    setTimeout(window.__rv.tara,600);
+  }
   if(btn.scrollIntoView){btn.scrollIntoView({block:'nearest',inline:'nearest'});}
   if(!temizle && first){
     /* Hedef, blogun sayfa icindeki sabit konumu; yapisik (sticky) filtre
@@ -665,7 +676,7 @@ function filterBrand(f, btn){
   els.forEach(function(e){io.observe(e);});
 })();
 </script>
-<script src="mobilenav.js?v=20" defer></script>
+<script src="mobilenav.js?v=21" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
 <script src="social-widget.js?v=7" defer></script>
 <script src="cookie-consent.js?v=2" defer></script>
