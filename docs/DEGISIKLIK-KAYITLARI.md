@@ -4,6 +4,14 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-64 — Eğitim talebi formunda kayan açıklama metni hizalandı; ön ödeme/taahhüt cümlesi kaldırıldı
+
+- **Yapan:** Onur'un *"eğitim formunda text'te kayma var"* ve *"'Hiçbir şey için ön ödeme veya taahhüt yok.' sözünü kaldır"* talimatları üzerine Claude (PDM asistanı).
+- **Kök neden (ölçüldü):** `cadbim_egitimler.html#form` bölümünde başlık bloğu `text-align:center` ile ortalanmış; `.slabel` ve `.stitle` blok genişliğini (1169px) kapladığı için merkezleri 632px'te. Ancak `.ssub` sınıfı **520px `max-width`** taşıyor ve yan boşlukları `auto` olmadığı için kutu sola yapışıyordu: 48→568px, merkezi **308px** — yani başlığa göre 324px kaymış görünüyordu. Metin kutunun içinde ortalı olduğu için hata "metin kayması" olarak fark ediliyordu.
+- **Yapılan:** İlgili `<p class="ssub">` öğesine `margin-left:auto;margin-right:auto` verildi (yalnızca bu öğe — site genelinde taranan tek "ortalanmış blok içinde `.ssub`" örneği burasıydı, paylaşılan kurala dokunmaya gerek yoktu). Aynı cümleden **"Hiçbir şey için ön ödeme veya taahhüt yok."** ifadesi çıkarıldı; metin "Formu doldurun, size en uygun programı önererek dönelim." olarak kaldı.
+- **Doğrulama:** Tarayıcıda kutu 372→892px, merkez **632px** — başlığın merkeziyle birebir aynı; açıklama tek satıra düştü, "ön ödeme/taahhüt" ifadesi bölümde yok, yatay taşma 0.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-63 — Sanatsal Baskı başlıklarındaki cümle sonu noktaları kaldırıldı; iki ifade netleştirildi
 
 - **Yapan:** Onur'un *"aşağıdaki başlıkların sonundan nokta işaretini kaldıralım"* talimatı ve iki ifade sorusu (*"tek titizlik????"*, *"yanıt aynı gün elinizde???"*) üzerine Claude (PDM asistanı).
