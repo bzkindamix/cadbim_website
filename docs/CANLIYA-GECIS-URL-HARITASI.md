@@ -188,12 +188,4 @@ Yeni site içeriği güncel adlandırmayla yazıldı. Eski site ziyaretçisi/ara
 
 ## 8. Geçiş Günü Kontrol Listesi
 
-- [ ] **`docs/htaccess-taslak.txt` UTF-8 (BOM'suz) olarak `.htaccess` adıyla Natro cPanel'de site köküne yüklendi** — bu olmadan hiçbir temiz URL (`/autocad`, `/post/...` dahil) çalışmaz, tüm site bu tek adıma bağımlı. Yüklemeden önce staging'de test edilmeli (bkz. dosyanın kendi başlığındaki uyarı).
-- [ ] Host 301 motoru hazır (CSV → `_redirects` dönüşümü)
-- [ ] GOZDEN satırları Onur onayından geçti
-- [ ] Blog kararı verildi (A/B)
-- [ ] `sitemap.xml` yeni host'ta doğrulandı, Search Console'a gönderildi
-- [ ] robots.txt yayında, sitemap satırı var
-- [ ] www yönlendirmesi + HTTPS zorlaması aktif
-- [ ] İlk 48 saat: canlı 404 logları → eksik 301 yaması
-- [ ] 4 hafta: Search Console kapsama/404 haftalık takip
+**Bu bölüm `docs/CANLIYA-GECIS-KONTROL-LISTESI.md` ile değiştirildi (2026-08-05)** — GÖZDEN ve blog A/B kararları kapandığı için (bkz. §5) artık yalnızca teknik/doğrulama adımları kaldı; bunlar daha kapsamlı biçimde o dosyada (Bölüm A-H: karar kalemleri, sunucu, SEO, formlar, içerik, yayın günü sırası, izleme, geri alma planı) tutuluyor. Güncel kontrol listesi için oraya bakın.
