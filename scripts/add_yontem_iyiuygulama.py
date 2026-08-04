@@ -182,8 +182,8 @@ def build(key):
     acc, steps, items = DATA[key]
     yon = HEAD % dict(
         lbl=u'Yöntemimiz', ttl=u'Bu Çözümü Nasıl Hayata Geçiriyoruz?',
-        sub=u'Kutu yazılım satmıyoruz — beş adımlı kanıtlanmış uygulama '
-            u'metodolojimizle süreci uçtan uca üstleniyoruz.',
+        sub=u'Beş adımlı uygulama metodolojimizle sürecin tamamını yönetiyoruz: '
+            u'ihtiyaç analizi, kurgu, devreye alma, yaygınlaştırma ve sürdürme.',
         wrap=u'display:flex;flex-wrap:wrap;gap:22px 0;margin-top:8px;',
         body="".join(STEP % dict(a=acc, no='%02d' % (i + 1), t=t, d=d)
                      for i, (t, d) in enumerate(steps)))

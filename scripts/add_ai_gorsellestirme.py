@@ -115,7 +115,7 @@ def video_section():
 <section class="section cz-sec" style="--cz:%s;">
   <div class="sh" style="margin-bottom:26px;">
     <div class="slabel" style="color:var(--cz);">Video Eğitimler</div>
-    <div class="stitle">Kendi kanalımızdan konu anlatımları</div>
+    <div class="stitle">Kendi Kanalımızdan Konu Anlatımları</div>
     <p class="ssub">Cadbim Teknik Destek kanalında yayınladığımız, tasarım ve
       görselleştirmede yapay zekâ kullanımına dair oturumlar.</p>
   </div>
@@ -226,14 +226,14 @@ def build_page():
 <section class="section" style="padding-top:56px;">
   <div class="sh">
     <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <div class="stitle">Bu Çözümde Kullanılan Cadbim Ürünleri</div>
     <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
   </div>
   <div class="grid g3" style="margin-top:0;">
 %(products)s  </div>
   <div class="sh" style="margin-top:40px;">
     <div class="slabel">Endüstriler</div>
-    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <div class="stitle">Bu Çözüm Hangi Endüstrilerde Kullanılıyor</div>
     <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
   </div>
   <div class="grid g3" style="margin-top:0;">

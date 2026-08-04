@@ -75,7 +75,7 @@ def build_intro(cfg):
   <div class="cz-intro">
     <div class="cz-intro-h">
       <div class="slabel" style="color:var(--cz);">Bu Çözüm Nedir?</div>
-      <div class="stitle">%(title)s</div>
+      <div class="stitle">%(Title)s</div>
     </div>
     <div class="cz-intro-b">
         %(ps)s
@@ -157,7 +157,7 @@ def build_brands(cfg):
 <section class="section section-alt cz-sec" style="--cz:%(accent)s;">
   <div class="sh" style="margin-bottom:26px;">
     <div class="slabel" style="color:var(--cz);">Markalar</div>
-    <div class="stitle">Bu çözümde çalıştığımız markalar</div>
+    <div class="stitle">Bu Çözümde Çalıştığımız Markalar</div>
     <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner,
       HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
   </div>
@@ -176,7 +176,7 @@ def build_faq(cfg):
 <section class="section section-alt cz-sec" style="--cz:%(accent)s;">
   <div class="sh" style="margin-bottom:26px;">
     <div class="slabel" style="color:var(--cz);">Sıkça Sorulanlar</div>
-    <div class="stitle">Bu çözüm hakkında merak edilenler</div>
+    <div class="stitle">Bu Çözüm Hakkında Merak Edilenler</div>
     <p class="ssub">Aradığınız yanıt burada yoksa uzmanımıza doğrudan sorabilirsiniz.</p>
   </div>
   <div class="cz-faq">%(items)s</div>

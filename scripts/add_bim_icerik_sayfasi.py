@@ -133,7 +133,7 @@ def kitle_section():
             u'<section class="section cz-sec" style="--cz:%s;padding-top:0;">\n'
             u'  <div class="sh" style="margin-bottom:26px;">\n'
             u'    <div class="slabel" style="color:var(--cz);">Kimler İçin?</div>\n'
-            u'    <div class="stitle">İki kitle, iki farklı ihtiyaç</div>\n'
+            u'    <div class="stitle">İki Kitle, İki Farklı İhtiyaç</div>\n'
             u'    <p class="ssub">Aynı teknik iş, iki taraf için farklı bir problemi çözer — '
             u'hangisi olduğunuza göre farklı bir paketle geliyoruz.</p>\n'
             u'  </div>\n'
@@ -199,7 +199,7 @@ def video_section():
 <section class="section cz-sec" style="--cz:%s;">
   <div class="sh" style="margin-bottom:26px;">
     <div class="slabel" style="color:var(--cz);">Video Eğitimler</div>
-    <div class="stitle">Kendi kanalımızdan konu anlatımları</div>
+    <div class="stitle">Kendi Kanalımızdan Konu Anlatımları</div>
     <p class="ssub">Cadbim Teknik Destek kanalında yayınladığımız, BIM içerik ve
       aile üretimiyle ilgili oturumlar.</p>
   </div>
@@ -282,14 +282,14 @@ def build_page():
 <section class="section" style="padding-top:0;">
   <div class="sh">
     <div class="slabel">İlgili Ürünler</div>
-    <div class="stitle">Bu çözümde kullanılan Cadbim ürünleri</div>
+    <div class="stitle">Bu Çözümde Kullanılan Cadbim Ürünleri</div>
     <p class="ssub">İlgili yazılım ve donanım sayfaları</p>
   </div>
   <div class="grid g3" style="margin-top:0;">
 %(products)s  </div>
   <div class="sh" style="margin-top:40px;">
     <div class="slabel">Endüstriler</div>
-    <div class="stitle">Bu çözüm hangi endüstrilerde kullanılıyor</div>
+    <div class="stitle">Bu Çözüm Hangi Endüstrilerde Kullanılıyor</div>
     <p class="ssub">İlgili endüstri sayfalarını inceleyin</p>
   </div>
   <div class="grid g3" style="margin-top:0;">
