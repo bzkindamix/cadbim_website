@@ -4,6 +4,15 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-63 — Sanatsal Baskı başlıklarındaki cümle sonu noktaları kaldırıldı; iki ifade netleştirildi
+
+- **Yapan:** Onur'un *"aşağıdaki başlıkların sonundan nokta işaretini kaldıralım"* talimatı ve iki ifade sorusu (*"tek titizlik????"*, *"yanıt aynı gün elinizde???"*) üzerine Claude (PDM asistanı).
+- **Noktası kaldırılan başlıklar (`cadbim_sanatsal_baski.html`):** "Kadrajdan koleksiyona", "Doğru kağıt, işin yarısı", "Ham dosya girer / Eser çıkar" (iki satırlı başlık, iki nokta) ve alt başlık "Yedi hizmet, … sergilenmeye değer sonuç". **Onur'un listelemediği ama aynı sınıftaki iki başlık da** ("HP DesignJet Z9+ Pro, Adobe renk hattıyla", "Dosyadan duvara, dört adım") aynı kurala alındı — yoksa sayfada yine karışık bir görünüm kalırdı. Sonuç: sayfadaki 5 `.btitle` başlığının hiçbiri noktayla bitmiyor.
+- **İfade 1:** "Yedi hizmet, **tek titizlik**: sergilenmeye değer sonuç." → "Yedi hizmet, **aynı titiz çalışma**: sergilenmeye değer sonuç" (Onur'un önerisi).
+- **İfade 2 — kapsam notu:** "Rötuş ücretsiz; yanıtımız aynı gün elinizde." cümlesi üç cümlelik bir dipnot paragrafının (`.cta-not`, 12,5px) sonundaydı; yalnızca son noktayı silmek düzyazıda dizgi hatası gibi görünürdü. Bu yüzden cümle paragraftan ayrılıp **kendi kısa satırına** taşındı ve muğlak "yanıtımız" ifadesi netleştirildi: **"Rötuş ücretsiz · gönderdiğiniz dosyaya aynı gün dönüş"** (noktasız). Paragrafın kalan iki cümlesi düzyazı olduğu için noktalarıyla duruyor. Yeni satır `.cta-not.cta-line{margin-top:8px}` ile birinci notla aynı blokta görünüyor.
+- **Doğrulama:** Tarayıcıda 5 başlığın hiçbiri noktayla bitmiyor, alt başlık ve iki satırlı başlık noktasız, iki not satırı 34px/8px boşlukla ardışık; istatistik sayıları (DK-58 düzeltmesi) 71,68px'te duruyor, yatay taşma 0.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-62 — Çözüm sayfalarında büyük başlıklar Başlık Düzeni'ne getirildi; "Kutu yazılım satmıyoruz" ifadesi değiştirildi
 
 - **Yapan:** Onur'un iki bulgusu: *"büyük başlıklarda bütün kelimelerin ilk harfi büyük olmalı"* (aynı sayfada bazı başlıklar Başlık Düzeni, bazıları cümle düzeniydi — ör. "Bu Çözümü Nasıl Hayata Geçiriyoruz?" vs "Bu çözümde çalıştığımız markalar") ve aynı ekran görüntüsündeki *"Kutu yazılım satmıyoruz"* ifadesinin gayri resmî durması — Claude (PDM asistanı).

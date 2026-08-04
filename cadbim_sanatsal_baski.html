@@ -490,6 +490,8 @@ main,header,footer{position:relative;z-index:3;}
 .ccard b{font-family:var(--fd);font-weight:500;font-size:17.5px;display:block;line-height:1.3;}
 .ccard span{display:block;font-size:12px;color:var(--mut);margin-top:6px;line-height:1.6;}
 .cta-not{margin-top:34px;font-size:12.5px;color:var(--mut);max-width:70ch;margin-left:auto;margin-right:auto;line-height:1.75;}
+/* Ikinci not satiri: birinciyle ayni blokta dursun (34px yerine dar bosluk). */
+.cta-not.cta-line{margin-top:8px;}
 
 /* ---------- alt bilgi ---------- */
 .foot{border-top:1px solid var(--ln);padding:26px clamp(18px,4vw,48px);display:flex;gap:18px;flex-wrap:wrap;align-items:center;max-width:1500px;margin:0 auto;}
@@ -692,8 +694,8 @@ html{overflow-x:clip;}
 <section class="blk" id="isler">
   <div class="bhead" data-rv>
     <span class="bno">01 — HİZMETLER</span>
-    <h2 class="btitle">Kadrajdan koleksiyona.</h2>
-    <p class="bsub">Yedi hizmet, tek titizlik: sergilenmeye değer sonuç.</p>
+    <h2 class="btitle">Kadrajdan koleksiyona</h2>
+    <p class="bsub">Yedi hizmet, aynı titiz çalışma: sergilenmeye değer sonuç</p>
   </div>
   <div class="works">
     <a class="wrow" href="#iletisim" data-rv data-hover>
@@ -750,7 +752,7 @@ html{overflow-x:clip;}
 <section class="blk" id="yuzeyler" style="padding-top:0;">
   <div class="bhead" data-rv>
     <span class="bno">02 — YÜZEYLER</span>
-    <h2 class="btitle">Doğru kağıt, işin yarısı.</h2>
+    <h2 class="btitle">Doğru kağıt, işin yarısı</h2>
     <p class="bsub">Altı yüzey, tek soru: karenize hangisi hizmet ediyor? Kararsızsanız örnek baskıyla gösteririz.</p>
     <div class="rnav">
       <button type="button" id="rprev" aria-label="Önceki yüzeyler" data-hover>←</button>
@@ -775,7 +777,7 @@ html{overflow-x:clip;}
   <div class="retouch">
     <div data-rv>
       <span class="bno">03 — BASKI ÖNCESİ</span>
-      <h3>Ham dosya girer.<br>Eser çıkar.</h3>
+      <h3>Ham dosya girer<br>Eser çıkar</h3>
       <p>Pozlama, renk, toz ve leke — baskı öncesi gereken tüm Photoshop çalışması atölyede yapılır. Siz yalnızca sonucu onaylarsınız. Baskı öncesi ve sonrası arasındaki farkı karşılaştırma görselinde inceleyebilirsiniz.</p>
       <span class="free">RÖTUŞ HİZMETİ ÜCRETSİZDİR</span>
     </div>
@@ -795,7 +797,7 @@ html{overflow-x:clip;}
 <section class="blk" id="atolye" style="padding-top:0;">
   <div class="bhead" data-rv>
     <span class="bno">04 — ATÖLYE</span>
-    <h2 class="btitle">HP DesignJet Z9+ Pro,<br>Adobe renk hattıyla.</h2>
+    <h2 class="btitle">HP DesignJet Z9+ Pro,<br>Adobe renk hattıyla</h2>
     <p class="bsub">Kalite makinede başlar, renk hattında güvenceye alınır: Photoshop profil yönetimi, Lightroom kalibrasyonu, soft proof, ICC eşleme.</p>
   </div>
   <div class="stats">
@@ -810,7 +812,7 @@ html{overflow-x:clip;}
 <section class="blk" id="surec" style="padding-top:0;">
   <div class="bhead" data-rv>
     <span class="bno">05 — SÜREÇ</span>
-    <h2 class="btitle">Dosyadan duvara, dört adım.</h2>
+    <h2 class="btitle">Dosyadan duvara, dört adım</h2>
   </div>
   <div class="steps">
     <div class="step" data-rv><div class="sno">1</div><h3>Dosyanızı gönderin</h3><p>E-posta ya da WhatsApp. Ebat ve yüzeyde kararsızsanız önerimizle döneriz — telefon kadrajı bile yeterli bir başlangıç.</p></div>
@@ -927,7 +929,8 @@ html{overflow-x:clip;}
       <span>Dosyanızı doğrudan gönderin</span>
     </a>
   </div>
-  <p class="cta-not" data-rv>Şehir dışı işler, sergilenmeye hazır halde korumalı ambalajla yola çıkar. Sergi sevkiyatlarında takvim birlikte planlanır. Rötuş ücretsiz; yanıtımız aynı gün elinizde.</p>
+  <p class="cta-not" data-rv>Şehir dışı işler, sergilenmeye hazır halde korumalı ambalajla yola çıkar. Sergi sevkiyatlarında takvim birlikte planlanır.</p>
+  <p class="cta-not cta-line" data-rv>Rötuş ücretsiz · gönderdiğiniz dosyaya aynı gün dönüş</p>
 </section>
 
 <script>
