@@ -318,15 +318,20 @@ a.card:focus-visible{outline:2px solid #00c8f0;outline-offset:3px;}
 .cz-faq-i[open] summary i{transform:rotate(45deg);}
 .cz-faq-i summary:hover{color:var(--cz);}
 .cz-faq-a{padding:0 18px 17px;font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.75;}
-/* NOT: wide-screen.css'teki `.section > *` kurali (>=1300px, max-width:var(--shell))
-   ayni ozgullukte ve daha sonra yuklendigi icin buradaki 900px'i eziyordu; serit
-   1333px'e uzayip metinle dugme arasinda ~925px bosluk kaliyordu. `.section >`
-   ile ozgulluk yukseltilerek kendi sinirina donduruldu. Icerik de artik iki uca
-   dagilmiyor, yan yana duruyor. */
+/* SSS alt cagrisi. Iki hatadan gecti, ikisi de hizalama kaynakliydi:
+   1) wide-screen.css'teki `.section > *` kurali (>=1300px) buradaki max-width'i
+      eziyor, serit 1333px'e uzayip metinle dugme arasinda ~925px bosluk
+      birakiyordu (justify-content:space-between).
+   2) Sabit bir max-width verilince serit bu kez ustundeki SSS listesiyle (46px'te
+      basliyor) hizasiz kalip ortada yuzen bir ada gibi duruyordu.
+   Cozum: serit icerigine gore daralir (inline-flex + width:auto) ve akista
+   soldan, yani listeyle ayni kenardan baslar. Boylece ne bosluk kalir ne de
+   hizasizlik. */
 .cz-faq-cta,
 .section > .cz-faq-cta{
-  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 22px;
-  max-width:820px;margin-top:20px;padding:20px 24px;border-radius:14px;
+  display:inline-flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;
+  width:auto;max-width:100%;gap:10px 18px;
+  margin-top:20px;padding:16px 20px;border-radius:14px;
   background:linear-gradient(120deg,rgba(0,200,240,.07),transparent 65%),#0d1830;
   border:.5px solid rgba(0,200,240,.2);
 }
