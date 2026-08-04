@@ -227,7 +227,7 @@ TEMPLATE = """<!DOCTYPE html>
   </div>
 </section>
 <section class="section" style="padding-top:0;">
-  <div style="border-radius:20px;overflow:hidden;border:.5px solid var(--w10);display:flex;justify-content:center;"><img width="1484" height="1850" src="{hero_img}" alt="{name} 3D yazıcı" style="max-width:100%;max-height:460px;display:block;" loading="lazy" decoding="async"></div>
+  <div style="border-radius:20px;overflow:hidden;border:.5px solid var(--w10);display:flex;justify-content:center;"><img width="1484" height="1850" src="{hero_img}" alt="{name} 3D yazıcı" style="max-width:100%;width:auto;height:auto;max-height:460px;display:block;" loading="lazy" decoding="async"></div>
 </section>
 
 <section class="section section-alt">
@@ -351,7 +351,7 @@ TEMPLATE = """<!DOCTYPE html>
 </footer>
 <script src="mobilenav.js?v=20" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
-<script src="social-widget.js?v=6" defer></script>
+<script src="social-widget.js?v=7" defer></script>
 <script src="cookie-consent.js?v=2" defer></script>
 </body></html>
 """
