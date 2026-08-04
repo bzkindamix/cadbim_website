@@ -4,6 +4,20 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-03 — Mobil menü masaüstüyle senkronize edildi: Sanatsal Baskı dahil 5 eksik Çözüm linki, Blog ve stale CTA düzeltildi
+
+- **Yapan:** Onur'un "mobilde menülerde desktop taki tüm linkleri göremiyorum, örneğin sanatsal baskı atölyesi çözümlerin altında yok" bulgusu üzerine Claude (PDM asistanı).
+- **Kök neden:** `mobilenav.js`'deki mobil akordeon menü, masaüstü `nav-mega` HTML'inin canlı bir yansıması değil — elle bakımı yapılan, tamamen ayrı bir `GROUPS`/`TOP_LINKS` veri dizisi. Masaüstü menüsü zaman içinde büyüdüğünde (Dijital Dönüşüm, Sanatsal Baskı Atölyesi gibi öne çıkan linkler eklendiğinde, Blog üst menüye girdiğinde, CTA hedefi `iletisim`'den özel `teklif-iste` sayfasına taşındığında) bu ikinci liste güncellenmemiş.
+- **Bulunan ve düzeltilen 4 fark:**
+  1. **Çözümler grubunda 5 link eksikti:** Dijital Dönüşüm, BIM İçerik & Obje Üretimi, Dijital İkiz, AI Destekli Görselleştirme, **Sanatsal Baskı Atölyesi** (bildirilen sorun). 14 → 19 link; sıralama da masaüstü mega-menünün mantıksal grup sırasına (Yapı & Altyapı → Ürün Tasarımı → Üretim → Veri Yönetimi → Görselleştirme → Sanatsal Baskı) çekildi.
+  2. **"Blog" üst menü linki hiç yoktu** — `TOP_LINKS`'e eklendi.
+  3. **"Teklif Al" CTA'sı eski `/iletisim#form`'a gidiyordu** — masaüstü çoktan `/teklif-iste#form`'a geçmişti (bu proje kapsamında ayrı bir sayfa olarak inşa edilmişti); mobilde bu geçiş hiç uygulanmamış. Düzeltildi.
+  4. **Endüstriler grubunda küçük bir etiket sürüklenmesi:** "İç Mimarlık & Tasarım" → masaüstünün güncel (sadeleştirilmiş) etiketi "İç Mimarlık" ile hizalandı; sıra da masaüstüyle eşitlendi.
+- **Cache bust:** `mobilenav.js?v=12` → `?v=13` (1.325 sayfa).
+- **Doğrulama:** Mobil viewport'ta (375px) hem kök (`/`) hem post (`/post/3d-gorunum.html`) sayfasında akordeon açılıp Çözümler'in 19/19 linki (Sanatsal Baskı Atölyesi dahil) doğru `href` ile listelendiği, CTA'nın `teklif-iste#form`'a (post'ta `../teklif-iste#form`) gittiği doğrulandı; `/sanatsal-baski`, `/teklif-iste`, `/blog` fetch ile 200; konsol hatası 0.
+- **Not (gelecek iyileştirme, şimdi yapılmadı):** Bu, aynı "iki kaynaktan biri unutuluyor" hatasının üçüncü örneği (önceki ikisi: post nav'ı kök mega-menüden kopuktu [Y12], 29 kök sayfa kendi aralarında sürüklenmişti [Y12]). Kalıcı çözüm, mobil menünün masaüstü DOM'undan çalışma anında türetilmesi olurdu (artık nav tüm sayfalarda tekdüze olduğu için bu şimdi düşük riskli) — ama bu, 1.325 sayfada paylaşılan navigasyon mantığını değiştiren daha büyük bir iş; şimdilik veri düzeltmesiyle sınırlı tutuldu, istenirse ayrı bir iş olarak ele alınabilir.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-05-02 — Son ".html" iç link kalıntısı temizlendi + htaccess taslağında kritik bir hata bulundu ve düzeltildi
 
 - **Yapan:** Onur'un "site canlıdayken bütün linkler .html uzantısız olacak değil mi" sorusu üzerine Claude (PDM asistanı) — cevaptan önce iddiayı gerçek taramayla doğruladı, tahmin etmedi.

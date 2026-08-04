@@ -37,32 +37,37 @@
     {
       label: "Çözümler", href: "/cozumler",
       items: [
+        ["Dijital Dönüşüm", "/dijital-donusum"],
         ["BIM", "/bim"],
-        ["PLM", "/plm"],
-        ["PDM", "/pdm"],
+        ["BIM İçerik & Obje Üretimi", "/bim-icerik-uretimi"],
+        ["İnşaat Proje Yönetimi", "/insaat-yonetimi"],
+        ["Gerçeklik Yakalama", "/gerceklik-yakalama"],
+        ["Dijital İkiz", "/dijital-ikiz"],
         ["Simülasyon & Analiz", "/simulasyon"],
-        ["CAM & İmalat", "/cam"],
         ["Tolerans Analizi", "/tolerans-analizi"],
+        ["Tasarım Otomasyonu", "/tasarim-otomasyonu"],
+        ["CAM & İmalat", "/cam"],
+        ["Eklemeli İmalat & 3D Baskı", "/eklemeli-imalat"],
         ["Nesting", "/nesting"],
         ["Fabrika Tasarımı", "/fabrika-tasarimi"],
-        ["Tasarım Otomasyonu", "/tasarim-otomasyonu"],
+        ["PLM", "/plm"],
+        ["PDM", "/pdm"],
         ["Görselleştirme & Render", "/gorsellestirme"],
-        ["Eklemeli İmalat & 3D Baskı", "/eklemeli-imalat"],
-        ["İnşaat Proje Yönetimi", "/insaat-yonetimi"],
+        ["AI Destekli Görselleştirme", "/ai-gorsellestirme"],
         ["Yaratıcı İçerik & Tasarım", "/yaratici-icerik"],
-        ["Gerçeklik Yakalama", "/gerceklik-yakalama"]
+        ["Sanatsal Baskı Atölyesi", "/sanatsal-baski"]
       ]
     },
     {
       label: "Endüstriler", href: "/sektor-mimari",
       items: [
         ["Mimarlık", "/sektor-mimari"],
-        ["İç Mimarlık & Tasarım", "/sektor-icmimarlik"],
+        ["Makine & Üretim", "/sektor-makine"],
+        ["Medya & Eğlence", "/sektor-medya"],
+        ["İç Mimarlık", "/sektor-icmimarlik"],
         ["İnşaat & Altyapı", "/sektor-insaat"],
         ["Mekanik Tesisat", "/sektor-tesisat"],
-        ["Makine & Üretim", "/sektor-makine"],
         ["Otomotiv", "/sektor-otomotiv"],
-        ["Medya & Eğlence", "/sektor-medya"],
         ["Eğitim", "/sektor-egitim"],
         ["Havacılık & Savunma", "/sektor-havacilik"]
       ]
@@ -74,7 +79,8 @@
     ["Eğitimler", "/egitimler"],
     ["Hakkımızda", "/hakkimizda"],
     ["İletişim", "/iletisim"],
-    ["KVKK", "/kvkk"]
+    ["KVKK", "/kvkk"],
+    ["Blog", "/blog"]
   ];
 
   /* ---- Arama indeksi: tüm sayfalar + anahtar kelimeler ---- */
@@ -409,7 +415,7 @@
         '<div class="cbm-results" role="listbox"></div>' +
         '<div class="cbm-menu">' +
           groupsHtml + links +
-          '<a class="cbm-cta" href="' + withBase("/iletisim#form") + '"><i class="ti ti-send"></i>Teklif Al</a>' +
+          '<a class="cbm-cta" href="' + withBase("/teklif-iste#form") + '"><i class="ti ti-send"></i>Teklif Al</a>' +
           '<div class="cbm-actions">' +
             '<a class="cbm-act" href="tel:+902324643490"><i class="ti ti-phone"></i>Ara</a>' +
             '<a class="cbm-act" href="mailto:cadbim@cadbim.com.tr"><i class="ti ti-mail"></i>E-posta</a>' +
