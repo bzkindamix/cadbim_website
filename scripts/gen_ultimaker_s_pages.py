@@ -242,8 +242,8 @@ TEMPLATE = """<!DOCTYPE html>
 <section data-enrich-brand style="padding:60px 3rem;background:#0a1225;">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#00c8f0;margin-bottom:8px;">Cadbim Farkı</div>
-    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;color:#fff;margin-bottom:8px;">UltiMaker Yatırımınızı Uçtan Uca Sahipleniyoruz</div>
-    <p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 26px;max-width:640px;">Lisans satışı işin başlangıcı — kurulumdan desteğe, yenilemeye tüm yaşam döngüsü tek muhatapta.</p>
+    <div style="font-family:'Manrope',sans-serif;font-size:clamp(1.3rem,2.4vw,1.7rem);font-weight:800;color:#fff;margin-bottom:8px;">UltiMaker Tedarikinde Doğru Yapılandırma</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;margin:0 0 26px;max-width:640px;">Doğru model ve malzeme seçimi, kesintisiz sarf tedariki — satın alma ve yenileme sürecinde tek muhatap.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:30px;">
    <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
      <div style="width:36px;height:36px;border-radius:10px;background:#10b9811a;color:#10b981;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-flask" style="font-size:18px;"></i></div>
@@ -251,9 +251,9 @@ TEMPLATE = """<!DOCTYPE html>
      <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">300+ malzeme arasından parça gereksiniminize uygun seçim ve doğrulanmış profiller.</p>
    </div>
    <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:22px 20px;">
-     <div style="width:36px;height:36px;border-radius:10px;background:#10b9811a;color:#10b981;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-school" style="font-size:18px;"></i></div>
-     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Operatör Eğitimi</h3>
-     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">Baskı hazırlığından filo yönetimine ekibinizi üretime hazırlıyoruz.</p>
+     <div style="width:36px;height:36px;border-radius:10px;background:#10b9811a;color:#10b981;display:flex;align-items:center;justify-content:center;margin-bottom:12px;"><i class="ti ti-truck-delivery" style="font-size:18px;"></i></div>
+     <h3 style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Düzenli Sarf Tedariki</h3>
+     <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin:0;">Filament, print core ve destek malzemesi stok planlamasıyla üretiminiz hiç durmaz.</p>
    </div></div>
     <div style="background:#0d1830;border:.5px solid rgba(255,255,255,0.08);border-radius:14px;padding:24px;display:flex;flex-wrap:wrap;gap:22px;">
    <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
@@ -273,15 +273,15 @@ TEMPLATE = """<!DOCTYPE html>
    <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
      <div style="width:30px;height:30px;border-radius:50%;background:#10b9811a;border:1px solid #10b98155;color:#10b981;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-settings" style="font-size:14px;"></i></div>
      <div>
-       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">3. Kurulum & Devreye Alma</div>
-       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Dağıtım, yapılandırma ve başlangıç yönlendirmesi.</div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">3. Sarf & Malzeme Planı</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Doğru filament ve print core kombinasyonuyla ilk üretim planı.</div>
      </div>
    </div>
    <div style="flex:1;min-width:170px;display:flex;gap:10px;align-items:flex-start;">
      <div style="width:30px;height:30px;border-radius:50%;background:#10b9811a;border:1px solid #10b98155;color:#10b981;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="ti ti-headset" style="font-size:14px;"></i></div>
      <div>
-       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">4. Sürekli Destek</div>
-       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Türkçe teknik destek ve yenileme dönemi hatırlatmaları.</div>
+       <div style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;">4. Sürekli İletişim</div>
+       <div style="font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;">Ürün ve sarf sorularınızda Türkçe tek muhatap, yenileme hatırlatmaları.</div>
      </div>
    </div></div>
   </div>

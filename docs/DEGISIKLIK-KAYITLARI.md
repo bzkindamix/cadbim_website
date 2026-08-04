@@ -4,6 +4,22 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-53 — UltiMaker sayfalarındaki tüm servis/devreye alma/operatör eğitimi iddiaları kaldırıldı
+
+- **Yapan:** Onur'un netleştirmesi — *"Ultimaker lar konusunda hiç bir servis işi yapmıyoruz tüm ilgili ifadeleri çıkar"* (DK-2026-08-04-52'de bildirilen açık maddelere yanıt olarak; ana sayfa marka şeridine dokunulmaması ve Meta Pixel'in kalması da aynı yanıtta teyit edildi) — Claude (PDM asistanı).
+- **Kapsam:** 9 sayfa (`cadbim_cura`, `cadbim_digital_factory`, `cadbim_factor4`, `cadbim_method_xl`, `cadbim_sketch_sprint`, `cadbim_ultimaker_s3/s5/s7/s8`) + `cadbim_ultimaker_malzeme` + üreteç şablonu `scripts/gen_ultimaker_s_pages.py`.
+- **Kaldırılan/değiştirilen ifadeler:**
+  - Bölüm başlığı "UltiMaker Yatırımınızı **Uçtan Uca Sahipleniyoruz**" → "UltiMaker Tedarikinde Doğru Yapılandırma" (yaşam döngüsünün tamamını üstlenme imasıydı).
+  - Giriş "Lisans satışı işin başlangıcı — **kurulumdan desteğe**, yenilemeye tüm yaşam döngüsü tek muhatapta." → "Doğru model ve malzeme seçimi, kesintisiz sarf tedariki — satın alma ve yenileme sürecinde tek muhatap."
+  - "**Operatör Eğitimi** — Baskı hazırlığından filo yönetimine ekibinizi üretime hazırlıyoruz." kartı → "Düzenli Sarf Tedariki — Filament, print core ve destek malzemesi stok planlamasıyla üretiminiz hiç durmaz." (ikon `ti-school` → `ti-truck-delivery`; ikon subset'te mevcut, doğrulandı).
+  - Yaşam döngüsü "**3. Kurulum & Devreye Alma** — Dağıtım, yapılandırma ve başlangıç yönlendirmesi." → "3. Sarf & Malzeme Planı — Doğru filament ve print core kombinasyonuyla ilk üretim planı."
+  - "**4. Sürekli Destek** — Türkçe **teknik destek** ve yenileme dönemi hatırlatmaları." → "4. Sürekli İletişim — Ürün ve sarf sorularınızda Türkçe tek muhatap, yenileme hatırlatmaları."
+  - `cadbim_ultimaker_malzeme.html`'deki "**Malzeme Eğitimi** — …kalibrasyon ve baskı ayarları konusunda uygulamalı eğitim." kartı tamamen kaldırıldı (bölüm 3 → 2 kart).
+  - `cadbim_cura.html` ve `cadbim_digital_factory.html` meta/og/twitter/JSON-LD açıklamalarındaki "**Cadbim destekli kurulum.**" cümlesi (2 sayfa × 5 alan) kaldırıldı.
+- **Bilinçli olarak korunanlar (CADBİM'in gerçekten yaptığı işler / ürün özellikleri):** "Malzeme Danışmanlığı", "Düzenli Sarf Tedariki", "1. Teklif & İhtiyaç Analizi", "2. Lisanslama / Tedarik"; ürünün **kendi** özelliği olan kalibrasyon/kurulum ifadeleri ("otomatik kalibrasyon", "basit kurulum ve otomatik seviyeleme", "Filo Kurulumu" kullanım senaryosu) — bunlar yazıcının kabiliyeti, CADBİM hizmeti değil; footer'daki site geneli "Teknik Destek" ve "HP Yetkili Servis" bağlantıları (HP DesignJet yetkisi gerçek). Genel şablonun 84 sayfadaki hâli değiştirilmedi — düzenleme yalnızca UltiMaker dosya listesinde yapıldı.
+- **Doğrulama:** Anahtar kelime taraması (kurulum/devreye alma/bakım anlaşması/kalibrasyon/orijinal parça/yetkili servis/teknik servis/teknik destek/operatör eğitimi) 11 dosyada tek tek bağlam okunarak yapıldı; CADBİM'e ait servis iddiası kalmadı. Tarayıcıda `ultimaker-s5`: başlık/giriş/2 kart (577px eşit)/4 adım doğru, bölümde servis ifadesi 0, ikonlar `tabler-icons` fontundan render ediliyor, yatay taşma yok. 10 JSON-LD bloğu yeniden ayrıştırıldı (bozuk: 0). Yazım denetimi sırasında "süreçinde" → "sürecinde" düzeltildi (10 dosya).
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-52 — SketchUp ve Lumion'dan "partner/yetkili satıcı" iddiaları, UltiMaker'lardan teknik servis iddiaları kaldırıldı
 
 - **Yapan:** Onur'un talimatı — *"sketch up ve lumion dan partner ifadesini kaldır. ultimaker lardan teknik servis işlemleri ile ilgili ifadeleri kaldır"* — Claude (PDM asistanı).
