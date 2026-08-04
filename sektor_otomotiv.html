@@ -245,30 +245,9 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   <link rel="manifest" href="site.webmanifest">
 <style>
 /* === SEKTOR GECIS SERIDI ============================================== */
-.secnav{position:sticky;top:68px;z-index:100;margin-top:68px;background:rgba(10,18,37,.94);backdrop-filter:blur(20px);border-bottom:.5px solid var(--w10);}
-.secnav-inner{position:relative;max-width:1180px;margin:0 auto;}
-.secnav-inner::after{content:'';position:absolute;top:0;right:0;bottom:0;width:52px;background:linear-gradient(90deg,transparent,rgba(10,18,37,.96));pointer-events:none;opacity:0;transition:opacity .25s;}
-.secnav-inner::before{content:'';position:absolute;top:0;left:0;bottom:0;width:52px;background:linear-gradient(270deg,transparent,rgba(10,18,37,.96));pointer-events:none;opacity:0;transition:opacity .25s;z-index:1;}
-.secnav-inner.has-more::after{opacity:1;}
-.secnav-inner.has-prev::before{opacity:1;}
-.secnav-track{display:flex;gap:9px;overflow-x:auto;padding:13px 0;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x proximity;}
-.secnav-track::-webkit-scrollbar{display:none;}
-.sec-card{position:relative;overflow:hidden;isolation:isolate;flex:0 0 auto;scroll-snap-align:start;display:flex;align-items:center;gap:11px;padding:9px 20px 9px 10px;border-radius:14px;border:.5px solid var(--w10);background:var(--navy3);text-decoration:none;transition:border-color .25s,transform .25s,background .25s,box-shadow .25s;}
-.sec-card::after{content:'';position:absolute;inset:0;z-index:-1;background-image:var(--art);background-size:auto 205%;background-position:right -14px center;background-repeat:no-repeat;opacity:0;transform:scale(1.2) translateX(10px);transition:opacity .4s ease,transform .9s cubic-bezier(.16,.8,.3,1);}
-.sec-card:hover{border-color:var(--sc);transform:translateY(-3px);background:#101d3a;box-shadow:0 10px 26px rgba(0,0,0,.35);}
-.sec-card:hover::after{opacity:.72;transform:scale(1) translateX(0);}
-.sec-ico{position:relative;width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px;color:var(--sc);background:var(--scbg);flex-shrink:0;transition:transform .35s cubic-bezier(.16,.8,.3,1),box-shadow .25s;}
-.sec-card:hover .sec-ico{transform:scale(1.09) rotate(-4deg);box-shadow:0 0 0 1px var(--sc) inset;}
-.sec-name{position:relative;font-size:13.5px;font-weight:600;color:var(--w80);white-space:nowrap;transition:color .2s;}
-.sec-card:hover .sec-name{color:var(--w);}
-.sec-card.active{border-color:var(--sc);background:linear-gradient(180deg,rgba(255,255,255,.05),transparent),var(--navy3);}
-.sec-card.active .sec-ico{box-shadow:0 0 0 1px var(--sc) inset;}
-.sec-card.active .sec-name{color:var(--w);}
-.sec-bar{position:absolute;left:10px;right:10px;bottom:0;height:2px;border-radius:2px 2px 0 0;background:var(--sc);}
-@media(prefers-reduced-motion:reduce){.sec-card,.sec-card::after,.sec-ico{transition:none;}}
 
 /* === HERO GORSELI ===================================================== */
-.hero{padding:40px 3rem 56px;}
+.hero{padding:108px 3rem 56px;}
 .hero-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center;position:relative;z-index:1;}
 .hero-art{position:relative;border-radius:var(--rxl);border:.5px solid var(--w10);background:linear-gradient(165deg,rgba(255,255,255,.045),transparent 55%),var(--navy2);overflow:hidden;}
 .hero-art::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 55% at 72% 18%,rgba(239,68,68,.16),transparent 72%);}
@@ -291,17 +270,15 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 /* === ORTAK YERLESIM =================================================== */
 .section{padding:56px 3rem;}
 .hero-inner,.hero>.crumb,.brands>*,.solutions>*{max-width:1180px;margin-left:auto;margin-right:auto;}
-.secnav{padding:0 3rem;}
 
 @media(max-width:960px){
-  .hero{padding:32px 1.5rem 44px;}
+  .hero{padding:100px 1.5rem 44px;}
   .hero-inner{grid-template-columns:1fr;gap:2rem;}
-  .secnav{padding:0 1.5rem;}
   .brands{padding:44px 1.5rem;}
   .section{padding:44px 1.5rem;}
 }
 </style>
-<link rel="stylesheet" href="assets/css/design-system.css?v=31">
+<link rel="stylesheet" href="assets/css/design-system.css?v=33">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
 <link rel="stylesheet" href="assets/css/wide-screen.css?v=3">
 </head>
@@ -389,32 +366,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 </nav></header>
 <main id="icerik">
 
-<nav class="secnav" aria-label="Endüstriler">
-  <div class="secnav-inner">
-  <div class="secnav-track" id="secnavTrack">
-    <a href="sektor-mimari" class="sec-card" style="--sc:#818cf8;--scbg:rgba(129,140,248,.13);--art:url(assets/img/sektor/mimari.svg);"><span class="sec-ico"><i class="ti ti-building"></i></span><span class="sec-name">Mimarlık</span></a>
-    <a href="sektor-makine" class="sec-card" style="--sc:#f59e0b;--scbg:rgba(245,158,11,.13);--art:url(assets/img/sektor/makine.svg);"><span class="sec-ico"><i class="ti ti-settings"></i></span><span class="sec-name">Makine &amp; Üretim</span></a>
-    <a href="sektor-medya" class="sec-card" style="--sc:#c084fc;--scbg:rgba(192,132,252,.13);--art:url(assets/img/sektor/medya.svg);"><span class="sec-ico"><i class="ti ti-movie"></i></span><span class="sec-name">Medya &amp; Eğlence</span></a>
-    <a href="sektor-icmimarlik" class="sec-card" style="--sc:#f472b6;--scbg:rgba(244,114,182,.13);--art:url(assets/img/sektor/icmimarlik.svg);"><span class="sec-ico"><i class="ti ti-armchair"></i></span><span class="sec-name">İç Mimarlık</span></a>
-    <a href="sektor-insaat" class="sec-card" style="--sc:#22c55e;--scbg:rgba(34,197,94,.13);--art:url(assets/img/sektor/insaat.svg);"><span class="sec-ico"><i class="ti ti-crane"></i></span><span class="sec-name">İnşaat &amp; Altyapı</span></a>
-    <a href="sektor-tesisat" class="sec-card" style="--sc:#2dd4bf;--scbg:rgba(45,212,191,.13);--art:url(assets/img/sektor/tesisat.svg);"><span class="sec-ico"><i class="ti ti-air-conditioning"></i></span><span class="sec-name">Mekanik Tesisat</span></a>
-    <a href="sektor-otomotiv" class="sec-card active" aria-current="page" style="--sc:#ef4444;--scbg:rgba(239,68,68,.13);--art:url(assets/img/sektor/otomotiv.svg);"><span class="sec-ico"><i class="ti ti-car"></i></span><span class="sec-name">Otomotiv</span><span class="sec-bar"></span></a>
-    <a href="sektor-egitim" class="sec-card" style="--sc:#38bdf8;--scbg:rgba(56,189,248,.13);--art:url(assets/img/sektor/egitim.svg);"><span class="sec-ico"><i class="ti ti-school"></i></span><span class="sec-name">Eğitim</span></a>
-    <a href="sektor-havacilik" class="sec-card" style="--sc:#a5b4fc;--scbg:rgba(165,180,252,.13);--art:url(assets/img/sektor/havacilik.svg);"><span class="sec-ico"><i class="ti ti-plane"></i></span><span class="sec-name">Savunma ve Havacılık</span></a>
-  </div>
-  </div>
-</nav>
-<script>
-(function(){var t=document.getElementById("secnavTrack");if(!t)return;
-  // Serit daima bastan acilir: otomatik kaydirma kartlari kenarda
-  // ortadan kesiyordu ve yukleme anina bagli tutarsiz calisiyordu.
-  // Devamini solma katmani (has-more/has-prev) gosterir.
-  function upd(){var p=t.parentNode;
-    p.classList.toggle("has-more",t.scrollLeft+t.clientWidth<t.scrollWidth-2);
-    p.classList.toggle("has-prev",t.scrollLeft>2);}
-  t.addEventListener("scroll",upd,{passive:true});
-  window.addEventListener("resize",upd);upd();})();
-</script>
 
 <section class="hero">
   <div class="hero-bg" style="background:radial-gradient(ellipse 80% 60% at 0% -10%,rgba(239,68,68,0.15) 0%,transparent 60%);"></div>
@@ -552,13 +503,13 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
           <img width="64" height="64" src="assets/img/emb-f0b66a5ada.png" alt="" style="width:28px;height:28px;border-radius:6px;flex-shrink:0;">
           <div><div class="brand-name">Autodesk</div><div style="font-size:11px;color:var(--w30);">Alias AutoStudio, Alias Surface, Alias Concept +3</div></div>
         </div><div class="brand-row">
-          <div style="width:28px;height:28px;border-radius:6px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="Chaos" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></div>
+          <div style="width:44px;height:44px;border-radius:9px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="Chaos" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></div>
           <div><div class="brand-name">Chaos</div><div style="font-size:11px;color:var(--w30);">Chaos V-Ray</div></div>
         </div><div class="brand-row">
-          <div style="width:28px;height:28px;border-radius:6px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy"></div>
+          <div style="width:44px;height:44px;border-radius:9px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy"></div>
           <div><div class="brand-name">UltiMaker</div><div style="font-size:11px;color:var(--w30);">UltiMaker S8 / S7</div></div>
         </div><div class="brand-row">
-          <div style="width:28px;height:28px;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></div>
+          <div style="width:44px;height:44px;border-radius:9px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></div>
           <div><div class="brand-name">HP</div><div style="font-size:11px;color:var(--w30);">HP Z Workstation, HP ZBook</div></div>
         </div></div>
   <div class="partner-note"><i class="ti ti-shield-check" style="color:var(--cyan);margin-right:6px;"></i><strong style="color:var(--w80);">Cadbim Gold Partner</strong> — Autodesk, Adobe, HP ve UltiMaker için tek yetkili çözüm ortağı.</div>
@@ -584,10 +535,10 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
       <a href="inventor" class="pcard" data-cat="c1"><img width="64" height="64" src="assets/img/emb-7435829947.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Inventor</h3><p>Mekanik parça ve montaj tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="fusion" class="pcard" data-cat="c1"><img width="64" height="64" src="assets/img/emb-81b62f7fac.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Fusion</h3><p>CAD + CAM + Generative Design</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="vred" class="pcard" data-cat="c2"><img width="965" height="1024" src="assets/logos/products/vred-professional.svg" alt="" style="width:40px;height:40px;object-fit:contain;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>VRED Professional</h3><p>Otomotiv VR ve dijital prototip</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <a href="chaos" class="pcard" data-cat="c2"><div style="width:40px;height:40px;border-radius:8px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="Chaos" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Chaos</div><h3>Chaos V-Ray</h3><p>Fotogerçekçi ürün ve araç render</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <a href="ultimaker" class="pcard" data-cat="c3"><div style="width:40px;height:40px;border-radius:8px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy" decoding="async"></div><div><div class="pbrand">UltiMaker</div><h3>UltiMaker S8 / S7</h3><p>Fonksiyonel prototip ve jig üretimi</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <a href="hp" class="pcard" data-cat="c4"><div style="width:40px;height:40px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">HP</div><h3>HP Z Workstation</h3><p>GPU render ve CAD/CAM performansı</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <a href="hp" class="pcard" data-cat="c4"><div style="width:40px;height:40px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">HP</div><h3>HP ZBook</h3><p>Mobil tasarım iş istasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="chaos" class="pcard" data-cat="c2"><div style="width:52px;height:52px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="Chaos" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Chaos</div><h3>Chaos V-Ray</h3><p>Fotogerçekçi ürün ve araç render</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="ultimaker" class="pcard" data-cat="c3"><div style="width:52px;height:52px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy" decoding="async"></div><div><div class="pbrand">UltiMaker</div><h3>UltiMaker S8 / S7</h3><p>Fonksiyonel prototip ve jig üretimi</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="hp" class="pcard" data-cat="c4"><div style="width:52px;height:52px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">HP</div><h3>HP Z Workstation</h3><p>GPU render ve CAD/CAM performansı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="hp" class="pcard" data-cat="c4"><div style="width:52px;height:52px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">HP</div><h3>HP ZBook</h3><p>Mobil tasarım iş istasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
   </div>
   <p id="pempty" style="display:none;color:var(--w50);font-size:14px;margin-top:24px;">Aramanızla eşleşen ürün bulunamadı.</p>
 </section>
@@ -785,6 +736,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 <script src="mobilenav.js?v=22" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
 <script src="social-widget.js?v=7" defer></script>
+<script src="webinar-widget.js?v=2" defer></script>
 <script src="cookie-consent.js?v=2" defer></script>
 <script src="yt-facade.js?v=1" defer></script>
 </body></html>

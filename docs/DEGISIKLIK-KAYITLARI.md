@@ -4,6 +4,47 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-73 — Sağ kenara açılır webinar takvimi eklendi (webinar-widget.js, 200 sayfa)
+
+- **Yapan:** Onur'un talebi: *"sosyal medya butonları gibi ekranın kenarına gizli bir takvim olsun en yakın webinarı göstersin üstündeki butondan kayıt yapılabilsin. ileri geri oklar olsun onunla da diğer webinarları göstersin sıradaki. ekranın sağında olsun"*, ardından *"widget yine saklanıp çıkabilen yapıda olsun"* ve *"webinarların görselleri webinar sayfasında var onu da göstermeliyiz"* — Claude (PDM asistanı).
+- **Konum ve davranış:** Sol kenardaki sosyal medya rayının aynası; sağ kenarda dikey sekme olarak gömülü durur, üzerine gelince tamamen dışarı çıkar, açılınca 302px'lik kart içeri kayar. Sekmede daima **en yakın webinarın gün/ay bilgisi** yazar. Kapatma: kapat düğmesi, `Esc` veya panel dışına tıklama.
+- **İçerik:** Webinar görseli (1200×627), tarih rozeti, kategori etiketi, saat, başlık, tam genişlikte **Kayıt Ol** düğmesi (webinar sayfasındaki `iletisim?webinar=<slug>#form` bağlantısının aynısı), ileri/geri okları, `n / 9` sayacı ve "Tümü" bağlantısı.
+- **Veri kopyalanmadı (tasarım kararı):** Kartlar çalışma anında `cadbim_webinar.html`'den okunur; widget'ın içinde webinar listesi tutulmaz. Böylece takvim güncellendiğinde widget kendiliğinden güncel kalır, ikinci bir güncelleme noktası doğmaz. İstek sayfa yüklendikten **sonra boşta** yapılır (`requestIdleCallback`), açılışı yavaşlatmaz. Yol, script'in kendi `src`'sine göre çözülür (alt klasörlerde de doğru).
+- **Tarih mantığı:** Kartlarda yıl yok, yalnızca gün + Türkçe ay kısaltması var; tarih bugüne en yakın makul yıla oturtulur (yıl dönümünde de doğru çalışır). **Geçmiş webinarlar elenir**, kalanlar tarihe göre sıralanır — sayfadaki kart sırası tarih sırası değildi (01 Eki, 22 Eki, 15 Eki, 27 Eki).
+- **Kapsam:** Sosyal medya rayının bulunduğu **200 kök sayfa**. `cadbim_webinar.html`'de bilinçli olarak görünmez (sayfa zaten tüm listeyi gösteriyor); `post/` sayfalarında sosyal ray da olmadığı için eklenmedi.
+- **Doğrulama (tarayıcı):** 9 yaklaşan webinar okundu, en yakını 06 Ağustos. Açık/kapalı geometri 1440×900 ve 375×812'de ölçüldü: kapalıyken panel ekran dışında (opacity 0) ve sekme görünür; açıkken panel içerik kenarına yaslı (1123–1425), sekme gizli. WhatsApp düğmesiyle çakışma yok (panel altı 667 < düğme üstü 818). İleri/geri 1→3→2→9→1 doğru ilerledi, uçlarda oklar devre dışı. Görsel yüklendi (1200×627), `Esc` ve dışarı tıklama kapattı, konsol hatası 0, yatay taşma 0. Webinar sayfasında widget yok.
+- **Erişilebilirlik:** Sekmede `aria-expanded`/`aria-controls`, panelde `role="region"` + `aria-label`, içerikte `aria-live="polite"` (ok ile gezildiğinde okunur), kayıt düğmesinde webinar adını içeren `aria-label`, açılışta odak kapat düğmesine / kapanışta sekmeye döner, `prefers-reduced-motion` desteklenir. Dokunmatik cihazlarda (hover yok) sekme daha az gömülü durur ki hedef büyüsün.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-08-04-72 — Ürün kartlarında jenerik ikon yerine gerçek marka logosu (19 kart, 12 sayfa)
+
+- **Yapan:** Onur'un bulgusu: *"bazı ürünlerin logosu yok yerine ikon var bunu düzelt"* + *"tüm sayfalarda"* (ekran görüntüsü: AI Görselleştirme sayfasında Chaos Veras, Chaos V-Ray & Enscape ve HP Z Workstation küp ikonu gösterirken komşuları Cosmos/Corona/Firefly gerçek logolarını gösteriyordu) — Claude (PDM asistanı).
+- **Tarama:** Site genelinde ikon kullanan **481 kart** bulundu; bunların büyük çoğunluğu çözüm/sektör kartı (Görselleştirme, BIM, PDM, Simülasyon, Sektör-Mimarlık…) — marka logosu olmayan CADBİM sayfaları, ikon orada doğru. Uygulanan kural: **kartın başlığı bir ürün/marka adıysa ve depoda logosu varsa logo konur.**
+- **Düzeltilen 19 kart:** Chaos Veras (`veras.png`), Chaos V-Ray & Enscape (`vray.svg` — komşu Cosmos/Corona kartlarıyla aynı mantık), Chaos Marka Sayfası (`chaos.webp`), HP Z Workstation ×2, HP Workstations, HP DesignJet, HP Build Workspace ×2 (`hp-blue.png`), UltiMaker (`ultimaker-icon.webp`), Nesting ×2 (`nesting.svg`), Method XL, Digital Factory ×6 (UltiMaker ürün görselleri).
+- **Bilinçli kapsam dışı:** Başlığı ürün adı değil **kategori/hizmet** olan kartlar ikonunu korudu — ikon orada anlam taşıyor: "Yetkili Teknik Servis" (alet), "Sarf Malzemeleri" (damla), "Malzeme Kütüphanesi" (deney şişesi), "Tüm Koleksiyon" ×4, "Donanım →", "3D Baskı →".
+- **Doğrulama:** AI Görselleştirme sayfasında 10 kart logosunun 10'u da yüklendi; çözüm/sektör kartları ikonunu korudu. Yeni eklenen 8 logo yolunun tamamı HTTP 200.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-08-04-71 — Endüstri sayfalarından üst geçiş şeridi kaldırıldı (9 sektör sayfası)
+
+- **Yapan:** Onur'un talebi: *"endüstriler sayfalarında diğer endüstriye geçmeyi yarayan üstteki menü olmasın"* — Claude (PDM asistanı).
+- **Kaldırılan:** Sabit başlığın altında yapışkan duran `.secnav` şeridi (9 endüstri kartı), onu besleyen `secnavTrack` betiği ve artık kullanılmayan `.secnav*` / `.sec-*` CSS kuralları (sayfa başına 23 satır). Kalan iz: 0.
+- **Yerleşim telafisi (kritik):** Şerit `margin-top:68px` ile sabit başlığı telafi ediyordu; kalkınca hero başlığın altına kayacaktı. Hero üst dolgusu bu yüzden büyütüldü: masaüstü **40px → 108px**, mobil **32px → 100px** (68px başlık + tasarımın özgün boşluğu).
+- **Doğrulama (tarayıcı):** Masaüstünde nav altı 68px, içerik üstü 108px (40px boşluk); mobilde 68/100 (32px boşluk) — her ikisinde de **çakışma yok**, yatay taşma 0, konsol hatası 0.
+- **Not:** Endüstriler arası geçiş, üst menüdeki "Endüstriler" açılırından, `endustriler` sayfasından ve footer bağlantılarından erişilebilir durumda — gezinme kaybı yok.
+- **Durum:** ✅ Tamamlandı.
+
+### DK-2026-08-04-70 — Marka ve ürün logoları site genelinde büyütüldü (14 sayfa + design-system.css)
+
+- **Yapan:** Onur'un bulgusu: *"ürün marka logoları aşırı küçük tüm site için kontrol et"* (Savunma ve Havacılık sayfası ekran görüntüsü) — Claude (PDM asistanı).
+- **Ölçülen sorun:** Kutular büyüktü ama görsele küçük sabit sınırlar konmuştu. Tarayıcı ölçümü: 268px genişliğindeki ürün kartında logo **26px**; marka satırlarında **18–20px**. Referans ölçü ana ürün kataloğuydu (`cadbim_urunler.html`): 44px kutu / 42px logo.
+- **Üç markup varyantı düzeltildi:** (1) `.brand-row` logo kutusu 28px (iç boşluk 4–5) → **44px kutu / 30–32px logo**; (2) sektör `.pcard` kutusu 40px (iç boşluk 6–7) → **52px kutu / 42px logo**; (3) `.pico` içindeki görselde `max-width:26px` veya sabit `28px` → **42px**. Toplam **83 kutu + 190 görsel**, 14 sayfa.
+- **Ortak taban kural:** `design-system.css`'e `.pico{min-width:48px;min-height:48px}` eklendi (`min-*` kullanıldı ki `cadbim_hp.html`'deki 52px kutuyu küçültmesin). Sayfa içi `.pcard > div{min-width:0}` kuralı (özgüllük 0,1,1) düz `.pico` seçicisini (0,1,0) eziyordu; bu yüzden `.pcard > .pico` (0,2,0) varyantı da yazıldı — ölçülüp doğrulandı.
+- **Bilinçli kapsam dışı:** 56–72px'lik **hero marka kutuları** (Enscape, V-Ray, VRED, Adobe) — renkli marka karosu içinde kasıtlı iç boşlukla duruyorlar, şikâyet edilen ızgara logoları değil.
+- **Önbellek:** `design-system.css ?v=31 → ?v=33` (1330 dosya).
+- **Doğrulama (tarayıcı):** Havacılık sayfasında marka logoları 18→30/32px, ürün logoları 26→42px (kutu 48px) olarak ölçüldü.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-69 — Hizmet/danışmanlık görselleri sıfırdan üretildi: 17 SVG, site diliyle (slayt kırpıkları kaldırıldı)
 
 - **Yapan:** Onur'un üç talimatı: *"1 inde resim olup diğerlerine koymadan olmaz — ya komple kaldır ya görsel üret aynı temada"*, *"gönderdiklerimden kullanma sadece içeriği al"*, *"sen benim gönderdiğimi baz alarak görselleri tamamen baştan üret"*; ve ilk denemedeki figür itirazı: *"eğitim hiç güzel değil, çöp adamlar ciddiyetsiz"* — Claude (PDM asistanı).
