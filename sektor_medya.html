@@ -267,6 +267,14 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 .sol-pill i{font-size:13px;color:var(--cyan);}
 
 /* === ORTAK YERLESIM =================================================== */
+/* Bolum basligi bilesenleri: bu sayfada tanimsizdi, bu yuzden "Cozumler" ve
+   "Markalar" bolum basliklari diger sektor sayfalarindan farkli goruntuleniyordu
+   (etiket cyan degil beyaz, baslik 15px/400 kaliyordu). Kurallar sektor
+   sablonundaki (sektor_egitim.html) tanimlarla birebir aynidir. */
+.sh{margin-bottom:48px;}
+.slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
+.stitle{font-family:var(--fd);font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:var(--w);margin-bottom:10px;}
+.ssub{font-size:15px;color:var(--w50);max-width:560px;line-height:1.7;}
 .section{padding:56px 3rem;}
 .hero-inner,.hero>.crumb,.brands>*,.solutions>*{max-width:1180px;margin-left:auto;margin-right:auto;}
 .secnav{padding:0 3rem;}
@@ -465,7 +473,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div>
 </section>
 
-<section style="padding:56px 3rem;">
+<section class="section">
   <div class="sh" style="margin-bottom:24px;">
     <div class="slabel">Çözümler</div>
     <div class="stitle" role="heading" aria-level="2">Bu sektöre hizmet eden Cadbim çözümleri</div>
