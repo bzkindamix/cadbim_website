@@ -10,8 +10,9 @@
 - **Hata:** Kartlarda yıl yazmadığı için gün+ay bir yıla oturtuluyor. Önceki sürüm tarihi **ileriye dönük bir pencereye** (bugün−30 gün … bugün+335 gün) oturtmaya çalışıyordu. Sonuç: sayfada 30 günden uzun süre duran **geçmiş** bir kart bu pencereye sığmıyor, döngü bir sonraki yıla geçiyor ve kart **gelecek yılın tarihiymiş gibi** yeniden "yaklaşan" listesine giriyordu. Simülasyon: 28.10.2026'da liste **5 webinar** gösteriyordu ve hepsi 2027 tarihliydi; 15.01.2027'de dokuzu birden 2027 olarak geri geliyordu.
 - **Düzeltme:** Yıl artık "ileri pencere" ile değil, **bugüne en yakın olacak şekilde** seçiliyor; sonuç geçmişte de olabilir ve eleme bir sonraki adımda yapılıyor. Böylece geçmiş kart geçmiş kalıyor.
 - **Doğrulanan davranış (simülasyon, 7 tarih):** Webinar **kendi gününde hâlâ görünür** (06 Ağu'da 9/9); **ertesi gün düşer** (07 Ağu'da 8). 20.09.2026'da 5, 28.10.2026'da 0 kalır — hepsi geçmişse widget hiç görünmez. Yıl dönümü ayrıca sınandı: 28.12.2026'da "05 Oca" kartı yaklaşan olarak görünüyor, 03.01.2027'de "28 Ara" kartı eleniyor.
-- **Kapsam dışı (karar Onur'da):** `cadbim_webinar.html` sayfasının kendisinde **tarih mantığı yok** — kartlar statik, geçmiş webinarlar da listede kalmaya devam ediyor. Sayfada otomatik gizleme/"Geçti" rozeti/arşiv ayrımı ayrı bir iş olarak açık bırakıldı.
-- **Durum:** ✅ Widget tarafı tamamlandı.
+- **Sayfa tarafı — KARAR KAPANDI (Onur, 2026-08-04):** `cadbim_webinar.html`'de tarih mantığı **bilinçli olarak yok**. Onur'un gerekçesi: *"zaten 3 ayda bir yeni çeyrek gelecek yeni webinarlar gelecek yani"* — kart listesi her çeyrekte baştan yazıldığı için otomatik gizleme, "Geçti" rozeti veya arşiv ayrımı kurulmayacak. Süreç: yeni çeyreğin webinarları geldiğinde sayfadaki kartlar değiştirilir; **widget hiçbir güncelleme gerektirmez**, listeyi sayfadan okuduğu için kendiliğinden döner.
+- **Bilinen ve kabul edilen davranış:** Çeyreğin son webinarı geçtikten sonra yeni liste yayımlanana kadarki boşlukta widget görünmez (gösterilecek yaklaşan webinar yoktur) ve sayfada yalnızca geçmiş kartlar durur.
+- **Durum:** ✅ Tamamlandı (widget düzeltildi; sayfa tarafı bilinçli olarak kapsam dışı).
 
 ### DK-2026-08-04-75 — Webinar widget'ına sektör süzgeci eklendi (İnşaat / Üretim)
 
