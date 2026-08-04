@@ -57,7 +57,14 @@ body{background:var(--navy);color:var(--white);font-family:var(--font-b);font-si
 .nav-cta:hover{box-shadow:0 4px 18px rgba(0,200,240,.35);transform:translateY(-1px);}
 
 /* HERO + KALICI 3D KATMAN */
-.hero{display:flex;align-items:center;position:relative;padding:88px 3rem 52px;}
+/* İzometrik çizim hero'nun kendi kutusuna hapsedilir: --draw-w tek kaynaktır,
+   yüksekliği viewBox oranından (520x440) türetilir ve hero'ya en az
+   "çizim + iki yanda eşit pay" kadar yükseklik verir. Böylece çizimin üstünde
+   ve altında kalan boşluk her viewport'ta eşit olur; overflow:hidden ise
+   kaydırma animasyonundaki büyümenin alt bölümlere taşmasını engeller. */
+.hero{display:flex;align-items:center;position:relative;padding:88px 3rem 52px;overflow:hidden;
+  --draw-w:min(46vw,640px);--draw-h:calc(var(--draw-w) * 440 / 520);--draw-gap:88px;
+  min-height:calc(var(--draw-h) + var(--draw-gap) * 2);}
 .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 55% at 72% 30%,rgba(0,200,240,0.07) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 15% 85%,rgba(14,165,233,0.05) 0%,transparent 60%);}
 .hero-gridlines{position:absolute;inset:0;z-index:0;opacity:.05;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 90% 80% at 60% 40%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 90% 80% at 60% 40%,#000 30%,transparent 75%);}
 .hero-content{position:relative;z-index:2;max-width:620px;}
@@ -78,8 +85,8 @@ body{background:var(--navy);color:var(--white);font-family:var(--font-b);font-si
 .hero-trust{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--w50);}
 .hero-trust b{color:var(--white);font-weight:700;}
 .hero-trust .td{width:4px;height:4px;border-radius:50%;background:var(--cyan);opacity:.7;}
-.hero-draw{position:fixed;top:0;right:0;width:52vw;height:100vh;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none;will-change:transform,opacity;}
-.hero-draw svg{width:min(46vw,640px);height:auto;display:block;}
+.hero-draw{position:absolute;top:0;bottom:0;right:0;width:52vw;display:flex;align-items:center;justify-content:center;z-index:0;pointer-events:none;will-change:opacity;}
+.hero-draw svg{width:var(--draw-w);height:auto;display:block;}
 .hero-coord{position:absolute;right:28px;bottom:20px;font-size:10px;letter-spacing:1.8px;color:rgba(0,200,240,.65);font-variant-numeric:tabular-nums;text-transform:uppercase;font-family:var(--font-d);white-space:nowrap;}
 .hero-content>*{opacity:0;transform:translateY(18px);animation:heroIn .7s cubic-bezier(.2,.7,.2,1) forwards;}
 .hero-content>.hero-eyebrow{animation-delay:.05s;}
@@ -249,7 +256,8 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
 /* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){
   .hero-content>*{animation:none;opacity:1;transform:none;}
-  .hero-draw{position:absolute;top:auto;right:0;width:50%;height:100%;opacity:.5;}
+  /* Katman zaten hero'ya bağlı ve konumu doğru; burada yalnızca geri çekilir. */
+  .hero-draw{opacity:.5;}
   .iso-line{stroke-dashoffset:0!important;transition:none!important;}
   .iso-txt{opacity:1!important;transition:none!important;}
   .reveal,.reveal-stagger>*{opacity:1!important;transform:none!important;transition:none!important;}
@@ -455,7 +463,7 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
   <link rel="manifest" href="site.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="Cadbim Blog" href="/feed.xml">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
-<link rel="stylesheet" href="assets/css/wide-screen.css?v=1">
+<link rel="stylesheet" href="assets/css/wide-screen.css?v=2">
 </head>
 <body>
 <a class="skip-link" href="#icerik">İçeriğe geç</a>
@@ -869,7 +877,7 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
   onScroll();
 })();
 </script>
-<script src="assets/js/home-3d.js?v=2"></script>
+<script src="assets/js/home-3d.js?v=3"></script>
 
 </body>
 </html>
