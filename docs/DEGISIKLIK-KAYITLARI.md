@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-74 — Webinar kayıt linkleri Teams etkinliklerine bağlandı; sağ kenar sekmesi yeniden tasarlandı
+
+- **Yapan:** Onur'un iki talebi: *"şu butonu daha yakışıklı yapalım"* (sağ kenardaki webinar sekmesi ekran görüntüsü) ve *"kerimcan ve ezgi bana e posta olarak webinar linklerini attı. cadbim.com.tr mail ıma bak ve oradan linkleri al kayıt ol butonlarına o linkleri koy"* — Claude (PDM asistanı).
+- **Kayıt linkleri (9/9):** Kaynak, 28.07.2026 tarihli iki "FY27 Q3 Webinar Programı" e-postası — **Ezgi Uygun (AEC, 4 webinar)** ve **Kerimcan Erengin (D&M, 5 webinar)**. Dokuz Teams etkinlik linki `cadbim_webinar.html`'deki kartlara yerleştirildi. Eşleme hem **başlık hem tarih** üzerinden birebir doğrulandı: 06 Ağu Inventor Yapısal Analiz, 27 Ağu Plant 3D, 03 Eyl AI'ın Gücü, 10 Eyl Fusion, 24 Eyl Forma, 01 Eki Inventor AI, 15 Eki Revit LT, 22 Eki Vault, 27 Eki BIM Koordinasyon.
+- **Önceki durum:** Düğmeler kendi iletişim formumuza gidiyordu (`iletisim?webinar=<slug>#form`). Artık doğrudan Teams kayıt sayfasına gidiyor; dış bağlantı olduğu için `target="_blank" rel="noopener"` eklendi.
+- **Widget kendiliğinden güncellendi:** Sağ kenar widget'ı linkleri webinar sayfasından okuduğu için (DK-73) ayrıca elle güncelleme gerekmedi — tek kaynak kararının ilk pratik faydası. Widget'ın kayıt düğmesi de artık dış bağlantıyı yeni sekmede açıyor ve ikonu ok yerine **dış bağlantı** işaretine dönüyor (`ti-external-link`; ikonun subset fontta bulunduğu doğrulandı).
+- **Sekme tasarımı:** Düz cyan blok yerine sitenin lacivert paletiyle aynı dilde **koyu cam yüzey** — üstte ince cyan şerit (takvim yaprağı hissi), gün rakamı 17 → **21px Manrope**, ay cyan'a alındı, araya saç teli ayraç kondu, jenerik takvim ikonu kaldırıldı. Üzerine gelince kenarlık parlıyor ve içeriden yumuşak cyan ışıma açılıyor. Genişlik 52 → 56px.
+- **Doğrulama:** Sayfada 9 kartın 9'u da benzersiz Teams linkine sahip, hepsinde `target=_blank rel=noopener`; iki link örneklem olarak HTTP **200** döndü. Widget'ta ileri/geri gezinirken kayıt linki kartla birlikte değişiyor. Konsol hatası 0.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-73 — Sağ kenara açılır webinar takvimi eklendi (webinar-widget.js, 200 sayfa)
 
 - **Yapan:** Onur'un talebi: *"sosyal medya butonları gibi ekranın kenarına gizli bir takvim olsun en yakın webinarı göstersin üstündeki butondan kayıt yapılabilsin. ileri geri oklar olsun onunla da diğer webinarları göstersin sıradaki. ekranın sağında olsun"*, ardından *"widget yine saklanıp çıkabilen yapıda olsun"* ve *"webinarların görselleri webinar sayfasında var onu da göstermeliyiz"* — Claude (PDM asistanı).

@@ -83,19 +83,35 @@
       "font-family:inherit;display:none;}" +
     "#wb-rail.wb-hazir{display:block;}" +
 
-    /* --- kapali sekme --- */
-    "#wb-tab{position:absolute;right:0;top:50%;transform:translate(14px,-50%);" +
-      "display:flex;flex-direction:column;align-items:center;gap:2px;width:52px;padding:11px 6px 10px;" +
-      "border:0;border-radius:10px 0 0 10px;cursor:pointer;color:#04101e;" +
-      "background:linear-gradient(180deg,#00c8f0,#00a6cc);box-shadow:-2px 2px 12px rgba(0,0,0,.34);" +
-      "transition:transform .25s cubic-bezier(.2,.7,.3,1.25),box-shadow .2s;}" +
+    /* --- kapali sekme: koyu cam yuzey + ustte cyan "takvim sirti" --- */
+    "#wb-tab{position:absolute;right:0;top:50%;transform:translate(13px,-50%);" +
+      "display:flex;flex-direction:column;align-items:center;width:56px;" +
+      "padding:13px 7px 11px;overflow:hidden;cursor:pointer;color:#fff;" +
+      "border:.5px solid rgba(0,200,240,.34);border-right:0;border-radius:13px 0 0 13px;" +
+      "background:linear-gradient(180deg,#13294a 0%,#0d1830 62%);" +
+      "box-shadow:-6px 0 20px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.06);" +
+      "transition:transform .28s cubic-bezier(.2,.7,.3,1.25),box-shadow .25s,border-color .25s;}" +
+    /* ustteki cyan serit — takvim yapragi hissi */
+    "#wb-tab::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;" +
+      "background:linear-gradient(90deg,#00c8f0,#4de3ff);}" +
+    /* ic parlama; hover'da guclenir */
+    "#wb-tab::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;" +
+      "background:radial-gradient(ellipse 90% 55% at 50% 0%,rgba(0,200,240,.28),transparent 70%);" +
+      "transition:opacity .25s;}" +
     "#wb-rail:hover #wb-tab,#wb-tab:focus-visible{transform:translate(0,-50%);" +
-      "box-shadow:-4px 2px 18px rgba(0,0,0,.45);}" +
-    "#wb-tab .wb-t-ico{font-size:15px;line-height:1;opacity:.85;}" +
-    "#wb-tab .wb-t-gun{font-size:17px;font-weight:800;line-height:1.05;letter-spacing:-.3px;}" +
-    "#wb-tab .wb-t-ay{font-size:10px;font-weight:700;line-height:1;text-transform:uppercase;opacity:.9;}" +
-    "#wb-tab .wb-t-et{font-size:8.5px;font-weight:700;letter-spacing:.9px;margin-top:3px;opacity:.75;}" +
-    "#wb-rail.wb-acik #wb-tab{transform:translate(64px,-50%);opacity:0;pointer-events:none;}" +
+      "border-color:rgba(0,200,240,.72);" +
+      "box-shadow:-8px 0 28px rgba(0,0,0,.5),0 0 0 1px rgba(0,200,240,.22)," +
+        "inset 0 1px 0 rgba(255,255,255,.09);}" +
+    "#wb-rail:hover #wb-tab::after,#wb-tab:focus-visible::after{opacity:1;}" +
+    "#wb-tab .wb-t-gun{position:relative;font-size:21px;font-weight:800;line-height:1;" +
+      "letter-spacing:-.6px;font-family:'Manrope',inherit;}" +
+    "#wb-tab .wb-t-ay{position:relative;margin-top:3px;font-size:10px;font-weight:800;line-height:1;" +
+      "text-transform:uppercase;letter-spacing:.8px;color:#00c8f0;}" +
+    "#wb-tab .wb-t-cizgi{position:relative;width:20px;height:1px;margin:8px 0 7px;" +
+      "background:rgba(255,255,255,.16);}" +
+    "#wb-tab .wb-t-et{position:relative;font-size:8px;font-weight:700;letter-spacing:1.1px;" +
+      "color:rgba(255,255,255,.5);}" +
+    "#wb-rail.wb-acik #wb-tab{transform:translate(66px,-50%);opacity:0;pointer-events:none;}" +
 
     /* --- acilan kart --- */
     "#wb-panel{position:absolute;right:0;top:50%;transform:translate(calc(100% + 14px),-50%);" +
@@ -162,8 +178,8 @@
     rail.id = "wb-rail";
     rail.innerHTML =
       '<button id="wb-tab" type="button" aria-expanded="false" aria-controls="wb-panel">' +
-        '<i class="ti ti-calendar-event wb-t-ico" aria-hidden="true"></i>' +
         '<span class="wb-t-gun"></span><span class="wb-t-ay"></span>' +
+        '<span class="wb-t-cizgi" aria-hidden="true"></span>' +
         '<span class="wb-t-et">WEBİNAR</span></button>' +
       '<div id="wb-panel" role="region" aria-label="Yaklaşan webinarlar">' +
         '<div id="wb-bas"><span>Yaklaşan Webinar</span>' +
@@ -204,8 +220,22 @@
       q("#wb-etiket").textContent = w.etiket;
       q("#wb-saat").textContent = w.saat;
       q("#wb-baslik").textContent = w.baslik;
-      q("#wb-kayit").href = w.kayit;
-      q("#wb-kayit").setAttribute("aria-label", w.baslik + " webinarına kayıt ol");
+      var kayit = q("#wb-kayit");
+      kayit.href = w.kayit;
+      kayit.setAttribute("aria-label", w.baslik + " webinarına kayıt ol");
+      /* Kayit linki Teams gibi dis bir siteye gidiyorsa yeni sekmede acilir
+         ve ikon dis-baglanti isaretine doner. */
+      var disari = false;
+      try { disari = new URL(w.kayit, location.href).origin !== location.origin; } catch (e) {}
+      if (disari) {
+        kayit.target = "_blank";
+        kayit.rel = "noopener";
+      } else {
+        kayit.removeAttribute("target");
+        kayit.removeAttribute("rel");
+      }
+      kayit.querySelector("i").className =
+        "ti " + (disari ? "ti-external-link" : "ti-arrow-right");
       q("#wb-sayac").textContent = (ix + 1) + " / " + liste.length;
       q("#wb-onceki").disabled = ix === 0;
       q("#wb-sonraki").disabled = ix === liste.length - 1;
