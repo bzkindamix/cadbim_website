@@ -212,8 +212,7 @@ footer{{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24
    "sameAs": [
     "https://www.linkedin.com/company/cadbim/",
     "https://www.youtube.com/c/CadbimTeknikDestek",
-    "https://www.instagram.com/cadbim_izmir/",
-    "https://www.facebook.com/cadbimizmir"
+    "https://www.instagram.com/cadbim_izmir/"
    ]
   }},
   {{

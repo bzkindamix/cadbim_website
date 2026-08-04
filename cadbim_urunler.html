@@ -135,7 +135,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 .brand-link{margin-left:auto;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;transition:gap .2s;}
 .brand-link:hover{gap:11px;}
 .brand-desc{font-size:14px;color:var(--w50);max-width:640px;line-height:1.7;margin-bottom:28px;}
-.group-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--w30);margin:26px 0 14px;}
+.ghead{display:flex;align-items:center;gap:11px;margin:34px 0 16px;flex-wrap:wrap;}.brand-desc + .ghead{margin-top:22px;}.ghead .gt{font-family:var(--fd);font-weight:700;font-size:16px;color:var(--w);}.ghead .gd{font-size:13px;color:var(--w50);}.ghead .gl{margin-left:auto;font-size:13px;color:var(--cyan);text-decoration:none;display:inline-flex;align-items:center;gap:5px;}.ghead .gl:hover{text-decoration:underline;}@media(max-width:600px){.ghead{gap:6px;}.ghead .gl{margin-left:0;}}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
 .pcard{display:flex;align-items:center;gap:14px;background:var(--navy3);border:.5px solid var(--w10);border-radius:var(--rm);padding:16px 18px;text-decoration:none;transition:border-color .18s,transform .15s,background .18s;}
 .pcard:hover{border-color:var(--cbor);transform:translateY(-2px);background:rgba(0,200,240,.04);}
@@ -313,6 +313,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 </section>
 
 <div class="filterbar" id="filterbar">
+  <button class="fchip active" data-f="all" onclick="filterBrand('all',this)">Tümü</button>
   <button class="fchip" data-f="autodesk" onclick="filterBrand('autodesk',this)">Autodesk</button>
   <button class="fchip" data-f="adobe" onclick="filterBrand('adobe',this)">Adobe</button>
   <button class="fchip" data-f="hp" onclick="filterBrand('hp',this)">HP</button>
@@ -334,14 +335,14 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   </div>
   <p class="brand-desc">Tasarım ve üretimin dijital motoru. Mimarlık, mühendislik, imalat ve medya için tüm Autodesk portföyü — lisanslama, eğitim ve teknik destekle.</p>
 
-  <div class="group-label">Koleksiyonlar</div>
+  <div class="ghead"><span class="gt">Koleksiyonlar</span><span class="gd">Sektöre göre bir arada sunulan Autodesk ürün paketleri</span></div>
   <div class="pgrid">
       <a href="aec-collection" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#818cf8;"><img width="340" height="310" src="assets/logos/products/aec-collection.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>AEC Collection</h3><p>Revit, AutoCAD, Civil 3D ve daha fazlası tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="pdm-collection" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>PD&M Collection</h3><p>Inventor, Vault, Fusion ve simülasyon tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="me-collection" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#0ea5e9;"><img width="340" height="310" src="assets/logos/products/me-collection.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>M&E Collection</h3><p>Maya + 3ds Max + Arnold tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
   </div>
 
-  <div class="group-label">ARCHITECTURE, ENGINEERING &amp; CONSTRUCTION (AEC)</div>
+  <div class="ghead"><span class="gt">Mimarlık &amp; İnşaat</span><span class="gd">Tasarım, BIM, altyapı ve şantiye dokümantasyonu</span></div>
   <div class="pgrid">
       <a href="autocad" class="pcard"><div class="pico" style="background:rgba(225,29,72,0.13);color:#e11d48;"><img width="965" height="1024" src="assets/logos/products/autocad.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>AutoCAD</h3><p>2B/3B tasarım ve dokümantasyon standardı</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="autocad-lt" class="pcard"><div class="pico" style="background:rgba(225,29,72,0.13);color:#e11d48;"><img width="965" height="1024" src="assets/logos/products/autocad-lt.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>AutoCAD LT</h3><p>Uygun fiyatlı 2B CAD çizim</p></div><i class="ti ti-arrow-right parr"></i></a>
@@ -354,13 +355,11 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <a href="robot-structural" class="pcard"><div class="pico" style="background:rgba(99,102,241,0.13);color:#a5b4fc;"><img width="965" height="1024" src="assets/logos/products/robot-structural.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Robot Structural Analysis</h3><p>Gelişmiş yapısal analiz</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="infraworks" class="pcard"><div class="pico" style="background:rgba(52,211,153,0.13);color:#34d399;"><img width="965" height="1024" src="assets/logos/products/infraworks.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>InfraWorks</h3><p>Altyapı konsept tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="vehicle-tracking" class="pcard"><div class="pico" style="background:rgba(52,211,153,0.13);color:#34d399;"><img width="965" height="1024" src="assets/logos/products/vehicle-tracking.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Vehicle Tracking</h3><p>Araç dönüş izi & otopark tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="fabrication-cadmep" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><img width="150" height="150" src="assets/logos/products/fabrication.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Fabrication CADmep</h3><p>MEP detaylı BIM modelleme</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="fabrication-estmep" class="pcard"><div class="pico" style="background:rgba(251,191,36,0.13);color:#fbbf24;"><img width="150" height="150" src="assets/logos/products/fabrication.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Fabrication ESTmep</h3><p>MEP maliyet tahmini</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="fabrication-camduct" class="pcard"><div class="pico" style="background:rgba(192,132,252,0.13);color:#c084fc;"><img width="150" height="150" src="assets/logos/products/fabrication.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Fabrication CAMduct</h3><p>Kanal imalatı</p></div><i class="ti ti-arrow-right parr"></i></a>
   </div>
-      <div style="display:flex;align-items:center;gap:11px;margin:34px 0 16px;flex-wrap:wrap;">
-        <img width="40" height="40" src="assets/logos/products/forma.svg" alt="" style="width:22px;height:22px;object-fit:contain;" loading="lazy" decoding="async">
-        <span style="font-family:'Manrope',sans-serif;font-weight:700;font-size:16px;color:#fff;">Autodesk Forma Platformu</span>
-        <span style="font-size:13px;color:rgba(255,255,255,0.45);">Tasarımdan sahaya bağlı AEC endüstri bulutu</span>
-        <a href="autodesk-forma" style="margin-left:auto;font-size:13px;color:#00c8f0;text-decoration:none;display:inline-flex;align-items:center;gap:5px;">Platforma genel bakış <i class="ti ti-arrow-right" style="font-size:13px;"></i></a>
-      </div>
+  <div class="ghead"><span class="gt">Forma Platformu</span><span class="gd">Tasarımdan sahaya bağlı AEC endüstri bulutu</span><a href="autodesk-forma" class="gl">Platforma genel bakış <i class="ti ti-arrow-right" style="font-size:13px;"></i></a></div>
       <div class="pgrid">
       <a href="forma" class="pcard"><div class="pico" style="background:rgba(52,211,153,0.13);color:#34d399;"><img width="40" height="40" src="assets/logos/products/forma.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Forma Site Design</h3><p>Bulutta erken aşama tasarım</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="autodesk-docs" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><img width="40" height="40" src="assets/logos/products/forma.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Forma Data Management</h3><p>Ortak veri ortamı (CDE)</p></div><i class="ti ti-arrow-right parr"></i></a>
@@ -368,7 +367,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <a href="insaat-yonetimi" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><img width="40" height="40" src="assets/logos/products/forma.svg" alt="" style="width:26px;height:26px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Build &amp; Takeoff</h3><p>Saha yönetimi ve model tabanlı metraj</p></div><i class="ti ti-arrow-right parr"></i></a>
       </div>
 
-  <div class="group-label">PRODUCT DESIGN &amp; MANUFACTURING</div>
+  <div class="ghead"><span class="gt">Ürün Tasarımı &amp; İmalat</span><span class="gd">Makine tasarımı, simülasyon, CAM ve tasarım verisi yönetimi</span></div>
   <div class="pgrid">
       <a href="inventor" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><img width="965" height="1024" src="assets/logos/products/inventor.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Inventor</h3><p>Parametrik makine ve ürün tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="fusion" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><img width="965" height="1024" src="assets/logos/products/fusion.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Fusion</h3><p>Bulut CAD/CAM/CAE platformu</p></div><i class="ti ti-arrow-right parr"></i></a>
@@ -381,9 +380,11 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <a href="powermill" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><img width="965" height="1024" src="assets/logos/products/powermill.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>PowerMill</h3><p>5 eksen gelişmiş CAM</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="powershape" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.13);color:#e879f9;"><img width="965" height="1024" src="assets/logos/products/powershape.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>PowerShape</h3><p>Kalıp & imalat CAD</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="alias" class="pcard"><div class="pico" style="background:rgba(217,70,239,0.13);color:#e879f9;"><img width="965" height="1024" src="assets/logos/products/alias.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Alias</h3><p>Endüstriyel tasarım & yüzey</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="vred" class="pcard"><div class="pico" style="background:rgba(255,107,0,0.13);color:#ff6b00;"><img width="340" height="310" src="assets/logos/products/vred.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>VRED</h3><p>Otomotiv VR & gerçek zamanlı görselleştirme</p></div><i class="ti ti-arrow-right parr"></i></a>
+      <a href="cfd" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#38bdf8;"><img width="75" height="75" src="assets/logos/products/cfd.png" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>CFD</h3><p>Hesaplamalı akışkanlar dinamiği</p></div><i class="ti ti-arrow-right parr"></i></a>
   </div>
 
-  <div class="group-label">MEDIA &amp; ENTERTAINMENT</div>
+  <div class="ghead"><span class="gt">Medya &amp; Eğlence</span><span class="gd">3B animasyon, görselleştirme, VFX ve prodüksiyon yönetimi</span></div>
   <div class="pgrid">
       <a href="maya" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#0ea5e9;"><img width="965" height="1024" src="assets/logos/products/maya.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Maya</h3><p>3B animasyon, modelleme & VFX</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="maya-creative" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#0ea5e9;"><img width="965" height="1024" src="assets/logos/products/maya-creative.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Maya Creative</h3><p>Uygun fiyatlı 3B araç seti</p></div><i class="ti ti-arrow-right parr"></i></a>
@@ -397,9 +398,8 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <a href="flow-studio" class="pcard"><div class="pico" style="background:rgba(14,165,233,0.13);color:#0ea5e9;"><img width="965" height="1024" src="assets/logos/products/flow-studio.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Autodesk Flow Studio</h3><p>Bulut tabanlı medya üretimi</p></div><i class="ti ti-arrow-right parr"></i></a>
   </div>
 
-  <div class="group-label">Genel Araçlar &amp; Platform Servisleri</div>
+  <div class="ghead"><span class="gt">Genel Araçlar</span><span class="gd">Görüntüleyiciler, bulut erişimi ve yardımcı uygulamalar</span></div>
   <div class="pgrid">
-      <a href="autocad-web" class="pcard"><div class="pico" style="background:rgba(225,29,72,0.13);color:#e11d48;"><img width="965" height="1024" src="assets/logos/products/autocad-web.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>AutoCAD Web</h3><p>Tarayıcıda CAD</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="autodesk-drive" class="pcard"><div class="pico" style="background:rgba(56,189,248,0.13);color:#38bdf8;"><img width="965" height="1024" src="assets/logos/products/autodesk-drive.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Autodesk Drive</h3><p>Güvenli bulut tasarım depolama</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="desktop-connector" class="pcard"><div class="pico" style="background:rgba(34,197,94,0.13);color:#22c55e;"><img width="965" height="1024" src="assets/logos/products/desktop-connector.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Desktop Connector</h3><p>Bulut dosya senkronizasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="recap-pro" class="pcard"><div class="pico" style="background:rgba(245,158,11,0.13);color:#f59e0b;"><img width="965" height="1024" src="assets/logos/products/recap-pro.svg" alt="" style="width:28px;height:28px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>ReCap Pro</h3><p>Nokta bulutu & gerçeklik yakalama</p></div><i class="ti ti-arrow-right parr"></i></a>
@@ -591,7 +591,6 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
       <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
       <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
       <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-      <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
     </div>
   </div>
 </footer>
@@ -599,13 +598,21 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 function filterBrand(f, btn){
   document.querySelectorAll('.fchip').forEach(function(c){c.classList.remove('active');});
   btn.classList.add('active');
+  var first=null;
   document.querySelectorAll('.brand-block').forEach(function(bl){
-    bl.style.display = (f==='all' || bl.dataset.brand===f) ? '' : 'none';
+    var show = (f==='all' || bl.dataset.brand===f);
+    bl.style.display = show ? '' : 'none';
+    if(show && !first) first=bl;
   });
-  if(f!=='all'){
+  if(btn.scrollIntoView){btn.scrollIntoView({block:'nearest',inline:'nearest'});}
+  if(f!=='all' && first){
+    /* Hedef, blogun sayfa icindeki sabit konumu; yapisik (sticky) filtre
+       cubugunun anlik konumu degil - yoksa hedef kaydirma sirasinda kayiyor. */
+    var nav=document.querySelector('.nav');
     var fb=document.getElementById('filterbar');
-    var y=fb ? fb.getBoundingClientRect().bottom+window.scrollY : 0;
-    window.scrollTo({top:Math.max(0,y-80),behavior:'smooth'});
+    var off=(nav?nav.offsetHeight:68)+(fb?fb.offsetHeight:0)+8;
+    var y=first.getBoundingClientRect().top+window.scrollY-off;
+    window.scrollTo({top:Math.max(0,y),behavior:'smooth'});
   }
 }
 </script>
@@ -617,9 +624,9 @@ function filterBrand(f, btn){
   els.forEach(function(e){io.observe(e);});
 })();
 </script>
-<script src="mobilenav.js?v=19" defer></script>
+<script src="mobilenav.js?v=20" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
-<script src="social-widget.js?v=5" defer></script>
+<script src="social-widget.js?v=6" defer></script>
 <script src="cookie-consent.js?v=2" defer></script>
 </body>
 </html>
