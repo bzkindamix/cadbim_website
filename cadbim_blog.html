@@ -55,6 +55,8 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .fchip{padding:8px 16px;border-radius:20px;font-size:12px;cursor:pointer;border:.5px solid var(--w10);background:transparent;color:var(--w50);transition:all .2s;font-family:var(--fb);}
 .fchip:hover{border-color:var(--w30);color:var(--w80);}
 .fchip.active{background:var(--cdim);border-color:var(--cbor);color:var(--cyan);}
+/* Aktif filtredeki × işareti, aynı öğeye basmakla filtrenin kalkacağını gösterir. */
+.fchip.active::after{content:'\00d7';margin-left:8px;font-size:15px;line-height:1;font-weight:700;opacity:.6;}
 .fchip.prod-chip.active{background:rgba(255,255,255,0.08);border-color:var(--w30);color:var(--w);}
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:8px;}
 .blog-card{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:22px;transition:border-color .2s;text-decoration:none;display:flex;flex-direction:column;overflow:hidden;}
@@ -152,7 +154,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=29">
+<link rel="stylesheet" href="assets/css/design-system.css?v=30">
   <link rel="alternate" type="application/rss+xml" title="Cadbim Blog" href="/feed.xml">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
 <link rel="stylesheet" href="assets/css/wide-screen.css?v=1">
@@ -250,7 +252,6 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <div class="filter-block">
     <div class="filter-label">Kategori</div>
     <div class="pfilter" id="catfilter">
-      <button class="fchip active" data-f="all">Tümü</button>
       <button class="fchip" data-f="BIM">BIM</button>
       <button class="fchip" data-f="CAD">CAD</button>
       <button class="fchip" data-f="Simülasyon">Simülasyon</button>
@@ -264,7 +265,6 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <div class="filter-block">
     <div class="filter-label">Ürün</div>
     <div class="pfilter" id="prodfilter">
-      <button class="fchip prod-chip active" data-p="all">Tümü</button>
       <button class="fchip prod-chip" data-p="Revit">Revit</button>
       <button class="fchip prod-chip" data-p="Inventor">Inventor</button>
       <button class="fchip prod-chip" data-p="Fusion">Fusion</button>
@@ -442,17 +442,19 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
 
   [].slice.call(document.querySelectorAll('#catfilter .fchip')).forEach(function(chip){
     chip.addEventListener('click',function(){
+      var temizle=chip.classList.contains('active');
       document.querySelectorAll('#catfilter .fchip').forEach(function(c){c.classList.remove('active');});
-      chip.classList.add('active');
-      activeCat=chip.getAttribute('data-f');
+      if(!temizle) chip.classList.add('active');
+      activeCat=temizle?'all':chip.getAttribute('data-f');
       render(true);
     });
   });
   [].slice.call(document.querySelectorAll('#prodfilter .fchip')).forEach(function(chip){
     chip.addEventListener('click',function(){
+      var temizle=chip.classList.contains('active');
       document.querySelectorAll('#prodfilter .fchip').forEach(function(c){c.classList.remove('active');});
-      chip.classList.add('active');
-      activeProd=chip.getAttribute('data-p');
+      if(!temizle) chip.classList.add('active');
+      activeProd=temizle?'all':chip.getAttribute('data-p');
       render(true);
     });
   });

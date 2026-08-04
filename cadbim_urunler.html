@@ -120,6 +120,8 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 .fchip{padding:8px 18px;border-radius:22px;border:.5px solid var(--w10);background:transparent;color:var(--w50);font-family:var(--fb);font-size:13px;cursor:pointer;transition:all .18s;white-space:nowrap;}
 .fchip:hover{border-color:var(--w30);color:var(--w80);}
 .fchip.active{background:var(--cyan);border-color:var(--cyan);color:var(--navy);font-weight:700;}
+/* Aktif cipteki × isareti, ayni cipe basinca filtrenin kalkacagini gosterir. */
+.fchip.active::after{content:'\00d7';margin-left:8px;font-size:15px;line-height:1;font-weight:700;opacity:.6;}
 .brand-block{padding:56px 3rem;border-bottom:.5px solid var(--w06);}
 .brand-block:nth-child(even){background:var(--navy2);}
 .brand-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:8px;}
@@ -213,7 +215,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=29">
+<link rel="stylesheet" href="assets/css/design-system.css?v=30">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
 <link rel="stylesheet" href="assets/css/wide-screen.css?v=1">
 </head>
@@ -313,7 +315,6 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
 </section>
 
 <div class="filterbar" id="filterbar">
-  <button class="fchip active" data-f="all" onclick="filterBrand('all',this)">Tümü</button>
   <button class="fchip" data-f="autodesk" onclick="filterBrand('autodesk',this)">Autodesk</button>
   <button class="fchip" data-f="adobe" onclick="filterBrand('adobe',this)">Adobe</button>
   <button class="fchip" data-f="hp" onclick="filterBrand('hp',this)">HP</button>
@@ -595,17 +596,30 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:40px 3rem 24p
   </div>
 </footer>
 <script>
+/* Marka logolari sayfa akisinda goze girsin diye kayarken animasyonla acilir
+   (asagidaki IntersectionObserver). Filtre bir markayi gizleyip tekrar
+   gosterdiginde gozlemci o ogeyi bir daha tetiklemez; bu yuzden animasyonu
+   filtre tiklamasi dogrudan oynatir - yoksa blok gorunur oluyor ama logosu
+   bos kaliyordu. */
+function playBrandReveal(scope){
+  /* Sinifi dogrudan ekler: henuz acilmamis logo CSS gecisiyle animasyonlu
+     gelir, zaten acilmis olan oldugu gibi kalir (yeniden titremez). */
+  (scope||document).querySelectorAll('.brand-logo').forEach(function(e){e.classList.add('in');});
+}
 function filterBrand(f, btn){
+  /* "Tumu" cipi yok: aktif cipe yeniden basmak filtreyi temizler. */
+  var temizle = btn.classList.contains('active');
   document.querySelectorAll('.fchip').forEach(function(c){c.classList.remove('active');});
-  btn.classList.add('active');
+  if(!temizle) btn.classList.add('active');
   var first=null;
   document.querySelectorAll('.brand-block').forEach(function(bl){
-    var show = (f==='all' || bl.dataset.brand===f);
+    var show = (temizle || bl.dataset.brand===f);
     bl.style.display = show ? '' : 'none';
     if(show && !first) first=bl;
   });
+  playBrandReveal(temizle ? null : first);
   if(btn.scrollIntoView){btn.scrollIntoView({block:'nearest',inline:'nearest'});}
-  if(f!=='all' && first){
+  if(!temizle && first){
     /* Hedef, blogun sayfa icindeki sabit konumu; yapisik (sticky) filtre
        cubugunun anlik konumu degil - yoksa hedef kaydirma sirasinda kayiyor. */
     var nav=document.querySelector('.nav');

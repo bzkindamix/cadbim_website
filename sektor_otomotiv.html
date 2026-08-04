@@ -113,6 +113,8 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:32px 3rem 20p
 .fchip{padding:8px 16px;border-radius:22px;border:.5px solid var(--w10);background:transparent;color:var(--w50);font-family:var(--fb);font-size:12.5px;cursor:pointer;transition:all .18s;white-space:nowrap;}
 .fchip:hover{border-color:var(--w30);color:var(--w80);}
 .fchip.active{background:var(--cyan);border-color:var(--cyan);color:var(--navy);font-weight:700;}
+/* Aktif filtredeki × işareti, aynı öğeye basmakla filtrenin kalkacağını gösterir. */
+.fchip.active::after{content:'\00d7';margin-left:8px;font-size:15px;line-height:1;font-weight:700;opacity:.6;}
 .psearch{margin-left:auto;display:flex;align-items:center;gap:7px;border:.5px solid var(--w10);border-radius:22px;padding:7px 14px;background:rgba(255,255,255,0.03);}
 .psearch i{font-size:14px;color:var(--w30);}
 .psearch input{background:transparent;border:none;outline:none;color:var(--w);font-family:var(--fb);font-size:13px;width:150px;}
@@ -296,7 +298,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   .section{padding:44px 1.5rem;}
 }
 </style>
-<link rel="stylesheet" href="assets/css/design-system.css?v=29">
+<link rel="stylesheet" href="assets/css/design-system.css?v=30">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
 <link rel="stylesheet" href="assets/css/wide-screen.css?v=1">
 </head>
@@ -564,7 +566,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     <div class="sol-title">Otomotiv için kullandığımız ürünler</div>
   </div>
   <div class="pfilter" id="pfilter">
-    <button class="fchip active" data-f="all">Tümü</button>
     <button class="fchip" data-f="c0">Konsept & Stil Tasarımı</button>
     <button class="fchip" data-f="c1">Mühendislik & İmalat</button>
     <button class="fchip" data-f="c2">Görselleştirme & Doğrulama</button>
@@ -600,8 +601,11 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     document.getElementById('pempty').style.display=n?'none':'';
   }
   chips.forEach(function(ch){ch.addEventListener('click',function(){
+    /* "Tumu" cipi yok: aktif cipe yeniden basmak filtreyi temizler. */
+    var temizle=ch.classList.contains('active');
     chips.forEach(function(x){x.classList.remove('active');});
-    ch.classList.add('active'); f=ch.getAttribute('data-f'); apply();
+    if(!temizle) ch.classList.add('active');
+    f=temizle?'all':ch.getAttribute('data-f'); apply();
   });});
   document.getElementById('psearch').addEventListener('input',function(e){
     q=e.target.value.trim().toLowerCase(); apply();

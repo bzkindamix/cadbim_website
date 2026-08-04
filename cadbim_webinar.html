@@ -58,6 +58,8 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .fchip{padding:8px 16px;border-radius:20px;font-size:12px;cursor:pointer;border:.5px solid var(--w10);background:transparent;color:var(--w50);transition:all .2s;font-family:var(--fb);}
 .fchip:hover{border-color:var(--w30);color:var(--w80);}
 .fchip.active{background:var(--cdim);border-color:var(--cbor);color:var(--cyan);}
+/* Aktif filtredeki × işareti, aynı öğeye basmakla filtrenin kalkacağını gösterir. */
+.fchip.active::after{content:'\00d7';margin-left:8px;font-size:15px;line-height:1;font-weight:700;opacity:.6;}
 .wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:32px;}
 .wcard{background:var(--navy3);border-radius:var(--rl);border:.5px solid var(--w10);padding:24px;transition:border-color .2s;display:flex;flex-direction:column;}
 .wcard:hover{border-color:var(--cbor);}
@@ -155,7 +157,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=29">
+<link rel="stylesheet" href="assets/css/design-system.css?v=30">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
 <link rel="stylesheet" href="assets/css/wide-screen.css?v=1">
 </head>
@@ -250,12 +252,10 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
 </section>
 <section class="section" style="padding-top:0;">
   <div class="pfilter" id="pfilter">
-    <button class="fchip active" data-f="all">Tümü</button>
     <button class="fchip" data-f="aec">Mimarlık, Mühendislik & İnşaat (AEC)</button>
     <button class="fchip" data-f="dm">Ürün Tasarımı & İmalat (D&M)</button>
   </div>
   <div class="pfilter" id="pfilter2" style="margin-top:4px;">
-    <button class="fchip active" data-p="all">Tüm Ürünler</button>
     <button class="fchip" data-p="Inventor">Inventor</button>
     <button class="fchip" data-p="Revit">Revit LT</button>
     <button class="fchip" data-p="AutoCAD Plant 3D">AutoCAD Plant 3D</button>
@@ -407,17 +407,19 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
   }
   chips.forEach(function(chip){
     chip.addEventListener('click',function(){
+      var temizle=chip.classList.contains('active');
       chips.forEach(function(c){c.classList.remove('active');});
-      chip.classList.add('active');
-      curCat=chip.getAttribute('data-f');
+      if(!temizle) chip.classList.add('active');
+      curCat=temizle?'all':chip.getAttribute('data-f');
       apply();
     });
   });
   chips2.forEach(function(chip){
     chip.addEventListener('click',function(){
+      var temizle=chip.classList.contains('active');
       chips2.forEach(function(c){c.classList.remove('active');});
-      chip.classList.add('active');
-      curProd=chip.getAttribute('data-p');
+      if(!temizle) chip.classList.add('active');
+      curProd=temizle?'all':chip.getAttribute('data-p');
       apply();
     });
   });

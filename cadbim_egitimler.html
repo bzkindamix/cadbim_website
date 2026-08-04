@@ -94,6 +94,8 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .ctab{padding:8px 18px;border-radius:20px;font-size:13px;cursor:pointer;border:.5px solid var(--w10);background:transparent;color:var(--w50);transition:all .2s;font-family:var(--fb);}
 .ctab:hover{border-color:var(--w30);color:var(--w80);}
 .ctab.active{background:var(--cdim);border-color:var(--cbor);color:var(--cyan);}
+/* Aktif filtredeki × işareti, aynı öğeye basmakla filtrenin kalkacağını gösterir. */
+.ctab.active::after{content:'\00d7';margin-left:8px;font-size:15px;line-height:1;font-weight:700;opacity:.6;}
 .catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;}
 .course-card{background:var(--navy3);border-radius:var(--rm);border:.5px solid var(--w06);padding:18px 16px;display:flex;align-items:flex-start;gap:12px;transition:border-color .2s,transform .15s;cursor:pointer;text-decoration:none;}
 .course-card:hover{border-color:var(--cbor);transform:translateY(-1px);}
@@ -249,7 +251,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon-180.png">
   <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="assets/css/design-system.css?v=29">
+<link rel="stylesheet" href="assets/css/design-system.css?v=30">
 <link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=3">
 <link rel="stylesheet" href="assets/css/wide-screen.css?v=1">
 </head>
@@ -450,7 +452,6 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
   <p class="ssub">Tüm eğitimler bireysel veya kurumsal olarak, seviyenize göre özelleştirilebilir.</p>
 
   <div class="catalog-tabs" style="margin-top:36px;">
-    <button class="ctab active" onclick="filterCourses('all', this)">Tümü</button>
     <button class="ctab" onclick="filterCourses('fusion', this)">Fusion</button>
     <button class="ctab" onclick="filterCourses('inventor', this)">Inventor</button>
     <button class="ctab" onclick="filterCourses('autocad', this)">AutoCAD</button>
@@ -1006,8 +1007,11 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:48px 3rem 24p
 
 <script>
 function filterCourses(cat, btn) {
+  /* "Tumu" sekmesi yok: aktif sekmeye yeniden basmak filtreyi temizler. */
+  var temizle = btn.classList.contains('active');
   document.querySelectorAll('.ctab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
+  if (!temizle) btn.classList.add('active');
+  if (temizle) cat = 'all';
   document.querySelectorAll('.course-card').forEach(c => {
     if(cat === 'all' || c.dataset.cat === cat) {
       c.classList.remove('hidden');
