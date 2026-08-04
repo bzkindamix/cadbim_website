@@ -29,8 +29,12 @@
     }
   }
   if (!self) return;
-  var KAYNAK = new URL("cadbim_webinar.html", self).href;
   var LISTE = new URL("webinar", self).href;
+  /* Iki barindirma bicimi var, ikisi de denenir:
+       - canli site (.htaccess): /webinar calisir, /cadbim_webinar.html 400 verir
+       - GitHub Pages / yerel:   /cadbim_webinar.html calisir, temiz URL 404'e duser
+     Sirayla denenip icinde gercekten webinar karti olan yanit kullanilir. */
+  var KAYNAKLAR = [LISTE, new URL("cadbim_webinar.html", self).href];
 
   /* Gun+ay veriliyor, yil verilmiyor: tarihi bugune en yakin makul yila oturt. */
   function tariheCevir(gun, ayKisa) {
@@ -47,7 +51,7 @@
 
   function metin(kok, sec) { var e = kok.querySelector(sec); return e ? e.textContent.trim() : ""; }
 
-  function kartlariOku(html) {
+  function kartlariOku(html, kaynak) {
     var doc = new DOMParser().parseFromString(html, "text/html");
     var bugun = new Date(); bugun.setHours(0, 0, 0, 0);
     var liste = [];
@@ -65,9 +69,9 @@
         etiket: metin(k, ".wtag"),
         saat: metin(k, ".wtime"),
         baslik: metin(k, "h3"),
-        gorsel: img ? new URL(img.getAttribute("src"), KAYNAK).href : "",
+        gorsel: img ? new URL(img.getAttribute("src"), kaynak).href : "",
         gorselAlt: img ? (img.getAttribute("alt") || "") : "",
-        kayit: btn ? new URL(btn.getAttribute("href"), KAYNAK).href : LISTE
+        kayit: btn ? new URL(btn.getAttribute("href"), kaynak).href : LISTE
       });
     });
     liste.sort(function (a, b) { return a.tarih - b.tarih; });
@@ -236,17 +240,31 @@
     rail.classList.add("wb-hazir");
   }
 
-  function getir() {
-    fetch(KAYNAK, { credentials: "same-origin" })
+  function getir(i) {
+    i = i || 0;
+    if (i >= KAYNAKLAR.length) return;      /* veri yoksa widget hic gorunmez */
+    var kaynak = KAYNAKLAR[i];
+    fetch(kaynak, { credentials: "same-origin" })
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
-      .then(function (html) { baslat(kartlariOku(html)); })
-      .catch(function () { /* veri yoksa widget hic gorunmez */ });
+      .then(function (html) {
+        var liste = kartlariOku(html, kaynak);
+        /* Yanit geldi ama webinar karti yoksa (orn. 404 sayfasi) sonrakini dene. */
+        if (!liste.length) return Promise.reject("kart yok");
+        return liste;
+      })
+      /* Hata isleyicisi bilincli olarak yalnizca VERI adimini kapsar:
+         baslat() icindeki bir hata yutulup sessizce sonraki kaynaga
+         gecilmesin, konsolda gorunsun. */
+      .then(baslat, function () { getir(i + 1); });
   }
 
   /* Sayfa acilisini yavaslatmamak icin bosta calistir. */
   function planla() {
-    if (window.requestIdleCallback) requestIdleCallback(getir, { timeout: 3000 });
-    else setTimeout(getir, 1200);
+    /* requestIdleCallback geri cagirima IdleDeadline gecirir; getir()'in
+       kaynak indeksi parametresiyle karismasin diye sarmalanir. */
+    var basla = function () { getir(0); };
+    if (window.requestIdleCallback) requestIdleCallback(basla, { timeout: 3000 });
+    else setTimeout(basla, 1200);
   }
   if (document.readyState === "complete") planla();
   else window.addEventListener("load", planla);
