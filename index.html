@@ -163,7 +163,7 @@ body{background:var(--navy);color:var(--white);font-family:var(--font-b);font-si
 .cred-row1 img[src*="sketchup"]{max-height:44px;}
 .cred-row1 img[src*="microsoft"]{max-height:46px;max-width:84%;}
 .cred-row1 img[src*="ultimaker"]{max-width:96%;}
-.cred-row1 img[src*="lumion"]{max-width:94%;}
+.cred-row1 img[src*="lumion"]{max-width:94%;max-height:34px;}
 /* Adobe ve Chaos rozetleri kendi renkli/opak kartlarıyla gelir (arka planları
    şeffaf değil) — mono filtre uygulanırsa tek renk bloğa döner, bu yüzden
    doğal halleriyle bırakılır (DK-2026-08-03-26). */
@@ -282,9 +282,11 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
   .cred{padding:56px 1.25rem;}
   .cred-row1{grid-template-columns:repeat(2,1fr);gap:14px;}
   .cred-row1 a{height:104px;padding:16px 14px;}
-.cred-row1 img[src*="ultimaker"],.cred-row1 img[src*="lumion"],.cred-row1 img[src*="autodesk"]{max-width:98%;}
+.cred-row1 img[src*="ultimaker"],.cred-row1 img[src*="autodesk"]{max-width:98%;}
+  .cred-row1 img[src*="lumion"]{max-width:98%;}
   .cred-row1 img{max-height:54px;}
   .cred-row1 img[src*="adobe"],.cred-row1 img[src*="chaos"]{max-height:64px;}
+  .cred-row1 img[src*="lumion"]{max-height:38px;}
 }
 @media(max-width:600px){
   .section{padding:56px 1.5rem;}
