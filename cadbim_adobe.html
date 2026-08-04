@@ -563,9 +563,9 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
       if(p.type==='video' && p.videoId){
         return '<div style="background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);overflow:hidden;">'
           + '<div style="aspect-ratio:16/9;background:#000;"><a class="yt-lite" href="https://www.youtube.com/watch?v='+p.videoId+'" target="_blank" rel="noopener" data-yt="'+p.videoId+'" data-title="'+esc(p.title)+'" aria-label="Videoyu oynat"><img src="https://i.ytimg.com/vi/'+p.videoId+'/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="yt-lite-btn" aria-hidden="true"></span></a></div>'
-          + '<div style="padding:16px;"><h3 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'.html" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h3><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
+          + '<div style="padding:16px;"><h3 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h3><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
       }
-      return '<a href="post/'+p.slug+'.html" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);padding:20px;text-decoration:none;">'
+      return '<a href="post/'+p.slug+'" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);padding:20px;text-decoration:none;">'
         + '<div style="font-size:10px;color:#00c8f0;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">'+esc(p.cat)+'</div>'
         + '<h3 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h3>'
         + '<p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></a>';
@@ -630,7 +630,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     </div>
   </div>
 </footer>
-<script src="mobilenav.js?v=12" defer></script>
+<script src="mobilenav.js?v=13" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
 <script src="social-widget.js?v=5" defer></script>
 <script src="cookie-consent.js?v=2" defer></script>

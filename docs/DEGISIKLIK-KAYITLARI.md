@@ -14,6 +14,28 @@
 - **Doğrulama:** Port 8420'de başka bir oturumun dev sunucusu (eski, önbelleğe alınmış MAP ile) çalıştığından dokunulmadı; bunun yerine bu oturuma özel `dev_server.py 8425` başlatılıp 4 yeni sayfa + 3 katalog sayfası tarayıcı panelinde tek tek gezildi: tüm temiz URL'ler (`/audition`, `/animate`, `/character-animator`, `/fresco`) doğru sayfaya çözümlendi, konsol hatası 0, tüm ağ istekleri 200, mobil genişlikte (375px) yatay taşma yok. Doğrulama sonunda geçici sunucu durduruldu.
 - **Durum:** ✅ Tamamlandı.
 
+### DK-2026-08-05-03 — Mobil menü masaüstüyle senkronize edildi: Sanatsal Baskı dahil 5 eksik Çözüm linki, Blog ve stale CTA düzeltildi
+
+- **Yapan:** Onur'un "mobilde menülerde desktop taki tüm linkleri göremiyorum, örneğin sanatsal baskı atölyesi çözümlerin altında yok" bulgusu üzerine Claude (PDM asistanı).
+- **Kök neden:** `mobilenav.js`'deki mobil akordeon menü, masaüstü `nav-mega` HTML'inin canlı bir yansıması değil — elle bakımı yapılan, tamamen ayrı bir `GROUPS`/`TOP_LINKS` veri dizisi. Masaüstü menüsü zaman içinde büyüdüğünde (Dijital Dönüşüm, Sanatsal Baskı Atölyesi gibi öne çıkan linkler eklendiğinde, Blog üst menüye girdiğinde, CTA hedefi `iletisim`'den özel `teklif-iste` sayfasına taşındığında) bu ikinci liste güncellenmemiş.
+- **Bulunan ve düzeltilen 4 fark:**
+  1. **Çözümler grubunda 5 link eksikti:** Dijital Dönüşüm, BIM İçerik & Obje Üretimi, Dijital İkiz, AI Destekli Görselleştirme, **Sanatsal Baskı Atölyesi** (bildirilen sorun). 14 → 19 link; sıralama da masaüstü mega-menünün mantıksal grup sırasına (Yapı & Altyapı → Ürün Tasarımı → Üretim → Veri Yönetimi → Görselleştirme → Sanatsal Baskı) çekildi.
+  2. **"Blog" üst menü linki hiç yoktu** — `TOP_LINKS`'e eklendi.
+  3. **"Teklif Al" CTA'sı eski `/iletisim#form`'a gidiyordu** — masaüstü çoktan `/teklif-iste#form`'a geçmişti (bu proje kapsamında ayrı bir sayfa olarak inşa edilmişti); mobilde bu geçiş hiç uygulanmamış. Düzeltildi.
+  4. **Endüstriler grubunda küçük bir etiket sürüklenmesi:** "İç Mimarlık & Tasarım" → masaüstünün güncel (sadeleştirilmiş) etiketi "İç Mimarlık" ile hizalandı; sıra da masaüstüyle eşitlendi.
+- **Cache bust:** `mobilenav.js?v=12` → `?v=13` (1.325 sayfa).
+- **Doğrulama:** Mobil viewport'ta (375px) hem kök (`/`) hem post (`/post/3d-gorunum.html`) sayfasında akordeon açılıp Çözümler'in 19/19 linki (Sanatsal Baskı Atölyesi dahil) doğru `href` ile listelendiği, CTA'nın `teklif-iste#form`'a (post'ta `../teklif-iste#form`) gittiği doğrulandı; `/sanatsal-baski`, `/teklif-iste`, `/blog` fetch ile 200; konsol hatası 0.
+- **Not (gelecek iyileştirme, şimdi yapılmadı):** Bu, aynı "iki kaynaktan biri unutuluyor" hatasının üçüncü örneği (önceki ikisi: post nav'ı kök mega-menüden kopuktu [Y12], 29 kök sayfa kendi aralarında sürüklenmişti [Y12]). Kalıcı çözüm, mobil menünün masaüstü DOM'undan çalışma anında türetilmesi olurdu (artık nav tüm sayfalarda tekdüze olduğu için bu şimdi düşük riskli) — ama bu, 1.325 sayfada paylaşılan navigasyon mantığını değiştiren daha büyük bir iş; şimdilik veri düzeltmesiyle sınırlı tutuldu, istenirse ayrı bir iş olarak ele alınabilir.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
+### DK-2026-08-05-02 — Son ".html" iç link kalıntısı temizlendi + htaccess taslağında kritik bir hata bulundu ve düzeltildi
+
+- **Yapan:** Onur'un "site canlıdayken bütün linkler .html uzantısız olacak değil mi" sorusu üzerine Claude (PDM asistanı) — cevaptan önce iddiayı gerçek taramayla doğruladı, tahmin etmedi.
+- **Bulgu 1 — 80 sayfada 160 kalıntı `.html` linki:** 80 kök ürün sayfasındaki "İlgili blog videoları" bölümünü çalışma anında üreten JS şablonu (`container.innerHTML=matched.map(...)`), post kartlarının linkini hâlâ `href="post/'+p.slug+'.html"` biçiminde üretiyordu — sitenin geri kalanı temiz URL'e geçmişken bu tek şablon geçmemişti. `.html` son eki kaldırıldı (160/160 düzeltme); tarayıcıda `/3dsmax` sayfasında üretilen linkler artık `post/slug` biçiminde ve `fetch()` ile 200 dönüyor. Kök + post sayfalarında iç link taramasında kalan `.html` referansı: **0**.
+- **Bulgu 2 — htaccess taslağında gizli bir çift-uzantı hatası:** `docs/htaccess-taslak.txt`'teki genel blog kuralı (`^post/(.+?)/?$ /post/$1.html [L]`) korumasızdı — biri doğrudan `/post/slug.html` adresine giderse (eski yer imi, dış backlink, veya az önce düzeltilen JS şablonunun ürettiği link gibi), kural `$1`'i "slug.html" olarak yakalayıp hedefi `/post/slug.html.html`'e çeviriyordu → **404**. Bu, sitede hiçbir yerden linklenmiyor olsa bile canlıda karşılaşılabilecek gerçek bir kırılmaydı (yerel `dev_server.py` bunu yakalamamıştı çünkü o, önce dosyanın fiziksel olarak var olup olmadığına bakıyor — farklı bir mantık). **Düzeltme:** genel kuralın önüne `^post/(.+)\.html$ /post/$1 [R=301,L]` eklendi — artık doğrudan `.html` isteği önce temiz URL'e 301'lenip döngü kırılıyor, sonra temiz URL normal şekilde iç dosyaya çözülüyor. K6'nın 102 Türkçe-karakterli post için zaten var olan özel 301 kuralları (bu genel kuraldan önce, dosyada daha yukarıda) önceliğini koruyor, çakışma yok (Python'da regex sırası simüle edilerek doğrulandı).
+- **Kapsam dışı not:** Bu htaccess düzeltmesi taslakta — henüz sunucuya yüklenmedi (bkz. `docs/CANLIYA-GECIS-KONTROL-LISTESI.md` Bölüm B). Yükleme öncesi staging testi bu tür hataları yakalamak için zaten planda.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-04-43 — Creative Cloud sayfası: pakete dahil 9 uygulama artık tıklanabilir, ayrı lisanslı 2 ürün ayrıştırıldı
 
 - **Yapan:** Onur'un "tüm adobe Creative Cloud içeriği ayrı ürün olarak gözükmüyor — cadbim.com.tr'den bak, adobe.com'dan teyit et, siteye ekle, adobe kataloglarına ekle, ürün kataloglarına ekle, logolarını doğru kullan" talebi üzerine Claude (PDM asistanı).

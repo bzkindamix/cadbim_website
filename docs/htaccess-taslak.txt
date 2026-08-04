@@ -558,6 +558,14 @@ RewriteRule ^yapi\-urunleri\-uretim\-ve\-imalati/?$ /bim [R=301,L]
 RewriteRule ^yapisal\-mühendislik\-icin\-bim/?$ /bim [R=301,L]
 
 # --- 3) Temiz URL -> gercek dosya (ic yeniden yazim, adres cubugu degismez) ---
+# HATA DUZELTMESI (2026-08-05): Asagidaki genel kural, ".html" ile bitmeyen
+# istekleri (temiz URL) ic dosyaya cozer, AMA korumasiz haliyle dogrudan
+# "/post/slug.html" istegi de eslesip $1="slug.html" yakalar ve hedefi
+# "/post/slug.html.html" yapardi (404). Onu onlemek icin: (a) dogrudan .html
+# istegi -> once temiz URL'e 301 (SEO tekillestirme + dongu kirilir),
+# (b) sonra temiz URL -> gercek dosya kurali sadece .html ICERMEYEN
+# isteklerde calisir.
+RewriteRule ^post/(.+)\.html$ /post/$1 [R=301,L]
 # 1126+ blog yazisi icin genel kural (post/<slug> -> post/<slug>.html)
 RewriteRule ^post/(.+?)/?$ /post/$1.html [L]
 RewriteRule ^3dsmax/?$ /cadbim_3dsmax.html [L]

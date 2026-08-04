@@ -49,7 +49,9 @@ Geçiş tarihinden önce netleşmesi gereken, teknik olarak "doğru" tek cevabı
 - [ ] `sitemap.xml` Google Search Console'a gönderildi.
 - [ ] **Search Console'da "Adres Değişikliği" aracı KULLANILMAYACAK** — alan adı aynı kalıyor (sadece host/platform değişiyor), bu araç yalnızca alan adı değişiminde gerekli.
 - [ ] Search Console mülk doğrulaması (DNS TXT veya HTML dosyası) yeni host üzerinden teyit edildi.
+- [ ] GSC mülkü **"Alan Adı (Domain)" tipinde** doğrulandı (DNS TXT) — www/non-www ve http/https tüm varyantları tek mülkte toplar. Wix döneminden kalan eski bir URL-öneki mülkü varsa onunla çakışmadığı teyit edildi.
 - [ ] `canonical` etiketleri örnekleme ile kontrol edildi — artık staging (`bzkindamix.github.io`) değil, gerçek `www.cadbim.com.tr` URL'lerini gösteriyor (bu zaten kod tarafında doğruydu, sadece host değişince canlıda teyit).
+- [ ] Geçiş sonrası **URL Inspection → "Dizine eklenmeyi iste"** ana sayfa + öncelikli 10-15 sayfa için yapıldı (yeni host'ta taramayı hızlandırır).
 - [ ] Bing Webmaster Tools'a da sitemap gönderimi (opsiyonel ama ücretsiz ek kapsama).
 
 ---
