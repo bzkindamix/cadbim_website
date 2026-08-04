@@ -409,7 +409,8 @@
   img,svg,iframe,video{max-width:100%;}
   @media(max-width:1024px){
     /* nav'ı hamburger için toparla */
-    .nav{padding-left:1.25rem!important;padding-right:1rem!important;gap:10px;}
+    /* nav hamburger icin toparlanir ama kenar boslugu icerikle ayni kalir */
+    .nav{padding-left:var(--pad)!important;padding-right:var(--pad)!important;gap:10px;}
     /* sabit kolonlu gridler daralt */
     .format-grid{grid-template-columns:repeat(2,1fr)!important;}
   }
@@ -418,7 +419,7 @@
     [style*="minmax(320px"],[style*="minmax(300px"],[style*="minmax(280px"]{grid-template-columns:1fr!important;}
     .format-grid,.stats{grid-template-columns:1fr 1fr!important;}
     /* yatay padding'i telefonda dengele */
-    .section,.hero,.others,.partners{padding-left:1.25rem!important;padding-right:1.25rem!important;}
+    .section,.hero,.others,.partners{padding-left:var(--pad)!important;padding-right:var(--pad)!important;}
     /* ana başlığı taşırmadan sığdır */
     .hero h1{font-size:clamp(1.9rem,7vw,2.6rem)!important;word-break:normal;}
     /* uzun URL/kod bloklarının satır kaydırması */
@@ -426,7 +427,6 @@
   }
   @media(max-width:440px){
     .stats,.format-grid{grid-template-columns:1fr!important;}
-    .nav{padding-left:1rem!important;padding-right:.75rem!important;}
   }
 
   /* ===== Masaüstü arama (⌘K komut paleti) ===== */

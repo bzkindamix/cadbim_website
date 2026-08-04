@@ -34,57 +34,83 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   İçerik rayı genişliği. 1180px sitenin mevcut standardı; 1600px üstünde
-   kademeli büyür ki büyük monitörlerde içerik dar bir şerit gibi kalmasın.
-   1599px'e kadar bugünkü ölçülerle bire bir aynıdır.
+   REVİZYON (Onur, 2026-08-04 — 1920px ekran görüntüleri):
+   İlk sürüm rayı 1180–1480px arasında SABİT tutuyordu. Bu iki soruna yol açtı:
+     1. 1920px ekranda içerik 1400px'e sıkışıyor, iki yanda ~250px ölü alan
+        kalıyordu — "tüm ekranı kullanalım" talebine aykırı.
+     2. Ray, kendisinden geniş olan satırları KESİYORDU. Ölçüm: sektör
+        sayfalarındaki `.secnav-track` 1590px genişliğinde; ray 1400px'e
+        kısınca 190px taşıyor, JS aktif sekmeyi görünüre kaydırıyor ve
+        "Mimarlık" ile "Makine & Üretim" sol kenarda kesiliyordu.
+
+   YENİ MODEL — akışkan kenar boşluğu, tam genişlik:
+   Ray artık sabit bir genişlik değil; "viewport eksi simetrik kenar boşluğu".
+   Kenar boşluğu ekranla birlikte büyür (clamp), üst sınır 4rem'de durur.
+   --shell yalnızca ÇOK geniş monitörlerde (>~2050px) devreye giren bir üst
+   tavandır; altındaki her ekranda satırlar kenar boşluğuna kadar yayılır.
+   Hizalama güvencesi korunur: bütün satırlar aynı iki kenara oturur, çünkü
+   kenar boşluğu tek bir değişkenden gelir.
    -------------------------------------------------------------------------- */
-:root { --shell: 1180px; }
-@media (min-width: 1600px) { :root { --shell: 1300px; } }
-@media (min-width: 1900px) { :root { --shell: 1400px; } }
-@media (min-width: 2300px) { :root { --shell: 1480px; } }
+:root {
+  /* Simetrik kenar boşluğu: 390px'te 20px, 1920px'te ~61px, 2560px'te 64px */
+  --gutter: clamp(1.25rem, 3.2vw, 4rem);
+  /* Üst tavan: çok geniş monitörlerde satır uzunluğu okunabilir kalsın */
+  --shell: 1920px;
+}
+
+/* Tam genişlik satırların yatay padding'i. İki durumu tek ifadede birleştirir:
+     · ekran tavandan dar  → kenar boşluğu (--gutter) uygulanır, satır yayılır
+     · ekran tavandan geniş → (100% − tavan) / 2 uygulanır, satır ortalanır
+   Bu şart olmasa padding'li satırlar (nav gibi) kenar boşluğunda kalırken
+   tavana oturan iç kutular ortalanır ve ikisi hizasız düşer. Ölçüm: 2560px'te
+   nav içeriği x=64, bölümler x=313 — 249px sapma. --pad ile ikisi eşitlenir. */
+:root { --pad: max(var(--gutter), calc((100% - var(--shell)) / 2)); }
+
+/* --------------------------------------------------------------------------
+   (A) TAM GENİŞLİK SATIRLAR — zemin viewport'ta, içerik tek hizada.
+   HER GENİŞLİKTE uygulanır (kırılım yok). Gerekçe — ölçülen hizasızlıklar:
+     · 1024px: nav 20px, bölümler/şerit 48px, footer 48px  → 2 ayrı kenar
+     ·  768px: nav 20px, bölüm/şerit 24px, footer 48px     → 3 ayrı kenar
+     ·  390px: nav 16px, bölüm 20px, şerit 24px, footer 48px → 4 ayrı kenar
+   Footer'ın 48px'i 390px ekranda genişliğin ~%25'ini yiyordu. --gutter
+   sitenin mevcut mobil/masaüstü değerlerine oturur (390→20px, 768→25px,
+   1440→46px, 1920→61px), bu yüzden tek hizaya geçiş ölçüleri bozmaz.
+   `padding-inline` yalnızca yatay değeri ezer; dikey padding'ler korunur.
+   -------------------------------------------------------------------------- */
+.nav,                 /* üst menü: logo rayın soluna, CTA rayın sağına  */
+.hero,                /* hero: metin bloğu alt bölümlerle aynı hizada   */
+.section,
+.cred,
+.wordstrip,
+.secnav,              /* sektör sayfalarındaki yapışkan alt menü        */
+.brands,
+.solutions,
+.brand-block,
+.filterbar,
+.cta-wrap,
+.atolye-in,
+#statsBand,           /* index metrik şeridi (4 sütun, tam genişlik)    */
+.stat-strip,          /* dijital-donusum istatistik şeridi              */
+footer {
+  padding-inline: var(--pad);
+}
+
+/* Satır içi style ile yatay padding verilen bölümler: zenginleştirme
+   şeritleri ([data-enrich-brand], [data-enrich], [data-newsol]), ilgili
+   blog kuşağı (#blog-related-section) ve sınıfsız bölümler (hakkimizda,
+   iletisim ×2, sektor_medya). Hepsi "padding:<Y> 3rem[ <Z>]" kalıbını
+   kullandığı için tek seçici yeter; inline bildirimi ancak !important ezer.
+   Yatay değerler istisnasız simetrik, bu yüzden ezmek güvenli. */
+section[style*="3rem"] {
+  padding-inline: var(--pad) !important;
+}
+
+/* Çerez bandı (cookie-consent.js satır içi style üretir) */
+#cc-banner {
+  padding-inline: var(--pad) !important;
+}
 
 @media (min-width: 1300px) {
-
-  /* Kenar boşluğu = (viewport − ray) / 2, taban 3rem.
-     Yüzde değeri var() içinde çözülmeden taşınır; her kuralda o öğenin
-     kendi kapsayıcı bloğuna göre hesaplanır. */
-  :root { --gutter: max(3rem, calc((100% - var(--shell)) / 2)); }
-
-  /* ---------------------------------------------------------------------
-     (A) TAM GENİŞLİK SATIRLAR — zemin viewport'ta, içerik rayda
-     --------------------------------------------------------------------- */
-  .nav,                 /* üst menü: logo rayın soluna, CTA rayın sağına  */
-  .hero,                /* hero: metin bloğu alt bölümlerle aynı hizada   */
-  .section,
-  .cred,
-  .wordstrip,
-  .secnav,              /* sektör sayfalarındaki yapışkan alt menü        */
-  .brands,
-  .solutions,
-  .brand-block,
-  .filterbar,
-  .cta-wrap,
-  .atolye-in,
-  #statsBand,           /* index metrik şeridi (4 sütun, tam genişlik)    */
-  .stat-strip,          /* dijital-donusum istatistik şeridi              */
-  footer {
-    padding-inline: var(--gutter);
-  }
-
-  /* Satır içi style ile yatay padding verilen bölümler: zenginleştirme
-     şeritleri ([data-enrich-brand], [data-enrich], [data-newsol]), ilgili
-     blog kuşağı (#blog-related-section) ve sınıfsız bölümler (hakkimizda,
-     iletisim ×2, sektor_medya). Hepsi "padding:<Y> 3rem[ <Z>]" kalıbını
-     kullandığı için tek seçici yeter; inline bildirimi ancak !important ezer.
-     Yatay değerler istisnasız simetrik, bu yüzden ezmek güvenli. */
-  section[style*="3rem"] {
-    padding-inline: var(--gutter) !important;
-  }
-
-  /* Çerez bandı (cookie-consent.js satır içi style üretir) */
-  #cc-banner {
-    padding-inline: max(24px, calc((100% - var(--shell)) / 2)) !important;
-  }
 
   /* ---------------------------------------------------------------------
      (B) RAYA OTURAN İÇ KUTULAR — mevcut 1080/1180/1200/1240px sabitleri
@@ -115,6 +141,24 @@
   }
 
   /* ---------------------------------------------------------------------
+     Sektör şeridi (9 sektör sayfası): masaüstünde kaydırma yerine SARMA.
+     9 kart tek satırda 1590px yer istiyor; 1920px'te sığıyor ama 1300–1600px
+     arasında sığmıyordu ve kaydırılan şeritte kartlar kenarda kesiliyordu
+     ("sayfa açıldığında ekrana sığmamış bir görünüm istemiyorum"). Sarma ile
+     bütün kartlar açılışta tam görünür, kaydırma hiç gerekmez; solma
+     katmanları da anlamsız kaldığı için kapatılır. <1300px'te (tablet/mobil)
+     yatay kaydırma deseni olduğu gibi korunur — orada doğal davranış.
+     --------------------------------------------------------------------- */
+  .secnav-track {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+  .secnav-inner::before,
+  .secnav-inner::after {
+    display: none;
+  }
+
+  /* ---------------------------------------------------------------------
      index.html — izometrik teknik çizim katmanı
      Çizim rayın sağ yarısına oturur; boşluk büyüdükçe çizim de içeriyle
      birlikte gelir. Genişlik doğrudan svg'ye değil `--draw-w` değişkenine
@@ -124,12 +168,16 @@
      çözülür; ray hizası korunur.)
      --------------------------------------------------------------------- */
   .hero-draw {
-    right: max(0px, calc((100% - var(--shell)) / 2));
-    width: calc(var(--shell) * .52);
+    /* Katman `.hero`nun padding kutusuna göre konumlanır; padding'i kenar
+       boşluğu oluşturduğu için sağ kenarı da o boşluğa hizalanmalı, yoksa
+       çizim rayın dışına, ekranın en sağına yapışır. */
+    right: var(--pad);
+    width: min(52%, 998px);
   }
-  .hero {
-    --draw-w: min(calc(var(--shell) * .46), 640px);
-  }
+  /* NOT: `--draw-w` burada EZİLMEZ. index.html onu `min(46vw,640px)` olarak
+     tanımlar ve hero'nun `min-height`'ını bu değerden türetir; yüzdeye
+     çevirmek min-height hesabını geçersiz kılar (yüzde, kapsayıcının
+     yüksekliğine göre çözülür). 640px tavanı geniş ekranda zaten yeterli. */
 
   /* ---------------------------------------------------------------------
      cadbim_sanatsal_baski.html kendi 1500px'lik rayını kullanır
@@ -140,4 +188,31 @@
   .bar {
     padding-inline: max(48px, calc((100% - 1500px) / 2));
   }
+}
+
+/* ==========================================================================
+   YATAY TAŞMA GÜVENLİK AĞI — her ekranda, kırılımsız
+   --------------------------------------------------------------------------
+   "Sayfa açıldığında ekrana sığmamış bir görünüm olmasın" (Onur, 2026-08-04).
+   Yukarıdaki düzen kuralları yalnızca ≥1300px'te çalışır; bu blok ise HER
+   genişlikte geçerlidir ve tek bir satırın bile belgeyi yatay kaydırmaya
+   zorlamasını engeller.
+
+   Neden `overflow-x:hidden` DEĞİL: gövdeye hidden vermek `position:sticky`
+   olan üst menüyü ve sektör şeridini bozar. Bunun yerine taşmanın kaynağı
+   olan iki kalıp hedeflenir:
+     - içsel genişliği kapsayıcıdan büyük olabilen ızgara/esnek çocuklar
+       (minmax(0,…) olmadan grid sütunları taşabilir)
+     - ölçüsü belirtilmemiş gömülü içerik (img/video/iframe/svg/table/pre)
+   ========================================================================== */
+img, svg, video, iframe, canvas, table, pre {
+  max-width: 100%;
+}
+/* Izgara ve esnek satırlarda çocukların içsel taban genişliği kapsayıcıyı
+   aşamaz. `min-width:auto` varsayılanı uzun kelime/etiketlerde satırı
+   şişirip belgeyi kaydırılabilir yapıyordu. */
+.grid > *,
+.footer-grid > *,
+.nav-mega-cols > * {
+  min-width: 0;
 }
