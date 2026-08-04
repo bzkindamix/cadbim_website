@@ -4,6 +4,14 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-02 — Son ".html" iç link kalıntısı temizlendi + htaccess taslağında kritik bir hata bulundu ve düzeltildi
+
+- **Yapan:** Onur'un "site canlıdayken bütün linkler .html uzantısız olacak değil mi" sorusu üzerine Claude (PDM asistanı) — cevaptan önce iddiayı gerçek taramayla doğruladı, tahmin etmedi.
+- **Bulgu 1 — 80 sayfada 160 kalıntı `.html` linki:** 80 kök ürün sayfasındaki "İlgili blog videoları" bölümünü çalışma anında üreten JS şablonu (`container.innerHTML=matched.map(...)`), post kartlarının linkini hâlâ `href="post/'+p.slug+'.html"` biçiminde üretiyordu — sitenin geri kalanı temiz URL'e geçmişken bu tek şablon geçmemişti. `.html` son eki kaldırıldı (160/160 düzeltme); tarayıcıda `/3dsmax` sayfasında üretilen linkler artık `post/slug` biçiminde ve `fetch()` ile 200 dönüyor. Kök + post sayfalarında iç link taramasında kalan `.html` referansı: **0**.
+- **Bulgu 2 — htaccess taslağında gizli bir çift-uzantı hatası:** `docs/htaccess-taslak.txt`'teki genel blog kuralı (`^post/(.+?)/?$ /post/$1.html [L]`) korumasızdı — biri doğrudan `/post/slug.html` adresine giderse (eski yer imi, dış backlink, veya az önce düzeltilen JS şablonunun ürettiği link gibi), kural `$1`'i "slug.html" olarak yakalayıp hedefi `/post/slug.html.html`'e çeviriyordu → **404**. Bu, sitede hiçbir yerden linklenmiyor olsa bile canlıda karşılaşılabilecek gerçek bir kırılmaydı (yerel `dev_server.py` bunu yakalamamıştı çünkü o, önce dosyanın fiziksel olarak var olup olmadığına bakıyor — farklı bir mantık). **Düzeltme:** genel kuralın önüne `^post/(.+)\.html$ /post/$1 [R=301,L]` eklendi — artık doğrudan `.html` isteği önce temiz URL'e 301'lenip döngü kırılıyor, sonra temiz URL normal şekilde iç dosyaya çözülüyor. K6'nın 102 Türkçe-karakterli post için zaten var olan özel 301 kuralları (bu genel kuraldan önce, dosyada daha yukarıda) önceliğini koruyor, çakışma yok (Python'da regex sırası simüle edilerek doğrulandı).
+- **Kapsam dışı not:** Bu htaccess düzeltmesi taslakta — henüz sunucuya yüklenmedi (bkz. `docs/CANLIYA-GECIS-KONTROL-LISTESI.md` Bölüm B). Yükleme öncesi staging testi bu tür hataları yakalamak için zaten planda.
+- **Durum:** ✅ Tamamlandı, push edilecek.
+
 ### DK-2026-08-04-43 — Creative Cloud sayfası: pakete dahil 9 uygulama artık tıklanabilir, ayrı lisanslı 2 ürün ayrıştırıldı
 
 - **Yapan:** Onur'un "tüm adobe Creative Cloud içeriği ayrı ürün olarak gözükmüyor — cadbim.com.tr'den bak, adobe.com'dan teyit et, siteye ekle, adobe kataloglarına ekle, ürün kataloglarına ekle, logolarını doğru kullan" talebi üzerine Claude (PDM asistanı).
