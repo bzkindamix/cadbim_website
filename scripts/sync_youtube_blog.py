@@ -200,7 +200,7 @@ POST_TEMPLATE = """<!DOCTYPE html>
 <link rel="stylesheet" href="../assets/css/design-system.css?v=30">
   <link rel="alternate" type="application/rss+xml" title="Cadbim Blog" href="/feed.xml">
 <link rel="stylesheet" href="../assets/css/mobile-guardrails.css?v=3">
-<link rel="stylesheet" href="../assets/css/wide-screen.css?v=1">
+<link rel="stylesheet" href="../assets/css/wide-screen.css?v=2">
 </head>
 <body>
 <a class="skip-link" href="#icerik">İçeriğe geç</a><header><nav class="nav">
@@ -347,11 +347,10 @@ POST_TEMPLATE = """<!DOCTYPE html>
       <a href="https://www.linkedin.com/company/cadbim/" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
       <a href="https://www.youtube.com/c/CadbimTeknikDestek" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
       <a href="https://www.instagram.com/cadbim_izmir/" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-      <a href="https://www.facebook.com/cadbimizmir" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
     </div>
   </div>
 </footer>
-<script src="../mobilenav.js?v=19" defer></script>
+<script src="../mobilenav.js?v=20" defer></script>
 <script src="../whatsapp-widget.js?v=1" defer></script>
 <script src="../cookie-consent.js?v=2" defer></script>
 <script src="../yt-facade.js?v=1" defer></script>

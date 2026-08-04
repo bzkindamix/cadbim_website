@@ -115,20 +115,20 @@
   }
 
   /* ---------------------------------------------------------------------
-     index.html — kalıcı izometrik teknik çizim katmanı
-     .hero-draw position:fixed + right:0 + 52vw olduğu için çizim viewport'un
-     sağ kenarına yapışıyor, içerik rayının dışına taşıyor ve sayfa
-     kaydırıldıkça alttaki bölümlerin üzerine biniyordu. Artık rayın sağ
-     yarısına oturur; boşluk büyüdükçe çizim de içeriyle birlikte gelir.
-     (prefers-reduced-motion içindeki position:absolute varyantında da
-     right yüzdesi .hero'nun padding kutusuna göre çözülür — hiza korunur.)
+     index.html — izometrik teknik çizim katmanı
+     Çizim rayın sağ yarısına oturur; boşluk büyüdükçe çizim de içeriyle
+     birlikte gelir. Genişlik doğrudan svg'ye değil `--draw-w` değişkenine
+     yazılır: index.html hero'nun min-height'ını bu değişkenden türettiği
+     için çizim ile hero yüksekliği her kırılımda birlikte hareket eder,
+     üst/alt boşluk eşit kalır. (Konum `.hero`nun padding kutusuna göre
+     çözülür; ray hizası korunur.)
      --------------------------------------------------------------------- */
   .hero-draw {
     right: max(0px, calc((100% - var(--shell)) / 2));
     width: calc(var(--shell) * .52);
   }
-  .hero-draw svg {
-    width: min(calc(var(--shell) * .46), 640px);
+  .hero {
+    --draw-w: min(calc(var(--shell) * .46), 640px);
   }
 
   /* ---------------------------------------------------------------------

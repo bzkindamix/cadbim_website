@@ -171,7 +171,13 @@
   if (reduce) free(); else setTimeout(free, 3600);
 
   /* scroll: tüm sayfa ilerlemesi sahneyi döndürür; hero'dan çıkarken katman
-     merkeze kayıp büyür ve düşük opaklıkta arka plana geçer */
+     düşük opaklıkta arka plana çekilir.
+     NOT: Katman eskiden position:fixed olduğu için buradaki kaydır+büyüt
+     hareketi "sahne arkaya çekiliyor" hissini veriyordu. Katman artık hero'nun
+     kutusuna bağlı (ve hero overflow:hidden ile kırpıyor) — büyütme çizimi
+     hero'nun dışına taşırıp kırpma kenarını görünür bir düz çizgi hâline
+     getiriyordu. Hero kaydırmayla birlikte zaten yukarı çıktığı için geri
+     çekilme hissi için opaklık tek başına yeterli; büyütme/kaydırma kaldırıldı. */
   var layer = document.getElementById('heroDraw');
   var coord = document.getElementById('heroCoord');
   function smooth(a,b,x){ var t = Math.min(1, Math.max(0, (x-a)/(b-a))); return t*t*(3-2*t); }
@@ -190,7 +196,6 @@
   function applyLayer(q){
     if (!layer) return;
     var e = smooth(0, 1, q);
-    layer.style.transform = 'translateX(' + (-24*e).toFixed(2) + 'vw) scale(' + (1 + .38*e).toFixed(3) + ')';
     layer.style.opacity = (1 - .87*e).toFixed(3);
   }
   window.CADBIM_hero = { set: function(p){ free(); applyProgress(p); }, setLayer: applyLayer };
