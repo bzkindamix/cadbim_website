@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-67 — Marka kartlarında logo+isim tekrarı giderildi, Chaos logosu düzeltildi, Çözümler sayfasından blog bölümü kaldırıldı
+
+- **Yapan:** Onur'un üç bulgusu: *"burda logo + isim koymuşuz markaları o zaman tekrar olmuş"*, ekran görüntüsünde Chaos logosunun **beyaz kare** olarak görünmesi ve *"[cadbim_cozumler.html] bu genel bir sayfa olduğu için bloga gerek yok"* — Claude (PDM asistanı).
+- **Logo + isim tekrarı:** `cadbim_cozumler.html`'deki 9 marka kartında logo ile birlikte marka adı da yazılıydı; logoların 7'si kelime-logosu (Autodesk, Adobe, Chaos, UltiMaker, SketchUp, Lumion, Microsoft) olduğu için ad iki kez okunuyordu. Bu 7 kartta metin adı kaldırıldı, yalnızca statü satırı (Gold Partner / Yetkili iş ortağı / Yetkili satıcı) bırakıldı. **HP ve Trimble** sembol logosu kullandığı için adları korundu — aksi hâlde marka tanımlanamaz olurdu. Dokuz kart da 70px yükseklikte, ızgara düzeni bozulmadı.
+- **Chaos logosu:** `assets/logos/chaos-logo-red.svg` içinde 120×120 **beyaz zemin dikdörtgeni** vardı; koyu temada logo yerine beyaz bir kare görünüyordu. Dikdörtgen kaldırıldı, kırmızı marka işareti (#E1161C) saydam zeminde duruyor.
+- **Blog bölümü:** `cadbim_cozumler.html` bir üst-seviye genel sayfa olduğu için "İlgili Yazılar" bölümü (`#blog-related-section`) ve onu besleyen betik tamamen kaldırıldı (3.599 karakter); sayfada `blogRelatedGrid` kalıntısı 0.
+- **Yan bulgu — Türkçe karakter eksikliği:** Aynı kartların statü metinleri "Yetkili **is ortagi**" / "Yetkili **satici**" olarak yazılmıştı. 14 dosyada 43 ifade "Yetkili iş ortağı" / "Yetkili satıcı" olarak düzeltildi.
+- **Doğrulama:** Tarayıcıda blog bölümü yok, 9 logonun tamamı yükleniyor, kart yükseklikleri eşit, konsol hatası 0, yatay taşma 0.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-66 — Onur'un iki hizmet slaytı siteye taşındı: 10 panel görseli kesilip ilgili sayfalara yerleştirildi
 
 - **Yapan:** Onur'un iki slaytı (Hizmetlerimiz 6 panel; Autodesk Forma (ACC) Danışmanlığı 4 kart) paylaşıp *"bu görselleri ilgili sayfalarda kullan"* demesi üzerine Claude (PDM asistanı).
