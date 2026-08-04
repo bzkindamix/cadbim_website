@@ -4,6 +4,17 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-68 — Hizmet/danışmanlık görselleri sıfırdan üretildi: 17 SVG, site diliyle (slayt kırpıkları kaldırıldı)
+
+- **Yapan:** Onur'un üç talimatı: *"1 inde resim olup diğerlerine koymadan olmaz — ya komple kaldır ya görsel üret aynı temada"*, *"gönderdiklerimden kullanma sadece içeriği al"*, *"sen benim gönderdiğimi baz alarak görselleri tamamen baştan üret"*; ve ilk denemedeki figür itirazı: *"eğitim hiç güzel değil, çöp adamlar ciddiyetsiz"* — Claude (PDM asistanı).
+- **Kaldırılanlar:** DK-66'daki 10 slayt kırpığı (WebP) 5 sayfadan **ve** depodan silindi; `assets/img/hizmetler/` klasörü boşaltıldı. Kartlar geçici olarak özgün ikonlarına döndü.
+- **Üretilenler — `assets/img/hizmet/`, 17 SVG:** Kart ölçüsü (400×250, 16:10) 12 adet: `bim-danismanlik-icerik`, `bim-implementasyon`, `bim-standart-sablon`, `cad-erp-entegrasyon`, `plm-pdm`, `cfd-fea`, `tasarim-otomasyonu`, `fabrika-dijital-ikiz`, `forma-data-management`, `forma-site-design`, `forma-build`, `forma-design-collaboration`. Bölüm ölçüsü (640×360, 16:9) 5 adet: `egitim-autodesk`, `egitim-bim`, `bim-obje-uretimi`, `bim-implementasyon-bolum`, `dijital-donusum`. Ortalama **2,9 KB** (slayt kırpıkları 8–26 KB, kaynak slaytlar 1,6 MB PNG).
+- **Görsel dil:** Sektör illüstrasyonlarıyla (`assets/img/sektor/`) birebir aynı scaffold — 25/28px ızgara deseni, radyal ışıma, `.ln/.ln2/.w/.w2/.dim` çizgi hiyerarşisi, akış (dash-offset) animasyonu, yanıp sönen düğümler, süzülme. **Kural: insan figürü yok, gömülü metin yok** (fonta bağımlılık ve çeviri/SEO sorunu doğurmaması için). İlk eğitim denemesindeki çöp adamlar tamamen çıkarıldı; eğitim salonu mimari plan olarak yeniden çizildi (duvarlar, kapı açılım yayı, projeksiyon perdesi, 3×4 sıra düzeni, ölçü çizgileri).
+- **Yerleşim:** `cadbim_danismanlik.html` → **12 kartın tamamı** görselli (8 danışmanlık alanı + 4 Forma modülü); ikonlu kart kalmadı, ızgara tutarlı. `cadbim_egitimler.html` → iki görselli şerit. `cadbim_bim_icerik_uretimi.html`, `cadbim_bim.html`, `cadbim_dijital_donusum.html` → bölüm illüstrasyonu + HTML alt yazı.
+- **Doğrulama:** Tarayıcıda Danışmanlık sayfasında 12 görselin tamamı yüklendi, hepsi 240×150 (16:10), Forma kartları 382px ve g2 kartları satır bazında eşit yükseklikte, `.card-icon` kalan kart **0**, yatay taşma 0. BIM sayfasında bölüm görseli 760×428 (16:9). Üretilen 17 dosyanın 17'si de kullanımda (yerleşmemiş dosya yok).
+- **Not:** Gemini (nano-banana) raster üretimi kota hatası verdiği için üretim SVG olarak yapıldı; sonuç site için daha uygun (ölçeklenebilir, ~3 KB, metin gömülü değil, mevcut görsel aileyle aynı).
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-67 — Marka kartlarında logo+isim tekrarı giderildi, Chaos logosu düzeltildi, Çözümler sayfasından blog bölümü kaldırıldı
 
 - **Yapan:** Onur'un üç bulgusu: *"burda logo + isim koymuşuz markaları o zaman tekrar olmuş"*, ekran görüntüsünde Chaos logosunun **beyaz kare** olarak görünmesi ve *"[cadbim_cozumler.html] bu genel bir sayfa olduğu için bloga gerek yok"* — Claude (PDM asistanı).

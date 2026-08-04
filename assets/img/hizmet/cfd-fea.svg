@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250" role="img">
+<defs>
+<pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern>
+<radialGradient id="gl" cx="50%" cy="46%" r="62%"><stop offset="0%" stop-color="#00c8f0" stop-opacity=".16"/><stop offset="100%" stop-color="#00c8f0" stop-opacity="0"/></radialGradient>
+</defs>
+<style>
+.ln{fill:none;stroke:#00c8f0;stroke-opacity:.8;stroke-width:1.3;stroke-linejoin:round;stroke-linecap:round}
+.ln2{fill:none;stroke:#00c8f0;stroke-opacity:.34;stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
+.w{fill:none;stroke:rgba(255,255,255,.5);stroke-width:1.1;stroke-linejoin:round;stroke-linecap:round}
+.w2{fill:none;stroke:rgba(255,255,255,.22);stroke-width:.9;stroke-linejoin:round}
+.fl{fill:#00c8f0;fill-opacity:.07}
+.nd{fill:#00c8f0}
+.dim{fill:none;stroke:rgba(255,255,255,.26);stroke-width:.8;stroke-dasharray:3 4}
+.blink{animation:bk 3.4s ease-in-out infinite}
+.blink:nth-of-type(2n){animation-delay:.6s}.blink:nth-of-type(3n){animation-delay:1.2s}
+@keyframes bk{0%,100%{opacity:.25}50%{opacity:1}}
+.flow{stroke-dasharray:7 9;animation:fw 3.4s linear infinite}
+@keyframes fw{to{stroke-dashoffset:-64}}
+.float{animation:fo 9s ease-in-out infinite}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.spin{transform-box:fill-box;transform-origin:center;animation:sp 26s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.pulse{animation:pl 3.2s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.4}50%{opacity:1}}
+</style>
+<rect width="400" height="250" fill="url(#g)"/>
+<rect width="400" height="250" fill="url(#gl)"/>
+<g class="float">
+  <!-- L profil parca + sonlu eleman agi -->
+  <g>
+    <path class="fl" d="M120 76 h48 v88 h84 v40 H120 Z"/><path class="ln" d="M120 76 h48 v88 h84 v40 H120 Z"/>
+    <g class="w2">
+      <path d="M120 98 h48 M120 120 h48 M120 142 h48 M120 164 h132 M120 186 h132"/>
+      <path d="M144 76 v128 M168 76 v128 M192 164 v40 M216 164 v40 M240 164 v40"/>
+      <path d="M120 76 L144 98 M144 76 L168 98 M120 120 L144 142 M144 120 L168 142 M168 164 L192 186 M192 164 L216 186 M216 164 L240 186"/>
+    </g>
+  </g>
+  <!-- gerilme bandi (koseden) -->
+  <g class="ln2"><path d="M160 156 a24 24 0 0 0 24 24" stroke-opacity=".5"/><path d="M154 150 a34 34 0 0 0 34 34" stroke-opacity=".35"/><path d="M148 144 a44 44 0 0 0 44 44" stroke-opacity=".22"/></g>
+  <!-- akis cizgileri -->
+  <g class="ln flow" stroke-opacity=".5">
+    <path d="M290 90 C330 96 348 112 356 130"/>
+    <path d="M290 120 C328 126 344 140 352 156"/>
+    <path d="M290 150 C324 156 338 168 346 182"/>
+  </g>
+  <path class="dim" d="M120 220 H252"/>
+  <circle class="nd blink" cx="168" cy="164" r="2.8"/><circle class="nd blink" cx="290" cy="120" r="2.4"/>
+</g>
+</svg>

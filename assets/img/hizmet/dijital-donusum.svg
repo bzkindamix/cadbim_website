@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img">
+<defs>
+<pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern>
+<radialGradient id="gl" cx="50%" cy="46%" r="62%"><stop offset="0%" stop-color="#00c8f0" stop-opacity=".16"/><stop offset="100%" stop-color="#00c8f0" stop-opacity="0"/></radialGradient>
+</defs>
+<style>
+.ln{fill:none;stroke:#00c8f0;stroke-opacity:.8;stroke-width:1.3;stroke-linejoin:round;stroke-linecap:round}
+.ln2{fill:none;stroke:#00c8f0;stroke-opacity:.34;stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
+.w{fill:none;stroke:rgba(255,255,255,.5);stroke-width:1.1;stroke-linejoin:round;stroke-linecap:round}
+.w2{fill:none;stroke:rgba(255,255,255,.22);stroke-width:.9;stroke-linejoin:round}
+.fl{fill:#00c8f0;fill-opacity:.07}
+.nd{fill:#00c8f0}
+.dim{fill:none;stroke:rgba(255,255,255,.26);stroke-width:.8;stroke-dasharray:3 4}
+.blink{animation:bk 3.4s ease-in-out infinite}
+.blink:nth-of-type(2n){animation-delay:.6s}.blink:nth-of-type(3n){animation-delay:1.2s}
+@keyframes bk{0%,100%{opacity:.25}50%{opacity:1}}
+.flow{stroke-dasharray:7 9;animation:fw 3.4s linear infinite}
+@keyframes fw{to{stroke-dashoffset:-64}}
+.float{animation:fo 9s ease-in-out infinite}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.spin{transform-box:fill-box;transform-origin:center;animation:sp 26s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.pulse{animation:pl 3.2s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.4}50%{opacity:1}}
+</style>
+<rect width="640" height="360" fill="url(#g)"/>
+<rect width="640" height="360" fill="url(#gl)"/>
+<g class="float">
+  <!-- 1. katman: sureclerin plani (alt) -->
+  <g>
+    <path class="fl" d="M320 262 L500 300 L320 338 L140 300 Z"/><path class="ln" d="M320 262 L500 300 L320 338 L140 300 Z"/>
+    <g class="w2"><path d="M230 281 L410 319 M275 271 L455 309 M365 271 L185 309 M410 281 L230 319"/></g>
+  </g>
+  <!-- 2. katman: bulut / veri -->
+  <g>
+    <path class="fl" d="M320 168 L470 200 L320 232 L170 200 Z"/><path class="ln" d="M320 168 L470 200 L320 232 L170 200 Z"/>
+    <path class="ln2" d="M262 196 a20 20 0 0 1 38 -7 a17 17 0 0 1 23 20 a14 14 0 0 1-5 26 h-48 a20 20 0 0 1-8-39 Z"/>
+  </g>
+  <!-- 3. katman: gosterge panosu (ust) -->
+  <g>
+    <path class="fl" d="M320 72 L446 100 L320 128 L194 100 Z"/><path class="ln" d="M320 72 L446 100 L320 128 L194 100 Z"/>
+    <g class="ln2"><path d="M270 104 v-14 M288 108 v-22 M306 112 v-12 M324 108 v-26 M342 104 v-18 M360 100 v-10"/></g>
+    <path class="ln flow" d="M262 96 C290 84 320 92 352 78" stroke-opacity=".5"/>
+  </g>
+  <!-- katmanlar arasi akis -->
+  <g class="ln flow" stroke-opacity=".5"><path d="M320 262 V232"/><path d="M320 168 V128"/></g>
+  <!-- yan olcu / gosterge -->
+  <path class="dim" d="M540 72 V338"/><path class="w2" d="M532 72 H548 M532 200 H548 M532 338 H548"/>
+  <g class="w2"><path d="M96 116 h64 M96 132 h44 M96 148 h54"/></g>
+  <circle class="nd blink" cx="320" cy="72" r="3"/><circle class="nd blink" cx="320" cy="168" r="2.8"/><circle class="nd blink" cx="320" cy="262" r="2.8"/>
+</g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250" role="img">
+<defs>
+<pattern id="g" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern>
+<radialGradient id="gl" cx="50%" cy="46%" r="62%"><stop offset="0%" stop-color="#00c8f0" stop-opacity=".16"/><stop offset="100%" stop-color="#00c8f0" stop-opacity="0"/></radialGradient>
+</defs>
+<style>
+.ln{fill:none;stroke:#00c8f0;stroke-opacity:.8;stroke-width:1.3;stroke-linejoin:round;stroke-linecap:round}
+.ln2{fill:none;stroke:#00c8f0;stroke-opacity:.34;stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
+.w{fill:none;stroke:rgba(255,255,255,.5);stroke-width:1.1;stroke-linejoin:round;stroke-linecap:round}
+.w2{fill:none;stroke:rgba(255,255,255,.22);stroke-width:.9;stroke-linejoin:round}
+.fl{fill:#00c8f0;fill-opacity:.07}
+.nd{fill:#00c8f0}
+.dim{fill:none;stroke:rgba(255,255,255,.26);stroke-width:.8;stroke-dasharray:3 4}
+.blink{animation:bk 3.4s ease-in-out infinite}
+.blink:nth-of-type(2n){animation-delay:.6s}.blink:nth-of-type(3n){animation-delay:1.2s}
+@keyframes bk{0%,100%{opacity:.25}50%{opacity:1}}
+.flow{stroke-dasharray:7 9;animation:fw 3.4s linear infinite}
+@keyframes fw{to{stroke-dashoffset:-64}}
+.float{animation:fo 9s ease-in-out infinite}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.spin{transform-box:fill-box;transform-origin:center;animation:sp 26s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.pulse{animation:pl 3.2s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.4}50%{opacity:1}}
+</style>
+<rect width="400" height="250" fill="url(#g)"/>
+<rect width="400" height="250" fill="url(#gl)"/>
+<g class="float">
+  <!-- fabrika yerlesim plani -->
+  <g>
+    <path class="fl" d="M60 84 h230 v120 H60 Z"/><path class="ln" d="M60 84 h230 v120 H60 Z"/>
+    <!-- konveyor -->
+    <path class="ln" d="M76 148 h198"/><g class="w2"><path d="M92 142 v12 M116 142 v12 M140 142 v12 M164 142 v12 M188 142 v12 M212 142 v12 M236 142 v12 M260 142 v12"/></g>
+    <!-- makine adalari -->
+    <g class="ln2">
+      <path d="M80 100 h44 v30 H80 Z M140 100 h44 v30 h-44 Z M200 100 h44 v30 h-44 Z"/>
+      <path d="M80 168 h44 v26 H80 Z M140 168 h44 v26 h-44 Z M200 168 h64 v26 h-64 Z"/>
+    </g>
+  </g>
+  <!-- dijital ikiz katmani (kayik kopya) -->
+  <g class="w2" stroke-dasharray="5 5">
+    <path d="M76 68 h230 v120 H76 Z"/>
+    <path d="M96 84 h44 v30 H96 Z M156 84 h44 v30 h-44 Z M216 84 h44 v30 h-44 Z"/>
+  </g>
+  <!-- sensor / telemetri -->
+  <g><circle class="nd blink" cx="102" cy="115" r="2.6"/><circle class="nd blink" cx="162" cy="115" r="2.6"/><circle class="nd blink" cx="222" cy="115" r="2.6"/></g>
+  <path class="ln flow" d="M290 124 H330"/><g class="ln"><path d="M330 100 h32 v52 h-32 Z"/></g>
+  <g class="w2"><path d="M338 138 v-10 M346 138 v-18 M354 138 v-26"/></g>
+  <path class="dim" d="M60 220 H290"/>
+</g>
+</svg>
