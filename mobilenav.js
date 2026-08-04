@@ -426,7 +426,13 @@
     p,li,td,span,a{overflow-wrap:break-word;}
   }
   @media(max-width:440px){
-    .stats,.format-grid{grid-template-columns:1fr!important;}
+    /* .stats kasitli olarak 2 sutunda kalir: 4 sayac tek sutuna inince sayfa
+       gereksiz uzuyordu. Dar ekranda rakam/etiket puntosu kucultulerek sigar. */
+    .format-grid{grid-template-columns:1fr!important;}
+    .stats .stat{padding:20px 10px!important;}
+    .stats .stat-num{font-size:1.7rem!important;}
+    .stats .stat-num sup{font-size:.9rem!important;}
+    .stats .stat-lbl{font-size:11px!important;}
   }
 
   /* ===== Masaüstü arama (⌘K komut paleti) ===== */

@@ -4,6 +4,15 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-79 — Mobil: sektörler 3x3 ızgara, istatistik bandı 2x2
+
+- **Yapan:** Onur'un talebi: *"endüstrileri 3 kolonlu 3 sıra yapalım"* ve *"şunları da 2 şerli 2 satır yapalım"* (istatistik bandı ekran görüntüsü) — Claude (PDM asistanı).
+- **Sektörler (3x3):** 9 sektör tam 3 satıra oturuyor. Bu genişlikte (~101-111px) açıklama metnine yer kalmadığı için kart sadeleşti: ikon üstte, ad altında, ortalı. `grid-auto-rows:1fr` eklendi — "Savunma ve Havacılık" iki satıra indiği için o satır diğerlerinden yüksek kalıyordu, üç satır da eşitlendi. **528px → 302px.**
+- **İstatistik bandı (2x2):** Kök neden `mobilenav.js` içindeydi: `@media(max-width:440px){.stats,.format-grid{grid-template-columns:1fr!important}}` kuralı bandı tek sütuna indiriyordu — bu, Onur'un "mobilde tek sütuna inip sayfa uzamasın, 2 sütun korunsun" tercihine (DK-2026-08-03-32 / mobile-guardrails) aykırıydı. `.stats` kuraldan çıkarıldı; dar ekranda sığması için rakam 2.3rem → 1.7rem, etiket 13px → 11px. **~420px → 209px.** `.format-grid` (egitimler sayfası) kapsam dışı bırakıldı, tek sütun kalmaya devam ediyor.
+- **Doğrulama:** 390×844 ve 360×740'ta sektörler 3 sütun/3 satır (302px, satır boyları eşit, 9 ikonun da rengi farklı), istatistikler 2 sütun/2 satır (209px, etiketler tek satır, rakam taşmıyor), yatay taşma yok.
+- **Açık soru:** Onur, sektörlerin hemen altındaki Çözümler şeridinin kalabalık olduğunu söyleyip kaldırılmasını sordu; ölçüm yapıldı (10 sekme, 50 bağlantı, **18 benzersiz çözüm sayfası**) ve karar için görüş bildirildi — Onur'un yanıtı bekleniyor.
+- **Durum:** ✅ İki düzenleme tamamlandı.
+
 ### DK-2026-08-04-78 — Anasayfa mobil: Sektörler ve Çözümler seçim ekranlarına sektör kimliği
 
 - **Yapan:** Onur'un talebi: *"mobilde ana sayfa da çözüm ve endüstri seçim ekranları çok hoşuma gitmiyor. sırayla aşağı doğru ilerleyen butonlar ne bi ikon var ne başka bir hareket"* — mockup gösterilip onay alındıktan sonra uygulandı. Claude (PDM asistanı).

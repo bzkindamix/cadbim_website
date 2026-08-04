@@ -294,28 +294,28 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
      yazılı açıklama metni gizlenmişti; geriye yalnız kalın bir isim kalıyordu.
      Artık her kartta sektörün kendi ikonu, vurgu rengi ve arka plan çizimi var,
      açıklama geri geldi. ~340px. */
-  .sectorsel-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
-  /* İkon başlıkla aynı satırda (üstünde değil): kart başına ~40px kazandırır,
-     9 kart × 2 sütunda toplam listeyi belirgin kısaltır. */
+  /* 9 sektör = tam 3×3 ızgara. Bu genişlikte (~105px) açıklama metnine yer
+     kalmadığı için kart sadeleşir: ikon üstte, ad altında, ortalı. */
+  /* grid-auto-rows:1fr — "Savunma ve Havacılık" iki satıra indiği için o satır
+     diğerlerinden yüksek kalıyordu; üç satır da eşitlenir. */
+  .sectorsel-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    grid-auto-rows:1fr;gap:8px;}
   .sectorsel-list a{position:relative;isolation:isolate;overflow:hidden;
-    display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;
-    gap:0 9px;padding:11px 11px 12px;border-radius:14px;
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    gap:0;padding:13px 7px 12px;border-radius:14px;text-align:center;
     transition:opacity .45s cubic-bezier(.2,.7,.2,1),transform .45s cubic-bezier(.2,.7,.2,1),
       border-color .2s,background .2s;}
-  .sectorsel-list a::after{content:'';position:absolute;right:-18px;bottom:-16px;
-    width:74px;height:74px;z-index:-1;background-image:var(--art);background-size:contain;
-    background-repeat:no-repeat;background-position:center;opacity:.10;}
-  .sectorsel-list a .sec-ic{grid-row:1;grid-column:1;
-    display:flex;align-items:center;justify-content:center;
-    width:28px;height:28px;border-radius:8px;flex-shrink:0;
+  .sectorsel-list a::after{content:'';position:absolute;right:-20px;bottom:-18px;
+    width:66px;height:66px;z-index:-1;background-image:var(--art);background-size:contain;
+    background-repeat:no-repeat;background-position:center;opacity:.09;}
+  .sectorsel-list a .sec-ic{display:flex;align-items:center;justify-content:center;
+    width:32px;height:32px;border-radius:9px;flex-shrink:0;margin-bottom:8px;
     color:var(--sc);background:color-mix(in srgb,var(--sc) 14%,transparent);}
-  .sectorsel-list a .sec-ic i{font-size:15px;}
-  .sectorsel-list a b{grid-row:1;grid-column:2;min-width:0;font-size:12.5px;
-    line-height:1.25;margin:0;}
-  /* açıklama iki satırla sınırlanır; uzun metin kartları farklı boylara sokmasın */
-  .sectorsel-list a>span:not(.sec-ic){grid-row:2;grid-column:1/-1;margin-top:7px;
-    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-    font-size:10.5px;line-height:1.4;flex:none;}
+  .sectorsel-list a .sec-ic i{font-size:17px;}
+  .sectorsel-list a b{min-width:0;font-size:11.5px;line-height:1.25;margin:0;
+    overflow-wrap:anywhere;}
+  /* Açıklama bu genişlikte okunmuyor; 3 sütunda gizlenir. */
+  .sectorsel-list a>span:not(.sec-ic){display:none;}
   .sectorsel-list a>i{display:none;}          /* ok ikonu kartta gereksiz */
   .sectorsel-list a:hover,.sectorsel-list a.on{border-color:var(--sc);
     background:linear-gradient(180deg,rgba(255,255,255,.05),transparent),var(--srf);}
@@ -955,7 +955,7 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
   els.forEach(function(e){io.observe(e);});
 })();
 </script>
-<script src="mobilenav.js?v=22" defer></script>
+<script src="mobilenav.js?v=23" defer></script>
 <script src="whatsapp-widget.js?v=1" defer></script>
 <script src="social-widget.js?v=7" defer></script>
 <script src="webinar-widget.js?v=10" defer></script>
