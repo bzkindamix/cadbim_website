@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250" role="img">
+<defs>
+<pattern id="g" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern>
+<radialGradient id="gl" cx="50%" cy="46%" r="62%"><stop offset="0%" stop-color="#00c8f0" stop-opacity=".16"/><stop offset="100%" stop-color="#00c8f0" stop-opacity="0"/></radialGradient>
+</defs>
+<style>
+.ln{fill:none;stroke:#00c8f0;stroke-opacity:.8;stroke-width:1.3;stroke-linejoin:round;stroke-linecap:round}
+.ln2{fill:none;stroke:#00c8f0;stroke-opacity:.34;stroke-width:1;stroke-linejoin:round;stroke-linecap:round}
+.w{fill:none;stroke:rgba(255,255,255,.5);stroke-width:1.1;stroke-linejoin:round;stroke-linecap:round}
+.w2{fill:none;stroke:rgba(255,255,255,.22);stroke-width:.9;stroke-linejoin:round}
+.fl{fill:#00c8f0;fill-opacity:.07}
+.nd{fill:#00c8f0}
+.dim{fill:none;stroke:rgba(255,255,255,.26);stroke-width:.8;stroke-dasharray:3 4}
+.blink{animation:bk 3.4s ease-in-out infinite}
+.blink:nth-of-type(2n){animation-delay:.6s}.blink:nth-of-type(3n){animation-delay:1.2s}
+@keyframes bk{0%,100%{opacity:.25}50%{opacity:1}}
+.flow{stroke-dasharray:7 9;animation:fw 3.4s linear infinite}
+@keyframes fw{to{stroke-dashoffset:-64}}
+.float{animation:fo 9s ease-in-out infinite}
+@keyframes fo{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.spin{transform-box:fill-box;transform-origin:center;animation:sp 26s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.pulse{animation:pl 3.2s ease-in-out infinite}
+@keyframes pl{0%,100%{opacity:.4}50%{opacity:1}}
+</style>
+<rect width="400" height="250" fill="url(#g)"/>
+<rect width="400" height="250" fill="url(#gl)"/>
+<g class="float">
+  <!-- bulut -->
+  <path class="ln" d="M150 74 a26 26 0 0 1 50-8 a22 22 0 0 1 30 26 a18 18 0 0 1-6 34 H158 a26 26 0 0 1-8-52 Z"/>
+  <path class="ln2" d="M168 92 h64 M168 106 h44"/>
+  <!-- bulut ile hub arasi veri akisi -->
+  <path class="ln flow" d="M200 126 V150"/>
+  <!-- hub katmanlari (ortak veri ortami) -->
+  <g>
+    <path class="fl" d="M200 150 L262 172 L200 194 L138 172 Z"/><path class="ln" d="M200 150 L262 172 L200 194 L138 172 Z"/>
+    <path class="ln2" d="M200 166 L232 178 L200 190 L168 178 Z"/>
+    <path class="fl" d="M200 176 L262 198 L200 220 L138 198 Z"/><path class="ln2" d="M200 176 L262 198 L200 220 L138 198 Z"/>
+  </g>
+  <!-- klasor agaci (sol) -->
+  <g>
+    <path class="w" d="M44 118 h26 l6 8 h22 v28 H44 Z"/>
+    <path class="w2" d="M60 154 v18 h20 M60 172 v16 h20"/>
+    <path class="w2" d="M80 166 h18 v12 H80 Z M80 182 h18 v12 H80 Z"/>
+  </g>
+  <path class="ln2 flow" d="M104 150 C124 152 130 162 138 170"/>
+  <!-- yetkilendirme kalkani (sag) -->
+  <g>
+    <path class="w" d="M330 126 l26-10 l26 10 v26 c0 18-14 30-26 34 c-12-4-26-16-26-34 Z"/>
+    <path class="ln" d="M348 150 l7 8 l14-16"/>
+  </g>
+  <path class="ln2 flow" d="M296 172 C312 168 320 158 330 150"/>
+</g>
+<path class="dim" d="M138 232 H262"/><path class="dim" d="M134 226 V238 M266 226 V238" stroke-dasharray="none" stroke-opacity=".4"/>
+<circle class="nd blink" cx="200" cy="150" r="2.6"/><circle class="nd blink" cx="200" cy="194" r="2.6"/><circle class="nd blink" cx="356" cy="152" r="2.6"/>
+</svg>
