@@ -71,7 +71,6 @@
         ["Havacılık & Savunma", "/sektor-havacilik"]
       ]
     },
-    { label: "Eğitimler", href: "/egitimler", flat: true },
     {
       label: "Hizmetler", href: "/danismanlik",
       items: [
@@ -80,7 +79,8 @@
         ["HP Plotter Teknik Servis", "/designjet-teknik-servis"],
         ["Yazılım Geliştirme", "/yazilim-gelistirme"]
       ]
-    }
+    },
+    { label: "Eğitimler", href: "/egitimler", flat: true }
   ];
 
   /* Grup dışı ana linkler */

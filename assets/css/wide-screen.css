@@ -1,0 +1,141 @@
+/* ==========================================================================
+   GENİŞ EKRAN KATMANI (DK-2026-08-04) — site geneli içerik rayı
+   --------------------------------------------------------------------------
+   SORUN (Onur, 2026-08-04 — 2200px ekran görüntüsü):
+   Sayfa satırlarının bir kısmı 1180px'lik içerik rayında ortalanıyor
+   (.section > *), bir kısmı ise yalnızca 3rem/2.5rem kenar boşluğuyla
+   viewport'a yayılıyordu. 2185px genişlikte ölçülen sapmalar:
+     - .nav logosu x=40, menü sağ kenarı x=2145  → içerik rayı 502–1682
+       (her iki yanda ~460px hizasızlık)
+     - .hero içeriği x=48'den başlıyor           → alt bölümlerle hizasız
+     - .cta-strip 2089px genişlikte              → başlık/metin 2000px satır
+     - .stats / .stat-strip sütunları 546px      → sayılar boşlukta yüzüyor
+     - index .hero-draw (position:fixed, 52vw)   → izometrik çizim rayın
+       250px dışına taşıp aşağıdaki bölümlerin üzerine biniyor
+     - #cc-banner metni 1798px'e yayılıyor
+
+   ÇÖZÜM — "yan kenarlardan boşluk" yaklaşımı (Onur'un önerisi):
+   Tam genişlikteki satırların ZEMİNİ (arka plan, üst/alt çizgi) viewport
+   genişliğinde kalır; İÇERİĞİ tek bir rayda (--shell) toplanır. İki teknik:
+     (A) Esnek/ızgara satırlarda (nav, stats, atolye) satırın kendisine
+         yatay padding verilir: padding-inline:var(--gutter)
+     (B) Blok satırlarda içteki kutu raya oturtulur:
+         max-width:var(--shell); margin-inline:auto
+
+   KAPSAM GÜVENCESİ — mobil/tablet HİÇ etkilenmez:
+   Bütün düzen kuralları @media (min-width:1300px) içindedir. Sitedeki tüm
+   duyarlı kırılımlar max-width tabanlı ve en yükseği 1024px olduğu için
+   1300px altında bu dosyanın tek etkisi yoktur (yalnızca --shell değişkeni
+   tanımlanır, kullanılmaz). 1300px eşiğinde hesaplanan boşluk (60px) mevcut
+   3rem (48px) değerinden büyük olduğundan hiçbir yerde daralma olmaz.
+
+   Bu dosya her sayfada EN SON yüklenir (mobile-guardrails.css'ten sonra) ki
+   aynı özgüllükteki satır içi ve şablon kurallarını ezebilsin.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   İçerik rayı genişliği. 1180px sitenin mevcut standardı; 1600px üstünde
+   kademeli büyür ki büyük monitörlerde içerik dar bir şerit gibi kalmasın.
+   1599px'e kadar bugünkü ölçülerle bire bir aynıdır.
+   -------------------------------------------------------------------------- */
+:root { --shell: 1180px; }
+@media (min-width: 1600px) { :root { --shell: 1300px; } }
+@media (min-width: 1900px) { :root { --shell: 1400px; } }
+@media (min-width: 2300px) { :root { --shell: 1480px; } }
+
+@media (min-width: 1300px) {
+
+  /* Kenar boşluğu = (viewport − ray) / 2, taban 3rem.
+     Yüzde değeri var() içinde çözülmeden taşınır; her kuralda o öğenin
+     kendi kapsayıcı bloğuna göre hesaplanır. */
+  :root { --gutter: max(3rem, calc((100% - var(--shell)) / 2)); }
+
+  /* ---------------------------------------------------------------------
+     (A) TAM GENİŞLİK SATIRLAR — zemin viewport'ta, içerik rayda
+     --------------------------------------------------------------------- */
+  .nav,                 /* üst menü: logo rayın soluna, CTA rayın sağına  */
+  .hero,                /* hero: metin bloğu alt bölümlerle aynı hizada   */
+  .section,
+  .cred,
+  .wordstrip,
+  .secnav,              /* sektör sayfalarındaki yapışkan alt menü        */
+  .brands,
+  .solutions,
+  .brand-block,
+  .filterbar,
+  .cta-wrap,
+  .atolye-in,
+  #statsBand,           /* index metrik şeridi (4 sütun, tam genişlik)    */
+  .stat-strip,          /* dijital-donusum istatistik şeridi              */
+  footer {
+    padding-inline: var(--gutter);
+  }
+
+  /* Satır içi style ile padding verilen bölümler (zenginleştirme şeritleri,
+     ilgili blog kuşağı) — inline bildirimi ancak !important ezer. */
+  section[data-enrich-brand],
+  section[data-enrich],
+  section[data-newsol],
+  #blog-related-section {
+    padding-inline: var(--gutter) !important;
+  }
+
+  /* Çerez bandı (cookie-consent.js satır içi style üretir) */
+  #cc-banner {
+    padding-inline: max(24px, calc((100% - var(--shell)) / 2)) !important;
+  }
+
+  /* ---------------------------------------------------------------------
+     (B) RAYA OTURAN İÇ KUTULAR — mevcut 1080/1180/1200/1240px sabitleri
+     tek değişkene bağlanır, böylece hepsi aynı hizada büyür/küçülür.
+     --------------------------------------------------------------------- */
+  .section > *,
+  .hero-inner,
+  .hero > .crumb,
+  .brands > *,
+  .solutions > *,
+  .secnav-inner,
+  .cta-strip,
+  .sectorsel,
+  .soltabs,
+  .why-grid,
+  .footer-grid,
+  .footer-bot,
+  .fbot {
+    max-width: var(--shell);
+    margin-inline: auto;
+  }
+
+  /* Zenginleştirme şeritlerinin satır içi max-width:1200px kutuları */
+  section[data-enrich-brand] > div,
+  section[data-enrich] > div {
+    max-width: var(--shell) !important;
+  }
+
+  /* ---------------------------------------------------------------------
+     index.html — kalıcı izometrik teknik çizim katmanı
+     .hero-draw position:fixed + right:0 + 52vw olduğu için çizim viewport'un
+     sağ kenarına yapışıyor, içerik rayının dışına taşıyor ve sayfa
+     kaydırıldıkça alttaki bölümlerin üzerine biniyordu. Artık rayın sağ
+     yarısına oturur; boşluk büyüdükçe çizim de içeriyle birlikte gelir.
+     (prefers-reduced-motion içindeki position:absolute varyantında da
+     right yüzdesi .hero'nun padding kutusuna göre çözülür — hiza korunur.)
+     --------------------------------------------------------------------- */
+  .hero-draw {
+    right: max(0px, calc((100% - var(--shell)) / 2));
+    width: calc(var(--shell) * .52);
+  }
+  .hero-draw svg {
+    width: min(calc(var(--shell) * .46), 640px);
+  }
+
+  /* ---------------------------------------------------------------------
+     cadbim_sanatsal_baski.html kendi 1500px'lik rayını kullanır
+     (.blk ve .foot zaten max-width:1500px). Üstteki yapışkan bar aynı raya
+     hizalanır; sayfanın tam genişlikteki sanatsal öğeleri (.mq, .orb-wrap)
+     kasıtlı olarak kapsam dışıdır.
+     --------------------------------------------------------------------- */
+  .bar {
+    padding-inline: max(48px, calc((100% - 1500px) / 2));
+  }
+}
