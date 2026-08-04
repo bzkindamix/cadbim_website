@@ -184,6 +184,13 @@
     "@media (max-width:600px){" +
       "#wb-tab{width:46px;padding:9px 5px 8px;}" +
       "#wb-tab .wb-t-gun{font-size:15px;}#wb-tab .wb-t-et{display:none;}" +
+      /* Sekme dikey ortadayken tam genislikteki kartlarin ~13px uzerine
+         biniyordu. Mobilde yuzen dugmelerin bulundugu sag-alt koseye,
+         WhatsApp dugmesinin (bottom:24px, 58px) hemen ustune alinir;
+         panel de asagi tasmamak icin yukari dogru acilir. */
+      "#wb-rail{top:auto;bottom:130px;}" +
+      "#wb-panel{top:auto;bottom:0;transform:translate(calc(100% + 14px),0);}" +
+      "#wb-rail.wb-acik #wb-panel{transform:translate(0,0);}" +
       "#wb-panel{width:min(292px,calc(100vw - 22px));max-height:calc(100vh - 150px);}}" +
     "@media (prefers-reduced-motion:reduce){" +
       "#wb-tab,#wb-panel,#wb-kayit,.wb-ok{transition:none;}}";

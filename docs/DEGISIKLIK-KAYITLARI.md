@@ -4,6 +4,22 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-78 — Anasayfa mobil: Sektörler ve Çözümler seçim ekranlarına sektör kimliği
+
+- **Yapan:** Onur'un talebi: *"mobilde ana sayfa da çözüm ve endüstri seçim ekranları çok hoşuma gitmiyor. sırayla aşağı doğru ilerleyen butonlar ne bi ikon var ne başka bir hareket"* — mockup gösterilip onay alındıktan sonra uygulandı. Claude (PDM asistanı).
+- **Ölçülen sorun:** Sektörler mobilde 9 tam genişlik satır olarak alt alta diziliyordu (**528px**). HTML'de yazılı açıklama metni (`Revit, BIM, görselleştirme` vb.) `display:none` ile **gizlenmişti** — geriye yalnız kalın bir isim kalıyordu; boş görünmesinin asıl sebebi buydu. Masaüstündeki büyük çizim de mobilde gizli. Çözümler ise 10 düz metin hapıydı.
+- **Yapılan (yalnız mobil):**
+  - Sektörler 2 sütunlu kart ızgarasına alındı; her kartta sektörün **kendi ikonu, vurgu rengi ve arka plan çizimi** (`assets/img/sektor/*.svg`) var. **Gizli açıklama geri getirildi** (2 satırla sınırlı).
+  - İkon başlığın üstünde değil **yanında**: kart başına ~40px kazandırdı (ilk deneme 587px'e çıkmıştı, 455px'e indi).
+  - Çözümler hapları aynı ikon+renk dilini aldı; sütun sayısı değişmedi (mobile-guardrails R8). Sanatsal Baskı'nın gradyanı korundu.
+  - Kademeli beliriş + dokunma geri bildirimi. Kapsayıcıların mevcut `.reveal/.in` durumundan sürülüyor — **ek sınıf ya da JS gerekmedi**.
+- **İkon/renk haritası:** Sektör sayfalarından kaldırılan üst geçiş şeridinden (DK-2026-08-04, `.sec-card`) devralındı; 10 ikonun onu da subset fontta mevcut, yeni font dosyası gerekmedi.
+- **Masaüstü değişmedi (ölçüldü):** liste hâlâ flex-column, kart 52px, ikon gizli, ok görünür, soldaki büyük çizim yerinde. Yeni kurallar yalnızca `max-width:900px` / `max-width:600px` sorguları içinde.
+- **Kenar rayları:** Sosyal rayın bindiği iddiası **ölçümle çürütüldü** — kapsayıcı 32px ama görünür ikon 16px'te bitiyor, kart 20px'te başlıyor (4px boşluk). Asıl bindiren, dikey ortada duran **webinar sekmesiydi** (13px). Mobilde yüzen düğmelerin bulunduğu sağ-alt köşeye, WhatsApp'ın üstüne alındı (`bottom:130px`); panel de aşağı taşmamak için yukarı doğru açılıyor.
+- **Doğrulama:** 390×844 ve 360×740'ta yatay taşma yok, ızgara 2 sütun, 9 kartın da rengi farklı, açıklamalar görünür. Kademeli gecikmeler 0.03→0.35s. `prefers-reduced-motion` kuralına yeni seçiciler eklendi. Konsol hatası 0.
+- **Not (ortam):** Önizleme paneli görüntülenmediği için sayfa kare üretmiyor; bu yüzden IntersectionObserver hiç tetiklenmiyor ve CSS geçişleri ilerlemiyor. Animasyonun kendisi canlı doğrulanamadı — kaskad, `.in` sınıfı elle verilip geçişler kapatılarak doğrulandı (9 kart ve 10 sekme de opaklık 1).
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-77 — Widget her açılışta sıradaki webinarla başlıyor
 
 - **Yapan:** Onur'un talebi: *"webinar tarihi belli zaten onu sistem tarihiyle check edip tarihi geçince o webinarı göstermesin bir sonrakini göstersin widget. her zaman bir sonraki webinarı ilk sırada göstersin"* — Claude (PDM asistanı).
