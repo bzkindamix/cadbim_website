@@ -71,12 +71,12 @@
         ["Havacılık & Savunma", "/sektor-havacilik"]
       ]
     },
+    { label: "Eğitimler", href: "/egitimler", flat: true },
     {
       label: "Hizmetler", href: "/danismanlik",
       items: [
+        ['<span class="sanatsal-gradient">Sanatsal Baskı Atölyesi</span>', "/sanatsal-baski"],
         ["Danışmanlık", "/danismanlik"],
-        ["Eğitimler & Sertifikasyon", "/egitimler"],
-        ["Sanatsal Baskı Atölyesi", "/sanatsal-baski"],
         ["HP Plotter Teknik Servis", "/designjet-teknik-servis"],
         ["Yazılım Geliştirme", "/yazilim-gelistirme"]
       ]
@@ -472,6 +472,9 @@
 
   function buildPanel() {
     var groupsHtml = GROUPS.map(function (g) {
+      if (g.flat) {
+        return '<a class="cbm-link" href="' + withBase(g.href) + '">' + g.label + '<i class="ti ti-chevron-right"></i></a>';
+      }
       var subs = g.items.map(function (it) {
         return '<a href="' + withBase(it[1]) + '">' + it[0] + "</a>";
       }).join("");
