@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-80 — Anasayfada Çözümler bölümü kaldırıldı, yerine Hizmetler bölümü geldi
+
+- **Yapan:** Onur'un kararı: *"bence çözümleri kaldıralım hizmetler ile ilgili bir bölüm ekleyelim sonra sanatsal baskı var zaten"* — Claude (PDM asistanı).
+- **Süreç notu:** Claude önce kaldırmaya karşı görüş bildirdi (18 çözüm sayfasına giden yol kapanır diye), Onur kararını yineledi ve uygulandı. **Claude'un ilk gerekçesi hatalıydı:** Çözümler ana menüde açılır listeyle duruyor (tekil çözüm sayfaları tek tek listeli), ayrıca hero düğmesinde ve alt bilgide de var — anasayfa bölümü kalkınca sayfalar erişimsiz kalmıyor. Bu, karardan sonra ölçümle doğrulandı.
+- **Kaldırılan:** `#cozumler` bölümü (10 sektör sekmesi + 10 panel + 49 bağlantı) ve ona ait tüm CSS (`.soltabs*`, `.soltab-btn*`, `.solchip*`). Site genelinde `#cozumler` çapasına giden bağlantı olmadığı doğrulandı; `cozumler` sayfasına giden 3 bağlantı (menü, hero, alt bilgi) korundu. `home-3d.js` içindeki sekme kodu korumalı (`if (cozumSvg)`, `if (!btns.length) return`) olduğu için hata vermiyor, yerinde bırakıldı.
+- **Neden kalabalıktı:** Hemen üstteki Sektörler bölümü zaten bir sektör seçicisiydi; Çözümler de aynı 9 sektörle başlayınca arka arkaya iki seçici çıkıyordu.
+- **Eklenen:** `#hizmetler` bölümü — Hizmetler menüsündeki beş hizmet kart olarak: Danışmanlık, Eğitimler & Sertifikasyon, Yazılım Geliştirme, HP Plotter Teknik Servis, Teknik Destek. **Metinler uydurulmadı**, hizmet sayfalarının kendi meta açıklamalarından alındı (eğitim yalnız Autodesk, servis yalnız HP DesignJet — marka kapsamı kurallarına uygun).
+- **Tasarım:** Üstteki sektör ızgarası dokuz ayrı renk taşıdığı için hizmet kartlarında tek vurgu rengi (cyan) kullanıldı; hiyerarşi korunuyor. Masaüstü `auto-fit` ile tek satırda 5 kart; mobilde 2 sütun, beşinci kart tek başına kalmasın diye satırın tamamını kaplıyor.
+- **Kaskad tuzağı:** Yeni masaüstü CSS'i ilk yerleştirmede `@media(max-width:600px)` bloğundan **sonraya** düşmüş ve mobil kuralı eziyordu (mobilde 1 sütun görünüyordu); blok mobil sorgudan önceye taşındı.
+- **Doğrulama:** 1440×900'de 5 kart tek satır, kart boyları eşit (203px), bölüm 493px. 360×740'ta 2 sütun + tam genişlik son kart, metin taşması yok, yatay taşma yok. Sektörler bölümü masaüstünde bozulmadı (liste flex-column, büyük çizim yerinde). Sanatsal Baskı şeridi yerinde. Konsol hatası 0.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-79 — Mobil: sektörler 3x3 ızgara, istatistik bandı 2x2
 
 - **Yapan:** Onur'un talebi: *"endüstrileri 3 kolonlu 3 sıra yapalım"* ve *"şunları da 2 şerli 2 satır yapalım"* (istatistik bandı ekran görüntüsü) — Claude (PDM asistanı).
