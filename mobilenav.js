@@ -54,8 +54,7 @@
         ["PDM", "/pdm"],
         ["Görselleştirme & Render", "/gorsellestirme"],
         ["AI Destekli Görselleştirme", "/ai-gorsellestirme"],
-        ["Yaratıcı İçerik & Tasarım", "/yaratici-icerik"],
-        ["Sanatsal Baskı Atölyesi", "/sanatsal-baski"]
+        ["Yaratıcı İçerik & Tasarım", "/yaratici-icerik"]
       ]
     },
     {
@@ -71,12 +70,21 @@
         ["Eğitim", "/sektor-egitim"],
         ["Havacılık & Savunma", "/sektor-havacilik"]
       ]
+    },
+    {
+      label: "Hizmetler", href: "/danismanlik",
+      items: [
+        ["Danışmanlık", "/danismanlik"],
+        ["Eğitimler & Sertifikasyon", "/egitimler"],
+        ["Sanatsal Baskı Atölyesi", "/sanatsal-baski"],
+        ["HP Plotter Teknik Servis", "/designjet-teknik-servis"],
+        ["Yazılım Geliştirme", "/yazilim-gelistirme"]
+      ]
     }
   ];
 
   /* Grup dışı ana linkler */
   var TOP_LINKS = [
-    ["Eğitimler", "/egitimler"],
     ["Hakkımızda", "/hakkimizda"],
     ["İletişim", "/iletisim"],
     ["KVKK", "/kvkk"],
