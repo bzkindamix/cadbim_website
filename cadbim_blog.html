@@ -429,7 +429,7 @@ footer{background:#040810;border-top:.5px solid var(--w06);padding:36px 3rem 24p
     var productIcon = (p.products||[]).map(function(x){return PRODUCT_ICON[x];}).filter(Boolean)[0];
     var thumb = p.type==='video' && p.videoId
       ? '<div class="bc-thumb"><img src="https://img.youtube.com/vi/'+p.videoId+'/hqdefault.jpg" alt="" loading="lazy"><i class="ti ti-player-play-filled bc-play"></i></div>'
-      : (productIcon ? '<div class="bc-thumb bc-thumb-logo"><img src="assets/logos/products/'+productIcon+'" alt="" loading="lazy"></div>' : '');
+      : '<div class="bc-thumb bc-thumb-logo"><img src="' + (productIcon ? 'assets/logos/products/'+productIcon : 'assets/logos/cadbim-logo.png') + '" alt="" loading="lazy"></div>';
     return '<a href="'+href+'" class="blog-card">'
       + thumb
       + '<div class="bc-tag">'+esc(p.cat)+'</div>'

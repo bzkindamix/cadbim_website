@@ -699,6 +699,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   var container=document.getElementById('blogRelatedGrid');
   if(!container) return;
   var topic=container.getAttribute('data-topic');
+  var PRODUCT_ICON={'Revit':'revit.svg','Revit LT':'revit-lt.svg','Inventor':'inventor.svg','Fusion':'fusion.svg','AutoCAD':'autocad.svg','AutoCAD LT':'autocad-lt.svg','AutoCAD Web':'autocad-web.svg','Alias':'alias.svg','Vault':'vault-pdm.svg','PDM':'vault-pdm.svg','PLM':'fusion-manage.svg','InfraWorks':'infraworks.svg','Forma':'forma.svg','Navisworks':'navisworks.svg','Civil 3D':'civil3d.svg','Advance Steel':'advance-steel.svg','Robot Structural':'robot-structural.svg','CFD':'cfd.png','Factory Design':'factory-design.svg','Fabrication':'fabrication.svg','Maya':'maya.svg','3ds Max':'3dsmax.svg','Recap Pro':'recap-pro.svg','Illustrator':'illustrator.svg','Photoshop':'photoshop.svg','Acrobat':'acrobat.svg','Firefly':'firefly.svg','Adobe Express':'adobe-express.svg','BIM Collaborate Pro':'forma.svg','Autodesk Docs':'forma.svg','Nastran':'inventor.svg'};
   function esc(s){return (s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   fetch('assets/data/blog-posts.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
     var allMatched=data.filter(function(p){return (p.products||[]).indexOf(topic)!==-1 || p.cat===topic;})
@@ -712,10 +713,14 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
           + '<div style="aspect-ratio:16/9;background:#000;"><a class="yt-lite" href="https://www.youtube.com/watch?v='+p.videoId+'" target="_blank" rel="noopener" data-yt="'+p.videoId+'" data-title="'+esc(p.title)+'" aria-label="Videoyu oynat"><img src="https://i.ytimg.com/vi/'+p.videoId+'/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async"><span class="yt-lite-btn" aria-hidden="true"></span></a></div>'
           + '<div style="padding:16px;"><h3 style="font-family:\'Manrope\',sans-serif;font-size:13px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;"><a href="post/'+p.slug+'" style="color:#fff;text-decoration:none;">'+esc(p.title)+'</a></h3><p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></div>';
       }
-      return '<a href="post/'+p.slug+'" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);padding:20px;text-decoration:none;">'
+      var logo=(p.products||[]).map(function(x){return PRODUCT_ICON[x];}).filter(Boolean)[0];
+      var gorsel=logo?'assets/logos/products/'+logo:'assets/logos/cadbim-logo.png';
+      return '<a href="post/'+p.slug+'" style="display:block;background:#0d1830;border-radius:16px;border:.5px solid rgba(255,255,255,.1);overflow:hidden;text-decoration:none;">'
+        + '<div style="aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#13294a 0%,#101d3a 100%);"><img src="'+gorsel+'" alt="" style="max-width:44%;max-height:40%;width:auto;height:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.7;" loading="lazy" decoding="async"></div>'
+        + '<div style="padding:16px;">'
         + '<div style="font-size:10px;color:#00c8f0;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">'+esc(p.cat)+'</div>'
         + '<h3 style="font-family:\'Manrope\',sans-serif;font-size:14px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:6px;">'+esc(p.title)+'</h3>'
-        + '<p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></a>';
+        + '<p style="font-size:11px;color:rgba(255,255,255,.3);margin:0;">'+esc(p.trdate)+'</p></div></a>';
     }).join('');
     if(allMatched.length>5){
       container.insertAdjacentHTML('afterend','<a href="blog?topic='+encodeURIComponent(topic)+'" style="display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13px;font-weight:600;color:#00c8f0;text-decoration:none;">Tüm '+allMatched.length+' içeriği gör <i class="ti ti-arrow-right" style="font-size:12px;"></i></a>');

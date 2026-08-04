@@ -4,6 +4,27 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-84 — Endüstriler SSS'ten sonraya alındı; görselsiz blog kartlarına thumbnail; SSS şeridi hizalandı
+
+**1) Endüstriler bloğu SSS'ten sonraya taşındı (17 çözüm sayfası)**
+- **Talep:** Onur: *"çözüm sayfalarında ilgili endüstrileri SSS alanından sonra ekle"*.
+- Endüstriler ayrı bir `<section>` değildi; "Portföy" bölümünün içinde `sh` + `grid` ikilisi olarak duruyordu. Kesilip `<!-- /cz-faq -->` ardına kendi bölümü içinde yerleştirildi.
+- **Üç farklı sarmalayıcı varyantı** vardı (`margin-top:40px`, `margin-top:56px`, ve bazı sayfalarda blok zaten kendi `<section>`'ı içindeydi); desenle genelleştirildi. Blok kendi bölümünün tek içeriği olduğu sayfalarda geriye kalan **boş `<section>` temizlendi**. `grid` içinde iç içe `<div>`ler olduğu için kapanış etiketi düz regex yerine **sayaçla** bulundu.
+- **Doğrulama:** 17/17 sayfada div ve section dengesi korundu, boş section kalmadı, yeni sıra (SSS → Endüstriler) doğrulandı.
+
+**2) Görselsiz blog kartlarına thumbnail (79 sayfa + blog listesi)**
+- **Talep:** Onur: *"resimsiz blog var. bunun için videolu blog karesi ile aynı yapıda olan thumbnail resmi ve başlık formatında olmalı [...] blog thumbnail'ını ürün logosunu kullanarak hazırla"*.
+- "İlgili İçerikler" şeridinde video kartları 16:9 thumbnail + başlık biçimindeyken yazı tipi içerikler **görselsiz düz metin kutusu** olarak kalıyordu; aynı satırda iki farklı kart biçimi yan yana duruyordu.
+- **Mevcut doğru desen yeniden kullanıldı:** `cadbim_blog.html`'de zaten `PRODUCT_ICON` haritası ve `.bc-thumb-logo` görsel dili vardı (ürün logosu, koyu gradyan üzerine beyaza çevrilmiş, %70 opaklık). Aynı yaklaşım şeride taşındı — yeni bir tasarım dili uydurulmadı.
+- **Blog listesindeki eksik de kapatıldı:** orada ürün eşleşmeyen yazılara **hiç thumbnail basılmıyordu** (`: ''`); artık Cadbim markası yedeği devreye giriyor, böylece her kartın görseli oluyor.
+- **Yanlış logo atama riskinden kaçınıldı:** eşleşmeyen ürünler için (Simülasyon, Generative Design, BIM 360, CAM, Dynamo gibi) tahmini bir ürün logosu atanmadı — yanlış ürünü ima etmemek için nötr Cadbim markası kullanıldı. Yalnızca kesin olan `Nastran → inventor.svg` (Inventor Nastran) haritaya eklendi.
+- **Doğrulama:** `cadbim_pdm.html`'de 5 kartın 5'i de 320x180 görselli (4 video thumbnail + Fusion logolu yazı kartı); blog listesinde 24 kartın tamamı görselli, görselsiz kart 0. Üretilen satır-içi JS `node --check` ile 3 sayfada doğrulandı, konsol hatası 0.
+
+**3) SSS alt çağrısı hizalandı (20 sayfa)**
+- Onur: *"bu çok kötü bir tasarım"*. DK-82'deki ilk düzeltme şeridi 820px'e sabitlemişti; bu kez şerit üstündeki SSS listesiyle (46px'te başlıyor) **hizasız kalıp ortada yüzen bir ada** gibi duruyordu. Artık `inline-flex` + `width:auto` ile içeriğine göre daralıyor ve listeyle aynı sol kenardan başlıyor (1440px'te 1333 → 418px, metin-düğme arası 18px).
+
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-83 — Çözüm sayfalarındaki marka şeridi kaldırıldı; başarı öyküsü müşteri logoları okunur yapıldı
 
 - **Yapan:** Onur'un iki talebi: *"çözümlerin sonunda bir daha çözümlerde kullandığımız markalara gerek yok kaldır gitsin tüm çözümlerden"* ve *"burda kötü bir görüntü var"* (SSS şeridi ekran görüntüsü, bkz. DK-82) ardından müşteri logolarının küçüklüğüne dair gözlem — Claude (PDM asistanı).
