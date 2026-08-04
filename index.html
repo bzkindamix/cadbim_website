@@ -169,6 +169,10 @@ body{background:var(--navy);color:var(--white);font-family:var(--font-b);font-si
    doğal halleriyle bırakılır (DK-2026-08-03-26). */
 .cred-row1 img[src*="adobe"]{filter:none;opacity:1;max-height:72px;max-width:90%;border-radius:8px;}
 .cred-row1 img[src*="chaos"]{filter:none;opacity:1;max-height:72px;border-radius:8px;}
+/* Marka kuralları gereği orijinal renkte gösterilmesi zorunlu logolar
+   (Onur talebi, 2026-08-04): HP mavi, SketchUp/Lumion/UltiMaker/Microsoft
+   kendi marka renkleri — mono beyaz filtre bunlarda da kaldırıldı. */
+.cred-row1 img[src*="hp-logo"],.cred-row1 img[src*="sketchup"],.cred-row1 img[src*="lumion"],.cred-row1 img[src*="ultimaker"],.cred-row1 img[src*="microsoft"]{filter:none;opacity:1;}
 
 /* ÇÖZÜMLER — ENDÜSTRİ SEKMELERİ */
 .soltabs{max-width:1180px;margin:0 auto;}

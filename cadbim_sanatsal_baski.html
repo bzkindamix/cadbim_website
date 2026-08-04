@@ -575,7 +575,7 @@ html{overflow-x:clip;}
   font-family:var(--fd);font-size:10.5px;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:7px;display:block;
   background:linear-gradient(92deg,var(--acc2),var(--vio),var(--mag));-webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.baski-form input,.baski-form select,.baski-form textarea{
+.baski-form input:not([type=checkbox]),.baski-form select,.baski-form textarea{
   width:100%;background:rgba(19,16,25,.55);border:1px solid var(--ln);border-radius:10px;
   padding:12px 14px;font-family:var(--fb);font-size:14px;color:var(--tx);outline:none;
   appearance:none;transition:border-color .2s,box-shadow .2s;
@@ -594,7 +594,7 @@ html{overflow-x:clip;}
   border-color:var(--acc2);box-shadow:0 0 0 3px rgba(110,231,255,.14);
 }
 .bf-kvkk{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--tx2);line-height:1.6;cursor:pointer;}
-.bf-kvkk input{width:auto;margin-top:3px;flex-shrink:0;}
+.bf-kvkk input{width:17px;height:17px;margin-top:3px;flex-shrink:0;accent-color:var(--acc2);cursor:pointer;}
 .bf-kvkk a{color:var(--acc2);text-decoration:none;}
 .bf-kvkk a:hover{text-decoration:underline;}
 .baski-form button.cta-btn{border:none;cursor:pointer;font-family:var(--fd);margin-top:6px;}
