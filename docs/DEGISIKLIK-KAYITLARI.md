@@ -4,6 +4,23 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-85 — Çözüm sayfası başlıkları çözümün adıyla yazıldı
+
+- **Yapan:** Onur'un talebi: *"çözüm sayfasındaki başlıklarda sürekli bu çözümü ifadesi başlama eğilimi var ne o çözüm? İsmini kullanarak etkileyici bir metin yazmalısın BIM ile kontrolü sağla vs. gibi"* — Claude (PDM asistanı).
+- **Ölçüm:** Bir çözüm sayfasında aynı anda **beş ayrı yerde** "Bu Çözüm/Bu Çözümü" geçiyordu; okur hangi çözüme baktığını başlıktan anlayamıyordu. Bunların bir kısmını DK-82'de Claude yazmıştı — tekrarı kaldırırken jenerikliği fark etmemiştim, uyarı yerinde.
+- **Değişim (18 sayfa, 104 başlık):**
+  - `Bu Çözüm Nedir?` → **`{Ad} Nedir?`**
+  - `Bu Çözümü Ayakta Tutan Ürünler` → **`{Ad} Hangi Ürünlerle Kuruluyor`**
+  - `Sahada Karşılığı Olan Bir Çözüm` → **`{Ad} Hangi Sektörlerde İş Görüyor`**
+  - `Bu Çözüm Hakkında Merak Edilenler` → **`{Ad} Hakkında Merak Edilenler`**
+  - `Bu Çözümü Nasıl Hayata Geçiriyoruz?` → **`{Ad} Nasıl Hayata Geçiyor?`**
+  - altyazı: `Bu çözümü kurduğumuz sektörler...` → **`{Ad} projelerini yürüttüğümüz sektörler ve iş akışları.`**
+- **TÜRKÇE EK KARARI:** Çözüm adlarına doğrudan hâl eki getirilmedi. "BIM'i / PDM'yi / Nesting'i" gibi kesme+ek biçimleri ada ve telaffuza göre değişiyor; 18 sayfada tek kalıpla doğru sonuç vermez. Bunun yerine adı **yalın bırakan** kalıplar seçildi ("... Hangi Ürünlerle Kuruluyor", "... Hakkında Merak Edilenler"), böylece hepsi dilbilgisi açısından doğru kalıyor.
+- **Bulunan tutarsızlık:** `cadbim_nesting.html`'de portföy bölümü çözüm değil **ürün sayfası kalıbını** kullanıyordu ("Keşfet / Bu Ürün Yalnız Çalışmıyor"); diğer 17 sayfayla aynı kalıba çevrildi.
+- **Kapsam dışı bırakılan:** Bir SSS sorusunun gövdesindeki *"...bu çözüm bize ne sağlar?"* ifadesi doğal bir cümle olduğu için korundu.
+- **Doğrulama:** Tarayıcıda BIM ve PDM sayfalarının bölüm sırası ve başlıkları okundu; hiçbirinde jenerik "Bu Çözüm" kalmadı. 18 sayfada div/section dengesi bozulmadı, yatay taşma ve konsol hatası yok.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-84 — Endüstriler SSS'ten sonraya alındı; görselsiz blog kartlarına thumbnail; SSS şeridi hizalandı
 
 **1) Endüstriler bloğu SSS'ten sonraya taşındı (17 çözüm sayfası)**
