@@ -68,7 +68,7 @@
         ["Mekanik Tesisat", "/sektor-tesisat"],
         ["Otomotiv", "/sektor-otomotiv"],
         ["Eğitim", "/sektor-egitim"],
-        ["Havacılık & Savunma", "/sektor-havacilik"]
+        ["Savunma ve Havacılık", "/sektor-havacilik"]
       ]
     },
     {
@@ -123,8 +123,8 @@
     ["PD&M Collection", "/pdm-collection", "autodesk koleksiyon inventor vault imalat paket", "Ürün"],
     ["M&E Collection", "/me-collection", "autodesk koleksiyon maya 3dsmax arnold paket", "Ürün"],
     ["Autodesk Forma", "/autodesk-forma", "autodesk forma construction cloud build takeoff docs insaat saha", "Ürün"],
-    ["BIM Collaborate Pro", "/bim-collaborate-pro", "autodesk revit bulut worksharing ortak calisma", "Ürün"],
-    ["Autodesk Docs", "/autodesk-docs", "autodesk cde dokuman yonetimi iso 19650", "Ürün"],
+    ["Forma Design Collaboration", "/bim-collaborate-pro", "autodesk bim collaborate pro revit bulut worksharing ortak calisma", "Ürün"],
+    ["Forma Data Management", "/autodesk-docs", "autodesk docs cde dokuman yonetimi iso 19650", "Ürün"],
     ["Vehicle Tracking", "/vehicle-tracking", "autodesk arac donus izi swept path otopark", "Ürün"],
     ["Photoshop", "/photoshop", "adobe goruntu duzenleme retus firefly", "Ürün"],
     ["Illustrator", "/illustrator", "adobe vektor logo grafik", "Ürün"],
@@ -234,7 +234,7 @@
     ["Otomotiv", "/sektor-otomotiv", "sektor otomotiv", "Sektör"],
     ["Medya & Eğlence", "/sektor-medya", "sektor medya eglence render", "Sektör"],
     ["Eğitim", "/sektor-egitim", "sektor egitim universite okul akademik lab", "Sektör"],
-    ["Havacılık & Savunma", "/sektor-havacilik", "sektor havacilik savunma defense aerospace", "Sektör"],
+    ["Savunma ve Havacılık", "/sektor-havacilik", "sektor havacilik savunma defense aerospace", "Sektör"],
     ["Hakkımızda", "/hakkimizda", "kurumsal 1993 firma", "Kurumsal"],
     ["İletişim", "/iletisim", "adres telefon teklif form izmir ankara", "Kurumsal"],
     ["KVKK", "/kvkk", "kisisel veri gizlilik", "Yasal"],
