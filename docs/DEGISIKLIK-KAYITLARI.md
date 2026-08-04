@@ -4,6 +4,16 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-04-75 — Webinar widget'ına sektör süzgeci eklendi (İnşaat / Üretim)
+
+- **Yapan:** Onur'un talebi: *"İnşaat sektörü / üretim sektörü filtresi koyabilir miyiz yine?"* + *"widget a"* — Claude (PDM asistanı).
+- **Neden "yine":** Süzgeç `cadbim_webinar.html` sayfasında zaten vardı (`.pfilter`, AEC / D&M çipleri); istenen, aynı ayrımın **sağ kenar widget'ında** da bulunmasıydı.
+- **Yapılan:** Panelin başlığının altına iki çip kondu — **İnşaat** (`aec`) ve **Üretim** (`dm`). Anahtarlar sayfadaki `data-cat` değerleriyle aynı; kategori de kartlardan okunuyor, yani ayrı bir eşleme tablosu tutulmuyor.
+- **Davranış:** Çipler karşılıklı dışlayıcı; **etkin çipe yeniden basmak süzgeci temizler** — sitedeki `.fchip` davranışının aynısı ("Tümü" çipi yok). Süzgeç değişince sayaç ve ileri/geri okları süzülmüş listeye göre çalışır. Sekmedeki tarih **süzgeçten bağımsız** olarak daima en yakın webinarı gösterir (sekme "sıradaki etkinlik" bilgisidir, tarama aracı değil).
+- **Güvenlik ağı:** Bir sektörde hiç yaklaşan webinar kalmazsa süzgeç yok sayılır; kullanıcı boş bir panelle karşılaşmaz.
+- **Doğrulama (tarayıcı):** Süzgeçsiz 1/9 → İnşaat 1/4 → Üretim 1/5 (sayfadaki 4 AEC + 5 D&M dağılımıyla birebir); Üretim içinde sona gidilince 5/5 ve "sonraki" devre dışı; etkin çipe tekrar basınca 1/9'a dönüyor. Panel süzgeç satırıyla 434 → 483px; 1440×900 ve 375×667'de tamamı ekranda, iç kaydırma gerekmiyor, WhatsApp düğmesiyle çakışma ve yatay taşma yok. Çip dokunma hedefi 129–134 × 29px. Konsol hatası 0.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-04-74 — Webinar kayıt linkleri Teams etkinliklerine bağlandı; sağ kenar sekmesi yeniden tasarlandı
 
 - **Yapan:** Onur'un iki talebi: *"şu butonu daha yakışıklı yapalım"* (sağ kenardaki webinar sekmesi ekran görüntüsü) ve *"kerimcan ve ezgi bana e posta olarak webinar linklerini attı. cadbim.com.tr mail ıma bak ve oradan linkleri al kayıt ol butonlarına o linkleri koy"* — Claude (PDM asistanı).

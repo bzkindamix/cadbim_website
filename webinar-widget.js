@@ -65,6 +65,8 @@
         tarih: t,
         gun: gun,
         ay: ayk,
+        /* webinar sayfasindaki sektor filtresiyle ayni anahtar: aec | dm */
+        kategori: k.getAttribute("data-cat") || "",
         ayUzun: AY_UZUN[t.getMonth()],
         etiket: metin(k, ".wtag"),
         saat: metin(k, ".wtime"),
@@ -129,6 +131,19 @@
       "display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;}" +
     "#wb-kapat:hover{background:rgba(255,255,255,.14);color:#fff;}" +
 
+    /* --- sektor suzgeci (webinar sayfasindaki AEC / D&M ayrimiyla ayni) --- */
+    "#wb-filtre{display:flex;gap:6px;padding:10px 14px 11px;}" +
+    ".wb-fc{flex:1;padding:6px 4px;border-radius:8px;cursor:pointer;font-family:inherit;" +
+      "font-size:11px;font-weight:700;letter-spacing:.2px;" +
+      "border:.5px solid rgba(255,255,255,.13);background:rgba(255,255,255,.04);" +
+      "color:rgba(255,255,255,.56);transition:border-color .2s,background .2s,color .2s;}" +
+    ".wb-fc:hover{border-color:rgba(255,255,255,.28);color:rgba(255,255,255,.86);}" +
+    ".wb-fc[aria-pressed='true']{background:rgba(0,200,240,.14);" +
+      "border-color:rgba(0,200,240,.46);color:#00c8f0;}" +
+    /* etkin cipe yeniden basmak suzgeci temizler — sitedeki .fchip davranisi */
+    ".wb-fc[aria-pressed='true']::after{content:'\\00d7';margin-left:6px;font-size:13px;" +
+      "line-height:1;font-weight:700;opacity:.62;}" +
+
     "#wb-gorsel{display:block;width:100%;aspect-ratio:1200/627;object-fit:cover;background:#0a1225;}" +
     "#wb-govde{padding:12px 14px 14px;}" +
     "#wb-ust{display:flex;align-items:center;gap:10px;margin-bottom:9px;}" +
@@ -185,6 +200,10 @@
         '<div id="wb-bas"><span>Yaklaşan Webinar</span>' +
           '<button id="wb-kapat" type="button" aria-label="Kapat">' +
             '<i class="ti ti-x" aria-hidden="true"></i></button></div>' +
+        '<div id="wb-filtre" role="group" aria-label="Sektöre göre süz">' +
+          '<button class="wb-fc" type="button" data-f="aec" aria-pressed="false">İnşaat</button>' +
+          '<button class="wb-fc" type="button" data-f="dm" aria-pressed="false">Üretim</button>' +
+        '</div>' +
         '<img id="wb-gorsel" alt="" loading="lazy" decoding="async">' +
         '<div id="wb-govde" aria-live="polite">' +
           '<div id="wb-ust"><div id="wb-tarih"><b></b><i></i></div>' +
@@ -204,15 +223,27 @@
     return rail;
   }
 
-  function baslat(liste) {
-    if (!liste.length) return;
+  function baslat(tumListe) {
+    if (!tumListe.length) return;
     var rail = ekle();
     var q = function (s) { return rail.querySelector(s); };
     var tab = q("#wb-tab"), panel = q("#wb-panel");
     var ix = 0;
+    var filtre = null;                 /* null = tumu, yoksa "aec" | "dm" */
+
+    /* Suzgecten gecen liste. Bir sektorde hic webinar kalmadiysa suzgec
+       yok sayilir; kullanici bos bir panelle karsilasmaz. */
+    function liste() {
+      if (!filtre) return tumListe;
+      var s = tumListe.filter(function (w) { return w.kategori === filtre; });
+      return s.length ? s : tumListe;
+    }
 
     function ciz() {
-      var w = liste[ix];
+      var l = liste();
+      if (ix > l.length - 1) ix = l.length - 1;
+      if (ix < 0) ix = 0;
+      var w = l[ix];
       q("#wb-gorsel").src = w.gorsel;
       q("#wb-gorsel").alt = w.gorselAlt;
       q("#wb-tarih b").textContent = w.gun;
@@ -236,14 +267,14 @@
       }
       kayit.querySelector("i").className =
         "ti " + (disari ? "ti-external-link" : "ti-arrow-right");
-      q("#wb-sayac").textContent = (ix + 1) + " / " + liste.length;
+      q("#wb-sayac").textContent = (ix + 1) + " / " + l.length;
       q("#wb-onceki").disabled = ix === 0;
-      q("#wb-sonraki").disabled = ix === liste.length - 1;
-      /* Sekmede daima en yakin webinarin tarihi durur. */
-      tab.querySelector(".wb-t-gun").textContent = liste[0].gun;
-      tab.querySelector(".wb-t-ay").textContent = liste[0].ay;
+      q("#wb-sonraki").disabled = ix === l.length - 1;
+      /* Sekmede daima (suzgecten bagimsiz) en yakin webinarin tarihi durur. */
+      tab.querySelector(".wb-t-gun").textContent = tumListe[0].gun;
+      tab.querySelector(".wb-t-ay").textContent = tumListe[0].ay;
       tab.setAttribute("aria-label",
-        "Yaklaşan webinar: " + liste[0].gun + " " + liste[0].ayUzun + " — " + liste[0].baslik);
+        "Yaklaşan webinar: " + tumListe[0].gun + " " + tumListe[0].ayUzun + " — " + tumListe[0].baslik);
     }
 
     function ac(durum) {
@@ -256,7 +287,20 @@
     tab.addEventListener("click", function () { ac(true); });
     q("#wb-kapat").addEventListener("click", function () { ac(false); });
     q("#wb-onceki").addEventListener("click", function () { if (ix > 0) { ix--; ciz(); } });
-    q("#wb-sonraki").addEventListener("click", function () { if (ix < liste.length - 1) { ix++; ciz(); } });
+    q("#wb-sonraki").addEventListener("click", function () { if (ix < liste().length - 1) { ix++; ciz(); } });
+
+    /* Sektor cipleri: etkin cipe yeniden basmak suzgeci temizler. */
+    Array.prototype.forEach.call(rail.querySelectorAll(".wb-fc"), function (c) {
+      c.addEventListener("click", function () {
+        var f = c.getAttribute("data-f");
+        filtre = (filtre === f) ? null : f;
+        Array.prototype.forEach.call(rail.querySelectorAll(".wb-fc"), function (x) {
+          x.setAttribute("aria-pressed", String(x.getAttribute("data-f") === filtre));
+        });
+        ix = 0;
+        ciz();
+      });
+    });
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && rail.classList.contains("wb-acik")) ac(false);
