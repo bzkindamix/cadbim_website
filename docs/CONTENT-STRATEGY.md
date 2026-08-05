@@ -62,6 +62,14 @@ Paylaşılabilir (özgün bakış açısı, veri):
 - Müşteri başarı öykülerinin derinleştirilmesi — denetim raporunda "19 başarı öyküsü var ama logosuz/metriksiz" tespiti var; bu, en yüksek paylaşılabilirlik potansiyeline sahip mevcut malzeme. Somut proje/metrik eklenerek (müşteri onayıyla) vaka analizine dönüştürülebilir.
 - "1993'ten bugüne" tarzı meta-içerik (kurum tarihi, sektördeki dönüşüm gözlemleri) — CADBİM'in 30+ yıllık konumunu kullanan tek yerde henüz yapılmamış bir açı.
 
+## 6a. Çapraz-Linkleme Felsefesi (2026-08-05'te Onur ile netleşti)
+
+"Her sayfa kendisiyle ilgili her şeyi göstermeli" ilkesi **"kendisiyle ilgili"** ile sınırlı — tüm katalog her sayfada görünsün demek değil. Uygulama:
+
+- Her sayfada bir birincil CTA (Teklif İste) + aynı direkten/komşu iş akışından 3-5 alakalı ürün-çözüm-sektör linki (mevcut yapı zaten bunu yapıyor — ör. Revit → BIM → İnşaat sektörü → Navisworks).
+- **Sanatsal Baskı Atölyesi istisnası:** Bu hizmet HP DesignJet altyapısına dayanıyor ve alışılmışın dışında "herkesi ilgilendirebilecek" (B2C/kreatif) bir profile sahip. Karar: tüm sayfalara zorla eklenmez (B2B mühendislik sayfalarında alaka dışı durur, asıl CTA'dan dikkat dağıtır). Nav + footer'daki mevcut sessiz erişim (zaten her sayfada var) yeterli kabul edildi. Sadece **gerçekten örtüşen sayfalarda** (HP DesignJet ürün sayfaları, Adobe/görsel-kreatif sayfaları, `sektor_medya`, `sektor_icmimarlik`) içerik içinde doğal bir cümleyle değinilecek.
+- Genel kural: maksimum görünürlük yerine sayfa odağını koruma tercih edilir.
+
 ## 7. Uygulanmayacak / Kapsam Dışı
 
 - Fiyat/indirim içeren içerik üretilmez, her CTA "Teklif İste" olur.
