@@ -20,30 +20,13 @@
   body, table, td, a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
   table, td { mso-table-lspace:0pt; mso-table-rspace:0pt; }
   img { -ms-interpolation-mode:bicubic; border:0; outline:none; text-decoration:none; display:block; }
-  body { margin:0; padding:0; width:100%!important; height:100%!important; background:#060c1a; }
+  body { margin:0; padding:0; width:100%!important; height:100%!important; background:#eef1f6; }
   a { text-decoration:none; }
-  .cyan { color:#00c8f0; }
-
-  /* Outlook.com / Yeni Outlook / Windows Mail karanlık modu, meta etiketine
-     rağmen renkleri yine de değiştirebiliyor; bu istemciler karanlık modda
-     [data-ogsc] işaretini ekler, biz de bunu hedefleyip orijinal renkleri
-     !important ile geri zorluyoruz. */
-  [data-ogsc] body,
-  [data-ogsc] .bg0 { background-color:#060c1a !important; }
-  [data-ogsc] .bg1 { background-color:#0a1225 !important; }
-  [data-ogsc] .bg2 { background-color:#0d1830 !important; }
-  [data-ogsc] .bg3 { background-color:#040810 !important; }
-  [data-ogsc] .bgcyan { background-color:#00c8f0 !important; }
-  [data-ogsc] .bg-white { background-color:#ffffff !important; }
-  [data-ogsc] .txt-w { color:#ffffff !important; }
-  [data-ogsc] .txt-dim { color:rgba(255,255,255,0.65) !important; }
-  [data-ogsc] .txt-dim2 { color:rgba(255,255,255,0.45) !important; }
-  [data-ogsc] .txt-navy { color:#060c1a !important; }
-  [data-ogsc] .cyan { color:#00c8f0 !important; }
+  .cyan { color:#0090ad; }
 
   @media only screen and (max-width:600px) {
     .container { width:100%!important; }
-    .stack { display:block!important; width:100%!important; border-radius:10px!important; border:1px solid rgba(0,200,240,0.2)!important; margin-bottom:8px!important; }
+    .stack { display:block!important; width:100%!important; border-radius:10px!important; border:1px solid rgba(0,144,173,0.25)!important; margin-bottom:8px!important; }
     .stack:last-child { margin-bottom:0!important; }
     .px { padding-left:20px!important; padding-right:20px!important; }
     .h1 { font-size:22px!important; line-height:1.25!important; }
@@ -52,35 +35,29 @@
   }
 </style>
 </head>
-<body style="margin:0;padding:0;background:#060c1a;">
+<body style="margin:0;padding:0;background:#eef1f6;">
 <!-- Preheader (inbox preview text, hidden) -->
-<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#060c1a;opacity:0;">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#eef1f6;opacity:0;">
   6 Ağustos Perşembe, 10.30 — Inventor'ın yeni FEA araçlarıyla daha hızlı ve doğru yapısal analiz. Katılım ücretsiz, yer sınırlı.
 </div>
 
-<center class="bg0" style="width:100%;background:#060c1a;">
+<center style="width:100%;background:#eef1f6;">
 <!--[if mso]>
 <table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td>
 <![endif]-->
-<table role="presentation" class="container bg1" width="600" align="center" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#0a1225;">
+<table role="presentation" class="container" width="600" align="center" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;background:#ffffff;">
 
   <!-- Header / Logo -->
   <tr>
-    <td align="center" class="bg0" style="padding:28px 20px 24px;background:#060c1a;border-bottom:1px solid rgba(255,255,255,0.08);">
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-        <td align="center" bgcolor="#ffffff" class="bg-white" style="background:#ffffff;border-radius:8px;padding:10px 18px;">
-          <a href="https://events.teams.microsoft.com/event/5f2c6ac3-319a-4263-ac92-2e7e3c37660f@8434bec9-4ba4-4cb2-b8d4-79b0e8ed07c6" target="_blank" style="display:block;">
-            <img src="https://useinbox-files.s3-eu-west-1.amazonaws.com/m_6093a09a115e670001cacaa0/images/cadbimlogoyataypngpng8f0fee.png" width="150" alt="Cadbim" style="display:block;height:auto;border:0;">
-          </a>
-        </td>
-      </tr></table>
+    <td align="center" bgcolor="#ffffff" style="padding:28px 20px 20px;background:#ffffff;border-bottom:1px solid rgba(10,18,37,0.08);">
+      <img src="https://useinbox-files.s3-eu-west-1.amazonaws.com/m_6093a09a115e670001cacaa0/images/cadbimlogoyataypngpng8f0fee.png" width="150" alt="Cadbim" style="display:block;height:auto;border:0;margin:0 auto;">
     </td>
   </tr>
 
   <!-- Eyebrow strip -->
   <tr>
-    <td align="center" class="bg1" style="padding:18px 20px 0;background:#0a1225;">
-      <p class="cyan" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#00c8f0;font-weight:700;">
+    <td align="center" bgcolor="#ffffff" style="padding:18px 20px 0;background:#ffffff;">
+      <p class="cyan" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#0090ad;font-weight:700;">
         Ücretsiz Webinar &middot; Product Design &amp; Manufacturing
       </p>
     </td>
@@ -88,7 +65,7 @@
 
   <!-- Hero image -->
   <tr>
-    <td class="px bg1" style="padding:16px 20px 0;background:#0a1225;">
+    <td class="px" bgcolor="#ffffff" style="padding:16px 20px 0;background:#ffffff;">
       <a href="https://events.teams.microsoft.com/event/5f2c6ac3-319a-4263-ac92-2e7e3c37660f@8434bec9-4ba4-4cb2-b8d4-79b0e8ed07c6" target="_blank">
         <img src="https://useinbox-files.s3-eu-west-1.amazonaws.com/m_6093a09a115e670001cacaa0/images/inventor-yapisal-analizjpg18f605.jpg" width="560" alt="Autodesk Inventor Professional 2027: Yapısal Analizlerde Hız ve Doğruluk" style="width:100%;max-width:560px;height:auto;border-radius:14px;">
       </a>
@@ -97,8 +74,8 @@
 
   <!-- Title -->
   <tr>
-    <td class="px bg1" style="padding:24px 32px 8px;background:#0a1225;">
-      <h1 class="h1 txt-w" style="margin:0;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:26px;line-height:1.25;font-weight:700;color:#ffffff;">
+    <td class="px" bgcolor="#ffffff" style="padding:24px 32px 8px;background:#ffffff;">
+      <h1 class="h1" style="margin:0;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:26px;line-height:1.25;font-weight:700;color:#0a1225;">
         Autodesk Inventor Professional 2027: <span class="cyan">Yapısal Analizlerde Hız ve Doğruluk</span>
       </h1>
     </td>
@@ -106,8 +83,8 @@
 
   <!-- Description -->
   <tr>
-    <td class="px bg1" style="padding:14px 32px 4px;background:#0a1225;">
-      <p class="txt-dim" style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.7;color:rgba(255,255,255,0.65);">
+    <td class="px" bgcolor="#ffffff" style="padding:14px 32px 4px;background:#ffffff;">
+      <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.7;color:#4a5568;">
         Inventor'ın güncellenmiş FEA araçlarıyla tasarım aşamasında daha hızlı ve doğru yapısal analiz yapmayı öğrenin. Cadbim uzmanları eşliğinde uygulamalı örneklerle işleyen bu ücretsiz oturuma katılım için yerinizi ayırtın.
       </p>
     </td>
@@ -115,20 +92,20 @@
 
   <!-- Info row: date / time / platform -->
   <tr>
-    <td class="px bg1" style="padding:22px 32px 0;background:#0a1225;">
+    <td class="px" bgcolor="#ffffff" style="padding:22px 32px 0;background:#ffffff;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td width="33%" class="stack bg2" valign="top" bgcolor="#0d1830" style="padding:14px 10px;background:#0d1830;border:1px solid rgba(0,200,240,0.2);border-radius:10px 0 0 10px;text-align:center;">
-            <p class="txt-dim2" style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Tarih</p>
-            <p class="txt-w" style="margin:0;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#ffffff;">6 Ağustos Perşembe</p>
+          <td width="33%" class="stack" valign="top" bgcolor="#eef6fb" style="padding:14px 10px;background:#eef6fb;border:1px solid rgba(0,144,173,0.25);border-radius:10px 0 0 10px;text-align:center;">
+            <p style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#6b7688;">Tarih</p>
+            <p style="margin:0;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#0a1225;">6 Ağustos Perşembe</p>
           </td>
-          <td width="34%" class="stack bg2" valign="top" bgcolor="#0d1830" style="padding:14px 10px;background:#0d1830;border-top:1px solid rgba(0,200,240,0.2);border-bottom:1px solid rgba(0,200,240,0.2);text-align:center;">
-            <p class="txt-dim2" style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Saat</p>
-            <p class="txt-w" style="margin:0;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#ffffff;">10.30 &ndash; 11.30</p>
+          <td width="34%" class="stack" valign="top" bgcolor="#eef6fb" style="padding:14px 10px;background:#eef6fb;border-top:1px solid rgba(0,144,173,0.25);border-bottom:1px solid rgba(0,144,173,0.25);text-align:center;">
+            <p style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#6b7688;">Saat</p>
+            <p style="margin:0;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#0a1225;">10.30 &ndash; 11.30</p>
           </td>
-          <td width="33%" class="stack bg2" valign="top" bgcolor="#0d1830" style="padding:14px 10px;background:#0d1830;border:1px solid rgba(0,200,240,0.2);border-radius:0 10px 10px 0;text-align:center;">
-            <p class="txt-dim2" style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Platform</p>
-            <p class="txt-w" style="margin:0;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#ffffff;">Online</p>
+          <td width="33%" class="stack" valign="top" bgcolor="#eef6fb" style="padding:14px 10px;background:#eef6fb;border:1px solid rgba(0,144,173,0.25);border-radius:0 10px 10px 0;text-align:center;">
+            <p style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#6b7688;">Platform</p>
+            <p style="margin:0;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;color:#0a1225;">Online</p>
           </td>
         </tr>
       </table>
@@ -137,47 +114,47 @@
 
   <!-- CTA button -->
   <tr>
-    <td align="center" class="bg1" style="padding:30px 32px 8px;background:#0a1225;">
+    <td align="center" bgcolor="#ffffff" style="padding:30px 32px 8px;background:#ffffff;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td class="btn-td bgcyan" align="center" bgcolor="#00c8f0" style="border-radius:8px;background:#00c8f0;">
-            <a class="btn-a txt-navy" href="https://events.teams.microsoft.com/event/5f2c6ac3-319a-4263-ac92-2e7e3c37660f@8434bec9-4ba4-4cb2-b8d4-79b0e8ed07c6" target="_blank" style="display:inline-block;padding:15px 36px;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:#060c1a;border-radius:8px;">
+          <td class="btn-td" align="center" bgcolor="#00c8f0" style="border-radius:8px;background:#00c8f0;">
+            <a class="btn-a" href="https://events.teams.microsoft.com/event/5f2c6ac3-319a-4263-ac92-2e7e3c37660f@8434bec9-4ba4-4cb2-b8d4-79b0e8ed07c6" target="_blank" style="display:inline-block;padding:15px 36px;font-family:'Space Grotesk',Arial,Helvetica,sans-serif;font-size:15px;font-weight:700;color:#060c1a;border-radius:8px;">
               Kayıt Ol &rarr;
             </a>
           </td>
         </tr>
       </table>
-      <p class="txt-dim2" style="margin:14px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:rgba(255,255,255,0.4);">Katılım ücretsizdir &middot; Yer sınırlıdır</p>
+      <p style="margin:14px 0 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#8a93a3;">Katılım ücretsizdir &middot; Yer sınırlıdır</p>
     </td>
   </tr>
 
   <!-- Divider -->
   <tr>
-    <td class="px bg1" style="padding:32px 32px 32px;background:#0a1225;">
-      <div style="border-top:1px solid rgba(255,255,255,0.08);line-height:1px;font-size:1px;">&nbsp;</div>
+    <td class="px" bgcolor="#ffffff" style="padding:32px 32px 32px;background:#ffffff;">
+      <div style="border-top:1px solid rgba(10,18,37,0.08);line-height:1px;font-size:1px;">&nbsp;</div>
     </td>
   </tr>
 
   <!-- Footer -->
   <tr>
-    <td class="bg3" style="background:#040810;padding:28px 32px;border-top:1px solid rgba(255,255,255,0.06);">
+    <td bgcolor="#f4f6fb" style="background:#f4f6fb;padding:28px 32px;border-top:1px solid rgba(10,18,37,0.06);">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td align="center" style="padding-bottom:14px;font-family:Arial,Helvetica,sans-serif;font-size:12px;">
-            <a href="https://www.linkedin.com/company/cadbim/" target="_blank" class="txt-dim" style="display:inline-block;margin:0 8px;padding:6px 12px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:rgba(255,255,255,0.6);">LinkedIn</a>
-            <a href="https://www.youtube.com/c/CadbimTeknikDestek" target="_blank" class="txt-dim" style="display:inline-block;margin:0 8px;padding:6px 12px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:rgba(255,255,255,0.6);">YouTube</a>
-            <a href="https://www.instagram.com/cadbim_izmir/" target="_blank" class="txt-dim" style="display:inline-block;margin:0 8px;padding:6px 12px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:rgba(255,255,255,0.6);">Instagram</a>
-            <a href="https://www.facebook.com/cadbimizmir" target="_blank" class="txt-dim" style="display:inline-block;margin:0 8px;padding:6px 12px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;color:rgba(255,255,255,0.6);">Facebook</a>
+            <a href="https://www.linkedin.com/company/cadbim/" target="_blank" style="display:inline-block;margin:0 8px;padding:6px 12px;border:1px solid rgba(10,18,37,0.15);border-radius:6px;color:#4a5568;">LinkedIn</a>
+            <a href="https://www.youtube.com/c/CadbimTeknikDestek" target="_blank" style="display:inline-block;margin:0 8px;padding:6px 12px;border:1px solid rgba(10,18,37,0.15);border-radius:6px;color:#4a5568;">YouTube</a>
+            <a href="https://www.instagram.com/cadbim_izmir/" target="_blank" style="display:inline-block;margin:0 8px;padding:6px 12px;border:1px solid rgba(10,18,37,0.15);border-radius:6px;color:#4a5568;">Instagram</a>
+            <a href="https://www.facebook.com/cadbimizmir" target="_blank" style="display:inline-block;margin:0 8px;padding:6px 12px;border:1px solid rgba(10,18,37,0.15);border-radius:6px;color:#4a5568;">Facebook</a>
           </td>
         </tr>
         <tr>
-          <td align="center" class="txt-dim2" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.7;color:rgba(255,255,255,0.4);">
+          <td align="center" style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.7;color:#8a93a3;">
             Cadbim &middot; Ataşehir Mah. Anadolu Cad. Kaşarcı Plaza No:901, Çiğli / İzmir<br>
-            0232 464 34 90 &middot; <a href="mailto:cadbim@cadbim.com.tr" class="txt-dim2" style="color:rgba(255,255,255,0.4);">cadbim@cadbim.com.tr</a>
+            0232 464 34 90 &middot; <a href="mailto:cadbim@cadbim.com.tr" style="color:#8a93a3;">cadbim@cadbim.com.tr</a>
           </td>
         </tr>
         <tr>
-          <td align="center" class="txt-dim2" style="padding-top:14px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.6;color:rgba(255,255,255,0.3);">
+          <td align="center" style="padding-top:14px;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.6;color:#a3aab8;">
             Bu e-postayı Cadbim'in bülten listesine kayıtlı olduğunuz için aldınız.
           </td>
         </tr>
