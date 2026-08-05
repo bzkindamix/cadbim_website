@@ -189,6 +189,8 @@ main,header,footer{position:relative;z-index:3;}
   display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
   gap:clamp(22px,4vw,64px); align-items:end; margin-top:5.5vh;
 }
+.h-promise{font-family:var(--fd);font-weight:500;font-size:clamp(1.15rem,2.4vw,1.9rem);letter-spacing:-.01em;line-height:1.32;max-width:58ch;margin:clamp(14px,2.4vh,26px) 0 0;}
+.h-promise .hl{background:linear-gradient(92deg,var(--acc2),var(--vio));-webkit-background-clip:text;background-clip:text;color:transparent;}
 .h-sub{font-size:clamp(14.5px,1.2vw,17px);color:var(--tx2);max-width:52ch;line-height:1.8;}
 .h-sub strong{color:var(--tx);font-weight:600;}
 .h-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end;}
@@ -221,7 +223,7 @@ main,header,footer{position:relative;z-index:3;}
   .lm.l1>span{animation-delay:.06s;} .lm.l2>span{animation-delay:.16s;} .lm.l3>span{animation-delay:.26s;}
   @keyframes lm{to{transform:none;}}
   .fadeup{opacity:0;transform:translateY(18px);animation:fu .8s cubic-bezier(.2,.7,.2,1) forwards;}
-  .fadeup.f1{animation-delay:.45s;} .fadeup.f2{animation-delay:.58s;} .fadeup.f3{animation-delay:.72s;}
+  .fadeup.f1{animation-delay:.45s;} .fadeup.f2{animation-delay:.58s;} .fadeup.f3{animation-delay:.72s;} .fadeup.f4{animation-delay:.86s;}
   @keyframes fu{to{opacity:1;transform:none;}}
 }
 
@@ -668,15 +670,16 @@ html{overflow-x:clip;}
     <span class="row lm l2"><span class="grad">BASKI</span></span>
     <span class="row lm l3"><span class="out">ATÖLYESİ</span></span>
   </h1>
+  <p class="h-promise fadeup f1">Kareyi bugün gönderin — <span class="hl">12 renk pigmentle</span> basılsın, <span class="hl">100 yıl</span> solmadan kalsın.</p>
   <div class="h-bottom">
-    <p class="h-sub fadeup f1">Bir kare bize ulaşır; kalibre edilmiş renk hattından geçer, <strong>12 renk pigmentle</strong> basılır, elle finisajlanır. Duvarınıza asılan artık bir çıktı değil — bir eser.</p>
-    <div class="h-ctas fadeup f2">
+    <p class="h-sub fadeup f2">Kalibre edilmiş renk hattından geçen her çıktı elle finisajlanır ve sergilenmeye hazır teslim edilir. Duvarınıza asılan artık bir çıktı değil — bir eser.</p>
+    <div class="h-ctas fadeup f3">
       <a href="#iletisim" class="btn-w" data-hover data-mag>Projenizi anlatın ↗</a>
       <a href="#isler" class="btn-o" data-hover data-mag>Atölyeyi inceleyin</a>
     </div>
   </div>
-  <div class="h-meta fadeup f3">
-    <div><b>152 cm</b>60″ baskı genişliği</div>
+  <div class="h-meta fadeup f4">
+    <div><b>12 renk</b>pigment mürekkep sistemi</div>
     <div><b>100+ yıl</b>pigment kalıcılığı</div>
     <div><b>Ücretsiz</b>Photoshop rötuşu</div>
     <div class="scrolhint">KAYDIR <i></i></div>
@@ -686,16 +689,37 @@ html{overflow-x:clip;}
 <!-- ============ MARQUEE ============ -->
 <div class="mq" aria-hidden="true">
   <div class="mq-in" id="mq">
-    <span>GICLÉE FINE ART</span><span>FOTOĞRAF BASKISI</span><span>KANVAS</span><span>FOTOBLOK</span><span>DEKOTA</span><span>ÇERÇEVE</span><span>SERGİ ÜRETİMİ</span><span>REPRODÜKSİYON</span><span>PANORAMİK</span><span>PROJE BASKISI</span><span>TARAMA</span>
+    <span>GICLÉE FINE ART</span><span>FOTOĞRAF BASKISI</span><span>KANVAS</span><span>FOTOBLOK</span><span>DEKOTA</span><span>ÇERÇEVE</span><span>SERGİ ÜRETİMİ</span><span>REPRODÜKSİYON</span><span>PANORAMİK</span><span>ESER TARAMASI</span>
   </div>
 </div>
 
+<!-- ============ RÖTUŞ ============ -->
+<section class="blk">
+  <div class="retouch">
+    <div data-rv>
+      <span class="bno">01 — BASKI ÖNCESİ</span>
+      <h3>Ham dosya girer<br>Eser çıkar</h3>
+      <p>Pozlama, renk, toz ve leke — baskı öncesi gereken tüm Photoshop çalışması atölyede yapılır. Siz yalnızca sonucu onaylarsınız. Baskı öncesi ve sonrası arasındaki farkı karşılaştırma görselinde inceleyebilirsiniz.</p>
+      <span class="free">RÖTUŞ HİZMETİ ÜCRETSİZDİR</span>
+    </div>
+    <div class="cmp" id="cmp" data-rv style="--d:.1s;">
+      <div class="ph once" aria-hidden="true"></div>
+      <div class="ph sonra" aria-hidden="true"></div>
+      <div class="cmp-line" aria-hidden="true"></div>
+      <div class="cmp-knob" aria-hidden="true">‹›</div>
+      <span class="cmp-lab once">HAM DOSYA</span>
+      <span class="cmp-lab sonra">ATÖLYE ÇIKIŞI</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Rötuş öncesi ve sonrası karşılaştırma sürgüsü">
+    </div>
+  </div>
+</section>
+
 <!-- ============ İŞLER ============ -->
-<section class="blk" id="isler">
+<section class="blk" id="isler" style="padding-top:0;">
   <div class="bhead" data-rv>
-    <span class="bno">01 — HİZMETLER</span>
+    <span class="bno">02 — HİZMETLER</span>
     <h2 class="btitle">Kadrajdan koleksiyona</h2>
-    <p class="bsub">Yedi hizmet, aynı titiz çalışma: sergilenmeye değer sonuç</p>
+    <p class="bsub">Altı hizmet, aynı titiz çalışma: sergilenmeye değer sonuç</p>
   </div>
   <div class="works">
     <a class="wrow" href="#iletisim" data-rv data-hover>
@@ -730,14 +754,8 @@ html{overflow-x:clip;}
     </a>
     <a class="wrow" href="#iletisim" data-rv data-hover style="--d:.25s;">
       <span class="wno">06</span>
-      <span class="wname">Proje Baskısı</span>
-      <span class="wdesc">Mimarlık ve mühendislik projeleri: CAD çıktısı, pafta, sunum posteri, mat film. Ölçüsü doğru, teslimi zamanında.</span>
-      <span class="warr">→</span>
-    </a>
-    <a class="wrow" href="#iletisim" data-rv data-hover style="--d:.3s;">
-      <span class="wno">07</span>
-      <span class="wname">Tarama Hizmetleri</span>
-      <span class="wdesc">Pafta, çizim, harita ve eser taraması — HP DesignJet HD Pro ve SD Pro tarayıcılarla geniş formatta, arşiv kalitesinde.</span>
+      <span class="wname">Eser Taraması</span>
+      <span class="wdesc">Orijinal fotoğraf, tablo ve eserlerin dijitalleştirilmesi — HP DesignJet HD Pro ve SD Pro tarayıcılarla geniş formatta, arşiv kalitesinde.</span>
       <span class="warr">→</span>
     </a>
   </div>
@@ -751,7 +769,7 @@ html{overflow-x:clip;}
 <!-- ============ YÜZEYLER ============ -->
 <section class="blk" id="yuzeyler" style="padding-top:0;">
   <div class="bhead" data-rv>
-    <span class="bno">02 — YÜZEYLER</span>
+    <span class="bno">03 — YÜZEYLER</span>
     <h2 class="btitle">Doğru kağıt, işin yarısı</h2>
     <p class="bsub">Altı yüzey, tek soru: karenize hangisi hizmet ediyor? Kararsızsanız örnek baskıyla gösteririz.</p>
     <div class="rnav">
@@ -769,27 +787,6 @@ html{overflow-x:clip;}
       <div class="rcard"><div class="rchip c-bez"></div><h3>Bayrak Bezi &amp; Paravan</h3><p>Kasnaklı bez, kanvas paravan — mekan ölçeğinde baskı.</p></div>
     </div>
     <div class="rail-hint">SÜRÜKLE / KAYDIR</div>
-  </div>
-</section>
-
-<!-- ============ RÖTUŞ ============ -->
-<section class="blk" style="padding-top:0;">
-  <div class="retouch">
-    <div data-rv>
-      <span class="bno">03 — BASKI ÖNCESİ</span>
-      <h3>Ham dosya girer<br>Eser çıkar</h3>
-      <p>Pozlama, renk, toz ve leke — baskı öncesi gereken tüm Photoshop çalışması atölyede yapılır. Siz yalnızca sonucu onaylarsınız. Baskı öncesi ve sonrası arasındaki farkı karşılaştırma görselinde inceleyebilirsiniz.</p>
-      <span class="free">RÖTUŞ HİZMETİ ÜCRETSİZDİR</span>
-    </div>
-    <div class="cmp" id="cmp" data-rv style="--d:.1s;">
-      <div class="ph once" aria-hidden="true"></div>
-      <div class="ph sonra" aria-hidden="true"></div>
-      <div class="cmp-line" aria-hidden="true"></div>
-      <div class="cmp-knob" aria-hidden="true">‹›</div>
-      <span class="cmp-lab once">HAM DOSYA</span>
-      <span class="cmp-lab sonra">ATÖLYE ÇIKIŞI</span>
-      <input type="range" min="0" max="100" value="50" aria-label="Rötuş öncesi ve sonrası karşılaştırma sürgüsü">
-    </div>
   </div>
 </section>
 
@@ -868,8 +865,7 @@ html{overflow-x:clip;}
             <option>Sanatsal Kanvas</option>
             <option>Sergi Üretimi</option>
             <option>Sertifika &amp; Poster</option>
-            <option>Proje Baskısı (CAD / Pafta)</option>
-            <option>Tarama Hizmeti</option>
+            <option>Eser Taraması</option>
             <option>Önerinizi isterim</option>
           </select>
         </div>
