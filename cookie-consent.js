@@ -26,6 +26,11 @@
   function loadGA() {
     if (window.__gaLoaded) return;
     window.__gaLoaded = true;
+    /* gtag.js'in kendisi asenkron yuklenir; Google'in standart snippet'i gibi
+       cagrilar dataLayer'a kuyruklanabilsin diye gtag() burada TANIMLANIYOR
+       (onceki surumde bu satir yoktu -> "gtag is not a function" hatasi). */
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
     var s = document.createElement("script");
     s.async = true;
     s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;

@@ -175,7 +175,8 @@
     ".wb-ok:hover:not(:disabled){border-color:rgba(0,200,240,.5);background:rgba(0,200,240,.12);color:#fff;}" +
     ".wb-ok:disabled{opacity:.32;cursor:default;}" +
     "#wb-sayac{font-size:11px;color:rgba(255,255,255,.42);font-variant-numeric:tabular-nums;}" +
-    "#wb-tumu{font-size:11.5px;color:#00c8f0;text-decoration:none;font-weight:600;}" +
+    "#wb-tumu{display:inline-block;font-size:11.5px;color:#00c8f0;text-decoration:none;" +
+      "font-weight:600;padding:7px 3px;margin:-7px -3px;}" +
     "#wb-tumu:hover{text-decoration:underline;}" +
 
     /* Dokunmatikte hover yok: sekme kalici olarak gomulu kalmasin diye

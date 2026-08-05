@@ -4,6 +4,21 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-91 — 3. bağımsız denetim raporu bulguları: gtag TypeError, CSP eksikleri, webinar başlık hiyerarşisi ve dokunma hedefi düzeltildi
+
+- **Yapan:** Onur'un paylaştığı 3. bağımsız denetim raporu (`cadbim-web-denetim-raporu_3.html`, skor 88→83 gerilemesi bildiriyordu) — Claude (PDM asistanı) her bulguyu koddan/tarayıcıdan doğrulayıp gerçek olanları düzeltti.
+- **1) `window.gtag is not a function` (KRİTİK, doğrulandı):** `cookie-consent.js`'teki `loadGA()`, `window.gtag(...)`'ı hiç tanımlamadan çağırıyordu — Google'ın resmi gtag.js snippet'indeki `dataLayer`/`gtag` stub'ı eksikti. `window.dataLayer = window.dataLayer || []; window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };` satırları eklendi (`?v=2`→`?v=3`, 1331 sayfa). Tarayıcıda doğrulandı: kabul sonrası `typeof gtag==="function"`, `dataLayer.length===4`, hata yok.
+- **2) CSP'de LinkedIn/Facebook/Google Ads eksikleri (YÜKSEK, doğrulandı + canlı testte genişletildi):** Meta tag CSP'si (1333 sayfa, birebir aynı string, tek Python `.replace()` geçişiyle güncellendi) ve `docs/htaccess-taslak.txt`'teki `Header always set Content-Security-Policy` iki adımda genişletildi:
+  - İlk geçiş: raporun belirttiği `connect.facebook.net`, `snap.licdn.com` (script-src), `www.facebook.com`, `px.ads.linkedin.com` (img-src/connect-src) eklendi.
+  - Canlı tarayıcı testinde raporda **hiç geçmeyen** ek ihlaller bulundu (GA4'ün Google Ads'e bağlı olması — `AW-588752010` — nedeniyle): `*.doubleclick.net`, `www.googleadservices.com` (script-src); `www.google.com`, `www.linkedin.com` (img-src); Meta Pixel'in gizli iframe/form yedeği için `frame-src`/`form-action`'a `www.facebook.com`. İkinci geçişle bunlar da eklendi.
+  - **Bilinçli kapsam dışı:** `www.google.com.tr` gibi ülke-TLD'li Google Ads remarketing pikselleri — CSP wildcard'ları farklı TLD'leri kapsayamaz, kullanıcının yerel ayarına göre değişen bu alan adlarını tam listelemek pratik değil; kabul edilmiş bilinen bir sınırlama olarak bırakıldı (tarayıcı konsolunda temiz sekmede tek kalan hata bu).
+  - Temiz sekmede doğrulama: sadece `www.google.com.tr` ihlali kaldı, doubleclick/googleadservices/facebook-frame/facebook-form/linkedin-img hatalarının hepsi giderildi.
+- **3) `cadbim_webinar.html` başlık hiyerarşisi (ORTA, doğrulandı):** H1'den doğrudan H3'e atlıyordu (arada H2 yoktu). Filtre/kart bloğunun üstüne `.slabel` + `<h2 class="stitle">Yaklaşan Webinarlar</h2>` eklendi. Doğrulama: `h1,h2,h3` sorgusu artık H1→H2→H3 sırasını veriyor.
+- **4) `webinar-widget.js`'te küçük dokunma hedefi (ORTA, doğrulandı, DK-24/-23'ten SONRA eklenen yeni dosyada tekrarlamış):** `#wb-tumu` linkinde padding yoktu (24px altı). `padding:7px 3px;margin:-7px -3px;display:inline-block` eklendi — görünüm/konum aynı kaldı (`?v=10`→`?v=11`, 200 sayfa).
+- **Stale/zaten-çözülmüş bulgu (aksiyon alınmadı):** Raporun "yeni webinar görseli boyutsuz eklendi (CLS riski)" bulgusu güncel kodda yanlış çıktı — 9 webinar görselinin tümünde gerçek dosya boyutuyla eşleşen `width`/`height` zaten vardı (başka bir session tarafından önceden düzeltilmiş).
+- **Doğrulama:** `node --check` (cookie-consent.js, webinar-widget.js) temiz; CSP string'i 1333/1333 dosyada güncellendi (script ile sayıldı); tüm düzeltmeler tarayıcıda (localhost:8420) canlı test edildi — konsol hataları, DOM başlık sırası, dokunma hedefi ölçümü.
+- **Durum:** ✅ Tamamlandı, push edilecek. 📋 Kapsam dışı (bilinçli, kabul edilmiş sınırlama): `www.google.com.tr` CSP geniş kapsamı.
+
 ### DK-2026-08-05-90 — Footer adresi sitewide eklendi, CTA tutarlılığı genişletildi, DWG TrueView ücretsiz-ürün diline çevrildi
 
 - **Yapan:** DK-88/89'un ardından Onur'a 3 açık madde soruldu (CTA genişletme kapsamı, footer adres, dwg_trueview tutarsızlığı); "1 nasıl en uygunsa öyle yap, 2 en uygununu yap, 3 a" yanıtı geldi — Claude (PDM asistanı) kendi değerlendirmesiyle uyguladı.
