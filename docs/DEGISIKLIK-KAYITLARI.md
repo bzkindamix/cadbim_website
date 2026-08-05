@@ -4,6 +4,18 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-89 — Sektör sayfalarındaki çözüm kartları yeniden yazıldı (7 sayfa, kapsam taraması sonucu)
+
+- **Yapan:** Onur'un talebi: *"benzer değişiklikleri tüm siteye uygula"* (DK-88'in devamı) + ara not: *"eğitimleri online olarak uzaktan da veriyoruz"* — Claude (PDM asistanı).
+- **Kapsam taraması:** "Tüm site" çok geniş bir hedef olduğu için önce örnekleme yapıldı — 9 farklı ürün sayfası (Autodesk: Inventor, Maya; Adobe: Photoshop; HP: Z6 G5, ZBook Ultra 14 G1a; DesignJet: T600; Chaos: V-Ray) ve 9 sektör sayfasının (sektor_*.html) tam metni okundu.
+- **Bulgu — ürün sayfaları (cadbim_*.html, ~165 dosya):** Örneklenen sayfalar zaten spesifik, aktif cümlelerle yazılmış (DENETIM-COPY-CRO-2026-08-05.md'nin "Adobe ve HP DesignJet grubu en temiz" tespitiyle örtüşüyor). DK-88'deki "çözüm kartı" tipi kusur (bozuk İngilizce-Türkçe karışımı, kalıp cümle) bulunamadı — bu gruba **bilinçli olarak dokunulmadı**, zaten iyi olan metne gereksiz risk almamak için.
+- **Bulgu — sektör sayfaları (9 dosya):** DK-88'den ÖNCEKİ (eski) çözüm hub kartı diliyle aynı zayıflıkta, pasif/kalıp cümleler bulundu. `sektor_makine.html` ve `sektor_otomotiv.html`'de 7 kart ("PLM", "PDM", "Simülasyon & Analiz", "CAM & İmalat", "Tolerans Analizi", "Fabrika Tasarımı & Dijital İkiz", "Tasarım Otomasyonu") birbirleriyle **birebir aynı** ve hepsi "...çözüm/çözümler sunulur/sağlar" kalıbıyla bitiyordu. `sektor_mimari.html`'de "Tasarım Otomasyonu" kartı da aynı kalıp metni paylaşıyordu.
+- **Uygulanan (7 dosya, 24 kart):** sektor_makine (7), sektor_otomotiv (7), sektor_mimari (1), sektor_havacilik (4), sektor_egitim (3), sektor_insaat (2). Her kart, o sektörün somut iş akışına (Autodesk/HP/Chaos ürün adları, ölçülebilir sonuç) bağlanan aktif cümlelerle yeniden yazıldı.
+- **Dokunulmayan sektör sayfaları:** sektor_icmimarlik.html ve sektor_tesisat.html'nin çözüm kartları zaten spesifik/aktif (ör. "Autodesk CFD ile hava dağılımı, basınç kaybı ve ısıl konfor analizleri."); sektor_medya.html'de bu bölümde hiç gövde metni yok (sadece isim linki). Üçüne de dokunulmadı.
+- **Ayrı not (bu turda ele alınmadı):** DENETIM-COPY-CRO-2026-08-05.md'de kalan diğer bulgular (footer adres eksikliği, CTA tutarlılığının ~60 sayfaya genişletilmesi, Meshmixer/Tinkercad'in Alias ile aynı alakasız çapraz-link seti, başarı öykülerinde 14/19 kartın metriksiz olması) bu copywriting turunun kapsamı dışında bırakıldı — bunlar metin kalitesi değil, mimari karar veya gerçek veri gerektiriyor (DUZELTME-2026-08-05.md'de de aynı gerekçeyle kapsam dışı tutulmuştu).
+- **Doğrulama:** 7 dosyanın `git diff` çıktısı satır satır okundu; HTML etiket yapısı bozulmadı, ürün adları İngilizce korundu.
+- **Durum:** ✅ Tamamlandı (sektör sayfaları) · ⏸️ Bilinçli olarak yapılmadı (165 ürün sayfası — defekt bulunamadı) · 📋 Kapsam dışı (footer/CTA/cross-link/metrik — ayrı iş).
+
 ### DK-2026-08-05-88 — Çözüm sayfaları copy-editing: kapsam ve sektör kartları yeniden yazıldı (19 sayfa)
 
 - **Yapan:** Onur'un talebi: *"sitedeki çözümler sayfalarının textlerini tekrar yaz türkçe ve anlamlı ifadeler kullan"* (önce yalnızca öneri istendi, ardından *"tamamını siteye uygula"*) — Claude (PDM asistanı).
