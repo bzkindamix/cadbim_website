@@ -4,6 +4,20 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-88 — Çözüm sayfaları copy-editing: kapsam ve sektör kartları yeniden yazıldı (19 sayfa)
+
+- **Yapan:** Onur'un talebi: *"sitedeki çözümler sayfalarının textlerini tekrar yaz türkçe ve anlamlı ifadeler kullan"* (önce yalnızca öneri istendi, ardından *"tamamını siteye uygula"*) — Claude (PDM asistanı).
+- **Kaynak:** /copywriting skill'i ile 19 çözüm sayfası (hub + 18 çözüm) tek tek okunup Mevcut→Öneri formatında bir denetim dokümanı hazırlandı; onay sonrası aynı doküman kullanılarak 4 paralel ajanla siteye uygulandı.
+- **Sorun tespiti:** Zayıf metinler üç yerde toplanıyordu: (1) "Çözüm Kapsamı" kartlarında eski sürümden kalma İngilizce başlıklar ve bozuk Türkçe-İngilizce karışık cümleler (ör. PLM'de "Fikirden lansmanaa" yazım hatası, "Change request, order ve onay iş akışları otomatize"; BIM'de "Ürününüzü BIM projelerde belirtin" anlamsız çeviri kalıntısı; Nesting'de "Inventory Yönetimi"); (2) sektör kartlarında öznesiz, sayfadan bağımsız kalıp cümleler ("...çözümleri sunulur." 10+ sayfada birebir tekrar); (3) Nesting sayfasında "NESTING" / "fiber yönü" ↔ "tane yönü" tutarsızlığı.
+- **Uygulanan (19 dosya, 69 madde):** cadbim_cozumler (3), cadbim_dijital_donusum (7), cadbim_bim (7), cadbim_bim_icerik_uretimi (1), cadbim_plm (6), cadbim_pdm (6), cadbim_simulasyon (9), cadbim_cam (8), cadbim_tolerans_analizi (6), cadbim_nesting (tümü + başlık/terim tutarlılığı), cadbim_fabrika_tasarimi (6), cadbim_tasarim_otomasyonu (8), cadbim_gorsellestirme (4), cadbim_ai_gorsellestirme (2), cadbim_yaratici_icerik (5), cadbim_eklemeli_imalat (3), cadbim_insaat_yonetimi (5), cadbim_gerceklik_yakalama (6), cadbim_dijital_ikiz (2).
+- **Doğruluk düzeltmesi:** Eklemeli İmalat sayfasında UltiMaker Digital Factory kartı "uçtan uca akıllı fabrika çözümü" olarak yanlış tanımlanmıştı; yazıcı filo yönetim platformu olduğu netleştirildi.
+- **DK-966ea6c15 ile çakışma kontrolü:** Bu görevden önce başka bir session'da (commit `966ea6c15`) çözümler hub hero metni, gorsellestirme.html ve yaratici_icerik.html'deki Autodesk-dışı "eğitim veriyoruz" ihlalleri zaten düzeltilmişti. Ajanlara bu maddeler açıkça **atlanacak** olarak işaretlendi; hiçbiri tekrar üzerine yazılmadı (gorsellestirme.html SSS eğitim yanıtı, yaratici_icerik.html "Nedir?" bölümü Eğitim kartı ve SSS'i olduğu gibi bırakıldı).
+- **İçerik stratejisi uyumu:** docs/CONTENT-STRATEGY.md §6a (çapraz-linkleme), §7 (fiyat yok, eğitim sadece Autodesk) kontrol edilip hiçbir öneri bu kurallarla çelişmeyecek şekilde yazıldı.
+- **Kalite kontrolü:** 4 ajanın uyguladığı tüm diff'ler tek tek `git diff` ile gözden geçirildi; bir dosyada (nesting.html) "malzeme verimi işin daha teklif aşamasında hesaplanır" şeklinde bozuk bir cümle bulunup elle düzeltildi ("işin" kelimesi kaldırıldı).
+- **Bilinçli korunanlar:** Tüm "Nedir?" anlatıları, "Yöntemimiz" adımları, "Saha Deneyimi" standartları, SSS'ler (yukarıda belirtilen istisnalar hariç), "Cadbim Farkı" bandı ve hero metinlerinin büyük çoğunluğu değiştirilmedi — zaten güçlü ve doğal Türkçe idi.
+- **Doğrulama:** 19 dosyanın `git diff` çıktısı satır satır okundu; hiçbir yerde HTML etiket dengesi bozulmadı, `<script type="application/ld+json">` bloklarına dokunulmadı, ürün adları (Autodesk, Revit, Inventor, Vault, Fusion, UltiMaker, V-Ray vb.) İngilizce korundu.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-87 — Kendi açılır listemiz (cbselect) + tekrar eden başlıklar ürün adıyla yazıldı
 
 - **Yapan:** Onur'un iki talebi: *"endüstri filtrelerini de blogta kullandığımız stil istiyorum. ancak kutu açılan seçim ekranı penceresi falan kaliteli olsun. blogtada güzel değil"* ve *"textler değişecekti çözümlerde birbirini tekrar eden başlıklar var. tüm sitede bu durum var."* — Claude (PDM asistanı).
