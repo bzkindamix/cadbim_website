@@ -4,6 +4,28 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-05-87 — Kendi açılır listemiz (cbselect) + tekrar eden başlıklar ürün adıyla yazıldı
+
+- **Yapan:** Onur'un iki talebi: *"endüstri filtrelerini de blogta kullandığımız stil istiyorum. ancak kutu açılan seçim ekranı penceresi falan kaliteli olsun. blogtada güzel değil"* ve *"textler değişecekti çözümlerde birbirini tekrar eden başlıklar var. tüm sitede bu durum var."* — Claude (PDM asistanı).
+
+**1) cbselect — native `<select>` yerine kendi açılır listemiz (`mobilenav.js`, site geneli)**
+- **Sorun:** DK-86'da blog filtresini native `<select>`e çevirmiştim; açılan liste işletim sisteminin kendi penceresi olduğu için ne renk ne ikon ne sayaç gösterilebiliyordu ve sitenin diline hiç benzemiyordu.
+- **Yaklaşım:** `<select>` DOM'da bırakılır (değer ve `change` olayı hâlâ ondan gider — **mevcut filtre mantıklarının hiçbiri değişmedi**), üstüne kendi düğmesi ve paneli çizilir. Seçenek zenginliği `option` üzerindeki `data-icon` / `data-color` / `data-count` nitelikleriyle gelir.
+- **Kapsam:** `select[data-cbsel]` ve mobildeki `.mfsel` (DK-81'in çip→liste dönüştürücüsü) otomatik kapsanır.
+- **Erişilebilirlik:** `role="listbox"`, `aria-haspopup`, `aria-expanded`, `aria-activedescendant`, `aria-selected`. Klavye: ↑/↓ gezinme, Enter seç, Esc kapat, Home/End, harfe basınca o harfle başlayan seçeneğe atlama. Dışarı tıklayınca kapanır. `prefers-reduced-motion` desteklenir.
+- **Çözümler sayfası:** 9 endüstri çipi bu listeye dönüştü; ikon, marka rengi ve çözüm sayısı korundu (native `<select>` bunları gösteremiyordu). `apply()`/hash mantığı olduğu gibi duruyor.
+
+**2) Tekrar eden başlıklar ürün/çözüm adıyla yazıldı (153 sayfa, 293 + 46 başlık)**
+- **Ölçüm:** DK-80'de yazdığım sloganlar sayfadan sayfaya **birebir aynıydı** — 75 sayfa "Bu Ürün Yalnız Çalışmıyor", 61 sayfa "Cadbim'in Ürün Portföyü Yanınızda", 51 "Kimler İçin?", 29 "Nerede İşe Yarıyor?", 29 "Size Uygun Lisans Modeli", 17 "Neler Yapabiliriz?", 16 çözüm sayfasında aynı altyazı. DK-85 yalnız çözüm sayfası **başlıklarını** kişiselleştirmiş, ürün sayfaları ve altyazılar kapsam dışı kalmıştı.
+- **Ad kaynağı:** Sayfanın kendi `<title>`'ı (ilk ayraça kadar). Marka öneki korundu — atmak "Fusion/Forma" gibi adlarda yanlış çağrışım yapardı. Başlığı şişirmemek için sondaki parantezli model listesi kırpıldı ("HP DesignJet T200 Serisi (T230/T250)" → "HP DesignJet T200 Serisi"). 153 adın tamamı elle gözden geçirildi.
+- **Türkçe ek notu (DK-85'ten devam):** Adlara hâl eki getirilmiyor; "… Nerede Devreye Giriyor", "… ile Birlikte Çalışanlar", "… için Lisans Seçenekleri" gibi adı yalın bırakan kalıplar seçildi.
+- **Bilinçli kapsam dışı:** "Seçenekler" (18 sayfa) model varyantlarını listeliyor ve ürün adı zaten model bilgisi taşıyor. Lisanslama/hizmet/SSS altyazıları (29/18/18 sayfa) her sayfada **aynı olması gereken** kurumsal metinler; kişiselleştirmek yapay olurdu.
+- **Sonuç:** 8+ sayfada tekrar eden başlık kalmadı; kalan tekrarlar yalnızca yukarıdaki bilinçli ortak metinler.
+
+- **Doğrulama:** Çözümler'de liste 10 seçenek, 9'unda ikon+sayaç; "Makine & Üretim" seçimi 18→12 kart, hash `#makine`, düğme işaretli. Blogda iki liste; klavyeyle ↓ açıyor, Enter "BIM" seçiyor (275 sonuç), Esc kapatıyor. Konsol hatası 0.
+- **Ortam notu:** Önizleme paneli görüntülenmediği için `window.innerHeight` 0 dönüyor; bu, `58vh` olan panel yükseklik sınırını sıfırlıyor ve paneli görsel olarak doğrulamayı engelliyor (işlevsel doğrulama tam yapıldı). Bu sırada fark edilen gerçek dayanıklılık açığı kapatıldı: görünüm yüksekliği okunamıyorsa panel artık yukarı açılmaya çalışmıyor, aşağı açılıyor.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-05-86 — Blog filtresi 46 butondan iki açılır listeye indi
 
 - **Yapan:** Onur'un talebi: *"bloglar sayfasındaki gibi çok butonlu filtre istemiyorum. 2 roller buton kategori ve ürün"* + *"arama alanının yanına yerleştir hemen"* — Claude (PDM asistanı).

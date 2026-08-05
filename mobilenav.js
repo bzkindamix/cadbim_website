@@ -489,6 +489,54 @@
     .mfsel.mf-secili{border-color:rgba(0,200,240,.5);background-color:rgba(0,200,240,.12);color:#00c8f0;}
     .mfsel option{background:#0d1830;color:#fff;font-weight:500;}
   }
+
+  /* ===== cbselect — sitenin dilinde açılır liste =====
+     Native <select> açıldığında işletim sisteminin kendi penceresi çıkıyor;
+     ne renk ne ikon ne sayaç gösterilebiliyordu. Bu bileşen <select>'i olduğu
+     gibi bırakıp (değer ve change olayı hâlâ ondan gider) üstüne kendi
+     düğmesini ve panelini çizer. */
+  .cbsel{position:relative;display:inline-block;vertical-align:middle;text-align:left;}
+  .cbsel-src{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;pointer-events:none;}
+  .cbsel-btn{display:flex;align-items:center;gap:9px;width:100%;min-width:0;
+    padding:10px 12px;border-radius:11px;cursor:pointer;
+    border:.5px solid rgba(255,255,255,.13);background:#101d3a;
+    color:rgba(255,255,255,.86);font-family:inherit;font-size:13px;font-weight:600;
+    line-height:1.2;transition:border-color .18s,background .18s;}
+  .cbsel-btn:hover{border-color:rgba(255,255,255,.28);}
+  .cbsel-btn:focus-visible{outline:none;border-color:rgba(0,200,240,.65);
+    box-shadow:0 0 0 3px rgba(0,200,240,.15);}
+  .cbsel.is-set .cbsel-btn{border-color:rgba(0,200,240,.5);background:rgba(0,200,240,.1);color:#fff;}
+  .cbsel-ic{flex-shrink:0;font-size:15px;color:var(--oc,#00c8f0);}
+  .cbsel-val{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .cbsel-cnt{flex-shrink:0;font-size:11px;font-weight:700;padding:2px 7px;border-radius:20px;
+    background:rgba(255,255,255,.09);color:rgba(255,255,255,.6);}
+  .cbsel.is-set .cbsel-cnt{background:rgba(0,200,240,.18);color:#7fe3ff;}
+  .cbsel-arw{flex-shrink:0;font-size:14px;color:#00c8f0;transition:transform .2s;}
+  .cbsel[data-open="true"] .cbsel-arw{transform:rotate(180deg);}
+
+  .cbsel-pop{position:absolute;z-index:1200;left:0;top:calc(100% + 6px);
+    min-width:100%;max-height:min(336px,58vh);overflow-y:auto;overscroll-behavior:contain;
+    padding:6px;border-radius:13px;background:#0d1830;
+    border:.5px solid rgba(255,255,255,.14);
+    box-shadow:0 20px 48px rgba(0,0,0,.58),0 0 0 1px rgba(0,200,240,.06);
+    opacity:0;transform:translateY(-6px) scale(.985);transform-origin:top center;
+    pointer-events:none;transition:opacity .16s ease,transform .16s cubic-bezier(.2,.7,.3,1.2);}
+  .cbsel[data-open="true"] .cbsel-pop{opacity:1;transform:none;pointer-events:auto;}
+  .cbsel-pop::-webkit-scrollbar{width:9px;}
+  .cbsel-pop::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:9px;
+    border:3px solid #0d1830;}
+  .cbsel-opt{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:9px;
+    cursor:pointer;font-size:13px;line-height:1.25;color:rgba(255,255,255,.72);}
+  .cbsel-opt .cbsel-val{white-space:normal;overflow:visible;}
+  .cbsel-opt:hover,.cbsel-opt.is-cur{background:rgba(255,255,255,.07);color:#fff;}
+  .cbsel-opt[aria-selected="true"]{background:rgba(0,200,240,.13);color:#00c8f0;}
+  .cbsel-opt[aria-selected="true"] .cbsel-cnt{background:rgba(0,200,240,.2);color:#7fe3ff;}
+  .cbsel-tik{flex-shrink:0;font-size:14px;color:#00c8f0;opacity:0;}
+  .cbsel-opt[aria-selected="true"] .cbsel-tik{opacity:1;}
+  .cbsel-ayrac{height:1px;margin:5px 8px;background:rgba(255,255,255,.09);}
+  @media(prefers-reduced-motion:reduce){
+    .cbsel-pop,.cbsel-arw{transition:none;}
+  }
   `;
 
   function inject() {
@@ -915,4 +963,205 @@
   } else {
     calistir();
   }
+})();
+
+/* ===== cbselect — <select> üstüne sitenin dilinde açılır liste =====
+   Native <select> açıldığında işletim sisteminin penceresi çıkıyor: renk,
+   ikon ve sayaç gösterilemiyor. Bu bileşen <select>'i DOM'da bırakır (değer
+   ve `change` olayı hâlâ ondan gider, mevcut filtre mantıkları değişmez) ve
+   üstüne kendi düğmesi ile panelini çizer.
+
+   Seçenek zenginliği option üzerindeki veri nitelikleriyle gelir:
+     data-icon="ti-building"  data-color="#818cf8"  data-count="10"
+*/
+(function () {
+  var sayac = 0;
+
+  function kur(sel) {
+    if (sel.dataset.cbselKurulu) return;
+    sel.dataset.cbselKurulu = "1";
+    sayac++;
+
+    var sarmal = document.createElement("div");
+    sarmal.className = "cbsel";
+    sarmal.setAttribute("data-open", "false");
+    if (sel.style.cssText) sarmal.style.cssText = sel.style.cssText;
+    sel.parentNode.insertBefore(sarmal, sel);
+    sarmal.appendChild(sel);
+    sel.classList.add("cbsel-src");
+    sel.setAttribute("tabindex", "-1");
+    sel.setAttribute("aria-hidden", "true");
+
+    var popId = "cbsel-pop-" + sayac;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "cbsel-btn";
+    btn.setAttribute("aria-haspopup", "listbox");
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-controls", popId);
+    var etiket = sel.getAttribute("aria-label");
+    if (etiket) btn.setAttribute("aria-label", etiket);
+
+    var pop = document.createElement("div");
+    pop.className = "cbsel-pop";
+    pop.id = popId;
+    pop.setAttribute("role", "listbox");
+    if (etiket) pop.setAttribute("aria-label", etiket);
+
+    var secenekler = [].slice.call(sel.options);
+
+    function ikonHtml(o) {
+      var ik = o.getAttribute("data-icon");
+      return ik ? '<i class="ti ' + ik + ' cbsel-ic" aria-hidden="true"></i>' : "";
+    }
+    function sayiHtml(o) {
+      var c = o.getAttribute("data-count");
+      return c ? '<span class="cbsel-cnt">' + c + "</span>" : "";
+    }
+
+    secenekler.forEach(function (o, i) {
+      var renk = o.getAttribute("data-color");
+      var opt = document.createElement("div");
+      opt.className = "cbsel-opt";
+      opt.setAttribute("role", "option");
+      opt.setAttribute("data-v", o.value);
+      opt.id = popId + "-o" + i;
+      if (renk) opt.style.setProperty("--oc", renk);
+      opt.innerHTML = ikonHtml(o) +
+        '<span class="cbsel-val">' + o.textContent + "</span>" +
+        sayiHtml(o) +
+        '<i class="ti ti-check cbsel-tik" aria-hidden="true"></i>';
+      pop.appendChild(opt);
+      /* ilk seçenek "filtre yok" anlamındaysa altına ince ayraç */
+      if (i === 0 && secenekler.length > 2) {
+        var ay = document.createElement("div");
+        ay.className = "cbsel-ayrac";
+        pop.appendChild(ay);
+      }
+    });
+
+    sarmal.appendChild(btn);
+    sarmal.appendChild(pop);
+
+    var optEls = [].slice.call(pop.querySelectorAll(".cbsel-opt"));
+    var imlec = Math.max(0, sel.selectedIndex);
+
+    function yansit() {
+      var o = sel.options[sel.selectedIndex] || sel.options[0];
+      if (!o) return;
+      var renk = o.getAttribute("data-color");
+      btn.innerHTML = ikonHtml(o) +
+        '<span class="cbsel-val">' + o.textContent + "</span>" +
+        sayiHtml(o) +
+        '<i class="ti ti-chevron-down cbsel-arw" aria-hidden="true"></i>';
+      btn.style.setProperty("--oc", renk || "#00c8f0");
+      /* ilk seçenek = filtre yok kabul edilir */
+      sarmal.classList.toggle("is-set", sel.selectedIndex > 0);
+      optEls.forEach(function (el, i) {
+        el.setAttribute("aria-selected", i === sel.selectedIndex ? "true" : "false");
+      });
+    }
+
+    function imlecKoy(i) {
+      imlec = Math.max(0, Math.min(optEls.length - 1, i));
+      optEls.forEach(function (el, k) { el.classList.toggle("is-cur", k === imlec); });
+      var el = optEls[imlec];
+      if (el) {
+        btn.setAttribute("aria-activedescendant", el.id);
+        var r = el.getBoundingClientRect(), p = pop.getBoundingClientRect();
+        if (r.top < p.top) pop.scrollTop -= (p.top - r.top);
+        else if (r.bottom > p.bottom) pop.scrollTop += (r.bottom - p.bottom);
+      }
+    }
+
+    function ac(durum) {
+      sarmal.setAttribute("data-open", durum ? "true" : "false");
+      btn.setAttribute("aria-expanded", durum ? "true" : "false");
+      if (durum) {
+        imlecKoy(sel.selectedIndex);
+        /* panel ekranın altına taşarsa yukarı açılır; görünüm yüksekliği
+           okunamıyorsa (bazı gömülü/headless ortamlar 0 döndürür) aşağı açılır */
+        var r = sarmal.getBoundingClientRect();
+        var vh = window.innerHeight || document.documentElement.clientHeight || 0;
+        var yukari = vh > 0 && (vh - r.bottom) < 240 && r.top > (vh - r.bottom);
+        pop.style.top = yukari ? "auto" : "";
+        pop.style.bottom = yukari ? "calc(100% + 6px)" : "";
+        pop.style.transformOrigin = yukari ? "bottom center" : "top center";
+      } else {
+        btn.removeAttribute("aria-activedescendant");
+      }
+    }
+
+    function sec(i) {
+      if (sel.selectedIndex !== i) {
+        sel.selectedIndex = i;
+        sel.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+      yansit();
+      ac(false);
+      btn.focus();
+    }
+
+    btn.addEventListener("click", function () {
+      ac(sarmal.getAttribute("data-open") !== "true");
+    });
+
+    optEls.forEach(function (el, i) {
+      el.addEventListener("click", function () { sec(i); });
+      el.addEventListener("mousemove", function () { imlecKoy(i); });
+    });
+
+    btn.addEventListener("keydown", function (e) {
+      var acik = sarmal.getAttribute("data-open") === "true";
+      var k = e.key;
+      if (k === "ArrowDown" || k === "ArrowUp") {
+        e.preventDefault();
+        if (!acik) { ac(true); return; }
+        imlecKoy(imlec + (k === "ArrowDown" ? 1 : -1));
+      } else if (k === "Home" || k === "End") {
+        if (!acik) return;
+        e.preventDefault();
+        imlecKoy(k === "Home" ? 0 : optEls.length - 1);
+      } else if (k === "Enter" || k === " ") {
+        e.preventDefault();
+        if (acik) sec(imlec); else ac(true);
+      } else if (k === "Escape") {
+        if (acik) { e.preventDefault(); ac(false); }
+      } else if (k === "Tab") {
+        ac(false);
+      } else if (k.length === 1) {
+        /* harfe basınca o harfle başlayan seçeneğe atla */
+        var h = k.toLocaleLowerCase("tr");
+        for (var n = 1; n <= optEls.length; n++) {
+          var i2 = (imlec + n) % optEls.length;
+          if ((sel.options[i2].textContent || "").trim().toLocaleLowerCase("tr").indexOf(h) === 0) {
+            if (!acik) ac(true);
+            imlecKoy(i2);
+            break;
+          }
+        }
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!sarmal.contains(e.target)) ac(false);
+    });
+    /* dışarıdan (ör. ?topic= ile) değer atanırsa düğme de güncellensin */
+    sel.addEventListener("change", yansit);
+
+    yansit();
+  }
+
+  function calistir() {
+    [].slice.call(document.querySelectorAll("select[data-cbsel], select.mfsel"))
+      .forEach(kur);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", calistir);
+  } else {
+    calistir();
+  }
+  /* mobilenav'ın çip→liste dönüştürücüsü sonradan select üretebilir */
+  window.addEventListener("load", calistir);
 })();
