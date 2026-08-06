@@ -236,6 +236,51 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     "@type": "Country",
     "name": "Türkiye"
    }
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Otomotiv projelerinde CADBİM hangi kapsamda çözüm sunuyor?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Konsept tasarım stüdyosundan mühendislik ve imalata, PLM/PDM ile ürün verisi yönetiminden fabrika yerleşimi ve dijital ikize kadar otomotiv değer zincirinin tamamına yazılım ve donanım çözümü sunuyoruz. Hangi aşamada olduğunuz fark etmez; mevcut araç setinize göre kapsamı birlikte belirleriz."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Otomotiv sektöründe hangi Autodesk ürünlerini kullanıyorsunuz?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Konsept ve stil tasarımı için Alias ailesini (Concept, Surface, AutoStudio); mekanik parça ve montaj mühendisliği için Inventor ve Fusion'ı; sanal doğrulama için VRED Professional'ı kullanıyoruz. Bunların yanında PLM/PDM, tolerans analizi, CAM ve tasarım otomasyonu çözümleri de otomotiv iş akışının parçasıdır."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Alias ile Inventor arasındaki fark nedir, hangisine ihtiyacımız var?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Alias, Class-A dış yüzey ve stil tasarımı için serbest form yüzey modelleme aracıdır; estetik onayı bu araçla verilir. Inventor ise onaylanan yüzeyin altındaki mekanik parça, kalıp ve montajı üretime hazır hale getirir. Bir stüdyo Alias'a, bir mühendislik ekibi Inventor'a, ikisini birlikte yürüten bir organizasyon her ikisine ihtiyaç duyar; kapsamı ihtiyaç analiziyle birlikte netleştiriyoruz."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "VRED Professional ile Chaos V-Ray arasındaki fark nedir?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "VRED Professional, otomotiv sektörüne özel geliştirilmiştir; gerçek zamanlı sanal prototipleme, VR inceleme ve tasarım onay toplantıları için optimize edilmiştir. Chaos V-Ray ise pazarlama görseli, katalog ve render kalitesinde öne çıkar. Karar toplantılarında hız ve etkileşim önemliyse VRED, nihai görsel kalite önemliyse V-Ray tercih edilir; çoğu stüdyo ikisini farklı aşamalarda birlikte kullanır."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "CAM ve tolerans analizini otomotiv üretiminde neden birlikte kullanmalıyız?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tolerans analizi, montajda biriken sapmaların hangi noktada uyum sorununa dönüşeceğini üretimden önce gösterir; CAM ise onaylanan tasarımı takım yoluna aktarıp çarpışmayı sanal ortamda test eder. İkisi birlikte kullanıldığında hem geometrik uyum hem de imalat güvenliği aynı revizyon döngüsünde doğrulanır, tezgâha hatalı parça gitme riski düşer."
+     }
+    }
+   ]
   }
  ]
 }
@@ -481,16 +526,17 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
       <h3>Tasarım Otomasyonu</h3>
       <p>Tekrarlayan tasarım adımlarını kural tabanlı otomasyonla üretir; mühendis yalnızca kararı verir.</p>
     </a>
-    <a href="pdm-collection" class="card">
-      <div class="card-icon" style="background:rgba(255,255,255,.07);"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="width:32px;height:32px;object-fit:contain;" loading="lazy" decoding="async"></div>
-      <h3>Autodesk PD&M Collection</h3>
-      <p>Inventor, Vault ve tamamlayıcı araçları tek pakette sunan imalat ürün koleksiyonu.</p>
+    <a href="eklemeli-imalat" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-cube-3d-sphere"></i></div>
+      <h3>Eklemeli İmalat & 3D Baskı</h3>
+      <p>UltiMaker donanımı ve baskı yazılımlarıyla prototipten üretime 3B baskı altyapısı.</p>
+    </a>
+    <a href="gorsellestirme" class="card">
+      <div class="card-icon" style="background:rgba(0,200,240,.12);"><i class="ti ti-sun-high"></i></div>
+      <h3>Görselleştirme & Render</h3>
+      <p>Konsept eskizinden final animasyona fotogerçekçi ve gerçek zamanlı görselleştirme hattı.</p>
     </a>
   </div>
-  <div class="sol-pills">
-      <a href="eklemeli-imalat" class="sol-pill"><i class="ti ti-arrow-right"></i>Eklemeli İmalat & 3D Baskı</a>
-      <a href="gorsellestirme" class="sol-pill"><i class="ti ti-arrow-right"></i>Görselleştirme & Render</a>
-    </div>
 </section>
 
 <section class="brands">
@@ -529,6 +575,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     <div class="psearch"><i class="ti ti-search"></i><input id="psearch" type="text" placeholder="Ürün ara..." aria-label="Ürün ara"></div>
   </div>
   <div class="pgrid" id="pgrid" style="margin-top:22px;">
+      <a href="pdm-collection" class="pcard" data-cat="c1"><div style="width:52px;height:52px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="340" height="310" src="assets/logos/products/pdm-collection.svg" alt="" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Autodesk</div><h3>PD&M Collection</h3><p>Inventor, AutoCAD, Fusion, Vault, Nastran, Nesting ve CAM tek pakette</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="alias" class="pcard" data-cat="c0"><img width="64" height="64" src="assets/img/emb-f0b66a5ada.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Alias AutoStudio</h3><p>Class-A exteriör & interiör yüzey</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="alias" class="pcard" data-cat="c0"><img width="64" height="64" src="assets/img/emb-eae15c9696.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Alias Surface</h3><p>Üretim kalitesinde yüzey modelleme</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="alias" class="pcard" data-cat="c0"><img width="64" height="64" src="assets/img/emb-a278c108d7.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Alias Concept</h3><p>Hızlı konsept modelleme</p></div><i class="ti ti-arrow-right parr"></i></a>
@@ -608,6 +655,20 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div></div>
   </div>
 </section>
+
+<!-- cz-faq -->
+<section class="section section-alt cz-sec" style="--cz:#ef4444;">
+  <div class="sh">
+    <div class="slabel" style="color:var(--cz);">Sıkça Sorulanlar</div>
+    <div class="stitle" role="heading" aria-level="2">Bu sektör hakkında merak edilenler</div>
+  </div>
+  <div class="cz-faq"><details class="cz-faq-i"><summary>Otomotiv sektöründe hangi Autodesk ürünlerini kullanıyorsunuz?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Konsept ve stil tasarımı için Alias ailesini (Concept, Surface, AutoStudio); mekanik parça ve montaj mühendisliği için Inventor ve Fusion'ı; sanal doğrulama için VRED Professional'ı kullanıyoruz. Bunların yanında PLM/PDM, tolerans analizi, CAM ve tasarım otomasyonu çözümleri de otomotiv iş akışının parçasıdır.</div></details><details class="cz-faq-i"><summary>Alias ile Inventor arasındaki fark nedir, hangisine ihtiyacımız var?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Alias, Class-A dış yüzey ve stil tasarımı için serbest form yüzey modelleme aracıdır; estetik onayı bu araçla verilir. Inventor ise onaylanan yüzeyin altındaki mekanik parça, kalıp ve montajı üretime hazır hale getirir. Bir stüdyo Alias'a, bir mühendislik ekibi Inventor'a, ikisini birlikte yürüten bir organizasyon her ikisine ihtiyaç duyar; kapsamı ihtiyaç analiziyle birlikte netleştiriyoruz.</div></details><details class="cz-faq-i"><summary>VRED Professional ile Chaos V-Ray arasındaki fark nedir?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">VRED Professional, otomotiv sektörüne özel geliştirilmiştir; gerçek zamanlı sanal prototipleme, VR inceleme ve tasarım onay toplantıları için optimize edilmiştir. Chaos V-Ray ise pazarlama görseli, katalog ve render kalitesinde öne çıkar. Karar toplantılarında hız ve etkileşim önemliyse VRED, nihai görsel kalite önemliyse V-Ray tercih edilir; çoğu stüdyo ikisini farklı aşamalarda birlikte kullanır.</div></details><details class="cz-faq-i"><summary>CAM ve tolerans analizini otomotiv üretiminde neden birlikte kullanmalıyız?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Tolerans analizi, montajda biriken sapmaların hangi noktada uyum sorununa dönüşeceğini üretimden önce gösterir; CAM ise onaylanan tasarımı takım yoluna aktarıp çarpışmayı sanal ortamda test eder. İkisi birlikte kullanıldığında hem geometrik uyum hem de imalat güvenliği aynı revizyon döngüsünde doğrulanır, tezgâha hatalı parça gitme riski düşer.</div></details></div>
+  <div class="cz-faq-cta">
+    <span>Sorunuz listede yok mu?</span>
+    <a href="iletisim#form" class="btn-p">Uzmanımıza Sorun <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+<!-- /cz-faq -->
 
 <div class="cta-wrap">
   <section style="padding:64px 3rem;background:#0a1225;" id="blog-related-section">
