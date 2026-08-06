@@ -4,6 +4,19 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-06-03 — Medya & Eğlence sayfasına Chaos ve Adobe'den (Phoenix, Character Animator, Frame.io) içerik eklendi
+
+- **Yapan:** Onur, DK-02'nin ardından "chaos group ve adobe'den de içerik al ve ekle bu endüstriye" dedi.
+- **Kaynak (Browser tool, chaos.com/film-vfx ve frame.io okundu):** Chaos'un Film & TV sayfasında `sektor_medya.html`'de eksik olan gerçek ürün: **Chaos Phoenix** (ateş/duman/sıvı simülasyonu, 3ds Max &amp; Maya) — CADBİM'de zaten kendi sayfası var (`cadbim_phoenix.html`, href="phoenix"). Sayfada ayrıca Game of Thrones, The Last of Us (Digital Domain/HBO) gibi V-Ray ile üretilmiş yapımlar ve Chaos Arena/Player (sanal prodüksiyon, LED sahne) adı geçiyordu — Arena/Player için CADBİM'de ayrı ürün sayfası yok, kart eklenmedi. Adobe tarafında **Character Animator** (web kamerasıyla gerçek zamanlı 2D animasyon, `cadbim_character_animator.html` zaten var) ve **Frame.io** (Adobe'nin satın aldığı, Creative Cloud'a entegre bulut video inceleme/onay aracı — ayrı CADBİM sayfası yok, mevcut "adobe" genel sayfasına yönlendirildi, MotionBuilder/Arnold'ın "autodesk" fallback deseniyle aynı mantık) eklendi.
+- **Eklenenler (`sektor_medya.html`):**
+  1. Katalog'a **3 yeni ürün kartı**: Chaos Phoenix (c1-Render), Adobe Character Animator (c2-Post Prodüksiyon), Frame.io (c5-Prodüksiyon Yönetimi &amp; Bulut, href="adobe" fallback).
+  2. "Dört Alanda Aynı Prodüksiyon Hattı" bölümündeki 4 kartın metni bu yeni içerikle genişletildi (Animasyon→Character Animator, VFX→Phoenix + Game of Thrones/The Last of Us endüstri-gerçeği referansı, Film Prodüksiyonu→Frame.io).
+  3. Chaos marka satırı "+Chaos Phoenix", Adobe marka satırı "+1"→"+2" (Character Animator'ı yansıtacak şekilde) güncellendi.
+  4. SSS'e **2 yeni soru** eklendi (Phoenix vs Maya/3ds Max'in kendi simülasyonu; Frame.io vs Autodesk Flow Capture) — hem görünür HTML hem FAQPage JSON-LD'ye (toplam SSS: 5→7).
+- **Bilinçli kapsam dışı:** Chaos Arena, Chaos Player, Bifrost, Flow Capture — CADBİM'de ayrı ürün sayfası olmadığı için tıklanabilir kart açılmadı; sadece metin içinde bahsedildi (yanlış/ölü link riski yok).
+- **Doğrulama (localhost:8433):** Yeni 2 SVG (`phoenix.svg`, `character-animator.svg`) fetch ile 200 OK; JSON-LD `json.loads` ile doğrulandı (FAQPage 7 soru, HTML'deki `cz-faq-i` sayısıyla eşleşiyor — 7); toplam ürün kartı 22→25; konsol hatası yok; `get_page_text` ile tüm yeni içerik doğru sırada göründü.
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-06-02 — Medya & Eğlence sayfası Autodesk'in Animation/VFX/Game Dev/Film Production içerikleriyle zenginleştirildi
 
 - **Yapan:** Onur, Autodesk'in Animation, Visual Effects, Game Design & Development, Film Production endüstri sayfalarını paylaştı ve "medya ve eğlenceye mi eklemeli yoksa ayrı endüstri mi" diye sordu. Claude (PDM asistanı) bu 4 sayfanın Medya & Eğlence'nin zaten kapsadığı bir tek M&E koleksiyonunun alt-anlatımları olduğunu, ayrı sayfaya bölmenin keyword cannibalization yaratacağını değerlendirdi; ayrı sayfa önermedi. Onur ardından "bu sayfalardaki içerikler bizim endüstri sayfasında yok ama bu sayfayı bu içeriklerle zenginleştir" dedi.
