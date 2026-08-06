@@ -1028,6 +1028,12 @@ def tuketici():
     return o + TAIL
 
 
+# DK-2026-08-06-01 NOT: otomotiv() ve havacilik() fonksiyonlari, canlidaki assets/img/sektor/
+# otomotiv.svg ve havacilik.svg'den geride kalmis (baska bir oturumda elle/farkli bir
+# betikle "aerodinamik akis", "roll" lastik donusu gibi detaylar eklenmis, buradaki kod
+# guncellenmemis). __main__ blogunu oldugu gibi calistirmak bu 2 dosyayi ESKI icerikle
+# ezer -- oncesinde `git diff assets/img/sektor/` ile kontrol edin, gerekirse
+# `git checkout -- assets/img/sektor/otomotiv.svg assets/img/sektor/havacilik.svg`.
 BUILDERS = {
     "mimari": mimari,
     "insaat": insaat,
