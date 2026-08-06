@@ -4,6 +4,15 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-06-04 — Medya & Eğlence "Çözümler" kartları tam genişlikte alt alta çıkıyordu: eksik `.grid`/`.card` CSS'i eklendi, sitewide tarandı
+
+- **Yapan:** Onur, "Çözümler" bölümünün ekran görüntüsünü paylaştı — kutucuklar kare değil, tam genişlikte üst üste satırlar olarak görünüyordu; "bu tarzı hiç kullanma, tüm site genelinde bu kuralı uygula ve mevcuttaki benzer görünümleri düzelt" dedi.
+- **Kök neden (tasarım tercihi değil, bug):** `sektor_medya.html`'in kendi `<style>` bloğunda `.grid{display:grid}`, `.g3{grid-template-columns:...}`, `.card{background:...}` ve `.card-icon{}` tanımları HİÇ yoktu — diğer 10 sektör sayfasının (otomotiv, makine, insaat vb.) hepsinde bu tanımlar var, sadece medya sayfasında eksikti (muhtemelen sayfa daha önce farklı bir şablondan/elle düzenlenirken atlanmış — bkz. dosyadaki eski yorum: ".sh/.slabel/.stitle/.ssub bu sayfada tanımsızdı" notu, aynı kökten bir eksiklik). Sonuç: `class="card"` öğeleri stilsiz `<div>` gibi davranıp %100 genişlikte alt alta diziliyordu. Bu, DK-02'de eklediğim "Dört Alanda Aynı Prodüksiyon Hattı" bölümünü de aynı şekilde etkiliyordu (fark edilmemişti).
+- **Sitewide tarama (Python, 172 sayfa `class="grid gN"` kullanıyor):** Her sayfa için hem kendi inline `<style>`'ı hem linklediği CSS dosyaları (`assets/css/*.css`, `tpl-*.css` şablonları) tarandı; `.grid{display:grid}` + `.gN{grid-template-columns}` ikilisi gerçekten tanımlı mı diye kontrol edildi (yalnızca `design-system.css`'teki zayıf `a.card{display:block}` sıfırlama kuralını "tanımlı" sayan ilk kaba tarama yanlış pozitif verdi — ikinci geçişte `.card{background` gerçek kutu stilini arayan daha katı regex kullanıldı). **Sonuç: site genelinde bu bug'a sahip TEK sayfa `sektor_medya.html`'di.** `cadbim_kvkk.html` ilk taramada şüpheli çıktı ama incelemede kendi `.card{display:flex;...background:var(--navy3)...}` tanımının düzgün olduğu, sadece farklı bir bileşen (link listesi, ikon-kart değil) olduğu görüldü — dokunulmadı.
+- **Düzeltme:** `sektor_medya.html`'e diğer sektör sayfalarındaki BİREBİR aynı 7 satırlık blok eklendi (`.grid`, `.g3`, `.card`, `.card:hover`, `.card-icon`, `.card h3`, `.card p`).
+- **Doğrulama (localhost:8433, JS ile ölçüldü):** "Çözümler" bölümündeki 2 kart artık 582px+582px yan yana (önce %100 genişlik tek sütun); "Dört Alanda Aynı Prodüksiyon Hattı" bölümündeki 4 kart 283×378px kare kutular halinde, arka plan `rgb(13,24,48)` (#0d1830, doğru navy kart rengi) ile doğru render ediyor. Konsol hatası yok.
+- **Durum:** ✅ Tamamlandı — tek etkilenen sayfa düzeltildi, sitewide başka örnek bulunmadı.
+
 ### DK-2026-08-06-03 — Medya & Eğlence sayfasına Chaos ve Adobe'den (Phoenix, Character Animator, Frame.io) içerik eklendi
 
 - **Yapan:** Onur, DK-02'nin ardından "chaos group ve adobe'den de içerik al ve ekle bu endüstriye" dedi.

@@ -317,6 +317,13 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 .slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
 .stitle{font-family:var(--fd);font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:var(--w);margin-bottom:10px;}
 .ssub{font-size:15px;color:var(--w50);max-width:560px;line-height:1.7;}
+.grid{display:grid;gap:16px;margin-top:40px;}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.card{background:var(--navy3,#0d1830);border-radius:16px;border:.5px solid rgba(255,255,255,0.1);padding:24px 22px;transition:border-color .2s;}
+.card:hover{border-color:rgba(0,200,240,0.2);}
+.card-icon{width:46px;height:46px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:22px;color:var(--cyan);}
+.card h3{font-family:'Manrope',sans-serif;font-size:15px;font-weight:600;color:#fff;margin-bottom:8px;}
+.card p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;}
 .section{padding:56px 3rem;}
 .hero-inner,.hero>.crumb,.brands>*,.solutions>*{max-width:1180px;margin-left:auto;margin-right:auto;}
 
