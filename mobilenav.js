@@ -279,7 +279,6 @@
     ["FeatureCAM", "/featurecam", "autodesk cam otomasyon cnc", "Ürün"],
     ["PowerMill", "/powermill", "autodesk cam cok eksen cnc frezeleme", "Ürün"],
     ["PowerShape", "/powershape", "autodesk cam modelleme kalip", "Ürün"],
-    ["Moldflow", "/moldflow", "autodesk enjeksiyon kalip simulasyon plastik", "Ürün"],
     ["Netfabb", "/netfabb", "autodesk eklemeli imalat 3d baski hazirlik", "Ürün"],
     ["Meshmixer", "/meshmixer", "autodesk mesh 3d baski hazirlik ucretsiz", "Ürün"],
     ["Tinkercad", "/tinkercad", "autodesk egitim 3d tasarim ucretsiz baslangic", "Ürün"],

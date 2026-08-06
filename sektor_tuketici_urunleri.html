@@ -134,6 +134,10 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 .slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan,#00c8f0);margin-bottom:8px;}
 .stitle{font-family:'Manrope',sans-serif;font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:#fff;margin-bottom:10px;}
 .ssub{font-size:15px;color:rgba(255,255,255,.5);max-width:560px;line-height:1.7;}
+.brand-strip{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px;}
+.brand-strip a{display:flex;align-items:center;justify-content:center;background:var(--navy3);border:.5px solid var(--w10);border-radius:12px;height:60px;padding:10px 22px;transition:border-color .18s,transform .18s;}
+.brand-strip a:hover{border-color:var(--cbor);transform:translateY(-2px);}
+.brand-strip img{max-height:26px;max-width:110px;width:auto;object-fit:contain;}
 .grid{display:grid;gap:16px;margin-top:40px;}
 .g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
 .card{background:var(--navy3,#0d1830);border-radius:16px;border:.5px solid rgba(255,255,255,0.1);padding:24px 22px;transition:border-color .2s;}
@@ -245,7 +249,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
      "name": "Tüketici ürünleri geliştirmede CADBİM hangi kapsamda çözüm sunuyor?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Endüstriyel tasarım stüdyosundan mühendislik doğrulamasına, kalıp simülasyonundan seri üretime geçişe kadar tüketici ürünü değer zincirinin tamamına yazılım ve donanım çözümü sunuyoruz. Alias/Fusion ile konsept, Inventor ile mühendislik, Moldflow ile kalıp doğrulama ve UltiMaker ile prototip — tek entegre akış."
+      "text": "Endüstriyel tasarım stüdyosundan mühendislik doğrulamasına, simülasyondan seri üretime geçişe kadar tüketici ürünü değer zincirinin tamamına yazılım ve donanım çözümü sunuyoruz. Alias/Fusion ile konsept, Inventor ile mühendislik ve UltiMaker ile prototip — tek entegre akış."
      }
     },
     {
@@ -258,18 +262,10 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     },
     {
      "@type": "Question",
-     "name": "Moldflow'a her ürün için gerek var mı?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Enjeksiyon kalıplama ile üretilecek, yüksek adetli veya kritik toleranslı parçalarda evet — büzülme, çekme izi ve kaynak hattı gibi kalıp doğrulamadan önce görülemeyen sorunları üretimden önce ortaya çıkarır. Düşük adetli veya basit geometrili parçalarda bu adım atlanabilir."
-     }
-    },
-    {
-     "@type": "Question",
      "name": "UltiMaker ile alınan prototip seri üretim parçasıyla aynı mı davranır?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "FFF baskı, fonksiyon ve montaj testine uygun malzeme davranışı verir ama enjeksiyon parçasının yüzey kalitesi ve nihai mekanik özellikleriyle bire bir örtüşmez. Prototip; form, montaj ve kullanıcı testi içindir — üretim onayı Moldflow ve fiziksel numune ile birlikte verilir."
+      "text": "FFF baskı, fonksiyon ve montaj testine uygun malzeme davranışı verir ama enjeksiyon parçasının yüzey kalitesi ve nihai mekanik özellikleriyle bire bir örtüşmez. Prototip; form, montaj ve kullanıcı testi içindir — üretim onayı fiziksel numune ile birlikte verilir."
      }
     },
     {
@@ -332,7 +328,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 }
 </style>
 <link rel="stylesheet" href="assets/css/design-system.css?v=35">
-<link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=4">
+<link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=5">
 <link rel="stylesheet" href="assets/css/wide-screen.css?v=3">
 </head>
 <body>
@@ -472,8 +468,8 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#3b82f60f,transparent 55%),#0d1830;border:.5px solid #3b82f633;border-radius:14px;padding:20px 18px;position:relative;">
     <div style="position:absolute;top:14px;right:16px;font-family:'Manrope',sans-serif;font-size:26px;font-weight:800;color:#3b82f6cc;">03</div>
     <i class="ti ti-chart-dots-3" style="font-size:22px;color:#3b82f6;display:block;margin-bottom:12px;"></i>
-    <h3 aria-level="2" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Simülasyon &amp; Kalıp Doğrulama</h3>
-    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Moldflow ile plastik akış analizi; Fusion Simulation ile yapısal doğrulama.</p>
+    <h3 aria-level="2" style="font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#fff;margin:0 0 6px;">Simülasyon &amp; Doğrulama</h3>
+    <p style="font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;margin:0;">Fusion Simulation ile yapısal ve termal doğrulama.</p>
     <div style="position:absolute;right:-11px;top:50%;transform:translateY(-50%);width:20px;height:20px;border-radius:50%;background:#0a1225;border:.5px solid #3b82f644;display:flex;align-items:center;justify-content:center;z-index:2;"><i class="ti ti-chevron-right" style="font-size:11px;color:#3b82f6;"></i></div>
   </div>
   <div style="flex:1;min-width:190px;background:linear-gradient(160deg,#3b82f60f,transparent 55%),#0d1830;border:.5px solid #3b82f633;border-radius:14px;padding:20px 18px;position:relative;">
@@ -537,27 +533,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div>
 </section>
 
-<section class="brands">
-  <div class="sh" style="margin-bottom:22px;">
-    <div class="slabel">Markalar</div>
-    <div class="stitle" role="heading" aria-level="2">Arkanızda Yetkili İş Ortakları Var</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner, HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="brand-stack"><div class="brand-row">
-          <div style="width:28px;height:28px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:4px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <div><div class="brand-name">Autodesk</div><div style="font-size:11px;color:var(--w30);">Fusion, Inventor, Alias, Vault +3</div></div>
-        </div><div class="brand-row">
-          <div style="width:52px;height:52px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="Chaos" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <div><div class="brand-name">Chaos</div><div style="font-size:11px;color:var(--w30);">Chaos V-Ray</div></div>
-        </div><div class="brand-row">
-          <div style="width:52px;height:52px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy" decoding="async"></div>
-          <div><div class="brand-name">UltiMaker</div><div style="font-size:11px;color:var(--w30);">UltiMaker S8 / S7</div></div>
-        </div><div class="brand-row">
-          <div style="width:52px;height:52px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div>
-          <div><div class="brand-name">HP</div><div style="font-size:11px;color:var(--w30);">HP Z Workstation, HP ZBook</div></div>
-        </div></div>
-  <div class="partner-note"><i class="ti ti-shield-check" style="color:var(--cyan);margin-right:6px;"></i><strong style="color:var(--w80);">Cadbim Gold Partner</strong> — Autodesk, Adobe, HP ve UltiMaker için tek yetkili çözüm ortağı.</div>
-</section>
 
 <section class="solutions" id="urun-katalogu">
   <div class="sol-header">
@@ -578,7 +553,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
       <a href="alias" class="pcard" data-cat="c0"><img width="64" height="64" src="assets/img/emb-a278c108d7.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Alias Concept</h3><p>Hızlı konsept modelleme ve form çalışması</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="fusion" class="pcard" data-cat="c0"><img width="64" height="64" src="assets/img/emb-81b62f7fac.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Fusion</h3><p>Endüstriyel tasarım + mühendislik tek platformda</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="inventor" class="pcard" data-cat="c1"><img width="64" height="64" src="assets/img/emb-7435829947.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Inventor</h3><p>Mekanizma, montaj ve enjeksiyon parça tasarımı</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <a href="moldflow" class="pcard" data-cat="c1"><div style="width:52px;height:52px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Autodesk</div><h3>Moldflow</h3><p>Enjeksiyon kalıbı plastik akış simülasyonu</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="simulasyon" class="pcard" data-cat="c1"><img width="64" height="64" src="assets/img/emb-81b62f7fac.png" alt="" style="width:40px;height:40px;border-radius:8px;flex-shrink:0;" loading="lazy" decoding="async"><div><div class="pbrand">Autodesk</div><h3>Fusion Simulation</h3><p>Entegre FEA ve termal analiz</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="chaos" class="pcard" data-cat="c2"><div style="width:52px;height:52px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="Chaos" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></div><div><div class="pbrand">Chaos</div><h3>Chaos V-Ray</h3><p>Katalog ve pazarlama kalitesinde fotogerçekçi render</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="ultimaker" class="pcard" data-cat="c3"><div style="width:52px;height:52px;border-radius:11px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:5px;"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy" decoding="async"></div><div><div class="pbrand">UltiMaker</div><h3>UltiMaker S8 / S7</h3><p>Fonksiyonel prototip ve kullanıcı testi parçaları</p></div><i class="ti ti-arrow-right parr"></i></a>
@@ -662,7 +636,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
     <div class="slabel" style="color:var(--cz);">Sıkça Sorulanlar</div>
     <div class="stitle" role="heading" aria-level="2">Bu sektör hakkında merak edilenler</div>
   </div>
-  <div class="cz-faq"><details class="cz-faq-i"><summary>Tüketici ürünleri geliştirmede CADBİM hangi kapsamda çözüm sunuyor?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Endüstriyel tasarım stüdyosundan mühendislik doğrulamasına, kalıp simülasyonundan seri üretime geçişe kadar tüketici ürünü değer zincirinin tamamına yazılım ve donanım çözümü sunuyoruz. Alias/Fusion ile konsept, Inventor ile mühendislik, Moldflow ile kalıp doğrulama ve UltiMaker ile prototip — tek entegre akış.</div></details><details class="cz-faq-i"><summary>Alias ile Fusion arasında hangisini seçmeliyiz?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Alias, serbest form endüstriyel tasarım ve Class-A yüzey için tasarlanmıştır; estetik onayı bu araçla verilir. Fusion ise tasarımı doğrudan mühendislik, simülasyon ve CAM'e bağlar — küçük ve orta ölçekli ekiplerde tek platform yeterli olabilir. Kapsamı ürün karmaşıklığınıza göre birlikte belirleriz.</div></details><details class="cz-faq-i"><summary>Moldflow'a her ürün için gerek var mı?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Enjeksiyon kalıplama ile üretilecek, yüksek adetli veya kritik toleranslı parçalarda evet — büzülme, çekme izi ve kaynak hattı gibi kalıp doğrulamadan önce görülemeyen sorunları üretimden önce ortaya çıkarır. Düşük adetli veya basit geometrili parçalarda bu adım atlanabilir.</div></details><details class="cz-faq-i"><summary>UltiMaker ile alınan prototip seri üretim parçasıyla aynı mı davranır?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">FFF baskı, fonksiyon ve montaj testine uygun malzeme davranışı verir ama enjeksiyon parçasının yüzey kalitesi ve nihai mekanik özellikleriyle bire bir örtüşmez. Prototip; form, montaj ve kullanıcı testi içindir — üretim onayı Moldflow ve fiziksel numune ile birlikte verilir.</div></details><details class="cz-faq-i"><summary>Render'larımızı katalog ve e-ticaret için kullanabilir miyiz?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Evet. Chaos V-Ray ile üretilen görseller, fotoğraf çekimine gerek kalmadan katalog, e-ticaret ve pazarlama materyali kalitesinde kullanılabilir; ürün henüz üretime girmeden pazarlama materyali hazırlanabilir.</div></details><details class="cz-faq-i"><summary>PLM/PDM küçük ürün ekiplerinde de gerekli mi?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Ekip büyüklüğünden çok revizyon sıklığı ve tedarikçi sayısı belirleyicidir. Birden fazla kişi aynı CAD dosyasına dokunuyorsa PDM (Vault), ürün ağacı ve BOM tedarikçiyle paylaşılıyorsa PLM (Fusion Manage) katkı sağlar. İhtiyaç analiziyle doğru başlangıç noktasını birlikte belirleriz.</div></details></div>
+  <div class="cz-faq"><details class="cz-faq-i"><summary>Tüketici ürünleri geliştirmede CADBİM hangi kapsamda çözüm sunuyor?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Endüstriyel tasarım stüdyosundan mühendislik doğrulamasına, simülasyondan seri üretime geçişe kadar tüketici ürünü değer zincirinin tamamına yazılım ve donanım çözümü sunuyoruz. Alias/Fusion ile konsept, Inventor ile mühendislik ve UltiMaker ile prototip — tek entegre akış.</div></details><details class="cz-faq-i"><summary>Alias ile Fusion arasında hangisini seçmeliyiz?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Alias, serbest form endüstriyel tasarım ve Class-A yüzey için tasarlanmıştır; estetik onayı bu araçla verilir. Fusion ise tasarımı doğrudan mühendislik, simülasyon ve CAM'e bağlar — küçük ve orta ölçekli ekiplerde tek platform yeterli olabilir. Kapsamı ürün karmaşıklığınıza göre birlikte belirleriz.</div></details><details class="cz-faq-i"><summary>UltiMaker ile alınan prototip seri üretim parçasıyla aynı mı davranır?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">FFF baskı, fonksiyon ve montaj testine uygun malzeme davranışı verir ama enjeksiyon parçasının yüzey kalitesi ve nihai mekanik özellikleriyle bire bir örtüşmez. Prototip; form, montaj ve kullanıcı testi içindir — üretim onayı fiziksel numune ile birlikte verilir.</div></details><details class="cz-faq-i"><summary>Render'larımızı katalog ve e-ticaret için kullanabilir miyiz?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Evet. Chaos V-Ray ile üretilen görseller, fotoğraf çekimine gerek kalmadan katalog, e-ticaret ve pazarlama materyali kalitesinde kullanılabilir; ürün henüz üretime girmeden pazarlama materyali hazırlanabilir.</div></details><details class="cz-faq-i"><summary>PLM/PDM küçük ürün ekiplerinde de gerekli mi?<i class="ti ti-plus"></i></summary><div class="cz-faq-a">Ekip büyüklüğünden çok revizyon sıklığı ve tedarikçi sayısı belirleyicidir. Birden fazla kişi aynı CAD dosyasına dokunuyorsa PDM (Vault), ürün ağacı ve BOM tedarikçiyle paylaşılıyorsa PLM (Fusion Manage) katkı sağlar. İhtiyaç analiziyle doğru başlangıç noktasını birlikte belirleriz.</div></details></div>
   <div class="cz-faq-cta">
     <span>Sorunuz listede yok mu?</span>
     <a href="iletisim#form" class="btn-p">Uzmanımıza Sorun <i class="ti ti-arrow-right"></i></a>
@@ -712,6 +686,13 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   }).catch(function(){ var section=document.getElementById('blog-related-section'); if(section) section.style.display='none'; });
 })();
 </script>
+<section class="brands brand-strip-sec">
+  <div class="sh" style="margin-bottom:20px;text-align:center;">
+    <div class="slabel">Markalar</div>
+    <div class="stitle" role="heading" aria-level="2">Arkanızda Yetkili İş Ortakları Var</div>
+  </div>
+  <div class="brand-strip"><a href="autodesk" aria-label="Autodesk"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></a><a href="chaos" aria-label="Chaos"><img width="1280" height="1280" src="assets/logos/chaos.webp" alt="Chaos" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></a><a href="ultimaker" aria-label="UltiMaker"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy" decoding="async"></a><a href="hp" aria-label="HP"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy" decoding="async"></a></div>
+</section>
 <div class="cta-strip">
     <h2>Tüketici ürünleri projeniz için konuşalım</h2>
     <p>Hangi ürünler iş akışınıza uygun — ücretsiz ihtiyaç analizi için bize ulaşın.</p>

@@ -251,8 +251,8 @@ SECTORS = {
              "Alias ve Fusion ile hızlı konsept modelleme ve form çalışması."),
             ("settings-2", "Mühendislik &amp; Detay",
              "Inventor ile mekanizma, montaj ve enjeksiyon parça tasarımı."),
-            ("chart-dots-3", "Simülasyon &amp; Kalıp Doğrulama",
-             "Moldflow ile plastik akış analizi; Fusion Simulation ile yapısal doğrulama."),
+            ("chart-dots-3", "Simülasyon &amp; Doğrulama",
+             "Fusion Simulation ile yapısal ve termal doğrulama."),
             ("cube-3d-sphere", "Fiziksel Prototip",
              "UltiMaker ile fonksiyonel prototip ve kullanıcı testi parçaları."),
             ("sun-high", "Pazarlama Görselleştirme",
@@ -293,8 +293,6 @@ SECTORS = {
              "Endüstriyel tasarım + mühendislik tek platformda", "c0", emb_img("emb-81b62f7fac.png")),
             ("inventor", "Autodesk", "Inventor",
              "Mekanizma, montaj ve enjeksiyon parça tasarımı", "c1", emb_img("emb-7435829947.png")),
-            ("moldflow", "Autodesk", "Moldflow",
-             "Enjeksiyon kalıbı plastik akış simülasyonu", "c1", ico_img("autodesk")),
             ("simulasyon", "Autodesk", "Fusion Simulation",
              "Entegre FEA ve termal analiz", "c1", emb_img("emb-81b62f7fac.png")),
             ("chaos", "Chaos", "Chaos V-Ray",
@@ -316,24 +314,19 @@ SECTORS = {
         "cta_h2": "Tüketici ürünleri projeniz için konuşalım",
         "faq": [
             ("Tüketici ürünleri geliştirmede CADBİM hangi kapsamda çözüm sunuyor?",
-             "Endüstriyel tasarım stüdyosundan mühendislik doğrulamasına, kalıp simülasyonundan "
+             "Endüstriyel tasarım stüdyosundan mühendislik doğrulamasına, simülasyondan "
              "seri üretime geçişe kadar tüketici ürünü değer zincirinin tamamına yazılım ve "
-             "donanım çözümü sunuyoruz. Alias/Fusion ile konsept, Inventor ile mühendislik, "
-             "Moldflow ile kalıp doğrulama ve UltiMaker ile prototip — tek entegre akış."),
+             "donanım çözümü sunuyoruz. Alias/Fusion ile konsept, Inventor ile mühendislik "
+             "ve UltiMaker ile prototip — tek entegre akış."),
             ("Alias ile Fusion arasında hangisini seçmeliyiz?",
              "Alias, serbest form endüstriyel tasarım ve Class-A yüzey için tasarlanmıştır; "
              "estetik onayı bu araçla verilir. Fusion ise tasarımı doğrudan mühendislik, "
              "simülasyon ve CAM'e bağlar — küçük ve orta ölçekli ekiplerde tek platform yeterli "
              "olabilir. Kapsamı ürün karmaşıklığınıza göre birlikte belirleriz."),
-            ("Moldflow'a her ürün için gerek var mı?",
-             "Enjeksiyon kalıplama ile üretilecek, yüksek adetli veya kritik toleranslı "
-             "parçalarda evet — büzülme, çekme izi ve kaynak hattı gibi kalıp doğrulamadan önce "
-             "görülemeyen sorunları üretimden önce ortaya çıkarır. Düşük adetli veya basit "
-             "geometrili parçalarda bu adım atlanabilir."),
             ("UltiMaker ile alınan prototip seri üretim parçasıyla aynı mı davranır?",
              "FFF baskı, fonksiyon ve montaj testine uygun malzeme davranışı verir ama enjeksiyon "
              "parçasının yüzey kalitesi ve nihai mekanik özellikleriyle bire bir örtüşmez. "
-             "Prototip; form, montaj ve kullanıcı testi içindir — üretim onayı Moldflow ve "
+             "Prototip; form, montaj ve kullanıcı testi içindir — üretim onayı "
              "fiziksel numune ile birlikte verilir."),
             ("Render'larımızı katalog ve e-ticaret için kullanabilir miyiz?",
              "Evet. Chaos V-Ray ile üretilen görseller, fotoğraf çekimine gerek kalmadan katalog, "

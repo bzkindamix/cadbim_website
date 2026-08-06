@@ -53,6 +53,10 @@ body{background:var(--navy);color:var(--w);font-family:var(--fb);font-size:16px;
 .slabel{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
 .stitle{font-family:var(--fd);font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;color:var(--w);margin-bottom:10px;}
 .ssub{font-size:15px;color:var(--w50);max-width:560px;line-height:1.7;}
+.brand-strip{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px;}
+.brand-strip a{display:flex;align-items:center;justify-content:center;background:var(--navy3);border:.5px solid var(--w10);border-radius:12px;height:60px;padding:10px 22px;transition:border-color .18s,transform .18s;}
+.brand-strip a:hover{border-color:var(--cbor);transform:translateY(-2px);}
+.brand-strip img{max-height:26px;max-width:110px;width:auto;object-fit:contain;}
 .btn-p{background:var(--cyan);color:var(--navy);padding:13px 28px;border-radius:var(--r);font-weight:700;font-size:14px;text-decoration:none;font-family:var(--fd);transition:opacity .2s,transform .15s;display:inline-flex;align-items:center;gap:8px;}
 .btn-p:hover{opacity:.88;transform:translateY(-1px);}
 .btn-g{background:transparent;color:var(--w80);border:.5px solid var(--w30);padding:13px 28px;border-radius:var(--r);font-size:14px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
@@ -256,7 +260,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 }
 </style>
 <link rel="stylesheet" href="assets/css/design-system.css?v=35">
-<link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=4">
+<link rel="stylesheet" href="assets/css/mobile-guardrails.css?v=5">
 <link rel="stylesheet" href="assets/css/wide-screen.css?v=3">
 </head>
 <body>
@@ -373,7 +377,7 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
 
 <section class="section section-alt">
   <div class="sh"><div class="slabel">Çözüm Alanları</div><div class="stitle" role="heading" aria-level="2">Savunma ve Havacılık İçin Neler Sunuyoruz?</div></div>
-  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-settings-2" style="color:#a5b4fc;"></i></div><h3>Hassas Parça Tasarımı</h3><p>Inventor ve Fusion ile tolerans kritik parça ve montaj tasarımı.</p></div><div class="card"><div class="card-icon"><i class="ti ti-chart-dots-3" style="color:#a5b4fc;"></i></div><h3>Simülasyon & Doğrulama</h3><p>Nastran, CFD ve Moldflow ile sanal test döngüleri.</p></div><div class="card"><div class="card-icon"><i class="ti ti-cube-3d-sphere" style="color:#a5b4fc;"></i></div><h3>İzlenebilir Eklemeli İmalat</h3><p>Factor 4 Plus ile sahada, talep anında, kayıtlı parça üretimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-database" style="color:#a5b4fc;"></i></div><h3>Güvenli Veri Yönetimi</h3><p>Vault PDM ile revizyon kontrolü ve erişim güvenliği.</p></div><div class="card"><div class="card-icon"><i class="ti ti-tool" style="color:#a5b4fc;"></i></div><h3>5 Eksen CAM</h3><p>Fusion CAM ile havacılık alaşımlarında ileri talaşlı imalat.</p></div><div class="card"><div class="card-icon"><i class="ti ti-shield-check" style="color:#a5b4fc;"></i></div><h3>Uyumluluk Danışmanlığı</h3><p>Savunma tedarik gereksinimlerine uygun yazılım altyapısı.</p></div></div>
+  <div class="grid g3"><div class="card"><div class="card-icon"><i class="ti ti-settings-2" style="color:#a5b4fc;"></i></div><h3>Hassas Parça Tasarımı</h3><p>Inventor ve Fusion ile tolerans kritik parça ve montaj tasarımı.</p></div><div class="card"><div class="card-icon"><i class="ti ti-chart-dots-3" style="color:#a5b4fc;"></i></div><h3>Simülasyon & Doğrulama</h3><p>Nastran ve CFD ile sanal test döngüleri.</p></div><div class="card"><div class="card-icon"><i class="ti ti-cube-3d-sphere" style="color:#a5b4fc;"></i></div><h3>İzlenebilir Eklemeli İmalat</h3><p>Factor 4 Plus ile sahada, talep anında, kayıtlı parça üretimi.</p></div><div class="card"><div class="card-icon"><i class="ti ti-database" style="color:#a5b4fc;"></i></div><h3>Güvenli Veri Yönetimi</h3><p>Vault PDM ile revizyon kontrolü ve erişim güvenliği.</p></div><div class="card"><div class="card-icon"><i class="ti ti-tool" style="color:#a5b4fc;"></i></div><h3>5 Eksen CAM</h3><p>Fusion CAM ile havacılık alaşımlarında ileri talaşlı imalat.</p></div><div class="card"><div class="card-icon"><i class="ti ti-shield-check" style="color:#a5b4fc;"></i></div><h3>Uyumluluk Danışmanlığı</h3><p>Savunma tedarik gereksinimlerine uygun yazılım altyapısı.</p></div></div>
 </section>
 
 <section data-enrich style="padding:64px 3rem;background:#0a1225;">
@@ -450,24 +454,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   </div>
 </section>
 
-<section class="brands">
-  <div class="sh" style="margin-bottom:22px;">
-    <div class="slabel">Markalar</div>
-    <div class="stitle" role="heading" aria-level="2">Arkanızda Yetkili İş Ortakları Var</div>
-    <p class="ssub">Cadbim; Autodesk Gold Partner ve Adobe Gold Reseller Partner, HP, Microsoft, Chaos ve UltiMaker yetkili iş ortağıdır.</p>
-  </div>
-  <div class="brand-stack"><div class="brand-row">
-          <div style="width:44px;height:44px;border-radius:9px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></div>
-          <div><div class="brand-name">Autodesk</div><div style="font-size:11px;color:var(--w30);">Inventor, Fusion, Vault PDM, Moldflow</div></div>
-        </div><div class="brand-row">
-          <div style="width:44px;height:44px;border-radius:9px;background:#0d1830;border:.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy"></div>
-          <div><div class="brand-name">UltiMaker</div><div style="font-size:11px;color:var(--w30);">UltiMaker Factor 4</div></div>
-        </div><div class="brand-row">
-          <div style="width:44px;height:44px;border-radius:9px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:6px;"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></div>
-          <div><div class="brand-name">HP</div><div style="font-size:11px;color:var(--w30);">HP Z Workstation</div></div>
-        </div></div>
-  <div class="partner-note"><i class="ti ti-shield-check" style="color:var(--cyan);margin-right:6px;"></i><strong style="color:var(--w80);">Cadbim Gold Partner</strong> — Autodesk, Adobe, HP ve UltiMaker için tek yetkili çözüm ortağı.</div>
-</section>
 
 <section class="section" style="padding-top:0;">
   <div class="cross">
@@ -486,7 +472,6 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
       <a href="fusion" class="pcard" data-cat="tasarim"><div class="pico"><img width="965" height="1024" src="assets/logos/products/fusion.svg" alt="" style="max-width:42px;max-height:42px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Fusion</h3><p>Autodesk Fusion (eskiden Fusion) satın al</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="factor4" class="pcard" data-cat="uretim"><div class="pico"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="" style="max-width:42px;max-height:42px;object-fit:contain;filter:brightness(0) invert(1);" loading="lazy" decoding="async"></div><div><h3>UltiMaker Factor 4</h3><p>UltiMaker Factor 4 ve Factor 4 Plus: sürekli üretim için endüstriyel...</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="vault-pdm" class="pcard" data-cat="veri"><div class="pico"><img width="965" height="1024" src="assets/logos/products/vault-pdm.svg" alt="" style="max-width:42px;max-height:42px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Vault PDM</h3><p>Autodesk Vault PDM yazılımı</p></div><i class="ti ti-arrow-right parr"></i></a>
-      <a href="moldflow" class="pcard" data-cat="uretim"><div class="pico"><img width="340" height="310" src="assets/logos/products/moldflow.svg" alt="" style="max-width:42px;max-height:42px;object-fit:contain;" loading="lazy" decoding="async"></div><div><h3>Moldflow</h3><p>Autodesk Moldflow ile plastik enjeksiyon kalıplama simülasyonu; dolum...</p></div><i class="ti ti-arrow-right parr"></i></a>
       <a href="hp-z-workstation" class="pcard" data-cat="donanim"><div class="pico"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="" style="max-width:42px;max-height:42px;object-fit:contain;filter:brightness(0) invert(1);" loading="lazy" decoding="async"></div><div><h3>HP Z Workstation</h3><p>HP Z2, Z4, Z6 ve Z8 Fury iş istasyonları: CAD, BIM, simülasyon ve GPU...</p></div><i class="ti ti-arrow-right parr"></i></a>
   </div>
   <p id="pempty" style="display:none;color:var(--w50);font-size:14px;margin-top:24px;">Aramanızla eşleşen ürün bulunamadı.</p>
@@ -601,6 +586,13 @@ a.pcard:hover .parr{color:var(--cyan);transform:translateX(3px);}
   }).catch(function(){ var section=document.getElementById('blog-related-section'); if(section) section.style.display='none'; });
 })();
 </script>
+<section class="brands brand-strip-sec">
+  <div class="sh" style="margin-bottom:20px;text-align:center;">
+    <div class="slabel">Markalar</div>
+    <div class="stitle" role="heading" aria-level="2">Arkanızda Yetkili İş Ortakları Var</div>
+  </div>
+  <div class="brand-strip"><a href="autodesk" aria-label="Autodesk"><img width="997" height="563" src="assets/logos/autodesk-white.svg?v=2" alt="Autodesk" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></a><a href="ultimaker" aria-label="UltiMaker"><img width="150" height="22" src="assets/logos/ultimaker.svg" alt="UltiMaker" style="max-width:100%;max-height:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.92;" loading="lazy"></a><a href="hp" aria-label="HP"><img width="300" height="300" src="assets/logos/hp-blue.png" alt="HP" style="max-width:100%;max-height:100%;object-fit:contain;" loading="lazy"></a></div>
+</section>
 <div class="cta-strip">
   <h2>Savunma ve Havacılık projeleriniz için destek alın</h2>
   <p>Lisanslama, donanım ve eğitim ihtiyaçlarınızı birlikte planlayalım.</p>

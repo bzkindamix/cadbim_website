@@ -26,8 +26,11 @@ img,svg,video,iframe,canvas{max-width:100%;}
   .hstats:not([style*="grid"])>.hstat{flex:1 1 42%;}
 
   /* R5 — Sabit 3+ sütunlu grid'ler mobilde 2 sütuna iner (tek sütuna değil):
-     içerik okunur kalır, sayfa gereksiz uzamaz. */
-  .g4,.g3{grid-template-columns:repeat(2,minmax(0,1fr));}
+     içerik okunur kalır, sayfa gereksiz uzamaz. auto-fit ile tek sütuna inen
+     tüm "özellik şeridi" kalıpları da (feat-grid, cz-buls/fark/hat/steps,
+     srvgrid, why-grid, brand-stack) aynı kurala tabidir (DK-2026-08-06). */
+  .g4,.g3,.feat-grid,.cz-buls,.cz-fark,.cz-hat,.cz-steps,.srvgrid,.why-grid,
+  .brand-stack{grid-template-columns:repeat(2,minmax(0,1fr));}
 
   /* R4 — Form satırları her zaman tek sütun (etiket+alan okunabilirliği) */
   .form-row,.form-grid{grid-template-columns:1fr;}

@@ -1,4 +1,4 @@
-/* tpl-urun-d — 9 sayfanın ortak satır içi CSS'i (Y8, DK-2026-08-03): cadbim_moldflow.html, cadbim_motionbuilder.html, cadbim_mudbox.html, cadbim_navisworks.html, cadbim_netfabb.html, cadbim_powermill.html, cadbim_powershape.html, cadbim_robot_structural.html, cadbim_tinkercad.html */
+/* tpl-urun-d — 8 sayfanın ortak satır içi CSS'i (Y8, DK-2026-08-03): cadbim_motionbuilder.html, cadbim_mudbox.html, cadbim_navisworks.html, cadbim_netfabb.html, cadbim_powermill.html, cadbim_powershape.html, cadbim_robot_structural.html, cadbim_tinkercad.html (cadbim_moldflow.html DK-2026-08-06'da kaldırıldı) */
 :root{
   --navy:#060c1a;--navy2:#0a1225;--navy3:#0d1830;
   --cyan:#00c8f0;--cyan2:#0ea5e9;
