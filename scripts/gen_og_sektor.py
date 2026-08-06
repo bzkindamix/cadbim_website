@@ -30,6 +30,22 @@ PAGES = [
         "desc": ["Cadbim MEP çözümleri — Revit MEP, Fabrication CADmep/CAMduct,",
                  "Autodesk CFD ve HP donanımıyla modelden imalata"],
     },
+    {
+        "file": "sektor_yapi_urunleri.png",
+        "acc": (249, 115, 22),
+        "label": "YAPI ÜRÜNLERİ & FABRİKASYON",
+        "title": "Yapı Ürünleri Çözümleri",
+        "desc": ["Cadbim çözümleri — Advance Steel, Inventor, Nesting ve Fusion CAM",
+                 "ile cephe, çelik ve prefabrik eleman üreticileri için"],
+    },
+    {
+        "file": "sektor_tuketici_urunleri.png",
+        "acc": (59, 130, 246),
+        "label": "TÜKETİCİ ÜRÜNLERİ",
+        "title": "Tüketici Ürünleri Çözümleri",
+        "desc": ["Cadbim çözümleri — Fusion, Inventor, Alias ve UltiMaker ile",
+                 "endüstriyel tasarımdan seri üretime konsept-üretim döngüsü"],
+    },
 ]
 
 

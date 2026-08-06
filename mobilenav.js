@@ -68,7 +68,9 @@
         ["Mekanik Tesisat", "/sektor-tesisat"],
         ["Otomotiv", "/sektor-otomotiv"],
         ["Eğitim", "/sektor-egitim"],
-        ["Savunma ve Havacılık", "/sektor-havacilik"]
+        ["Savunma ve Havacılık", "/sektor-havacilik"],
+        ["Yapı Ürünleri & Fabrikasyon", "/sektor-yapi-urunleri"],
+        ["Tüketici Ürünleri", "/sektor-tuketici-urunleri"]
       ]
     },
     {
@@ -235,6 +237,8 @@
     ["Medya & Eğlence", "/sektor-medya", "sektor medya eglence render", "Sektör"],
     ["Eğitim", "/sektor-egitim", "sektor egitim universite okul akademik lab", "Sektör"],
     ["Savunma ve Havacılık", "/sektor-havacilik", "sektor havacilik savunma defense aerospace", "Sektör"],
+    ["Yapı Ürünleri & Fabrikasyon", "/sektor-yapi-urunleri", "sektor yapi urunleri fabrikasyon building products cephe celik prefabrik nesting", "Sektör"],
+    ["Tüketici Ürünleri", "/sektor-tuketici-urunleri", "sektor tuketici urunleri consumer products endustriyel tasarim", "Sektör"],
     ["Hakkımızda", "/hakkimizda", "kurumsal 1993 firma", "Kurumsal"],
     ["İletişim", "/iletisim", "adres telefon teklif form izmir ankara", "Kurumsal"],
     ["KVKK", "/kvkk", "kisisel veri gizlilik", "Yasal"],

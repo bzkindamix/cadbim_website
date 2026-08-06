@@ -910,6 +910,124 @@ def icmimarlik():
     return o + TAIL
 
 
+# --------------------------------------------------------------------------
+def yapiurunleri():
+    """Yapi urunleri & fabrikasyon: civatali celik bagi + nesting kesim plakasi."""
+    a = "#f97316"
+    o = head(a)
+    o += '<g class="float">\n'
+    # --- civatali moment baglantisi (kolon + kiris + baglanti plakasi) ---
+    cx, cy = 168, 210
+    # kolon (dikey I-profil, basit iki flanş + gövde)
+    o += ('<path class="ln" d="M%d 40 V%d M%d 40 V%d" />' % (cx - 22, cy + 20, cx + 22, cy + 20)
+          + '<path class="ln2" d="M%d 40 H%d M%d %d H%d" stroke-opacity=".5"/>'
+          % (cx - 22, cx + 22, cx - 22, cy + 20, cx + 22))
+    for yy in range(56, cy, 22):
+        o += '<line class="ln2" x1="%d" y1="%d" x2="%d" y2="%d" stroke-opacity=".22"/>' % (
+            cx - 10, yy, cx + 10, yy)
+    # kiris (yatay I-profil)
+    o += ('<path class="ln" d="M%d %d H560 M%d %d H560" />' % (cx + 24, cy - 16, cx + 24, cy + 16)
+          + '<line class="ln2" x1="%d" y1="%d" x2="560" y2="%d" stroke-opacity=".5"/>'
+          % (cx + 24, cy, cy))
+    for xx in range(cx + 46, 560, 26):
+        o += '<line class="ln2" x1="%d" y1="%d" x2="%d" y2="%d" stroke-opacity=".22"/>' % (
+            xx, cy - 10, xx, cy + 10)
+    # bagli plaka + civata deseni
+    o += ('<rect class="fl" x="%d" y="%d" width="46" height="72" rx="4"/>'
+          '<rect class="ln" x="%d" y="%d" width="46" height="72" rx="4" fill="none"/>\n'
+          % (cx, cy - 36, cx, cy - 36))
+    for bx, by in ((cx + 10, cy - 24), (cx + 36, cy - 24), (cx + 10, cy), (cx + 36, cy),
+                   (cx + 10, cy + 24), (cx + 36, cy + 24)):
+        o += '<circle class="cy blink" cx="%d" cy="%d" r="3.6"/>' % (bx, by)
+    o += "\n</g>\n"
+
+    # --- nesting: sac plaka uzerinde yerlestirilmis parcalar ---
+    px0, py0, pw, ph = 380, 60, 220, 300
+    o += ('<rect class="ln" x="%d" y="%d" width="%d" height="%d" fill="none"/>'
+          % (px0, py0, pw, ph))
+    parts = [(px0 + 10, py0 + 10, 70, 46), (px0 + 88, py0 + 10, 46, 46),
+             (px0 + 10, py0 + 64, 46, 90), (px0 + 64, py0 + 64, 70, 40),
+             (px0 + 64, py0 + 112, 70, 42), (px0 + 142, py0 + 10, 66, 68),
+             (px0 + 142, py0 + 86, 66, 66), (px0 + 10, py0 + 162, 130, 50),
+             (px0 + 10, py0 + 220, 198, 44), (px0 + 142, py0 + 160, 66, 52)]
+    for i, (x, y, w, h) in enumerate(parts):
+        o += ('<rect class="ln2" x="%d" y="%d" width="%d" height="%d" fill="%s" '
+              'fill-opacity=".07" stroke-opacity=".5"/>' % (x, y, w, h, a))
+    # CAM kesim yolu -- ilk parcayi dolasan kesikli cizgi
+    cx0, cy0, cw, ch = parts[0]
+    path = ('M%d %d H%d V%d H%d Z' % (cx0, cy0, cx0 + cw, cy0 + ch, cx0))
+    o += '<path class="cy draw" d="%s" fill="none" stroke-opacity=".8"/>\n' % path
+    for x, y, w, h in parts[:4]:
+        o += node(x + w / 2.0, y + h / 2.0, 2.2, cls="nd")
+
+    # olcu cizgisi + tarama
+    o += ('<path class="dim" d="M%d %d H%d M%d %d V%d M%d %d V%d"/>\n'
+          % (px0, py0 - 14, px0 + pw, px0, py0 - 20, py0 - 8, px0 + pw, py0 - 20, py0 - 8))
+    o += scanline(a, 60)
+    return o + TAIL
+
+
+def tuketici():
+    """Tuketici urunleri: enjeksiyon kalibi kesiti + render viewport isik konisi."""
+    a = "#3b82f6"
+    o = head(a)
+
+    # --- basit urun siluyeti (sise/kutu govdesi) ---
+    body_path = ("M150 300 C150 300 140 240 148 190 C152 160 168 140 176 118 "
+                 "C182 100 180 84 176 70 L204 70 C200 84 198 100 204 118 "
+                 "C212 140 228 160 232 190 C240 240 230 300 230 300 Z")
+    o += '<g class="float">\n'
+    o += '<path class="fl" d="%s"/><path class="ln" d="%s"/>\n' % (body_path, body_path)
+    for yy in range(140, 296, 20):
+        o += '<path class="ln2" d="M154 %d Q190 %d 226 %d" stroke-opacity=".22"/>' % (
+            yy, yy - 4, yy)
+    o += ('<rect class="ln2" x="172" y="66" width="36" height="10" rx="3" fill="none" '
+          'stroke-opacity=".6"/>\n</g>\n')
+
+    # --- enjeksiyon kalibi kesiti (iki yari + ayrim hatti + sprue) ---
+    mx, my = 120, 340
+    o += ('<path class="ln" d="M%d %d H%d V%d H%d Z" fill="none"/>'
+          % (mx, my, mx + 200, my + 50, mx))
+    o += '<line class="cy draw" x1="%d" y1="%d" x2="%d" y2="%d" stroke-opacity=".7"/>' % (
+        mx, my + 25, mx + 200, my + 25)
+    o += ('<path class="ln2" d="M%d %d L%d %d L%d %d Z" fill="none" stroke-opacity=".6"/>\n'
+          % (mx + 90, my, mx + 110, my, mx + 100, my - 22))
+    for xx in (mx + 30, mx + 170):
+        o += node(xx, my + 25, 2.4)
+
+    # --- render viewport ---
+    vx, vy, vw, vh = 360, 90, 240, 190
+    o += ('<rect class="fl" x="%d" y="%d" width="%d" height="%d" rx="8"/>'
+          '<rect class="ln" x="%d" y="%d" width="%d" height="%d" rx="8" fill="none"/>\n'
+          % (vx, vy, vw, vh, vx, vy, vw, vh))
+    for k in range(-4, 5):
+        o += '<line class="ln2" x1="%d" y1="%d" x2="%d" y2="%d" stroke-opacity=".18"/>' % (
+            vx + vw // 2 + k * 30, vy + vh, vx + vw // 2, vy + vh - 60)
+    lx, ly = vx + 60, vy + 40
+    o += ('<circle class="cy" cx="%d" cy="%d" r="9" stroke-opacity=".8"/>'
+          % (lx, ly))
+    for k in range(5):
+        ang = k * math.pi / 4 - math.pi / 2
+        o += ('<line class="cy" x1="%s" y1="%s" x2="%s" y2="%s" stroke-opacity=".5"/>'
+              % (f(lx + 13 * math.cos(ang)), f(ly + 13 * math.sin(ang)),
+                 f(lx + 19 * math.cos(ang)), f(ly + 19 * math.sin(ang))))
+    scx, scy, sr = vx + vw - 70, vy + vh - 60, 40
+    o += '<circle class="ln" cx="%d" cy="%d" r="%d"/>' % (scx, scy, sr)
+    for k in range(1, 3):
+        o += '<ellipse class="ln2" cx="%d" cy="%d" rx="%s" ry="%d" stroke-opacity=".45"/>' % (
+            scx, scy, f(sr * math.cos(k * math.pi / 3)), sr)
+    o += '<ellipse class="ln2" cx="%d" cy="%d" rx="46" ry="10" stroke-opacity=".3"/>\n' % (
+        scx, scy + sr + 8)
+    o += ('<text x="%d" y="%d" fill="rgba(255,255,255,.4)" font-size="9" '
+          'font-family="monospace" letter-spacing="1.5">RENDER 01</text>\n' % (vx + 6, vy + vh - 8))
+
+    o += ('<path class="dim" d="M96 76 V300 M96 70 H%d M96 300 H%d"/>\n' % (mx - 4, mx - 4))
+    for x, y in ((190, 70), (150, 300), (scx, scy)):
+        o += node(x, y, 2.6)
+    o += scanline(a, 50)
+    return o + TAIL
+
+
 BUILDERS = {
     "mimari": mimari,
     "insaat": insaat,
@@ -920,6 +1038,8 @@ BUILDERS = {
     "havacilik": havacilik,
     "tesisat": tesisat,
     "icmimarlik": icmimarlik,
+    "yapiurunleri": yapiurunleri,
+    "tuketici": tuketici,
 }
 
 if __name__ == "__main__":
