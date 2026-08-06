@@ -4,6 +4,19 @@
 > Kayıt biçimi: **DK-YYYY-MM-DD-NN** · Tarih · Yapan · Kapsam · Etkilenen dosyalar · Doğrulama · Durum · Referans (commit).
 > Kaynak kod sürüm kontrolü Git/GitHub'dadır; bu dosya insan-okunur değişiklik özetidir.
 
+### DK-2026-08-06-02 — Medya & Eğlence sayfası Autodesk'in Animation/VFX/Game Dev/Film Production içerikleriyle zenginleştirildi
+
+- **Yapan:** Onur, Autodesk'in Animation, Visual Effects, Game Design & Development, Film Production endüstri sayfalarını paylaştı ve "medya ve eğlenceye mi eklemeli yoksa ayrı endüstri mi" diye sordu. Claude (PDM asistanı) bu 4 sayfanın Medya & Eğlence'nin zaten kapsadığı bir tek M&E koleksiyonunun alt-anlatımları olduğunu, ayrı sayfaya bölmenin keyword cannibalization yaratacağını değerlendirdi; ayrı sayfa önermedi. Onur ardından "bu sayfalardaki içerikler bizim endüstri sayfasında yok ama bu sayfayı bu içeriklerle zenginleştir" dedi.
+- **Kaynak (Browser tool ile 4 sayfa okundu, WebFetch 403 verdi):** Autodesk'in 4 sayfasında `sektor_medya.html`'de eksik olan gerçek ürünler: **Flow Production Tracking** (eski ShotGrid, prodüksiyon/shot/bütçe takibi), **Flow Studio** (AI mocap/kamera takibi/kompozit), **Golaem** (kalabalık simülasyonu), **Mudbox** (dijital heykel/doku), **Maya Creative** (Flex token lisans), **Flame** (üst düzey finishing/compositing). Hepsinin CADBİM'de zaten kendi ürün sayfası var (`cadbim_flow_production_tracking.html` vb.) — sadece Medya sektör sayfasına eklenmemişlerdi. Flow Capture ve Bifrost için ayrı ürün sayfası olmadığından kart eklenmedi, metinde geçtiler.
+- **Eklenenler (`sektor_medya.html`):**
+  1. Yeni bölüm **"Dört Alanda Aynı Prodüksiyon Hattı"** (workflow'dan sonra) — Animasyon / VFX / Oyun Geliştirme / Film & Dizi Prodüksiyonu, her biri 2-3 satır + ilgili araçlarla.
+  2. Katalog'a yeni **"Prodüksiyon Yönetimi & Bulut"** kategorisi (c5) + 6 yeni ürün kartı (Golaem, Mudbox, Maya Creative, Flame, Flow Production Tracking, Flow Studio) — tabler-icons-subset.css'te bulunan gerçek ikonlarla (ti-flame, ti-users, ti-device-gamepad-2 vb. kontrol edildi).
+  3. Autodesk marka satırı "+1"→"+4" güncellendi (yeni ürünleri yansıtacak şekilde).
+  4. Yeni **SSS bölümü** (5 soru, sayfada hiç yoktu) + FAQPage JSON-LD `@graph`'a eklendi (json.loads/dumps değil, elle — otomotiv şablonundaki desenle aynı `cz-faq` sınıfları kullanıldı).
+  5. Meta/OG/Twitter/JSON-LD açıklaması, yeni kapsamı (Flow Production Tracking, Flame) yansıtacak şekilde güncellendi (tek tekrarlı string, `replace_all` ile tüm konumlar).
+- **Doğrulama (localhost:8433):** `get_page_text` ile sayfa uçtan uca okundu — yeni bölüm, 6 yeni ürün kartı, güncel marka satırı, 5 SSS sorusu doğru sırada göründü. 6 yeni SVG logosu `fetch()` ile 200 OK doğrulandı (lazy-load nedeniyle `naturalWidth` ilk taramada 0 çıktı, fetch ile kesinleştirildi). JSON-LD `json.loads` ile doğrulandı (5 graph node: Organization/WebPage/BreadcrumbList/Service/FAQPage).
+- **Durum:** ✅ Tamamlandı.
+
 ### DK-2026-08-06-01 — Yapı Ürünleri & Fabrikasyon ve Tüketici Ürünleri sektörleri eklendi; Makine & Üretim kapsamı Industrial Equipment Manufacturing'i açıkça kapsayacak şekilde genişletildi
 
 - **Yapan:** Onur, Autodesk'in endüstri sayfalarını (Building Products & Fabrication, Consumer Products, Industrial Equipment Manufacturing) paylaşıp CADBİM'in 9 sektöründe eksik olanları sordu; Claude (PDM asistanı) gap-analizi yaptı, önerdi, Onur onayladı ("evet onaylıyorum, makine sayfasını da kapsam genişlemesine onay veriyorum").
