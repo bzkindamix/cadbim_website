@@ -62,7 +62,7 @@ BRANDS_B = {
         ("chaos", "Chaos", "Chaos V-Ray"),
     ],
     "havacilik": [
-        ("autodesk", "Autodesk", "Inventor, Fusion, Vault PDM, PowerMill, Moldflow"),
+        ("autodesk", "Autodesk", "Inventor, Fusion, Vault PDM, Moldflow"),
         ("ultimaker", "UltiMaker", "UltiMaker Factor 4"),
         ("hp", "HP", "HP Z Workstation"),
     ],

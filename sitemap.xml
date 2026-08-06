@@ -71,7 +71,6 @@
   <url><loc>https://www.cadbim.com.tr/fabrika-tasarimi</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/factor4</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/factory-design</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cadbim.com.tr/featurecam</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/firefly</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/flame</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/flow-production-tracking</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -134,8 +133,6 @@
   <url><loc>https://www.cadbim.com.tr/phoenix</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/photoshop</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/plm</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cadbim.com.tr/powermill</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cadbim.com.tr/powershape</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/premiere-pro</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/recap-pro</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/revit</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -178,6 +175,8 @@
   <url><loc>https://www.cadbim.com.tr/</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://www.cadbim.com.tr/sektor-egitim</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/sektor-havacilik</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cadbim.com.tr/sektor-yapi-urunleri</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.cadbim.com.tr/sektor-tuketici-urunleri</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/sektor-insaat</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/sektor-makine</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.cadbim.com.tr/sektor-medya</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
