@@ -543,29 +543,26 @@ html{overflow-x:clip;}
   .ring{animation:donme 34s linear infinite;}
   @keyframes donme{from{transform:rotateY(0deg);}to{transform:rotateY(360deg);}}
 }
+/* paneller gerçek atölye baskıları — her kare kendi en-boy oranını korur,
+   panel genişliği sabit, yükseklik orandan gelir; kırpma/germe yok */
 .panel{
-  position:absolute;inset:0;border-radius:12px;overflow:hidden;
+  position:absolute;top:50%;left:0;width:100%;height:auto;
+  aspect-ratio:var(--ar,3/4);
+  border-radius:12px;overflow:hidden;
   border:1px solid rgba(233,236,247,.22);
   box-shadow:0 24px 60px -22px rgba(0,0,0,.65);
-  backface-visibility:visible;opacity:.92;
+  backface-visibility:visible;opacity:.92;background:#12141f;
 }
+.panel img{display:block;width:100%;height:100%;object-fit:contain;}
 .panel::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.13),transparent 42%);}
-.panel:nth-child(1){transform:rotateY(0deg) translateZ(var(--tz));}
-.panel:nth-child(2){transform:rotateY(45deg) translateZ(var(--tz));}
-.panel:nth-child(3){transform:rotateY(90deg) translateZ(var(--tz));}
-.panel:nth-child(4){transform:rotateY(135deg) translateZ(var(--tz));}
-.panel:nth-child(5){transform:rotateY(180deg) translateZ(var(--tz));}
-.panel:nth-child(6){transform:rotateY(225deg) translateZ(var(--tz));}
-.panel:nth-child(7){transform:rotateY(270deg) translateZ(var(--tz));}
-.panel:nth-child(8){transform:rotateY(315deg) translateZ(var(--tz));}
-.a1{background:radial-gradient(ellipse 90% 55% at 50% 88%,#241a12 0%,transparent 60%),radial-gradient(circle at 50% 36%,#f6d9a0 0%,#e0955a 30%,#a34a2c 60%,#3a2020 100%);}
-.a2{background:linear-gradient(180deg,#c8d4e6 0%,#8ba2c4 36%,#51648e 62%,#22283f 100%);}
-.a3{background:repeating-linear-gradient(100deg,#191622 0 8px,#d9dde9 8px 16px,#3c3750 16px 18px,#d9dde9 18px 32px);}
-.a4{background:radial-gradient(circle at 62% 30%,#ffe9b8 0%,#f2a65f 20%,transparent 46%),linear-gradient(180deg,#8fb6c9 0%,#5d84a6 40%,#2e3f63 72%,#161b2e 100%);}
-.a5{background:linear-gradient(160deg,#f26bd8 0%,#8b5cd6 45%,#2c2350 100%);}
-.a6{background:linear-gradient(180deg,#d6dfd2 0%,#93a68c 40%,#4f6250 70%,#243026 100%);}
-.a7{background:radial-gradient(circle at 50% 62%,#e8c87a 0%,#b98e45 34%,transparent 66%),linear-gradient(180deg,#22263c 0%,#3c3350 55%,#141221 100%);}
-.a8{background:conic-gradient(from 210deg at 50% 42%,#6ee7ff 0%,#8b7cf7 32%,#1a1626 55%,#3d78ff 78%,#6ee7ff 100%);}
+/* 7 panel — 360/7 ≈ 51.4286deg */
+.panel:nth-child(1){transform:translateY(-50%) rotateY(0deg) translateZ(var(--tz));}
+.panel:nth-child(2){transform:translateY(-50%) rotateY(51.4286deg) translateZ(var(--tz));}
+.panel:nth-child(3){transform:translateY(-50%) rotateY(102.8571deg) translateZ(var(--tz));}
+.panel:nth-child(4){transform:translateY(-50%) rotateY(154.2857deg) translateZ(var(--tz));}
+.panel:nth-child(5){transform:translateY(-50%) rotateY(205.7143deg) translateZ(var(--tz));}
+.panel:nth-child(6){transform:translateY(-50%) rotateY(257.1429deg) translateZ(var(--tz));}
+.panel:nth-child(7){transform:translateY(-50%) rotateY(308.5714deg) translateZ(var(--tz));}
 @media(max-width:1180px){.stage{display:none;}}
 
 /* ============ R3 — SANATSAL BASKI FORMU ============ */
@@ -659,8 +656,13 @@ html{overflow-x:clip;}
   <div class="stage" aria-hidden="true">
     <div class="tilt">
       <div class="ring">
-        <div class="panel a1"></div><div class="panel a2"></div><div class="panel a3"></div><div class="panel a4"></div>
-        <div class="panel a5"></div><div class="panel a6"></div><div class="panel a7"></div><div class="panel a8"></div>
+        <div class="panel" style="--ar:640/853;"><img src="assets/img/sanatsal/eser/sahin-640.jpg" srcset="assets/img/sanatsal/eser/sahin-320.jpg 320w, assets/img/sanatsal/eser/sahin-640.jpg 640w" sizes="(min-width:1181px) 235px, 175px" alt="" width="640" height="853" loading="lazy" decoding="async"></div>
+        <div class="panel" style="--ar:640/359;"><img src="assets/img/sanatsal/eser/laleler-640.jpg" srcset="assets/img/sanatsal/eser/laleler-320.jpg 320w, assets/img/sanatsal/eser/laleler-640.jpg 640w" sizes="(min-width:1181px) 235px, 175px" alt="" width="640" height="359" loading="lazy" decoding="async"></div>
+        <div class="panel" style="--ar:640/962;"><img src="assets/img/sanatsal/eser/akcaagac-640.jpg" srcset="assets/img/sanatsal/eser/akcaagac-320.jpg 320w, assets/img/sanatsal/eser/akcaagac-640.jpg 640w" sizes="(min-width:1181px) 235px, 175px" alt="" width="640" height="962" loading="lazy" decoding="async"></div>
+        <div class="panel" style="--ar:640/853;"><img src="assets/img/sanatsal/eser/sincap-640.jpg" srcset="assets/img/sanatsal/eser/sincap-320.jpg 320w, assets/img/sanatsal/eser/sincap-640.jpg 640w" sizes="(min-width:1181px) 235px, 175px" alt="" width="640" height="853" loading="lazy" decoding="async"></div>
+        <div class="panel" style="--ar:4/3;"><img src="assets/img/sanatsal/eser/portofino-640.jpg" srcset="assets/img/sanatsal/eser/portofino-320.jpg 320w, assets/img/sanatsal/eser/portofino-640.jpg 640w" sizes="(min-width:1181px) 235px, 175px" alt="" width="640" height="480" loading="lazy" decoding="async"></div>
+        <div class="panel" style="--ar:2/3;"><img src="assets/img/sanatsal/eser/kalem-heykeli-640.jpg" srcset="assets/img/sanatsal/eser/kalem-heykeli-320.jpg 320w, assets/img/sanatsal/eser/kalem-heykeli-640.jpg 640w" sizes="(min-width:1181px) 235px, 175px" alt="" width="640" height="960" loading="lazy" decoding="async"></div>
+        <div class="panel" style="--ar:640/853;"><img src="assets/img/sanatsal/eser/ayi-maskot-640.jpg" srcset="assets/img/sanatsal/eser/ayi-maskot-320.jpg 320w, assets/img/sanatsal/eser/ayi-maskot-640.jpg 640w" sizes="(min-width:1181px) 235px, 175px" alt="" width="640" height="853" loading="lazy" decoding="async"></div>
       </div>
     </div>
   </div>

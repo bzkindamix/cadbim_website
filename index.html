@@ -393,17 +393,21 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
 .atolye-cta{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-family:var(--font-d,'Space Grotesk',sans-serif);font-size:13.5px;font-weight:700;color:var(--cyan);}
 .atolye-cta i{font-size:15px;transition:transform .25s;}
 .atolye:hover .atolye-cta i{transform:translate(3px,-3px);}
-/* mini 3D halka — paneller palet içi "baskı" görselleri */
+/* mini 3D halka — paneller gerçek atölye baskıları;
+   her kare kendi en-boy oranını korur (kırpma/germe yok) */
 .atolye-ring{display:flex;justify-content:center;perspective:900px;}
 .aring{--tz:150px;position:relative;width:106px;aspect-ratio:3/4;transform-style:preserve-3d;transform:rotateX(-10deg);}
-.ap{position:absolute;inset:0;border-radius:9px;border:1px solid rgba(230,235,242,.25);opacity:.95;box-shadow:0 16px 34px -16px rgba(4,8,16,.7);}
+.ap{position:absolute;top:50%;left:0;width:100%;height:auto;aspect-ratio:var(--ar,3/4);border-radius:9px;overflow:hidden;border:1px solid rgba(230,235,242,.25);opacity:.95;box-shadow:0 16px 34px -16px rgba(4,8,16,.7);background:#0a1225;}
+.ap img{display:block;width:100%;height:100%;object-fit:contain;}
 .ap::after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(115deg,rgba(230,235,242,.14),transparent 45%);}
-.ap1{transform:rotateY(0deg) translateZ(var(--tz));background:radial-gradient(circle at 55% 34%,#e6ebf2 0%,#38bdf8 30%,#0ea5e9 58%,#0a1225 100%);}
-.ap2{transform:rotateY(60deg) translateZ(var(--tz));background:linear-gradient(180deg,#e6ebf2 0%,#8fa5bd 45%,#111f3d 100%);}
-.ap3{transform:rotateY(120deg) translateZ(var(--tz));background:repeating-linear-gradient(100deg,#060c1a 0 6px,#e6ebf2 6px 12px,#111f3d 12px 14px,#e6ebf2 14px 24px);}
-.ap4{transform:rotateY(180deg) translateZ(var(--tz));background:conic-gradient(from 210deg at 50% 42%,#00c8f0 0%,#0ea5e9 34%,#0a1225 58%,#38bdf8 82%,#00c8f0 100%);}
-.ap5{transform:rotateY(240deg) translateZ(var(--tz));background:repeating-linear-gradient(0deg,rgba(230,235,242,.08) 0 2px,transparent 2px 12px),linear-gradient(160deg,#111f3d 0%,#0d1830 55%,#04101e 100%);}
-.ap6{transform:rotateY(300deg) translateZ(var(--tz));background:linear-gradient(165deg,#e6ebf2 0%,#b6c3d4 48%,#5d708a 100%);}
+/* 7 panel — 360/7 ≈ 51.4286deg */
+.ap1{transform:translateY(-50%) rotateY(0deg) translateZ(var(--tz));}
+.ap2{transform:translateY(-50%) rotateY(51.4286deg) translateZ(var(--tz));}
+.ap3{transform:translateY(-50%) rotateY(102.8571deg) translateZ(var(--tz));}
+.ap4{transform:translateY(-50%) rotateY(154.2857deg) translateZ(var(--tz));}
+.ap5{transform:translateY(-50%) rotateY(205.7143deg) translateZ(var(--tz));}
+.ap6{transform:translateY(-50%) rotateY(257.1429deg) translateZ(var(--tz));}
+.ap7{transform:translateY(-50%) rotateY(308.5714deg) translateZ(var(--tz));}
 @media (prefers-reduced-motion: no-preference){
   .aring{animation:aringDon 22s linear infinite;}
   @keyframes aringDon{from{transform:rotateX(-10deg) rotateY(0deg);}to{transform:rotateX(-10deg) rotateY(360deg);}}
@@ -734,7 +738,13 @@ footer{background:#040810;border-top:1px solid var(--w06);padding:56px 3rem 28px
     </div>
     <div class="atolye-ring" aria-hidden="true">
       <div class="aring">
-        <i class="ap ap1"></i><i class="ap ap2"></i><i class="ap ap3"></i><i class="ap ap4"></i><i class="ap ap5"></i><i class="ap ap6"></i>
+        <span class="ap ap1" style="--ar:640/853;"><img src="assets/img/sanatsal/eser/sahin-320.jpg" srcset="assets/img/sanatsal/eser/sahin-320.jpg 320w, assets/img/sanatsal/eser/sahin-640.jpg 640w" sizes="106px" alt="" width="320" height="427" loading="lazy" decoding="async"></span>
+        <span class="ap ap2" style="--ar:640/359;"><img src="assets/img/sanatsal/eser/laleler-320.jpg" srcset="assets/img/sanatsal/eser/laleler-320.jpg 320w, assets/img/sanatsal/eser/laleler-640.jpg 640w" sizes="106px" alt="" width="320" height="180" loading="lazy" decoding="async"></span>
+        <span class="ap ap3" style="--ar:640/962;"><img src="assets/img/sanatsal/eser/akcaagac-320.jpg" srcset="assets/img/sanatsal/eser/akcaagac-320.jpg 320w, assets/img/sanatsal/eser/akcaagac-640.jpg 640w" sizes="106px" alt="" width="320" height="481" loading="lazy" decoding="async"></span>
+        <span class="ap ap4" style="--ar:640/853;"><img src="assets/img/sanatsal/eser/sincap-320.jpg" srcset="assets/img/sanatsal/eser/sincap-320.jpg 320w, assets/img/sanatsal/eser/sincap-640.jpg 640w" sizes="106px" alt="" width="320" height="427" loading="lazy" decoding="async"></span>
+        <span class="ap ap5" style="--ar:4/3;"><img src="assets/img/sanatsal/eser/portofino-320.jpg" srcset="assets/img/sanatsal/eser/portofino-320.jpg 320w, assets/img/sanatsal/eser/portofino-640.jpg 640w" sizes="106px" alt="" width="320" height="240" loading="lazy" decoding="async"></span>
+        <span class="ap ap6" style="--ar:2/3;"><img src="assets/img/sanatsal/eser/kalem-heykeli-320.jpg" srcset="assets/img/sanatsal/eser/kalem-heykeli-320.jpg 320w, assets/img/sanatsal/eser/kalem-heykeli-640.jpg 640w" sizes="106px" alt="" width="320" height="480" loading="lazy" decoding="async"></span>
+        <span class="ap ap7" style="--ar:640/853;"><img src="assets/img/sanatsal/eser/ayi-maskot-320.jpg" srcset="assets/img/sanatsal/eser/ayi-maskot-320.jpg 320w, assets/img/sanatsal/eser/ayi-maskot-640.jpg 640w" sizes="106px" alt="" width="320" height="427" loading="lazy" decoding="async"></span>
       </div>
     </div>
   </div>
