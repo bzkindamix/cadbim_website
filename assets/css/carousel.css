@@ -1,0 +1,296 @@
+/* ==============================================================
+   CAROUSEL.CSS — Mobil scroll-snap carousel sistem
+
+   Uygulanacak bölümler:
+   - .carousel-why (Neden Biz, 4 item)
+   - .carousel-sectors (Sektörler, 11 item)
+   - .carousel-brands (Yetkili Logolar, 8 item)
+   - .carousel-cz-fark (Çözüm Sayfaları Fark, 4 item)
+
+   Breakpoints:
+   - Mobil (<600px): 1 item visible + peek
+   - Tablet (600px-900px): 2 item visible
+   - Masaüstü (900px+): 3-4 item visible (veya grid fallback)
+   ============================================================== */
+
+/* CAROUSEL WRAPPER */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+/* SCROLL TRACK — Grid-auto-columns ile responsive width */
+.carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 16px;
+  padding: 0;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  /* Webkit smooth scroll */
+  -webkit-overflow-scrolling: touch;
+  /* Scrollbar hide (modern browsers) */
+  scrollbar-width: none;
+  width: 100%;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* CAROUSEL SLIDE */
+.carousel-slide {
+  /* grid-auto-flow: column ile otomatik kolon oluş */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   MOBILE (<600px) — 1 item fully visible + 0.15 peek
+   ============================================================ */
+@media (max-width: 600px) {
+  .carousel-track {
+    gap: 12px;
+    padding: 0 16px;
+    scroll-padding-inline: 16px;
+  }
+
+  .carousel-slide {
+    /* Mobil: 1 item fully visible, overflow trigger için width > container */
+    min-width: 100%;
+    flex-shrink: 0;
+  }
+}
+
+/* ============================================================
+   TABLET (600px-900px) — 2 item visible
+   ============================================================ */
+@media (min-width: 600px) and (max-width: 900px) {
+  .carousel-track {
+    gap: 16px;
+    padding: 0 24px;
+  }
+
+  .carousel-slide {
+    width: calc((100vw - 80px) / 2);
+    /* 2 item yan yana: (viewport - 2×padding - 1×gap) / 2 */
+  }
+}
+
+/* ============================================================
+   MASAÜSTÜ (900px+) — Carousel durur, grid fallback
+   ============================================================ */
+@media (min-width: 900px) {
+  .carousel {
+    scroll-behavior: auto;
+  }
+
+  /* Masaüstü'nde carousel zaten gereksiz; fallback grid görünür kalır */
+  /* Ama carousel scroll durdurulabilir de */
+  .carousel-track {
+    overflow-x: visible;
+    scroll-snap-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 0;
+  }
+
+  .carousel-slide {
+    width: auto;
+    scroll-snap-align: none;
+  }
+}
+
+/* ============================================================
+   NAVIGATION BUTTONS
+   ============================================================ */
+
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Prev/Next Buttons */
+.carousel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(0, 200, 240, 0.1);
+  border: 0.5px solid rgba(0, 200, 240, 0.3);
+  color: #00c8f0;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background: rgba(0, 200, 240, 0.2);
+  border-color: rgba(0, 200, 240, 0.6);
+  transform: translateY(-2px);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================================
+   CAROUSEL DOTS (Slide Indicator)
+   ============================================================ */
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.carousel-dots button[aria-selected="true"] {
+  width: 24px;
+  background: #00c8f0;
+  border-radius: 4px;
+}
+
+.carousel-dots button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-dots button[aria-selected="true"]:hover {
+  background: #00c8f0;
+}
+
+/* ============================================================
+   NAV VARIATIONS
+   ============================================================ */
+
+/* .carousel-nav-compact: Arrows only (11+ item'ler) */
+.carousel-nav-compact {
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.carousel-nav-compact .carousel-dots {
+  display: none;
+}
+
+/* .carousel-nav-minimal: Dots only (4 item'ler) */
+.carousel-nav-minimal {
+  justify-content: center;
+}
+
+.carousel-nav-minimal .carousel-btn {
+  display: none;
+}
+
+/* ============================================================
+   CAROUSEL-SPECIFIC STYLING
+   ============================================================ */
+
+/* Why Grid Carousel */
+.carousel-why {
+  margin-bottom: 0;
+}
+
+/* Sectors Carousel */
+.carousel-sectors {
+  margin-bottom: 0;
+}
+
+/* Brands Carousel */
+.carousel-brands {
+  margin-bottom: 0;
+}
+
+.carousel-brands .carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+}
+
+.carousel-brands .brand-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-brands .brand-link img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+/* Çözüm Fark Carousel */
+.carousel-cz-fark {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   ACCESSIBILITY: Keyboard Navigation Focus
+   ============================================================ */
+
+.carousel-btn:focus-visible,
+.carousel-dots button:focus-visible {
+  outline: 2px solid #00c8f0;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   REDUCED MOTION: Accessibility
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    scroll-behavior: auto;
+  }
+
+  .carousel-btn,
+  .carousel-dots button {
+    transition: none;
+  }
+
+  .carousel-btn:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   PRINT: Hide navigation
+   ============================================================ */
+
+@media print {
+  .carousel-nav {
+    display: none;
+  }
+}
